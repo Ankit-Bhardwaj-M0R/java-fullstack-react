@@ -1,0 +1,5692 @@
+# Complete Guide to Java Errors, Exceptions & Global Exception Handling Interview Questions
+
+Let me break this massive topic into organized sections. I'll give you EVERYTHING, and you can ask me to continue whenever needed.
+
+---
+
+## PART 1: COMMON COMPILATION ERRORS
+
+### Q1. What is the difference between compilation errors and runtime errors?
+
+Think of it like building a house. Compilation errors are like the building inspector stopping you before construction even starts - "Hey, your blueprint has a door in the middle of a wall, fix that first!" You cannot run your program until these are fixed.
+
+Runtime errors are like problems that happen after the house is built - maybe a pipe bursts when someone turns on the water. The program compiled fine, but something went wrong during execution.
+
+**Example:**
+```java
+// Compilation Error - won't even compile
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Hello"  // Missing semicolon
+    }
+}
+
+// Runtime Error - compiles but crashes when run
+public class Test {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        System.out.println(arr[10]); // ArrayIndexOutOfBoundsException
+    }
+}
+```
+
+**Industry scenario:** In a banking app, if you forget a semicolon, the code won't compile. But if you try to divide by zero when calculating interest, it compiles fine but crashes at runtime.
+
+---
+
+### Q2. What is "cannot find symbol" error and when does it occur?
+
+This is probably THE most common compilation error for beginners. It means the compiler doesn't recognize a variable, method, or class name you're trying to use.
+
+**Common scenarios:**
+
+**Scenario 1 - Typo in variable name:**
+```java
+String userName = "John";
+System.out.println(username); // Error: cannot find symbol username
+// You wrote 'username' but declared 'userName'
+```
+
+**Scenario 2 - Using variable before declaring:**
+```java
+System.out.println(salary); // Error: cannot find symbol salary
+int salary = 50000;
+```
+
+**Scenario 3 - Wrong class import or missing import:**
+```java
+// No import statement
+ArrayList<String> list = new ArrayList<>(); // Error: cannot find symbol ArrayList
+```
+
+**Industry example:** You're building an e-commerce cart. You declare `totalAmount` but accidentally type `totaAmount` when calculating the bill. The compiler immediately tells you "cannot find symbol totaAmount".
+
+---
+
+### Q3. What is "variable might not have been initialized" error?
+
+Java forces you to initialize local variables before using them. Instance variables get default values, but local variables don't.
+
+```java
+public void calculateDiscount() {
+    int discount;
+    int finalPrice = 1000 - discount; // Error: variable discount might not have been initialized
+}
+
+// Correct way:
+public void calculateDiscount() {
+    int discount = 0; // Initialize first
+    int finalPrice = 1000 - discount;
+}
+```
+
+**Why does this happen?** Java wants to protect you from using garbage values. If you don't initialize, the variable could contain any random value from memory.
+
+**Industry example:** In a payment gateway, if you declare `transactionFee` but forget to initialize it, Java won't let you calculate the final amount. This prevents charging customers random amounts!
+
+---
+
+### Q4. What is "unreachable statement" error?
+
+This happens when you write code that can NEVER execute because something before it always exits.
+
+```java
+public String processOrder() {
+    return "Order Processed";
+    System.out.println("Email sent"); // Error: unreachable statement
+}
+
+// Another common case:
+public void checkStock(int quantity) {
+    if(quantity > 0) {
+        return;
+    } else {
+        return;
+    }
+    System.out.println("Done"); // Error: unreachable statement
+}
+```
+
+**Industry example:** In an inventory system, if you return from the method after checking stock availability, any code after that return statement is unreachable. The compiler catches this dead code.
+
+---
+
+### Q5. What is "missing return statement" error?
+
+If your method signature promises to return something, EVERY path through your method must return that type.
+
+```java
+// Error example:
+public int calculateTotal(int price, int quantity) {
+    if(price > 0) {
+        return price * quantity;
+    }
+    // What if price is 0 or negative? No return!
+    // Error: missing return statement
+}
+
+// Correct way:
+public int calculateTotal(int price, int quantity) {
+    if(price > 0) {
+        return price * quantity;
+    }
+    return 0; // Handle all cases
+}
+```
+
+**Industry example:** In a loan calculator app, if you calculate EMI only when principal is positive but forget to return something when it's negative, the compiler stops you. What would the calling method receive? Java doesn't allow this ambiguity.
+
+---
+
+### Q6. What is "incompatible types" error?
+
+You're trying to assign a value of one type to a variable of another incompatible type.
+
+```java
+int age = "25"; // Error: incompatible types: String cannot be converted to int
+
+String name = 100; // Error: incompatible types: int cannot be converted to String
+
+double salary = "50000.50"; // Error: String to double
+```
+
+**Tricky case with return types:**
+```java
+public int getUserAge() {
+    return "25"; // Error: incompatible types: String cannot be converted to int
+}
+```
+
+**Industry example:** In an employee management system, if someone accidentally tries to store employee age (which comes from a text field as String) directly into an int variable without converting, Java catches this type mismatch immediately.
+
+---
+
+### Q7. What is "possible loss of precision" error?
+
+This happens when you try to put a larger data type into a smaller data type without explicit casting.
+
+```java
+int x = 10;
+byte b = x; // Error: possible lossy conversion from int to byte
+
+long accountBalance = 1000000L;
+int balance = accountBalance; // Error: possible lossy conversion from long to int
+
+double price = 99.99;
+int roundedPrice = price; // Error: possible lossy conversion from double to int
+```
+
+**Why?** A byte can hold -128 to 127, but int can hold much larger values. If x was 200, it wouldn't fit in a byte. Java makes you explicitly say "I know what I'm doing" with a cast.
+
+**Correct way:**
+```java
+int x = 10;
+byte b = (byte)x; // Explicit cast
+```
+
+**Industry example:** In a financial application, if you're converting transaction amounts from double to int, Java forces you to explicitly cast because you might lose the decimal portion (precision loss). This prevents accidental data loss.
+
+---
+
+### Q8. What is "non-static variable cannot be referenced from a static context" error?
+
+The static main method is trying to access instance variables or methods directly.
+
+```java
+public class BankAccount {
+    int balance = 1000; // Instance variable
+    
+    public static void main(String[] args) {
+        System.out.println(balance); // Error: non-static variable balance cannot be referenced from a static context
+    }
+}
+```
+
+**Why does this happen?** Static methods belong to the class, not to any specific object. Instance variables belong to objects. When main runs, no objects exist yet! Which object's balance should it print?
+
+**Correct ways:**
+```java
+// Option 1: Create an object
+public static void main(String[] args) {
+    BankAccount account = new BankAccount();
+    System.out.println(account.balance); // Works!
+}
+
+// Option 2: Make the variable static
+static int balance = 1000;
+public static void main(String[] args) {
+    System.out.println(balance); // Works!
+}
+```
+
+**Industry example:** In a Spring Boot controller, if you try to access a service instance variable from a static utility method without creating an object or injecting it, you'll hit this error.
+
+---
+
+### Q9. What is "method does not return a value" vs "missing return statement"?
+
+These sound similar but are slightly different:
+
+```java
+// "missing return statement" - compiler can prove no return exists in some path
+public int calculate(int x) {
+    if(x > 0) {
+        return x * 2;
+    }
+    // Missing return for x <= 0 case
+}
+
+// "method does not return a value" - void method trying to return something
+public void printMessage() {
+    return "Hello"; // Error: cannot return a value from method whose result type is void
+}
+```
+
+**Industry example:** In an OTP validation service, if your method signature says it returns boolean (success/failure) but you forget to return false when validation fails, compiler catches it immediately.
+
+---
+
+### Q10. What is "duplicate local variable" error?
+
+You cannot declare the same variable name twice in the same scope.
+
+```java
+public void processPayment() {
+    int amount = 100;
+    int amount = 200; // Error: duplicate local variable amount
+}
+
+// Tricky case:
+public void validateUser(String email) {
+    String email = "default@mail.com"; // Error: duplicate parameter email
+}
+```
+
+**But this is fine (different scopes):**
+```java
+public void method1() {
+    int count = 10; // Fine
+}
+
+public void method2() {
+    int count = 20; // Fine - different method scope
+}
+```
+
+**Industry example:** In an order processing method, if you accidentally declare `orderId` twice while debugging, Java stops you immediately. This prevents confusing bugs where you might think you're using one variable but actually using another.
+
+---
+
+Should I continue with more compilation errors? I have about 20 more compilation error scenarios, then we'll move to runtime exceptions (NullPointerException, ClassCastException, etc.), checked exceptions, and finally global exception handling questions. Let me know!
+
+## PART 2: MORE COMPILATION ERRORS
+
+### Q11. What is "constructor is already defined" error?
+
+You cannot have two constructors with the exact same parameter list (same type, same order).
+
+```java
+public class Employee {
+    String name;
+    int age;
+    
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Error: constructor Employee(String,int) is already defined
+    public Employee(String empName, int empAge) {
+        this.name = empName;
+        this.age = empAge;
+    }
+}
+```
+
+**Why?** Java can't decide which constructor to call. Even though parameter names are different (name vs empName), the types are identical - both are (String, int).
+
+**This is fine (different parameter types):**
+```java
+public Employee(String name, int age) { }
+public Employee(String name) { }  // Fine - different parameter count
+public Employee(int id, String name) { } // Fine - different order
+```
+
+**Industry example:** In a Product class for e-commerce, if you create two constructors both taking (String name, double price), Java won't compile. You need to make them different - maybe one takes (String, double) and another takes (String, double, int quantity).
+
+---
+
+### Q12. What is "array required, but X found" error?
+
+You're trying to use array syntax on something that's not an array.
+
+```java
+String name = "John";
+System.out.println(name[0]); // Error: array required, but String found
+
+int age = 25;
+System.out.println(age[0]); // Error: array required, but int found
+```
+
+**Common mistake in loops:**
+```java
+String userName = "admin";
+for(int i = 0; i < userName.length(); i++) {
+    System.out.println(userName[i]); // Error!
+}
+
+// Correct way:
+System.out.println(userName.charAt(i));
+```
+
+**Industry example:** In a password validation service, if you try to access characters of a String password using array notation password[0] instead of password.charAt(0), you'll get this error. Coming from languages like Python, this is a common mistake.
+
+---
+
+### Q13. What is "void type not allowed here" error?
+
+You're trying to use a void method's "return value" which doesn't exist.
+
+```java
+public void sendEmail(String to) {
+    // sends email
+}
+
+public void notifyUser() {
+    String result = sendEmail("user@mail.com"); // Error: void type not allowed here
+}
+
+// Another case:
+System.out.println(sendEmail("test@mail.com")); // Error: void type not allowed here
+```
+
+**Why?** Void methods don't return anything, so you can't assign their "result" to a variable or print it.
+
+**Industry example:** In a notification service, if sendSMS() is a void method (just sends, doesn't return status), you cannot do `boolean status = sendSMS(number)`. The method needs to return boolean if you want to capture status.
+
+---
+
+### Q14. What is "illegal start of expression" error?
+
+This is a catch-all error that happens when Java sees something in a place where it doesn't make sense grammatically.
+
+**Common scenarios:**
+
+**Scenario 1 - Access modifier inside a method:**
+```java
+public void calculate() {
+    public int result = 10; // Error: illegal start of expression
+}
+```
+
+**Scenario 2 - Missing opening brace:**
+```java
+public class Test 
+    public static void main(String[] args) // Error: missing {
+        System.out.println("Hello");
+    }
+}
+```
+
+**Scenario 3 - Class keyword in wrong place:**
+```java
+public void method() {
+    class Inner { // This is actually legal
+    }
+    public class Wrong { // Error: illegal start of expression
+    }
+}
+```
+
+**Industry example:** While refactoring code in a payment gateway, if you accidentally leave a method signature incomplete or put a class declaration inside a method incorrectly, you'll see this cryptic error.
+
+---
+
+### Q15. What is "class, interface, or enum expected" error?
+
+This usually means there's something outside any class/interface/enum that shouldn't be there.
+
+```java
+public class Test {
+    public void method() {
+        System.out.println("Hello");
+    }
+} // Class ends here
+
+System.out.println("I'm outside!"); // Error: class, interface, or enum expected
+```
+
+**Common cause - mismatched braces:**
+```java
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+} // Extra brace closes class early
+
+public int subtract(int a, int b) { // Error: seems like it's outside class
+    return a - b;
+}
+```
+
+**Industry example:** In a large service class with many methods, if you accidentally put an extra closing brace after one method, everything below appears to be "outside" the class, causing this error.
+
+---
+
+### Q16. What is "cannot assign a value to final variable" error?
+
+Once you declare a variable as final, you cannot change its value.
+
+```java
+final int MAX_USERS = 100;
+MAX_USERS = 200; // Error: cannot assign a value to final variable MAX_USERS
+
+final String DB_URL = "jdbc:mysql://localhost";
+DB_URL = "jdbc:postgresql://localhost"; // Error: cannot assign
+```
+
+**Tricky case with final parameters:**
+```java
+public void processOrder(final int orderId) {
+    orderId = orderId + 1; // Error: cannot assign a value to final variable orderId
+}
+```
+
+**Final with objects (common confusion):**
+```java
+final List<String> names = new ArrayList<>();
+names.add("John"); // This is FINE - you're modifying content, not the reference
+names = new ArrayList<>(); // Error: cannot assign - you're changing the reference
+```
+
+**Industry example:** In configuration classes, constants like API_KEY are marked final. If someone tries to modify it at runtime (maybe thinking they're updating config), Java prevents it at compilation.
+
+---
+
+### Q17. What is "abstract method cannot have a body" error?
+
+Abstract methods are meant to be implemented by subclasses, so they cannot have implementation in the abstract class.
+
+```java
+public abstract class Payment {
+    public abstract void processPayment() { // Error: abstract methods cannot have a body
+        System.out.println("Processing");
+    }
+}
+
+// Correct way:
+public abstract class Payment {
+    public abstract void processPayment(); // Just signature, no body
+}
+
+public class CreditCardPayment extends Payment {
+    public void processPayment() { // Implementation here
+        System.out.println("Processing credit card");
+    }
+}
+```
+
+**Industry example:** In a payment gateway, you have an abstract Payment class with processPayment() method. Each payment type (CreditCard, DebitCard, UPI) implements it differently. The abstract method must be empty - no body allowed.
+
+---
+
+### Q18. What is "class X is public, should be declared in a file named X.java" error?
+
+If a class is declared public, it MUST be in a file with the exact same name.
+
+```java
+// File name: Test.java
+public class Employee { // Error: class Employee is public, should be declared in Employee.java
+    String name;
+}
+```
+
+**Rules:**
+- One public class per file
+- File name must match public class name exactly (case-sensitive)
+- You can have multiple non-public classes in same file
+
+```java
+// File name: Employee.java - This is correct
+public class Employee {
+    String name;
+}
+
+class Department { // Fine - not public
+    String name;
+}
+
+class Address { // Fine - not public
+    String city;
+}
+```
+
+**Industry example:** In a microservice project, if you create a public class CustomerService but save the file as Service.java, compilation fails. IDE usually creates files with correct names, but if you manually create files, this error can occur.
+
+---
+
+### Q19. What is "break outside switch or loop" error?
+
+The break statement can only be used inside loops (for, while) or switch statements.
+
+```java
+public void processData() {
+    System.out.println("Start");
+    break; // Error: break outside switch or loop
+    System.out.println("End");
+}
+
+// Common mistake:
+if(condition) {
+    break; // Error: break doesn't work in if statements
+}
+```
+
+**Correct usage:**
+```java
+for(int i = 0; i < 10; i++) {
+    if(i == 5) {
+        break; // Fine - inside loop
+    }
+}
+
+switch(status) {
+    case "ACTIVE":
+        System.out.println("Active");
+        break; // Fine - inside switch
+}
+```
+
+**Industry example:** In a data processing job, if you want to exit early based on a condition, you can't just put break in an if statement. You need to use return (to exit method) or restructure with a loop.
+
+---
+
+### Q20. What is "continue outside of loop" error?
+
+Similar to break, continue can only be used inside loops.
+
+```java
+public void validateOrders() {
+    if(order.isValid()) {
+        continue; // Error: continue outside of loop
+    }
+}
+
+// Correct usage:
+for(Order order : orders) {
+    if(!order.isValid()) {
+        continue; // Fine - skip this iteration
+    }
+    processOrder(order);
+}
+```
+
+**Industry example:** In a batch job processing orders, if an order is invalid, you use continue to skip it and move to the next one. But continue only makes sense inside a loop context.
+
+---
+
+## PART 3: RUNTIME EXCEPTIONS (UNCHECKED)
+
+### Q21. What is NullPointerException and when does it occur?
+
+This is THE most common runtime exception. It happens when you try to use an object reference that points to null.
+
+**Common scenarios:**
+
+**Scenario 1 - Calling method on null:**
+```java
+String name = null;
+System.out.println(name.length()); // NullPointerException
+```
+
+**Scenario 2 - Accessing array element when array is null:**
+```java
+int[] numbers = null;
+System.out.println(numbers[0]); // NullPointerException
+```
+
+**Scenario 3 - Uninitialized object fields:**
+```java
+public class Employee {
+    Address address; // null by default
+    
+    public void printCity() {
+        System.out.println(address.city); // NullPointerException if address not initialized
+    }
+}
+```
+
+**Scenario 4 - Method returning null:**
+```java
+public Employee findEmployee(int id) {
+    // Database query finds nothing
+    return null;
+}
+
+Employee emp = findEmployee(999);
+System.out.println(emp.getName()); // NullPointerException
+```
+
+**Prevention:**
+```java
+if(name != null) {
+    System.out.println(name.length());
+}
+
+// Or modern approach:
+String result = (name != null) ? name.toUpperCase() : "DEFAULT";
+```
+
+**Industry example:** In an e-commerce app, when fetching user's shipping address, if user hasn't added address yet, the query returns null. If you directly try to access address.getCity() without null check, application crashes with NullPointerException. This is why you always validate: `if(address != null)` before accessing.
+
+---
+
+### Q22. What is ArrayIndexOutOfBoundsException?
+
+Trying to access an array index that doesn't exist.
+
+```java
+int[] scores = new int[5]; // Valid indices: 0,1,2,3,4
+System.out.println(scores[5]); // ArrayIndexOutOfBoundsException
+
+String[] names = {"John", "Mary"};
+System.out.println(names[2]); // ArrayIndexOutOfBoundsException
+```
+
+**Common mistake in loops:**
+```java
+int[] numbers = {10, 20, 30};
+for(int i = 0; i <= numbers.length; i++) { // Wrong: <= instead of 
+    System.out.println(numbers[i]); // Crashes when i = 3
+}
+```
+
+**Industry example:** In a report generation system, you have an array of 12 elements (for 12 months). If someone passes month=13 and you do `data[month]` without validation, it crashes. Always validate: `if(month >= 0 && month < data.length)`.
+
+---
+
+### Q23. What is ClassCastException?
+
+Trying to cast an object to a type it's not compatible with.
+
+```java
+Object obj = "Hello";
+Integer num = (Integer) obj; // ClassCastException: String cannot be cast to Integer
+
+// Collection example:
+List list = new ArrayList();
+list.add("Text");
+Integer value = (Integer) list.get(0); // ClassCastException
+```
+
+**Why does it happen?** At runtime, Java checks if the actual object can be cast to the target type. If not, it throws this exception.
+
+**Safe casting:**
+```java
+Object obj = "Hello";
+if(obj instanceof Integer) {
+    Integer num = (Integer) obj;
+} else {
+    System.out.println("Not an Integer");
+}
+```
+
+**Industry example:** In a payment processing system, you store different payment types (CreditCard, DebitCard, UPI) in a List<Payment>. When retrieving, if you blindly cast `CreditCard card = (CreditCard) payment` without checking the actual type, you might get ClassCastException if it's actually a UPI payment.
+
+---
+
+### Q24. What is NumberFormatException?
+
+Trying to convert a String to a number, but the String doesn't represent a valid number.
+
+```java
+String age = "25abc";
+int num = Integer.parseInt(age); // NumberFormatException
+
+String price = "99.99";
+int value = Integer.parseInt(price); // NumberFormatException - decimal not allowed for parseInt
+
+String empty = "";
+int x = Integer.parseInt(empty); // NumberFormatException
+```
+
+**Safe parsing:**
+```java
+try {
+    int age = Integer.parseInt(userInput);
+} catch(NumberFormatException e) {
+    System.out.println("Invalid number format");
+    age = 0; // default value
+}
+```
+
+**Industry example:** In a banking app, when user enters transaction amount in a text field, it comes as String. If user types "1000abc" or "1,000" (with comma), parseInt throws NumberFormatException. You must validate input format before parsing or handle the exception gracefully.
+
+---
+
+### Q25. What is ArithmeticException?
+
+Illegal arithmetic operations, most commonly division by zero for integers.
+
+```java
+int a = 10;
+int b = 0;
+int result = a / b; // ArithmeticException: / by zero
+
+int x = 10;
+int y = 0;
+int mod = x % y; // ArithmeticException: / by zero (modulo by zero)
+```
+
+**Note:** Division by zero with doubles doesn't throw exception:
+```java
+double d = 10.0 / 0.0; // Result: Infinity (no exception)
+double d2 = 0.0 / 0.0; // Result: NaN (no exception)
+```
+
+**Prevention:**
+```java
+if(b != 0) {
+    int result = a / b;
+} else {
+    System.out.println("Cannot divide by zero");
+}
+```
+
+**Industry example:** In a loan EMI calculator, when calculating monthly payment `principal / months`, if user hasn't selected tenure yet (months = 0), division by zero occurs. Always validate divisor is non-zero before calculation.
+
+---
+
+Should I continue? I have 25+ more exception questions covering StringIndexOutOfBoundsException, IllegalArgumentException, IllegalStateException, UnsupportedOperationException, ConcurrentModificationException, and then we'll move to checked exceptions (IOException, SQLException, etc.) and finally global exception handling patterns. Let me know!
+
+## PART 4: MORE RUNTIME EXCEPTIONS
+
+### Q26. What is StringIndexOutOfBoundsException?
+
+Trying to access a character in a String at an invalid index.
+
+```java
+String name = "John"; // length = 4, valid indices: 0,1,2,3
+char c = name.charAt(5); // StringIndexOutOfBoundsException
+
+String email = "user@mail.com";
+String sub = email.substring(20); // StringIndexOutOfBoundsException
+```
+
+**Common scenarios:**
+
+```java
+String password = "";
+char firstChar = password.charAt(0); // Exception - empty string
+
+String code = "ABC";
+String part = code.substring(1, 5); // Exception - end index 5 > length 3
+```
+
+**Safe access:**
+```java
+if(name.length() > 5) {
+    char c = name.charAt(5);
+}
+
+// Or
+if(index >= 0 && index < name.length()) {
+    char c = name.charAt(index);
+}
+```
+
+**Industry example:** In an OTP validation service, if you try to extract the first 4 characters from user input using `otp.substring(0, 4)` but user entered only 3 digits, you get StringIndexOutOfBoundsException. Always check: `if(otp.length() >= 4)` first.
+
+---
+
+### Q27. What is IllegalArgumentException and when do we throw it?
+
+This exception indicates that a method received an argument that's invalid or inappropriate.
+
+```java
+public void setAge(int age) {
+    if(age < 0 || age > 150) {
+        throw new IllegalArgumentException("Age must be between 0 and 150");
+    }
+    this.age = age;
+}
+
+public void setDiscount(double discount) {
+    if(discount < 0 || discount > 100) {
+        throw new IllegalArgumentException("Discount must be between 0 and 100");
+    }
+    this.discount = discount;
+}
+```
+
+**Real scenarios where Java throws it:**
+```java
+Thread.sleep(-1000); // IllegalArgumentException - negative sleep time
+
+String text = "Hello";
+text.substring(5, 2); // IllegalArgumentException - beginIndex > endIndex
+```
+
+**Industry example:** In an e-commerce cart, when user applies a coupon, your `applyCoupon(String code)` method validates the code. If code is null or empty, you throw IllegalArgumentException("Coupon code cannot be empty"). This tells the caller "you passed wrong data, fix it."
+
+---
+
+### Q28. What is IllegalStateException and when does it occur?
+
+This indicates that a method was called at an illegal or inappropriate time - the object's state doesn't allow this operation.
+
+```java
+public class Order {
+    private String status = "DRAFT";
+    
+    public void ship() {
+        if(!status.equals("CONFIRMED")) {
+            throw new IllegalStateException("Cannot ship order that is not confirmed");
+        }
+        // shipping logic
+    }
+    
+    public void cancel() {
+        if(status.equals("SHIPPED")) {
+            throw new IllegalStateException("Cannot cancel order that is already shipped");
+        }
+        // cancellation logic
+    }
+}
+```
+
+**Java's built-in example:**
+```java
+Iterator<String> iterator = list.iterator();
+iterator.remove(); // IllegalStateException - must call next() first
+
+iterator.next();
+iterator.remove(); // Fine
+iterator.remove(); // IllegalStateException - can only remove once per next()
+```
+
+**Industry example:** In a payment gateway, after a transaction is completed, if someone tries to retry the same transaction, you throw IllegalStateException("Transaction already completed"). The operation is invalid given the current state of the transaction object.
+
+---
+
+### Q29. What is UnsupportedOperationException?
+
+This indicates that the requested operation is not supported by the object.
+
+**Common scenario with Collections:**
+```java
+List<String> list = Arrays.asList("A", "B", "C");
+list.add("D"); // UnsupportedOperationException
+list.remove(0); // UnsupportedOperationException
+```
+
+**Why?** `Arrays.asList()` returns a fixed-size list backed by the original array. You cannot add/remove elements.
+
+**Another example:**
+```java
+List<String> unmodifiableList = Collections.unmodifiableList(myList);
+unmodifiableList.add("X"); // UnsupportedOperationException
+```
+
+**When you throw it:**
+```java
+public abstract class Payment {
+    public void refund() {
+        throw new UnsupportedOperationException("Refund not supported for this payment type");
+    }
+}
+
+public class CashPayment extends Payment {
+    // Doesn't override refund - cash payments can't be refunded
+}
+```
+
+**Industry example:** In a document management system, certain document types are read-only (like signed contracts). If someone tries to call `document.edit()` on a signed contract, you throw UnsupportedOperationException("Cannot edit signed documents").
+
+---
+
+### Q30. What is ConcurrentModificationException?
+
+This happens when you modify a collection while iterating over it (in most cases).
+
+```java
+List<String> names = new ArrayList<>();
+names.add("John");
+names.add("Mary");
+names.add("Bob");
+
+for(String name : names) {
+    if(name.equals("Mary")) {
+        names.remove(name); // ConcurrentModificationException
+    }
+}
+```
+
+**Why?** The iterator detects that the collection was modified during iteration and throws this fail-fast exception.
+
+**Correct approaches:**
+
+**Approach 1 - Use Iterator's remove:**
+```java
+Iterator<String> iterator = names.iterator();
+while(iterator.hasNext()) {
+    String name = iterator.next();
+    if(name.equals("Mary")) {
+        iterator.remove(); // Safe
+    }
+}
+```
+
+**Approach 2 - Collect items to remove:**
+```java
+List<String> toRemove = new ArrayList<>();
+for(String name : names) {
+    if(name.equals("Mary")) {
+        toRemove.add(name);
+    }
+}
+names.removeAll(toRemove);
+```
+
+**Industry example:** In a notification service, you have a list of subscribers. While sending notifications in a loop, if you remove unsubscribed users directly in the loop, you get ConcurrentModificationException. Solution: collect unsubscribed users first, then remove them after the loop.
+
+---
+
+### Q31. What is StackOverflowError?
+
+This happens when method call stack exceeds its limit, usually due to infinite recursion.
+
+```java
+public void recursiveMethod() {
+    recursiveMethod(); // Calls itself forever
+}
+
+public int factorial(int n) {
+    return n * factorial(n - 1); // No base case!
+}
+```
+
+**Why is it an Error, not Exception?** Stack overflow is a serious problem indicating a fundamental design flaw. It's an Error (part of Throwable but not Exception).
+
+**Correct recursion:**
+```java
+public int factorial(int n) {
+    if(n <= 1) return 1; // Base case
+    return n * factorial(n - 1);
+}
+```
+
+**Industry example:** In a hierarchical organization structure where Employee has a reference to manager, if you write a method to get top-level manager without proper termination condition, you might create circular reference (A manages B, B manages A) causing StackOverflowError when traversing the hierarchy.
+
+---
+
+### Q32. What is OutOfMemoryError?
+
+This happens when JVM runs out of heap memory.
+
+**Common causes:**
+
+**Cause 1 - Memory leak (objects not released):**
+```java
+public class Cache {
+    private static List<Object> cache = new ArrayList<>();
+    
+    public void addToCache(Object obj) {
+        cache.add(obj); // Never removed - keeps growing
+    }
+}
+```
+
+**Cause 2 - Creating too many objects:**
+```java
+List<byte[]> list = new ArrayList<>();
+while(true) {
+    list.add(new byte[1024 * 1024]); // 1 MB each - will eventually run out
+}
+```
+
+**Cause 3 - Large data loading:**
+```java
+// Loading entire database table into memory
+List<Order> allOrders = orderRepository.findAll(); // 10 million records!
+```
+
+**Industry example:** In a report generation service, if you load all customer transactions (millions of records) into memory at once instead of processing in batches, you'll get OutOfMemoryError. Solution: use pagination or streaming - process data in chunks.
+
+---
+
+### Q33. What is NoClassDefFoundError vs ClassNotFoundException?
+
+These look similar but are different!
+
+**ClassNotFoundException (Checked Exception):**
+- Thrown when trying to load a class at runtime using Class.forName() or loadClass()
+- The class doesn't exist in classpath
+
+```java
+try {
+    Class.forName("com.example.NonExistentClass");
+} catch(ClassNotFoundException e) {
+    // Handle it
+}
+```
+
+**NoClassDefFoundError (Error):**
+- Class was present at compile time but not found at runtime
+- Or class loading failed due to initialization error
+
+```java
+// Suppose you compiled with library X, but removed it before running
+MyClass obj = new MyClass(); // NoClassDefFoundError if MyClass.class not found
+```
+
+**Real scenario:**
+```java
+public class Database {
+    static {
+        int x = 10 / 0; // ArithmeticException during static initialization
+    }
+}
+
+Database db = new Database(); // NoClassDefFoundError: could not initialize class Database
+```
+
+**Industry example:** In a microservice, you compile code with version 1.0 of a library. At runtime, you deploy with version 2.0 where a class was removed. When your code tries to use that class - NoClassDefFoundError. ClassNotFoundException is when you explicitly try to load a class by name (like loading JDBC drivers) and it's not in classpath.
+
+---
+
+### Q34. What is IndexOutOfBoundsException?
+
+This is the parent exception for ArrayIndexOutOfBoundsException and StringIndexOutOfBoundsException. Also used by List implementations.
+
+```java
+List<String> names = new ArrayList<>();
+names.add("John");
+names.add("Mary");
+
+String name = names.get(5); // IndexOutOfBoundsException
+```
+
+**LinkedList example:**
+```java
+LinkedList<Integer> numbers = new LinkedList<>();
+numbers.add(10);
+numbers.add(20);
+
+int value = numbers.get(2); // IndexOutOfBoundsException
+```
+
+**Prevention:**
+```java
+if(index >= 0 && index < names.size()) {
+    String name = names.get(index);
+}
+```
+
+**Industry example:** In a shopping cart, displaying items using indices - if cart has 3 items but you try to display item at index 3 (4th item), you get IndexOutOfBoundsException. Always validate: `if(index < cart.size())`.
+
+---
+
+## PART 5: CHECKED EXCEPTIONS
+
+### Q35. What is the difference between checked and unchecked exceptions?
+
+**Checked Exceptions:**
+- Must be handled (try-catch) or declared (throws) at compile time
+- Compiler forces you to deal with them
+- Extend Exception class (but not RuntimeException)
+- Examples: IOException, SQLException, ClassNotFoundException
+
+**Unchecked Exceptions:**
+- Not checked at compile time
+- You can handle them, but compiler doesn't force you
+- Extend RuntimeException
+- Examples: NullPointerException, ArrayIndexOutOfBoundsException
+
+```java
+// Checked - must handle or declare
+public void readFile() throws IOException { // Must declare
+    FileReader fr = new FileReader("file.txt"); // Checked exception
+}
+
+// Or handle:
+public void readFile() {
+    try {
+        FileReader fr = new FileReader("file.txt");
+    } catch(IOException e) {
+        // Handle
+    }
+}
+
+// Unchecked - no forced handling
+public void divide(int a, int b) {
+    int result = a / b; // Might throw ArithmeticException, but no forced handling
+}
+```
+
+**Why this design?** Checked exceptions represent recoverable conditions (file not found - you can ask user for another file). Unchecked exceptions represent programming errors (null pointer - fix your code).
+
+**Industry example:** In a file upload service, IOException is checked because file operations can fail for many external reasons (disk full, permission denied). But NullPointerException is unchecked because if your code has null pointers, that's a bug you should fix, not a condition to handle at runtime.
+
+---
+
+### Q36. What is IOException and when does it occur?
+
+IOException is the parent class for all input/output related exceptions.
+
+**Common scenarios:**
+
+**Scenario 1 - File not found:**
+```java
+try {
+    FileReader fr = new FileReader("config.txt");
+} catch(FileNotFoundException e) { // Subclass of IOException
+    System.out.println("File not found");
+}
+```
+
+**Scenario 2 - Network issues:**
+```java
+try {
+    URL url = new URL("http://api.example.com");
+    InputStream is = url.openStream();
+} catch(IOException e) {
+    System.out.println("Network error");
+}
+```
+
+**Scenario 3 - Disk full while writing:**
+```java
+try {
+    FileWriter fw = new FileWriter("large-file.txt");
+    fw.write(hugeLargeData);
+} catch(IOException e) {
+    System.out.println("Cannot write - disk full?");
+}
+```
+
+**Industry example:** In a document management system, when user uploads a file, you save it to disk. If disk is full or file path is invalid, IOException occurs. You catch it and show user-friendly message: "Upload failed. Please try again or contact support."
+
+---
+
+### Q37. What is FileNotFoundException and how is it different from IOException?
+
+FileNotFoundException is a subclass of IOException, specifically for when a file doesn't exist.
+
+```java
+try {
+    FileInputStream fis = new FileInputStream("report.pdf");
+} catch(FileNotFoundException e) {
+    System.out.println("Report file not found");
+} catch(IOException e) {
+    System.out.println("Other IO error");
+}
+```
+
+**When it occurs:**
+- File doesn't exist at specified path
+- Path is a directory, not a file
+- No permission to access file
+
+**Important:** When creating FileInputStream/FileReader for reading, if file doesn't exist - FileNotFoundException. But when creating FileOutputStream/FileWriter for writing, if file doesn't exist, Java creates it (no exception).
+
+```java
+// Reading - throws FileNotFoundException if doesn't exist
+FileInputStream fis = new FileInputStream("input.txt");
+
+// Writing - creates file if doesn't exist (no exception)
+FileOutputStream fos = new FileOutputStream("output.txt");
+```
+
+**Industry example:** In a banking app generating account statements, you try to read a template file "statement-template.pdf". If template is missing, FileNotFoundException occurs. You catch it specifically to log "Template missing" instead of generic "IO error".
+
+---
+
+### Q38. What is SQLException and when does it occur?
+
+SQLException occurs during database operations.
+
+**Common scenarios:**
+
+**Scenario 1 - Connection failure:**
+```java
+try {
+    Connection conn = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/mydb", "user", "password"
+    );
+} catch(SQLException e) {
+    System.out.println("Cannot connect to database: " + e.getMessage());
+}
+```
+
+**Scenario 2 - Invalid SQL syntax:**
+```java
+try {
+    Statement stmt = conn.createStatement();
+    ResultSet rs = stmt.executeQuery("SELCT * FROM users"); // Typo: SELCT
+} catch(SQLException e) {
+    System.out.println("SQL error: " + e.getMessage());
+}
+```
+
+**Scenario 3 - Constraint violation:**
+```java
+try {
+    PreparedStatement ps = conn.prepareStatement(
+        "INSERT INTO users (id, email) VALUES (?, ?)"
+    );
+    ps.setInt(1, 100);
+    ps.setString(2, "existing@mail.com"); // Email already exists (unique constraint)
+    ps.executeUpdate();
+} catch(SQLException e) {
+    System.out.println("Duplicate email");
+}
+```
+
+**SQLException has useful methods:**
+```java
+catch(SQLException e) {
+    System.out.println("Error code: " + e.getErrorCode());
+    System.out.println("SQL state: " + e.getSQLState());
+    System.out.println("Message: " + e.getMessage());
+}
+```
+
+**Industry example:** In user registration, when inserting new user, if email already exists (unique constraint), SQLException is thrown. You catch it and check error code to determine if it's duplicate key error, then show user: "Email already registered. Please use different email."
+
+---
+
+### Q39. What is ClassNotFoundException and when does it occur?
+
+Thrown when trying to load a class by name, but class is not found in classpath.
+
+```java
+try {
+    Class.forName("com.mysql.jdbc.Driver"); // Loading JDBC driver
+} catch(ClassNotFoundException e) {
+    System.out.println("MySQL driver not found in classpath");
+}
+```
+
+**Common causes:**
+- JAR file containing the class is not in classpath
+- Typo in class name
+- Wrong package name
+
+**Loading class dynamically:**
+```java
+String className = "com.example.ReportGenerator";
+try {
+    Class<?> clazz = Class.forName(className);
+    Object obj = clazz.newInstance();
+} catch(ClassNotFoundException e) {
+    System.out.println("Class not found: " + className);
+}
+```
+
+**Industry example:** In a plugin-based application, you load plugin classes dynamically by name. If plugin JAR is not deployed or class name is wrong, ClassNotFoundException occurs. You catch it and log "Plugin 'X' not found, skipping."
+
+---
+
+### Q40. What is InterruptedException and when does it occur?
+
+Thrown when a thread is interrupted while it's waiting, sleeping, or occupied.
+
+```java
+try {
+    Thread.sleep(5000); // Sleep for 5 seconds
+} catch(InterruptedException e) {
+    System.out.println("Thread was interrupted");
+}
+```
+
+**Real scenario:**
+```java
+public void processLongRunningTask() {
+    try {
+        for(int i = 0; i < 100; i++) {
+            // Some work
+            Thread.sleep(1000); // Sleep between iterations
+        }
+    } catch(InterruptedException e) {
+        System.out.println("Task was interrupted, cleaning up...");
+        // Cleanup code
+    }
+}
+
+// Another thread can interrupt:
+Thread thread = new Thread(() -> processLongRunningTask());
+thread.start();
+thread.interrupt(); // Interrupts the sleeping thread
+```
+
+**Industry example:** In a batch processing job that runs overnight, if you need to stop it (maybe for emergency maintenance), you interrupt the thread. The thread catches InterruptedException, stops processing, and performs cleanup (save progress, close connections).
+
+---
+
+Should I continue? I have more checked exceptions (ParseException, EOFException, etc.) and then we'll move to the main topic - **Global Exception Handling** with questions about try-catch-finally, throws vs throw, custom exceptions, exception handling best practices, and Spring Boot's @ControllerAdvice patterns. Let me know!
+
+## PART 6: MORE CHECKED EXCEPTIONS
+
+### Q41. What is ParseException and when does it occur?
+
+ParseException occurs when trying to parse a String into another format (like Date) but the format is invalid.
+
+```java
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+try {
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    Date date = sdf.parse("2024-02-15"); // Wrong format! Expected dd-MM-yyyy but got yyyy-MM-dd
+} catch(ParseException e) {
+    System.out.println("Invalid date format");
+}
+```
+
+**Common scenarios:**
+
+**Scenario 1 - Wrong date format:**
+```java
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+Date date = sdf.parse("15-02-2024"); // ParseException - expected / but got -
+```
+
+**Scenario 2 - Invalid date:**
+```java
+SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+Date date = sdf.parse("32-02-2024"); // ParseException - no such date
+```
+
+**Industry example:** In an employee management system, user enters joining date as "15-Feb-2024" but your parser expects "15-02-2024". ParseException is thrown. You catch it and show: "Invalid date format. Please use DD-MM-YYYY format."
+
+---
+
+### Q42. What is EOFException (End Of File Exception)?
+
+EOFException occurs when reading from a file/stream and unexpectedly reaching the end.
+
+```java
+try {
+    DataInputStream dis = new DataInputStream(new FileInputStream("data.bin"));
+    
+    while(true) {
+        int value = dis.readInt(); // Reading integers from file
+        System.out.println(value);
+    }
+} catch(EOFException e) {
+    System.out.println("Reached end of file");
+} catch(IOException e) {
+    System.out.println("IO error");
+}
+```
+
+**Why does this happen?** When you try to read more data but file has ended.
+
+**Better approach:**
+```java
+try {
+    DataInputStream dis = new DataInputStream(new FileInputStream("data.bin"));
+    
+    while(dis.available() > 0) { // Check if data available
+        int value = dis.readInt();
+        System.out.println(value);
+    }
+} catch(IOException e) {
+    System.out.println("IO error");
+}
+```
+
+**Industry example:** In a file processing job, you read binary data file containing transaction records. If file is corrupted or incomplete (last record cut off), when you try to read that incomplete record, EOFException occurs. You catch it, log "Incomplete data file", and alert the operations team.
+
+---
+
+### Q43. What is MalformedURLException?
+
+Thrown when creating a URL object with an invalid URL string.
+
+```java
+try {
+    URL url = new URL("htp://example.com"); // Typo: htp instead of http
+} catch(MalformedURLException e) {
+    System.out.println("Invalid URL format");
+}
+
+try {
+    URL url = new URL("not a url at all");
+} catch(MalformedURLException e) {
+    System.out.println("Malformed URL");
+}
+```
+
+**Valid URL examples:**
+```java
+URL url1 = new URL("http://example.com");
+URL url2 = new URL("https://api.example.com/users");
+URL url3 = new URL("ftp://ftp.example.com/files");
+```
+
+**Industry example:** In a web scraping service, users provide URLs to scrape. If user enters "www.example.com" (missing protocol) or "http://example .com" (space in domain), MalformedURLException is thrown. You catch it and validate: "Please enter valid URL starting with http:// or https://".
+
+---
+
+### Q44. What is UnknownHostException?
+
+Thrown when the IP address of a host cannot be determined (DNS resolution fails).
+
+```java
+try {
+    URL url = new URL("http://nonexistentdomain12345.com");
+    InputStream is = url.openStream();
+} catch(UnknownHostException e) {
+    System.out.println("Cannot resolve host - check domain name or internet connection");
+} catch(IOException e) {
+    System.out.println("Other IO error");
+}
+```
+
+**When it occurs:**
+- Domain doesn't exist
+- No internet connection
+- DNS server issues
+- Typo in domain name
+
+**Industry example:** In a payment gateway calling external API (like PayPal), if PayPal's domain cannot be resolved (maybe internal network blocks it or internet is down), UnknownHostException occurs. You catch it specifically to log "External service unreachable - DNS failure" instead of generic "Connection error".
+
+---
+
+### Q45. What is SocketTimeoutException?
+
+Thrown when a socket read/write operation times out.
+
+```java
+try {
+    Socket socket = new Socket();
+    socket.connect(new InetSocketAddress("api.example.com", 80), 5000); // 5 sec timeout
+    socket.setSoTimeout(10000); // 10 sec read timeout
+    
+    InputStream is = socket.getInputStream();
+    int data = is.read(); // If no data comes in 10 seconds - SocketTimeoutException
+} catch(SocketTimeoutException e) {
+    System.out.println("Operation timed out");
+} catch(IOException e) {
+    System.out.println("IO error");
+}
+```
+
+**Common with HTTP requests:**
+```java
+URLConnection conn = url.openConnection();
+conn.setConnectTimeout(5000); // 5 seconds to connect
+conn.setReadTimeout(10000); // 10 seconds to read response
+
+try {
+    InputStream is = conn.getInputStream();
+} catch(SocketTimeoutException e) {
+    System.out.println("Request timed out");
+}
+```
+
+**Industry example:** In a microservice calling another service's API, if the other service is slow or hung, after 30 seconds you get SocketTimeoutException. You catch it and either retry or return error response: "Service temporarily unavailable. Please try again."
+
+---
+
+## PART 7: EXCEPTION HANDLING MECHANISMS
+
+### Q46. What is try-catch block and how does it work?
+
+Try-catch is used to handle exceptions. Code that might throw exception goes in try block, handling goes in catch.
+
+```java
+try {
+    // Risky code
+    int result = 10 / 0;
+} catch(ArithmeticException e) {
+    // Handle exception
+    System.out.println("Cannot divide by zero");
+}
+```
+
+**How it works:**
+1. JVM executes try block
+2. If exception occurs, JVM stops executing remaining try block code
+3. JVM looks for matching catch block
+4. If match found, catch block executes
+5. Program continues after try-catch
+
+```java
+System.out.println("Before try");
+try {
+    System.out.println("In try - line 1");
+    int x = 10 / 0; // Exception here
+    System.out.println("In try - line 2"); // This won't execute
+} catch(ArithmeticException e) {
+    System.out.println("In catch");
+}
+System.out.println("After try-catch"); // This executes
+
+// Output:
+// Before try
+// In try - line 1
+// In catch
+// After try-catch
+```
+
+**Industry example:** In a user login method, you try to query database. If SQLException occurs (maybe database is down), you catch it and return error message "Login service temporarily unavailable" instead of crashing the application.
+
+---
+
+### Q47. Can we have multiple catch blocks?
+
+Yes! You can have multiple catch blocks to handle different exception types differently.
+
+```java
+try {
+    String text = null;
+    System.out.println(text.length()); // NullPointerException
+    
+    int[] arr = new int[5];
+    System.out.println(arr[10]); // ArrayIndexOutOfBoundsException
+    
+    int x = 10 / 0; // ArithmeticException
+} catch(NullPointerException e) {
+    System.out.println("Null value found");
+} catch(ArrayIndexOutOfBoundsException e) {
+    System.out.println("Invalid array index");
+} catch(ArithmeticException e) {
+    System.out.println("Math error");
+}
+```
+
+**Important rule:** More specific exceptions must come before general exceptions.
+
+```java
+// WRONG - won't compile
+try {
+    // code
+} catch(Exception e) { // General exception first
+    // handle
+} catch(IOException e) { // Specific exception - UNREACHABLE!
+    // handle
+}
+
+// CORRECT
+try {
+    // code
+} catch(IOException e) { // Specific first
+    // handle
+} catch(Exception e) { // General last
+    // handle
+}
+```
+
+**Multi-catch (Java 7+):**
+```java
+try {
+    // code
+} catch(IOException | SQLException e) { // Catching multiple types
+    System.out.println("IO or SQL error: " + e.getMessage());
+}
+```
+
+**Industry example:** In a file upload and save to database operation, you might get IOException (file read error), SQLException (database error), or NullPointerException (missing data). You handle each differently: IOException → "File error", SQLException → "Database error", NullPointerException → "Invalid data".
+
+---
+
+### Q48. What is the finally block and when does it execute?
+
+Finally block ALWAYS executes, whether exception occurs or not, whether exception is caught or not.
+
+```java
+try {
+    System.out.println("Try block");
+    int x = 10 / 0; // Exception
+} catch(ArithmeticException e) {
+    System.out.println("Catch block");
+} finally {
+    System.out.println("Finally block - ALWAYS executes");
+}
+
+// Output:
+// Try block
+// Catch block
+// Finally block - ALWAYS executes
+```
+
+**Even if no exception:**
+```java
+try {
+    System.out.println("Try block");
+    return;
+} finally {
+    System.out.println("Finally executes even after return!");
+}
+```
+
+**Common use case - Resource cleanup:**
+```java
+Connection conn = null;
+try {
+    conn = DriverManager.getConnection(url, user, password);
+    // Database operations
+} catch(SQLException e) {
+    System.out.println("Database error");
+} finally {
+    if(conn != null) {
+        try {
+            conn.close(); // Always close connection
+        } catch(SQLException e) {
+            // Log error
+        }
+    }
+}
+```
+
+**When finally doesn't execute (very rare):**
+- JVM crashes: `System.exit(0)`
+- Fatal errors
+- Infinite loop in try/catch
+
+**Industry example:** In a file processing service, you open a file in try block. Whether processing succeeds or fails (exception), you MUST close the file in finally block to release resources. Without finally, if exception occurs, file remains open (resource leak).
+
+---
+
+### Q49. What is try-with-resources and how is it better than finally?
+
+Try-with-resources automatically closes resources that implement AutoCloseable interface. No need for finally block.
+
+**Old way with finally:**
+```java
+BufferedReader br = null;
+try {
+    br = new BufferedReader(new FileReader("file.txt"));
+    String line = br.readLine();
+} catch(IOException e) {
+    System.out.println("Error");
+} finally {
+    if(br != null) {
+        try {
+            br.close(); // Manual closing
+        } catch(IOException e) {
+            // Handle close error
+        }
+    }
+}
+```
+
+**New way with try-with-resources:**
+```java
+try(BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+    String line = br.readLine();
+} catch(IOException e) {
+    System.out.println("Error");
+}
+// BufferedReader automatically closed - no finally needed!
+```
+
+**Multiple resources:**
+```java
+try(
+    FileInputStream fis = new FileInputStream("input.txt");
+    FileOutputStream fos = new FileOutputStream("output.txt")
+) {
+    // Use both streams
+    // Both automatically closed in reverse order
+} catch(IOException e) {
+    System.out.println("Error");
+}
+```
+
+**Benefits:**
+1. Less code - no finally needed
+2. Safer - resources always closed, even if exception in close() itself
+3. Resources closed in reverse order of creation
+
+**Industry example:** In a database service, instead of manually closing Connection, Statement, ResultSet in finally block, you use try-with-resources. If any error occurs during close operations, try-with-resources handles it gracefully, preventing resource leaks.
+
+---
+
+### Q50. What is the difference between throw and throws?
+
+**throw** - Used to actually throw an exception (inside method body)
+**throws** - Used to declare that a method might throw exceptions (in method signature)
+
+```java
+// throws - declaring
+public void readFile(String path) throws IOException {
+    // This method might throw IOException
+    FileReader fr = new FileReader(path);
+}
+
+// throw - actually throwing
+public void setAge(int age) {
+    if(age < 0) {
+        throw new IllegalArgumentException("Age cannot be negative"); // Throwing exception
+    }
+    this.age = age;
+}
+```
+
+**Key differences:**
+
+**throw:**
+- Used inside method
+- Followed by exception object
+- Used to explicitly throw exception
+- Example: `throw new Exception("Error")`
+
+**throws:**
+- Used in method signature
+- Followed by exception class name
+- Declares exceptions method might throw
+- Example: `public void method() throws IOException`
+
+**Can use both together:**
+```java
+public void validateAndProcess(String data) throws CustomException {
+    if(data == null) {
+        throw new CustomException("Data cannot be null"); // throw
+    }
+    // processing
+}
+```
+
+**Industry example:** In an order processing service, your method signature uses `throws` to tell callers "I might throw OrderValidationException, be prepared". Inside the method, when you find invalid order, you use `throw` to actually throw that exception.
+
+---
+
+### Q51. Can we throw multiple exceptions from a method?
+
+Yes! A method can throw multiple exception types.
+
+```java
+public void processOrder(Order order) throws SQLException, IOException, ValidationException {
+    // Validate order
+    if(!isValid(order)) {
+        throw new ValidationException("Invalid order");
+    }
+    
+    // Save to database
+    saveToDatabase(order); // might throw SQLException
+    
+    // Generate invoice PDF
+    generateInvoice(order); // might throw IOException
+}
+```
+
+**Caller must handle all declared exceptions:**
+```java
+try {
+    processOrder(order);
+} catch(SQLException e) {
+    System.out.println("Database error");
+} catch(IOException e) {
+    System.out.println("File error");
+} catch(ValidationException e) {
+    System.out.println("Validation error");
+}
+```
+
+**Or declare throws in caller too:**
+```java
+public void handleOrder(Order order) throws SQLException, IOException, ValidationException {
+    processOrder(order); // Propagating exceptions up
+}
+```
+
+**Industry example:** In a payment processing method, you might throw PaymentDeclinedException (card declined), NetworkException (payment gateway unreachable), InsufficientBalanceException (not enough money). Each exception type indicates different failure reason, allowing caller to handle each appropriately.
+
+---
+
+### Q52. What happens if we don't catch an exception?
+
+If you don't catch a checked exception, you must declare it with throws. If you don't catch an unchecked exception, it propagates up the call stack.
+
+**For checked exceptions - MUST handle or declare:**
+```java
+// Won't compile - must handle or declare
+public void readFile() {
+    FileReader fr = new FileReader("file.txt"); // Compile error!
+}
+
+// Option 1 - Handle it
+public void readFile() {
+    try {
+        FileReader fr = new FileReader("file.txt");
+    } catch(FileNotFoundException e) {
+        System.out.println("File not found");
+    }
+}
+
+// Option 2 - Declare it
+public void readFile() throws FileNotFoundException {
+    FileReader fr = new FileReader("file.txt");
+}
+```
+
+**For unchecked exceptions - propagates up:**
+```java
+public void method1() {
+    method2();
+}
+
+public void method2() {
+    method3();
+}
+
+public void method3() {
+    int x = 10 / 0; // ArithmeticException
+}
+
+// Exception flows: method3 → method2 → method1 → caller
+// If no one catches it, program crashes
+```
+
+**What happens when exception reaches top?**
+```java
+public static void main(String[] args) {
+    int x = 10 / 0; // Uncaught exception
+}
+
+// Output:
+// Exception in thread "main" java.lang.ArithmeticException: / by zero
+// at ClassName.main(FileName.java:lineNumber)
+// Program terminates
+```
+
+**Industry example:** In a web application, if a NullPointerException occurs in a controller method and no one catches it, it propagates to the framework (Spring). The framework catches it, logs it, and returns 500 Internal Server Error to the user. Without proper exception handling, user sees ugly error pages.
+
+---
+
+### Q53. What is exception chaining and when do we use it?
+
+Exception chaining is wrapping one exception inside another to preserve the original cause while throwing a more meaningful exception.
+
+```java
+public void processPayment(String orderId) throws PaymentException {
+    try {
+        // Database operation
+        Order order = database.getOrder(orderId);
+    } catch(SQLException e) {
+        // Wrap SQLException in PaymentException
+        throw new PaymentException("Payment processing failed for order: " + orderId, e);
+    }
+}
+```
+
+**Why chain exceptions?**
+1. Hide low-level details from caller (SQLException)
+2. Provide context-specific exception (PaymentException)
+3. Preserve original cause for debugging
+
+**Getting the cause:**
+```java
+try {
+    processPayment("ORD123");
+} catch(PaymentException e) {
+    System.out.println("Payment error: " + e.getMessage());
+    
+    Throwable cause = e.getCause(); // Get original SQLException
+    System.out.println("Root cause: " + cause.getMessage());
+    
+    e.printStackTrace(); // Shows full chain
+}
+```
+
+**Constructor for chained exceptions:**
+```java
+public class PaymentException extends Exception {
+    public PaymentException(String message, Throwable cause) {
+        super(message, cause); // Pass cause to parent
+    }
+}
+```
+
+**Industry example:** In a microservice, when calling external payment API, you might get various low-level exceptions (SocketException, ConnectException). You catch all these and throw a single PaymentGatewayException with the original exception as cause. This way, your service layer doesn't need to know about network exceptions - it just handles PaymentGatewayException.
+
+---
+
+### Q54. Can we re-throw an exception?
+
+Yes! You can catch an exception and throw it again (or throw a different exception).
+
+**Re-throwing same exception:**
+```java
+public void processData() throws IOException {
+    try {
+        // File operations
+        readFile();
+    } catch(IOException e) {
+        // Log the error
+        logger.error("File error: " + e.getMessage());
+        
+        // Re-throw for caller to handle
+        throw e;
+    }
+}
+```
+
+**Throwing different exception:**
+```java
+public void processOrder() throws OrderException {
+    try {
+        // Database operation
+        saveOrder();
+    } catch(SQLException e) {
+        // Convert to business exception
+        throw new OrderException("Order processing failed", e);
+    }
+}
+```
+
+**Why re-throw?**
+1. Log exception locally but let caller handle it
+2. Add additional context
+3. Convert technical exception to business exception
+
+**Partial handling:**
+```java
+public void importData() throws DataException {
+    try {
+        processFile();
+    } catch(IOException e) {
+        if(isRecoverable(e)) {
+            // Handle locally
+            retry();
+        } else {
+            // Can't handle, re-throw
+            throw new DataException("Fatal error", e);
+        }
+    }
+}
+```
+
+**Industry example:** In a batch job, when processing fails for a record, you catch the exception, log it with record details (for debugging), update statistics (failed count), and re-throw the exception so the job coordinator knows processing failed and can decide whether to abort or continue.
+
+---
+
+### Q55. What is the order of execution in try-catch-finally with return statements?
+
+This is tricky! Finally executes even if try or catch has return.
+
+**Case 1 - Return in try:**
+```java
+public int test() {
+    try {
+        System.out.println("Try");
+        return 1;
+    } finally {
+        System.out.println("Finally");
+    }
+}
+
+// Output:
+// Try
+// Finally
+// Returns: 1
+```
+
+**Case 2 - Return in try and finally:**
+```java
+public int test() {
+    try {
+        System.out.println("Try");
+        return 1;
+    } finally {
+        System.out.println("Finally");
+        return 2; // Finally's return overrides try's return!
+    }
+}
+
+// Output:
+// Try
+// Finally
+// Returns: 2 (finally's return wins!)
+```
+
+**Case 3 - Exception in try, return in finally:**
+```java
+public int test() {
+    try {
+        System.out.println("Try");
+        int x = 10 / 0; // Exception
+        return 1;
+    } catch(ArithmeticException e) {
+        System.out.println("Catch");
+        return 2;
+    } finally {
+        System.out.println("Finally");
+        return 3; // This wins!
+    }
+}
+
+// Output:
+// Try
+// Catch
+// Finally
+// Returns: 3
+```
+
+**Important note:** Returning from finally is considered bad practice because it can hide exceptions!
+
+**Industry example:** Don't use return in finally block in production code. It can mask exceptions and make debugging very difficult. Finally should only be used for cleanup (closing resources), not for returning values.
+
+---
+
+Should I continue? Now we'll move to the most important topic - **GLOBAL EXCEPTION HANDLING** covering custom exceptions, exception handling best practices, @ControllerAdvice, @ExceptionHandler, and enterprise patterns. Let me know!
+
+## PART 8: CUSTOM EXCEPTIONS
+
+### Q56. How do we create custom exceptions and when should we use them?
+
+Custom exceptions make your code more readable and allow you to handle specific business scenarios.
+
+**Creating custom exception:**
+```java
+// Custom checked exception
+public class InsufficientBalanceException extends Exception {
+    private double balance;
+    private double amount;
+    
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
+    
+    public InsufficientBalanceException(String message, double balance, double amount) {
+        super(message);
+        this.balance = balance;
+        this.amount = amount;
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+    
+    public double getAmount() {
+        return amount;
+    }
+}
+
+// Custom unchecked exception
+public class InvalidOrderException extends RuntimeException {
+    public InvalidOrderException(String message) {
+        super(message);
+    }
+    
+    public InvalidOrderException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
+```
+
+**Using custom exception:**
+```java
+public void withdraw(double amount) throws InsufficientBalanceException {
+    if(amount > balance) {
+        throw new InsufficientBalanceException(
+            "Cannot withdraw " + amount + ", available balance: " + balance,
+            balance,
+            amount
+        );
+    }
+    balance -= amount;
+}
+```
+
+**When to create custom exceptions:**
+1. Business-specific scenarios (InsufficientBalanceException, OrderNotFoundException)
+2. Need to carry additional data (balance, orderId)
+3. Want specific handling for specific situations
+4. Make code self-documenting
+
+**Industry example:** In an e-commerce system, instead of throwing generic IllegalArgumentException when product is out of stock, you create ProductOutOfStockException. This allows your exception handler to show user-friendly message: "Sorry, this product is currently out of stock. Would you like to be notified when available?"
+
+---
+
+### Q57. Should custom exceptions extend Exception or RuntimeException?
+
+**Extend Exception (Checked):**
+- When caller MUST handle it
+- Recoverable conditions
+- Part of method's contract
+- External failures (network, database)
+
+**Extend RuntimeException (Unchecked):**
+- Programming errors
+- Cannot be reasonably recovered
+- Internal validation failures
+- Don't want to force handling
+
+```java
+// Checked - caller must handle
+public class OrderNotFoundException extends Exception {
+    public OrderNotFoundException(String orderId) {
+        super("Order not found: " + orderId);
+    }
+}
+
+public Order getOrder(String orderId) throws OrderNotFoundException {
+    Order order = database.findOrder(orderId);
+    if(order == null) {
+        throw new OrderNotFoundException(orderId);
+    }
+    return order;
+}
+
+// Unchecked - programming error
+public class InvalidEmailFormatException extends RuntimeException {
+    public InvalidEmailFormatException(String email) {
+        super("Invalid email format: " + email);
+    }
+}
+
+public void setEmail(String email) {
+    if(!isValidEmail(email)) {
+        throw new InvalidEmailFormatException(email); // No throws needed
+    }
+    this.email = email;
+}
+```
+
+**Industry example:** In a banking API, AccountNotFoundException extends Exception (checked) because caller must handle it and show "Account not found". But InvalidAccountNumberFormatException extends RuntimeException because if caller passes invalid format, it's a programming error that should be fixed, not handled at runtime.
+
+---
+
+### Q58. What are best practices for custom exception naming?
+
+**Naming conventions:**
+
+1. **End with "Exception":**
+```java
+✅ OrderNotFoundException
+✅ PaymentFailedException
+❌ OrderNotFound
+❌ PaymentFailed
+```
+
+2. **Be specific and descriptive:**
+```java
+✅ InsufficientBalanceException
+❌ BalanceException
+
+✅ DuplicateEmailException
+❌ EmailException
+```
+
+3. **Use business terminology:**
+```java
+✅ SubscriptionExpiredException
+✅ MaximumRetryExceededException
+❌ Exception1
+❌ MyCustomException
+```
+
+4. **Group related exceptions:**
+```java
+public class PaymentException extends Exception { }
+    public class CardDeclinedException extends PaymentException { }
+    public class InsufficientFundsException extends PaymentException { }
+    public class ExpiredCardException extends PaymentException { }
+```
+
+**Industry example:** In your PerformanceTrack system:
+```java
+✅ GoalNotFoundException
+✅ GoalAlreadyApprovedException
+✅ UnauthorizedGoalAccessException
+✅ InvalidGoalStatusException
+❌ GoalException (too generic)
+❌ Error1 (meaningless)
+```
+
+---
+
+## PART 9: GLOBAL EXCEPTION HANDLING
+
+### Q59. What is global exception handling and why do we need it?
+
+Global exception handling is a centralized way to handle all exceptions in one place instead of try-catch in every method.
+
+**Without global handling (bad):**
+```java
+@RestController
+public class UserController {
+    
+    @GetMapping("/users/{id}")
+    public ResponseEntity<?> getUser(@PathVariable int id) {
+        try {
+            User user = userService.getUser(id);
+            return ResponseEntity.ok(user);
+        } catch(UserNotFoundException e) {
+            return ResponseEntity.status(404).body("User not found");
+        } catch(Exception e) {
+            return ResponseEntity.status(500).body("Server error");
+        }
+    }
+    
+    @PostMapping("/users")
+    public ResponseEntity<?> createUser(@RequestBody User user) {
+        try {
+            User created = userService.create(user);
+            return ResponseEntity.ok(created);
+        } catch(DuplicateEmailException e) {
+            return ResponseEntity.status(400).body("Email already exists");
+        } catch(Exception e) {
+            return ResponseEntity.status(500).body("Server error");
+        }
+    }
+    // Same try-catch in every method!
+}
+```
+
+**Problems:**
+1. Code duplication
+2. Hard to maintain
+3. Inconsistent error responses
+4. Cluttered business logic
+
+**With global handling (good):**
+```java
+@RestController
+public class UserController {
+    
+    @GetMapping("/users/{id}")
+    public User getUser(@PathVariable int id) {
+        return userService.getUser(id); // No try-catch!
+    }
+    
+    @PostMapping("/users")
+    public User createUser(@RequestBody User user) {
+        return userService.create(user); // No try-catch!
+    }
+}
+
+@ControllerAdvice // Global exception handler
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFound(UserNotFoundException e) {
+        return ResponseEntity.status(404).body(e.getMessage());
+    }
+    
+    @ExceptionHandler(DuplicateEmailException.class)
+    public ResponseEntity<String> handleDuplicateEmail(DuplicateEmailException e) {
+        return ResponseEntity.status(400).body(e.getMessage());
+    }
+    
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGeneric(Exception e) {
+        return ResponseEntity.status(500).body("Internal server error");
+    }
+}
+```
+
+**Benefits:**
+1. Clean controller code
+2. Centralized exception handling
+3. Consistent error responses
+4. Easy to maintain
+
+**Industry example:** In your PerformanceTrack Analytics module, instead of wrapping every analytics calculation in try-catch, you let exceptions bubble up to global handler. Global handler catches GoalNotFoundException and returns proper JSON error response with 404 status.
+
+---
+
+### Q60. What is @ControllerAdvice annotation in Spring Boot?
+
+@ControllerAdvice marks a class as global exception handler for all controllers.
+
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleException(Exception e) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            e.getMessage(),
+            System.currentTimeMillis()
+        );
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+
+**How it works:**
+1. Spring scans for @ControllerAdvice classes on startup
+2. When exception occurs in any controller
+3. Spring checks if global handler has @ExceptionHandler for that exception
+4. If found, calls that handler method
+5. Returns response to client
+
+**Scope control:**
+```java
+// Handle exceptions only for specific package
+@ControllerAdvice(basePackages = "com.example.api.controllers")
+public class ApiExceptionHandler { }
+
+// Handle exceptions only for specific controllers
+@ControllerAdvice(assignableTypes = {UserController.class, OrderController.class})
+public class SpecificExceptionHandler { }
+
+// Handle exceptions only for @RestController
+@RestControllerAdvice // Combines @ControllerAdvice + @ResponseBody
+public class RestExceptionHandler { }
+```
+
+**Industry example:** In your PerformanceTrack system, you have multiple modules (Goals, Reviews, Feedback, Analytics). Instead of handling exceptions in each module separately, one @ControllerAdvice class handles all exceptions from all modules, ensuring consistent error responses across the entire application.
+
+---
+
+### Q61. What is @ExceptionHandler annotation?
+
+@ExceptionHandler marks a method to handle specific exception types.
+
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    // Handle specific exception
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFound(UserNotFoundException e) {
+        return ResponseEntity.status(404).body(e.getMessage());
+    }
+    
+    // Handle multiple exceptions
+    @ExceptionHandler({SQLException.class, DataAccessException.class})
+    public ResponseEntity<String> handleDatabaseErrors(Exception e) {
+        return ResponseEntity.status(500).body("Database error occurred");
+    }
+    
+    // Handle all exceptions
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleAllExceptions(Exception e) {
+        return ResponseEntity.status(500).body("An error occurred");
+    }
+}
+```
+
+**Method can receive:**
+1. Exception object
+2. WebRequest object (for request details)
+3. HttpServletRequest
+4. HttpServletResponse
+
+```java
+@ExceptionHandler(InvalidDataException.class)
+public ResponseEntity<ErrorResponse> handleInvalidData(
+    InvalidDataException e,
+    WebRequest request
+) {
+    ErrorResponse error = new ErrorResponse(
+        400,
+        e.getMessage(),
+        request.getDescription(false)
+    );
+    return ResponseEntity.status(400).body(error);
+}
+```
+
+**Exception hierarchy matters:**
+```java
+@ExceptionHandler(Exception.class) // Catches all
+public ResponseEntity<String> handleAll(Exception e) {
+    return ResponseEntity.status(500).body("Error");
+}
+
+@ExceptionHandler(RuntimeException.class) // Catches RuntimeException and subclasses
+public ResponseEntity<String> handleRuntime(RuntimeException e) {
+    return ResponseEntity.status(500).body("Runtime error");
+}
+
+@ExceptionHandler(NullPointerException.class) // Most specific wins!
+public ResponseEntity<String> handleNullPointer(NullPointerException e) {
+    return ResponseEntity.status(500).body("Null pointer error");
+}
+```
+
+**Industry example:** In payment module, you have @ExceptionHandler for PaymentDeclinedException (400 Bad Request), PaymentTimeoutException (504 Gateway Timeout), and generic PaymentException (500 Internal Error). Each returns appropriate HTTP status and user-friendly message.
+
+---
+
+### Q62. How do we create a standard error response structure?
+
+Create a common error response class for consistent API responses.
+
+```java
+public class ErrorResponse {
+    private int status;
+    private String message;
+    private long timestamp;
+    private String path;
+    
+    public ErrorResponse(int status, String message, String path) {
+        this.status = status;
+        this.message = message;
+        this.timestamp = System.currentTimeMillis();
+        this.path = path;
+    }
+    
+    // Getters and setters
+}
+```
+
+**Using in exception handler:**
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleUserNotFound(
+        UserNotFoundException e,
+        WebRequest request
+    ) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.NOT_FOUND.value(),
+            e.getMessage(),
+            request.getDescription(false).replace("uri=", "")
+        );
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+}
+```
+
+**Enhanced error response with validation errors:**
+```java
+public class ErrorResponse {
+    private int status;
+    private String message;
+    private long timestamp;
+    private String path;
+    private List<String> errors; // For validation errors
+    
+    public ErrorResponse(int status, String message, String path) {
+        this.status = status;
+        this.message = message;
+        this.timestamp = System.currentTimeMillis();
+        this.path = path;
+        this.errors = new ArrayList<>();
+    }
+    
+    public void addError(String error) {
+        this.errors.add(error);
+    }
+    
+    // Getters and setters
+}
+```
+
+**JSON response example:**
+```json
+{
+    "status": 404,
+    "message": "User not found with id: 123",
+    "timestamp": 1709546789000,
+    "path": "/api/users/123"
+}
+```
+
+**Industry example:** In your PerformanceTrack Analytics API, all errors return this standard format. Whether it's GoalNotFoundException, InvalidDateRangeException, or database errors, clients always get same JSON structure with status, message, timestamp, and path. This makes frontend error handling much easier.
+
+---
+
+### Q63. How do we handle validation exceptions (@Valid)?
+
+When using @Valid for request body validation, Spring throws MethodArgumentNotValidException.
+
+**DTO with validation:**
+```java
+public class UserDTO {
+    @NotNull(message = "Name cannot be null")
+    @Size(min = 3, max = 50, message = "Name must be between 3 and 50 characters")
+    private String name;
+    
+    @Email(message = "Invalid email format")
+    @NotBlank(message = "Email cannot be blank")
+    private String email;
+    
+    @Min(value = 18, message = "Age must be at least 18")
+    private int age;
+    
+    // Getters and setters
+}
+```
+
+**Controller with @Valid:**
+```java
+@PostMapping("/users")
+public User createUser(@Valid @RequestBody UserDTO userDTO) {
+    return userService.create(userDTO);
+}
+```
+
+**Handling validation errors:**
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> handleValidationErrors(
+        MethodArgumentNotValidException e,
+        WebRequest request
+    ) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            "Validation failed",
+            request.getDescription(false).replace("uri=", "")
+        );
+        
+        // Extract all validation errors
+        for(FieldError fieldError : e.getBindingResult().getFieldErrors()) {
+            error.addError(fieldError.getField() + ": " + fieldError.getDefaultMessage());
+        }
+        
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+}
+```
+
+**Response when validation fails:**
+```json
+{
+    "status": 400,
+    "message": "Validation failed",
+    "timestamp": 1709546789000,
+    "path": "/api/users",
+    "errors": [
+        "name: Name must be between 3 and 50 characters",
+        "email: Invalid email format",
+        "age: Age must be at least 18"
+    ]
+}
+```
+
+**Industry example:** In PerformanceTrack Goals module, when employee creates a goal, you validate title (not empty, max 200 chars), description (max 1000 chars), target date (future date). If validation fails, user gets clear error message for each invalid field instead of generic "Bad Request".
+
+---
+
+### Q64. How do we handle specific HTTP errors like 404, 403, etc.?
+
+Create custom exceptions for different HTTP scenarios and map them to appropriate status codes.
+
+**Custom exceptions:**
+```java
+// 404 Not Found
+public class ResourceNotFoundException extends RuntimeException {
+    public ResourceNotFoundException(String message) {
+        super(message);
+    }
+}
+
+// 403 Forbidden
+public class UnauthorizedAccessException extends RuntimeException {
+    public UnauthorizedAccessException(String message) {
+        super(message);
+    }
+}
+
+// 409 Conflict
+public class ResourceAlreadyExistsException extends RuntimeException {
+    public ResourceAlreadyExistsException(String message) {
+        super(message);
+    }
+}
+
+// 400 Bad Request
+public class InvalidRequestException extends RuntimeException {
+    public InvalidRequestException(String message) {
+        super(message);
+    }
+}
+```
+
+**Global exception handler:**
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND) // 404
+    public ErrorResponse handleNotFound(ResourceNotFoundException e, WebRequest request) {
+        return new ErrorResponse(404, e.getMessage(), request.getDescription(false));
+    }
+    
+    @ExceptionHandler(UnauthorizedAccessException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN) // 403
+    public ErrorResponse handleUnauthorized(UnauthorizedAccessException e, WebRequest request) {
+        return new ErrorResponse(403, e.getMessage(), request.getDescription(false));
+    }
+    
+    @ExceptionHandler(ResourceAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT) // 409
+    public ErrorResponse handleConflict(ResourceAlreadyExistsException e, WebRequest request) {
+        return new ErrorResponse(409, e.getMessage(), request.getDescription(false));
+    }
+    
+    @ExceptionHandler(InvalidRequestException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST) // 400
+    public ErrorResponse handleBadRequest(InvalidRequestException e, WebRequest request) {
+        return new ErrorResponse(400, e.getMessage(), request.getDescription(false));
+    }
+}
+```
+
+**Using in service:**
+```java
+public User getUser(int id) {
+    return userRepository.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
+}
+
+public void deleteGoal(int goalId, int userId) {
+    Goal goal = getGoal(goalId);
+    if(goal.getEmployeeId() != userId) {
+        throw new UnauthorizedAccessException("You are not authorized to delete this goal");
+    }
+    goalRepository.delete(goal);
+}
+```
+
+**Industry example:** In PerformanceTrack, when employee tries to view another employee's goals (goalId doesn't belong to them), you throw UnauthorizedAccessException → returns 403 Forbidden. When manager approves already-approved goal, you throw ResourceAlreadyExistsException → returns 409 Conflict with message "Goal already approved".
+
+---
+
+### Q65. How do we handle database exceptions (DataAccessException)?
+
+Spring's DataAccessException is thrown for database-related errors. Handle it globally to avoid exposing database details to clients.
+
+**Handling DataAccessException:**
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(DataAccessException.class)
+    public ResponseEntity<ErrorResponse> handleDatabaseErrors(
+        DataAccessException e,
+        WebRequest request
+    ) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            "Database operation failed. Please try again later.",
+            request.getDescription(false).replace("uri=", "")
+        );
+        
+        // Log actual error for debugging (don't expose to client)
+        System.err.println("Database error: " + e.getMessage());
+        
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+
+**Handling specific database exceptions:**
+```java
+@ExceptionHandler(DataIntegrityViolationException.class)
+public ResponseEntity<ErrorResponse> handleDataIntegrityViolation(
+    DataIntegrityViolationException e,
+    WebRequest request
+) {
+    String message = "Data integrity constraint violated";
+    
+    // Check if it's a duplicate key error
+    if(e.getMessage().contains("Duplicate entry")) {
+        message = "Record already exists with this information";
+    }
+    
+    ErrorResponse error = new ErrorResponse(
+        HttpStatus.CONFLICT.value(),
+        message,
+        request.getDescription(false).replace("uri=", "")
+    );
+    
+    return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+}
+```
+
+**Why hide database details?**
+```java
+// Bad - exposes database structure
+"Error: Duplicate entry 'john@example.com' for key 'users.email_UNIQUE'"
+
+// Good - user-friendly message
+"Email already registered. Please use a different email."
+```
+
+**Industry example:** In PerformanceTrack, when saving a goal with duplicate title (if you have unique constraint), DataIntegrityViolationException is thrown. Instead of showing "Duplicate entry 'Q1 Sales Target' for key 'goals.title_UNIQUE'", you show "A goal with this title already exists. Please use a different title."
+
+---
+
+### Q66. Should we log exceptions in exception handlers?
+
+Yes! Always log exceptions for debugging and monitoring.
+
+**Proper logging in exception handler:**
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleNotFound(
+        ResourceNotFoundException e,
+        WebRequest request
+    ) {
+        // Log with appropriate level
+        logger.warn("Resource not found: {} - Path: {}", 
+            e.getMessage(), 
+            request.getDescription(false)
+        );
+        
+        ErrorResponse error = new ErrorResponse(
+            404, 
+            e.getMessage(), 
+            request.getDescription(false).replace("uri=", "")
+        );
+        
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+    
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleGenericException(
+        Exception e,
+        WebRequest request
+    ) {
+        // Log unexpected errors with full stack trace
+        logger.error("Unexpected error occurred: {} - Path: {}", 
+            e.getMessage(), 
+            request.getDescription(false), 
+            e // This logs full stack trace
+        );
+        
+        ErrorResponse error = new ErrorResponse(
+            500, 
+            "An unexpected error occurred. Please try again later.",
+            request.getDescription(false).replace("uri=", "")
+        );
+        
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+```
+
+**Log levels to use:**
+- **ERROR** - Unexpected exceptions, system failures
+- **WARN** - Expected exceptions (not found, validation errors)
+- **INFO** - Important business events (not for exceptions usually)
+- **DEBUG** - Detailed debugging info
+
+**Don't expose sensitive data in logs:**
+```java
+// Bad
+logger.error("Login failed for user: {} with password: {}", username, password);
+
+// Good
+logger.error("Login failed for user: {}", username);
+```
+
+**Industry example:** In production PerformanceTrack system, when database connection fails, you log ERROR with full details (connection string, timeout, error message) to CloudWatch/ELK. Operations team can diagnose issue. But to user, you just show "Service temporarily unavailable. Please try again."
+
+---
+
+Should I continue? I have more topics on exception handling best practices, handling exceptions in async methods, transaction rollback on exceptions, and common interview scenarios with exception handling. Let me know!
+
+## PART 10: EXCEPTION HANDLING BEST PRACTICES
+
+### Q67. What are the best practices for exception handling in enterprise applications?
+
+**1. Don't catch exceptions you can't handle:**
+```java
+// Bad - catching but doing nothing useful
+try {
+    processPayment();
+} catch(Exception e) {
+    System.out.println("Error"); // What now?
+}
+
+// Good - let it propagate if you can't handle
+public void processOrder() throws PaymentException {
+    processPayment(); // Let exception bubble up
+}
+```
+
+**2. Catch specific exceptions, not generic Exception:**
+```java
+// Bad
+try {
+    readFile();
+    parseData();
+    saveToDatabase();
+} catch(Exception e) { // Too broad!
+    // Which operation failed?
+}
+
+// Good
+try {
+    readFile();
+    parseData();
+    saveToDatabase();
+} catch(IOException e) {
+    logger.error("File operation failed", e);
+} catch(ParseException e) {
+    logger.error("Data parsing failed", e);
+} catch(SQLException e) {
+    logger.error("Database operation failed", e);
+}
+```
+
+**3. Never swallow exceptions silently:**
+```java
+// Very bad - swallowing exception!
+try {
+    deleteFile();
+} catch(IOException e) {
+    // Empty catch - exception disappeared!
+}
+
+// Good - at least log it
+try {
+    deleteFile();
+} catch(IOException e) {
+    logger.error("Failed to delete file", e);
+    // Then decide: rethrow? return error? retry?
+}
+```
+
+**4. Close resources properly:**
+```java
+// Bad - resource leak if exception occurs
+FileReader fr = new FileReader("file.txt");
+String data = readData(fr);
+fr.close(); // Never executes if readData() throws exception!
+
+// Good - use try-with-resources
+try(FileReader fr = new FileReader("file.txt")) {
+    String data = readData(fr);
+} // Automatically closed even if exception
+```
+
+**5. Don't use exceptions for control flow:**
+```java
+// Bad - using exception for logic
+try {
+    User user = findUser(id);
+} catch(UserNotFoundException e) {
+    user = createDefaultUser(); // Exception for normal flow!
+}
+
+// Good - use conditional logic
+User user = findUser(id);
+if(user == null) {
+    user = createDefaultUser();
+}
+```
+
+**6. Provide meaningful error messages:**
+```java
+// Bad
+throw new Exception("Error");
+throw new OrderException("Failed");
+
+// Good
+throw new OrderException("Order processing failed for order ID: " + orderId + 
+    ". Reason: Insufficient inventory for product: " + productName);
+```
+
+**7. Document exceptions in method signature (Javadoc):**
+```java
+/**
+ * Processes payment for the given order
+ * @param orderId the order ID to process
+ * @throws OrderNotFoundException if order doesn't exist
+ * @throws PaymentDeclinedException if payment is declined
+ * @throws InsufficientBalanceException if account balance is insufficient
+ */
+public void processPayment(String orderId) 
+    throws OrderNotFoundException, PaymentDeclinedException, InsufficientBalanceException {
+    // Implementation
+}
+```
+
+**Industry example:** In PerformanceTrack, when manager approves a goal, if goal doesn't exist, you throw GoalNotFoundException with message "Goal not found with ID: 123 for employee: John Doe". If goal already approved, throw IllegalStateException with "Goal ID: 123 is already approved on 2024-01-15. Cannot approve again." Clear, specific, actionable.
+
+---
+
+### Q68. What is exception translation and when should we use it?
+
+Exception translation is converting low-level exceptions to higher-level, more meaningful exceptions.
+
+**Why translate exceptions?**
+Separate layers shouldn't expose implementation details. Service layer shouldn't expose database exceptions to controller.
+
+**Example - Without translation (bad):**
+```java
+// Repository layer
+public User findUser(int id) throws SQLException {
+    // Database code
+}
+
+// Service layer
+public User getUser(int id) throws SQLException { // Exposing database details!
+    return userRepository.findUser(id);
+}
+
+// Controller layer
+public User getUserEndpoint(int id) throws SQLException { // Controller knows about SQL!
+    return userService.getUser(id);
+}
+```
+
+**With translation (good):**
+```java
+// Repository layer
+public User findUser(int id) throws SQLException {
+    // Database code that might throw SQLException
+}
+
+// Service layer
+public User getUser(int id) throws UserNotFoundException {
+    try {
+        return userRepository.findUser(id);
+    } catch(SQLException e) {
+        // Translate SQLException to UserNotFoundException
+        throw new UserNotFoundException("User not found with id: " + id, e);
+    }
+}
+
+// Controller layer
+public User getUserEndpoint(int id) throws UserNotFoundException {
+    return userService.getUser(id); // No knowledge of SQL!
+}
+```
+
+**Spring's exception translation:**
+Spring automatically translates JDBC exceptions to DataAccessException:
+
+```java
+// Raw JDBC - you handle SQLException
+try {
+    PreparedStatement ps = conn.prepareStatement("SELECT * FROM users");
+    ResultSet rs = ps.executeQuery();
+} catch(SQLException e) {
+    // Handle
+}
+
+// Spring JdbcTemplate - SQLException translated to DataAccessException
+try {
+    List<User> users = jdbcTemplate.query("SELECT * FROM users", rowMapper);
+} catch(DataAccessException e) {
+    // Spring translated it for you
+}
+```
+
+**Industry example:** In PerformanceTrack Analytics module, when calculating goal completion rate, if database query fails (SQLException), you don't expose SQL error to the REST API. You catch SQLException and throw AnalyticsCalculationException with message "Failed to calculate goal completion rate for department: Sales". The API consumer doesn't need to know about database errors.
+
+---
+
+### Q69. How do we handle exceptions in multi-threaded environments?
+
+Exceptions in separate threads don't propagate to the main thread. You need special handling.
+
+**Problem - Exception lost in thread:**
+```java
+public void processOrders() {
+    Thread thread = new Thread(() -> {
+        int x = 10 / 0; // ArithmeticException thrown
+    });
+    thread.start();
+    
+    // Exception in thread doesn't affect main thread
+    // Main thread continues, exception is just printed to console
+}
+```
+
+**Solution 1 - Using ExecutorService with Future:**
+```java
+ExecutorService executor = Executors.newFixedThreadPool(5);
+
+Future<String> future = executor.submit(() -> {
+    if(someCondition) {
+        throw new CustomException("Error in thread");
+    }
+    return "Success";
+});
+
+try {
+    String result = future.get(); // This will throw exception if task failed
+} catch(ExecutionException e) {
+    Throwable cause = e.getCause(); // Get the actual exception
+    if(cause instanceof CustomException) {
+        // Handle CustomException
+    }
+} catch(InterruptedException e) {
+    // Handle interruption
+}
+```
+
+**Solution 2 - Using Thread.UncaughtExceptionHandler:**
+```java
+Thread thread = new Thread(() -> {
+    int x = 10 / 0; // Will be caught by handler
+});
+
+thread.setUncaughtExceptionHandler((t, e) -> {
+    logger.error("Exception in thread " + t.getName(), e);
+    // Send alert, save to database, etc.
+});
+
+thread.start();
+```
+
+**Solution 3 - CompletableFuture (modern approach):**
+```java
+CompletableFuture.supplyAsync(() -> {
+    if(someError) {
+        throw new CustomException("Error");
+    }
+    return processData();
+})
+.exceptionally(e -> {
+    logger.error("Async processing failed", e);
+    return defaultValue; // Fallback value
+})
+.thenAccept(result -> {
+    // Use result
+});
+```
+
+**Industry example:** In PerformanceTrack, when generating department-wise analytics report, you process each department in parallel threads. If one thread fails (maybe data corruption for HR department), you don't want entire report to fail. You use CompletableFuture, catch exception for failed department, log it, and continue with other departments. Final report shows "HR: Data unavailable" instead of crashing.
+
+---
+
+### Q70. How do we handle exceptions in @Async methods?
+
+Async methods run in separate threads. Exceptions need special handling.
+
+**Basic @Async method:**
+```java
+@Service
+public class NotificationService {
+    
+    @Async
+    public void sendEmail(String to, String message) {
+        // If exception occurs here, who catches it?
+        emailClient.send(to, message);
+    }
+}
+```
+
+**Problem - Exceptions disappear:**
+```java
+@GetMapping("/notify")
+public String notifyUser() {
+    notificationService.sendEmail("user@example.com", "Hello");
+    return "Notification sent"; // Returns immediately, email sent in background
+    // If email sending fails, exception is lost!
+}
+```
+
+**Solution 1 - Return CompletableFuture:**
+```java
+@Service
+public class NotificationService {
+    
+    @Async
+    public CompletableFuture<String> sendEmail(String to, String message) {
+        try {
+            emailClient.send(to, message);
+            return CompletableFuture.completedFuture("Email sent");
+        } catch(Exception e) {
+            return CompletableFuture.failedFuture(e);
+        }
+    }
+}
+
+// Controller
+@GetMapping("/notify")
+public CompletableFuture<String> notifyUser() {
+    return notificationService.sendEmail("user@example.com", "Hello")
+        .exceptionally(e -> {
+            logger.error("Email sending failed", e);
+            return "Email failed";
+        });
+}
+```
+
+**Solution 2 - AsyncUncaughtExceptionHandler:**
+```java
+@Configuration
+@EnableAsync
+public class AsyncConfig implements AsyncConfigurer {
+    
+    @Override
+    public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
+        return new CustomAsyncExceptionHandler();
+    }
+}
+
+public class CustomAsyncExceptionHandler implements AsyncUncaughtExceptionHandler {
+    
+    private static final Logger logger = LoggerFactory.getLogger(CustomAsyncExceptionHandler.class);
+    
+    @Override
+    public void handleUncaughtException(Throwable ex, Method method, Object... params) {
+        logger.error("Async method {} failed with params {}", 
+            method.getName(), 
+            Arrays.toString(params), 
+            ex
+        );
+        
+        // Send alert, save to database, etc.
+    }
+}
+```
+
+**Solution 3 - Try-catch inside async method:**
+```java
+@Async
+public void sendEmail(String to, String message) {
+    try {
+        emailClient.send(to, message);
+        logger.info("Email sent successfully to: {}", to);
+    } catch(Exception e) {
+        logger.error("Failed to send email to: {}", to, e);
+        // Save failed email to retry queue
+        retryQueue.add(new FailedEmail(to, message));
+    }
+}
+```
+
+**Industry example:** In PerformanceTrack, when a goal is approved, you send notification emails to employee and manager asynchronously. If email service is down, you don't want goal approval to fail. You use @Async with try-catch inside method, catch exception, log "Email notification failed for goal ID: 123", and save notification to retry queue for later delivery.
+
+---
+
+### Q71. How does exception handling work with transactions (@Transactional)?
+
+By default, Spring rolls back transactions only for unchecked exceptions (RuntimeException and Error).
+
+**Default behavior:**
+```java
+@Service
+public class OrderService {
+    
+    @Transactional
+    public void processOrder(Order order) {
+        orderRepository.save(order); // Transaction starts
+        
+        // Unchecked exception - transaction WILL rollback
+        if(order.getAmount() < 0) {
+            throw new IllegalArgumentException("Invalid amount");
+        }
+        
+        // Checked exception - transaction will NOT rollback by default!
+        try {
+            externalService.call();
+        } catch(IOException e) {
+            throw new IOException("Service unavailable"); // Transaction commits!
+        }
+    }
+}
+```
+
+**Configuring rollback for checked exceptions:**
+```java
+@Transactional(rollbackFor = Exception.class) // Rollback for all exceptions
+public void processOrder(Order order) throws IOException {
+    orderRepository.save(order);
+    externalService.call(); // If IOException occurs, transaction rolls back
+}
+
+// Or specific exceptions
+@Transactional(rollbackFor = {IOException.class, SQLException.class})
+public void processData() throws IOException, SQLException {
+    // Rolls back for IOException or SQLException
+}
+```
+
+**Preventing rollback for specific exceptions:**
+```java
+@Transactional(noRollbackFor = ValidationException.class)
+public void processOrder(Order order) {
+    orderRepository.save(order);
+    
+    // Even though RuntimeException, transaction won't rollback for ValidationException
+    if(!isValid(order)) {
+        throw new ValidationException("Invalid order");
+    }
+}
+```
+
+**Nested transactions with exception handling:**
+```java
+@Transactional
+public void processMultipleOrders(List<Order> orders) {
+    for(Order order : orders) {
+        try {
+            processSingleOrder(order); // Has its own @Transactional
+        } catch(Exception e) {
+            logger.error("Failed to process order: {}", order.getId(), e);
+            // Continue with other orders
+        }
+    }
+}
+
+@Transactional(propagation = Propagation.REQUIRES_NEW)
+public void processSingleOrder(Order order) {
+    // Runs in separate transaction
+    // If this fails, only this order rolls back, not parent transaction
+}
+```
+
+**Industry example:** In PerformanceTrack, when manager approves multiple goals in batch, you wrap each goal approval in separate transaction with REQUIRES_NEW. If one goal approval fails (maybe foreign key violation), only that goal rolls back. Other goals are still approved. You catch exception, log "Goal ID 123 approval failed", and continue with remaining goals.
+
+---
+
+### Q72. What is the difference between throw, throws, and Throwable?
+
+These three terms are often confused but completely different!
+
+**throw - keyword to actually throw an exception:**
+```java
+public void setAge(int age) {
+    if(age < 0) {
+        throw new IllegalArgumentException("Age cannot be negative");
+    }
+    this.age = age;
+}
+```
+
+**throws - keyword to declare exceptions in method signature:**
+```java
+public void readFile(String path) throws IOException {
+    FileReader fr = new FileReader(path);
+    // Method declares it might throw IOException
+}
+```
+
+**Throwable - root class of all errors and exceptions:**
+```java
+// Class hierarchy:
+Object
+  └── Throwable
+        ├── Error (OutOfMemoryError, StackOverflowError)
+        └── Exception
+              ├── RuntimeException (unchecked)
+              └── IOException, SQLException (checked)
+```
+
+**Using Throwable (rarely needed):**
+```java
+// Catching everything (usually bad practice)
+try {
+    riskyOperation();
+} catch(Throwable t) {
+    // Catches both Exceptions AND Errors
+    logger.error("Something went very wrong", t);
+}
+```
+
+**Comparison table format (but in conversation):**
+
+When you use **throw**, you're actually throwing an exception object inside your method body. Think: "I'm throwing this exception now!"
+
+When you use **throws**, you're declaring in the method signature what exceptions might be thrown. Think: "Warning: this method might throw these exceptions."
+
+**Throwable** is the parent class. Everything you can throw must extend Throwable. Think: "The family tree of all exceptions and errors."
+
+**Industry example:** In PerformanceTrack goal approval method, you write `throws GoalNotFoundException, UnauthorizedException` in method signature (declaration). Inside the method, you write `throw new GoalNotFoundException("Goal not found")` when goal doesn't exist (actual throwing). Both exceptions extend Throwable through Exception hierarchy.
+
+---
+
+### Q73. Can we have try without catch or finally?
+
+**No! Try must have either catch or finally (or both).**
+
+**Invalid - won't compile:**
+```java
+try {
+    int x = 10 / 0;
+}
+// Error: 'try' without 'catch', 'finally' or resource declarations
+```
+
+**Valid options:**
+
+**Option 1 - try-catch:**
+```java
+try {
+    int x = 10 / 0;
+} catch(ArithmeticException e) {
+    System.out.println("Error");
+}
+```
+
+**Option 2 - try-finally:**
+```java
+try {
+    int x = 10 / 0;
+} finally {
+    System.out.println("Cleanup");
+}
+// Exception still propagates up, but finally executes
+```
+
+**Option 3 - try-catch-finally:**
+```java
+try {
+    int x = 10 / 0;
+} catch(ArithmeticException e) {
+    System.out.println("Error");
+} finally {
+    System.out.println("Cleanup");
+}
+```
+
+**Option 4 - try-with-resources (Java 7+):**
+```java
+try(FileReader fr = new FileReader("file.txt")) {
+    // Use resource
+}
+// No catch or finally needed - resource auto-closed
+```
+
+**When to use try-finally without catch?**
+When you want to ensure cleanup happens but don't want to handle the exception:
+
+```java
+public void processData() throws IOException {
+    Lock lock = getLock();
+    try {
+        lock.acquire();
+        // Process data
+    } finally {
+        lock.release(); // Always release lock
+    }
+    // IOException propagates to caller
+}
+```
+
+**Industry example:** In PerformanceTrack, when generating PDF report, you acquire a file lock to prevent concurrent access. You use try-finally to ensure lock is released even if PDF generation fails. You don't catch the exception because you want it to propagate up to the global handler which will return appropriate HTTP error response.
+
+---
+
+### Q74. Can we rethrow an exception with different type?
+
+Yes! This is called exception wrapping or exception translation.
+
+**Catching and rethrowing different type:**
+```java
+public void processOrder(String orderId) throws OrderProcessingException {
+    try {
+        // Database operation
+        Order order = orderRepository.findById(orderId);
+    } catch(SQLException e) {
+        // Wrap SQLException in OrderProcessingException
+        throw new OrderProcessingException("Failed to process order: " + orderId, e);
+    }
+}
+```
+
+**Why do this?**
+1. Hide implementation details (database, file system)
+2. Provide business-level exception
+3. Preserve original cause for debugging
+
+**Getting original exception:**
+```java
+try {
+    processOrder("ORD123");
+} catch(OrderProcessingException e) {
+    System.out.println("Business error: " + e.getMessage());
+    
+    Throwable cause = e.getCause(); // Get SQLException
+    System.out.println("Technical cause: " + cause.getMessage());
+}
+```
+
+**Multiple levels of wrapping:**
+```java
+// DAO layer
+public Order findOrder(String id) throws DataAccessException {
+    try {
+        // JDBC code
+    } catch(SQLException e) {
+        throw new DataAccessException("Database error", e);
+    }
+}
+
+// Service layer
+public Order getOrder(String id) throws OrderNotFoundException {
+    try {
+        return orderDAO.findOrder(id);
+    } catch(DataAccessException e) {
+        throw new OrderNotFoundException("Order not found: " + id, e);
+    }
+}
+
+// Original SQLException wrapped in DataAccessException wrapped in OrderNotFoundException
+```
+
+**Industry example:** In PerformanceTrack Analytics, when calculating department performance metrics:
+- Repository throws SQLException (database layer)
+- Service catches and throws AnalyticsDataException (service layer)
+- Controller's global handler catches AnalyticsDataException and returns HTTP 500 with message "Failed to calculate metrics" (presentation layer)
+
+Each layer works with appropriate abstraction level, but original cause is preserved for debugging.
+
+---
+
+### Q75. What happens when exception occurs in catch block?
+
+The exception in catch block propagates up, and the original exception is lost (unless you chain them).
+
+**Exception in catch block:**
+```java
+try {
+    int x = 10 / 0; // ArithmeticException
+} catch(ArithmeticException e) {
+    int y = 10 / 0; // Another ArithmeticException!
+    // Original exception lost, this new exception propagates
+}
+```
+
+**Better approach - log before throwing:**
+```java
+try {
+    int x = 10 / 0;
+} catch(ArithmeticException e) {
+    logger.error("Original error", e); // Log original
+    
+    // Now if something fails here, at least original is logged
+    notifyAdmin(e);
+}
+```
+
+**Exception in catch with exception chaining:**
+```java
+try {
+    processOrder();
+} catch(OrderException e) {
+    try {
+        rollbackOrder();
+    } catch(RollbackException rollbackEx) {
+        // Chain both exceptions
+        throw new SystemException("Order processing failed and rollback failed", e)
+            .addSuppressed(rollbackEx);
+    }
+}
+```
+
+**Real-world scenario:**
+```java
+Connection conn = null;
+try {
+    conn = getConnection();
+    // Database operations
+} catch(SQLException e) {
+    logger.error("Database error", e);
+    throw new DataAccessException("DB operation failed", e);
+} finally {
+    if(conn != null) {
+        try {
+            conn.close();
+        } catch(SQLException closeEx) {
+            // Exception while closing!
+            logger.error("Failed to close connection", closeEx);
+            // Don't throw here - would hide original exception
+        }
+    }
+}
+```
+
+**Industry example:** In PerformanceTrack, when saving a goal fails, you try to send notification email to admin about the failure. If email sending also fails (in catch block), you don't want to lose the original "goal save failed" error. You log the email error separately but rethrow the original goal save exception.
+
+---
+
+### Q76. Can finally block prevent exception from propagating?
+
+Yes! If finally block has return statement or throws exception, it overrides the original exception.
+
+**Finally with return (bad practice!):**
+```java
+public int divide(int a, int b) {
+    try {
+        return a / b; // ArithmeticException for b=0
+    } catch(ArithmeticException e) {
+        System.out.println("Error");
+        throw e; // Trying to rethrow
+    } finally {
+        return 0; // This OVERRIDES the exception!
+    }
+}
+
+int result = divide(10, 0);
+// No exception! Method returns 0
+// Original exception completely lost!
+```
+
+**Finally with exception (also bad):**
+```java
+public void processData() throws CustomException {
+    try {
+        int x = 10 / 0; // ArithmeticException
+    } finally {
+        throw new CustomException("Error in finally"); // Overrides ArithmeticException
+    }
+}
+// CustomException thrown, ArithmeticException lost!
+```
+
+**Why is this bad?**
+Original exception is silently lost, making debugging very difficult.
+
+**Correct approach:**
+```java
+public void processData() {
+    try {
+        int x = 10 / 0;
+    } finally {
+        // Only cleanup code, no return or throw
+        closeResources();
+        logger.info("Cleanup done");
+    }
+}
+```
+
+**Legitimate use (rare):**
+```java
+public boolean isConnectionAvailable() {
+    try {
+        testConnection();
+        return true;
+    } catch(Exception e) {
+        logger.error("Connection failed", e);
+        return false; // Want to return false, not throw exception
+    } finally {
+        // Cleanup
+        closeResources();
+    }
+}
+```
+
+**Industry example:** Never use return or throw in finally blocks in production code. It's considered an anti-pattern. In PerformanceTrack, if goal save fails, you want that exception to reach the global handler so user gets proper error message. If finally block returns something or throws different exception, user gets wrong error message and original cause is lost.
+
+---
+
+Should I continue? I have more advanced topics: exception handling in Spring Boot REST APIs with proper HTTP status codes, exception handling in reactive programming (WebFlux), suppressed exceptions, exception handling performaconsiderations, and common interview scenario-based questions. Let me know!
+
+## PART 11: ADVANCED EXCEPTION HANDLING SCENARIOS
+
+### Q77. What are suppressed exceptions and when do they occur?
+
+Suppressed exceptions occur when an exception happens while handling another exception, and both need to be preserved.
+
+**Common scenario - try-with-resources:**
+```java
+// Custom resource that throws exception on close
+class MyResource implements AutoCloseable {
+    public void doWork() throws Exception {
+        throw new Exception("Error during work");
+    }
+    
+    @Override
+    public void close() throws Exception {
+        throw new Exception("Error during close");
+    }
+}
+
+// Using try-with-resources
+try(MyResource resource = new MyResource()) {
+    resource.doWork(); // Throws exception
+} 
+// close() also throws exception
+// First exception (from doWork) is primary
+// Second exception (from close) is suppressed
+```
+
+**Accessing suppressed exceptions:**
+```java
+try {
+    try(MyResource resource = new MyResource()) {
+        resource.doWork();
+    }
+} catch(Exception e) {
+    System.out.println("Main exception: " + e.getMessage());
+    
+    Throwable[] suppressed = e.getSuppressed();
+    for(Throwable t : suppressed) {
+        System.out.println("Suppressed: " + t.getMessage());
+    }
+}
+
+// Output:
+// Main exception: Error during work
+// Suppressed: Error during close
+```
+
+**Manual suppression (advanced):**
+```java
+Exception mainException = new Exception("Main error");
+Exception secondaryException = new Exception("Secondary error");
+
+mainException.addSuppressed(secondaryException);
+
+throw mainException; // Contains both exceptions
+```
+
+**Why is this useful?**
+You don't lose information about what went wrong during cleanup.
+
+**Industry example:** In PerformanceTrack, when generating analytics report, you open multiple database connections (for different schemas). If query fails AND connections fail to close, try-with-resources preserves both exceptions. Main exception: "Query timeout", Suppressed: "Connection 1 close failed", "Connection 2 close failed". You log all of them to understand full picture of what went wrong.
+
+---
+
+### Q78. How do we handle exceptions in REST API with proper HTTP status codes?
+
+Different exceptions should map to different HTTP status codes with meaningful error responses.
+
+**Complete REST exception handling:**
+```java
+@RestControllerAdvice
+public class RestExceptionHandler {
+    
+    // 400 Bad Request - Client error
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleValidationErrors(MethodArgumentNotValidException e) {
+        ErrorResponse error = new ErrorResponse(
+            400,
+            "Validation failed",
+            LocalDateTime.now()
+        );
+        
+        e.getBindingResult().getFieldErrors().forEach(fieldError -> 
+            error.addValidationError(fieldError.getField(), fieldError.getDefaultMessage())
+        );
+        
+        return error;
+    }
+    
+    // 401 Unauthorized - Authentication required
+    @ExceptionHandler(AuthenticationException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ErrorResponse handleAuthenticationError(AuthenticationException e) {
+        return new ErrorResponse(401, "Authentication required", LocalDateTime.now());
+    }
+    
+    // 403 Forbidden - Authenticated but not authorized
+    @ExceptionHandler(AccessDeniedException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public ErrorResponse handleAccessDenied(AccessDeniedException e) {
+        return new ErrorResponse(403, "Access denied: " + e.getMessage(), LocalDateTime.now());
+    }
+    
+    // 404 Not Found - Resource doesn't exist
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleNotFound(ResourceNotFoundException e) {
+        return new ErrorResponse(404, e.getMessage(), LocalDateTime.now());
+    }
+    
+    // 409 Conflict - Resource already exists or state conflict
+    @ExceptionHandler(DuplicateResourceException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorResponse handleDuplicate(DuplicateResourceException e) {
+        return new ErrorResponse(409, e.getMessage(), LocalDateTime.now());
+    }
+    
+    // 422 Unprocessable Entity - Valid syntax but semantic errors
+    @ExceptionHandler(BusinessValidationException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    public ErrorResponse handleBusinessValidation(BusinessValidationException e) {
+        return new ErrorResponse(422, e.getMessage(), LocalDateTime.now());
+    }
+    
+    // 500 Internal Server Error - Unexpected errors
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ErrorResponse handleInternalError(Exception e) {
+        logger.error("Unexpected error", e);
+        return new ErrorResponse(
+            500, 
+            "An unexpected error occurred. Please contact support.", 
+            LocalDateTime.now()
+        );
+    }
+    
+    // 503 Service Unavailable - External service down
+    @ExceptionHandler(ServiceUnavailableException.class)
+    @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
+    public ErrorResponse handleServiceUnavailable(ServiceUnavailableException e) {
+        return new ErrorResponse(503, e.getMessage(), LocalDateTime.now());
+    }
+}
+```
+
+**Enhanced error response structure:**
+```java
+public class ErrorResponse {
+    private int status;
+    private String message;
+    private LocalDateTime timestamp;
+    private String path;
+    private List<ValidationError> validationErrors;
+    
+    public static class ValidationError {
+        private String field;
+        private String message;
+        
+        // Constructor, getters, setters
+    }
+    
+    public void addValidationError(String field, String message) {
+        if(validationErrors == null) {
+            validationErrors = new ArrayList<>();
+        }
+        validationErrors.add(new ValidationError(field, message));
+    }
+    
+    // Constructor, getters, setters
+}
+```
+
+**Using in service layer:**
+```java
+public Goal getGoal(Long goalId) {
+    return goalRepository.findById(goalId)
+        .orElseThrow(() -> new ResourceNotFoundException("Goal not found with id: " + goalId));
+}
+
+public Goal createGoal(Goal goal) {
+    if(goalRepository.existsByTitleAndEmployeeId(goal.getTitle(), goal.getEmployeeId())) {
+        throw new DuplicateResourceException("Goal with title '" + goal.getTitle() + "' already exists");
+    }
+    return goalRepository.save(goal);
+}
+
+public void approveGoal(Long goalId, Long managerId) {
+    Goal goal = getGoal(goalId);
+    
+    if(!goal.getManagerId().equals(managerId)) {
+        throw new AccessDeniedException("You are not authorized to approve this goal");
+    }
+    
+    if(goal.getStatus().equals("APPROVED")) {
+        throw new BusinessValidationException("Goal is already approved");
+    }
+    
+    goal.setStatus("APPROVED");
+    goalRepository.save(goal);
+}
+```
+
+**Industry example:** In PerformanceTrack Analytics API:
+- GET /analytics/goals/999 (goal doesn't exist) → 404 with "Goal not found"
+- POST /analytics/goals (invalid date range) → 400 with validation errors
+- PUT /analytics/goals/123/approve (not your goal) → 403 with "Access denied"
+- POST /analytics/goals (goal title already exists) → 409 with "Duplicate goal"
+- GET /analytics/department-metrics (database down) → 500 with "Service error"
+
+---
+
+### Q79. How do we handle exceptions with internationalization (i18n)?
+
+Exception messages should support multiple languages based on user's locale.
+
+**Setting up message source:**
+```java
+@Configuration
+public class MessageConfig {
+    
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("messages/exceptions");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+    
+    @Bean
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver resolver = new SessionLocaleResolver();
+        resolver.setDefaultLocale(Locale.ENGLISH);
+        return resolver;
+    }
+}
+```
+
+**Message properties files:**
+
+**messages/exceptions_en.properties:**
+```properties
+error.goal.notfound=Goal not found with id: {0}
+error.goal.duplicate=Goal with title ''{0}'' already exists
+error.goal.unauthorized=You are not authorized to access this goal
+error.goal.alreadyapproved=Goal is already approved
+error.validation.required={0} is required
+error.validation.invalid={0} is invalid
+```
+
+**messages/exceptions_es.properties:**
+```properties
+error.goal.notfound=Objetivo no encontrado con id: {0}
+error.goal.duplicate=Ya existe un objetivo con el título ''{0}''
+error.goal.unauthorized=No está autorizado para acceder a este objetivo
+error.goal.alreadyapproved=El objetivo ya está aprobado
+error.validation.required={0} es obligatorio
+error.validation.invalid={0} es inválido
+```
+
+**Using in exception handler:**
+```java
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @Autowired
+    private MessageSource messageSource;
+    
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleNotFound(
+        ResourceNotFoundException e,
+        HttpServletRequest request
+    ) {
+        Locale locale = LocaleContextHolder.getLocale();
+        
+        String message = messageSource.getMessage(
+            "error.goal.notfound",
+            new Object[]{e.getResourceId()},
+            locale
+        );
+        
+        return new ErrorResponse(404, message, LocalDateTime.now());
+    }
+    
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleValidation(
+        MethodArgumentNotValidException e,
+        HttpServletRequest request
+    ) {
+        Locale locale = LocaleContextHolder.getLocale();
+        ErrorResponse error = new ErrorResponse(400, "Validation failed", LocalDateTime.now());
+        
+        e.getBindingResult().getFieldErrors().forEach(fieldError -> {
+            String message = messageSource.getMessage(
+                "error.validation." + fieldError.getCode(),
+                new Object[]{fieldError.getField()},
+                fieldError.getDefaultMessage(),
+                locale
+            );
+            error.addValidationError(fieldError.getField(), message);
+        });
+        
+        return error;
+    }
+}
+```
+
+**Custom exception with i18n:**
+```java
+public class GoalNotFoundException extends RuntimeException {
+    private final String messageKey;
+    private final Object[] args;
+    
+    public GoalNotFoundException(Long goalId) {
+        super("Goal not found: " + goalId);
+        this.messageKey = "error.goal.notfound";
+        this.args = new Object[]{goalId};
+    }
+    
+    public String getMessageKey() {
+        return messageKey;
+    }
+    
+    public Object[] getArgs() {
+        return args;
+    }
+}
+```
+
+**Industry example:** PerformanceTrack is used by multinational company with offices in US, Spain, and Japan. When Spanish user tries to access non-existent goal, error message shows "Objetivo no encontrado con id: 123" instead of English message. You store message keys in exceptions and resolve them based on user's locale in Accept-Language header.
+
+---
+
+### Q80. How do we handle exceptions in @Scheduled methods?
+
+Scheduled methods run automatically at intervals. Exceptions need special handling or they silently fail.
+
+**Problem - Exception stops scheduling:**
+```java
+@Scheduled(fixedRate = 60000) // Every minute
+public void generateReports() {
+    int x = 10 / 0; // ArithmeticException
+    // After this exception, scheduling STOPS for this method!
+}
+```
+
+**Solution 1 - Try-catch inside scheduled method:**
+```java
+@Scheduled(fixedRate = 60000)
+public void generateReports() {
+    try {
+        logger.info("Starting report generation");
+        
+        List<Report> reports = reportService.generateAll();
+        
+        logger.info("Generated {} reports", reports.size());
+    } catch(Exception e) {
+        logger.error("Report generation failed", e);
+        // Notify admin
+        sendAlert("Report generation failed: " + e.getMessage());
+        // Scheduling continues!
+    }
+}
+```
+
+**Solution 2 - Global handler for scheduled methods:**
+```java
+@Configuration
+public class SchedulerConfig implements SchedulingConfigurer {
+    
+    @Override
+    public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
+        taskRegistrar.setScheduler(taskExecutor());
+    }
+    
+    @Bean
+    public Executor taskExecutor() {
+        ThreadPoolTaskScheduler scheduler = new ThreadPoolTaskScheduler();
+        scheduler.setPoolSize(10);
+        scheduler.setThreadNamePrefix("scheduled-task-");
+        scheduler.setErrorHandler(t -> {
+            logger.error("Scheduled task failed", t);
+        });
+        scheduler.initialize();
+        return scheduler;
+    }
+}
+```
+
+**Solution 3 - Retry on failure:**
+```java
+@Scheduled(fixedRate = 300000) // Every 5 minutes
+public void syncData() {
+    int maxRetries = 3;
+    int attempt = 0;
+    
+    while(attempt < maxRetries) {
+        try {
+            dataService.sync();
+            logger.info("Data sync successful");
+            return; // Success, exit
+        } catch(Exception e) {
+            attempt++;
+            logger.warn("Data sync failed, attempt {}/{}", attempt, maxRetries, e);
+            
+            if(attempt >= maxRetries) {
+                logger.error("Data sync failed after {} attempts", maxRetries, e);
+                sendAlert("Data sync failed permanently");
+            } else {
+                // Wait before retry
+                Thread.sleep(5000);
+            }
+        }
+    }
+}
+```
+
+**Conditional scheduling based on previous execution:**
+```java
+private boolean lastExecutionFailed = false;
+
+@Scheduled(fixedRate = 60000)
+public void processOrders() {
+    if(lastExecutionFailed) {
+        logger.warn("Skipping execution due to previous failure");
+        return;
+    }
+    
+    try {
+        orderService.processAll();
+        lastExecutionFailed = false;
+    } catch(Exception e) {
+        logger.error("Order processing failed", e);
+        lastExecutionFailed = true;
+        sendAlert("Order processing halted");
+    }
+}
+```
+
+**Industry example:** In PerformanceTrack, you have a scheduled job that calculates department-wise goal completion rates every night. If calculation fails (maybe database deadlock), you don't want job to stop permanently. You wrap in try-catch, log error, send email to admin with error details, and let scheduling continue. Next night, job runs again automatically.
+
+---
+
+### Q81. How do we handle exceptions when using Java Streams?
+
+Streams don't handle checked exceptions well. You need workarounds.
+
+**Problem - Checked exception in lambda:**
+```java
+List<String> files = Arrays.asList("file1.txt", "file2.txt", "file3.txt");
+
+// Won't compile - FileReader throws IOException
+files.stream()
+    .map(file -> new FileReader(file)) // Compile error!
+    .forEach(reader -> processFile(reader));
+```
+
+**Solution 1 - Wrap in unchecked exception:**
+```java
+files.stream()
+    .map(file -> {
+        try {
+            return new FileReader(file);
+        } catch(IOException e) {
+            throw new UncheckedIOException(e); // Wrap in unchecked
+        }
+    })
+    .forEach(reader -> processFile(reader));
+```
+
+**Solution 2 - Create utility wrapper:**
+```java
+@FunctionalInterface
+public interface ThrowingFunction<T, R> {
+    R apply(T t) throws Exception;
+    
+    static <T, R> Function<T, R> wrap(ThrowingFunction<T, R> throwingFunction) {
+        return t -> {
+            try {
+                return throwingFunction.apply(t);
+            } catch(Exception e) {
+                throw new RuntimeException(e);
+            }
+        };
+    }
+}
+
+// Usage:
+files.stream()
+    .map(ThrowingFunction.wrap(file -> new FileReader(file)))
+    .forEach(reader -> processFile(reader));
+```
+
+**Solution 3 - Handle exceptions within stream:**
+```java
+List<String> results = files.stream()
+    .map(file -> {
+        try {
+            FileReader reader = new FileReader(file);
+            return processFile(reader);
+        } catch(IOException e) {
+            logger.error("Failed to process file: {}", file, e);
+            return null; // or default value
+        }
+    })
+    .filter(Objects::nonNull) // Remove nulls (failed items)
+    .collect(Collectors.toList());
+```
+
+**Solution 4 - Collect exceptions separately:**
+```java
+List<String> files = Arrays.asList("file1.txt", "file2.txt", "file3.txt");
+List<Exception> errors = new ArrayList<>();
+
+List<String> results = files.stream()
+    .map(file -> {
+        try {
+            return processFile(file);
+        } catch(Exception e) {
+            errors.add(e);
+            return null;
+        }
+    })
+    .filter(Objects::nonNull)
+    .collect(Collectors.toList());
+
+if(!errors.isEmpty()) {
+    logger.error("Processing completed with {} errors", errors.size());
+    errors.forEach(e -> logger.error("Error: ", e));
+}
+```
+
+**Industry example:** In PerformanceTrack Analytics, you calculate goal completion rate for all departments using streams. If one department's calculation fails (maybe data corruption), you don't want entire stream to fail. You wrap in try-catch, log error for that department, return null/default value, and continue with other departments. Final report shows "HR: 85%, Sales: 92%, IT: Data unavailable".
+
+---
+
+### Q82. What is the performance impact of exception handling?
+
+Exception handling has performance cost. Understanding this helps write efficient code.
+
+**Performance considerations:**
+
+**1. Creating exceptions is expensive:**
+```java
+// Expensive - creates stack trace
+throw new Exception("Error");
+
+// Less expensive - no stack trace (but loses debugging info)
+throw new Exception("Error", null, false, false);
+```
+
+**2. Don't use exceptions for control flow:**
+```java
+// Very bad - exception for normal flow
+public User findUser(String email) {
+    try {
+        return database.getUser(email);
+    } catch(UserNotFoundException e) {
+        return createDefaultUser();
+    }
+}
+
+// Good - use conditional logic
+public User findUser(String email) {
+    Optional<User> user = database.getUser(email);
+    return user.orElseGet(() -> createDefaultUser());
+}
+```
+
+**3. Catching exceptions is cheap, throwing is expensive:**
+```java
+// Try-catch has minimal overhead if no exception occurs
+try {
+    normalOperation(); // Fast
+} catch(Exception e) {
+    // Not executed - no cost
+}
+
+// But throwing is expensive
+for(int i = 0; i < 1000000; i++) {
+    try {
+        throw new Exception(); // Very slow!
+    } catch(Exception e) {
+        // Handle
+    }
+}
+```
+
+**4. Deep call stacks increase exception cost:**
+```java
+// Expensive - exception travels through 10 method calls
+public void method1() {
+    try {
+        method2();
+    } catch(Exception e) {
+        // Exception traveled through 10 methods to get here
+    }
+}
+
+public void method2() { method3(); }
+public void method3() { method4(); }
+// ... method4 to method9
+public void method10() {
+    throw new Exception(); // Created here, caught 10 levels up
+}
+```
+
+**5. Validation before operations:**
+```java
+// Bad - relying on exception
+public void processFile(String path) {
+    try {
+        FileReader fr = new FileReader(path);
+        // Process
+    } catch(FileNotFoundException e) {
+        logger.error("File not found");
+    }
+}
+
+// Better - validate first
+public void processFile(String path) {
+    File file = new File(path);
+    if(!file.exists()) {
+        logger.error("File not found");
+        return;
+    }
+    
+    try {
+        FileReader fr = new FileReader(path);
+        // Process
+    } catch(IOException e) {
+        // Only for unexpected IO errors
+    }
+}
+```
+
+**Benchmark example:**
+```java
+// Throwing exceptions: ~5000 nanoseconds per iteration
+for(int i = 0; i < 100000; i++) {
+    try {
+        throw new Exception();
+    } catch(Exception e) { }
+}
+
+// Conditional logic: ~2 nanoseconds per iteration
+for(int i = 0; i < 100000; i++) {
+    if(someCondition) {
+        // Handle
+    }
+}
+```
+
+**Industry example:** In PerformanceTrack, when checking if goal exists before updating, don't call `updateGoal()` and catch GoalNotFoundException. First check `if(goalRepository.existsById(id))`, then call update. For 10,000 goals processed in batch, this saves significant time - validation is microseconds, exceptions are milliseconds.
+
+---
+
+### Q83. How do we handle exceptions in CompletableFuture chains?
+
+CompletableFuture has special methods for exception handling in async chains.
+
+**Basic exception handling:**
+```java
+CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+    if(someCondition) {
+        throw new RuntimeException("Error occurred");
+    }
+    return "Success";
+});
+
+// Handle exception
+future.exceptionally(ex -> {
+    logger.error("Async operation failed", ex);
+    return "Default value"; // Fallback
+}).thenAccept(result -> {
+    System.out.println("Result: " + result);
+});
+```
+
+**Using handle() - for both success and failure:**
+```java
+CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+    return processData();
+})
+.handle((result, ex) -> {
+    if(ex != null) {
+        logger.error("Processing failed", ex);
+        return "Error: " + ex.getMessage();
+    }
+    return "Success: " + result;
+});
+```
+
+**Exception in chain:**
+```java
+CompletableFuture.supplyAsync(() -> {
+    return "Step 1";
+})
+.thenApply(result -> {
+    throw new RuntimeException("Error in step 2");
+})
+.thenApply(result -> {
+    return "Step 3"; // Won't execute
+})
+.exceptionally(ex -> {
+    logger.error("Chain failed at some step", ex);
+    return "Failed";
+});
+```
+
+**Multiple futures with exception handling:**
+```java
+CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> service1.call());
+CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> service2.call());
+CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> service3.call());
+
+CompletableFuture<Void> allFutures = CompletableFuture.allOf(future1, future2, future3);
+
+allFutures.handle((result, ex) -> {
+    if(ex != null) {
+        logger.error("At least one future failed", ex);
+    }
+    
+    // Check each future individually
+    try {
+        String result1 = future1.join();
+        logger.info("Service 1: {}", result1);
+    } catch(Exception e) {
+        logger.error("Service 1 failed", e);
+    }
+    
+    try {
+        String result2 = future2.join();
+        logger.info("Service 2: {}", result2);
+    } catch(Exception e) {
+        logger.error("Service 2 failed", e);
+    }
+    
+    return null;
+});
+```
+
+**Timeout with exception:**
+```java
+CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+    // Long running operation
+    Thread.sleep(10000);
+    return "Done";
+});
+
+future.orTimeout(5, TimeUnit.SECONDS) // Throws TimeoutException after 5 seconds
+    .exceptionally(ex -> {
+        if(ex instanceof TimeoutException) {
+            logger.error("Operation timed out");
+            return "Timeout";
+        }
+        return "Error";
+    });
+```
+
+**Industry example:** In PerformanceTrack Analytics, when generating comprehensive report, you call 5 microservices in parallel (goals, reviews, feedback, attendance, skills). Each call is a CompletableFuture. If one service fails, you use exceptionally() to provide default data for that section. Report still generates with partial data and note "Skills data unavailable". Users get report faster, and one service failure doesn't block entire report.
+
+---
+
+### Q84. What are common exception handling anti-patterns to avoid?
+
+**Anti-pattern 1: Empty catch block (Exception swallowing)**
+```java
+// Very bad!
+try {
+    processPayment();
+} catch(Exception e) {
+    // Silent failure - impossible to debug
+}
+
+// Good
+try {
+    processPayment();
+} catch(Exception e) {
+    logger.error("Payment processing failed", e);
+    throw new PaymentException("Payment failed", e);
+}
+```
+
+**Anti-pattern 2: Catching Throwable or Error**
+```java
+// Bad - catches OutOfMemoryError, StackOverflowError
+try {
+    doSomething();
+} catch(Throwable t) {
+    // Can't recover from errors!
+}
+
+// Good - catch specific exceptions
+try {
+    doSomething();
+} catch(SpecificException e) {
+    // Handle
+}
+```
+
+**Anti-pattern 3: Log and throw**
+```java
+// Bad - logged multiple times in call stack
+public void method1() {
+    try {
+        method2();
+    } catch(Exception e) {
+        logger.error("Error", e); // Logged here
+        throw e; // Also caught and logged in caller
+    }
+}
+
+// Good - either log or throw, not both
+public void method1() {
+    try {
+        method2();
+    } catch(Exception e) {
+        throw new CustomException("Method1 failed", e); // Just throw
+    }
+}
+```
+
+**Anti-pattern 4: Overly broad catch**
+```java
+// Bad
+try {
+    readFile();
+    parseData();
+    saveToDatabase();
+} catch(Exception e) { // Too broad!
+    return "Error";
+}
+
+// Good
+try {
+    readFile();
+    parseData();
+    saveToDatabase();
+} catch(IOException e) {
+    return "File error";
+} catch(ParseException e) {
+    return "Parse error";
+} catch(SQLException e) {
+    return "Database error";
+}
+```
+
+**Anti-pattern 5: Return in finally**
+```java
+// Bad - hides exception
+public String getData() {
+    try {
+        throw new Exception("Error");
+    } finally {
+        return "Success"; // Exception lost!
+    }
+}
+
+// Good - let exception propagate
+public String getData() throws Exception {
+    try {
+        return processData();
+    } finally {
+        cleanup(); // Only cleanup, no return
+    }
+}
+```
+
+**Anti-pattern 6: Generic exception messages**
+```java
+// Bad
+throw new Exception("Error");
+throw new Exception("Something went wrong");
+
+// Good
+throw new OrderException("Order processing failed for order ID: " + orderId + 
+    ". Reason: Payment declined by bank. Transaction ID: " + transactionId);
+```
+
+**Anti-pattern 7: Exception for control flow**
+```java
+// Bad
+public boolean isValidUser(String username) {
+    try {
+        User user = findUser(username);
+        return true;
+    } catch(UserNotFoundException e) {
+        return false;
+    }
+}
+
+// Good
+public boolean isValidUser(String username) {
+    return userRepository.existsByUsername(username);
+}
+```
+
+**Industry example:** Code review in PerformanceTrack found these anti-patterns: empty catch blocks in goal approval (hiding errors), catching Exception instead of specific GoalNotFoundException, and logging same error 3 times in call stack. After fixing: errors are properly handled, specific exceptions caught, logged once at appropriate layer, and meaningful error messages returned to users.
+
+---
+
+### Q85. How do we test exception handling in unit tests?
+
+**Testing with JUnit 5:**
+
+**Test 1: Assert exception is thrown**
+```java
+@Test
+void shouldThrowExceptionWhenGoalNotFound() {
+    // Assert exception is thrown
+    assertThrows(GoalNotFoundException.class, () -> {
+        goalService.getGoal(999L);
+    });
+}
+```
+
+**Test 2: Assert exception message**
+```java
+@Test
+void shouldThrowExceptionWithCorrectMessage() {
+    GoalNotFoundException exception = assertThrows(
+        GoalNotFoundException.class,
+        () -> goalService.getGoal(999L)
+    );
+    
+    assertEquals("Goal not found with id: 999", exception.getMessage());
+}
+```
+
+**Test 3: Verify exception cause**
+```java
+@Test
+void shouldWrapDatabaseException() {
+    // Mock repository to throw SQLException
+    when(goalRepository.findById(1L)).thenThrow(new SQLException("Connection failed"));
+    
+    DataAccessException exception = assertThrows(
+        DataAccessException.class,
+        () -> goalService.getGoal(1L)
+    );
+    
+    // Verify original cause
+    assertTrue(exception.getCause() instanceof SQLException);
+    assertEquals("Connection failed", exception.getCause().getMessage());
+}
+```
+
+**Test 4: Test exception handler**
+```java
+@Test
+void shouldReturn404WhenGoalNotFound() {
+    GoalNotFoundException exception = new GoalNotFoundException(999L);
+    
+    ResponseEntity<ErrorResponse> response = exceptionHandler.handleNotFound(
+        exception,
+        webRequest
+    );
+    
+    assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+    assertEquals(404, response.getBody().getStatus());
+    assertTrue(response.getBody().getMessage().contains("999"));
+}
+```
+
+**Test 5: Test with MockMvc (integration test)**
+```java
+@Test
+void shouldReturn404ForNonExistentGoal() throws Exception {
+    mockMvc.perform(get("/api/goals/999"))
+        .andExpect(status().isNotFound())
+        .andExpect(jsonPath("$.status").value(404))
+        .andExpect(jsonPath("$.message").value("Goal not found with id: 999"));
+}
+```
+
+**Test 6: Verify no exception thrown**
+```java
+@Test
+void shouldNotThrowExceptionForValidGoal() {
+    assertDoesNotThrow(() -> {
+        goalService.getGoal(1L);
+    });
+}
+```
+
+**Test 7: Test multiple exceptions**
+```java
+@Test
+void shouldHandleDifferentExceptions() {
+    // Test GoalNotFoundException
+    assertThrows(GoalNotFoundException.class, 
+        () -> goalService.getGoal(999L));
+    
+    // Test UnauthorizedException
+    assertThrows(UnauthorizedAccessException.class,
+        () -> goalService.approveGoal(1L, 999L));
+    
+    // Test DuplicateException
+    assertThrows(DuplicateResourceException.class,
+        () -> goalService.createGoal(duplicateGoal));
+}
+```
+
+**Test 8: Verify logging on exception**
+```java
+@Test
+void shouldLogErrorWhenExceptionOccurs() {
+    // Use log capture
+    when(goalRepository.save(any())).thenThrow(new DataAccessException("DB error"));
+    
+    assertThrows(DataAccessException.class, () -> {
+        goalService.createGoal(goal);
+    });
+    
+    // Verify logger was called
+    verify(logger).error(contains("Failed to create goal"), any(DataAccessException.class));
+}
+```
+
+**Industry example:** In PerformanceTrack Analytics module, you write tests for all exception scenarios:
+- Test GoalNotFoundException when calculating metrics for non-existent goal
+- Test UnauthorizedException when employee tries to view another's analytics
+- Test DataAccessException handling when database is down
+- Test validation exceptions for invalid date ranges
+- All tests verify correct HTTP status codes and error messages
+
+---
+
+Should I continue with final topics? I have: exception handling in microservices (circuit breakers, fallbacks), common interview scenario questions, and a comprehensive summary of all exception types with when to use each. Let me know!
+
+## PART 12: EXCEPTION HANDLING IN MICROSERVICES
+
+### Q86. How do we handle exceptions when calling external microservices?
+
+When calling external services, you need to handle network failures, timeouts, and service unavailability.
+
+**Problem - Direct call without handling:**
+```java
+@Service
+public class OrderService {
+    
+    @Autowired
+    private RestTemplate restTemplate;
+    
+    public PaymentResponse processPayment(Order order) {
+        // What if payment service is down?
+        // What if network timeout?
+        // What if service returns 500?
+        return restTemplate.postForObject(
+            "http://payment-service/api/payments",
+            order,
+            PaymentResponse.class
+        );
+    }
+}
+```
+
+**Solution 1 - Try-catch with specific handling:**
+```java
+@Service
+public class OrderService {
+    
+    public PaymentResponse processPayment(Order order) {
+        try {
+            return restTemplate.postForObject(
+                "http://payment-service/api/payments",
+                order,
+                PaymentResponse.class
+            );
+        } catch(ResourceAccessException e) {
+            // Network error, timeout
+            logger.error("Payment service unreachable", e);
+            throw new ServiceUnavailableException("Payment service is currently unavailable");
+        } catch(HttpClientErrorException e) {
+            // 4xx errors (400, 404, etc.)
+            logger.error("Payment service client error: {}", e.getStatusCode());
+            throw new PaymentValidationException("Invalid payment request: " + e.getResponseBodyAsString());
+        } catch(HttpServerErrorException e) {
+            // 5xx errors (500, 503, etc.)
+            logger.error("Payment service error: {}", e.getStatusCode());
+            throw new PaymentServiceException("Payment service encountered an error");
+        } catch(RestClientException e) {
+            // Generic REST client errors
+            logger.error("Payment service communication error", e);
+            throw new ServiceCommunicationException("Failed to communicate with payment service");
+        }
+    }
+}
+```
+
+**Solution 2 - RestTemplate with timeout configuration:**
+```java
+@Configuration
+public class RestTemplateConfig {
+    
+    @Bean
+    public RestTemplate restTemplate() {
+        SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
+        factory.setConnectTimeout(5000); // 5 seconds to establish connection
+        factory.setReadTimeout(10000);   // 10 seconds to read response
+        
+        RestTemplate restTemplate = new RestTemplate(factory);
+        
+        // Add error handler
+        restTemplate.setErrorHandler(new CustomResponseErrorHandler());
+        
+        return restTemplate;
+    }
+}
+
+public class CustomResponseErrorHandler implements ResponseErrorHandler {
+    
+    @Override
+    public boolean hasError(ClientHttpResponse response) throws IOException {
+        return response.getStatusCode().is4xxClientError() || 
+               response.getStatusCode().is5xxServerError();
+    }
+    
+    @Override
+    public void handleError(ClientHttpResponse response) throws IOException {
+        if(response.getStatusCode().is5xxServerError()) {
+            throw new ServiceUnavailableException(
+                "External service error: " + response.getStatusCode()
+            );
+        } else if(response.getStatusCode().is4xxClientError()) {
+            throw new InvalidRequestException(
+                "Invalid request: " + response.getStatusCode()
+            );
+        }
+    }
+}
+```
+
+**Solution 3 - Using Feign Client with fallback:**
+```java
+@FeignClient(
+    name = "payment-service",
+    fallback = PaymentServiceFallback.class
+)
+public interface PaymentServiceClient {
+    
+    @PostMapping("/api/payments")
+    PaymentResponse processPayment(@RequestBody PaymentRequest request);
+}
+
+@Component
+public class PaymentServiceFallback implements PaymentServiceClient {
+    
+    @Override
+    public PaymentResponse processPayment(PaymentRequest request) {
+        // Fallback when service is down
+        logger.error("Payment service unavailable, using fallback");
+        
+        PaymentResponse response = new PaymentResponse();
+        response.setStatus("PENDING");
+        response.setMessage("Payment queued for processing");
+        
+        // Save to retry queue
+        paymentQueue.add(request);
+        
+        return response;
+    }
+}
+```
+
+**Industry example:** In PerformanceTrack, Analytics module calls Goals microservice to fetch goal data. If Goals service is down, instead of crashing, you catch ServiceUnavailableException, return cached analytics data with timestamp "Last updated: 2 hours ago", and show banner "Real-time data temporarily unavailable. Showing cached results."
+
+---
+
+### Q87. What is Circuit Breaker pattern and how does it help with exception handling?
+
+Circuit Breaker prevents cascading failures by stopping calls to failing services.
+
+**Circuit Breaker states:**
+1. **CLOSED** - Normal operation, requests pass through
+2. **OPEN** - Service failing, requests immediately fail (don't even try)
+3. **HALF_OPEN** - Testing if service recovered, allow few requests
+
+**Using Resilience4j Circuit Breaker:**
+
+**Configuration:**
+```java
+@Configuration
+public class CircuitBreakerConfig {
+    
+    @Bean
+    public CircuitBreaker paymentCircuitBreaker() {
+        CircuitBreakerConfig config = CircuitBreakerConfig.custom()
+            .failureRateThreshold(50) // Open if 50% requests fail
+            .waitDurationInOpenState(Duration.ofSeconds(30)) // Wait 30s before HALF_OPEN
+            .slidingWindowSize(10) // Consider last 10 requests
+            .minimumNumberOfCalls(5) // Need at least 5 calls before calculating failure rate
+            .build();
+        
+        return CircuitBreaker.of("payment-service", config);
+    }
+}
+```
+
+**Using Circuit Breaker:**
+```java
+@Service
+public class OrderService {
+    
+    @Autowired
+    private CircuitBreaker paymentCircuitBreaker;
+    
+    public PaymentResponse processPayment(Order order) {
+        return paymentCircuitBreaker.executeSupplier(() -> {
+            try {
+                return restTemplate.postForObject(
+                    "http://payment-service/api/payments",
+                    order,
+                    PaymentResponse.class
+                );
+            } catch(Exception e) {
+                logger.error("Payment service call failed", e);
+                throw new PaymentServiceException("Payment failed", e);
+            }
+        });
+    }
+}
+```
+
+**With fallback:**
+```java
+public PaymentResponse processPayment(Order order) {
+    try {
+        return paymentCircuitBreaker.executeSupplier(() -> {
+            return callPaymentService(order);
+        });
+    } catch(CallNotPermittedException e) {
+        // Circuit breaker is OPEN
+        logger.warn("Circuit breaker is OPEN for payment service");
+        return handlePaymentServiceDown(order);
+    } catch(Exception e) {
+        logger.error("Payment processing failed", e);
+        throw new PaymentException("Payment failed", e);
+    }
+}
+
+private PaymentResponse handlePaymentServiceDown(Order order) {
+    // Fallback logic
+    PaymentResponse response = new PaymentResponse();
+    response.setStatus("QUEUED");
+    response.setMessage("Payment queued - service temporarily unavailable");
+    
+    // Save to queue for later processing
+    paymentQueue.save(order);
+    
+    return response;
+}
+```
+
+**Monitoring circuit breaker events:**
+```java
+paymentCircuitBreaker.getEventPublisher()
+    .onStateTransition(event -> {
+        logger.info("Circuit breaker state changed: {} -> {}", 
+            event.getStateTransition().getFromState(),
+            event.getStateTransition().getToState()
+        );
+        
+        if(event.getStateTransition().getToState() == CircuitBreaker.State.OPEN) {
+            sendAlert("Payment service circuit breaker is OPEN - service failing");
+        }
+    });
+```
+
+**Industry example:** In PerformanceTrack, when calling Notification microservice to send emails, if notification service is down (500 errors), after 5 failed calls, circuit breaker opens. For next 30 seconds, all notification calls immediately fail without trying (fast fail). Notifications are saved to queue. After 30 seconds, circuit breaker allows few test calls. If they succeed, circuit closes and normal operation resumes.
+
+---
+
+### Q88. What is Retry pattern and when should we use it?
+
+Retry pattern automatically retries failed operations, useful for transient failures.
+
+**Using Resilience4j Retry:**
+
+**Configuration:**
+```java
+@Configuration
+public class RetryConfig {
+    
+    @Bean
+    public Retry apiRetry() {
+        RetryConfig config = RetryConfig.custom()
+            .maxAttempts(3) // Retry up to 3 times
+            .waitDuration(Duration.ofSeconds(2)) // Wait 2 seconds between retries
+            .retryOnException(e -> e instanceof ServiceUnavailableException) // Only retry for specific exceptions
+            .ignoreExceptions(ValidationException.class) // Don't retry validation errors
+            .build();
+        
+        return Retry.of("external-api", config);
+    }
+}
+```
+
+**Using Retry:**
+```java
+@Service
+public class ReportService {
+    
+    @Autowired
+    private Retry apiRetry;
+    
+    public Report generateReport(Long reportId) {
+        return apiRetry.executeSupplier(() -> {
+            try {
+                return externalApiClient.fetchReportData(reportId);
+            } catch(SocketTimeoutException e) {
+                logger.warn("API timeout, will retry");
+                throw new ServiceUnavailableException("API timeout", e);
+            } catch(ValidationException e) {
+                logger.error("Validation error, will NOT retry");
+                throw e; // Won't retry
+            }
+        });
+    }
+}
+```
+
+**Exponential backoff (advanced):**
+```java
+RetryConfig config = RetryConfig.custom()
+    .maxAttempts(5)
+    .waitDuration(Duration.ofSeconds(1))
+    .intervalFunction(IntervalFunction.ofExponentialBackoff(
+        Duration.ofSeconds(1), // Initial wait
+        2 // Multiplier (1s, 2s, 4s, 8s, 16s)
+    ))
+    .build();
+```
+
+**Retry with callback:**
+```java
+public Report generateReport(Long reportId) {
+    return apiRetry.executeSupplier(() -> {
+        return callExternalApi(reportId);
+    });
+}
+
+// Listen to retry events
+apiRetry.getEventPublisher()
+    .onRetry(event -> {
+        logger.warn("Retry attempt {} for report {}", 
+            event.getNumberOfRetryAttempts(),
+            reportId
+        );
+    })
+    .onError(event -> {
+        logger.error("All retry attempts failed for report {}", reportId);
+    });
+```
+
+**When to retry vs when NOT to retry:**
+
+**Retry for:**
+- Network timeouts
+- Connection refused (temporary)
+- 503 Service Unavailable
+- Database deadlock
+- Temporary resource exhaustion
+
+**Don't retry for:**
+- 400 Bad Request (client error)
+- 401 Unauthorized (auth error)
+- 404 Not Found (resource doesn't exist)
+- Validation errors
+- Business logic errors
+
+```java
+RetryConfig config = RetryConfig.custom()
+    .retryOnException(e -> {
+        // Retry for network and server errors
+        return e instanceof SocketTimeoutException ||
+               e instanceof ConnectException ||
+               e instanceof HttpServerErrorException;
+    })
+    .ignoreExceptions(
+        ValidationException.class,
+        UnauthorizedException.class,
+        ResourceNotFoundException.class
+    )
+    .build();
+```
+
+**Industry example:** In PerformanceTrack, when saving goal to database, if you get "Deadlock detected" error, you retry 3 times with 1-second gap. Usually succeeds on retry. But if you get "Duplicate key" error (goal title already exists), you don't retry - it's a validation error that won't fix itself. You immediately return error to user.
+
+---
+
+### Q89. How do we handle exceptions in event-driven architecture (Kafka, RabbitMQ)?
+
+In message-driven systems, exception handling is different because there's no immediate caller to return error to.
+
+**Problem - Message processing failure:**
+```java
+@KafkaListener(topics = "goal-approvals")
+public void handleGoalApproval(GoalApprovalEvent event) {
+    // What if this fails?
+    // Message is lost!
+    goalService.approveGoal(event.getGoalId());
+}
+```
+
+**Solution 1 - Error handler with retry:**
+```java
+@KafkaListener(topics = "goal-approvals")
+public void handleGoalApproval(GoalApprovalEvent event) {
+    try {
+        goalService.approveGoal(event.getGoalId());
+        logger.info("Goal approved: {}", event.getGoalId());
+    } catch(Exception e) {
+        logger.error("Failed to approve goal: {}", event.getGoalId(), e);
+        throw e; // Kafka will retry based on configuration
+    }
+}
+```
+
+**Solution 2 - Dead Letter Queue (DLQ):**
+```java
+@Configuration
+public class KafkaErrorConfig {
+    
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, GoalApprovalEvent> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, GoalApprovalEvent> factory = 
+            new ConcurrentKafkaListenerContainerFactory<>();
+        
+        // Configure error handler
+        factory.setCommonErrorHandler(new DefaultErrorHandler(
+            new DeadLetterPublishingRecoverer(kafkaTemplate()), // Send to DLQ
+            new FixedBackOff(1000L, 3L) // Retry 3 times with 1 second gap
+        ));
+        
+        return factory;
+    }
+}
+
+@KafkaListener(topics = "goal-approvals")
+public void handleGoalApproval(GoalApprovalEvent event) {
+    // If this fails after 3 retries, message goes to DLQ
+    goalService.approveGoal(event.getGoalId());
+}
+
+// Process messages from DLQ manually or with monitoring
+@KafkaListener(topics = "goal-approvals.DLT") // Dead Letter Topic
+public void handleFailedApprovals(GoalApprovalEvent event) {
+    logger.error("Message failed permanently: {}", event);
+    
+    // Alert admin
+    sendAlert("Goal approval failed for goal: " + event.getGoalId());
+    
+    // Save to database for manual investigation
+    failedMessageRepository.save(event);
+}
+```
+
+**Solution 3 - Idempotent processing (handle duplicates):**
+```java
+@KafkaListener(topics = "goal-approvals")
+public void handleGoalApproval(GoalApprovalEvent event) {
+    try {
+        // Check if already processed (in case of retry)
+        if(goalApprovalRepository.existsByGoalIdAndEventId(
+            event.getGoalId(), 
+            event.getEventId()
+        )) {
+            logger.info("Event already processed, skipping: {}", event.getEventId());
+            return; // Idempotent - safe to receive duplicate
+        }
+        
+        // Process
+        goalService.approveGoal(event.getGoalId());
+        
+        // Mark as processed
+        goalApprovalRepository.save(new ProcessedEvent(event.getEventId()));
+        
+    } catch(Exception e) {
+        logger.error("Failed to process goal approval", e);
+        throw e; // Will retry
+    }
+}
+```
+
+**Solution 4 - Compensating transaction on failure:**
+```java
+@KafkaListener(topics = "order-created")
+public void handleOrderCreated(OrderEvent event) {
+    try {
+        // Reserve inventory
+        inventoryService.reserve(event.getProductId(), event.getQuantity());
+        
+        // Process payment
+        paymentService.charge(event.getAmount());
+        
+    } catch(PaymentException e) {
+        logger.error("Payment failed, releasing inventory", e);
+        
+        // Compensate - release reserved inventory
+        inventoryService.release(event.getProductId(), event.getQuantity());
+        
+        // Publish failure event
+        kafkaTemplate.send("order-failed", new OrderFailedEvent(event.getOrderId(), e.getMessage()));
+        
+    } catch(Exception e) {
+        logger.error("Order processing failed", e);
+        throw e; // Retry
+    }
+}
+```
+
+**Solution 5 - Circuit breaker for external calls in listener:**
+```java
+@KafkaListener(topics = "notifications")
+public void sendNotification(NotificationEvent event) {
+    try {
+        // Use circuit breaker for external email service
+        circuitBreaker.executeSupplier(() -> {
+            return emailService.send(event.getEmail(), event.getMessage());
+        });
+    } catch(CallNotPermittedException e) {
+        // Circuit breaker OPEN - service down
+        logger.warn("Email service down, saving to retry queue");
+        retryQueue.save(event);
+    } catch(Exception e) {
+        logger.error("Notification failed", e);
+        throw e; // Kafka will retry
+    }
+}
+```
+
+**Industry example:** In PerformanceTrack, when a goal is approved, event is published to "goal-approved" topic. Multiple listeners process it:
+- Notification service sends email (if fails, retries 3 times, then DLQ)
+- Analytics service updates metrics (idempotent - checks if already processed)
+- Audit service logs event (never fails - writes to DLQ if database down)
+
+Each listener has its own error handling strategy based on criticality.
+
+---
+
+### Q90. How do we create a comprehensive exception handling summary for different scenarios?
+
+Let me give you a complete decision tree for exception handling:
+
+**SCENARIO 1: File Operations**
+```java
+// Reading file
+try(BufferedReader br = new BufferedReader(new FileReader(path))) {
+    return br.readLine();
+} catch(FileNotFoundException e) {
+    logger.error("File not found: {}", path);
+    throw new ResourceNotFoundException("File not found: " + path);
+} catch(IOException e) {
+    logger.error("Error reading file: {}", path, e);
+    throw new DataAccessException("Failed to read file", e);
+}
+
+// Writing file
+try(BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
+    bw.write(data);
+} catch(IOException e) {
+    logger.error("Error writing file: {}", path, e);
+    throw new DataAccessException("Failed to write file", e);
+}
+```
+
+**SCENARIO 2: Database Operations**
+```java
+// Spring Data JPA
+try {
+    return repository.save(entity);
+} catch(DataIntegrityViolationException e) {
+    if(e.getMessage().contains("Duplicate entry")) {
+        throw new DuplicateResourceException("Resource already exists");
+    }
+    throw new DataAccessException("Database constraint violation", e);
+} catch(Exception e) {
+    logger.error("Database operation failed", e);
+    throw new DataAccessException("Database error", e);
+}
+```
+
+**SCENARIO 3: REST API Calls**
+```java
+try {
+    return restTemplate.getForObject(url, ResponseType.class);
+} catch(ResourceAccessException e) {
+    // Timeout or connection refused
+    logger.error("Service unreachable: {}", url, e);
+    throw new ServiceUnavailableException("External service unavailable");
+} catch(HttpClientErrorException e) {
+    // 4xx errors
+    logger.error("Client error calling service: {}", e.getStatusCode());
+    throw new InvalidRequestException("Invalid request to external service");
+} catch(HttpServerErrorException e) {
+    // 5xx errors
+    logger.error("Server error from service: {}", e.getStatusCode());
+    throw new ServiceException("External service error");
+}
+```
+
+**SCENARIO 4: Parsing/Validation**
+```java
+// Date parsing
+try {
+    return dateFormat.parse(dateString);
+} catch(ParseException e) {
+    throw new ValidationException("Invalid date format: " + dateString);
+}
+
+// JSON parsing
+try {
+    return objectMapper.readValue(json, TargetClass.class);
+} catch(JsonProcessingException e) {
+    logger.error("Invalid JSON", e);
+    throw new ValidationException("Invalid JSON format");
+}
+
+// Number parsing
+try {
+    return Integer.parseInt(value);
+} catch(NumberFormatException e) {
+    throw new ValidationException("Invalid number: " + value);
+}
+```
+
+**SCENARIO 5: Business Logic**
+```java
+// Business validation
+if(balance < amount) {
+    throw new InsufficientBalanceException(
+        "Insufficient balance. Available: " + balance + ", Required: " + amount
+    );
+}
+
+if(!isAuthorized(userId, resourceId)) {
+    throw new UnauthorizedAccessException(
+        "User " + userId + " not authorized to access resource " + resourceId
+    );
+}
+
+if(status.equals("COMPLETED")) {
+    throw new IllegalStateException(
+        "Cannot modify completed resource"
+    );
+}
+```
+
+**SCENARIO 6: Transactions**
+```java
+@Transactional(rollbackFor = Exception.class)
+public void processOrder(Order order) {
+    try {
+        // Save order
+        orderRepository.save(order);
+        
+        // Reserve inventory
+        inventoryService.reserve(order);
+        
+        // Process payment
+        paymentService.charge(order);
+        
+    } catch(InsufficientInventoryException e) {
+        logger.warn("Insufficient inventory for order: {}", order.getId());
+        throw e; // Rollback transaction
+    } catch(PaymentDeclinedException e) {
+        logger.warn("Payment declined for order: {}", order.getId());
+        throw e; // Rollback transaction
+    }
+}
+```
+
+**SCENARIO 7: Async Operations**
+```java
+@Async
+public CompletableFuture<Report> generateReport(Long id) {
+    try {
+        Report report = reportService.generate(id);
+        return CompletableFuture.completedFuture(report);
+    } catch(Exception e) {
+        logger.error("Report generation failed for id: {}", id, e);
+        return CompletableFuture.failedFuture(e);
+    }
+}
+```
+
+**SCENARIO 8: Batch Processing**
+```java
+public BatchResult processBatch(List<Order> orders) {
+    BatchResult result = new BatchResult();
+    
+    for(Order order : orders) {
+        try {
+            processOrder(order);
+            result.addSuccess(order.getId());
+        } catch(ValidationException e) {
+            logger.warn("Validation failed for order: {}", order.getId(), e);
+            result.addFailure(order.getId(), e.getMessage());
+        } catch(Exception e) {
+            logger.error("Unexpected error processing order: {}", order.getId(), e);
+            result.addFailure(order.getId(), "Processing error");
+        }
+    }
+    
+    return result;
+}
+```
+
+**Industry example:** In PerformanceTrack, you handle exceptions differently based on scenario:
+- File upload: FileNotFoundException → 404 "File not found"
+- Goal save: DataIntegrityViolation → 409 "Goal already exists"
+- External API: Timeout → 503 "Service unavailable" with retry
+- Validation: Invalid date → 400 "Invalid date format"
+- Authorization: Not your goal → 403 "Access denied"
+- Transaction: Payment failed → Rollback entire order creation
+
+---
+
+## PART 13: COMPREHENSIVE EXCEPTION REFERENCE
+
+### Q91. Can you give a complete list of all common Java exceptions with when to use each?
+
+**UNCHECKED EXCEPTIONS (RuntimeException):**
+
+**NullPointerException**
+- When: Accessing method/field on null object
+- Example: `String name = null; name.length();`
+- Prevention: Null checks, Optional
+
+**ArrayIndexOutOfBoundsException**
+- When: Array index < 0 or >= length
+- Example: `int[] arr = new int[5]; arr[10]`
+- Prevention: Validate index before access
+
+**StringIndexOutOfBoundsException**
+- When: String index invalid
+- Example: `"Hello".charAt(10)`
+- Prevention: Check string length
+
+**ArithmeticException**
+- When: Math error (divide by zero)
+- Example: `int x = 10 / 0;`
+- Prevention: Check divisor != 0
+
+**NumberFormatException**
+- When: String to number conversion fails
+- Example: `Integer.parseInt("abc")`
+- Prevention: Validate format before parsing
+
+**ClassCastException**
+- When: Invalid type casting
+- Example: `String s = (String) new Integer(10);`
+- Prevention: instanceof check before cast
+
+**IllegalArgumentException**
+- When: Method receives invalid argument
+- Example: `setAge(-5)` where age must be positive
+- Use: Validate method parameters
+
+**IllegalStateException**
+- When: Object in wrong state for operation
+- Example: Approving already-approved goal
+- Use: State validation
+
+**UnsupportedOperationException**
+- When: Operation not supported
+- Example: `Arrays.asList(...).add(...)` (fixed-size list)
+- Use: Indicate unsupported operations
+
+**ConcurrentModificationException**
+- When: Collection modified during iteration
+- Example: Removing from list while iterating
+- Prevention: Use Iterator.remove() or collect-then-remove
+
+**CHECKED EXCEPTIONS (Exception):**
+
+**IOException**
+- When: Input/output operation fails
+- Subclass: FileNotFoundException
+- Use: File operations, network operations
+
+**SQLException**
+- When: Database operation fails
+- Examples: Connection failed, query error
+- Use: Database access
+
+**ClassNotFoundException**
+- When: Class not found at runtime
+- Example: `Class.forName("NonExistent")`
+- Use: Dynamic class loading
+
+**ParseException**
+- When: Parsing fails (dates, etc.)
+- Example: Invalid date format
+- Use: Data parsing operations
+
+**InterruptedException**
+- When: Thread interrupted while waiting
+- Example: `Thread.sleep()` interrupted
+- Use: Thread operations
+
+**ERRORS (should not catch):**
+
+**OutOfMemoryError**
+- When: JVM runs out of heap memory
+- Cannot recover, JVM crashes
+
+**StackOverflowError**
+- When: Stack space exhausted (infinite recursion)
+- Cannot recover
+
+**NoClassDefFoundError**
+- When: Class available at compile time but not at runtime
+- Different from ClassNotFoundException
+
+**Industry example:** In PerformanceTrack:
+- NullPointerException: goalRepository.findById() returns null, you call .getTitle()
+- IllegalArgumentException: createGoal() receives negative target value
+- IllegalStateException: deleteGoal() when goal is already approved
+- SQLException: Database connection pool exhausted
+- IOException: Reading uploaded goal document fails
+- ParseException: Parsing user-entered deadline date fails
+
+---
+
+### Q92. What is the final checklist for production-ready exception handling?
+
+**CHECKLIST FOR PRODUCTION CODE:**
+
+**✅ 1. Global Exception Handler Configured**
+```java
+@ControllerAdvice present
+All major exceptions mapped to HTTP status codes
+Standard error response format
+Logging configured
+```
+
+**✅ 2. Custom Exceptions Created**
+```java
+Business exceptions extend RuntimeException or Exception appropriately
+Meaningful names (GoalNotFoundException, not Exception1)
+Include message, cause, and additional context
+```
+
+**✅ 3. Exception Translation**
+```java
+Low-level exceptions (SQLException) wrapped in business exceptions
+Each layer translates to appropriate abstraction level
+Original cause preserved in chain
+```
+
+**✅ 4. Logging Strategy**
+```java
+ERROR level for unexpected exceptions
+WARN level for expected exceptions (not found, validation)
+Include context (user ID, resource ID, operation)
+Full stack trace for debugging
+```
+
+**✅ 5. Resource Cleanup**
+```java
+Use try-with-resources for AutoCloseable
+finally blocks for manual cleanup
+No return or throw in finally
+```
+
+**✅ 6. Transactional Behavior**
+```java
+@Transactional(rollbackFor) configured correctly
+Understand checked vs unchecked rollback rules
+Test transaction rollback scenarios
+```
+
+**✅ 7. Async Exception Handling**
+```java
+@Async methods return CompletableFuture
+AsyncUncaughtExceptionHandler configured
+Exceptions don't disappear silently
+```
+
+**✅ 8. External Service Calls**
+```java
+Timeouts configured
+Circuit breaker for critical services
+Retry for transient failures
+Fallback mechanisms
+```
+
+**✅ 9. Message Processing**
+```java
+Dead Letter Queue configured
+Idempotent processing
+Retry strategy defined
+Failed message monitoring
+```
+
+**✅ 10. User-Friendly Messages**
+```java
+Don't expose technical details
+Internationalization support
+Actionable error messages
+Consistent format
+```
+
+**✅ 11. Testing**
+```java
+Unit tests for exception scenarios
+Integration tests for error flows
+Test HTTP status codes
+Test error response format
+```
+
+**✅ 12. Monitoring & Alerting**
+```java
+Exception metrics tracked
+Alerts for critical exceptions
+Dashboard for error rates
+Exception trend analysis
+```
+
+**Industry example - PerformanceTrack Production Checklist:**
+```
+✅ GlobalExceptionHandler with all business exceptions
+✅ Custom exceptions: GoalNotFoundException, UnauthorizedException, etc.
+✅ SQLException wrapped in DataAccessException
+✅ Logging: ERROR for DB errors, WARN for not found
+✅ Try-with-resources for file operations
+✅ @Transactional(rollbackFor = Exception.class) on service methods
+✅ @Async returns CompletableFuture with exceptionally()
+✅ RestTemplate has 5s timeout, circuit breaker configured
+✅ Kafka has DLQ for failed messages
+✅ Error messages: "Goal not found" not "SQLException: ..."
+✅ Tests for 404, 403, 409, 500 scenarios
+✅ CloudWatch alerts for exception rate > threshold
+```
+
+---
+
+## FINAL COMPREHENSIVE INTERVIEW SCENARIOS
+
+### Q93. Interview Scenario: "Walk me through how you would handle exceptions in a real-world order processing system."
+
+**MY ANSWER:**
+
+"In an order processing system, I would implement multi-layered exception handling:
+
+**Layer 1 - Controller Layer:**
+- Global exception handler with @ControllerAdvice
+- Map exceptions to HTTP status codes
+- OrderNotFoundException → 404
+- InsufficientInventoryException → 422
+- PaymentDeclinedException → 402
+- Return standard error response JSON
+
+**Layer 2 - Service Layer:**
+- Validate business rules, throw appropriate exceptions
+- Translate database exceptions to business exceptions
+- Use @Transactional with proper rollback configuration
+- If inventory reservation fails, payment doesn't happen (rollback)
+
+**Layer 3 - External Integration:**
+- Payment gateway calls wrapped in circuit breaker
+- Retry for network timeouts (3 attempts with exponential backoff)
+- Fallback: Queue payment for later processing
+- Email notification failures don't stop order processing
+
+**Layer 4 - Data Layer:**
+- Repository exceptions caught in service layer
+- SQLException → DataAccessException → OrderProcessingException
+- Duplicate key constraint → DuplicateOrderException
+
+**Example flow:**
+```java
+@Transactional(rollbackFor = Exception.class)
+public Order processOrder(OrderRequest request) {
+    // Validate
+    if(request.getAmount() <= 0) {
+        throw new ValidationException("Invalid amount");
+    }
+    
+    // Check inventory
+    if(!inventoryService.isAvailable(request.getProductId(), request.getQuantity())) {
+        throw new InsufficientInventoryException("Product out of stock");
+    }
+    
+    // Reserve inventory
+    inventoryService.reserve(request.getProductId(), request.getQuantity());
+    
+    // Process payment with retry and circuit breaker
+    try {
+        PaymentResponse payment = circuitBreaker.executeSupplier(() ->
+            retry.executeSupplier(() -> 
+                paymentService.charge(request.getAmount())
+            )
+        );
+    } catch(PaymentDeclinedException e) {
+        // Rollback happens automatically
+        throw e;
+    } catch(ServiceUnavailableException e) {
+        // Queue for later
+        paymentQueue.add(request);
+    }
+    
+    // Save order
+    Order order = orderRepository.save(new Order(request));
+    
+    // Async notification (fire and forget)
+    notificationService.sendConfirmation(order).exceptionally(ex -> {
+        logger.error("Notification failed, saved to retry queue", ex);
+        return null;
+    });
+    
+    return order;
+}
+```
+
+This ensures: data consistency (transactions), resilience (circuit breaker, retry), observability (logging), and good user experience (meaningful error messages)."
+
+---
+
+### Q94. Interview Scenario: "How would you debug a NullPointerException in production that you cannot reproduce locally?"
+
+**MY ANSWER:**
+
+"I would follow this systematic approach:
+
+**Step 1 - Analyze Stack Trace:**
+- Get full stack trace from logs
+- Identify exact line number
+- Check which object is null
+
+**Step 2 - Add Defensive Logging:**
+Deploy new version with detailed logging:
+```java
+// Before (crashes):
+public void approveGoal(Long goalId) {
+    Goal goal = goalRepository.findById(goalId).get();
+    goal.setStatus("APPROVED"); // NPE here
+}
+
+// After (with logging):
+public void approveGoal(Long goalId) {
+    logger.info("Approving goal: {}", goalId);
+    
+    Optional<Goal> goalOpt = goalRepository.findById(goalId);
+    logger.info("Goal found: {}", goalOpt.isPresent());
+    
+    if(!goalOpt.isPresent()) {
+        logger.error("Goal not found in database: {}", goalId);
+        throw new GoalNotFoundException(goalId);
+    }
+    
+    Goal goal = goalOpt.get();
+    logger.info("Goal status before: {}", goal.getStatus());
+    logger.info("Goal manager: {}", goal.getManagerId());
+    
+    goal.setStatus("APPROVED");
+    logger.info("Goal status updated");
+}
+```
+
+**Step 3 - Check Environment Differences:**
+- Production database has different data?
+- Race condition in multi-threaded production environment?
+- Different configuration (null values from properties)?
+
+**Step 4 - Add Null Checks:**
+```java
+public void approveGoal(Long goalId) {
+    Goal goal = goalRepository.findById(goalId)
+        .orElseThrow(() -> new GoalNotFoundException(goalId));
+    
+    if(goal.getManagerId() == null) {
+        logger.error("Goal {} has no manager assigned", goalId);
+        throw new IllegalStateException("Goal has no manager");
+    }
+    
+    goal.setStatus("APPROVED");
+}
+```
+
+**Step 5 - Use Monitoring Tools:**
+- Check APM tool (NewRelic, Datadog) for request parameters
+- Analyze which requests are causing NPE
+- Look for patterns (specific users? specific times?)
+
+**Step 6 - Reproduce with Production Data:**
+- Get sanitized copy of production database
+- Run locally with production-like data
+- Try to trigger the same code path
+
+**Step 7 - Implement Permanent Fix:**
+After identifying root cause, implement proper fix with:
+- Null checks at appropriate places
+- Validation at entry points
+- Better error messages
+- Unit tests for null scenarios
+
+This happened in PerformanceTrack - goal approval failed in production but not locally. Turned out production had orphaned goals (employee deleted but goal remained with null employee reference). Added null check and data cleanup script."
+
+---
+
+This completes the comprehensive exception handling guide! You now have:
+- 94 interview questions covering all aspects
+- Compilation errors, runtime exceptions, checked exceptions
+- Global exception handling, best practices
+- Microservices, async, transactions
+- Real-world scenarios and debugging strategies
+
+All in conversational format with industry examples from PerformanceTrack!
