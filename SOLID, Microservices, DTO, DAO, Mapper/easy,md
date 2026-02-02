@@ -1,0 +1,1143 @@
+# Complete Interview Guide: SOLID, Microservices, DTO, DAO, Mapper
+
+## SOLID Principles Questions
+
+### **Q1: What are SOLID principles and why do we need them?**
+
+SOLID is basically five design principles that help us write better, cleaner code. Think of it like cooking rules - just like you follow certain steps to make good food, SOLID gives us rules to write good code.
+
+We need them because without these principles, our code becomes messy. Imagine adding new features breaks old features, or changing one class requires changing 10 other classes. SOLID prevents these headaches.
+
+The five principles are: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.
+
+---
+
+### **Q2: Explain Single Responsibility Principle with example**
+
+SRP says one class should do only one job. Don't make a class that does everything.
+
+Bad example: A `User` class that handles user data, sends emails, and also saves to database. That's three jobs!
+
+Good example: Split it into three classes:
+- `User` - holds user data
+- `EmailService` - sends emails  
+- `UserRepository` - saves to database
+
+This way, if email logic changes, you only touch `EmailService`, not the entire `User` class.
+
+---
+
+### **Q3: What is Open/Closed Principle? Give real example**
+
+Open/Closed means classes should be open for extension but closed for modification. You should add new features WITHOUT changing existing code.
+
+Real example from PerformanceTrack: Let's say you have a `ReportGenerator` class. Instead of modifying it every time you need a new report type, create a `Report` interface and make different implementations like `GoalReport`, `FeedbackReport`, `PerformanceReport`.
+
+```java
+interface Report {
+    void generate();
+}
+
+class GoalReport implements Report {
+    public void generate() { /* goal logic */ }
+}
+```
+
+Now you can add new report types without touching old code. That's Open/Closed.
+
+---
+
+### **Q4: Explain Liskov Substitution Principle in simple terms**
+
+LSP says if you have a parent class and a child class, you should be able to use the child class anywhere you use the parent class without breaking anything.
+
+Simple example: If `Bird` is parent and `Sparrow` is child, wherever you use `Bird`, you should be able to replace it with `Sparrow` and everything still works.
+
+Bad example: If `Bird` has `fly()` method, but you make a `Penguin` class (penguins can't fly), then replacing `Bird` with `Penguin` breaks the code. That violates LSP.
+
+---
+
+### **Q5: What is Interface Segregation Principle?**
+
+ISP says don't force classes to implement methods they don't need. Keep interfaces small and specific.
+
+Bad example:
+```java
+interface Employee {
+    void submitGoal();
+    void reviewGoal();
+    void generateReport();
+}
+```
+
+Now regular employees must implement `generateReport()` even though only managers generate reports!
+
+Good example: Split into smaller interfaces:
+```java
+interface GoalSubmitter {
+    void submitGoal();
+}
+
+interface GoalReviewer {
+    void reviewGoal();
+}
+```
+
+Now employees only implement what they actually do.
+
+---
+
+### **Q6: Explain Dependency Inversion Principle**
+
+DIP says depend on abstractions (interfaces), not concrete classes. High-level classes shouldn't depend on low-level classes.
+
+Without DIP:
+```java
+class GoalService {
+    MySQLDatabase db = new MySQLDatabase(); // depends on concrete class
+}
+```
+
+Now you're stuck with MySQL. What if you want PostgreSQL?
+
+With DIP:
+```java
+class GoalService {
+    Database db; // depends on interface
+    
+    GoalService(Database db) {
+        this.db = db;
+    }
+}
+```
+
+Now you can inject any database implementation. That's the power of DIP.
+
+---
+
+### **Q7: How do SOLID principles help in real projects?**
+
+In PerformanceTrack, SOLID makes your life easier:
+
+- **SRP**: Your `GoalService` only handles business logic, not database or email stuff
+- **Open/Closed**: Adding new report types doesn't break existing reports
+- **LSP**: Any `User` subclass (Employee, Manager, Admin) works wherever `User` is expected
+- **ISP**: Employees don't have methods for admin-only operations
+- **DIP**: You can switch from MySQL to PostgreSQL without changing service classes
+
+Bottom line: less bugs, easier testing, easier to add features, easier for team members to understand code.
+
+---
+
+### **Q8: Can you violate SOLID principles? When is it okay?**
+
+Yes, you can violate them if you have good reasons. SOLID are guidelines, not laws.
+
+Sometimes violating is okay for:
+- Very simple applications (don't over-engineer)
+- Prototypes or MVPs (speed matters more)
+- Performance-critical code (sometimes the "clean" way is slower)
+
+But in enterprise projects like PerformanceTrack, follow SOLID. The benefits are huge.
+
+---
+
+### **Q9: What's the difference between SRP and ISP?**
+
+SRP is about classes - one class, one responsibility.
+
+ISP is about interfaces - don't force classes to implement unnecessary methods.
+
+Example: 
+- SRP violation: `UserService` that sends emails, saves to DB, generates reports
+- ISP violation: Interface with 20 methods, but classes only need 3
+
+Both promote separation, but at different levels.
+
+---
+
+### **Q10: How does DIP relate to Dependency Injection in Spring?**
+
+DIP is the principle, Dependency Injection (DI) is how you implement it.
+
+DIP says "depend on interfaces". Spring's DI actually provides those implementations at runtime using `@Autowired`.
+
+```java
+class GoalService {
+    @Autowired
+    private GoalRepository repo; // interface
+}
+```
+
+Spring automatically creates the implementation and injects it. You're following DIP because `GoalService` doesn't know which concrete class it's getting - Spring decides.
+
+---
+
+## Microservices Questions
+
+### **Q11: What are microservices?**
+
+Microservices means breaking your big application into small, independent services. Each service does one specific business function.
+
+Instead of one giant PerformanceTrack application, you'd have:
+- Goal Service (handles goals)
+- Review Service (handles reviews)
+- Feedback Service (handles feedback)
+- User Service (handles authentication)
+
+Each service runs independently, has its own database, and communicates with others through APIs.
+
+---
+
+### **Q12: What's the difference between monolithic and microservices architecture?**
+
+Monolithic is like one big building - everything is together. If one part breaks, the whole building might collapse. Deploying means deploying everything.
+
+Microservices is like a shopping mall with separate shops. Each shop is independent. If one shop closes, others keep running. You can renovate one shop without affecting others.
+
+In PerformanceTrack monolithic: All modules in one deployable unit.
+
+In microservices: Each module is a separate service with its own deployment.
+
+---
+
+### **Q13: What are advantages of microservices?**
+
+**Independent deployment**: Update Goal Service without touching Feedback Service.
+
+**Technology flexibility**: Goal Service in Java, Feedback Service in Python if needed.
+
+**Scalability**: If Goal Service gets heavy traffic, scale only that service, not everything.
+
+**Team independence**: Different teams work on different services without stepping on each other.
+
+**Fault isolation**: If Review Service crashes, Goal Service keeps working.
+
+---
+
+### **Q14: What are disadvantages or challenges of microservices?**
+
+**Complexity**: Managing 10 services is harder than managing 1 application.
+
+**Network calls**: Services communicate over network, which is slower than in-memory calls.
+
+**Data consistency**: Hard to maintain transactions across multiple services.
+
+**Debugging**: When something fails, which of the 10 services caused it?
+
+**Deployment overhead**: Need to deploy and monitor multiple services.
+
+For college projects, monolithic is usually better. Microservices are for large, complex systems.
+
+---
+
+### **Q15: What is API Gateway in microservices?**
+
+API Gateway is the single entry point for all client requests. Think of it as a receptionist in a building.
+
+Instead of clients calling Goal Service, Review Service, Feedback Service directly, they call the API Gateway. The gateway routes requests to the correct service.
+
+Benefits:
+- Single URL for clients
+- Handles authentication once
+- Can do load balancing
+- Hides internal service structure
+
+Example: Client calls `api-gateway.com/goals`, gateway forwards to Goal Service.
+
+---
+
+### **Q16: How do microservices communicate with each other?**
+
+Two main ways:
+
+**Synchronous (REST/HTTP)**: Service A directly calls Service B's API and waits for response. Like making a phone call.
+
+**Asynchronous (Message Queue)**: Service A puts message in a queue, Service B picks it up later. Like sending an email.
+
+In PerformanceTrack: When a goal is approved, Goal Service could publish a message to a queue, and Notification Service picks it up to send email. Goal Service doesn't wait for email to be sent.
+
+---
+
+### **Q17: What is service discovery?**
+
+In microservices, services run on different servers/ports. Service discovery helps services find each other.
+
+Without service discovery: Goal Service needs to know Review Service is at `192.168.1.5:8081`. What if it moves?
+
+With service discovery (like Eureka): Services register themselves. Goal Service asks "Where is Review Service?" and gets the current address.
+
+It's like a phone directory for services.
+
+---
+
+### **Q18: What is circuit breaker pattern?**
+
+Circuit breaker protects your system when a service is down. It's like an electrical circuit breaker.
+
+Scenario: Goal Service calls Review Service. Review Service is down. Without circuit breaker, Goal Service keeps trying, wasting resources and hanging.
+
+With circuit breaker (like Hystrix/Resilience4j): After few failed attempts, circuit breaker "opens" and Goal Service immediately returns a fallback response instead of calling Review Service.
+
+After some time, it tries again. If successful, circuit "closes" and normal flow resumes.
+
+---
+
+### **Q19: What is the database per service pattern?**
+
+Each microservice has its own database. Goal Service has goals_db, Review Service has reviews_db.
+
+**Why?** 
+- Services are truly independent
+- Can use different database types (MySQL for one, MongoDB for another)
+- Schema changes in one service don't affect others
+
+**Challenge?** 
+How to get data from multiple services? You need to make API calls or use event-driven approaches.
+
+---
+
+### **Q20: What is eventual consistency in microservices?**
+
+In monolithic apps, you can use database transactions to ensure data is always consistent immediately.
+
+In microservices with separate databases, you can't do that. So we accept "eventual consistency" - data will be consistent eventually, not immediately.
+
+Example: User creates a goal in Goal Service. Notification Service needs to send email. If Notification Service is temporarily down, the email is sent later (eventually), not immediately.
+
+---
+
+### **Q21: How do you handle transactions across microservices?**
+
+This is tough. You can't use traditional database transactions across services.
+
+Solutions:
+
+**Saga pattern**: Break transaction into multiple local transactions. Each service does its part and publishes an event. If something fails, compensating transactions undo previous steps.
+
+Example: Order Service → Payment Service → Inventory Service. If payment fails, Order Service cancels the order.
+
+**Two-Phase Commit**: Coordinator asks all services to prepare, then asks to commit. Rarely used because it's complex and blocking.
+
+For most cases, design services to avoid needing distributed transactions.
+
+---
+
+### **Q22: What tools are used in microservices?**
+
+**Service Registry**: Eureka, Consul - for service discovery
+
+**API Gateway**: Spring Cloud Gateway, Kong - single entry point
+
+**Config Server**: Spring Cloud Config - centralized configuration
+
+**Circuit Breaker**: Resilience4j, Hystrix - fault tolerance
+
+**Message Queue**: RabbitMQ, Kafka - async communication
+
+**Containerization**: Docker - package services
+
+**Orchestration**: Kubernetes - manage containers
+
+**Monitoring**: Prometheus, Grafana, ELK Stack - track service health
+
+---
+
+### **Q23: When should you use microservices?**
+
+Use microservices when:
+- Application is large and complex
+- Different modules have different scaling needs
+- Multiple teams working on the project
+- Need to deploy parts independently
+- Different technologies for different modules
+
+DON'T use microservices when:
+- Small application (like college projects)
+- Small team
+- Starting new project (start monolithic, break later if needed)
+- Don't have DevOps expertise
+
+For PerformanceTrack college project, monolithic is perfect. In real Cognizant projects with hundreds of developers, microservices make sense.
+
+---
+
+### **Q24: What is containerization and why is it important for microservices?**
+
+Containerization (Docker) packages your service with everything it needs (code, libraries, dependencies) into a container. It runs the same everywhere.
+
+Without containers: "It works on my machine!" problem. Goal Service works on your laptop but fails on server because of different Java versions or missing libraries.
+
+With containers: Package Goal Service in a Docker container with the exact Java version, libraries, everything. It runs identically on your laptop, test server, and production.
+
+For 10 microservices, you have 10 containers. Easy to deploy and manage.
+
+---
+
+### **Q25: What is Kubernetes and why use it?**
+
+Kubernetes (K8s) manages your containers. When you have 10 services with 100 containers, managing manually is impossible.
+
+Kubernetes does:
+- **Deployment**: Deploys containers across multiple servers
+- **Scaling**: Automatically adds more containers if load increases
+- **Load balancing**: Distributes traffic across containers
+- **Self-healing**: Restarts crashed containers
+- **Rolling updates**: Updates services without downtime
+
+Think of Kubernetes as an operating system for your microservices infrastructure.
+
+---
+
+## DTO (Data Transfer Object) Questions
+
+### **Q26: What is DTO and why do we use it?**
+
+DTO is a simple object that carries data between layers or services. It's like a box for transporting data.
+
+**Why use DTO?**
+
+Your `Goal` entity has 20 fields including audit fields, internal IDs, etc. When sending goal data to the frontend, you don't want to send everything.
+
+DTO lets you:
+- Send only necessary data (security)
+- Hide internal implementation
+- Customize response format
+- Decouple frontend from backend entities
+
+---
+
+### **Q27: What's the difference between Entity and DTO?**
+
+**Entity**: Represents database table. Maps to your database schema. Has JPA annotations like `@Entity`, `@Table`.
+
+```java
+@Entity
+class Goal {
+    @Id
+    private Long id;
+    private String title;
+    private LocalDateTime createdAt;
+    // other fields
+}
+```
+
+**DTO**: Represents data you send/receive through API. No database mapping.
+
+```java
+class GoalDTO {
+    private Long id;
+    private String title;
+    // only fields needed for API
+}
+```
+
+Entity is for database, DTO is for API communication.
+
+---
+
+### **Q28: Should we use the same class for request and response?**
+
+Not always. Often you need different DTOs.
+
+**GoalRequestDTO** (when creating goal):
+```java
+class GoalRequestDTO {
+    private String title;
+    private String description;
+    // no id, user sends data
+}
+```
+
+**GoalResponseDTO** (when sending back goal):
+```java
+class GoalResponseDTO {
+    private Long id;
+    private String title;
+    private String status;
+    private String employeeName; // joined data
+}
+```
+
+Response often has more data (like id, calculated fields) than request. Separate DTOs give you flexibility.
+
+---
+
+### **Q29: How do you convert Entity to DTO?**
+
+Three common ways:
+
+**Manual conversion** (simple):
+```java
+GoalDTO dto = new GoalDTO();
+dto.setId(goal.getId());
+dto.setTitle(goal.getTitle());
+```
+
+**Using constructor**:
+```java
+public GoalDTO(Goal goal) {
+    this.id = goal.getId();
+    this.title = goal.getTitle();
+}
+```
+
+**Using mapper libraries** (ModelMapper, MapStruct):
+```java
+GoalDTO dto = modelMapper.map(goal, GoalDTO.class);
+```
+
+For PerformanceTrack, manual conversion or constructor is fine. For large projects, use MapStruct.
+
+---
+
+### **Q30: Where should DTO conversion happen?**
+
+Best practice: Convert in Controller or Service layer.
+
+**In Controller** (common):
+```java
+@PostMapping("/goals")
+public GoalResponseDTO createGoal(@RequestBody GoalRequestDTO dto) {
+    Goal goal = convertToEntity(dto);
+    Goal saved = goalService.save(goal);
+    return convertToDTO(saved);
+}
+```
+
+**In Service** (if complex logic):
+```java
+public GoalResponseDTO createGoal(GoalRequestDTO dto) {
+    Goal goal = convertToEntity(dto);
+    Goal saved = goalRepository.save(goal);
+    return convertToDTO(saved);
+}
+```
+
+Never expose entities directly through your API. Always use DTOs.
+
+---
+
+### **Q31: What are nested DTOs?**
+
+DTOs that contain other DTOs. Common when returning related data.
+
+Example:
+```java
+class GoalResponseDTO {
+    private Long id;
+    private String title;
+    private EmployeeDTO employee; // nested DTO
+}
+
+class EmployeeDTO {
+    private Long id;
+    private String name;
+}
+```
+
+When you return a goal, it includes employee info as a nested object. This is cleaner than flattening everything.
+
+---
+
+### **Q32: Should DTOs have validation annotations?**
+
+Yes! DTOs are perfect for validation because they represent incoming data.
+
+```java
+class GoalRequestDTO {
+    @NotBlank(message = "Title is required")
+    @Size(max = 100, message = "Title too long")
+    private String title;
+    
+    @NotNull
+    @Future(message = "Deadline must be in future")
+    private LocalDate deadline;
+}
+```
+
+Then in controller:
+```java
+@PostMapping("/goals")
+public GoalResponseDTO create(@Valid @RequestBody GoalRequestDTO dto) {
+    // validation happens automatically
+}
+```
+
+This way validation is at API entry point, not in entity or service.
+
+---
+
+### **Q33: What's the difference between DTO and VO (Value Object)?**
+
+**DTO**: Transfers data between layers. Mutable. Simple getters/setters.
+
+**VO**: Represents a value. Immutable. Has business logic. Like `Money`, `Email`, `Address`.
+
+```java
+class Email { // Value Object
+    private final String value;
+    
+    public Email(String value) {
+        if (!isValid(value)) throw new IllegalArgumentException();
+        this.value = value;
+    }
+    
+    // no setters, immutable
+}
+```
+
+In practice, for PerformanceTrack, you mostly use DTOs. VOs are for domain-driven design.
+
+---
+
+### **Q34: Do DTOs have business logic?**
+
+Generally no. DTOs are dumb data containers.
+
+Business logic belongs in Service layer with entities.
+
+Exception: Simple formatting or conversion logic is okay.
+
+```java
+class GoalDTO {
+    private LocalDate deadline;
+    
+    public String getFormattedDeadline() {
+        return deadline.format(DateTimeFormatter.ISO_DATE);
+    }
+}
+```
+
+But don't put complex business rules in DTOs.
+
+---
+
+### **Q35: How do you handle DTOs in microservices?**
+
+Each service has its own DTOs. When Service A calls Service B, it uses Service B's DTO.
+
+Option 1: Duplicate DTOs in each service (simple)
+
+Option 2: Shared DTO library that all services import (risky, creates coupling)
+
+Option 3: Each service has its own DTOs and does conversion (best practice)
+
+For PerformanceTrack microservices, if you split into services, each service would have its own `GoalDTO`, `ReviewDTO`, etc.
+
+---
+
+## DAO (Data Access Object) Questions
+
+### **Q36: What is DAO pattern?**
+
+DAO is a pattern that separates database access logic from business logic. It's a layer between your service and database.
+
+Instead of service directly doing SQL queries, service calls DAO methods. DAO handles all database operations.
+
+```java
+class GoalService {
+    private GoalDAO goalDAO;
+    
+    public Goal getGoal(Long id) {
+        return goalDAO.findById(id); // service doesn't know about SQL
+    }
+}
+```
+
+This way, if you change database from MySQL to MongoDB, you only change DAO, not service.
+
+---
+
+### **Q37: What's the difference between DAO and Repository?**
+
+They're very similar, but subtle difference:
+
+**DAO**: Generic data access. Can work with any data source (database, file, API).
+
+**Repository**: Domain-driven design concept. Works with aggregate roots and domain objects.
+
+In Spring Data JPA, we use Repository pattern:
+```java
+interface GoalRepository extends JpaRepository<Goal, Long> {
+}
+```
+
+In practice, people use these terms interchangeably. Repository is the modern way.
+
+---
+
+### **Q38: Do we still need DAO in Spring Boot?**
+
+Not traditional DAO classes. Spring Data JPA repositories replace them.
+
+Old way (manual DAO):
+```java
+class GoalDAO {
+    public Goal findById(Long id) {
+        // JDBC code, SQL queries
+    }
+    public void save(Goal goal) {
+        // JDBC code
+    }
+}
+```
+
+Spring Boot way:
+```java
+interface GoalRepository extends JpaRepository<Goal, Long> {
+    // methods provided automatically
+}
+```
+
+Spring Data JPA does all the DAO work for you. That's why we don't write DAO classes anymore.
+
+---
+
+### **Q39: When would you create a custom DAO?**
+
+Rarely, but sometimes:
+
+**Complex native queries**: If JPA can't handle your query
+**Multiple data sources**: Connecting to legacy systems
+**Non-database data**: Reading from files, external APIs
+**Performance**: Hand-optimized JDBC for high-performance scenarios
+
+For PerformanceTrack, Spring Data JPA repositories are enough. In real enterprise with legacy systems, you might need custom DAOs.
+
+---
+
+### **Q40: What's the advantage of DAO pattern?**
+
+**Separation of concerns**: Service doesn't know database details
+
+**Testability**: Mock DAO in service tests
+
+**Flexibility**: Change database without changing service
+
+**Reusability**: Multiple services can use same DAO
+
+**Consistency**: All database access goes through DAO, enforcing standards
+
+---
+
+## Mapper Questions
+
+### **Q41: What is a Mapper?**
+
+Mapper converts one object type to another. Typically Entity ↔ DTO conversion.
+
+```java
+class GoalMapper {
+    public static GoalDTO toDTO(Goal goal) {
+        GoalDTO dto = new GoalDTO();
+        dto.setId(goal.getId());
+        dto.setTitle(goal.getTitle());
+        return dto;
+    }
+    
+    public static Goal toEntity(GoalDTO dto) {
+        Goal goal = new Goal();
+        goal.setTitle(dto.getTitle());
+        return goal;
+    }
+}
+```
+
+Mapper keeps conversion logic in one place, not scattered everywhere.
+
+---
+
+### **Q42: What are mapper libraries? Name some.**
+
+Libraries that automatically map objects without manual code:
+
+**ModelMapper**: Reflection-based, convention over configuration
+**MapStruct**: Compile-time code generation, fastest
+**Dozer**: XML/annotation based
+**Orika**: Byte code generation
+
+Most popular: **ModelMapper** (easy) and **MapStruct** (production-grade).
+
+---
+
+### **Q43: How does ModelMapper work?**
+
+ModelMapper uses reflection to automatically map matching fields.
+
+Setup:
+```java
+@Bean
+public ModelMapper modelMapper() {
+    return new ModelMapper();
+}
+```
+
+Usage:
+```java
+@Autowired
+ModelMapper modelMapper;
+
+GoalDTO dto = modelMapper.map(goal, GoalDTO.class);
+```
+
+It automatically maps fields with same names. For different names, you configure it.
+
+Easy to use but slower than MapStruct because it uses reflection.
+
+---
+
+### **Q44: How does MapStruct work?**
+
+MapStruct generates mapper code at compile time. It's faster than ModelMapper.
+
+Define interface:
+```java
+@Mapper(componentModel = "spring")
+public interface GoalMapper {
+    GoalDTO toDTO(Goal goal);
+    Goal toEntity(GoalDTO dto);
+}
+```
+
+MapStruct generates implementation automatically during compilation. You inject and use it:
+
+```java
+@Autowired
+GoalMapper goalMapper;
+
+GoalDTO dto = goalMapper.toDTO(goal);
+```
+
+No reflection, just plain Java code. Very fast.
+
+---
+
+### **Q45: ModelMapper vs MapStruct - which to choose?**
+
+**ModelMapper**:
+- Easy setup, no configuration
+- Good for simple mappings
+- Slower (uses reflection)
+- Runtime errors if mapping wrong
+
+**MapStruct**:
+- Requires more setup
+- Compile-time safety (errors at compile time, not runtime)
+- Very fast (generates code)
+- Better for large projects
+
+For PerformanceTrack college project: ModelMapper is fine.
+
+For Cognizant production projects: Use MapStruct.
+
+---
+
+### **Q46: How do you handle different field names in mapping?**
+
+If entity has `goalTitle` but DTO has `title`, mapper won't auto-map.
+
+**ModelMapper**:
+```java
+modelMapper.typeMap(Goal.class, GoalDTO.class)
+    .addMapping(Goal::getGoalTitle, GoalDTO::setTitle);
+```
+
+**MapStruct**:
+```java
+@Mapping(source = "goalTitle", target = "title")
+GoalDTO toDTO(Goal goal);
+```
+
+**Manual mapper**:
+```java
+dto.setTitle(goal.getGoalTitle());
+```
+
+---
+
+### **Q47: How do you handle nested objects in mapping?**
+
+Mapper libraries handle nested objects automatically if you have DTOs for them.
+
+```java
+class Goal {
+    private Employee employee; // nested entity
+}
+
+class GoalDTO {
+    private EmployeeDTO employee; // nested DTO
+}
+
+@Mapper
+interface GoalMapper {
+    GoalDTO toDTO(Goal goal); // also maps nested employee
+}
+```
+
+Mapper automatically calls `EmployeeMapper` for nested object. You need to define `EmployeeMapper` too.
+
+---
+
+### **Q48: How do you handle collections in mapping?**
+
+Same as single objects. Mapper handles lists automatically.
+
+```java
+@Mapper
+interface GoalMapper {
+    List<GoalDTO> toDTOList(List<Goal> goals);
+}
+```
+
+Call it:
+```java
+List<Goal> goals = goalRepository.findAll();
+List<GoalDTO> dtos = goalMapper.toDTOList(goals);
+```
+
+It loops through and converts each goal. Very convenient.
+
+---
+
+### **Q49: Should mapper be in Service or Controller?**
+
+Either works, but best practice:
+
+**Controller** (common for simple projects):
+```java
+@PostMapping("/goals")
+public GoalDTO create(@RequestBody GoalDTO dto) {
+    Goal goal = goalMapper.toEntity(dto);
+    Goal saved = goalService.save(goal);
+    return goalMapper.toDTO(saved);
+}
+```
+
+**Service** (better for complex logic):
+```java
+public GoalDTO createGoal(GoalDTO dto) {
+    Goal goal = goalMapper.toEntity(dto);
+    Goal saved = goalRepository.save(goal);
+    return goalMapper.toDTO(saved);
+}
+```
+
+For PerformanceTrack, do it in controller to keep service focused on business logic.
+
+---
+
+### **Q50: Do you need mapper for simple cases?**
+
+If your DTO and Entity are almost identical, mapper might be overkill.
+
+Simple case - just do manual conversion:
+```java
+GoalDTO dto = new GoalDTO(goal.getId(), goal.getTitle());
+```
+
+Complex case (10+ fields, nested objects) - use mapper library.
+
+Don't over-engineer. For PerformanceTrack, manual conversion is probably fine unless you have many DTOs.
+
+---
+
+### **Q51: How do you test mappers?**
+
+Write unit tests to ensure mapping is correct.
+
+```java
+@Test
+public void testGoalMapping() {
+    Goal goal = new Goal();
+    goal.setId(1L);
+    goal.setTitle("Test Goal");
+    
+    GoalDTO dto = goalMapper.toDTO(goal);
+    
+    assertEquals(1L, dto.getId());
+    assertEquals("Test Goal", dto.getTitle());
+}
+```
+
+Test both directions: Entity → DTO and DTO → Entity.
+
+With MapStruct, mapping is generated at compile time, so less risk. But still test to ensure your configurations are correct.
+
+---
+
+### **Q52: How do you handle null values in mapping?**
+
+Mapper libraries have different strategies:
+
+**ModelMapper**: By default skips null values
+
+**MapStruct**: Can configure:
+```java
+@Mapper(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+```
+
+**Manual**: Handle yourself:
+```java
+if (goal.getTitle() != null) {
+    dto.setTitle(goal.getTitle());
+}
+```
+
+Usually default behavior is fine. Only configure if you have specific requirements.
+
+---
+
+### **Q53: Can mapper handle type conversions?**
+
+Yes! Mapper libraries handle common conversions automatically.
+
+Example: String to Integer, Date to LocalDate, etc.
+
+```java
+class Goal {
+    private LocalDate deadline;
+}
+
+class GoalDTO {
+    private String deadline; // different type
+}
+```
+
+MapStruct can convert:
+```java
+@Mapper
+interface GoalMapper {
+    @Mapping(source = "deadline", target = "deadline", dateFormat = "yyyy-MM-dd")
+    GoalDTO toDTO(Goal goal);
+}
+```
+
+For custom conversions, you write converter methods.
+
+---
+
+### **Q54: What is the performance impact of using mappers?**
+
+**ModelMapper**: Slower because of reflection. But for most applications, the difference is negligible unless you're mapping thousands of objects per second.
+
+**MapStruct**: Almost zero overhead. Generated code is as fast as manual code.
+
+**Manual mapping**: Fastest, but most code.
+
+For PerformanceTrack, performance is not a concern. Use whatever is most convenient.
+
+---
+
+### **Q55: Should each service have its own mapper?**
+
+Yes, especially in microservices.
+
+Goal Service has `GoalMapper`, Review Service has `ReviewMapper`.
+
+Even if they map similar objects, keep them separate. This maintains service independence.
+
+In monolithic PerformanceTrack, you can have all mappers in a `mapper` package and reuse them.
+
+---
+
+## Integration Questions (Combining Concepts)
+
+### **Q56: How do SOLID principles apply to DTO/DAO/Mapper design?**
+
+**SRP**: DTO only holds data, DAO only does database access, Mapper only does conversion. Each class one responsibility.
+
+**ISP**: Don't make a giant DTO with 50 fields. Make specific DTOs like `GoalCreateDTO`, `GoalUpdateDTO`, `GoalResponseDTO`.
+
+**DIP**: Service depends on `GoalRepository` interface, not concrete implementation. You can swap JPA with JDBC without changing service.
+
+Following SOLID makes your DTO/DAO/Mapper code cleaner and more maintainable.
+
+---
+
+### **Q57: How would you design DTO layer for PerformanceTrack microservices?**
+
+Each microservice has its own DTOs:
+
+**Goal Service**:
+- `GoalRequestDTO`, `GoalResponseDTO`, `GoalUpdateDTO`
+
+**Review Service**:
+- `ReviewRequestDTO`, `ReviewResponseDTO`
+
+**Feedback Service**:
+- `FeedbackRequestDTO`, `FeedbackResponseDTO`
+
+When Goal Service calls Review Service, it uses Review Service's DTOs. Don't share DTOs across services - keeps them independent.
+
+---
+
+### **Q58: How do you handle validation in DTO vs Entity?**
+
+**DTO**: API-level validation (required fields, format, size)
+```java
+class GoalRequestDTO {
+    @NotBlank
+    @Size(max = 100)
+    private String title;
+}
+```
+
+**Entity**: Database-level validation (unique constraints, relationships)
+```java
+@Entity
+class Goal {
+    @Column(unique = true)
+    private String code;
+}
+```
+
+DTO validates incoming data. Entity enforces database rules. Two different concerns.
+
+---
+
+### **Q59: In microservices, should DTOs be shared across services?**
+
+No! Each service should have its own DTOs.
+
+Bad practice: Common DTO library that all services import. Creates tight coupling. If one service changes DTO, all services need to update.
+
+Good practice: Each service defines its own DTOs. If Service A calls Service B, it uses Service B's API contract but may convert to its own internal DTOs.
+
+This is the microservice philosophy - independence over reusability.
+
+---
+
+### **Q60: How would you implement DAO layer in PerformanceTrack?**
+
+In Spring Boot, you don't need traditional DAO. Use repositories:
+
+```java
+interface GoalRepository extends JpaRepository<Goal, Long> {
+    List<Goal> findByEmployeeId(Long empId);
+    List<Goal> findByStatus(String status);
+}
+```
+
+If you need complex queries, add custom repository:
+
+```java
+interface GoalRepositoryCustom {
+    List<Goal> findGoalsWithComplexCriteria(...);
+}
+
+class GoalRepositoryImpl implements GoalRepositoryCustom {
+    @PersistenceContext
+    private EntityManager em;
+    
+    public List<Goal> findGoalsWithComplexCriteria(...) {
+        // custom query
+    }
+}
+```
+
+This is the modern DAO pattern in Spring Boot.
+
+---
+
+That's your complete interview preparation guide! These 60 questions cover every angle of SOLID, Microservices, DTO, DAO, and Mapper. Practice explaining these in your own words and you'll be well-prepared for your interim evaluation and future interviews at Cognizant!
