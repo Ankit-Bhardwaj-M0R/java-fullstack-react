@@ -1,0 +1,3153 @@
+FILE: 09. Finding the Path.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Yup, so I have started the recording.
+Let us just open the file in my VS code.
+Here it is, right?
+And just give me a moment.
+Let me pull things up, right?
+So here is my VS code, okay?
+And we have our app.js over here, right?
+So, is my screen visible and audible?
+Audible, visible, I am just taking a poll, okay?
+So I am taking a poll.
+If I am visible and audible, just tell me.
+Am I visible and audible? True or false?
+Am I visible and audible properly?
+Visible and audible properly?
+Yup.
+I am working on fixing a lot of tech things, right?
+I am working with the tech team.
+I want the experience to be smooth for all of you, right?
+So don't worry about it.
+It will just be better each day.
+Don't worry about it, okay?
+So awesome, cool.
+So some people are saying that, okay,
+what was the course plugin which I had, right?
+The course plugin was course Chrome, right?
+If you write course Chrome on Google,
+you will find this plugin, okay?
+So allow course.
+This is the Chrome plugin that I used last time, right?
+It is over here.
+So install it.
+You won't get the error.
+Lot of people were getting that error.
+Awesome, awesome, right?
+So, cool.
+So let us just start today's session, okay?
+Let us just start today's session.
+So in, but before that, before moving on to that,
+in the last class, we studied about an important hook, okay?
+We are starting the class now, okay?
+Please pay attention.
+So we starting the class now, okay?
+So in the last class, we studied about use effect hook, right?
+So can you quickly tell me
+what was the use of use effect hook?
+What was the use of use effect hook?
+Quickly, yep, call API.
+Is it calling API?
+Calling API is just something which I did inside use effect.
+But basically, use effect is a hook, right?
+Which React gives us, right?
+Which is called after the component is rendered?
+Listen to me carefully.
+Use effect is called after your component is rendered.
+It all, what is the, what is the two parameters it takes?
+What are the two things we have to pass inside use effect?
+Yes.
+First thing is the callback function.
+The second one is your dependency array, okay?
+So let me show it to you.
+We had this, right?
+Let me get rid of these comments first of all, okay?
+These comments are distracting.
+Let me get rid of these comments, okay?
+So what we did?
+It takes a callback function, right?
+And it takes a dependency array with this, right?
+So when is this callback function called?
+When is this callback function called?
+After your render.
+Yup, everybody is correct over here.
+Thank you so much for answering it, right?
+So when you have an empty array,
+that means it will be called how many times?
+If you have an empty array, only once.
+Only once after the initial render, okay?
+The use effect callback function will be called
+only once after initial render.
+If I have a variable, a state variable over here,
+now this is the dependency array.
+That means this is dependent on search text.
+Whenever my search text changes, right?
+Whenever my search text changes, the component re-renders
+and now my callback function is called after the render,
+right?
+What is the sequence?
+First of all, the component will render,
+use effect will be called
+and then if anything changed, then it will re-render again,
+right?
+So how this data flowed into our app was
+first of all, we made an initial render, right?
+First of all, we made an initial render, right?
+And let's remove this console log.
+First of all, we made this initial render
+and what happens after that is use effect is called
+and we set our restore from here, right?
+Once we have our restore data set in all restore,
+the component re-renders and fills the data
+into the component, cool?
+Makes sense, awesome, awesome, right?
+So one more thing I wanted to ask, okay?
+So we know that, okay, search text, right?
+Search text, if the search text is added
+as the dependency, so whenever the search text
+like is changed, so our component re-renders
+and use effect is called, this makes sense.
+What if I have an empty array, then it is called
+once and only once at initial render?
+What if we don't have this array?
+What if we don't have this array?
+Will this work?
+Is it correct or not?
+Tell me, is this correct or not?
+Or will this complain?
+No, no, no, it is not correct.
+Yes, it will work, no, it is not correct, not correct.
+Okay, let me tell you what happens
+if we don't have a dependency array.
+If we don't have a dependency array,
+that means our use effect is not dependent on anything.
+It is not dependent on anything
+and use effect's default behavior
+is to be called after render.
+So every time my component renders,
+my use effect will be called.
+What did I say?
+It will be called after each render, after each render.
+Okay, does that make sense?
+Chalo, let me show you an example also, okay?
+Let me show you example also.
+So first of all, in our app, let me start my app.
+Let me start my app by npm start
+and we have our app running on localhost1234.
+Awesome, we have our data.
+Oh my God.
+Oh, is there a restaurant with Nadim, namaste?
+Nice, nice, nice, awesome.
+So let us just go.
+Okay, so I'll show you the demo, right?
+How do we write use effect?
+Don't worry about it.
+So we have our head, we have our body and we have our footer.
+Let me just remove these two for now, right?
+Let's just play with head, right?
+We have just header.
+In header, right?
+If I write a console log of render, right?
+If I am writing the console log of render, right?
+Now I am creating one more use effect, right?
+I am creating one more use effect, right?
+Use effect takes a callback function
+and it also takes a dependency array, right?
+So what will happen is now let me just
+listen to me very carefully, right?
+We have our use effect here, right?
+So in what order will it be print?
+What will print first?
+Render or use effect?
+What will print first?
+Render or use effect?
+Exactly.
+We have our render first and then our use effect.
+Let me make it a little zoom, okay?
+So we have our render first, then we have our use effect.
+Now let me tell you one interesting thing,
+one interesting thing, okay?
+Now, if I click on my login, right?
+If I click on this login, so my state changes.
+So will the use effect be called?
+Will the use effect will be called?
+No, right?
+Or yes?
+Yes or no?
+A lot of people are saying no, some people are saying yes.
+So if I change my state, see, render is getting called,
+but use effect isn't getting called, see?
+Whenever I change my state.
+Why?
+Because our dependency array is empty, right?
+Dependency array is empty, right?
+Now, suppose if we don't have the dependency array,
+now there is no dependency in our app,
+no dependency.
+How will this be called?
+How many times will this be called?
+It will be called after every render, see?
+After every time my state changes,
+see, this use effect will be called, okay?
+So note down in your notebooks, right?
+Take down your notes that if we don't pass anything,
+use effect will be called after every render.
+If we pass an empty array,
+that means there is no dependency.
+It will only be called once after initial render.
+And suppose if I put is logged in here, right?
+It will be called every once, right?
+It will be called after initial render once
+and it will be called every time my is logged in changes.
+Make sense?
+Okay, write cool in the comments if that makes sense, right?
+Let's move to the next topic.
+This is what I wanted to tell you.
+The first thing today, okay?
+Where is my body in, okay, okay, okay, okay.
+Let me just get back to my code, app.js.
+Where is my app.js?
+Here it is.
+Let me get back my body and not my body,
+I mean app's body as well as header in over here.
+Okay, and we have our data coming in.
+Okay, so let me just also see this, right?
+One more cool thing I wanted to tell you.
+One more cool thing, right?
+Some cool developers, some cool developers, right?
+What they do is they try to, what is this?
+What is app layout?
+What is app layout?
+App layout is a functional component, okay?
+It's a function.
+Now I'm telling you one important thing.
+React says that, React's documentation says that
+never create a component inside a component.
+Some cool developers try to do that.
+I want to create a food component inside my component.
+Never do that, never do that.
+Write it down, okay?
+Write it down.
+React says that don't do that,
+keep it on the top level, right?
+You can compose the component if you want to,
+but never create a component inside component
+because otherwise rendering, see,
+suppose if your app is being rendered,
+your component will be created how many times?
+Tell me, tell me Preeti,
+Preeti asking for a reason, right?
+Does that make sense?
+Does that make sense to not call it inside?
+You know a lot of people call it, right?
+A lot of people call it inside, right?
+But because they don't know how rendering process works,
+how reconciliation works,
+it does not, like, it will call food,
+like how many times this food will be created?
+No need, never create a component like that, okay?
+Now, let me tell you few more important things, right?
+About hooks, which I wanted to tell you.
+Don't keep noting this down in your notebook, okay?
+These are important points.
+So, we have our use state, right?
+We have our use state.
+So, never ever write a use state inside a if-else.
+Never ever write a use state inside if-else.
+Never do this, okay?
+You don't have to do this, okay?
+You don't have to do this.
+See, when I said that you cannot create a component
+inside a component, that does not mean you cannot,
+see, you can do like this.
+You can nest these components.
+Footer is inside app layout.
+Don't create it inside this body.
+Don't create it, okay?
+This is what I was trying to say.
+What I'm trying to say in use state is,
+never write a use state inside a if-condition, okay?
+Don't do that.
+React, you know, use state have its own variable, right?
+Roo state creates its own local variable
+and react does not like inconsistencies.
+What will happen in this is,
+react won't exactly know whether search text
+will be there or not.
+React won't know whether search text
+will ever be there or not, right?
+So, that's not a optimized way.
+React's like what you'll say, concrete things, okay?
+You should exactly know what your component is doing, right?
+You should exactly know
+what variables react has to track.
+You should exactly know.
+So, never do that
+and you will never get a case to do that also, right?
+You will hardly, you will not get a case
+where you might do that.
+I'm just telling you because it is important,
+never ever write create a variable inside if else.
+This is not a good thing
+because it leads to inconsistency, right?
+So, don't do that.
+Also, never write it inside a for loop.
+Never write it inside a for loop.
+Why?
+Never write it inside a for loop, okay?
+Why are a lot of people saying
+video is lagging, video is logging, audio is lagging?
+Is it working fine for you?
+Okay, let me take a poll.
+Is the audio and video clear?
+Is the audio and video clear for you all?
+Submit your answers.
+Is the audio and video clear for you all?
+Okay, okay.
+Cool.
+So, people who are facing some issues, right?
+Take a screenshot, send it to support.
+We will check out, check out, right?
+But before that, just refresh your page, okay?
+Don't worry.
+A lot of people, it is working for a lot of people.
+There are few people, right?
+Seven, eight percent people whom it is not working.
+We'll see.
+Don't worry.
+Okay.
+So, let me check my internet ones.
+My internet is working fine.
+Check your internet ones, right?
+My internet is fine, I guess.
+Yep.
+Cool.
+Let's get back.
+Like, refresh the page if it is not, right?
+If it is, you are facing some issues.
+Cool.
+So, never write it inside for loop.
+You know, react doesn't like inconsistencies.
+It should exactly know how many search texts will be there.
+It is not a good way, right?
+You can't create a lot of search text.
+Suppose if I wrote I is equals to zero
+and I is less than equal to 10.
+So, will it create 10 search texts?
+It does not make sense.
+And never do that.
+Okay?
+So, these are few things which I wanted to tell you, right?
+And use state.
+See, use state is a hook which react gives you
+to create local state variable inside your functional components.
+Let me tell you once again.
+Use state is a hook that react gives you
+to create local state variable inside your functional component.
+Repeating it once again.
+You know, react gives you use state
+so that you can create local state variable
+inside your functional component.
+So, never use use state outside of functional component, right?
+Never use use state outside your functional component, right?
+You don't do this, right?
+Don't create it outside because it won't make sense.
+It won't make sense.
+React's documentation says that you don't have to do this.
+And you will never have to do this.
+Why do you want to do this, right?
+Shalini says, I did that mistake.
+I know that is why I am telling you.
+That is why I am telling you.
+Lot of people make this mistake.
+Okay?
+So, don't do that.
+There is no need for it.
+Always create your state variables
+inside your functional components.
+Cool.
+So, what all things I told, right?
+I told about use effect without a dependency area, right?
+And use state should not be called inside if else.
+Use state should not be called inside for loop.
+And use state should not be called inside outside
+of functional component.
+Three things.
+Cool.
+Awesome.
+Okay, okay, okay.
+So, let's move to next portion of the things, right?
+A lot of people had that doubt in the Discord community.
+Can I use more than one use effect?
+Can I use more than one use effect?
+Can I use?
+Yes or no?
+What do you think?
+Yes or no?
+Yes.
+You can create a lot of use effects,
+but how much ever you want to.
+See, what if I want to do something
+after just first initial render?
+I will create this use effect, right?
+I can create a use effect which is just dependent
+on my search text.
+I can create it.
+You can create several use effects according
+to their use cases.
+It is completely fine to create more than one use effect.
+Okay, cool.
+Let's move on to another topic, right?
+Somebody, right?
+Someone also said, someone also said, right, yesterday,
+how do I import my images?
+See, this image is coming from,
+where is this image coming from?
+Where is this image coming from?
+This image is coming from CDN.
+What if you want to keep your images locally?
+How would you do that?
+How would you do that if you want to keep your images locally?
+Yeah, so let me tell you how we, how you would do that.
+So in the SRC folder, just like we have components,
+a good way, you know, see, it is not a,
+it is not a hardcore rule, but you can create a variable
+or a folder asset, right?
+Or assets, right?
+Whatever you may want to call this as.
+I have seen that happening.
+Whatever you want to name that as, just do assets.
+And in that, you can keep your image images, right?
+You can put your images here.
+You can in fact create a folder of IMG, right?
+Or something, do that.
+Okay, now how would you use this image in your system?
+How would you use that?
+How would we import it, right?
+Let's, let's, let's check it once, okay?
+So let me just food, food willa logo, okay?
+So let us just change the logo, okay?
+Which one should I use?
+Let us use this, okay?
+Let me just save image as food willa dot whatever, right?
+What happened?
+Keep.
+Okay, so my image got downloaded, okay?
+Let me just pull that image to my folder.
+Let me just quickly do that, okay?
+Where is my downloads, right?
+Food willa dot PNG.
+And I am just pulling it down where?
+In my assets, okay?
+And I am just pulling it down where?
+In my assets IMG, okay?
+I have got my food willa dot IMG.
+I have just dragged it and put it inside my assets slash image.
+How do I import it now?
+I'll go to my header dot JS.
+I'll go to my header dot JS.
+And I will write import.
+Just like a normal component, you can import.
+Import my logo from dot dot slash.
+What should I write here?
+Assets slash IMG slash food
+VILLA willa dot PNG.
+Makes sense.
+Instead of my SRC, I can just write this.
+So it should work.
+Let us just see if it is working or not.
+Fingers crossed, refresh the page.
+It is working.
+Looks cool.
+Looks cool.
+Yup.
+So we have our food willa logo here.
+So if you want to use this image, you can use it like this,
+or now this is coming from our assets, or, or, or.
+Yes, you can use SVG, you can use any type of image,
+whatever is present, right?
+Or you can just load it via CDN.
+But generally, you know what happens
+when you are building an app, when you are building an app.
+So CDN images, see, in Swiggy, see,
+Swiggy also uses a CDN to store image.
+Why?
+Read about, this is your homework.
+Why is CDN a great place to host your images?
+Okay, because CDN is faster.
+CDN caches your image.
+CDN returns it very fast.
+It has 100% uptime, right?
+It optimizes things, right?
+So many, so many reasons why we use from CDN.
+Even Swiggy uses CDN, right?
+If you go and open image in new tab,
+this is a CDN URL.
+If you will see, this is a cloudinary,
+is a cloud CDN URL.
+Okay, people who don't know about CDN, read about it.
+Awesome.
+Let's move to the next topic now.
+Okay.
+Let's move to the next topic.
+Cool.
+So in CDN, we cannot optimize our images
+after it comes to our browser, right?
+We cannot do that.
+So we put in optimized images on CDN, okay?
+So the images are already optimized
+when they put into CDN, okay?
+Cool.
+So try it out, other combinations of it, right?
+Let's move back to our app, right?
+So one more thing which I saw was,
+did you implement the Shimmer UI?
+Did you implement anybody?
+Did anyone implement it Shimmer UI?
+Yes or no?
+A lot of people are saying, yes, they implemented it.
+How did you implement it?
+How did you implement it?
+How did you implement it?
+Quickly, yep.
+A lot of people are saying using React Shimmer,
+using a NPM package.
+Come on people, come on, come on, come on.
+You use the package for Shimmer,
+NPM Shimmer package, React Shimmer.
+Don't use this.
+Why do you need to use this?
+It is such an easy task to create a Shimmer.
+Why are you using an extra package for it?
+You can create it on your own.
+It is such an easy task.
+I don't know.
+This is a very bad thing that for everything,
+we should not import a new package.
+Be conscious about what packages are you importing.
+If it is actually needed, then only do,
+otherwise you create your own Shimmer, right?
+Does it take a lot of effort to create a Shimmer?
+It does not take a lot of effort to create a Shimmer.
+So never use extra packages.
+You know, if you try to use extra packages,
+then there are thousands of packages.
+Let me show you one cool package, okay?
+There is one NPM package, which is known as Izod.
+Izod.
+This Izod package just find out
+whether the number is odd or not.
+Do you want to use a,
+do you want to import a function from a package?
+Do you want to do that?
+Don't do that.
+People have created, I don't know,
+because JavaScript and everything is so,
+JavaScript is a very,
+it's very communicative, right?
+Somebody creates some random package and then they put in
+and then people start importing and start using it.
+And my God, see, 4,24,000 people download it every week.
+They can't write a if-else logic for finding odd.
+They import a package.
+Don't do this kind of stuff.
+Create your own Shimmer, okay?
+So it is very, I am seeing people doing that,
+that is why.
+Don't do that, right?
+It's just the if-else condition.
+Don't be so lazy.
+Let me, okay, let's just quickly create a Shimmer, okay?
+I'll show you how much time will it take
+to create a Shimmer.
+Let's try to create a Shimmer, okay?
+Here we had the Shimmer.
+If we load the page, do we see Shimmer?
+No restaurant matching your filter, okay?
+Let me remove this check for now, okay?
+I want to see the Shimmer.
+Yup, Shimmer UI loading.
+So let us create a Shimmer.
+How will you create a Shimmer?
+Let's go to the Shimmer page, okay?
+What is actually Shimmer?
+What is actually Shimmer?
+These are basically dummy restaurant card, isn't it?
+Dummy restaurant card, isn't it?
+Some boxes, dummy layout, right?
+So what we have to do is we have to create
+a similar kind of a view.
+Where is our body.js?
+We have to create a similar kind of a view, isn't it?
+We have to create this restaurant list
+with dummy cards, right?
+So let us just try to create a
+restaurant list with dummy cards, okay?
+We have a slash div, right?
+In that, I need a lot of cards, right?
+What is a card?
+What is a dummy card?
+Let's give it a class name.
+Shimmer card, okay?
+Shimmer card.
+Cool, we have this Shimmer card.
+Let's go back to CSS, okay?
+Let me give some CSS to my Shimmer card, okay?
+What CSS should I give?
+What CSS should I give?
+Like, let me give a normal random CSS, right?
+Let me give a width height, right?
+Width of, what was the width of my card?
+Okay, it was 200 px, right?
+Let's give it 200 px width
+and let's give it height of 200 px.
+Let's give it some gray color, right?
+Let's make it gray color.
+Background is gray, light gray or something.
+Let's make it light gray.
+And what else?
+Should we give it margin?
+Let's give it margin of 20 px or something, okay?
+Okay, we have our Shimmer.
+Let me go back and see.
+I got my one box.
+I got one box, okay?
+Now, how many boxes I need?
+How many boxes I need?
+Let us create 10, 20 boxes, okay?
+Let's create 10 boxes.
+How will you create 10 boxes?
+How will you create 10 boxes?
+It is so easy.
+I'll tell you, right?
+Array of,
+array of let's create 10 boxes.
+Dot fill, right?
+Just fill it with random data, right?
+Empty string or something.
+This is how you can create a quick array, right?
+Of 10 and then just do a map over it, right?
+Map and then you can just do it.
+Is this making sense?
+Is this making sense to you?
+Yes or no, right?
+See, did it take a lot of time?
+How much time did it take to create a Shimmer?
+Don't need to use what I'm trying to say.
+You don't have to use a NPM package
+for every small thing you do, okay?
+This is what I wanted to show you, okay?
+You don't have to use a NPM package for everything.
+The more code you will write,
+the better you will become, okay?
+Cool.
+So we have created a Shimmer.
+Why is it complaining?
+Now you know, right?
+Why is it complaining?
+You know why is it complaining?
+Yup, key.
+So ideally it should have a unique key.
+For now let me just use a index.
+Right now I don't have a very optimized key for it, right?
+Let me just use a index, right?
+Index,
+index, sorry, key.
+Key is equals to index.
+Cool.
+If I go, cool, right?
+This is a Shimmer.
+What else is a Shimmer?
+You can make it a fancy UI, right?
+Like you see, but it is still better, okay?
+Cool.
+Let me just go back to my app.js, right?
+So what I am trying to say is,
+see, when you are building an app,
+always be conscious about what packages are you importing?
+You don't have to import packages for every small thing, okay?
+When should you import a big package?
+When should you import a big package?
+I'll tell you when.
+When the things get complex.
+I'll tell you my example and my learnings
+from the past work that I have done.
+In all the companies that I have worked previously, right?
+They were mostly into finance, right?
+They were mostly into finance.
+And when you see financial applications, right?
+There are a lot of forms.
+You must have, I mean, tell you,
+you must have already used a website
+where there are a lot of forms, isn't it?
+It's there, right?
+A lot of forms are there, right?
+Big forms, lengthy forms.
+There are like 10, 20 input boxes,
+five, six select boxes,
+and then random big forms, right?
+When you have to build that kind of forms
+and each and every component
+or each and every input box has their own rejects check, right?
+Rejects check.
+Each and every, suppose you are entering pan number,
+so pan number should have a specific pattern.
+If you are entering mobile number,
+so mobile number has a different checks, right?
+There should be error fields, validations.
+So many things are there, right?
+In a lot of, so instead of building
+all the components on your own,
+you can use a package, NPM package, right?
+A library, something known as Swarmic.
+You know, when you have to do TDS work,
+then you can use NPM packages, right?
+You don't have to see
+when do you use package?
+Suppose I don't want to create my own Babel, right?
+So I will obviously pull in Babel from NPM, okay?
+But for every small thing, don't install.
+So use, use, you know, this is a very good.
+I am telling you, if you are ever working in your company
+and you need some forms, use Swarmic.
+Swarmic is not sponsoring this video, sorry.
+But I am just telling you,
+Swarmic is a really great library.
+I have compared a lot of Swarmic.
+I have compared it with a lot of libraries.
+Swarmic is an open source library, use it up, right?
+And it names also suggest, see,
+build forms and react without the tiers.
+Cool, right?
+I like it's, I like it's, you are logo, right?
+This slogan, whatever it is called, right?
+Build forms and react without the tiers.
+Okay, so this is really nice
+and a lot of big companies already use it, right?
+So, and it has a lot of functionalities.
+So if you are building form, you can use it, right?
+It gives you very easy way to handle validations
+and all that stuff.
+I'm not going to dive deep into Swarmic or something.
+I just told you because it just came into my head right now.
+Okay, so I just told it.
+Anyways, so now what I'm trying to say
+for every small thing, don't have a package or library.
+Do it if it is really required.
+Because now we are going to install our new package,
+a new library into our project,
+which is the lesson of today, right?
+The chapter of today is the chapter.
+Yes, obviously, you have to import Redux, Router.
+You don't have to import Tailwind, right?
+You have to import it, those are packages.
+But today we are going to install a package, a library
+and the name of this chapter was Finding the Path.
+So we will be finding the path
+of different pages of our app.
+Okay, so we will be working.
+Thank you for the cool name.
+Okay, so, you know, so we will be routing today, right?
+We will be creating a lot of routes.
+So we created this menu, right?
+Home, About Us, Contact, Cart.
+So let us try to make different pages for it.
+Let us try to make different pages for it, okay?
+This is what we will create.
+For that, we will use a NPM package, a library
+which is known as, it's a very popular library.
+It is one of the standard library now, right?
+Everybody uses, almost every project which we have seen, right?
+Every project that we have seen, use it.
+Like I have seen in my career,
+almost uses React Router, okay?
+So this React Router has come up with its new version.
+I will be working on version six, the latest one.
+The latest one.
+If you are on version five,
+then some things might not work.
+Version six has come up with a new style of writing it.
+React Router has made some significant changes
+in recent past, right?
+So the way of writing code is slightly different
+in your version.
+I would recommend you all to use the latest version,
+like I am using.
+Cool.
+Let us just install our routing library with us, okay?
+So let's go back.
+How do you install a package into our project?
+First of all, let me get rid of this console log.
+Where is this coming from here, okay?
+So how do you install a package?
+How do you install a package, okay?
+Let's get back to our terminal, close this, right?
+NPM install, NPM install,
+or you can just write NPMI, okay?
+And then write React Router DOM, cool.
+NPMI React Router DOM,
+or you can do NPM install.
+It's one and the same thing, make sense?
+If I do NPMI React Router DOM, what will happen?
+It installed 73 packages or something, I don't know.
+Nice, 207 packages in two seconds.
+I don't know what, right?
+So we have got this into our package.json, right?
+We got this React Router DOM in our package.json, okay?
+We have got this into our package.json, cool.
+So we did that, now, now, let us just,
+let us just start using it.
+Are you ready to use it?
+Cool, let's just start using it.
+Now, first of all, let me tell you the features
+that we are going to build today, okay?
+Oh my God, okay.
+I need to start my app again.
+I close the live server, coming back.
+So what we are going to build right now is that, right?
+Is that I will make the about us page,
+I'll make the contact page, okay?
+And then we will see how routing works, cool.
+So let us create a about us component, okay?
+Let's create about us component.
+How do you create a component about.js, okay?
+I prefer to write all of my components.
+It is always a good habit to write a component.
+You can do something like this, okay?
+Some cool developers do something like this, R-A-F-C-E,
+and you get a component already working for you, right?
+You just spawn a new component.
+But, but, but, don't do that.
+I don't like to do that.
+The more you write yourself, the more you write yourself,
+the better it is, okay?
+So always write your components from scratch.
+Make a habit you will never fall into trouble, okay?
+Rout, cool.
+So we'll do a export default of about, okay?
+Okay, and then we will return a JSX from it, right?
+Let's have a JSX, div, and then we have a H1 here,
+and then let's call it as about us page, right?
+And then let us have some p tag here, and let's call it,
+this is the Namaste React live course class.
+Chapter 07, finding the path, cool.
+Let us see it, make it work, okay?
+Let us just make this work, okay?
+So let's go back to app, right?
+Let's go back to app.
+Now I want to create a route where I write slash about,
+and it should take me to the about page.
+How will I do that?
+How will I do that, right?
+So for that, I will have to create a routing configuration,
+okay?
+You will have to create a routing configuration.
+Some people are saying repeat.
+We have not done anything, what should I repeat?
+I just created a new component about us.
+Is there a problem, Meghana, with this?
+I did not do anything, what should I repeat?
+Come on, I just created a new component about us.
+Now I will do, now I will create a routing, okay?
+Let me create a routing.
+How will I create a routing?
+First of all, I'll have to create a configuration
+for a router.
+Now listen to me carefully,
+otherwise you will say repeat again, okay?
+So we will import something from the latest package
+that we import, and we will create browser router.
+Note down in your notebook, create browser router.
+This is a function that we get from react router.
+It will help us create routing, okay?
+Let us get back, right?
+How do I create my routing now?
+We will create something known as app router, okay?
+App router is equals to create browser router.
+Listen to me very carefully now.
+When we use this function, creates browser router,
+we are creating a router, right?
+It takes in some configuration.
+What is this configuration?
+This is the place where I will define
+what will happen if I load my slash path, got it?
+This is the place I will tell
+that if there is a slash about in my page,
+then load the about us component.
+This is the place we will do, okay?
+Now I'll create routing configuration, okay?
+We will create routing configuration.
+Some people are saying that, okay,
+why are you not using different type of routers?
+There are multiple routers that we can use.
+They have their own ways of creating route.
+Go to the documentation.
+I will give you the link of this documentation
+in the assignment.
+Read about all the routers, okay?
+We are using right now something known as
+create browser router.
+This is the recommended router
+for all react router web projects.
+I am using the most recommended version of router, okay?
+So use this, right?
+I would recommend you to use the same, okay?
+There are multiple routers as well.
+Go explore it after this class, okay?
+I am using create browser router.
+How do you create this configuration?
+Now I will tell my component what should happen
+if I use, right?
+If I use different path, how will I define that?
+Suppose if my path is slash, what should I load?
+What component should I load on slash?
+What component should I load on slash?
+What component?
+Home is not a component.
+Component, component, component.
+Yup, Irshad is 100% right, Rahul is right.
+It is app layout, right?
+Let us load app layout when we have slash, okay?
+Right, makes sense?
+So we have our, so in this, right?
+Here we write something known as element
+and in this element we pass what we have to load.
+So if we have to load app layout, right?
+App layout, we will write like this, right?
+And because this is a constant, just give me a moment.
+I'll tell you how do we do that, right?
+So always, you know, always create this below app layout.
+If you will create this above app layout,
+what will happen?
+Will this work?
+You know, I am creating like this
+because you know, a lot of you people would be,
+will this work?
+Yes or no?
+Yes or no?
+It won't work because app layout, it runs in a sequence, right?
+So we need to have app layout defined
+before I am creating my router.
+So always created below this, right?
+So we have our app layout which will be there on slash, okay?
+So app layout will be loaded on slash.
+Now, what will happen?
+What should I write over here
+if I have to load something on about?
+What should I have?
+What should I have here, right?
+My about component, right?
+I will load my about component in it, right?
+How do I load my about component?
+Let us import my about component.
+Import about component.
+I have got this about.
+Now let me have my about if I run slash about.
+Will this work?
+Will this work?
+Yes or no, what do you think?
+Yes, yes, no, no, yes, yes, no, no, yeah.
+So it won't work.
+Why it won't work?
+Because we need to provide,
+we have just created this configuration app router.
+We need to provide this app router to our app.
+We need to provide this app router to our app, okay?
+How do we provide this?
+You know, how do we provide this?
+There is something known as, there is a component.
+This is a component which is exported
+from React Router DOM.
+It is known as router provider, okay?
+Note it down in your notebook.
+There is a component router provided
+which is coming from our React Router DOM, okay?
+So this router provider is a component.
+Now, here in root dot render,
+we were rendering app layout, right?
+We were rendering app layout.
+But do we always have to render app layout?
+No, right?
+We want to render according to our path.
+We want to render according to our path, okay?
+So what we will do instead of app layout,
+I will say that render my router provider, right?
+This router provider,
+and I will give in some configuration.
+Which configuration?
+What, which configuration?
+I will give in some configuration.
+This configuration will be router.
+I will provide my router to this.
+App router, okay?
+Cool.
+Now what will happen?
+Now what will happen, right?
+Now what will happen?
+Yes, I will, I will repeat it once again.
+Don't worry.
+What will happen?
+Whatever it, whatever the root will render,
+it will render according to this configuration.
+Does that make sense?
+Does that make sense?
+Some people, some people it makes sense, right?
+Okay.
+Let me tell everything once again, okay?
+Let me tell you everything once again.
+But this time I will tell you very fast, okay?
+So listen to me very carefully.
+Don't, don't miss it, right?
+I am deleting everything, okay?
+I am deleting everything.
+I am creating it from scratch, okay?
+How was it?
+Let me just do command Z.
+So we have done this, right?
+Where is it?
+Where is it?
+Where is it?
+Where is it?
+Just a minute, right?
+Cool.
+From scratch.
+From scratch, listen to me very slowly, okay?
+I am going slow, don't worry.
+Okay, okay, slow, slow, slow, okay, okay, slow.
+Import create browser router, right?
+This create browser router will come from the library we have just installed.
+First thing, right?
+Now I will create this configuration.
+This configuration will decide what will happen if I load a certain path, okay?
+How do I create my configuration?
+I will create a app router, okay?
+Basically, you can call this as I am creating a router, okay?
+You can also call this as I am creating a router.
+How do I create a router by a create browser router?
+What will my create browser router takes?
+It takes some configuration.
+This configuration is an array.
+It is a list of paths, list of paths.
+How do we define one path?
+Each path is an object, right?
+And we have a path, right?
+Which takes exactly what URL it will take, this URL.
+What do I have to load in this URL?
+Comes over here like this, element.
+And in this element, I will put in a component that I have to load, okay?
+So I want to load app layout if the routing is slash.
+If my path is slash about, right?
+If my path is slash about, it should load my about component.
+Let me import my about component.
+About component, right?
+I imported my about component and let me put in my about component.
+Now, how will I configure this?
+How will I route this?
+Cool.
+I will have to pass this router to my render, right?
+See, root.render will render whatever you give it to it.
+If you give it app layout, it will always render app layout.
+I want to render according to this configuration, right?
+I want to render according to this router.
+So we need to provide this router to my render.
+We need to provide this router to my render.
+For that we will use router provider, router provider, okay?
+This router provider, right?
+Comes over here.
+Now this router provider takes this config, this router, app router, right?
+Router is equals to app router.
+Make sense?
+Make sense?
+Some people are saying, why are you keeping this inside the named import?
+Why?
+Because this is how somebody would have exported it, right?
+Somebody would have exported it.
+Don't ask meta, react router DOM is not created by Facebook.
+This is not a Facebook library.
+This is not developed by Facebook, this is developed by remix, okay?
+So it's not developed by Facebook, cool?
+So now I need to please repeat router provider, okay?
+I'll repeat the router provider.
+So this you understood?
+App router?
+Yes or no?
+Yes or no?
+Give me a thumbs up over here in the comment, right?
+Thumbs up, thumbs up, yes, yes, awesome, awesome, awesome, right?
+You undertook creating the router.
+Now, you know, whatever you pass in this root dot render, that renders, right?
+If I pass in app layout, what will we see?
+If I pass in app layout, what do I see over here?
+I see my app layout.
+What if I pass in about us here?
+If I pass my about, what will render?
+It rendered our about us page, whatever you will pass in, it will render because I want
+to render according to my router.
+So I will have to provide my router here, right?
+I'll have to provide my router.
+How do you provide my router?
+Router provider makes sense in my router provider, I will give a router and it will
+be the same router that I created, this app router, okay, will come over here, cool?
+Now you must be asking, this is looking like something we did last time, right?
+What is this known as?
+What is this known as?
+Yes, Piyush is right, Ram is right, Shreya is right.
+This is known as props, props.
+How does this router provider component understand these props?
+Because somebody else, a developer just like you and me has written this code, written
+this component inside React Router DOM, somebody would have written it, remix developer, okay?
+So don't have to worry about, it is normal React, normal React, okay?
+And somebody would have done a named export there, export there, that is why we are
+calling it like this, awesome?
+Now you would ask me, where do I find all this information?
+How do I know whether it should be a named export or not?
+How will you find this?
+Suppose if I have to find in, how will I find it?
+You have to read the documentation, everything is available in the documentation, awesome,
+right?
+So we have given this path, we have given this path, now let's go back to our app
+and let's go back to our local host, refresh the page, we have this, right?
+Now suppose if I go to my slash about, slash about, if I hit enter, see, we rendered our
+about us, isn't it?
+Is it cool or not, right?
+We have our about us with us, we have our about us with us, awesome stuff, right?
+But, but, but, wait, wait, wait, wait, wait, what if I did XYZ here?
+What will it load, XYZ here?
+What will it load, what will it load, will it break or work, break or work?
+It will give us an unhandled thrown error.
+But did you observe an amazing thing?
+Did you observe an amazing thing?
+An amazing thing is that this react router DOM, this is such a powerful library that it
+also gives us a better UI for showing us errors, right?
+Better UI for showing us these errors.
+See nothing break in our console, in our console log we do not see any errors.
+It is a great user experience, we are showing a default error page.
+React router DOM is doing it for us, we did not write this unhandled thrown error.
+This is not our error page, right?
+This is not our error page, right?
+There should be a error page which we would have developed but we haven't developed any
+error page but this is a very user friendly experience that react router DOM gives it
+explicitly to us, awesome, right?
+It does not give you an ugly error in the console.
+It does not make your console red, it does not make your console red.
+Now this is a default error page.
+What if I have to create my own error page, cool error page, right?
+You would have seen that error page, right?
+With that oops something went wrong, isn't it?
+So how do we create such error page, right?
+You have seen that error page, right?
+Let us just create our error page, right?
+Let's just create our error page.
+What is an error page?
+How will you create an error page?
+Error page, everything in React is what?
+Everything in React is what?
+A component, so error page is also a component, right?
+Let us create our error page, E-R-R-O-R, R-R-R, not J-S, right?
+So let's create a error page quickly, E-R-R-O-R is equals to a functional component
+that just returns some piece of JSX.
+This JSX is our div, right?
+And in div we have a H1, and I don't know why people write this,
+but we have something known as oops, right?
+And then we also give it as something went wrong,
+something went wrong.
+Okay, let's make it H2 or something
+so that it looks a little beautiful.
+You can pitch in some images and all that stuff, right?
+You can put in some images, cool images, broken images,
+but let us just now refresh our page and oh my God,
+it is not loading.
+Will it load?
+Will it load?
+How?
+We have just created a function.
+We did not do anything out of it, right?
+Let us just export our function.
+You're not telling me that I'm not doing it properly.
+Come on, you should tell me, right?
+So export default error, export default error.
+Now we need to pass this information
+to our router config.
+We need to pass this error information
+in our router config.
+Where is our router config in our app.js file here?
+Just like we said the path is this,
+element is this, if we load this path
+and we have what element will be loaded app layout.
+Now we can give something like error element, right?
+And whatever I give to it, whatever component I give to it
+will be loaded in case of error.
+Make sense?
+Does that make sense to you?
+Write cool in the comment if that makes sense.
+Write cool in the comment, E-R-R-O-R, right?
+From my component slash error.
+So if you load this path, this will load.
+If there is an error in this path,
+it will load the error element.
+Will this work?
+Yes or no?
+Yes or no?
+Yup.
+So this is the R cool looking,
+cool looking, fancy looking, error component,
+the error page, right?
+Okay, so we have loaded it.
+It's not looking cool, I know,
+but you can put in some images
+and all that fancy stuff that you want to, okay?
+Okay, so this is a wild card match.
+If you write any random gibberish URL, hit enter,
+this will take care of it.
+Any random URL that comes will go to our error page, okay?
+Let me repeat it very quickly.
+What did I see?
+We want to create an error page.
+So app router says that, okay, on certain path,
+whatever you want to load, give it to element.
+Whatever you want to load in case of error,
+give it to error element.
+Awesome, awesome.
+Don't worry, Sushmit.
+I know you are very eager to know
+what happens if I give slash about slash restaurant,
+slash akshe slash namaste, we will cover everything.
+We will cover about nested route.
+Don't worry, please calm down.
+I will teach you everything.
+Don't worry, okay?
+So this is how we have our error component here, right?
+Let's get back to the main page.
+Got it?
+We studied how do we create default path?
+We studied how do we create our normal path?
+We gave element.
+We studied how do we create our error element?
+Let me tell you a cool thing.
+Let me tell you a cool thing before I take a break.
+I will take a break, listen to this very carefully.
+Now, suppose we have our error component.
+Does this look good?
+This error component, if there is a user,
+he will not get to know what is this error?
+Suppose if he loaded some page,
+he will not get to know that what is this error?
+We want to show some more information about this error.
+We want to show some more information about this error.
+How do we show that information?
+How do we show that information?
+Okay, we will show it information.
+Let me just tell you, okay?
+So ReactRouterDome gives us one more cool thing, right?
+ReactRouter gives us one more cool thing,
+that I can import from my ReactRouterDome.
+Okay, what is this cool thing?
+What is this cool thing?
+This cool thing is known as useRouteError.
+UseRouteError.
+Can you tell me what is this useRouteError?
+Can you guess what is this useRouteError?
+Absolutely everyone, my friends, this is a hook, right?
+This is a hook which ReactRouterDome gives us, right?
+This is a hook.
+You know how do you identify a hook?
+Hook starts with use, okay?
+It starts with a use, okay?
+So this is a hook and how do I use?
+Okay, what is a hook at the end of the day?
+What is a hook at the end of the day?
+It's a normal function.
+How do I use this hook?
+I will just use a useRouterError.
+It will just give me my error in this.
+Let us just see what we get over here, right?
+Let us just log this object, right?
+We will get something, right?
+Console.logerr, okay?
+Let us just see on our console what we get.
+See, it gives us this error object.
+This error object contains a lot of information
+about what type of error do we have, right?
+It gives you the information about
+what are the types of error we have.
+It says that it is four not four status
+and not found error.
+There could be multiple type of errors,
+but ReactRouterDome gives us useRouterError
+and it is smart enough to catch all the errors.
+It won't throw red color errors
+in your console, okay?
+It won't throw.
+ReactRouterDomeOP, right?
+It is amazing library.
+I just love it.
+It is a standard in the industry right now, right?
+Learn all these things, right?
+This will be helpful for 100% of the projects
+that you will make.
+Very important lesson today, okay?
+Let's go back and we will see now
+how do I display my error, right?
+So let us display my status and status text, okay?
+You can use this piece of information
+to show it on your page however you like to, okay?
+You can do a, how will you use it?
+Err, err.status, right?
+You can do a err.status plus something like this.
+Four not four not found something like this.
+Err.status text, what was the name?
+Status text, okay?
+Let's do a err.status text.
+If I refresh my page, see?
+It gives us more information about your error.
+We can do a destructuring as well.
+We can do destructuring as well, okay?
+Let me repeat it once again
+for everyone who did not understood.
+We, React Router DOM is very powerful, okay?
+It is very powerful.
+It does not let you throw error in your console, right?
+It catches all the routing errors.
+If suppose there is a mistake in the route,
+it catches those errors.
+Now, we can catch this error
+and we can use this piece of error
+to show it to the user properly.
+How do we show it?
+It gives us access to a hook
+which is known as use route hook.
+Use route error hook, sorry, right?
+What is hook at the end of the day?
+It's just a normal function.
+How will we use a hook?
+We will just call a function, isn't it?
+Very easy.
+Now, this hook gives us access to this error.
+The error that is there, right?
+Now, we can just use this error in our code.
+Some people are saying, can we destructure?
+Yes, we can destructure it, right?
+Why not?
+We can just have a status comma status text from error
+and we can just use it directly.
+Got my point?
+Got my point?
+We can do it, right?
+Try it out in your assignments, right?
+Create your own error component,
+but for now, I am just leaving it as it is.
+We have studied to read errors now.
+We are reading errors now.
+See, we are not just getting errors out of the box.
+We are reading errors and showing it to the users properly.
+Great way, right?
+Great way, right?
+So, wherever we get errors, right?
+We should be good with catching those errors
+and displayed to users the proper message
+that needs to be displayed, right?
+Cool.
+This was a routing session, right?
+Let's take a five-minute break.
+We will be back.
+I want to teach you amazing things now.
+Nested components, nested routing and dynamic routing.
+Lot of things are coming up.
+Take a five-minute break and let's just come back, okay?
+Five-minute timer, drink some water, right?
+Drink some water, stay away, go away from your screens, right?
+Relax your eyes a little.
+We have one more hour to spend together, okay?
+Thank you so much.
+Yup, so people are asking for Discord link.
+Let me give you the Discord link, okay?
+Join it right now, okay?
+We will be closing this link very soon.
+Let me just give it to you.
+Invite people, copy link, okay?
+Akshay, you are great.
+Thank you so much, Monal.
+You are also great.
+You are a great student, yup.
+Everybody is great.
+If you are here, you are great.
+Thank you so much.
+Yup, love you Akshay, who said that?
+Bro, Anish, yup, love you, bro.
+Love you, Anish.
+Join Discord, okay?
+So I have pinned this Discord link.
+Join it quickly right now, okay?
+And we will be closing this link very soon.
+We will close this link in half an hour, okay?
+I'll close this link in half an hour.
+Please do that.
+And thank you so much everyone
+who is helping other people in this chat.
+I just love our forum.
+I just love our Discord forum.
+See, somebody wrote this question one minute ago
+and there are people who are already starting helping it.
+See, one minute ago, one minute ago
+and people are already helping this guy, see, right?
+Faster than the chat GPT, right?
+So amazing community, right?
+Amazing community.
+I have not seen such a community, right?
+You know, I just love it.
+And you know, we have secretly also gotten some TAs
+who are helping you, okay?
+So we have secretly pitched in the TAs
+who are helping you, right?
+So I won't tell you who they are,
+but there are people who are helping it
+and we are on a mission to make this
+a very great React community.
+Thank you so much everyone for being there, okay?
+No, no, Nopil is not our TA.
+Nopil is our, Nopil is our normal student
+and he's, thank you so much, Nopil.
+Nopil is very helpful, very helpful in the community.
+Thank you so much, Nopil.
+Let's go back.
+Let's not waste time.
+Let's quickly consider, you know,
+I have a flight to catch at five o'clock.
+I need to quickly finish this session and rush, okay?
+So let me finish it, cool.
+So, cool.
+So, yep.
+So let us now, we have seen that, okay?
+We created a slash about page, right?
+It goes to the about us page, right?
+Where do I have to go?
+Hey, I am going to Bangalore.
+I am meeting this tech team over here, right?
+Graphy team, we will figure out issues,
+all the issues, we will resolve all the issues, okay?
+Don't worry, right?
+I am, you know, when I'm not taking class,
+I'm working, don't worry.
+After this class, I'll go.
+Tomorrow I will sit with the team,
+graphy team, I will fix all these issues
+which you get during the class.
+This live class, right?
+I will be going to their Bangalore office.
+I will fix all these issues, yep.
+Cool, so I will talk to them, right?
+And I will meet the team as well, right?
+I will meet the team as well, I need to go.
+Okay, cool.
+Let's just focus once again, no more random questions.
+Suppose if I have to click on this about
+and go to about us page, what should I use?
+What do I use?
+If I click on about it and I go to the about page, right?
+Some people are saying on click.
+Some people already know the answer.
+Wow, why have you come here to learn?
+Some people are saying anchor tag, okay.
+I'll tell you what, right?
+So basically, React Router DOM says us, right?
+You know what is the problem with an anchor tag?
+I'll tell you what is the problem with an anchor tag.
+When you suppose, see, on our logo,
+we have our anchor tag, right?
+On where is our header?
+Where is our head, right?
+This header title, right?
+So in this title, we have a anchor tag here, right?
+What is the problem with anchor tag?
+The problem with anchor tag is if you click on this,
+right, it refreshes the whole page.
+It just refreshes the whole page.
+Very bad, right?
+Very bad.
+We are building a single page application.
+With this, I want to introduce you to a great concept,
+which is known as, I'll tell you.
+We are building a SPA, a single page application.
+What is a single page application?
+What is a single page application?
+I have not covered anything.
+Why, what should I repeat?
+Let me, let me at least cover something, okay?
+So we are, you know, this is a single page application.
+React applications are single page applications.
+When we say, not all, see, React is a library
+which you can use in HTML.
+But this is a single page application.
+What does it mean by when I say
+a single page application?
+Earlier, right?
+Earlier in older days, how are websites used to work?
+Remember our old, old websites,
+they used to work with an HTML page, right?
+For about, for, if you have to load an about page,
+so you have to go to slash about.html, right?
+You, it loads the whole page again and again.
+Isn't it?
+Suppose if you have to go to the contact page,
+you have to go slash contact.html,
+it loads everything once again.
+With single page application,
+our application does not reload.
+It is not making network call when we are changing pages.
+Suppose if I am going from home to about page,
+it should not make a network call
+and fetch the about us data.
+Earlier it used to happen.
+Still every, so many websites are built like this.
+I don't know Wikipedia has changed itself or not.
+Wikipedia is one such website, right?
+It was there.
+Let us just see, right?
+No, I think they have also improved it.
+Earlier it used to be like normal pages, right?
+Bank website, whatever you see,
+it just loads the whole page, right?
+Wikipedia is fast, right?
+It's very fast.
+It is very fast and very great indexing.
+I just love Wikipedia as a website, right?
+Okay, cool.
+So we will be making single page application, right?
+So, okay.
+With single page application,
+one more thing came to my mind, right?
+Let me tell you before I forget, okay?
+There are two types of routing.
+Can you tell me what are the two types of routing?
+Can you tell me what are two types of routing?
+Right?
+Can you tell me what are two types of routing?
+Private and protected, no.
+File-based, yep.
+So there are two types of routing.
+One is known as client-side routing.
+One is known as server-side routing.
+One is known as client-side routing.
+Client-side routing.
+And one is known as server-side routing, okay?
+Note it down in your notebook.
+There are two types of routing.
+Client-side routing, server-side routing.
+What is the difference between two?
+Server-side routing is the way
+that all our pages come from server, right?
+Suppose if you are going to another route,
+suppose I am changing my route, right?
+Suppose I am going from this to about page.
+I am changing my route.
+Now this about page will come from my server.
+This is server-side routing, okay?
+It means in our older times that we do, right?
+We used to call slash about.html in it.
+Used to make a network call, get the HTML, JavaScript, CSS,
+and then loads the whole page.
+That is server-side routing, okay?
+But in React applications or in our application right now,
+we will build client-side routing.
+When I say client-side routing,
+we will click on this about page.
+It will go to the about page
+without making any network call
+because all our components are already there in our code, right?
+We don't have to go to server to fetch about as detail.
+It is there in our app already.
+That component is sitting over there.
+According to that route,
+we will just load a different component, right?
+Cool.
+So we will do client-side routing right now, right?
+Let's focus on it, right?
+So now if I click on my about us,
+we need to create first a single-page application.
+So we need to create a single-page application
+and we don't want to reload our page.
+So one way could be to do something like this, okay?
+I can do a ahref is equals to slash about, right?
+About, is this a good way?
+Is this a good way?
+I can do it like this, right?
+I can do it like this.
+It is, see, about came in.
+I don't know, it just messed up the CSS, but anyways.
+If I click on my about, see, it reloads the whole page.
+It is reloading our whole page.
+See, it is just reloading.
+If you see it clearly, see, your page will see reloading.
+See, it reloads.
+Now we have our anchor tag.
+So I don't want to reload.
+So react router DOM says, okay,
+I will help you with not reloading and stuff, right?
+So it help, it gives you, this react router DOM gives you
+something known as link, okay?
+Let me remove this, we are not using it.
+Import link from react router DOM.
+Does it make sense?
+This is a link, right?
+This is a link component, which is again a named export
+from the react router DOM library
+and we will use this link.
+How do I use my link is exactly how we use our anchor tag, okay?
+Exactly how we use our anchor tag.
+We use link instead of href, instead of href, we give it to.
+So basically it is like link to slash about, okay?
+Link to slash about.
+It is exactly, it exactly works like anchor tag.
+Simple, right?
+Let me repeat it once again.
+Suppose if I, if you have to put an anchor tag somewhere
+in your react application, you won't use a anchor A.
+You won't put that anchor tag.
+You will put a link, okay?
+You will put a link to all the random pages.
+Does that make sense?
+Write cool if that makes sense.
+Did you understand that?
+Write cool, awesome, awesome, awesome, right?
+So now let us just see it working, right?
+And let us also give this link to our home, right?
+Let us give this link to our home, right?
+So how will I write for home?
+Link to, what will I give inside my H2?
+Slash, okay?
+And let's go back to our home, okay?
+This is our link home.
+This is our link about, okay?
+If I refresh my page, see.
+Now let us just go to about page.
+I went to my about page.
+It is not reloading it.
+It's not reloading it.
+And we have our home here, right?
+Which does not do anything.
+So what are the people writing over here?
+When we make a request from other servers,
+load, client, route, so user gets back the route
+from client side, I don't know.
+Just a minute.
+See, I don't know what questions are you asking,
+but let me tell you once again,
+let me repeat it once again, okay?
+Client side routing means that, okay?
+I'm repeating it very quickly.
+Client side routing means that we don't want to
+load anything from the server.
+When you are going to about a page, right?
+It is not making any network call or something.
+The component is already there.
+It is just putting it up.
+It is just putting it up, right?
+So, keep inside LI.
+Oh, you are saying that we can keep this link inside LI.
+Yeah, come on.
+You can do whatever you wish to, okay?
+You can do whatever you wish to.
+It is just like an anchor tag.
+Do you put an anchor tag here
+or you put an anchor tag outside?
+It will work like an anchor tag, right?
+You can put this like this as well, right?
+You can do it like this, okay?
+It exactly works like an anchor tag.
+I'll tell you, so no need to worry.
+You can play with it in your system, okay?
+You can do this also.
+It is one and the same thing.
+It is one and the same thing.
+Does that make sense?
+Okay, it is one and the same thing.
+Nothing will break, okay?
+Cool, you can do that too.
+Awesome, right?
+So one more important thing which I want to tell.
+One more important thing I want to tell you.
+Listen to me very carefully, right?
+Link tag.
+What is this link tag?
+What is this link tag?
+Who developed this link tag?
+Who developed this link tag?
+Remix developed it, right?
+Remix developers would have developed it,
+but the amazing part is
+we don't have to use an anchor tag,
+but we have to use a link tag, right?
+But at the end of the day,
+if you go to the elements and see
+what is there inside my home, right?
+Let us go and see what is there.
+What is there inside my UL?
+It is again an anchor tag?
+Oh my God.
+I wrote a link tag over here, right?
+I wrote a link tag over here, isn't it?
+What is this?
+Akshay, you have wasted our time.
+You said that, okay, you don't have to use an anchor tag.
+No, link is already using an anchor tag, right?
+Is this a joke?
+Why should I write a link?
+Why should I import it from Reactor Outer Dom?
+Why should I do, at the end of the day,
+it is an anchor tag?
+So, you know, at the end of the day,
+the link component uses an anchor tag behind the scenes,
+but we use this link tag because now
+my Reactor Outer Dom, my sweet little Reactor Outer Dom,
+it's not actually little.
+It is my sweet big awesome Reactor Outer Dom.
+You know, I'm just bribing my Reactor Outer Dom, okay?
+So, my Reactor Outer Dom is doing some black magic
+behind the scenes and converting this to an anchor tag,
+but it is also keeping a track of this link.
+Just like we create UState, right?
+It is a local variable, React is keeping track of it.
+Now, of these links, Reactor Outer Dom
+is keeping track of all of that.
+My Reactor Outer Dom is keeping a track
+of all of this link.
+Browser understands anchor tag.
+So, at the end of the day,
+we need to convert everything
+to something which browser understands.
+That is why it's a anchor tag behind the scenes, okay?
+Make sense?
+Cool, if it does not make sense,
+watch the recording once again, it will make sense to you.
+Let's move ahead, okay?
+I have to code a lot.
+Let us just quickly write it down.
+Otherwise, you will again, we will be very late, okay?
+Now, I want to show you the nested routing.
+I want to show you nested routing, okay?
+What is the problem in our app is, right now,
+the problem with our app is,
+if I load my About Us page, where is my header and footer?
+Where is my header and footer?
+Our header and footer is gone, right?
+So, let us try, we want to keep the header and footer intact
+whether I go to my About Us page,
+whether I go to my Contact Us page,
+whether I go anywhere, I want my About Us page
+to be inside my between the header and footer, okay?
+Let's try to write code for it.
+What will we do?
+Let's, we will have to change our routing config, okay?
+The routing config that we did, what we said,
+if it is slash load app layout, right?
+If it is about, load about,
+what if I need to load my About
+between my header and footer?
+How will I do that?
+Very important thing, listen to me carefully,
+otherwise you won't be able to understand this.
+Listen to me carefully, right?
+I want my About to render over here, right?
+I want my About to render over here, right?
+If path is, path is slash about, render this, right?
+If my path is slash render this,
+does this make sense?
+Does this make sense?
+Okay, so how will I write this configuration?
+I will have to change my configuration over here, okay?
+So now, first of all, I will have to make my About page
+the children of app layout.
+I will have to make my About page children of app layout
+because it should come inside app layout,
+not outside of app layout.
+It should come inside app layout,
+it should not come outside app layout, right?
+It should be inside my app layout, right?
+Between the header and footer.
+It should be like that, right?
+So what I will do, let me remove this.
+Let me remove this, okay?
+Or let me keep it here, I will tell you.
+Let's keep it for a reference.
+But how do I make my children of app layout, okay?
+I will have to make my children of app layout.
+How do I make it?
+There is something known as children here.
+You can create children of your route.
+So if I have this route over here slash,
+I can create multiple children of my route.
+Okay, how will I create my children?
+It will take exactly the same configuration here, okay?
+It will take exactly the same configuration, okay?
+Slash about and now my about is the child of my app layout.
+My about is the child of app layout.
+Does this make sense?
+Does this make sense, this configuration?
+Because I wanted my about to be children of app layout,
+it should be inside my app layout, right?
+And my body is also inside my app layout.
+Not my body, I mean my app's body component
+is inside this app layout.
+So these should be children, right?
+So if I have my path slash about, it is a children.
+Suppose my, suppose if there is a page, okay?
+Let us create a contact page also.
+Very quickly, let us create a contact page, okay?
+How do I create a contact page?
+Contact.js, you know, I have become expert
+in creating components by keeping
+on creating components from scratch, okay?
+Quickly create a contact page, okay?
+Return H1 tag, okay?
+I'm just returning just one tag.
+Let's call it as contact us page, okay?
+Contact us page H1 and let us just close this.
+Let us just export my default, default contact, okay?
+I have made this contact page.
+Let us just load my contact page.
+Where should my contact page come in?
+Here, does that make sense?
+Does that make sense?
+If my path is slash contact,
+how will I write the configuration for this?
+How will I create this configuration for this?
+How will I create the configuration for contact?
+I will create one more children over here
+with slash contact, right?
+Slash contact, okay?
+Here is the contact, not contacts, okay?
+So now my app layout will have children, okay?
+So let us just try to render it.
+Let us just try to render it.
+Will this work?
+Will this work?
+Will this work?
+It won't work, right?
+Because I have put in all of them together.
+It will load all of it together.
+See, contact us page also came on the page.
+About us also came.
+And my search page also came, right?
+Body also came.
+This is not the right way to do it, isn't it?
+Not the right way to do it.
+How I want to put in, if the page is slash about,
+I want to load about, if the page is contact,
+I want to put contact, if it is a normal slash,
+it will be body, right?
+How do I do it?
+Now listen to me very carefully, right?
+I will not pass anything over here.
+This is the place I want to render random things, right?
+This is the place I want to render anything thing, right?
+This is basically the place, right?
+This is basically the outlet.
+I have to, this is the outlet
+where I have to fill in different pages.
+We have to fill in different pages in this outlet.
+So React Router DOM gives us access
+to something known as outlet, okay?
+Something known as outlet.
+Outlet is what is a component.
+And I will put my outlet here, okay?
+This outlet will be filled by my, this configuration, okay?
+Outlet will be filled by the children configuration.
+Let me explain you once again.
+First of all, if you have to create nested routes,
+if you have to create nested routes,
+you will have to create a outlet.
+I want my header footer to be always there in my app.
+I want middle portion to keep on changing
+according to my route.
+Let me repeat it once again.
+I want my header and footer to be always there.
+I want my header and footer to be always there.
+What should change things in between?
+What should change the content in the outlet should change?
+My outlet should render according to my config.
+Outlet render according to my config.
+Now, whatever children we have over here
+will go into my outlet.
+Note it down in your notebook, very important thing.
+All the children's will go into the outlet.
+All the children's will go into the outlet
+according to the route.
+According to the route,
+all the children's will go into the outlet.
+Let us just see.
+See, now I am on my about us page.
+Now I am on slash about.
+We have our about us page, isn't it?
+If I go to my contact page, it is my contact page.
+But what happens if I go to this page?
+It does not have my body.
+Sorry, the body component.
+By the way, keep calling my body.
+It does not have body, right?
+So, I will have to also pass a children for my body.
+Right, for my body component.
+Okay, so path is slash and here we have our body.
+Body.
+Okay, so this body component will go inside the outlet
+when the route is this.
+My about component will go inside the outlet
+when the route is about.
+When the route is contact,
+outlet will be filled by this component.
+Does it make sense?
+Does it make sense?
+Awesome, let's see it in action.
+Let us make this contact page also a link, right?
+Okay, let's quickly toggle between the pages.
+Okay, where is my header?
+Here it is, right?
+Let us just create one more link, sorry.
+Sorry, sorry, sorry.
+I have my contact.
+Let me have my contact page component in my contact route.
+Okay, does this make sense?
+Let's go back to our app and see things working.
+Sorry for the bad UI.
+You people are amazing in CSS.
+I was seeing assignments of you guys.
+You people have, you people are masters of CSS.
+Why were you asking me to teach you CSS?
+You people write so amazing CSS, yeah.
+You should teach me.
+Why it did not load?
+Okay, if we refresh the page, now see,
+in the home page, when we load the slash route,
+so the body went inside the outlet.
+When we have a route of slash, our body went inside, right?
+So if I click on my about page, it loads the about.
+When I click on the contact, it loads the contact.
+And the amazing part you see, right?
+It is not refreshing the page, see?
+Is it refreshing the page?
+It's not refreshing the page.
+It is not refreshing the page.
+Some people are very clever.
+They are asking that show us the HTML, Akshay.
+What is happening in the reconciliation?
+Oh my God, I taught you all amazing stuff
+and now you are questioning me.
+Oh, nice, nice.
+I'll show you, I'll show you, okay?
+Let us just see.
+Now just keep on seeing what is changing inside our DOM, okay?
+Our header will be there always.
+It won't change, okay?
+See, I am going to my about page.
+I am going from the about to contact, see?
+Do you see what is changing?
+Do you see?
+I am going from about to contact quickly.
+See, what is changing?
+Do you see the change?
+Header is there as it is.
+Header is there as it is, right?
+This header does not go anywhere.
+Header does not go anywhere.
+Our reconciliation algorithm exactly knows
+what needs to be loaded on the page according to the route.
+Awesome.
+Why is the root getting changing, right?
+Why is the root getting changing?
+So it is getting changing because Chrome is just showing us
+that something inside the root changed, okay?
+It's not getting changed.
+Something inside root got changed.
+Something inside root got changed.
+That is this branch, okay?
+That is this branch is getting changes over here, right?
+Root is not changing, okay?
+It is just showing.
+But you see it cleverly, right?
+It just changes it.
+And amazing thing is I'll go to home now.
+It will make an API call, right?
+See, it changed twice.
+See, when I go from about to home, right?
+It will change twice because it renders two times.
+Because it renders two times.
+Repeating it once again.
+Repeating it once again, okay?
+If I go to my about us and now I'm go to contact us.
+See, our root changes and child changes.
+So root is not changing anything.
+It is just showing that in our root something got changed.
+That is why it is reflecting over here, right?
+And nothing else changed, right?
+And see header.
+Header is not changing anything.
+Let's see.
+Header is not changing anything.
+Header is at its core place, right?
+Now, right?
+Now you would say that, okay?
+Akshay, where is outlet?
+Where is outlet?
+Outlet is nowhere.
+HTML does not recognize outlet.
+Outlet has got filled with what you put inside that outlet.
+React router DOM is doing everything for us.
+React router DOM knows exactly
+what needs to be loaded when.
+Make sense?
+Cool.
+So now if I go from about to contact,
+see only the major pages.
+You code it down in your laptop
+and just switch the pages.
+You will understand it properly.
+Now when I go to home, right?
+How many times the page will re-render?
+If I go to my home, how many times page will render?
+Two times.
+First time it will render.
+Then it will make an API call.
+Then it will again re-render.
+Isn't it?
+Render API call again re-render.
+Now, see, when I go to home,
+don't look on the top,
+just keep looking in the HTML, okay?
+I am just hiding it up, right?
+Just see this HTML, what happens when I load on home, right?
+Once it will render, then it will API call,
+then it will again render.
+See, once, twice, right?
+Did you see this?
+See it once again.
+I am just showing it to you once again.
+On account of three, I am clicking on it once again.
+Click one, second time, right?
+So this is, this is amazing thing.
+This is guys amazing thing.
+This is amazing, my friends, right?
+React Router DOM is doing a lot of amazing things for us, right?
+If you have any concerns, play with it, right?
+You will be amazed by the power of React Router.
+It is doing it everything very fast,
+loading it again and again.
+Let me just quickly repeat it once again
+for people who did not understand, okay?
+So sometimes what we have to do is,
+we have to load several components according to our routing, right?
+Suppose if the route is slash about,
+I want to load the about between my header and footer.
+So wherever we need to do that dynamic
+or conditional routing, right?
+So we will put a outlet here.
+So outlet is like a place where you,
+where your configuration will fill it.
+Outlet is like a placeholder, right?
+In this placeholder,
+this body component will go in if the route is slash.
+If my route is slash about,
+our about will go in the outlet.
+If my slash contact is the path,
+this contact will go inside the outlet.
+It's like a container, right?
+It's like a container.
+Is this outlet name compulsory?
+Yes, because this is the outlet name
+given by react router DOM.
+It is just a, what is outlet?
+What is outlet?
+What is outlet?
+It is a component, right?
+It's a named export component, that's all.
+Somebody wrote it for us.
+It is doing some extra things for us,
+but yes, it is a component.
+That's all, right?
+Now, some people are saying,
+what if our outlet is not in the middle
+and it is below footer?
+Will this work, Akshay?
+Nice question, right?
+Nice question, it's not a nice question.
+It will work, why?
+It won't change anything.
+It won't change anything.
+Now our footer will go up, that is all, right?
+If I go to home, let me go to about page header,
+footer, about.
+If I go to contact page, header, footer, contact page.
+Easy, right?
+Expected behavior, you can put in your,
+you can just use this outlet, okay?
+You can just use this outlet.
+You can use this outlet like this.
+What will happen now?
+My header and footer has gone.
+My header and footer has gone.
+How will I go to next page then, okay?
+Let me go by like this, okay?
+See, header and footer has gone.
+It will still work, right?
+So now I can't explain you more
+better than this, right?
+I have just taken so much time
+to explain this small concept.
+Now we will code very fast, not very fast.
+We will code it quickly.
+I want to show you an important thing, okay?
+I want to build a feature, very important feature, right?
+I will show you dynamic, not dynamic.
+What do we call it as?
+Dynamic keys, I don't know what.
+I'm forgetting the name.
+Dynamic route, just give me a moment.
+I'm forgetting the name.
+See, that is why I don't like interviews, right?
+They give us so much jargons, right?
+And I forget all these jargons.
+What do we call it as?
+Dynamic segments?
+Yup, dynamic segments, okay?
+Dynamic routing.
+I'll tell you.
+The name is dynamic routing, okay?
+So dynamic routing means, let's go to cg.com, right?
+I'll show you what is dynamic routing.
+So when I click on Asha Tiffins,
+so see, it goes to restaurant slash Asha Tiffins, right?
+If I click on Namaste, it goes to restaurant slash Namaste.
+It is dynamic, right?
+Our route is changing dynamically.
+What is happening is, how do we create
+this dynamic routing?
+If my route is, see, if my route is slash restaurant slash my ID, right?
+And this ID can be dynamic, isn't it?
+This ID is dynamic.
+Did you understand what is the meaning of dynamic?
+Yes or no?
+This is a dynamic route.
+Because we don't know anything can be there in place of ID.
+ID can be one, two, three, four, five, six.
+Namaste, Asha Tiffins.
+Whatever, right?
+So let us try to build this cool thing
+because we will need it, right?
+What I am going to build now is,
+if I click on Grameen, it should take me to Grameen page.
+Shall we build it?
+Are you aligned with me?
+Let us quickly build the last portion of today's session.
+Let us quickly build it, amazing feature.
+If we click on Grameen, it should take me to Grameen page.
+If I click on Rotiwala, it should take me
+to Rotiwala page.
+And I am feeling very hungry right now seeing all this.
+Anyways, okay?
+So let us try to build a component for this, okay?
+Can we build a component restaurant detail?
+Let's build a component restaurant detail.
+Let's call it as restaurant detail.
+Give a good name for this component.
+Restaurant detail, what should I give?
+Let's keep it restaurant detail only.
+Name whatever you wish to, later, okay?
+Rename, restaurant details, details, okay?
+Basically it's a restaurant page, right?
+It will show you the, okay, let's give it restaurant menu.
+It should show us restaurant menu, right?
+Let's try to build it quickly, okay?
+Can we show it?
+Let me just do it quickly.
+It is a lot to code, right?
+What will we do?
+We click on Grameen, it should take us to a page
+which is Grameen's page, okay?
+Which is Grameen page, right?
+Or Rotiwala page, okay?
+So let us build a restaurant menu page.
+Constant, restaurant menu, menu is equals
+to our functional component.
+There is nothing new I am doing.
+And this page should have our JSX.
+This page should return some JSX to us.
+This JSX is a div, right?
+In this div, we have a H1 tag
+which says our restaurant ID, right?
+Restaurant ID, one, two, three, right?
+And then we can have the name of the restaurant.
+Let's give it a name Namaste.
+I don't know why the Namaste restaurant exists,
+but suppose if the name is Namaste,
+let's go to this restaurant page, okay?
+We will export our default constant,
+default restaurant menu, right?
+Now, I want my route to be dynamic
+on this route.
+I should load my restaurant menu.
+I should load my restaurant menu, okay?
+Let us just put an element
+and let me load a restaurant menu.
+Okay, we have our restaurant menu
+and I think I have a plugin known as auto imported,
+quickly imported it.
+Black magic, again black magic by VS Code.
+Okay, so restaurant menu, right?
+Did you understand this?
+Why I created this?
+Did you explain this?
+Right, cool.
+So let's go to our restaurant page.
+If I go to my restaurant page, will this work?
+Tell me, will this URL work now?
+Will this URL work?
+No, yes, no, yes.
+Yep, we have our URL in our outlet.
+We have our restaurant page in our component, right?
+It's there.
+The outlet got filled with,
+the outlet got filled with,
+this outlet got filled with my restaurant menu
+on this route.
+And this is my friend's dynamic.
+I passed in one, two, three here.
+I, if I pass in one, two, three, four.
+Cool.
+It can be anything, ID, right?
+Now let me, let us go back and see, okay?
+Let us go back to our restaurant menu.
+Now, let us try to read this ID.
+Let us try to read this ID into our component.
+How will I read this ID?
+React router DOM is super powerful, my friends.
+It gives us access to amazing things, right?
+We will load something known as, I'll tell you.
+It has such a beautiful API, right?
+It has such a beautiful API,
+it gives us access to something known as use params.
+Use params, it's the routing parameters, right?
+So what is use params at the end of the day?
+What is use params?
+It's a hook.
+You already know what I'm going to ask.
+People have already started writing hook.
+Amazing.
+You people are catching up my teaching style, right?
+You exactly know what I'm going to ask now.
+Let's use our params, okay?
+Let's first see and use params.
+How do we call this use params?
+It's just a normal function.
+There need to worry about, you know,
+when I was building this Namaste React live course,
+a lot of students came to me and said,
+Akshay, will you teach us hooks?
+I don't understand what is react hooks.
+There is something magical in react hooks.
+Hooks is just normal functions.
+Hook is just normal functions.
+Okay, so we have our use params.
+Now we will get this params from our route.
+Let's just try to see what we get inside our params, okay?
+Let's just try to see what we have inside our params, right?
+Cool, we have our ID.
+We have our ID with us now in our component, isn't it?
+If I give this ID as 9876543210,
+not zero, it's zero, zero, right?
+And I hit enter, it gives me this ID.
+Okay, this is not my number.
+This is my number, yes.
+You can call me, okay?
+So this is the number, right?
+Which we get in params.
+How do I read my ID?
+I can de-structure it, right?
+I can de-structure my ID.
+I can write something like this.
+ID is equals to params and I can even use it here, right?
+Can I use this here?
+Will this work?
+Will this work?
+Tell me yes or no.
+What do you think, my friends?
+Will this work or not?
+Yes, this works perfectly fine.
+If I change this to 54321, 54321,
+it works exactly fine.
+It is giving us correct ID.
+And some cool developers would also like
+to de-structure on the fly, okay?
+Also like to de-structure on the fly.
+How do you de-structure on the fly?
+You can do something like this, okay?
+Some cool developers will do this.
+And you know, people, then a lot of developers say,
+Akshay, can we do this?
+Yes, this is JavaScript.
+This is JavaScript, normal JavaScript, right?
+So if you find a code written like this,
+don't get panicked, okay?
+You don't have to panic if the code is like this.
+Let me repeat it once again.
+Suppose if we have a dynamic route,
+restaurant slash any ID,
+how do we configure it?
+The configuration comes like this.
+The configuration comes like this, restaurant slash ID.
+Whatever you pass in over here, this ID is not, see,
+this ID is not a hard-coded ID.
+You can put res ID, whatever you put in, right?
+Will come as a param here.
+Whatever you put in, will come as a param here.
+Here I'll have to write res ID, okay?
+See, if I refresh my page, we have it working.
+React Router DOM gives us access to this hook,
+which is known as use params.
+We can read the URL.
+So basically what I showed you right now,
+how to, how to,
+read a dynamic URL, params.
+Make sense?
+Make sense?
+Cool.
+Thumbs up, I need thumbs up quickly, okay?
+Now, what will happen is, let's try to make this page, okay?
+Now I can read this ID.
+So let's just go to Swiggy, okay?
+Let's try to play with the data, right?
+Play with production data.
+Let's try to use Meghna Biryani.
+Oh my God, Meghna Biryani, Paneer 65.
+Okay.
+Let us just go to our console, okay?
+Have you tried Meghna Biryani, anyone?
+What is the review?
+I'll be in Bangalore, so I'll try this out.
+Where is the API call here?
+Where is the API call?
+Oh, did it not load any API call?
+Hard refresh.
+Where is my API call?
+Hard reload.
+Where is my API call?
+Let's go back, inspect.
+I can't see my API call.
+Yep, so we have this API call.
+This gives us the full information about the restaurant, see?
+This API call is getting the information
+about this Grameen restaurant, right?
+Grameen restaurant, and it is also giving us
+the menu details, right?
+See this data.
+This says that okay, this is the ID,
+this is the name of restaurant Grameen, right?
+This is the name of restaurant Grameen, right?
+And it is in Kormangala, it's in Bangalore, right?
+We have the address for it.
+We have a North Indian healthy food.
+Okay, I should try this out.
+It has healthy food, it gives us the cuisine,
+it gives us all the information required
+to put in the restaurant details page.
+Lol, ha ha ha.
+Hey, don't chat.
+You people started chatting over here?
+Listen to me carefully, you won't understand.
+I won't repeat it now again, okay?
+I am teaching you, you are like,
+I need to be a bad teacher, right, otherwise.
+So what it is going is,
+this API is giving us detail about this restaurant, right?
+And this menu ID is the restaurant ID.
+I suppose, let us just see.
+Let us go back to some other restaurant.
+Let's just go back to Meghna Foods, okay?
+If I go to Meghna Foods, see,
+Meghna Foods is this.
+See, this is Meghna Foods.
+See, the ID is 229.
+The ID is 229, right?
+So this menu ID over here is the restaurant ID.
+Okay, so let us just try to make this API call.
+How do we make an API call?
+How do we make an API call?
+Yep, you already know that, right?
+What will I use?
+Use effect, right?
+Let us just try to make an API call
+and get the data into our restaurant detail page.
+Over here, let's get the details, okay?
+So use effect.
+What will use effect take?
+Quickly, you should answer my questions quickly.
+What will it take?
+A callback function.
+And what is the second argument over here?
+What should I write in the second argument?
+Quickly tell me, yep, all of you are right.
+We should pass in a empty dependency array.
+In this, we will get restaurant info, right?
+Restaurant info, right?
+Get restaurant info.
+This get restaurant info is a async function
+because we are making an API call.
+We don't, we want to make it as a async function, right?
+To handle our promises, right?
+So async function, async function, get restaurant info
+and what I will do, we have taught this
+so I'm going a little faster now, right?
+We will do a constant data is equals to fetch, right?
+And this fetch will take a URL.
+This is the API which I need to call, okay?
+Let's take this API of Magna food
+and let us see if we can call this API right now.
+Will this work, my dear friends?
+Yes or no?
+What do you think?
+Will this work?
+Constant JSON is equals to data.json, data.json, right?
+And we will have a console.log of JSON.
+Will this work, my dear friend?
+I did not put await, so how will this work?
+Thank you so much.
+You people are amazing.
+I forgot this.
+I really forgot this this time, okay?
+So, okay, I did my async function restaurant, right?
+And I put a await here.
+See, that is why you should code slow, okay?
+I was talking and coding very fast, so.
+Yep, we have our API data with us.
+Awesome.
+We have got the API data with us.
+We have got the Magna biryani.
+What is this?
+Magna foods.
+Yep, we have the Magna food, biryani,
+Andhra, 500 rupees for two.
+Okay, okay, 250 for one.
+500 rupees for two, biryani.
+Cool.
+So anyways, we have our use effect.
+Now, what I have to do is,
+let us just try to render this.
+Let us just try to render this into our page.
+How will I render this?
+How will I render this?
+Quickly.
+This is a revision from last class.
+Her shit is amazing.
+Chavi is amazing.
+Rajiv is amazing.
+Srinivas, CLND, yep, Karan.
+You people are amazing.
+You exactly know we need to create a use state for it,
+right?
+We will create a state variable.
+Give me a better name.
+I am just using a short name, okay, res, and set res.
+When I'm writing set res,
+assume that it's a restaurant.
+Never use res.
+I am doing wrong, right?
+Use proper names.
+Let me, let me write.
+I am just doing it because I want to complete it fast.
+Like restaurant, I hate it, right?
+Use proper names, okay?
+This is not a proper name, right?
+Use state.
+Where does this use state come from?
+Where will this use state come from?
+Where will this use state come from?
+Quickly.
+It will come from my react.
+You know, a lot of react developers,
+lot of react developers rely on auto import.
+They rely on auto import.
+I want you all, all my students over here in this call
+and in our batch should exactly know
+which of the hook is coming from which library.
+Never ever use auto import.
+Never use it.
+You know, a lot of developers, you know,
+they don't remember where this hook comes from.
+I want you to be developer.
+You should exactly know each and every single word you know.
+Whatever word I am writing,
+each and every letter, text, what I am writing,
+you should know the meaning of it.
+You should know the meaning of each and every word
+that I'm writing.
+Why I am writing?
+If you don't know that,
+be curious, find it out.
+Basics are important.
+Right?
+So we have a use state which is coming from react.
+You should exactly know how my use param
+is coming from where, which library?
+You should know.
+Most people don't remember.
+They just copy paste from random files.
+Don't copy paste, write it down.
+Use state should have a default value.
+What should be the default value?
+The default value over here,
+the data is a object, right?
+So let us create a object, empty object.
+And I need to fill this object with the actual data, right?
+How do I fill this data?
+Set res, right?
+Set res.
+Let me just use proper name also, right?
+I am feeling bad by not using good names.
+Restaurant, okay?
+Set res, res, round, okay?
+Set restaurant, res, round.
+I don't know, I mean, I'm bad at spellings.
+Set restaurant, what should I pass in?
+I'll pass in JSON.data into it.
+Cool, so now we should have our JSON.data with us
+in our page, right?
+Set restaurant is not a function.
+Did I misspell it?
+Did I misspell it?
+Refresh the page.
+Save it, refresh the page.
+Set restaurant is not a function.
+Sorry, my bad.
+Oh, my bad, my bad, my bad, my bad.
+My bad, my bad, my bad.
+Yes, yes, yes, yes, yes, yes.
+You have filled the whole chat with this array, cool.
+I was taking in, I was writing the object inside you state
+and like, I just made it, right?
+You people are amazing.
+Thank you so much.
+Thank you so much everyone for awesome.
+See, you know, this is what the vibe of live teaching is.
+Right?
+Vive of live teaching, I make mistakes live, right?
+Okay, anyways, so we have this, right?
+Let us just quickly, quickly write it up, right?
+Let's populate our page, right?
+With this, so we have our restaurant ID.
+Now I want my restaurant dot,
+let's bring our image right here.
+Can we bring our image or name, right?
+We have our restaurant name here, right?
+Meghna Foods, let us get image.
+Can we get the image?
+Do we have image over here?
+Yep, we have this cloudinary image ID, right?
+This cloudinary image ID.
+Let us have our IMG tag, IMG tag, right?
+Not this closing tag, right?
+IMG tag and we will have a SRC is equals to image,
+restaurant dot, restaurant dot, cloudinary image.
+But I will need that link also, right?
+I am waiting for some people to, yep, you are right.
+Ankit Mahule, awesome man.
+This is what I was looking for.
+Divya Chavda, thank you so much.
+You are amazing.
+Yes, so I was waiting for somebody
+to write that in the chart.
+So what we will do is, we will use the same CDN URL
+that we used last time, which is present inside our
+contact, not contact, constants.
+Where is our constants?
+Constants.js, right?
+Now you understood the importance
+of our config and constants.
+Did you understood the importance
+of our constant and config?
+We can reuse it anywhere I want to.
+What will I do is, I will import my CDN URL directly.
+IMG CDN URL from my constants.
+Cool, now I will just do IMG CDN plus this.
+Will this work?
+Do you think this will work?
+Oh, did I misspelled it?
+Okay, I misspelled my restaurant name.
+Thank you so much.
+You have a eagle eye.
+You have a eagle eye.
+Let us just see.
+Oh, nice, nice looking biryani on our page.
+Awesome, awesome.
+Let's use some more info, right?
+Let's use the area, let's use city.
+Let's use area city and,
+area city, area city and rating.
+Where is the rating?
+Area city, average rating.
+Area city, rating, cost for two.
+I will forget.
+Area city, rating, cost for two.
+Okay, remind me.
+Area city, rating, cost for two.
+Area city, oh my God.
+Area, right?
+And then we can have restaurant.area city, right?
+Area city, rating.
+What is their average rating or something, right?
+What was the name?
+AVG rating, right?
+AVG rating means stars, right?
+Basically 4.4 stars.
+And what?
+Cost for two, okay.
+Cost for two, cost for two message.
+Come on, I was not expecting this from Swiggy.
+See, we saw a bad thing in the API.
+See, isn't it a bad thing?
+We have an average rating.
+Then we have an average rating string.
+You know, this is what happens.
+This is what happens when the developer, you know,
+there would be, I know why this is happening.
+There would already be average rating,
+but some developer would have thought that,
+okay, let me pass it as a string.
+So they have introduced a new parameter.
+We should not have, right?
+We have 4.4, then why do we need the string?
+We can convert anything in string anytime, right?
+See, we found the legacy code inside our Swiggy app.
+Cheers.
+Anybody of you who will join Swiggy, right?
+Who will crack Swiggy's interview, fix this?
+Will you fix this?
+Join Swiggy and fix this, okay?
+Cool, so there are cost for two also.
+See, cost for two is 550,000.
+Okay, it must be in paisa, in rupees, 500, dot, dot, right?
+So we will not need two things, right?
+So basically, this is not a good practice, right?
+Vada raha, oh my God, you people are cost for two message.
+Cost for two message.
+So see, Swiggy developers and everybody is like us only, okay?
+So we have our image here, okay?
+You can just resize the image and whatnot, right?
+Let me just try to get menu also.
+Let us try to render menu, right?
+Let us try to render menu.
+See, we have menu items.
+We have this items, plain rice, paneer 65, chili paneer,
+oh my God.
+Let us just try to get these items onto our page, okay?
+Let's create a dev for it, okay?
+Let's do it quickly.
+It is fun.
+I really want the menu to be on my page now.
+Paneer 365, paneer 65.
+Why it is 65 though?
+Do you know why it is 65?
+Menu.items, right?
+So see, one more cool thing, one more cool thing is,
+this is a list of objects.
+This is an array of objects, okay?
+We will have to loop on this array of objects, right?
+This is the object, right?
+This is the object, got it?
+This is the, not the object, sorry, this is the object.
+I'll show you what I'm trying to say.
+I'll show you what I'm trying to say, okay?
+If you do a restaurant.menu.item, dot restaurant.menu,
+menu dot item dot restaurant dot menu dot restaurant dot menu dot items items right and let me do a console log right console dot log
+basically this is the menu items right these are the menu items so see these are so many objects
+this is not an array this is objects this is a key and this is a value this key and a value
+so what we have to do is we will have to iterate over the values how would i do that
+how will i do that i will use something known as object dot values people who are not understanding
+after the class go ahead read about it i am not explaining you right away so when you do object
+dot values it will give us all list of now it gave us an array now it gave us an array of objects
+now we can map it now we can map it i am telling you right now only many people will get
+errors because of this and they will post in the discord community i don't want any
+errors of this posted in discord community because read it this is important right why i
+am doing object dot values what is the use of it so basically it is converting my
+objects right the whole objects into my arrays right array of values okay so now i will loop
+onto it right i will now loop onto it let me quickly loop right first of all let me
+create a h1 tag let's call this as menu okay what is the time how much time is left okay
+we don't have much time let us just quickly go i have to catch a flight also okay so
+let me just quickly do it up for you right let us create a ul li okay i am not making a fancy
+UI here right i am not making a fancy UI let us list down all the menu items wouldn't it be
+amazing if i get the menu on the page would be would it be amazing if i get the menu items on the
+page let's do the map right map of each item right and let's go and return a li from it
+li from it right and what should i fill in my li my item dot let us see what our item has
+our item dot where is it item dot name right item dot name item dot name does it also have
+an id i am forgetting one thing id we should have a key for it isn't it always remember my
+dear friends if you are doing a map always use a key now we already have an id over here for this
+right this id right so what i will write over here key is equals to item dot id make sense
+will it list will it list down our menu quickly tell me yes let us just see our menu oh my god
+we have our menu it is not looking as beautiful as swiggy right swiggy has a great css over here
+golden baby con paneer 65 but we have a decent looking menu isn't it it is looking like a menu
+of our that we menu we get inside a restaurant right on the page printed let us put some css to
+make it look better class equals to menu okay menu let us make it a flex quickly let me make it a flex
+it will look better i am not putting a lot of focus on css but
+menu menu right and let us give it display flex okay cool my dear friends isn't it cool
+it is not looking very good see oh again a mistake i wanted to show you this mistake
+what is the mistake tell me tell me this mistake optional chaining you people are experts you know
+whosoever is saying optional chaining you did your homework cool but why is it happening
+is one more reason because till the time our restaurant are not there right in the initial
+render it is an empty object but still i am reading a lot of things from this empty object
+that is why it will give the error once again right it will give the error once again did you
+understand why because on initial render our page is empty object right our page is empty object
+right so we do not want this i will i will tell you a quick way to fix it okay so on
+initial render let us not render empty object let us render null okay let us render null
+okay and i can do a l early return i can do a early return if my if my restaurant is
+if my restaurant is not right then i can just return
+okay instead of early return let's let's do a shimmer right let's do a shimmer okay till the api is
+called it is being called let's do a shimmer right this is the beauty of react right we can reuse
+the components see because we made now this is a very important thing there were people who
+were asking should i create a new component for shimmer remember in the last class somebody
+asked me this question right that should i create a new component for shimmer see component for shimmer
+has helped us now we can reuse it again right so shimmer imported from shimmer right and then
+we have our shimmer or else we can write like this right we can write like this only using
+our ternary operator right if are not of restaurant then load our shimmer else load our
+does this make sense to any everyone if it does not make sense i have taught this to you already
+i'm not explaining this to you again okay if not of restaurant load shimmer else load my
+normal page will this work okay export default restaurant menu what did i do wrong cannot
+assign property to message cannot assign property message where what what error do we get
+export default restaurant menu cannot assign read only property message of oh did i make a
+mistake oh i i sorry sorry sorry i removed a parenthesis from here my bad my bad my bad
+not a coding bug yep so we have this with us right let us refresh the page
+we have our shimmer see shimmer with us cool does this look cool my dear friends cool right
+now let us just quickly make everything dynamic right but let us make you know what we are building
+is super powerful why because this restaurant is being loaded from a dynamic route dynamic route
+if i change my id over here will my page change will my page change let us go back to swiggy
+let us grab the grab the id of our gramming right this is another restaurant right if i load the
+page of gramming whoosh where it is let us load the page of gramming oh did i not use
+gramming oh my god why it is not loading gramming because i have hard coded my api
+array i was about to show you an amazing thing i was about to show you some magic and shoot
+very bad i was about to show you the magic and everybody would have been so excited
+but my bad my bad my bad my bad my bad friends okay so basically i need to pass in dynamic id
+from my data right yep gramming is live now can we get a thumbs up can we get a thumbs up now
+gramming is live with us when you write your code in a modular fashion listen to me very carefully
+important lesson when you write your code in a modular fashion then we can reuse it a lot
+okay we can reuse it a lot just by changing my route id i can just load a new restaurant
+see isn't it amazing isn't it amazing magna food came in if i go back
+my gramming came in if i go front my magna food came in this is so amazing guys
+this is amazing right we have our menu i can show all the information about the menu right
+whatever information you want to show just show it you have all the data over here right
+property class okay i did not use class name somewhere
+my bad where did i use class okay class name okay so we have our class name we have this
+data right so we i can use any piece of menu i can put in price also suppose jeera rice is
+hundred rupees so you can put in you can make those fancy uis but this is the power of react
+router dom react and it is loading very fast everything is happening very fast there is
+a reconciliation whenever you load this route right a reconciliation process triggers shimmer
+happens we are building a production ready app it is no way less than swiggy it is no
+way less than if you go to swiggy they would have also written code like this they would have
+also written code like this but let us just make it work right what should happen is on my home
+if i click on kanur food point it should take me to kanur food point if i look click on donate
+biryani it should take me to donate biryani let us make that right let us make this cool thing
+right our app should work properly how will i do that how will i do that i will just link
+i will just link these components right this is the last part i am doing then we will wind up right
+because it is it was a very knowledge heavy session you know the the sessions will be
+more knowledge heavy as we go ahead right so keep doing your assignments keep finishing it
+let's go to body we have a restro card with us right this restro card let us wrap it inside
+our link right let us have our link to right link to link to what link to what let us let us link it
+right let us link this why is it complaining oh i did not import my link the link will come from
+where link will come from where quickly tell me link will come from should i do it like this
+should i do it like this oh my dear friends i should be a named import you should remember
+all of this right it's a good practice good habit to remember what is what is it complaining
+what is it complaining here did i messed up something okay i have okay sorry sorry my bad my bad my bad
+i closed it right so in the link to right slash restaurant and i also want to give it a dynamic
+id right dynamic id how do i give it i need a jsx like here right and i need to pass in a dynamic id
+plus id how will i get this is the id right let me tell you one more thing right now we are mapping
+our link component so this key should be in our link component okay whatever we are running
+map on the key should be on that okay so now we have a link let us go back to our page oh my god
+css css css oh css it is looking a little ugly but trust me my friends all these cards are
+clickable now see okay if i click on kanur food point will it take me to kanur food point
+if i click on hotel empire will it take me to hotel empire yes or no yes let us see this in action
+in three two one hotel empire hotel empire is live with us hotel happy new year happy shake
+is missing be happy new year see this right so if we go back to roti wala it takes us to roti wala
+amazing right and you know this is not a normal app we have done so much today we have created
+dynamic routes we have dynamic id is associated with each route with the id of this restaurant
+we have fetched in some information using use effect we have pushed in term data we have
+our shimmer effect my friends we have shimmer effect with us we are not failing anywhere
+if i click on asha defense it takes me to this page we have showed the menu items we have showed
+asha defense menu here right and we have done this we are moving ahead we are moving on to the
+cool things we the knowledge all these lessons will be more knowledge heavy as we go ahead
+please keep doing your assignments i have to go to catch my flights i will do a quick recap
+but i wanted to show you that this is very important thing your homework for today is
+your homework for can i have some energy you people are not having energy today can i have
+some energy thumbs up energy blow it up yep 1.1k 1.2k yes so what i wanted to tell you your
+homework for today is you have to make everything dynamic in your app routing should be proper
+you should exactly know about what all things that we used you should exactly know about
+nested routes you should exactly know about dynamic routes you should exactly know how do
+we handle errors in our route how do we create a error page right lots of things that we did
+lots of things we did today amazing super session isn't it we have built see this is a
+very production ready app right just just pardon my css skills right pardon my css skills otherwise
+it is a production ready app it is fast it is optimized it is it has parcel parcel is a beast
+it is doing a lot of things right nothing is hard coded over here we are exactly using the
+live data disclaimer i am not promoting swiggy hair swiggy has not paid me anything but see
+we are using live production swiggy data i am not hard coding anything i am not showing you any data
+right so we have this page we have shimmer effect we have beautiful ui we have hooks
+amazing things we are doing right this is what you have to do alex surya says that
+is this the first batch yes you people are the first live batch it's a mass batch i have run boot
+camp before it was a very close audience there very close audience i have taught react so many times
+i have taught react multiple times this time i am teaching this live over here to a lot of people
+and i wish i can teach a lot more people this knowledge should go everywhere everywhere right
+i will teach more people right this is what is the best thing and thank you so much everyone to be
+active in the discord community who has not joined discord community join from that link
+which is pinned on the comments right we have built amazing thing today you have to build this
+all everything should be working see and you know we have built it in such a way
+that everything is a different component now let me take a moment to explain you
+okay you you should also know what this all this is happening client side routing
+this is all client side routing nothing is changing our header stays intact our face
+footer stays intact let us appreciate the good things about react react is amazing
+header state inside intact footer is there we are going on to different routes everything
+is working super smooth everything we have our error page with us if i go to random route error
+pages there you can make a beautiful error phase for yourself we have our shimmer which
+is happening for every route right that we load suppose if i am loading we have our shimmer
+happening amazing let us appreciate it we have this login logout button as well it's not working
+but it is amazing thing right so right so we will do all that right amazing things in our app right
+we are going to do more heavy knowledge sessions finish your homework before the next class
+okay so tired today lot of code shall we recap it once again the whole lesson
+it has been two and a half hours i am constantly speaking recap right a quick recap
+we will end the session don't want to teach anything else people who want to leave can
+leave good night bye bye right sleep now sunday is done you have had a productive sunday happy
+makar sankranti right i am just teaching who are here right i am recapping it once again
+what we did right from the start right from each and everything that i imported
+okay so first of all we talked about we talked about that can we okay we cannot create uh
+i told you few things can we create multiple use effect quickly answer me can we create multiple
+use effect yes can i write my use state inside a if else can i write a use state inside if else no
+i can't write it inside if else i can't write it i should not not can't you can write it you
+should not write it inside if else you should not write it inside a for loop okay now what i
+went to tell I also showed you how we can have images into our app right how can I import my
+image into our app I showed you this right we can have a assets folder IMG or you can have it in
+assets and how do we import it let us go to the head right header header section of our app
+and we did something known as I logo right this logo come is coming from see remember one crucial
+thing one crucial thing this logo comes like a default export you don't have to do a named export
+because we are not named name export right we are not doing a named export of an image okay
+so it's a default export it will work okay cool some people are asking which I which
+which extension am I using for these colorful icons okay these colorful icons you see right
+this is a vs code icon extension don't ask me random questions I am teaching something
+this is a different extension find it out yourself google it you will get to know
+or ask it in discord don't ask me right now you are don't disturb me while I'm teaching
+please please please please important stuff I will forget otherwise I will leave okay like I mean
+things will be things will go out of my mind I have to actually recall what all I taught today
+I told you about image then I also told you about how can you have shimmer inside your app
+this shimmer right you don't have to include a another library if you don't need it
+otherwise library is like is or is also there right I showed you that right you have to just
+create your shimmer like this try to make a beautiful UI using CSS HTML don't do that
+okay cool you can use your shimmer then we went on to seeing that okay we have we have
+we are app needs a lot of packages and libraries but those packages should be important I told the
+name of a of a package that that can help us build forms that can help us fill forms what was that
+exactly Irshad is right Rahul is right Vicky is right you are all are paying attention
+whosoever remember the name you all are paying attention in my classes you are the first
+benchers okay so we have this extension known as formic right we saw that okay formic helps us
+and it has helped me a lot in my career so build your forms and react without the tears
+so I have just telling you okay if you ever built a react application use this right try to use this
+right formic maybe try to to can you build this today will you take one more thing as
+assignment build a login page build a login page with a form and you will use formic in it will you
+do that give me a thumbs up if you are ready to do that extra homework for you extra homework build a
+login page right build a login page when you click on it right it takes us to this page okay will
+you build that thumbs up yep huh not authentication ready give it a hard coded true give a hard coded
+authentication okay it will be more fun build something of your own okay so we studied about
+and use formic try to use formic try to read documentation make a habit of reading documentation
+it has a good documentation okay if you go to the tutorial it will teach you everything
+how do you create a form and all okay do that right so um then we studied what then we came
+on to routing right to do routing to do routing how do I create a router what did I what what
+is the function that we used to create a router name that function is does anybody remember
+yes it the name is create browser router what do we I am not showing you the code intentionally
+over here right you you are amazing if you remember that what do you put inside create browser router
+does it take an object or an array object or an array object or an array array array of configuration
+array of objects each and every object has what a path and what is the what is the key of that
+what is the key that we write for component element exactly how do you put in error element
+what is the exact key for an error element error element right I I come on I I told you
+error element already not a good question okay so let me let me ask you more question
+after making that configuration how do you provide it how do you provide it what is the component
+that we used router provider exactly rich are you are amazing Nikita you are amazing
+Santosh everything is right router provider now now now now let us just see the code now
+okay let us just go back to app.js I have my create browser router who did not understand
+create router prouder right create browser router oh my god create browser router it takes an array
+of objects each and every object has a path an element an error element and we can have in
+children's also right and the important thing to remember is we need to provide this route
+now we are not rendering our app layout we are not rendering our app layout we are rendering our
+router that means that whatever is rendered onto the root just render it using this config
+whatever is rendered using in this route just render it using this config now when the path
+is slash it loads about app layout right okay tell me a place tell me a place tell me a
+component where you fill in where you fill in yes everybody is right over here that is known as the
+outlet where does this outlet come from where does this outlet come from react router dome exactly
+some people are saying react dom no react dom oh my god not react dom react router dom
+react dom is different react router dom the library that we had
+I don't know you need to revise it again okay so now what we did we had this outlet
+now whatever children that we make will go inside our outlet whatever children that we make will
+go inside the outlet our header and footer remains intact and the outlet will fill in
+if I have my about it about will go and this is how we created the children over here
+amazing thing right does the sequence matter does this sequence matter
+will this sequence matter what do you think no sequence does not matter
+sequence does not matter it is an array of objects you can pass in any configuration
+awesome right so we did this now we now we provided this app router over here also remember this line
+also okay once we have this our application is super powerful now then we went on creating an
+error component and we use the hook let me not show you that hook what was the name of that hook
+what was the name of the hook to get the error what was the name of that hook
+exactly right use route error use route error hook which is give us information about the
+error we can display it onto our page right now how do I put my error into into my into
+my config how will I put this error page into my config yes you are right it is the error
+element absolutely right you people are amazing right we put this error element like this okay
+it will catch all the errors and it won't put a error in the console okay for us now in the dev
+tools let us just see that what now we started building our restaurant page right then we gave
+a dynamic id to this right this dynamic id how do i read my dynamic id how do i read my dynamic id
+oh somebody already started writing before even i asked for it use params exactly use param hook
+use params right let's go to the restaurant page we have our use params hook amazing part of
+the reusable component see because we kept our folder structure so nicely we created a new file
+for each component we are exporting files from different component that is why today we have
+we you know why because we are building everything in a very good fashion this is how you write
+code in production because we are writing it in proper way that is why we are able to reuse a
+lot of things that is why we were able to reuse shimmer that is why we were able to reuse our cdn
+because make a habit to use all of this whenever you do something right break your break your
+components into new files break your small logic into components more components is better
+okay don't don't make a component for each button right but make a component for every
+logical thing right that will help you make your code modular that will help you make your
+code readable that will help you make your code maintainable that will help you made your code
+testable that what did i say what did i just said what what what are the four things i told
+it will help you make your code modular it will help you make your code readable
+it will help you make your code maintainable
+it will help you make your code
+what? reusable
+it will help you make your code
+testable
+remember all these five points
+in your interview
+stick it in your
+in your interview stick it in
+okay
+so
+uh
+modular
+reusable
+cleaner
+maintainable
+testable
+got it
+cool
+so
+we did that
+then
+this is the thing
+which we saw last time also
+we made an api call
+we forgot the dynamic import last time
+right
+we
+dynamic id
+but then this is how we do
+we fetch the data
+put it inside a use state variable
+and we trigger a reconciliation cycle
+from the react fiber
+and all that thing happens
+very fast
+and our react renders are done
+with a new principle
+got it
+always keep using optional chaining
+wherever possible
+here also you have to use optional
+chaining
+okay
+keep it right
+you never know
+when area
+when did api
+stop sending area
+you never know
+right
+suppose if your api
+stopped sending you area
+right
+never know right
+so
+use this right
+to be careful
+when you are writing code
+okay
+so this is what we saw
+and then we plugged in
+we used
+yes
+I forgot to tell you
+link component
+link component
+right
+I forgot to tell you link component
+so link component is used
+over here
+like this
+and always remember that this is not href
+this is 2
+achha
+at the end of the day
+what is this link component using
+behind the scenes
+anchor tag my dear friend
+amazing
+you know you have to play with your code
+you have to do that
+and see it in the elements also
+in your html
+when you switch the page right
+see in your elements
+when you will do your homework right
+see it in the browser
+what is changing
+how is that reconciliation happening
+right
+will you do that
+right
+amazing
+you would love react
+you know
+okay
+now I want to ask you one more question
+we are at chapter 7 now
+are you loving react
+are you started liking react
+yes or no
+yes or no
+can we have a react OP in our chat
+are you loving react
+can we have react OP
+yes
+this is what my mission is to make you fall in love with react
+last time I made you fall in love with javascript
+this time I wanted to make you fall in love with react
+right
+I want to teach you everything
+I want to teach you how people write code in the industry
+I want to teach you industry ready code
+not just normal code with some dummy data no
+live data
+live things that we use
+shimmer
+microservices
+micro
+right I told you everything microservices monolith
+config driven routes
+right
+config
+so you should know
+client side routing
+you should know difference between everything
+client side routing
+server side routing
+you should know every small thing
+right
+we have a lot more things to cover
+the sessions will go more knowledge heavy
+if you have not finished your homework
+or assignments
+I am telling you this is the right point
+even if you have not done your first assignment
+this is the right point
+take this whole week
+finish all your assignment
+finish all your assignment
+this is what we are building
+config driven UI architecture
+and you know everything right
+you know a lot of things now
+if you have attended all the classes
+right
+almost three hours every class
+seven classes
+seven threes are 21
+21 classes
+21 hours sorry
+21 hours done and dusted
+21 hours into react
+right
+we will fall in love with react even more
+let us just
+keep doing it
+right
+and keep learning
+please stay active on the discord community
+the link to the discord community
+will expire very quickly
+thank you so much once again
+I am stopping to share my screen
+right
+and
+let us just
+let us just wind up this session
+happy makar sankranti to everyone
+have a nice day
+and let's meet
+next Saturday
+with a new concept
+in react
+and let's continue this journey
+be active on discord
+second thing is keep doing your assignments
+please
+okay
+bye bye
+goodbye
+I have to catch a flight
+I need to go
+we are finishing on time today
+157
+three minutes left
+can we have the energy last time
+thumbs up
+let's hit the thumbs up
+let's break their servers
+let's break their servers
+come on
+1.92
+2.1
+let's click on it
+I am also clicking along with you
+let's
+let's click the thumbs up
+yup
+okay some people are saying get pushed
+yes
+yeah
+thank you for reminding me people
+you are amazing
+let me
+let me put this up
+right
+the recordings take some while to do
+right
+recording will take some while to come up
+meanwhile you can just see the code
+right
+the code link you will find
+where you will find the code link
+now people will ask me again
+it has been seven sessions
+people don't know where they will find the bid bucket link
+it has been seven sessions
+keep the energy coming in
+I am pushing in
+pushing the code
+chapter 07
+sync it sync it up
+the code is live
+okay
+I have pushed the code
+bye bye
+see you in the next class
+let's meet next week
+please please finish your assignment
+I am telling you once again
+and bye bye love you all
+okay bye bye
+4.4k
+let's go at 5k
+can we have thumbs up 4.5
+4.6
+7
+8
+9
+yup
+chalo bye bye

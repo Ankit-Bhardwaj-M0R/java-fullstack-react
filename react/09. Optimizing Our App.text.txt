@@ -1,0 +1,1383 @@
+FILE: 11. Optimizing Our App.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+the recording now and good morning everyone today's class is optimizing our
+app can you guess what what what will be there can you guess what will be there
+quickly let me share my screen here is my screen to share awesome are you able
+to see me are you able to see me yes awesome awesome thank you so much let me
+start the project up so I have this project with me just give me a moment
+why is special class what is special this is a regular class man nothing
+special about it yes every class is special okay so this is also special yeah
+so so let's start the session the session is optimizing our app what do you think
+we would be doing today awesome Chandan says we would be doing code splitting
+and lazy loading are you interested we will be doing code splitting we put
+be seeing how we lazy load things up we would be seeing how we make a big large
+scale application which is performant which is fast right we would be doing
+that right we would be doing a lot of stuff today and we also would be seeing
+one more interesting concept can you just tell me what that concept will be
+quickly try it out stateless use memo no redux no memoization no profiler no lazy
+loading yes yes lazy loading is there but apart from that what one more context
+API no suspense yes what else chunking yes no tailwind not yet no state
+management not yet no context not yet today we will be seeing one more important
+thing which is like okay what hooks have we used till now what hooks have we
+used till now the most important hooks in react are use state and use effect
+these are most important hooks you would use it almost daily you should be very
+good at it we have used other hooks like use params right we used use params right
+we used use params to get the parameters right params from the URL today we are
+going to see how to create a custom hook interesting isn't it we will see how we
+can build our own hooks right now as I told you my friends we are on chapter 9 we
+have seen how to build basic react applications if a react application it
+needs to be built where you have to build a page you have to run render some
+components right you have to do basic stuff you have to manage state you have
+to pass in data from one component to other you have to break down your
+components into smaller portions all of these things to make an external API call
+to fetch data show it into our components create an input box create
+buttons we have done so many things already right we have done so many things
+already right so basics are covered and now we are moving on to the advanced
+concepts right so advanced concepts are really very important so I need your
+full attention from for each coming session okay last session was also how
+was last session how was last session how was it did you like it yummy mind
+blowing heavy good gripping so if I have to rate between 1 to 10 what you would
+give to that session 1 to 10 11 9 10 okay 10 100 okay so the session was last
+time was class-based components I wanted to teach you class-based components
+because they are really very important for your interviews and it is also very
+important when you are suppose you are go you went to a company right and
+that company uses a older version of react right so in our older projects most
+of the codes you will you will find will be written in class-based components
+style so I wanted to teach you the latest coding practices that is the
+functional component so throughout the course we would be using functional
+component but but but having the knowledge of class components like
+makes you a better developer will make you understand that what are the
+philosophy of react when it was built okay so it was that okay and total
+chapters so we will be having we will be having total 16 chapters total 16
+chapters out of this 8 8 are finished 50% of it is finished but we have learned
+so much in this 50% of 8 classes we would have 8 more and these all 8 would
+just open up your mind even more okay and after those 8 sessions right in
+between there will be more sessions so 8 react knowledge heavy sessions are
+remaining and there will also be bonus sessions bonus sessions will be on
+personal branding bonus sessions will be on LinkedIn because I feel personal
+branding is a very great very great tool right about it right the other thing
+is LinkedIn are you interested in LinkedIn we would be having a bonus
+session over LinkedIn where I will give you my personal tips and tricks right
+whatever I have learned over LinkedIn and you can ask me a lot of questions
+regarding LinkedIn as well right before every bonus session I will take up some
+questions right and I will answer those questions along with it right that will
+all happen over discord okay then we would also be having right we would
+also be having one more bonus session over resume tips resume tips and
+tricks right we will be covering a little bit about interviews along with that
+session right so we would we would do right we would do all that okay so we
+will do these sessions on weekdays between our react sessions react
+sessions will be on Saturday Sundays those session will be on weekdays you
+will get the notification about those sessions a week before don't worry
+about that okay awesome we will talk about it right we will talk about all
+those things later on let us start today's session because it is already 11
+11 I don't want to waste time let us just start I have to teach a lot of
+things today let us start our project by running npm start and we have our
+app running isn't it no okay where does it fail restaurant menu what happened
+to restaurant menu okay we have our app running I guess I don't know what was
+the glitch so let me just get my browser in over here here is my browser and I
+have my local host cool so here is my browser but where am I just give me a
+moment yep yep a lot of people are saying projects projects projects don't
+spam the chat now projects we are building a major project what do you want 10
+small projects or less number of projects but div big projects tell me big
+projects or 10 small projects big projects or 10 small projects come on yeah
+you know when I am teaching you all this stuff you are capable of building
+thousands of projects you are capable of building thousands of projects isn't
+it I am diving deep into all these concepts suppose if you have to make
+amazon.com can't you make amazon.com using something like this can't you make
+like there are see there are millions of projects but I want to focus upon less
+number of projects let me tell you my teaching style okay I'll tell you my
+teaching style I could have built every small project for every feature I
+built in this app right every small project for but you won't then
+understand that how will you work with so many components today if you see we
+have so many components in our app and the code is getting messy day by day
+isn't it right so you should know as a big as a senior developer that how are
+you managing your code how are you able to keep your code clean how are you
+able to maintain this code it is important instead of and let me tell
+you in your resume if you write 10 projects doesn't matter much if you
+write one project but that one project is solid one project is solid it will
+make a lot of difference do you understand one important thing I'll
+tell you you know we don't appreciate a lot but don't you know that okay go
+to any file over here don't you know meaning of each and every word that we
+write each and every word you exactly know what is this use route error doing
+where it is coming from you remember that isn't it why did we use this error
+dot status text remember it or not right why did we use this error component
+where did we use each and every tell me tell me that if I have copy pasted
+even one word in this project did I copy paste even one word in this project I
+have not copy pasted one word in my project I want you all to be such great
+developers that you should know the meaning of each and every word that you
+are writing in your project I am telling you and I personally have never you
+know how do you create component let me try let me tell you a lot of people
+create components like this okay suppose we have a live chat component okay live
+chat component live chat.js you can write RAFCE you write RAFCE and enter
+everything is automatically generated you won't know what is happened how did
+this component came in what is the meaning of default what is the meaning
+of export what is the meaning of import where is this react coming from
+where is the what is this react what is this functional component what is this
+JSX why are you writing like this I have told you every damn small thing that's
+important so I want to focus upon less number of projects but dive deep into
+every small concept so that you can build any project that's come to your
+way but let me tell you I will build towards the end of our sessions right
+towards the ending sessions we will build projects we will see everything
+working fine so don't worry about it give like give like get some trust on me
+okay just trust me for a while okay I am your teacher I will take I will take
+care of you don't worry okay I will cover a lot of things right I want to
+cover a lot of things just keep keep your trust over me okay I am not
+running every anywhere I am not running anywhere okay so I am zooming a little
+okay cool so I have zoomed let us just start with today's session so last last
+time we studied about last time we studied about class components so let us
+take a quick let us take a quick test let us take a quick test okay
+so let me take a quiz test are you ready how many times component did mount is
+called how many times component did mount is called one two one two one exactly
+you are absolutely right whosoever is saying one amazing you people are
+amazing okay how many times component did update will be called component did
+update two times two times component did update every times every render it
+will be called component did update so component did update will be called
+every time you people forgot okay this will be called every time will this be
+called every time no this will not be called every time this will be called
+when we change our state when we update something there are three states what are
+two phases of react what are two phases of react what are the two
+phases of react lifecycle yes there is render phase there is commit phase right
+okay so suppose we have two child so do you remember batching yes or no render
+phase where we was being batched yep so people don't get confused there are
+three things mounting updating and mounting every time you load a component
+there is a for at the first time what happens at the first time mounting
+happens mounting the component is mounted if suppose a component does not
+have any props does not have any state then how many times update will happen
+zero there will be no update if there is no state there is no props there won't be
+any update the component will be mounted and when you go from one page to
+another one URL to another or it will can be unmounted that's all that's all
+update happens when you change some data change some behavior in your
+component okay whether it is changed in props whether it is in change in state
+whether you have some on-change handlers and all that stuff okay so these are the
+only three things you have to practice right I I don't know how many of you
+were a got time to do your homework for yesterday but please do your homework
+when you are doing your homework create a nested child parent
+relationship and try to do it okay try to do console logs and see how life
+cycle methods work it's really very important okay one more question what is
+component will unmount used for component will unmount used for exactly clean
+up yes clean up okay so try that up right that is really very important
+try that up okay so now today let us just go to our page and where is it what is
+it body.js let us go to body.js why it is complaining okay we have our body.js
+in here inspect awesome we have about us in about us page we have this profile
+component and we had a set interval running where was that profile component we
+also had an API call over here right where was that API call that was in
+profile.js I guess no profile class.js yes okay so what we will do is we will go
+to about us page instead of okay this is the functional component let's use the
+class component over here okay where is that API call did we remove it about oh
+we removed it okay thank you for reminding me let's see okay did we remove it really
+okay yeah we might have removed it don't know but anyways no issues today today I am going to
+show you an important thing okay we have been using a lot of hooks in our app already
+we used use state we used use effect right we used use state we used use effect right
+what is hook at the end of the day what is hook at the end of the day it's a normal
+JavaScript function isn't it it's a normal JavaScript function and we will we will try to
+build our own hook today we will try to build our own hook today okay this is an advanced concept
+first of all now there are so many questions that pops up to our head that why do we build our own
+hook when should I build our own hook and how should I build our own hook right three questions
+come to our mind when how why isn't it amazing right so first of all let me tell you that why
+should we even build hooks why why should we even build hooks right why should we even build hooks
+can you tell me yes some people says reusability exactly one great example is one great use case
+is reusability yes more what else readability exactly thank you so much yathendra for your answer
+yes hooks gives us readability and reusability these are two important things and there is
+one more thing which is separation of concerns maintainability right these things come as perks
+when we use hooks okay so I'll tell you how to create our own hook
+but first of all let us just see that why we need this hook why we need a hook
+so what is a hook in general right when react was coming up with a you know with a
+concept of hook right hook is nothing but a normal JavaScript function why do we build
+functions in JavaScript why do we build functions so basically we can wrap up
+a small a small logic inside a function isn't it we can wrap up a small logic inside a function
+and can reuse it anywhere we want to isn't it we can wrap up a small logic and we can use
+anywhere we want to where did we created function so we created see we created filter data
+why because now over here in my code I don't have to see I could have written the whole logic of this
+here also isn't it can I write that logic here no we could have written this logic here also right
+of filtering why did we break it down into a function why did we break it down into a function
+modularity readability reusability exactly three things modularity reusability readability
+let me come to one by one readability is see this button is there it has a on click
+so now when I am reading this code I know that okay there is data which comes from filter data
+so I don't have to worry about what logic filter data is using filter data might be using any logic
+right to filter out suppose if there is a search logic so there can be there can be binary search
+there can be different type of linear search right it we don't have to worry about how it is
+searching I just want to know the output of it right so what I am saying is what I am saying
+is we need to abstract the logic it makes our code much more readable it makes our code much
+more readable right it is readable isn't it I could have written the whole logic over here
+it's readable second thing is maintainable when I say maintainable it is like you can
+sorry reusable right reusable means you can reuse it suppose if we need to filter data
+somewhere else in our code I can just reuse it what is a great place to keep this filter data
+what is a great place to keep this filter data yes so basically a great place to keep
+see whenever you are creating reusable function so they see filter data we are doing it over
+here suppose one more component use needs to use filter data have to do filter data so there
+should be a common place where we can keep our utility functions does that make sense
+there should be a common place where we can keep our utility functions and import from there
+okay a great a great way to do that in our industry is to make a folder like utils
+okay it's a it's a it's a good practice in the industry what people do is they make a
+folder utils okay this is like a utility folder right why do we call it as utils it's like a
+utility right utility means small you can name it whatever you want to some people name it common
+some people name it common some people name it helper right so different ways you can name
+it whatever you want to some people name it shared exactly you are right some people name it
+something else so you can you can give whatever names you want to different people use different
+names let's use utils and in utils you can create a utils.js or you can create a helper.js
+or you can create a common.js or you can whatever right whatever okay so let's give it a name
+what name should I give it what name should I give it let's give it helper.js okay helper.js
+so this helper.js will keep our helper functions will keep my helper functions so what I'll do is
+I'll just copy my pay like I'll just clean up right I'll clean up this component I'm just
+copy pasting this over here and what I'll do I'll just do a export of it I'll just export it
+right and I can just import it inside over here how how should I import it yes like this right
+filter data from my utils slash helper now what happens is now suppose it is inside my utils now
+suppose my profile class needs to use this helper method it can also use it
+suppose any component want to use it it can use it from a central place without rewriting it
+so this keeps this makes our code readable and reusable we have seen two things readable reusable
+right so now see our component became a little cleaner right we don't have to worry about what
+is the filter logic now reusable readable third thing is this makes our code more testable
+do you understand this makes our code more testable how because I can write separate
+test cases for this I can write a separate test case for this right and suppose if something does
+not work right and then I will not have to check my filter logic when I'm writing test cases for my
+body not my body basically the body component right I don't have to write test cases for
+checking whether the filter is happening properly or not I just have to test it individually
+okay cool so now there are more what else it makes our code maintainable why do we say
+it makes our code maintainable why do we say that it makes our code maintainable yes it is
+easy to debug right it is easy to debug suppose see suppose if I write my filter logic at one place
+suppose if I write my filter logic over here only right so it is not a good right
+suppose if I if if our app grows there are thousands of components then suppose if I wanted
+to modify my filter logic I'll have to like search where was the filter logic written
+come back over here and find it out but when I know that okay my filter logic will be in some
+utils I can quickly fix things up okay so it makes our code readable it makes our code reusable it
+makes our code maintainable it makes our code testable write down all these all these great
+thing right so and hooks are also kind of used for the same reason hooks are also kind of used
+for the same reason because at the end of the day they are functions okay now some people are asking
+what is modularity what is modularity modularity means our code is modular means we have broken
+down code into meaningful pieces okay remember this statement we have broken down code into
+meaningful pieces when I say my component components are modular that means see every
+component that you see has its own responsibility isn't it I have always from the start created
+component in smaller chunks right I have always created my components in smaller chunks see
+I could have written the shimmer logic over here itself isn't it I could have written the shimmer
+whatever I have written right these I could have written this jsx the same jsx over here
+in my over here but I made it modular okay so this is what is known as modularity now let us
+just see why hooks are used okay you got your answer that why we need hooks right so now let us
+create our own hook okay let us create our own hook let's find out okay let's try to use our hook
+over here only suppose let us see this restaurant menu component this is the restaurant menu component
+what is this restaurant menu component doing what is the job of this restaurant menu component
+what is the job of this restaurant menu component showing the restaurant detail where is it
+where is the restaurant menu component restaurant menu component is this component
+if i clicked on magna food this is my restaurant menu component right this is my restaurant menu
+component what is the job of this component the job of this component is to show the menu of the
+restaurant job of the component is to show the menu of the restaurant this logic right
+to display the menu of the restaurant suppose if the restaurant does not exist or the data
+isn't loaded yet so it will just show shimmer it will just show shimmer okay now we have put in
+this logic also into the same component what is this component doing it loads then it tries to
+fetch data then it tries to load that component right then it tries to fetch data and then it
+tries to load component so it it is doing two jobs a single component is doing two two things
+some people are saying zoom it let me zoom a little but don't ask me to zoom more than this
+otherwise it becomes unreadable for me okay cool okay so
+so what I'm saying is see now we have this we have this component right it is doing two things
+it is fetching data and then it is displaying data it is fetching data it is displaying data
+can we can we can we extract some more logic from this component
+can we extract some more logic from this component what logic can I extract from this component
+what logic can I extract api call you are absolutely right chandan right so what we will
+do is what we will do see we have this extra logic in our component isn't it we have this
+extra logic in our component what we will do we will try to we will try to extract this logic
+see what my component is trying to do I am repeating it once again my component when it loads
+it tries to it tries to get the restaurant information first of all it tries to find
+out the parameter it finds out the restaurant id now first thing is find out the restaurant id
+second thing is find get the details from the server of that restaurant third thing is to display
+so let us create a hook that will help us that's a helper hook that will help us get the restaurant
+details make sense did you understand the feature did you understand the feature
+awesome let us try to write code for it important thing to note whenever you are
+creating a hook what is a hook hook is just a function right hook is just a function
+whenever you are creating a hook I love to create it as a new file okay I love to create
+it as a new file let's name and always always always my dear friend always always my dear friends
+create a hook with the use name in front of it create a hook with a use name in front of it
+it is a react way of knowing that it is a hook okay that is why you would see that all the
+hooks that you use have a use word in it use state use effect use params okay you can create your hook
+anywhere you can create a separate folder which is known as hooks to keep your hooks
+you can create a folder which which in utils you can create it in utils also okay let's
+create it in utils let's create it in utils okay let's create our hook inside utils
+let's name the hook as use use what use restaurant menu or use restaurant
+we have this use restaurant okay no let me tell you you have to name this file as small letters
+it is a good practice and a convention in react that all the components are named by a capital letter
+component names as well as their files when you are creating a hook create it with a small use
+small u small case lower case and use okay what is hook at the end of the day
+it's a normal function how do you write a function
+how do you write a function use normal function i'll create a arrow function for it i'll create
+a arrow function okay and i will just import export this from here okay export default
+use restaurant now a lot of people ask me this question right in my previous batch they ask me
+i don't know if you have that question in your if you have that question in your mind or not
+right what if i do a named export right what if i do a named export can i do a named export
+yes you can do you can do a named export over here but generally when you are creating one file
+for one component one file for one hook then you generally do it by default why see suppose if
+a developer if my friend see suppose if i wrote this code now tomorrow my friend reads this code
+so basically he will see this code as use restaurant so what does it make sense this
+use restaurant will be exporting use restaurant hook by default isn't it it will be loading use
+restaurant hook by default it will be exporting right similarly this is shimmer this will be
+exporting shimmer by default isn't it it's a basic convention now let me tell you suppose if i have
+my helper.js what my helper.js will export by default it does not make any sense it does not make any
+sense so generally we use all the helper methods as named export it is it can export multiple
+things right so generally we use generally we use named export that is that is the same reason
+in our constants file right constants in our constants generally you would see
+named export exactly the same reason okay so we have a use restaurant so what will this use
+restaurant do okay this use restaurant will fetch the data for us use restaurant will
+fetch the data for us and will send me okay use data will fetch the restaurant for us and will
+send me now with using use restaurant it is very it is becoming very difficult for me to write
+code like this i am doing this my zoom are you able to read this now are you able to read this
+yes okay cool awesome so what i'll do is this is my logic i want to export right i want to put it in
+a hook this logic i want to put it in a hook how would i do that okay so first i'll tell you the
+taste of using hook right now what we are doing is we we get the param we get the res id where
+does this res id come from where does this res id come from the url isn't it so when we have my res
+id i will fetch the data i will fetch the menu with this res id okay what if what if i had a hook
+right i had a hook which can directly see what i am doing over here i am fetching this data
+and i am putting this data into my restaurant isn't it i am putting this data into my restaurant
+what is this restaurant what is this restaurant yes you are right this is a state variable right
+this is a state variable what if i have a restaurant and i don't have to worry about
+where this data is coming from and i just had a magical hook which says use restaurant
+and i pass in i pass in my res id and it just returns me the restaurant details
+how cool would it be right nice right i don't have to worry about random logic i just want
+to use a hook use restaurant which i will just pass in my restaurant id it should give me the
+restaurant data i don't care at the end of the day where that data is coming from i don't care
+whether this is hard coded whether it is api whether it is i don't care my component my
+so let me tell you my restaurant menu should care where that data is coming from no
+restaurant menu the only job of restaurant menu is to display the restaurant menu that's all okay cool
+so i will just let me create this hook i will repeat it once again okay follow along don't
+worry okay what i'll do is now instead of my state variable now instead of my state variable
+i want to have this okay i want to have a restaurant which is coming from use restaurant
+and i am passing in my res id to it now my user restaurants should do all the complicated things
+my use restaurant should do what it should take a res id okay how will it take a res id
+see at the end of the day my dear friends don't panic hooks are just like normal functions
+who's the hooks are just like normal functions nothing fancy okay we just we just create a
+panic that oh my god there is something known as react hooks can i create my own hook it is
+very tough no it is not very tough today i will make you able by the end of this session
+you will be writing your own hooks okay you will be writing your own hooks for a lot of things
+that you have not even imagined you will write great clean production ready code
+okay how will i write i'll tell you it is just a normal function very easy now suppose i wanted
+this restaurant information what will i do over here you tell me what will i do over here
+tell me what will i do over here i have got my restaurant id first of all tell me what
+should use restaurant return what should use restaurant return what should use restaurant return
+return restaurant data right return restaurant data where does this data come from what will
+it do where will it find it will get data from api isn't it now one more thing that we have to
+handle is suppose if my param changes my data should also change right suppose if my param
+changes my data should also change right so what i will do is i will offload my responsibilities
+over here what i'll do is i'll create a state for this hook okay i'll create a state i'll
+maintain a state just for this fetching data logic okay how do i create a state variable i'll
+create a restaurant okay and a set restaurant you already know that isn't it how do i create a
+state i'll use a use state this use state comes from react okay what should be the default
+value of this what should be the default value of this what was the default value that i used here
+null okay i am using null initially okay now what i'll do is i'll fetch get data from the api
+how do i get data from the api how do i get data from the api how do i get data fetch
+but where we will fetch data inside which hook use effect exactly so basically
+we did something like this right we had use effect we had get restaurant info i'll take
+all that logic take off all that pain from my component and do this logic over here
+does that make sense does that make sense i have explained this to you already so i'm not
+repeating it once again right so what i'm doing is in my use restaurant we have a state this state
+will be updated this state will be updated whenever the data is fetched from the api
+whenever the data is fetched from the api now what will i return from here what should i return from
+here return this state variable right easy any confusion with this code any confusion with
+this code you know since the day i wrote the code in restaurant menu i knew that i will
+export that logic okay i will export that logic already since the day i wrote that code
+and you will also know that when you will write code i'll tell you how you will become great
+i'm telling you okay so in my restaurant menu see how clean my restaurant component looks now
+okay just see how clean it looks i'll repeat it once again don't worry just see how clean it looks
+see this does it look clean if somebody reads our code okay let me repeat everything once again
+why do we use hooks hooks are like normal functions we just extract some logic out in
+different function you know these people who write again and again that we did not understand it
+came late i see so many people still joining in the class first of all come on time and listen
+to me very carefully otherwise i won't repeat it like thousands of time okay again but i'll
+repeat it once again for everybody so why do we use hooks hooks are like normal functions
+we use hook to export some logic into that function to export some logic into that function
+when we are writing this function restaurant menu suppose if i had to create this restaurant menu
+suppose if i have to create this restaurant menu i want to do two things fetch data show data
+fetch data and show data so what i did is assume that okay i got my rest id from my params
+i got this rest id from my params now what if there was a hook which which gives which takes a rest
+id and i don't have to worry about what logic does it use behind the scenes what logic it is
+using behind the scenes i don't care i just want i just want my data in the restaurant
+okay i just want my data in the restaurant all the things will be taken care of by this hook
+this is a custom made hook right this hook is kind of like a normal helper function for us
+okay so this is how we use hook if i save this file i have see now i have imported this
+file from userestra i have imported this file from userestra i don't have to maintain a separate
+state for this component now my hook is maintaining userestra is maintaining the state userestra
+is updating it automatically okay now some people have a lot of questions how is it different
+than a normal component functional component do you think what is a functional remember the
+definition of a functional component what is the definition of a functional component
+it is a function that returns a that returns a yes j s x everybody is right over here so
+hook does not need to return a j s x it is piece of javascript code it extracts some logic
+it extracts some logic out of it if you clearly see if you clearly see is it returning is it it's
+a hook it is not returning some j s x it is returning some value it is returning some javascript
+it is returning some object it is returning some array it is see use params return some
+object use effect returns what use effect returns what i don't know it is not used in such a way
+sometimes it cannot return i don't know it does not return anything right and what does use state
+returns what does use state returns use state returns an array it can return any piece of thing
+we can offload any functionality to it okay awesome how render stuff will work now let me tell
+you how this component will work now it will come to restaurant menu right when the restaurant menu
+loads it will find out the res id from use params that you understood right then what will happen
+is it will read that this restaurant is coming from use restaurant so it will go to this
+use restaurant and will create a state it will call the api it will reset the state as soon as it
+sets the state right it has its own reconciliation going on does that make sense it has its own
+reconciliation going on do you see the difference now do you understand the importance of it
+it has its own cool reconciliation going on whenever there is a change in suppose you know
+what will happen right suppose if i set my restaurant it will again update the state variable
+it will again update my component which is loading this hook everything will happen automatically
+react has abstracted everything from us react will do all the black magic behind the scenes
+all the magic automatically our component will update okay awesome now some people are saying
+what how can i make this even more better how can i make this even more better this hook
+how can i make this even more better yep one thing is that we can export this into where export this
+url into constants see i am also keep on i am also keeping telling you what are the good
+practices that you should use see you know i am writing code in front of you all the code
+in these three hours right so i might night i might not write code which is 100% production ready
+but i'll tell you few things that you should always remember so whenever you are creating this type
+of urls always keep it in your constant files just like we have this image cdn url just like
+you can have another url for fetching menu okay export fetch fetch menu url okay this is again
+a different nomenclature that follow that is followed like the underscores okay this is another
+nomenclature which is followed the under under underscores right so that is why i am using
+the same now you can import as a named export right fetch menu url from my constants okay and i
+can write see it is looking even more clean isn't it is my code looking clean now see
+is my code looking clean it exactly knows what it is doing let me remove this comment
+because it is explicit right so now if somebody reads my code he will totally understand what is
+going on in this restaurant this use restaurant is a hook which has a state which is maintaining
+this restaurant now it is fetching this get restaurant info in a use effect and we know
+what is this doing isn't it we know exactly what is this doing this res id is coming from
+this red id is coming from where this is coming from my component right i am passing this over here
+when i am using the hook awesome and now i am just having this api call and i am setting my
+state variable and when you set your state variable it just updates automatically react
+subscribes to that right react already knows react triggers the reconciliation process again
+okay awesome let us just okay i know that some people might still be confused about
+when should i create a new hook how should i create a new hook it is looking very awesome
+because we have already written that logic and now we have converted it to a hook
+but let us try to build a hook from scratch what if i have to develop a feature and i can
+write code using a hook it would be amazing isn't it it would be amazing if isn't it right
+let's do that now i'll i'll tell you one more feature use effect is not defined where is
+my use effect is not defined okay use restaurant okay use effect cool now everything is working
+fine let me go back to my page i'll make one more amazing feature okay see you know why i am
+building feature is because i want to do project based learning these are the real features that
+you will have to get in your app when you are building a production ready app okay so one more
+feature that i am going to build is you would have seen that okay sometimes suppose if we
+have a broken internet right and we are playing some video or browsing some website what does happen
+is it it shows that looks like you are offline looks like you are offline have you seen that
+have you seen that feature no internet connection please check your internet connection looks
+like you are offline right suppose if you have a website and you are you became offline
+suppose your wifi is not connected right or your internet goes off it says right chrome tells you
+in the dino game dino game starts to come up right or one more thing one more thing remember
+suppose if your internet goes off so your status your chat status become that red green dot becomes
+gray dot online offline right how do you build that
+should we build that should we build that awesome let us just build that feature okay
+so we will build a feature where we will track whether the status of our page or our internet
+is online or offline because see suppose if somebody is we can provide a rich experience
+to a user if we can build that right suppose i know that the user is offline then should i
+make it able to click this it will it won't load right it will not make an api call it will fail
+so what i'll do is suppose if the user is offline what i'll show is i will restrict the
+user to click on any of these i will restrict the user to click on any of these i will say
+check your internet connection give me a thumbs up if this feature makes sense
+this feature can be used in so many other places so many other places okay so what will happen is
+suppose if your internet goes off your website should show connects please check your internet
+connection okay cool so let us see that let us see how we can build that right so now i'll tell you
+i won't write the logic directly i will tell you how to create a custom hook to write this logic
+okay it is this feature is known as let's say call it as online is online are you online
+or not it is basically to track are you online or not okay cool so let us just go to our main menu
+where is our body not body our body component it here is our body component okay here we show shimmer
+see now a potential is to extract this also as a hook will you do this as a homework
+will you do this as a homework awesome cool do this as a homework extract this as a hook as well
+it will be a good practice for you okay now what i want to do is suppose if i am offline if i am
+i am offline okay suppose if i am offline if i am offline if offline right let's make offline
+as true okay if i am offline then return a h1 which says offline please check your internet
+connection does this make sense does this make sense to you right so what will happen is offline
+please check your internet connection cool we can have a red dot or something right kind of like this
+fake it more like you can beautify it how much ever you want to right just just put some css okay
+i am not doing css right now okay so if you are offline then it shows that if the offline is false
+then basically this loads right cool amazing so how will i do that how will i do that right
+basically how will i do that how will i do that is how will i do that is see i will suppose if
+now how will i get to know whether i am offline or online how will i get to know whether i am
+offline or online how will i get to know how will i get to know there is something known as
+window event online this is a javascript thing i will use this okay window dot online right window
+dot event there is an event listener online when you go online browser tracks it when you go
+offline browser tracks it but how would i do that and react right i'll show it to you suppose right
+now i have hard coded it what if i had a custom hook which says use online right and it returns me
+whether i am online or offline how cool would it be amazing right amazing so what i am trying to
+say is you have to change the way how you think when you are writing code you have to change the way
+how you are writing code now chetanya is like he you know chetanya has spam the chat so much that
+why can't we make a normal function why can't we make a hook why do we have to make a hook
+why not normal function tell me my dear friend can you make a state variable inside your normal
+function can you do that everybody will the react trigger your reconciliation process for your normal
+function no will you have use effect in your normal function no got your answer where is the
+chetanya chetanya got your answer i can't see your comment okay chetanya says thank you he
+has been he has been bugging since like 15 minutes i am reading his comment come on okay right so offline
+use online okay so suppose if we had a hook use online and we don't our component our body component
+has not to care how that use online will walk at the end of the day build a hook use online
+right so what i am trying to say is you have to change the way you think when you are writing code
+suppose if you are a developer and your manager comes to you and says akshay we have to build a
+feature where have we have to show the users that you are offline please check your internet
+connection okay please check your internet connection okay so if you have to build
+that feature you will have to write like this build a hook for a extra functionality
+and offload all the logic of finding whether i am online or offline to that hook okay first of all
+before example i showed you that you have a existing logic you need to extract it to a hook
+i showed you that now i am telling you how to write a hook from scratch suppose if you have to
+build this function you have to build a new hook use online how would i build a new hook use
+online how would i build a new hook use online i will create a util again right use online what is
+use online what is use online at the end of the day use online is basically a normal arrow function
+okay what should it return what should it return what should it return what type of value
+should it return a boolean isn't it a boolean right it should return the status
+isn't it it should return the status which is a boolean at the end of the day right
+returns true or false if i am online returned true if i am offline return false
+make sense cool now what i'll do is export my export my what should i write over here default
+see you know i ask you a lot of questions so please write it down you know it is important it will
+just revise your concepts right when you will write code when you will go back do your homework
+right you will remember all this people who are writing it over here in the chat they will
+remember it i'm telling you okay so my use online right now tell me one more thing tell me one more
+thing do i want my status to change automatically or not do i want my state change so what will
+do i want whenever i go offline whenever i go online it should it should automatically change
+right right so what what should i use for that
+yes this should come to your mind this should come to your mind that what i will use is i will use
+a state variable for it i will use a state variable for it to maintain the state right
+and what maintain how i will maintain the state let me give it a variable is online
+is online will be true or false set is online what should i give a default value to it as
+let's make it by default true right online we are online by default okay let me import my use state
+where will i import my use state from from react right and what will i return i will just
+return this is online right it will contain true or false okay cool now i will have to write a logic
+i will have to write a logic to keep on updating my online status whenever i go offline or whenever
+i go online make sense okay how do i write that logic so basically i have so in in javascript
+how do you do that let me tell you first of all how do you do that in javascript you do that
+in javascript by window dot window dot add event listener and there is an event listener online
+right and whatever function you pass in over here whatever code you write in over here
+right will trigger whenever you go online whenever you go online this code will trigger
+make sense so what i will do is so how many times i have to set my event listener
+how many times do i have to set my event listener just once my dear friend whenever
+my page loads my event listener should be tracked once make sense only once how do i write a code
+that this should only run once i want to make you think i don't want to write quickly i can
+write it in two minutes yes you people are right exactly right we will have to use use effect
+but using use effect will work how will i have to make this code work just for once
+just for once by writing an empty dependency array now my code will run just once isn't it
+and i will just set this once right make sense what will happen suppose if i go online
+right this should happen how do you how do you add an event handler for offline
+for offline there is another event handler which is this
+if i go online this function will run if i go offline this function will run okay okay cool
+so now what should i do if i go off online and what should i do if i go offline
+what should i do tell me you should help me write code set is online false exactly
+you know this is just this is just the ninth chapter and you people are already writing code
+along with me you people are telling see i am not even i am writing questions and you people
+are telling me that answers amazing here amazing amazing you people are amazing
+you know set is online false and if i go online it should be set is online true amazing
+amazing amazing amazing now what did use online did use online created a state variable
+now in use effect now you know do you understand the meaning of every word did i write
+why did you write use effect why did you not created a normal function and created a hook
+why did you use a state variable and not a normal variable why did you return is online
+right every small damn thing you should know you should be confident while you write code
+this is known as pure class of coding you you your code is in your control actually
+your code is in your control okay awesome right so let us just see now right what happens if
+i go to my body i have see and my body is so clean sorry yeah my body is also clean but my
+body component looks so clean right now right my body component looks so clean now right we
+don't have to worry about where is this online status coming from right just like we had use
+params right use params and we were wondering that oh my god how what black magic did a react
+router down did that we don't have to worry about anything i just write use params it just gives
+me residing it just gives me residing remember right we were we were wondering right what black
+magic would have react router done now you understand that how they would have written
+the code now you understood that how that library would have been built did you understand
+they would have also maintained a state they would have also maintained a state because every
+time my param changes my component is reloaded isn't it now like is your brain cells opening or
+not see my job is not just to teach you react my job is to make you think better make you think
+better the job of a teacher is not just to tell you that okay you use use params this will give
+you params no i should be able to make you think that why how that react router down library
+would have been built tomorrow you know people from our app people from our batch would be
+building some libraries okay so i want you to be a great developer everybody to be a great developer
+who has learning from my class that is why i connect the dots also that you use use params
+i am creating a something i am creating a use online cool isn't it you can export it as an
+npm library also and i might not know but it might be already existing i don't know
+you can create a can you create a can you create a npm library now when some people can create an
+npm library for is odd right is odd you can create a npm library for online right so suppose
+how cool would it be if somebody is importing importing uh use online from namaste library
+how cool would it be right it would be cool right people are installing npm i namaste library and
+using our use online now you understood how things are built now you understood right how
+things are built give me a thumbs up if you are if you are if you are able to increase your
+thinking capacity if you are able to increase your thinking capacity just i want somebody from this
+batch there are so many students to make their own library also i am not teaching you how to
+make a library right this is not part of the curriculum of namaste riyadh but i would
+want somebody of you to build your own real library which can import which can export a lot of
+useful hooks see how how common this is a use case right commonly we would need so many apps
+will need this function isn't it so many apps will need this function so you have a potential
+i am telling you that you have a potential to build a lot of amazing things you have to open your
+head you are brilliant my dear friends those of you and was it tough to write it wasn't tough to
+write right i mean how how like you people i i you know i did not even write it i was just
+asking you you people help me write it cool enough of motivation right i i i generally don't
+try to avoid this but okay i wanted to realize your potential i wanted you all to realize your
+potential my dear friends you are learning from me you are amazing i want you all to
+break the interviews challenge the interviewers that yes this is how it works i can do it
+in a better cleaner way cool so now let us just see it working right whether it works or not i am
+just i am just ranting so much i am just saying so much let us just at least see whether it is
+working or not oh shit okay use online not defined i have not imported it if it does not work then
+you people will just screw me up akshay you have given us enough motivation but it is not
+working for you use online from dot dot slash utils oh we already have a helper right so utils
+dot dot slash utils slash use online does that make sense does that make sense let us just go
+use online is not a function why oh my god use online okay i am i imported it as a named import
+so oh oh oh oh oh my god the chat is already filled with
+lot of answer you see you people are writing you know the fun about live coding is that
+sometimes i make mistake and you people correct me how cool this is i love it amazing now use
+effect is not defined i was just writing it in hurry my bad oops something went wrong why offline
+please check your internet why what happened what happened my if condition uses true is online
+where is is online just let me let me just check it once it should have worked right oh offline right
+is online if my is online is false i have a different condition sorry i had to write code
+if my is online if i am not online then give me this otherwise load my page does that make sense
+does this make sense awesome now what today is not a good day for me let me wait
+cannot assign property message what did i break what did i break export default body what okay i
+did not close something is it okay i wrote an extra parenthesis my bad okay sorry yep so we are
+online now right we have been loading but let us go offline oh if i turn off my internet that would
+that would just break things up let me let me fake going offline let me fake it
+right how do i fake it do you know how do i fake it do you know how do i fake online yes
+no okay no i'll tell you so go to chrome go to network tab over here there is an option to
+change your speed so you can change to fast you can change to slow 3g you can change to offline
+okay and you can change to no throttling okay so let me go offline if i go offline see cool amazing
+right if i go offline to run it quickly it says that oh my god you are you offline please check
+your internet connection you can build see it is about UI right you can some people like to show a
+pop up right that oh it seems like you are online it is a bad experience right now in terms of the
+UI but you can make it better by using CSS isn't it but it is amazing right it is amazing right
+i want you all to build great experiences for your users i you suppose if you go online
+in your website you can build a dino game isn't it now you understood how that dino game build
+how that dino game is built this is how dino game is built you can build a tic-tac-to right
+if suppose somebody cannot order food you can build a tic-tac-to right or else you can just show that
+okay send us an sms right suppose if somebody is online you can just say that oh call swiggy's support
+or just call contact support nice how cool would it be or you can build a you can
+build a tic-tac-to you can build whatever you want to now we have got a way to show whether you are
+online or not amazing stuff amazing some people are saying is it compulsory to name the same variable
+what what is online is used over here is it what do you think this is not react this is
+javascript what do you think is it compulsory come on it's not compulsory it's javascript
+name it whatever you wish to see this function is using is online you returned it the is online is
+not returned is online is not written what does this function return what does it function return
+a boolean the value which is online contains it is online is just a norm name right oh my god
+you have to like brush up your fundamentals but a nice question see i don't i don't say that any
+question is bad i know these are some curious questions curious questions happens when somebody
+is learning new computer science right they have this is a good right now let me tell you one more
+thing that let me tell you one more thing this is not a senior developers code this is a junior
+developer code how will you make this as a senior developer code quickly how will you make it as a
+senior developer code how see you are you are okay first of all let us just see we went offline
+right it went off what if we go online once again what if we go online suppose suddenly our internet
+came up once again suppose if our internet came up once again oh my god it again came up amazing
+isn't it right this is cool thing right you go offline you get to know you go online you come
+back okay awesome now this is not a senior developer's code this is a junior developer's code why
+you know what every time i am going offline and every time i am going online
+right fast 3g see i let me open it in slow 3g right let me go offline and now let me open
+it in slow 3g see this is how our site loads in slow 3g in slow 3g network this is how our site loads
+you can play with it right so now now one more question i have okay one more question i have
+important question after that we'll take a break important question the question is
+suppose if you have to suppose if you have to write a code as a senior developer not a junior
+developer what else would you do cleaning the cash cleaning our event listener a lot of people
+who are saying that in the chat i was reading it certainly i was just ignoring it you have
+whenever you add an event listener you need to clean up your event listeners you need to
+clean up your event listeners right because what is happening is every time you know a junior developer
+in terms write code like this and leave it like this it is working they feel that okay it is working
+but whenever you are going online whenever you are going offline and coming back online
+what is happening what is happening a new event listener is getting created every time a new
+event listener is getting created okay right so it is oh no sorry no no no no every time you are
+going offline and coming online will it create a new event listener let us just reason
+let us just reason would it happen what will happen every time every time this is online is
+changed will it create a new event listener no why because we have a empty dependency array
+so it will be just once right and if i set this function it will be changed it won't call this use
+effect again it won't call this use effect again but but but but remember one case suppose if you
+are on this home page you went to about us page you went to about us page you went to about us
+page the event listener is still there isn't it or is it not there is the event listener
+still there or isn't there still there right yes but we needed our event listener only for our
+body component so i so it is always a good practice to clear the event listeners when
+we go out of our component okay it is always a good good practice to clear the mess that i create
+otherwise your browser will keep holding your event listeners right and it will just blow up
+okay so how do we clear this how do we clean this yesterday i told you how do we clean this
+where do i clean this yes unmount cycle array wow you people are amazing yeah you people are amazing
+how do we do that in a return you people are amazing in a return i will remove these listeners
+i will remove these listeners how do you remove this listener window dot remove event listener
+remove event listener and online and then you have to pass a function the same function that you
+passed while attaching a listener so basically this should be the same function this should
+be the same function but if i write like this this is not this is not correct
+this is not correct how would you have to do it you have to remove the same listener so
+basically i will extract my function okay i will extract my function outside constant
+handle online is equals to so whatever function i am setting it right the same function
+the same function i will remove make sense make sense does it make sense yes or no
+yes everybody says yes so basically
+whenever i am removing my event listener right whenever i am removing my event listener
+so i have to pass in the same function that i passed in see this is remove event listener
+this is add event listener when i am adding an event listener the same function needs to be removed
+okay so that's why i will just extract this as a different variable handle offline
+right handle offline is this function does this make sense now does this makes sense now
+right fail to execute add event listener to argument required what what okay here
+handle offline let me refresh the page yep this is a serial developers code
+right cool understood was it fun or not cool or not cool amazing cool now
+some people say some people are saying that still like should i repeat it once again
+okay i will repeat it let's take a five minutes break i will repeat it then we will move on
+to the next concept okay i will repeat it five minutes break meanwhile people can just read this
+yes so some people are asking that why do we have extracted this because see
+you know there can be multiple event handlers right somebody can put in online an event handler
+multiple times suppose you have a large code in some other file somebody can also write
+handle online too or any random feature right so you are specifically removing the one which you
+did right so that's why fix line 19 oh sorry my bad it should be offline yep thank you thank you
+so much robin yep so yes the timer is over let us quickly revise it once again okay quickly
+so you know this time we were building a feature the feature was whether to see if your connection
+goes off i should show some jsx show something on the online or not right so we have to do this
+now for that we saw that okay i'll see if if i am online i'll show this if i am not online then
+i'm rendering something else okay so it is kind of like an early return right so i created a hook
+which is used online and now body component just needs to know that okay whether i am online or
+not online body component does not have to worry about how i am finding out whether i am online
+or offline body components needs not to know the logic of how i am online or offline no
+okay is that i yep so now what we did we created a hook i'll come back to your question there is
+one good question here right so i created a hook now this hook needs to maintain its own state
+so that i can switch between online and offline and this is how you do you can set is online set
+is offline and you just return this boolean value that state variable and everything works in right
+so one amazing thing is how do you reuse it see when we created this helper function use online
+i can reuse it anywhere i want to anywhere i want to some people are asking when are these
+hooked removed when will this hook removed when will this hook be removed tell me when will this hook
+be removed unmounting right don't you remember where what is the unmounting phase where is
+that unmounting phase exactly your hook will be removed in an unmounting phase cool now one more
+thing i wanted to say is suppose we have created this hook right suppose we have created this
+utils use online now i can use it anywhere in my code i want to this is the super cool feature
+right suppose if i had to show a online offline along with my login right suppose if i have my
+login right where is my login button over here so suppose if i have here i wanted to show
+suppose if i have an h1 i wanted to show i am login or log out oh sorry whether i am offline
+or online how would i show it how would i show it i will just see i will just do a
+is is online from use online right i will just find out my online online status
+see somebody who is using this hook right as a developer would feel or a wow this is so much
+nice feature right use online which is coming from use online right now i have my online
+status i can write is online if i am online then just show a green tick right or just show a red
+right or just show a red does that make sense why is this complaining in valid character okay
+okay i think it does not recognizes this right because it's a it's not a string it's not a string
+cool does this make sense yep so we are online right now or you can show a green
+now you understood how those chat applications show whether you are online offline
+if i go online it becomes green now you know how that slack how that teams how that hangout
+is showing whether you are online or offline now you know can you build that feature for your
+app let's remove it from the body okay suppose i am commenting down this code from my body right
+suppose see if you are over here it will just show you see i am offline i am online
+amazing right you can do it the dinosaur game as well yes amazing let's move on to the next
+concept because we are really very late i don't want to like i mean tell you or but i am telling
+you that you can create a lot of hooks whenever you feel like that there is a
+feature that you can abstract you can just create a hook are you getting confidence tell me write
+confidence if you are getting confidence right are you getting confidence are you confident
+while building your own hook can you build your own hook how much percentage of
+building your custom hook knowledge you have can you build this hook without looking at code
+without looking at my recording how much sure are you out of hundred
+how much sure are you hundred percent hundred percent nice nice 60 90 great 60 is also good
+right 80 okay okay cool so what you can do is you can build a lot of such hooks right
+you can suppose build a hook for this right you can build a hook for is logged in right
+this is logged in should should come come via hook you know whenever you are you you are building
+a feature think of it in terms that can i build a hook for it right this component header component
+needs not to know the logic of whether you are logged in or not isn't it does that make sense
+header function does not need to know how you are finding out whether you are logged in or
+not it should just know whether you are logged in or not how would you know is logged in is equals to
+use auth use auth build a use auth and now put all the login logic into your use auth
+how clean our code is looking now right how clean our code is looking now
+so similarly you can create a lot of hooks in your homework create a hook to use local storage
+can you create a hook to use local storage right constant local storage is equals to use local
+storage can you build this you can build this right you can do enormous things you can do use
+local storage right it will give you access to local storage right and you can do amazing things
+do you want to build a hook just like you state so what you can do is you can also do something
+like this instead of local storage you can say get local get local variables and set local
+variables can you do this can you build this custom custom hook do you know do you know how
+will you write code can you think something coming to your mind something coming to your
+mind how will you write code for this suppose if you have to build this what will you return
+from there what will you return from there right does it make sense everybody
+if something is running into your head my job is done i have successfully planted
+a curiosity seed in your head now it is your willingness that how much you want to take
+this forward okay so please build it please the more you code the better you will be
+you can build a lot of cool hooks you can create your own library will you create
+your own library okay aksh will you create your own library yes sania says will try yes
+create a create a sania library right how cool it would be we will we will do a npm install
+sania library into our app and import some named named hooks okay okay let us just okay
+so let us just do this now let us move to the next thing i'll tell you one more thing
+in the in the second class okay in the second chapter the second chapter was igniting our app
+what did we study in that what did we study in that we studied parcel npm babel okay the
+major thing was parcel right and parcel is parcel is a beast right okay but what is parcel instead
+of a beast okay what is parcel in general what is it it's a bundler everybody is correct what is
+a job of a bundler what is the job of a bundler minification optimization what is a job tree
+shaking h mr amazing you people remember everything but but yeah these are all these are all caching
+everything is live server everything is a job of parcel but what is the basic job of a bundler
+what is the basic core basic minimum job of a bundler what is a bundler basic job of a bundler
+come on nobody is able to yes bundle things bundle things what bundle things what should it bundle
+what should it bundle bundle your code right right do you understand this right
+how many js files does parcel produce one js file for our whole code for our whole code all the
+component everything it creates one some people are saying for in their local it is creating two
+you know why does it happen sometimes you are not just try to remove your parcel cache
+and do it once again it should not create more than one right so see there are so many
+js files parcel has created but at the end of the day there is only let me remove my dist
+right if I remove my dist it generally creates one js file this is the one main js file that is
+there right now let us just see right bundler job is how will you see it magna i'll tell you don't
+don't spam the chat magna please i'll i'll show it to you don't worry if i go in if i refresh my page
+see this is the only js file which has come up i have put the filter of js see if you see the
+all files there are so many but if you see the js file there is the only now you would say
+what are these files akshay these files are not see this file is chrome extension file
+this is the chrome extension file this is also a chrome extension file this is also a chrome
+extension file this is our main file see this is the file which is coming from local host so if
+If I put, I am concerned about just the file which is from our app, only one file.
+This file have code for all the code, all the component, all the hooks, whatever we have
+written till now, all the code is, all the code is what?
+All the code is what?
+Come on, bundled together, bundled, minified, compressed, optimized, obfuscated, so many things
+parcel is doing it for us, okay?
+For development when you are doing development, right?
+So the size of this index file is large, when you will build the production bundle,
+the size of the app will be, size of this JS file will be small.
+It will minimize it even more, okay?
+Now, now, but suppose, okay, let's talk about a big website, okay?
+Suppose if we have, suppose if we have makemytrip.com, have you seen this website before?
+Makemytrip.com, right?
+Okay, people who have not seen this or people who are not from India, right?
+So this website is to book flight tickets.
+This website is for booking flight tickets.
+Does it do something else?
+Does it do something else?
+Just, it also books hotel, isn't it?
+It also books hotel.
+Secondary job is to book flights.
+Secondary job is to book hotels.
+There are home stairs, there are holiday packages, there is, you can book trains, you can have
+buses, you can have cabs, you can have forex, you can have activities, basically a lot
+of things.
+It's mostly a travel, right?
+It's a travel helper kind of stuff, right?
+It's like makemytrip, everything that related, that is related to your trip, it helps you
+with it, right?
+I mean somebody, Sandeep is very much interested in honeymoon packages.
+Why, he's writing again and again in comments honeymoon packages.
+Come on, do you use it so much for booking honeymoon packages?
+So interested, I mean.
+I am telling about flights, hotels and he is concerned about honeymoon packages
+there.
+Come on, okay, so what I am trying to say, please pay attention, we have very less time,
+right?
+We have very less time, let me finish it once again very quickly, okay?
+So, read it, read it, read it, please, right?
+So what happens is, when you build a big app, can you guess how many components
+would make my trip would have written in their code?
+Because this was a whole react application, how many components, right?
+This is a different component, this is a different component, there are download button, this
+is a different component, there is a footer component, there is a frequently asked question
+component, there is a social media component, there is a search button component, there
+is a explore more component.
+See if you click on this, there is a, this is also component, isn't it?
+Oh man, so many component, so many components, this is also a component, this trending search
+is also a component, these input boxes are component, if you click on round trip, this
+is a component.
+If you go to hotels, this is again so many components, if you go to activities, again
+so many components, right?
+So there would be, do you agree that there would be hundreds of components there?
+If not thousand, there would be hundreds of components, hundreds, numerous.
+Suppose if you are bundler, took the code of all those hundred components and put it
+up in one index.js.
+What will happen?
+How much fun will it be fun?
+It would just blast, it will make our app very slow, okay?
+It will make our app very slow because the size of that index.js will become very huge and
+it does not make sense to put all our components into one file, right?
+Now when we are, see I want you all to become, to build large scale production ready applications.
+If you have to build large scale production ready applications, they cannot work if you
+just create one bundle, right?
+It cannot be created by just one bundle, okay Akshay, it cannot be created by one bundle,
+what should I do?
+We should do chunking, right?
+Now I will tell you a lot of people call this in thousands of different ways, okay?
+Some people call this as, call this concept as chunking.
+Some people call this question as, call this function as code splitting.
+Everything is same, okay?
+Everything is same at the end of the day, okay?
+Some people call this as chunking.
+Some people call this as code splitting, okay?
+Some people call this as dynamic bundling, right?
+Some people call this as, call this as lazy loading.
+These all are same concepts.
+I will tell you what it is, okay?
+I will tell you what it is.
+If you have, have you ever heard any of this term?
+When you are building, you know why I, why I was not building, why I was not building
+small, small 10 projects?
+Because you can't cover such things in small projects.
+You need to understand, you need to have a mindset of building very big projects, large
+scale projects.
+I want you to be a developer who goes to, who gets hired and make my trip, can understand
+and make my trip's code on the first day you should be able to contribute to their repository,
+okay?
+I want you to be like that so that you can understand how these large scale companies
+work, how these code is managed, why these apps are fast, why these apps are fast.
+So okay, so then said Akshay, first of all we use bundler to bundle our files.
+Now we are saying that let us break down our bundle.
+So is bundling good or bad?
+Is bundling good or bad?
+Is bundling good or bad?
+It's good, right?
+But it's good, but it's good to a limit.
+You cannot bundle everything into our app.
+Make sense?
+You have to make logical bundles of your app.
+I'll tell you today how do you do that?
+You know, some people say that okay, it is just one line of code.
+It won't make much difference.
+It won't make much difference.
+Have you heard this statement?
+Is it true?
+Is this statement true?
+It's just one line of code.
+It won't make much difference.
+No, it is not true.
+Today I will tell you just few lines of code can optimize your production-ready app to a
+next level.
+Just few lines of code.
+I will tell you now.
+So what we are going to do, okay, but now how do you think?
+How do you think do we split the bundles?
+How do you think make my trip would split these bundles?
+How would it build?
+How would it build?
+How?
+Most of the times, you know, you don't want to break the experience of the user as well
+as you don't want to give them, you don't want to burden them with a big bundle size.
+So you want to keep your bundle size small but still logical.
+How will I do it?
+I'll tell you.
+You see, when a person is coming on make my trip, they generally come with an intent,
+isn't it?
+They come with an intent.
+What is that intent?
+Most of the time, why do you go to make my trip?
+Why do you go to make my trip?
+To basically book your flight ticket, right?
+Suppose if there are hundred people, suppose if there are hundred people who are coming
+on to their website, how many of them would do you think goes to flight and book the flight?
+How many of those people book flight out of hundred, seventy, eighty, ninety people?
+How many of they?
+How many of those people go to trains?
+How many of people go to trains 10, 12, whatever, right?
+But but but but do I'm just telling you a small difference.
+Suppose I am going to make my trip to book a flight, will I will I go to my train section?
+Will I go to the train section?
+I might go.
+I might go.
+But most of the times how but it is it is a lot.
+It is it lot makes sense that people won't go to train.
+If suppose somebody is coming to book a train, they will they go to bus section?
+Will they go to cab?
+Will they go to cab?
+No way they are going to cab, right?
+They have come with an intent to go to flights.
+So suppose if we created the whole bundle.
+So what will happen is suppose there are hundred components for flight, hundred components
+for train, you would be loading train components, flight components, bus component and load
+everything to the browser.
+Good idea?
+Is this a good idea?
+It's not a good idea.
+So generally in your large scale applications, you build different chunks, you build different
+bundles based on the use cases.
+It is upon the developer's wisdom.
+It is upon the developer's wisdom, a senior engineer.
+You know the tech architects, the senior engineers, the tech architects, they do they
+do a system design.
+What I am telling you today, this will help you in your system design interviews.
+Do you agree?
+This will help you in your system design interviews because you will be, see what happens in
+a system design interview.
+They will tell you that okay you have to build make my trip.
+You have to build make my trip.
+You as a developer will have to tell the interviewer that when I am making make my trip, I will
+use code splitting for all of them.
+When I will be doing bundling, when I will be using webpack or parcel or whatever, I
+will make sure that my bundle does not include random code.
+Do you understand?
+Will you be able to convince your interviewer why we need bundling and logical bundling.
+Always in system design interviews interviewer is looking for these signals only.
+And then suppose if the interviewer gives you to build a feature of online offline,
+you should be able to tell that oh I will create a hook for it.
+Do you understand the difference between a difference between the people who when you
+go to the interview, right when you go to the interview, you have to give smart answers
+because if you will give the normal answers, everybody, all interviewers are listening
+to it.
+You have to give smart answers.
+You have to show them that you can code better.
+You are better programmer than other react developers, okay.
+So this knowledge will help you in your interviews.
+I will show you how we do that.
+It's not that tough.
+Okay.
+I'll show you but I am just saying that it does not make sense to load all these components
+of home stay into my along with my flights.
+Now what I want now I'll tell you the feature we are going to build.
+Whenever our homepage loads, whenever our homepage loads, it should just load components
+for my flight.
+Does that make sense?
+Does that make sense?
+Okay.
+Now suppose if I am clicking on my trains, now it should load my train bundle.
+Does that make sense?
+Right cool if that makes sense.
+I will only load the components, the code of my train only when user clicks on train.
+Right.
+I'll tell you once again, people who did not understand.
+Suppose if I am on makemytrip.com right slash makemytrip.com by default it loads some code.
+It should only have flights code.
+It should only have flights code.
+Suppose if I go to trains, see the URL it changes the URL changes to makemytrip.com
+slash railways as soon as I load my railways page, it should load my train.
+It should load the bundle which has the code for trains and it should render it.
+It should render the train bundle.
+It should when I go to my buses, it should render the buses bundle.
+Got it?
+This is also known as on demand loading.
+One more word for it.
+Note down all this word.
+When you will go to interview right, then you have to you know you have to go to the interviewer
+and use these jargons interviewer that oh we will do on demand loading of our bundles.
+Okay we will do bundle chunking, we will do code splitting, we will do dynamic import.
+Right.
+There is something known as dynamic import also.
+Everything is same.
+We will see all of it and not just you can say this to interviewer, interviewer can also
+ask you what is dynamic import?
+You should know that is why I am telling you all these things.
+This will help you not today, tomorrow, whenever you are giving your system design interview.
+And this makes a huge difference interviewer will get to know oh this is a he has qualities
+of a senior developer that he understand what is bundling, what how important it is awesome.
+Right.
+So and you know you have to tell every small thing like you will suppose the interviewer
+ask you you should tell that okay make my trip is a this is out of context.
+Make my trip is a image heavy site.
+Isn't it?
+There is always an image associated with all the hotels, all the homestays.
+So you would say that okay I will keep all the images over CDN.
+I will compress those images.
+So these are the things interviewer is looking on looking up in your system design round.
+You will cash it.
+You will you will you know and yeah this is not disclaimer.
+This is not sponsored by MMT.
+No way.
+Right.
+MMT does not pay me anything for talking about MMT okay.
+I see you know I just love Indian startups.
+So I just go to their website and just see what is happening.
+I just try to reason that can I build a website like make my trip.
+What it takes to make a website like make my trip okay.
+So and this happens with every website right.
+Suppose if you have Paytm if you go to Paytm right payments wallet.
+So it also has different icons right.
+Don't you think that each icon is a different bundle right.
+Each icon is a different bundle recharge is a different bundle movie tickets is a different
+bundle your UPI is a different bundle it's a different bundle for everything.
+Now let us just see how we can do this in our code.
+Now let's come back to food villa what bundle should we create.
+Should restaurant menu be a different bundle should restaurant menu will be a different
+bundle doesn't make sense to me generally see our app is still not very large enough
+to split it down into bundles but I will show you how to do bundling okay suppose
+if Swiggy was all okay so Swiggy has something known as Instamart also right Swiggy has
+something known as Instamart also right do you feel that Instamart should be a different
+bundle okay do you feel Instamart should be a different bundle so people who don't know
+about what is Instamart so Instamart is so Swiggy you can order you can order food
+from Swiggy you can also Swiggy also have a instant delivery kind of thing that is
+a different thing altogether it is not on web I guess is it on web I don't see
+Instamart here is it on where it is offers it's down where where is Instamart
+anyways but Instamart is a different altogether or maybe let us think that
+okay this this offers can be a new bundle right this offers can be a new
+bundle or something like that assume or cart can be a new bundle like make it
+logically you understand the logic right we can create bundles out of it okay so
+suppose if I have my Instamart okay let us create a Instamart over here let us
+have one more Instamart let's create Instamart how do we create Instamart
+how will I create my Instamart should I write it over here okay awesome oh is it
+because Instamart is not in my location no I have put in location as Bangalore
+Bangalore who has Instamart right I don't know why it is not showing anyways
+let us create Instamart how will you create Instamart let us create an Instamart
+component Instamart.js right suppose let us just write a dummy code not dummy
+right let's just let's just create a normal function functional component right
+it just returns Instamart right and suppose this is a very big very big
+component right very big parent component and it has thousands of component
+inside it right right now I am not creating it but assume that okay it has so
+many component inside it right so like hundreds of components inside it okay
+and right so some people are saying use emit I don't prefer to use emit when I'm
+teaching because otherwise no I don't use emit while teaching generally I don't
+use because I don't because writing code when you write your code yourself
+right each and every word you know what is happening each and every point when
+I have to code fast right when I am writing code I am developing the application then
+I write code using emit and all that thing but when I am teaching you I want
+to write every small damn thing to you in front of you so that you understand
+every word of the code that I write oh oh everybody started complaining you
+people you know who who said it should be default amazing you people are the
+champions you people are learning actually along with me over here amazing
+give a clap for yourself give a clap for yourself where is my app.js now
+suppose if I have one more path okay let's get one more path which is known
+as Instamart okay let's give one more one more path which is known as
+Instamart right and this Instamart loads Instamart right it has been important okay
+and yep okay so why am I not creating this as a parent because I want my
+header and footer in Instamart also okay make sense cool let's go back to my
+Instamart my Instamart comes from my Instamart and let's create a path also
+just like we have cart right in our header let us create one route for Instamart
+how do I create a route how do I create a route tell me link exactly
+you are exactly right Tanvi chahat just like we have this link we will create
+one link to Instamart right and we have Instamart cool so we have this Instamart
+if I click on it Instamart and assume that this is a big application there
+are so many components so many data calls so many API so many hierarchy okay
+you already know how do we build it right so just like just like our big body
+js right see our body has so many components there are nested components
+nested components similarly assume that this is like this now let me tell you
+and everything Instamart code is also inside this index.js right now
+Instamart code is also inside iindex.js right now let us try to do chunking
+should we do chunking are you ready for that let us just quickly do it now we
+will do chunking so where at what point do you do chunking so wherever you
+have the route wherever you have a import for Instamart where is the
+import for Instamart it is in our app.js right here you are importing so there
+you have to lazy load it there you have to do a dynamic import so you won't
+import my Instamart like this now you would import your Instamart in a
+different way I will tell you how we will do Instamart is equals to listen
+to me very carefully there is something known as lazy this lazy is for lazy
+loading it is like a dynamic import okay so I will do a lazy where will this lazy
+come from this lazy comes from my react library this lazy comes from my react
+library as a named import okay just like a use state just like a use effect react
+library also gives us something known as lazy okay so now I can do lazy now
+this lazy takes a function this lazy takes a function does this make sense
+lazy takes a function and now we will do a dynamic import how do you do see this
+syntax see the syntax ones we will write import now this is not a normal import
+this is not this import this is a import function and you will have to write
+the path of the file there right components slash Instamart do you understand this do
+you understand this does it make sense so you have to write one line what we were
+writing before we were doing something like this import Instamart from Instamart
+right so now instead of writing like this we will have to lazy load Instamart
+we have to import it it's like a dynamic import it will is it is a lazy import it
+is a lazy import right let me repeat it once again Instamart is imported like
+this this is how you import it in a lazy way what do you mean by lazy way I'll
+show it to you let me remove this okay now now if and normally we have put
+Instamart like this let us save our app go back to our app let's refresh the page
+now we have our one JS file over here this one bundle isn't it one bundle is
+there this bundle does not have a Instamart code this bundle does not have
+a Instamart code let me go to Instamart page let me go to Instamart page and
+see the network call now if I click on the Instamart page see we got one more
+Instamart.js right it did not load Instamart.js this file will have all
+the code of Instamart this is on demand loading this is on demand import this
+is dynamic import this is known as code splitting this is known as bundle
+chunking got it does that make sense I'll tell you why this error is coming but
+does this make sense right now cool give me a thumbs up if you understood this
+concept awesome so many thumbs up amazing so this is this will have your
+Instamart code this will have rest of the code so when anybody says that what
+one line of code can do just show them this code show them this code okay so
+this will just do a lazy load but it has not loaded yet it is throwing an
+error okay this is looking like a beautiful error how is this error coming
+up this is coming from our error router okay amazing you people are amazing you
+remember everything now let me tell you why this error is coming now let me tell
+you why this error is coming when you click on Instamart when you click on
+you know you have to tell me this is your homework also I will note it down but
+let me tell you explain you why this error is coming when you load Instamart this
+is a different bundle altogether so it takes some time to load this script it
+takes some time to load this script right it takes some time to load this
+script so meanwhile react tries to render it react tries to render it okay react
+tries to render something which is not there so in this process react
+suspends the rendering okay I'll tell you okay remember this statement remember
+this statement react when you are loading your component in demand right react
+tries to suspend it do you understand do it understand this okay no I'll tell
+you so when will you load dynamically upon on demand loading it is on demand
+right react does not know that I don't have code for Instamart it just knows
+that if there is a link which goes to Instamart it does not know where what
+is Instamart when you click on this it dynamically loads it right it
+dynamically loads it see now it loads it how why did it load it right now tell me
+how did it wrote it right now amazing question amazing question because once
+you have this code over here once you have this code in your browser I can
+go because why I am looking for a specific answer not cash I am looking for a
+specific answer it is still an SPA mother's mother's gun is absolutely right it
+is still an SPO Ankit is exactly right it is single page application you have
+once loaded this page it is not changing its page right go back to Instamart
+anytime now Instamart is loaded so in my make my trip in my make my trip if
+I am on flight I went to train now if I go back to my flight so the flight
+component are still there if I go back to my train or train component are still
+there see it does not even reload see if I go to my train see this search box
+does not reload only the data reloads the data below reloads see the search
+box does not reload because it has already loaded does this make sense does
+this make sense awesome right so but why was it giving error for the first time it
+is giving error so I have refreshed the page now I just have one file if I
+click on Instamart it will try to load the components it will sorry it will
+try to render react will try to render components which are not even
+there so it will suspend the operation there is a keyword which is
+known as on-demand loading upon render react will suspend right suspend
+loading okay it will suspend the loading because the code is not there how do I
+handle it then so if I am loading for the first time it will suspend because
+see code is not there right it came after this code came after 27
+milliseconds it took 27 milliseconds but react was trying to render it even
+before 27 milliseconds right so it suspends now to handle this case we
+will have to do something right we will have to do something what we can do what
+we can do we use something known as suspense we use something known as
+suspense can you I don't know why react people gave this as a name suspense
+right react people gave this name as a suspense because it is a suspense right
+what is going to come up right it's it is a suspense what is going to come up
+right so it is a suspense this is how I remember it okay I don't know make up
+make some logic to remember it I don't know how by react developers Facebook
+developers would have named it suspense but this is my logic because it is a
+suspense what is a suspense this instant art is a suspense whether it will
+load or not right so what we can do is let us just wrap it inside suspense
+okay we can just wrap it inside suspense because we don't know whether this will
+be loaded or not it's a suspense okay does this make sense if you load this as
+a suspense react takes care of all the things right if you load it go back to
+your home page refresh the page go to Instamart it works okay it works even
+before now react takes care of it automatically there is a black magic
+react would be doing behind the scenes react would track that this you know
+when you write suspense right when you write suspense so react takes care of
+these components in a different fashion react takes care of these components in
+a different fashion react knows that okay these components will be lazy loaded
+they will be dynamically loaded so it waits for this promise to resolve
+basically you know what it is this is a promise I am not going into I am not
+diving deep into this today come on it will take two three more hours but for
+your curiosity I'm just telling you this is a promise okay this is a promise please
+go if I will explain a lot right it will take two three hours it is not a small
+concept right this thing so but go do that right do take that up as a homework
+go read about it fulfill your curiosity okay fulfill your curiosity so okay
+so react will wait for that promise to resolve right until it loads the
+component okay so when you write suspense but but suppose this Instamart
+loaded this Instamart loaded in 12 milliseconds right 12 milliseconds what
+if it took two seconds if our component is large it can take one or
+two seconds right it will take one or two seconds what should I show in the
+intermediate time what should we show over here we should show a shimmer yes you
+people are amazing you people are amazing okay so react exactly knows when
+there is a suspense that what will be loaded when there is a suspense so react
+component takes a prop which is known as react component takes a prop which is
+known as fallback okay and in this fallback you can pass in whatever you
+need to show until and unless Instamart is available what should I show over here
+I will show shimmer okay where is this shimmer imported from oh shimmer is
+not here let us import our shimmer does this make sense does this make sense let
+us go back let's go to the home refresh the page refresh the page I'll go to
+Instamart now quickly see you will see shimmer for milliseconds see oh my god
+seven millisecond is very less time to see shimmer okay okay yeah yeah let us see
+in 3g mode yeah let us see it in slow 3g mode okay yeah let's go back to our
+home okay let me refresh the page ones let's see if we can see it in
+three slow 3g mode see it it even shows not rendered come on slow 3g come
+on that slow 3g is too slow what is taking so much time come on come on dude I
+think that API call that API call Swiggy's API call is taking too much time why let
+me go to fast 3g I can't take it hey did we break anything or what no
+throttling what is what is the issue I don't know this I think our Swiggy
+APIs are a little slow it has it is taking a lot of time to load right so
+slower than expected I guess I don't know right I mean it's okay so yep Swiggy
+APIs take one second in slow network how much time it takes Swiggy API is
+let us just see check it yeah it is not our it is not our big deal I am we are
+not swiggy developers let's let's don't go into that zone okay I'll show you
+what I need to okay I have loaded this now I'll make my network slow okay now I'll
+make my network slow let me have now I'll make my network slow okay I have a
+slow 3g now I will load in stomach see do you see shimmer do you see shimmer
+this is the fallback amazing awesome stuff this is the shimmer what I did
+is I just turned on to slow 3g it shows you the fallback UI right so let me repeat
+the let me repeat the second part of our session about lazy loading once
+again suppose if you are building a very big application suppose Amazon dot
+in suppose we are building Amazon if somebody is coming to buy mobile
+phones he might not go to fashion he might not go to electronics so we can
+keep different bundles of our application in different chunks okay we can
+keep different bundles of our application different chunks we can do
+chunking on the basis of different different parts of our app does that
+make sense now a good question Nisha Nishanti has asked is that is chunking
+really necessary for small apps what do you think should we do chunking for a
+small app no need when you feel that okay your app is the bundle size is
+going huge then you should go chunking why I am telling you all that
+because you should know how you can do chunking when you go as a react developer
+when you are building a large scale web application you will always have to do
+chunking when you say huge size what is a huge size huge size means building
+apps like make my trip building apps like Paytm I want you to be a developer
+not to just make a tic-tac-toe and a carousel no you should be a developer
+where you can take step forward and build facebook.com youtube.com amazing
+thing right now people are saying we should also load our shimmer in lazy you
+can do anything you can load anything in lazy anything anything okay let us
+just quickly revise how do how will I write my about component in lazy
+loading oh let me remove this first do you remember the syntax let's get our
+about component in lazy loading about what should I write now what should I
+write what is that function lazy what does this function takes what does this
+function takes callback function exactly right what do you are doing my
+function it should return me import right and what should I give it a path path of
+my components slash about okay that's all I need to do okay now let me get my
+instrument also if I go to my about now I don't need my about over here I will
+remove my about okay now what else should I do suspense everybody is amazing
+let's go to suspense where will I write suspense over here where I am loading in
+my suspense I will give my fallback what fallback should I give what fallback
+should I give don't call me shimmer about us we should not have shimmer come on
+like you want to give shimmer to everything no about us can have a
+different shimmer but we can have a normal what I am trying to say is it can
+have any piece of JSX it can have any piece of JSX over here what any piece
+you can even write something like this h1 loading does that make sense does
+that make sense give me a thumbs up you can give a loading spinner or whatever you
+want to let's go back oh I misspelled the name or something oh dot slash
+components sorry my bad let me refresh the page let me go from slow 3g to
+faster internet yep okay now if I go to my about page now if I go to my about
+page see we have about the JS loaded cool right if we go to insta mart we have
+insta mart loaded and it has it is loading right now it's why it was not
+loaded before this is the awesome stuff hope you would have learnt a lot hope
+you would have enjoyed it hope you would have now seen that why the
+large scale applications are fast why their size size of their bundles doesn't
+explode right so now the sessions are going more deep now we are diving deep
+into more advanced topics please finish your homework before I end this session
+let me just okay tell you that your homework will be to do to do create your
+own hooks remember we created our own hooks we learnt a lot of things today
+which see how much code did we did today oh my god 10 files and every file
+has so much code we created our hooks let us just quickly do a recap we
+created our use restaurant hook we created our use restaurant hook right we
+did we will offload it the responsibility of fetching over there we
+created a use online hook we learnt about why do we need a hook how do we
+create a custom hook when should I create a custom hook hope you are
+understood everything right we also saw that how can we lazy load things why do
+we lazy load things right how do we do chunking how do we do bundle splitting
+right this is also known as load on demand one more thing I wanted to tell
+you before I end this session is one more thing I wanted to tell you
+never ever listen to me very carefully note it down in your notebook this is a
+thing which I am telling you never ever dynamically load your component inside
+another component never do this never do this inside your component don't try to lazy load
+instant art no okay suppose if you are using instant art right over here don't
+lazy load it I have you know I have made my job harder because every time I tell
+you something in every session I say be curious be curious and now whenever I
+teach you something you you you become curious and you tell me that okay bye
+Akshay why why why right but but yeah I am happy that you have this curiosity
+why okay can someone can someone can someone you know you know you know the answer why
+you know the answer why why should I note lazy lazy load inside why
+why should I not lazy load inside my component why because this will be lazy
+loaded after every render cycle do you want to lazy load after every cycle do you want to
+no right it does not make sense to lazy load so this is a mistake which a lot of developers do
+suppose if you have to lazy load your footer right suppose if you have to lazy load your
+fitter don't try it like this you know how people will write they will write inside this I
+know right I know what you will make mistake then you will go to discord then you will
+say that Akshay my app is not performant Akshay this is no I know this I know the mistake what my
+students make I am one step ahead of you okay so I know what mistakes you will make that is why I
+am telling you otherwise you will you will mess up right so whenever you have footer right
+never do it here even though you are using this footer over here only never lazy load over
+here always lazy load on the top just where you are importing there is where you should lazy load
+does that make sense wherever you are writing import statements
+import do lazy loading here only it's a good habit so you won't mess things up okay I am
+telling you good practices I am telling you good practices right so now don't write like code it
+might work if you do that lazy loading inside but it's not a good practice it's not it's not
+the thing you should do okay so it was a long tough session my voice is you know
+yesterday also I like was speaking so much for so much hours let us wrap up our session
+so thank you so much everybody to join right all of you who join live I have huge respect for you
+all I am just wrapping up this session hope you would have enjoyed this week this week became
+a little more advanced and we will be going little little more advanced every week so please
+my dear friends okay get push I am doing it push wait for a while you people I mean you people want
+everything instantaneously oh my god chapter nine okay I have done this comment okay so it's it's
+working fine right our app works fine okay cool so I don't want to put in break broken code
+let me make a comment yes the code is pushed already the code is pushed okay so this was the
+chapter this was the chapter nine optimizing our app you would have understood you would have
+learned a lot I guess right I enjoyed the session a lot right I enjoyed the session
+a lot right I don't know why I can't make it big I enjoyed this session hope you would have
+enjoyed it did you enjoy it in the next week show some energy with those thumbs up show some
+energy come on right so hope you would have enjoyed it this was optimizing your app remember
+that all the things that we learned today whether it is building your custom hook or whether
+you learned that you know whether you would have learned to lazy load things splitting it bundle
+chunking all this knowledge will help you in your interviews and when you are building your large
+scale production ready applications when you are writing big components so you need to create
+sometimes custom hooks to offload the functionality to those hooks so you are capable now to
+build your own hook you totally understand now that how does react router dome would have
+built use params isn't it are you a smart developer you are becoming smart
+one day by day and I want you to be more smart as in when we progress through next sessions
+things will get even more complicated so everybody who has not done the homework till now
+even if you have not done your homework since the first day you still have time finish your
+homework finish your assignments code till now what we have done watch all the recordings
+if you are not getting time for from your job right if you are not getting time from your
+job take a leave but do this this is really very important make the most out of your course
+thank you so much for joining in once again and I really love people I have a great place in my
+heart for people who join every day regularly in my every session live I have huge respect for
+people who join in live are there people who who have joined every session live
+right write it down have you joined every session live amazing thank you so much everyone
+a big thank you to all of you because you know for me also it is exciting because I know that okay
+there is someone whom I am teaching it is not like I am talking to a camera in recorded videos
+I feel the vibe I feel the energy when you when you hit the thumbs up I feel the energy
+thank you so much everyone keep attending the sessions live it is different experience
+altogether because you know when you watch these recorded sessions you won't like it it will feel
+a little boring right and it won't have that vibe feel it participate along with me when you are
+joining the live session thank you so much thank you so much everyone I will be doing
+lot more sessions I will be doing amazing sessions I will be there next week 11 o'clock
+Saturday the class will be there hope to see in the next class thank you so much everyone and
+if I get time I will do a ask me anything session in between right if I get time but
+I am not promising yet right so I will do that thank you so much love you all let's hit
+let's show some energy before we end this up right 3.8k let's hit the let's hit that
+thumbs up to 5k and we will end the session come on 4.8 4.95 you have amazing energy thank you
+so much thank you so much everyone I hope you would have enjoyed it and thank you so much
+everyone I saw that there are so many people who were writing on LinkedIn thank you so much
+for sharing it love you all right I felt so nice when I opened LinkedIn there were
+so many people writing about Namaste react and though the session has already started and we have
+covered a lot of things but then there were so many people who were congratulating me in my DMs that
+Akshay I it's you know so many founders were congratulating Akshay like it is amazing to
+see you are changing lives of a lot of developers and it felt so good right there are so many
+founder friends I have my old manager right they were saying that there is a huge need of
+react developer in the market and it's great that you are teaching them stuff not and and and I
+really want to teach you what I have learned over the years in the industry so I am just doing
+my bit thank you so much it acts such a great motivation thank you so much love you all
+bye bye see you see you in the next one

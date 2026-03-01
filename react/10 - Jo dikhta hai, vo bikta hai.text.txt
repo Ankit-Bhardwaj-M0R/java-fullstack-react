@@ -1,0 +1,2832 @@
+FILE: Episode 10 - Jo dikhta hai, vo bikta hai.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Welcome back to Namaste React, this is Episode 10, Jyodhikta Hai Soh Bikta Hai
+In this episode, we are going to see that how we can make our app look beautiful, right?
+When I say the app look beautiful, that means we are going to see that how we can add styles to our application
+How we can add CSS to our applications
+And I am going to cover various ways how you can apply CSS to our application
+And then we will pick away, right? We will pick a CSS framework that we will use to add styles for our whole app
+In this episode, we are going to make our app look very beautiful, right?
+Till now, in this whole 9 episodes, I was just focusing upon writing the code and making our code work properly, right?
+We were learning about the internals of React, right?
+We were seeing that how we can build features inside React
+But today, in this episode, we are going to make our app look very beautiful
+Let us just start with opening our project into our VES code
+Let's just start our project
+Let me just make it a little bit and let me start it
+NPM start, right?
+When I run NPM start, that means our server runs
+And let us just open it up on the browser, right?
+So here we are, so here we have our app, right?
+And we have built this app
+We have made a lot of features inside this app
+And in this episode, we are going to see that how we can make our app look beautiful, right?
+Right now, it is looking a little ugly, right?
+Here and there, everything is clumsy here and there
+It's not looking very beautiful, right?
+Today, I am going to show you that how we can add CSS to our application, right?
+And what are various ways to add CSS to our application?
+So just pay attention and keep listening to me, right?
+So let me tell you the first way of writing CSS
+The first way of writing CSS is the one which we were already using, right?
+So we had an index.css file, right?
+And we used to put all these CSS into this file, isn't it?
+That is an easier way, that is a very basic way of putting CSS, right?
+So this is how we were using CSS, right?
+We used to have classes inside our JSX, right?
+And these class names used to be the class inside our HTML, right?
+So this was a logo class for this IMG tag
+And we can put in some CSS onto this class name
+And it used to apply on this image, right?
+Which we load over here
+So similarly, one way is to add CSS like this
+So this is the first way
+The second way to add CSS is to use SAS and SCSS, right?
+SAS and SCSS
+People who don't know what is SCSS and SCSS
+Please go ahead and just please Google it and just see it, right?
+What is SAS and SCSS
+So let me tell you in a short brief syntax, right?
+Short brief statement that what is SCSS and SCSS
+So basically, you can assume that SAS is like writing CSS
+With some superpowers, right?
+It adds some superpowers to CSS, right?
+The way we write CSS over here
+SAS adds some superpowers to CSS
+And writing CSS becomes a little more advanced and a little more easy
+When we write using SCSS and SCSS, right?
+SAS and SCSS, right?
+Note it down and please go ahead and see it, right?
+A lot of people I know who are watching this
+Would already know about this
+But people who don't know about this
+Please go ahead and see what is SCSS and what is SAS, right?
+But let me tell you this is not a recommended way to write CSS, right?
+When your application grows big
+These writing styles does not scale well
+These are not used in industry production-ready application, right?
+Companies do not use SAS or CSS like this, right?
+People are not writing like this
+This is just a way we use to add CSS to our app
+But this is not a recommended way
+Then you might ask, Akshay, what is a recommended way
+And what actually developers use inside big companies, right?
+So let me tell you, there is one more way to add CSS to our application
+That is commonly used with React
+That is known as styled components, right?
+Styled components
+So styled components is another way to add CSS
+And let me tell you that when I used to work in Uber, right?
+So in Uber, our components used to be styled components
+We used to use styled components, right?
+The styled component to write CSS for our components
+Got it
+So please go ahead, right?
+In this episode, in this series, in Namaste React
+I am not going to teach you styled components
+I am not going to teach you SAS and SCSS
+I am not going to teach you normal CSS, right?
+We have already written normal CSS
+I am going to teach you Tailwind CSS, right?
+But before coming on to Tailwind CSS
+Let me tell you all the ways of writing CSS, right?
+Which are popularly used inside React, right?
+So one, this is a very common scenario, right?
+See, if you will see, right?
+Lot of big companies use styled components
+This is the one, styled components is the one
+You can choose to use along with your React application
+If you don't choose other ones, right?
+So styled components is a way
+So just see this syntax, right?
+So here is a button component
+And this is how you write style over here, right?
+If you are interested to learn more about styled components
+Just write styledcomponents.com
+And go ahead and check out their examples
+It's very easy to use and easy to get started with, right?
+Read the documentation out
+After styled components, there is one more way
+How we can add CSS to our files
+Or how we can make our app look beautiful, right?
+So the different ways are using libraries and frameworks
+Different type of libraries and frameworks, right?
+Let me tell you that
+You must have heard of something known as Material UI
+Have you heard of it? Have you heard of Bootstrap?
+Have you heard of Ant Design?
+Have you heard of Chakra UI, right?
+So note down all these things, right?
+There is something known as Material UI, right?
+Material UI, right?
+So this is a way
+We can make our app look beautiful
+So this is basically a React component library
+Which gives you component out of the box
+Got it?
+So a lot of big companies use
+Similar kind of libraries or frameworks
+Let me repeat it once again
+A lot of big companies, right?
+They use different libraries and frameworks
+Which are used
+These are like CSS libraries and frameworks, right?
+And these libraries and frameworks
+Makes our life very, very, very easy, right?
+So basically, let me show it to you, right?
+If I go to their website
+So basically, they give you
+Pre-styled components, right?
+They give you components
+They basically export components
+Which already are beautiful
+Got it?
+So suppose if you have to create a button, right?
+So suppose this is our application
+Our button looks very ugly, right?
+So over here, if we use the buttons
+From Material UI, right?
+Let me show it to you
+Those are already beautiful looking buttons, right?
+If you go to components over here
+So basically what we do is
+Instead of using our own button tag
+We will use button like this, right?
+This button is coming from Material UI
+And those buttons will look like this, right?
+It already has a pre-built CSS inside it, right?
+So you don't have to worry about writing CSS
+Writing this hover, right?
+Changing the color on hover
+Making the borders round
+And you don't have to worry about any CSS
+You just have to import this button
+And everything works out of the box
+This is the beautiful thing
+About libraries and CSS frameworks, right?
+So you get built in
+You already get pre-built components, right?
+Listen to me very carefully
+You get pre-built components
+You just import into your app
+And you build a button, right?
+Which is already beautiful
+You don't have to worry about putting colors to it
+And making it round corners
+And changing the fonts and all that stuff, right?
+Everything comes out of the box, right?
+Similar to Material UI
+Material UI is much used, right?
+It is very popular in the UI community
+And a lot of companies use Material UI, right?
+Along with Material UI
+People use Bootstrap, right?
+Search for Bootstrap, right?
+Bootstrap is another one
+Bootstrap is another popular
+HTML, CSS and JS library
+Over here also, right?
+It gives you custom ways to style your components, right?
+Use it if you want to see the example
+Another one is Chakra UI
+Why I am telling you all this, right?
+I am telling you because
+You should know various options, right?
+You should know various options
+Go ahead, explore them
+See which one do you like a lot
+Write it down in the comments that
+Which one are you using it already
+Or which one do you like more, right?
+Go ahead, check out all of them
+And then make a wise decision
+Which one you want to use, right?
+All of these frameworks and libraries
+Do one and the same thing, right?
+Like, I mean
+All the components that you will see inside Bootstrap
+Is available inside Chakra UI
+Is available inside different
+Different type of libraries and frameworks
+But go ahead and see which one appeals to you
+Which one look better to you, right?
+They have their own way of designing things
+Okay, so go ahead and make an
+Inform decision for yourself
+I am just telling you various ways
+To put CSS into your app, right?
+I am not basically
+What you will say pushing one over the other, right?
+I have used a lot of them
+I have used material UI in production
+I have used Bootstrap
+I have used styled components
+I haven't used Chakra UI
+But I am just telling you that
+These are various ways
+Go ahead, explore Chakra UI
+Along with Chakra UI
+There is one more and design, right?
+There is one more
+Which is known as and design, right?
+This is world's second most popular
+React UI library
+I don't know why they claim to be
+Second most popular and what is the first
+I don't know, basically
+But whatever it is, so go ahead
+See this, I am not sure why it is not loading
+Their app is a little slow, I guess
+Right?
+I am not sure why it is not loading
+But go ahead to their website and see
+And design is another UI framework
+Which people use, right?
+So you can use any of these
+Frameworks, right?
+To build it
+But you must be thinking that
+Akshay, why are you rushing things up?
+You have not
+Dived deep into any of these
+Libraries or Framework
+Let me tell you that these are alternatives
+Which I was telling you
+Now, let me tell you about the thing
+Let me tell you about the way
+That I am going to use today
+In this episode
+Right? So in this episode
+In Namaste React
+I want to teach you how to
+Style your components using
+Tailwind CSS
+So basically we learnt various ways
+Before coming on to Tailwind CSS
+Let me revise what are the ways we studied
+One is like normal CSS
+That we were using since 9 episodes
+Right? Normal CSS
+Then SCSS and SAS
+SAS and SCSS
+That is another way
+The third one is Style Components
+The fourth one is using those
+Different libraries and frameworks
+Like Bootstrap, Material UI, Chakra UI
+And Design
+There are lot more
+But these are the popular ones
+And then, among all these
+After all these ways
+We also have something
+Which is trending today in the Frontend Community
+Which is a latest framework
+Which has come out and gaining a lot of traction
+That is Tailwind CSS
+And in this episode
+I am going to dive deep into Tailwind CSS
+I want to take Tailwind CSS
+As the primary CSS
+framework that we will use to
+Customize our application
+To make our application look cool
+Right? So let's see
+Let's explore Tailwind CSS
+You know see
+Now you must be thinking, Akshay
+Should we always use Tailwind CSS
+No
+I am just saying that I will teach you what is Tailwind CSS
+Go ahead
+Tailwind CSS in your project
+And make a informed decision for yourself
+I am not biased towards Tailwind
+Or I am not biased towards any other way
+Of writing CSS
+It's your call what you want to use
+But in this episode
+I will focus upon Tailwind CSS
+Okay
+So let's get started with Tailwind CSS
+Right?
+Take a pause over here
+Take a break at this moment in this video
+Go ahead
+All the previous ways of writing CSS
+Right? Explore it
+Explore different websites of Material UI
+And design, Chakra UI
+Bootstrap, see all of them
+Go to their website, see what they are offering
+And then afterwards
+Come back over here
+Then we will start with our fresh minds
+To start learning Tailwind CSS
+Right? So take a break
+And we will come back soon
+And we will start learning Tailwind CSS
+And we will start making this app look
+More beautiful
+Let's take a break
+Welcome back my dear friends
+Now let us see how we can use Tailwind CSS
+What Tailwind CSS
+Has to offer
+What is different in Tailwind CSS
+Than writing normal CSS
+We will explore a lot of new things
+So take down notes while I teach you
+Right? And you will love this framework
+Right?
+So what is Tailwind first of all
+Let me just open the website
+Tailwind CSS
+So Tailwind CSS
+If you will see the website
+It is used
+See what Tailwind CSS has to say
+So it says that
+Rapidly build modern websites
+Without ever leaving your HTML
+What does that mean?
+Tailwind CSS says that
+You don't have to leave your HTML file
+Or you don't have to leave your JSX over here
+This is like a HTML for us
+JSX
+And you can still style your components
+Without moving
+And switching between the files
+You don't have to move back and forth
+So we will see that in action
+But now you must be wondering
+That how we can do that
+How if we don't write CSS
+Inside our CSS file
+Then how do we modify our components
+So now without wasting any time
+In just talking and blabbering
+About the theory of Tailwind CSS
+Let us just go and start using Tailwind CSS
+That is the best way to learn
+So first of all
+We will have to configure our Tailwind CSS
+Into our React project
+So for that go to their website
+Click on get started and let me show you
+How you can configure your Tailwind CSS
+With your project
+Let me first of all tell you
+Tailwind CSS is not just a
+React thing
+It works along with React
+But it also works with all the frameworks available
+It's a very generic CSS framework
+It works with React
+It works with Angular
+It works with different UI frameworks
+It works with normal HTML
+CSS JavaScript also
+There are various ways to install
+Tailwind CSS
+But we have to install it
+In a different way
+This is not a normal installation
+That we have to do
+Basically we will go to framework guides
+And we will choose parcel
+Because we are using parcel
+We will choose parcel over here
+Choose accordingly
+So if you are using a create react app
+Just choose create react app
+If you are using Angular, use Angular guide
+If you are using next, use next guide
+So because our project uses parcel
+So I am clicking on parcel
+And I will see
+How to install Tailwind CSS
+With parcel
+So here is where I have to go
+Go here and follow these steps
+So let me follow it along with you
+So basically
+First of all it says how to create your project
+We already have a project
+So ignore this
+Then how to install Tailwind CSS
+So basically it comes as a package
+So to install Tailwind CSS
+We will install Tailwind CSS
+And we will install port CSS
+So I will tell you what these things are
+But let me just copy it
+And let us run these commands into our terminal
+So let me just
+Close this app
+First of all and let me just
+Copy paste this
+And enter
+So now this is basically installing
+Two packages for us
+Tailwind CSS and post CSS
+Now let me tell you what is the second package
+Tailwind CSS we understood
+Tailwind CSS is like a normal Tailwind CSS
+What is post CSS
+So let me tell you
+This post CSS that we have installed
+Let me tell you what is post CSS
+Let me write it down
+Post CSS is a tool for transforming
+CSS with JavaScript
+Basically if you have to transform your CSS
+Inside JavaScript
+You use post CSS
+So Tailwind CSS uses post CSS
+Behind the scenes
+So you don't have to study differently
+What is post CSS
+You just need to know what is post CSS
+But you don't have to specifically
+Learn post CSS to start using tailwind CSS
+Tailwind CSS behind the scenes
+Uses post CSS
+Don't worry about that
+But for now
+Just understand that tailwind CSS
+Post CSS is a tool for transforming
+CSS along with JavaScript
+Tailwind CSS uses this
+So now this is what
+We installed tailwind CSS
+We installed post CSS
+And then we did NPX
+Tailwind in it
+When you did NPX
+Tailwind in it
+Remember this is NPX
+Remember we used NPX earlier also
+So NPX means
+We are invoking
+We are executing tailwind CSS
+So we did NPX
+NPX Tailwind CSS
+In it that means we are initializing
+Detailwind CSS
+Into a repository
+Whenever we do NPX Tailwind in it
+When we did this NPX Tailwind in it
+It will create a tailwind.config.js
+For us
+It created
+A file
+It created a new file for us
+Which is known as
+tailwind.config.js
+This is the configuration file
+For our tailwind CSS
+So this is the configuration
+File which is automatically created
+When we execute this package
+Using NPX Tailwind CSS in it
+So now we have
+Got a configuration for our tailwind
+Now we will create a configuration
+For our post CSS also
+So we will have to
+Create our post CSS file also
+A configuration file
+For post CSS also
+And it says that create a
+Post CSS RC file
+How to create that
+So go on to the root section
+And create a new file
+Which is post CSS RC
+So post CSS RC
+Is a configuration file
+For post CSS
+We are using tailwind
+So post CSS RC
+Is configuration for post CSS
+Tailwind.config.js
+Is the configuration for tailwind
+We have to configure tailwind
+We have to configure post CSS
+So in post CSS RC
+Let us go back
+It says that you have to
+Write this
+So you have to basically copy this thing
+And just paste it over here
+This means that
+Post CSS RC
+You have to tell post CSS RC
+That we are using tailwind
+Over here
+So what will post CSS RC do
+Like tailwind
+If you have to use tailwind
+So your parcel
+Need to use post CSS RC
+To read tailwind
+Got it? Listen to me carefully
+Because we are using parcel
+So parcel
+Your bundler will use
+Post CSS RC
+Is used
+To understand tailwind
+So post CSS RC
+Is kind of a way that our projects
+Understand what is written inside tailwind
+Got it? So that is how you can use it
+That is all you need to understand
+For post CSS
+For writing tailwind
+So basically in this configuration
+We are just telling that
+We are using tailwind in our project
+And please parcel
+Understand tailwind
+Classes
+Understand it
+That is what we are doing in this file
+So this is our configuration file
+For post CSS
+Post CSS RC file
+That's all, let's close this
+That's all we need for post CSS
+Now let us configure our tailwind
+So you must be thinking we already have this configuration
+But
+There is a slight modification that we have to do
+In our tailwind config file as well
+What is that modification
+It says that inside our content
+We need to write this
+There is a content
+There is content over here
+We need to give a configuration
+This configuration
+What is this configuration doing
+This configuration means
+That
+This content attribute
+Takes an array
+Takes a list
+List of all the files
+Where I can use my tailwind
+CSS
+This
+Takes the configuration
+What all places are we going to use
+Tailwind
+With this
+With this regex kind of an expression
+We are telling tailwind
+That tailwind can be used inside our HTML files
+Tailwind can be used inside our JS files
+Tailwind can be used inside our TS files
+Tailwind can be used inside our .JSX files
+Tailwind can be used inside TSX files
+So right now
+We are saying that
+Anywhere in your project
+Wherever you find any of these files
+HTML file, JS file, TS file
+JSX file, TSX file
+You can find tailwind anywhere
+So this is a way
+We are telling our project
+That we can use tailwind in any of these files
+Any of these files
+Which are using this extension
+So see
+Any files which are inside our src folder
+And star star
+Star star
+That means anywhere
+Under our src folder
+And have one of these extensions
+We can use tailwind over there
+So basically when we say that
+Now our tailwind configuration is done
+Now our project
+Will track
+Where our tailwind classes are there
+And it will automatically pick up
+And understand tailwind CSS
+As we use it
+Now you must be thinking
+Why do we need to give it
+JSX, TSX and all these things
+We have not created any TS file
+We have not created any JSX
+Yes, you don't need to
+You can omit this
+So tailwind CSS
+We just want to use
+CSS or tailwind CSS inside our HTML
+JS file
+Over here
+They have given it because they don't know
+Whether you are using TypeScript
+Or whether you are using JSX
+They have just given you a generic
+Configuration over here
+So right now I am just using HTML
+And JS files in my project
+So that is why let me just keep my HTML
+And JS file over here as well
+So that's where we use
+HTML and JS file
+We will use tailwind CSS
+So this is the configuration
+Done for tailwind
+Done for post CSS
+So right now let me recap it once again
+Till now what we have done is
+First of all I have
+Installed my tailwind CSS
+And post CSS
+Using npm install
+Then we wrote npx tailwind CSS
+That created a configuration
+That created a configuration
+For our tailwind
+Then we created a configuration
+For post CSS
+Got it? That was the third step
+Then one more step was
+To just add this content
+This is the place
+Where we add what files we can find
+Tailwind CSS in
+Got it? So this is one thing
+And then now what else we should do
+We have to
+Write this inside our index.css file
+We have to
+Write this inside our
+Index.css files
+That means we are kind of
+Importing our
+Tailwind CSS into our CSS file
+Let me tell you one more thing
+After this
+Point in our project
+Let me just
+Do a control a
+Delete everything inside my index.css
+I have deleted all
+The styles that I wrote
+Till now in our project I have deleted
+Everything and I will just
+Write three lines
+I will just write three lines
+This is basically kind of
+Importing tailwind into your
+Index.css file
+This is basically importing your
+Tailwind CSS into your CSS file
+And from this point onwards
+In my project I will not
+Write a single word inside my CSS file
+Yes
+You must be thinking
+What it is
+But let me tell you
+I will not be touching my index.css files
+Ever again in my project
+Ever again
+So these are the only three
+Lines that you have to write
+Inside your index.css
+After writing these three files
+Let me just close my index.css
+File and let me tell you
+My dear friends, our project
+Is now configured to use
+Tailwind
+So now this is all the configuration
+That we needed and now we will
+Just start using Tailwind CSS
+In our projects
+And let me tell you
+To check, let us just check
+Whether we have installed Tailwind CSS
+Properly or not
+Let me just start my project
+Once again
+I will write npm start
+Once again
+And if I write npm start
+Let me go back to our app
+If I refresh my page
+Oh my god, did you see this
+Everything has been broken now
+Now we have
+Tailwind in our web application
+We have messed up everything
+All the UI is messed up
+But we have
+Tailwind CSS in our project
+Configured
+Now
+I will show you
+How we can customize
+And make our app look beautiful
+Using Tailwind
+Now we will start using Tailwind
+But at this point
+I want you all to take a break
+Take a pause at this moment
+Before I start writing Tailwind
+Just take a break and try to
+Set up Tailwind in your project
+You know, you might face some issues
+You might face some issues over here
+While writing those commands
+Like here and there, some bugs over here
+If you will face any issues, just google search
+Try to find it on stack overflow
+Or somewhere or the other
+Please configure Tailwind
+But most of the times you will be able to
+Solve it properly
+Just follow this guide
+Go to Tailwinds website
+Try to just follow whatever it is showing over here
+And everything will be installed successfully
+Tailwind CSS successfully
+And your page looks something like this
+It's looking ugly
+It's looking distorted
+Don't you worry
+But please just install Tailwind
+Come back over here
+Your terminal should be clean
+No errors over here
+No errors in your console
+Your console should not have any errors
+If you have any errors in your console
+Then just fix it
+Once you are done with that
+Come back over here
+Let's take a break
+Come back and pause the video over here
+Configure Tailwind
+And then come back and then we will continue
+To use Tailwind CSS into our project
+We will actually
+Write and modify our application
+And make it look beautiful
+Using Tailwind
+See you very soon
+Let's get back
+Welcome back my dear friends
+Now let us just start using Tailwind CSS
+To our project
+Let me tell you how Tailwind CSS works
+It works
+Very different than normal CSS
+In normal CSS
+We used to just write
+Some class name over here
+And then we used to add CSS for this class name
+Into our index.css file
+But over here
+We are not going to do like that
+How we are going to put CSS is
+We are going to put CSS
+Using class names
+Right, so Tailwind basically
+Offers you a class name
+For every CSS that you can
+Put inside your app
+Let me repeat it once again
+Tailwind CSS gives you
+Class names automatically
+For every CSS that you would
+Want to write into your app
+What does it mean
+So suppose, let me tell you
+So suppose if you want to use
+If you want to make the background of your app
+Read
+There is a separate different class
+Which Tailwind CSS gives you
+That you can directly use it over here
+Suppose if you want to increase
+The width of your image
+There is a separate class
+That Tailwind CSS gives you
+That you have to use it over there
+Now it might be sounding confusing
+But let me tell you
+What I am trying to say
+So
+How our thought process will work
+When using Tailwind, it will work
+How our thought process was working
+When we were using normal
+CSS files
+How we used to think
+Suppose let us just try to write
+CSS for our header component
+This is our header component
+Let us try to write CSS for this
+Header component
+First of all, we will have
+To make our header component a flexbox
+So that
+Our components
+Our tabs or our divs
+Inside the header component aligns properly
+So how to make a div as flex
+So we just have to
+Write flex over here
+If I write the class name
+As flex
+That means our div will become flex
+See this
+They came one after the other
+They came side by side
+That means our div component
+Became our div became
+Flex
+So let me show it to you over here also
+Where is our header component
+Where is our header div
+There must be a header div over here
+Yes, see this
+This is our header div
+This is our header div
+And when we write flex over here
+So see this
+Tailwind CSS basically
+Added display flex to it
+So you do not have to go to index.css
+And write
+Flex
+Over there
+You just have to put this class name flex
+And it will make your div as flex
+So now
+Suppose you want to decrease the width of this
+Logo
+Suppose if you want to decrease the width
+Of this logo
+How can you decrease the width of this image
+So let me tell you
+That there is another class that we can use
+To decrease and increase the width
+Of this logo
+What is that class
+W-
+W-
+And it will give you different parameters
+Suppose if I write W-8
+W-8
+And let me save this file
+If I go back to my browser
+See this, the image become very small
+Did you see this
+It is not even visible over here
+Barely visible
+Suppose if I write W-24
+Instead of 8
+See this, if I save this
+Isn't it
+Did you see it
+It is still very small
+Let us make it
+W-56
+And let me save it to you
+It will become a little more big
+Now it is looking better
+Now it is looking better
+It looks like a logo
+So let us just keep this
+So basically if you will write
+W-something
+W-56
+And let me add the width to your image
+Let us see
+What width it has added to our image
+If I go over here
+The class is W-56
+And it added the width of
+14REM
+To it
+14REM
+So now this is how you add width over here
+By writing W-
+Let me now tell you
+Let us now see all the other things
+How we do it
+Let me explain you a lot more
+But for now just see that
+What am I trying to do
+How am I adding CSS to my application
+So suppose
+This is this UL
+This is the unordered list
+And there are the list items
+So let us just make this list items also
+Like this UL also flex
+So that they come over here
+So let's make this UL flex
+How do I make it UL flex
+I will add a class name flex to it
+If I add flex
+They came in like this
+We wanted it like this
+Now suppose if you want to add
+Space between these divs
+So suppose if I want to add space
+Between this logo
+And this UL
+So what I will do is
+I will use justify space between
+Remember we can use justify space between
+And they will move apart
+And this will go on the right hand side
+How do I do that
+Since CSS and let me write
+How do I write justify content
+Justify content
+So if I go to justify content
+And I have to write justify content
+Space between
+So what class I have to use
+I have to use justify between
+So I will just use a class name
+Justify
+Between over here
+Between
+So if I write justify between
+Let me save it up
+See this
+It became
+A part
+Display flex and justify content
+Space between
+So they moved apart from each other
+It aligned to the right
+Now in this UL
+Let me also give it some padding margin
+Let me now show you how to give padding margin
+So instead of going back and forth
+I remember it
+I will tell it to you
+Give some padding margin to my UL
+So I will give it some padding
+Padding of
+Padding of 4
+If I write p-4
+It will give it some padding
+It give it some padding from top bottom left
+Right and let us also
+If I have to give it margin
+Then I will give it something like this
+m-4
+If I give it m-4
+Then if I save it it will give it some margin
+Let me show it to you
+If I inspect it
+And let me go to the UL
+See this it gave it padding 1rem
+And it gave
+Margin of 1rem as well
+So this is how you give padding
+And margin to
+Any div or any
+Piece of container
+Which you want to give
+Now you must be thinking that Akshay are you mad
+What
+We have to apply some css
+And we have to constantly go to
+Akshay's website and keep on searching
+For css equivalent classes
+And then just put it into our html
+And like this is just
+Making our life more tough
+Is tailwind making our life
+Easier or is it making it tough
+Let me tell you my dear friends
+You know
+There is an initial learning
+Curve in tailwind
+Initial learning curve
+But as you go ahead as you start
+Writing these class names
+Intererate it
+You know once you will write classes
+Once or twice
+Once you will write these classes once or twice
+Then you know next time
+They just become easier and easier
+Right now it is very tough
+For me to explain you that
+Like you must not be believing in me
+Right you must be thinking Akshay
+It's not possible right
+It is just a lot of things to remember
+What are the class names
+If I write W that means width
+M that means margin if I write P
+That means padding but trust me my dear friends
+Once you start using tailwind
+Your life will
+Become easier
+Once you start
+Doing css more and more in tailwind
+You will just get habitual
+Of writing these classes
+It will become a piece of cake for you
+It just comes with initial learning curve
+And
+Let me also take let me also
+Give you an important
+Important thing
+Important tool
+Important superpower when you are using tailwind
+Right that is known as
+Right that will make your life
+Very very easy while you are using
+Tailwind that is known as
+Tailwind
+VS code extension
+Right so there is a
+Tailwind VS code extension
+That is known as tailwind css
+IntelliSense install this
+In your VS code
+You know if this extension was not there
+I would have never used tailwind
+So basically the process
+Of
+Basically let me just show you what this extension does for it
+Right so go to
+Installed extension
+Tailwind
+IntelliSense
+Right IntelliSense you can install it
+From here or you can install it
+From there right from the browser you can
+Download and put it up in VS code
+Or you can just install it from here
+Right this is tailwind css
+IntelliSense which is there by
+Tailwind labs
+Right I am just enabling it
+And let me just reload my browser
+I am just enabling it
+And let me just go back
+Right once I have
+My extension with us
+This extension once you
+Install and enable it
+It will give you
+Superpowers my dear friends
+Now you don't
+Have to go to
+Tailwind's website again and again
+You don't have to go to tailwind
+Website again and again
+But you will get
+Tailwind class suggestions
+As in when you are writing code
+You will get tailwind class
+Suggestions as in when
+You are writing code
+Suppose if I want to make the background
+As pink I will start writing
+Pink over here see this
+Write pink over here
+Right if I write pink over here
+See this it automatically
+Shows us different classes
+That I can use
+If I write bg pink 50
+bg pink 100
+bg pink 200
+This is giving us different colors
+That I can different shade of pink
+That I can put as background
+And it also
+Shows that what css
+It is using
+Let me use like bg pink 100
+If I use bg pink 100
+And if I hover onto this class
+See this
+This extension is doing
+This powerful thing for us
+Suppose if you want to find out
+What class is doing what
+Right so you can just
+Hover onto that class name
+And it shows you what exactly
+Css
+Is going to be put
+Inside our html
+If I will write bg pink 100
+It will put in
+It will put in this background color
+Of bg pink
+Lighter shade of pink
+To our html
+Let us just see
+What is there inside w56
+If I forgot what is there in w56
+Just hover onto this
+This extension will tell you
+What is this class doing
+This class is putting a width of 14rem
+Isn't it cool
+This extension will tell you
+What this class is actually
+Doing behind the scenes
+And this extension will also
+Suggest you what classes
+You have to use
+Suppose if you forget the name of this class
+Got it
+So this is how powerful this extension is
+It just makes our life easier
+Right let me just save it
+And let us go back see this
+Our header has become pink now
+Isn't it
+Has become pink now
+Let us try to explore more
+Suppose if I have to
+Give some shadow to my header
+Why it is white
+It is because this is the image
+This is full image
+This image is whole square
+That is why it is not taking it full
+Got it
+If we change the image to png
+I think this does not have a
+Transparent background
+If this had a transparent background
+It would have become pink
+Got it this is a square image
+So anyways
+Let us just see how to put in shadow
+Now I will not
+See the code for
+Shadow in my tailwind css website
+I will just try to use my
+IntelliSense this tailwind
+Extension to find out how
+To put shadow
+Suppose if I want to put shadow inside my header
+How do I put it
+Let's go over here
+When it starts giving me suggestions
+If I will write shadow
+It shows me
+See this
+Shadow sm, shadow md, shadow lg
+So what does this mean
+Shadow sm
+So wherever you will hear the word sm
+This sm means small
+md means medium
+lg means large
+xl means extra large
+2xl means double extra large
+These are just the nomenclature
+Of the tailwind uses
+So basically if you forget this
+You can just write shadow
+And you can write shadow lg
+Let's see shadow large
+What happens if you write shadow large
+And let me save it
+If I go back, see this
+Do you see the shadows over here
+It has made a shadow
+Underneath this header
+Suppose if I have to give margin
+So if I write m-
+It gives me all the values
+If you have to give margin 1rem
+1.25rem
+And it tells you what all variables you can use
+Whether can you use
+20, 24, 28, 32
+It gives you suggestions for everything
+It will make your life
+Very very easy
+So let's give us margin of 2
+margin m2
+m2 means margin of 0.5rem
+That means 8px
+Let's give this
+So if we give margin of 2px
+See this
+It has taken the margin of 2px
+All around
+So right now this m2
+Has given margin all around
+Suppose if I just had to give margin
+To bottom
+So how do I give margin bottom
+It's very easy
+You will have to write mb
+mb means margin bottom
+Okay
+So if I have to give margin bottom
+I will write mb2
+Give margin bottom 0.5rem
+It's easy
+I'm telling you once you start using it
+It is very very easy
+If I have to give you margin on the top
+empty
+margin on the right
+mr
+ml
+It's very easy
+Similarly if I have to give padding on the right
+pr
+If I give pr0, pr1, pr2
+Similarly if I have to give
+padding on the left pr
+Suppose if I have
+to give padding on the left
+and right on the
+sides on the
+width sides
+on the
+horizontal axis
+So what I will do I will write
+px
+px means it will
+give padding to the left
+and the right
+px means on the x axis
+px means on the x axis
+If I have to give padding
+to left and right together
+then I will use px
+If I have to just give to right
+I will use pr
+So this is the nomenclature
+that we can use inside our
+jsx and these
+CSS classes will
+make us write CSS
+for our whole application like this
+using just these classes
+Now you must be thinking that
+it is very very very confusing
+for me but
+to clear your confusion I think
+we just have to use it a lot
+Let me just let me just keep
+using this tailwind css
+and let us just build something
+Let us try to create the UI
+and then let us see that whether it has
+advantages or disadvantages
+If you are not liking it right now
+don't worry if you are liking it
+then that is amazing if you are don't liking it
+don't worry don't worry keep
+liking it right let me make
+our UI look more beautiful
+and let us see right how much effort
+it is taking for us right
+and that is when later on we will
+decide for it right so we have created
+this header let us try to create
+this search bar also right so right
+now we have the search bar right
+let me just give it some padding margin
+or something right to the to our
+so we are done with
+header right or maybe let us
+just customize our header a little more
+so let's make it
+center align from top and bottom
+this is sticking to each other and it is
+not aligned properly right let us
+make it center align from top and bottom
+how do we do that if we are using
+flex basically
+when we use flex we can do
+align items to center right
+that will align it vertically
+isn't it so let us just
+go to this nav items
+and over here I can use flex
+right so if I use
+flex over here and if I use
+align item center right
+so I have to do item
+center so if I write align
+item item center that means
+I am putting items
+align item center right
+so the class name is item center
+let me do that and let me see
+if it works let me save it yep
+see this now it has come like
+this now what I have to do
+is these are sticking to each other
+so I have to give padding to each
+item but in x axis
+right are you are you make
+is it making sense to you I have to
+give padding to each of these
+li's right li
+list items right and I
+have to give it on x axis not on
+y axis just x axis right how
+do I give it padding right padding
+on x axis to all these li's
+so I can just
+use a class name
+right I can use a class
+name padding
+of padding on x axis of
+and
+x axis of let me give it px4
+right px4 means
+px4 means 1rem
+right so if I give it
+see this this online status
+has got padding of
+1px both the sides
+right similarly you can
+put this class name to all of them
+so let us just give this class name
+to all of them right all these
+li all these list items
+I am just giving this class name to all
+these list items right if I give
+it padding to all these list
+items right let us give it to
+cart as well so if I save
+it now do you see
+those have taken all
+of this has taken padding
+on x axis of 1rem
+got it
+now it is looking a little much
+better right now this is looking
+much better let me just
+go on to style this search input
+box as well right so now let us
+just style this input box so
+let us go to input box where
+is our input box it is inside body
+let us go to body component now
+and in my body component
+where is it there is the input box
+right this is the search
+ok so first of all let us give it
+padding margin right so let us give
+it margin m4
+p4 right so I give
+it m4 p4 right let
+me save it and see how it looks
+we have got this padding margin over here
+amazing isn't it
+so we have got this padding margin now
+let us style this input box
+right right now it is looking very ugly
+oh my god let us go back I
+clicked on to something
+I have this input box right let
+us give it like some borders
+isn't it I think we should give it
+some borders I should
+give it some borders to my input
+box so I will do
+border and then I will write
+border
+hyphen
+border hyphen
+solid right something like that
+border solid right I will give it a
+solid border and I will
+give it border black or something
+border black
+got it so I have given it
+border right now my input
+box is much more visible
+now let us make this search
+search button look like
+a button right it is not looking
+like a button how do I make my search
+look like a button right let
+us try to do it so this is a
+button let us write some
+CSS to this button right class name
+right how do I
+write it let me give it some
+padding first of all let us give
+it padding of 4
+let us give it padding of 4
+and let us make that button as green color
+ok let us give it BG of green
+right if I write BG green
+and let me give it BG green of
+100 right let me give it background
+of green of 100 right
+and let us give it margin also
+right if I give it margin
+of 4 right let us give it
+M4 right not margin of 4
+M4 that means margin of 1
+REM right and let me save and see
+if it looks better oh
+it looks a little bigger
+right it looks a little
+bigger that means I just have
+to give it padding
+on X and Y axis and
+not on the top and right
+basically I don't have to
+give it padding all around so let me
+just give it padding on the X axis
+only right so that I make it a little
+so because it has taken
+padding all around right that is why it is
+looking a little ugly and looking
+a little more
+bigger right then we expected to be
+so let me just give it on X axis
+PX4 right if I write PX4
+hope you are understanding
+this be patient if you
+are not understanding this what am I doing over here
+I am just giving it on the right and left
+right on the X axis
+call it PX oh my god
+it became a little
+very short right it just took
+so what I can do is let me
+reduce it right
+let me let me give it
+PX is fine right let me
+give it on the Y axis
+let me give it a little lesser right if I
+give PY of 2
+save it cool
+right now it looks good
+on the X axis I have given it
+4
+that means 1 REM
+and on PY I have given it 0.5
+REM right when you will play with
+it right when you will play with
+you know let me tell you first of all I am not
+an expert in tailwind
+I am also learning it I am
+also using it for the first time
+that is why I am also struggling
+with it but
+that does not mean I don't want to use it
+let's use it and see if it is making
+our life easier or not
+if we were not using tailwind
+what we had to do is we had to go
+to index.css files and try this
+ourselves right we would have written
+padding top padding bottom and all
+this ourselves tailwind
+is giving us a shortcut
+method of writing css
+and on the fly
+right on the fly means
+when I am creating a button I can directly
+write a class name at that point itself right
+we don't have to
+go between js files
+and html files and css files
+1 again and again and again and again
+to modify our buttons
+right so it is beneficial
+it is very very beneficial
+if you see it in this perspective
+right if you understand these
+classes well you it will
+make your life a lot easier
+right so similarly we have got
+this padding see we
+have got this input box we have got this search
+button cool so now
+let's
+go back to top rated restaurants
+right this is also a button right
+I think this is also a button so top rated
+restaurant where is it
+ok here is our top rated
+restaurant button right so let
+me make this filter as a flex
+right and it will come on the side
+right it will come side by
+side this top rated restaurant is also
+a button isn't it so let's
+modify this top rated this
+is the filter btn so I don't need this
+class anymore let's
+give the similar kind of
+css right just like
+search button we have this top rated
+restaurant button so let's give it
+right let's give it
+padding right padding of
+x of 4 right similarly
+and padding of y of
+2 right
+and let me also give it some
+background color as gray or something
+right let me give it as gray
+right bg gray
+right bg gray 50 right let's
+give it maybe bg gray 50 or 100
+let's give it 100
+right let me save it and see
+see this we have got this
+so why it has become big
+because it is taking the full width of the parent
+right so it is taking the full
+width of the parent because it is not
+wrapped inside a div let us just wrap it
+inside a div right so let us just
+wrap it inside a div and
+let's put this button inside
+this div over here right
+if I put this button inside
+this div and
+if and I will give this div
+right I will give this parent div
+the same class name as we gave it
+for the search items right
+let's give it like this
+right so now it is wrapped inside
+the div now it is looking much more better
+right now we just have to align it
+properly how to align this properly
+right we already know I can do
+my flex and I
+can do it flex and then item
+center right item center
+so when you will do this item center it became
+like it came in a straight line
+right now what we can do is suppose
+if we have to give round corners to
+our buttons right how do we give round
+corners to our button let us see how
+we can give round corners to our button
+so let's go back to our search button
+right here is our search button where is it
+this is our search button
+let's give it round corners so
+I will write round rounded right
+so I have already get this class
+see this rounded SM
+rounded medium rounded large
+so let's give it rounded LG and let's
+see how it looks right if I give it rounded
+LG see this
+it made the button look
+like see this see the corner of this
+button it became like this
+isn't it how cool
+it looks right we have just given
+one class rounded LG
+and it made our buttons look
+curved right the round
+corners are now rounded isn't it
+let's suppose if I had given
+rounded XL right let's see
+how XL looks right rounded
+XL so if I save it
+see this it has become more more rounded
+let's give it rounded to
+XL right if I write
+rounded to XL see this it
+has become more rounded it is
+looking not looking that
+great isn't it which button is
+looking good let's give it rounded LG
+right I think LG was looking much better
+so rounded LG right
+see this rounded LG is cool right
+similarly let's give rounded
+LG to operator rest also
+isn't it why not so let's
+so what I am trying to say is
+if you know these class names
+right if you know these
+class names and if you are using these
+extension it will
+help you a lot right this extension
+will suggest a lot of things right
+you don't have to remember
+everything right I am telling you
+don't have to remember everything
+all these CSS classes and all
+these things right now
+let us just work on building these cards
+right let us just work on
+building these cards right where are these cards
+these cards are
+basically inside our
+component right rest of
+card right so this is a rest of
+card component okay so
+first of all always
+you know I always start by giving
+margin padding right that's a good
+way to start with M4
+and then P4 right margin
+padding
+right best way to start
+margin padding I have
+given some margin padding now let me give it
+a width also right let's me give
+it a width width of
+let's give it the
+card width of 200px or
+something yes so now suppose
+if I have to give a width of
+200px right and
+now first of all what I will do
+is I will write W and then
+hyphen and then I will try to
+find out I will try
+to find out does
+200px exist
+right so see
+W48 is 192px
+W52 is
+208px
+what if there is
+a use case where I have to give it
+specific px
+suppose if I had to give it
+200px no matter
+what I just have to give it hard
+coded 200px I don't
+want to give it
+192px or 208px
+I want to give it like
+200px there is
+no class for it
+so if you ever
+don't have a class for a certain
+hard coded value what you
+can do is you can write
+it like this right
+you can use these parenthesis
+you can use these
+square brackets and inside
+the square brackets if you
+specify 200px
+so it will take it
+as a hard coded
+size right
+instead of writing W48
+W50 W52 whatever it
+is you can also write it
+like this W
+hyphen in the square brackets
+200px that is how you
+make dynamic classes in this
+tailwind right this is
+a feature I wanted to show it to you
+that's how we do it right
+generally whenever
+possible try to use the
+classes which tailwind is offering to us
+but suppose you
+can get into a use case where you
+specifically have to use a certain size
+right specifically have to use it
+then you can make your own
+styles as well right
+so you are not
+feeling handicap that I always have to use
+tailwind classes you can modify
+these tailwind classes as well
+right and if I make it
+200px like this it will take the
+width of 200px like this
+right see this
+our card has become
+200px wide
+right so our card has become
+200px wide
+isn't it and now
+let me also
+let me also
+make let's make it a little more
+wide right not 200px
+is looking very small
+very tiny so let's
+make it 250px maybe right
+so let's make it 250px
+so now it is looking good right now
+it is looking good and now these
+cards are coming one below the other
+right let's make our card
+become on the side by side
+let's make our cards come side by
+side what class do we use
+so I will make the whole container
+as flex and then I will
+like
+make it flex right let's make it flex
+so let me go to the
+restaurant card component
+here is it right rest container
+this is the rest container restaurant container
+let's make it flex
+right flex if I do
+flex see this they have come side by
+side but the problem is it has gone
+all over here right it has
+gone all over here so now
+let me get it on the next
+right how do we do it
+I will do a flex wrap
+so I don't know how to do a flex wrap
+right I don't know how to do a
+flex wrap in tailwind I will
+just write wrap over here right
+if I write wrap so I can do a
+flex wrap see this so
+tailwind css
+extension is very
+very helpful to us
+you know if you see it clearly
+I am just writing wrap you know
+I am just writing wrap over here
+and it is doing a wild card match see this
+it is suggesting that you can use flex wrap
+reverse
+right so it is
+it is searching from
+all the classes that tailwind
+offers to us and it is suggesting us that
+you can use either of them
+so I can choose flex wrap right and
+I can save it and let's see if
+let's see if we get the desired
+output or not right so if I do
+flex wrap now see this
+it has come one below the other
+and do you see
+my dear friends in such
+short amount of time
+we have made our cards look
+much beautiful isn't it
+we have made our cards
+look much beautiful isn't
+our website looking beautiful
+right and we have
+done this how much time I
+have taken right it has just
+been half an hour and we have
+customized our app is looking
+much more beautiful than before isn't it
+it was faster isn't it
+right now
+you would say Akshay because you
+remember the classes that's why it is
+faster for you yes that is what I am
+telling you initial
+time taken
+to remember these classes is a little
+more right the initial learning
+curve is a little high but once you
+get used to of these classes
+your life becomes very easy
+because most of the times we are using
+the normal CSS right padding
+margin colors borders
+and all that stuff right so
+once you start using it it starts
+to get very easy for you
+I am telling you
+you must be thinking that Akshay
+you have been using tailwind since a lot
+of time that is why we have become better at it
+no I am not better
+at tailwind I have just used
+very less tailwind in our code
+I have never used tailwind in the
+production let me tell you I
+am just using tailwind to teach you
+and
+tailwind is catching popularity
+because developers are liking it
+that is why I am teaching you
+tailwind inside Namaste React
+otherwise I could have taught anything right
+material UI, chakra UI and all that
+other stuff no I wanted to
+teach you the latest thing
+who knows that tomorrow
+industry in all the
+industry everybody start using tailwind
+because tailwind is
+powerful in a way we will discuss
+about pros and cons of tailwind later
+but let's see let's
+try to write more of tailwind
+and let's try to see how fast it is
+to do this right
+let's make our card look more better
+right so let's make some rounded
+corners of our card can we do that
+let's do that right or maybe let's
+make the rounded corner of the images
+inside the card right let's do that
+right inside our card in the images
+let me make it rounded
+corner or something right it will look
+good right if these corners are
+rounded maybe let's let's try
+I am not a very good
+design expert right but then I am just
+trying out stuff right rounded
+I don't have to put a
+class name over here go to my CSS
+file write CSS for that
+class name I can do it right away
+I can experiment stuff I can do that
+rounded and very less rounded right
+small rounded small see this
+oh did it even take
+not sure let me give it
+LG right if I give it rounded
+LG yep it is taking
+now see this this images are
+looking much better right
+these images have a rounded corner
+inside the card see this
+this images are rounded corner it
+looks better right let me
+also make our cards rounded maybe
+right can we make our cards rounded
+let's make our cards rounded
+right rounded LG
+or something right let's make it rounded
+LG see this our cards have become
+rounded now let's make
+let's make the font bold over here
+let's make the font of the restaurant
+name bold right
+we can we can hardly read this
+we can hardly read this
+Leon's burgers and wings right
+so let me make the
+let me make this name
+as
+let me make this name as bold right
+if I write bold right if I write
+bold so you know sometimes this
+you know there is some weird error
+in this extension sometimes it does not
+give you suggestions like it is not
+giving you suggestions right now
+so if it does not give you suggestions
+in the Mac use
+control and space bar
+if you use control plus space bar it
+starts giving you suggestions
+what it so
+I am using macOS I am using
+Apple right so I am using
+control and space bar it starts
+giving you suggestions sometimes there
+is a bug in this extension
+I hope it will be fixed very soon
+but suppose if you are also facing
+tailwind so I am facing this bug a lot
+of times right so it does not give
+you suggestions automatically
+if it does not give you
+use control and space bar in windows
+also it must be something similar right
+control plus space bar right
+over here it is control plus space bar
+so I will start
+writing font bold right so I can
+write font bold font bold
+and if I write bold or font
+bold it will just make my
+font bold see this it has
+the font bold over here
+right easy right and I
+can give this some padding also
+let me give it some padding also
+because it is looking very sticky
+it is sticking everywhere
+it is sticking let me give it padding
+from top and bottom
+let me give it padding from top and bottom
+how to give it from top and bottom
+y axis how to
+give padding at y axis p y
+you are absolutely right
+you are also remembering it now
+right it is not that hard
+isn't it p y right see
+this we have got this
+padding from top and bottom
+isn't it we can also
+increase the size suppose if I have to
+increase the size so there is a class
+known as text and then I can
+write text excel right
+it will make the text extra large
+I can make the text
+lg it will make the text
+large I can make the text
+excel it will make the text extra
+large right let me save it see this
+now our
+name of the restaurant has
+become a little larger
+right extra large is looking
+a little more large right let me make it
+large only lg right that would
+make more sense lg right
+see this now they are looking better
+so what I am
+trying to say is that
+tailwind comes with an
+initial learning curve
+but once you start using
+tailwind it will make your life
+easier
+I am speaking while coding
+and still
+within half an hour I have built this
+UI right I
+you remember I have
+deleted all the css from
+the css file index.css
+I am writing it from scratch I have written
+the whole css from scratch
+and see how beautiful we have made
+this within such
+short span of time
+I don't know if you are realizing the
+power of this or not but
+trust me this makes
+our development process very fast
+it makes the development process
+very fast now
+you know
+you know I was discussing
+this with my friends and colleagues
+right colleagues from my previous
+companies they are very good front end
+developers and right I just
+I was just taking their advice
+what are your opinions on tailwind css
+and I was just talking to them
+and let me tell you
+a lot of people we were having a
+healthy discussion and you know
+a lot of people have a positive
+side to it and a lot of people were
+very optimistic about it and a lot of
+people were very pessimist about it
+because tailwind css
+has come up with some pros
+and some cons
+and let us discuss all of those
+so that you can make better
+informed decision
+so first of all let me tell you
+let me give you a disclaimer that
+I am not promoting tailwind css
+and I am not even
+demotivating you
+that you don't use tailwind
+I am just giving you my opinion
+I personally really
+like tailwind css
+I have my own pros and cons
+for it
+let me tell you the pros and cons
+that are my pros and cons
+first pros about it is
+I don't have to move between files
+earlier how I was writing css
+was I was writing a class name over here
+right I was writing a class name
+going back to css file
+writing exact css
+padding colon and then px
+and all that stuff
+tailwind is taking care of all of this
+it just comes with some
+a little bit of initial learning curve
+and then it will make our life very very easy
+I am telling you that
+I have just used tailwind to teach
+right I have just told
+tailwind right I have not used tailwind
+in any of my personal projects
+I have not used tailwind in any of the
+companies I have worked for
+I have not used tailwind for production ever
+but
+I have just used tailwind very less
+but when I have learned
+when I have used tailwind for very less
+period of time also I am started liking it
+earlier it was a pain
+in ass for me
+it was very painful for me
+but when I started using it I am kind of
+developing a taste of tailwind
+I have started liking it to be very honest
+I am liking tailwind
+and trust me
+if I will ever build
+next project right if I will
+build another project right
+whenever I will build another personal project
+I will definitely use tailwind there
+I will not use
+material UI or bootstrap
+other frameworks I will use tailwind
+because I am liking it
+it gives me a lot of superpowers
+right
+so this is one major
+this is my opinion about tailwind
+what I don't like about tailwind is
+that it just
+you know when you are
+writing tailwind right so sometimes
+you are writing it inside
+over here right so when you have
+to apply a lot of CSS
+to a class right suppose if I have
+to apply a lot of CSS to this card
+so what will happen is
+suppose if I have to give it shadow
+if I have to give it borders
+if I have to give it click
+if I have to give it margins background color
+this that so much CSS
+I have to write classes
+for each and every small thing
+and that makes our code look
+ugly that makes
+our code look ugly right
+what am I talking about I will give you an example
+let's go to tailwind CSS website
+let me go to the home page
+so let me go to components over here
+I will show you pre-built components
+that tailwind offers
+similar to bootstrap
+and other frameworks
+tailwind also offers you
+pre-built components
+suppose if you have to create a button
+it will give you pre-built code
+that you can directly copy paste and use it
+so it makes your life
+easier it gives you components
+suppose if you have to make this
+if you have to make this kind of UI
+if you have to make a table
+if you have to make this select box
+if you have to make date picker and all that stuff
+tailwind gives you
+tailwind offers you a lot of UI over it
+so let me just browse some of its component
+and I will tell you the major disadvantage
+which I found inside tailwind
+which I personally feel it's a very
+pain in ass
+so let me just show you some
+let me just
+show you some maybe
+component right let's take an example
+okay so let's take an example of this
+right so if I go over here
+suppose if you have to build a UI
+like this right if you have to build a
+UI like this if you have a shopping cart
+let's see the code for this
+see this your code
+will look something like this
+and if you will see it clearly
+right our code looks
+ugly isn't it our class
+names goes so long
+see this it
+kind of looks ugly just see this
+right sometimes
+when we are writing a lot of classes
+right so our code
+goes so big right see this
+see this line see this particular line
+this particular line
+is writing a lot of CSS over here
+right flex it has used cursor
+pointer it has used item center
+it has used justify center and a lot of
+things right so when you write
+classes like this sometimes
+your JS code will
+become ugly it will become
+lengthy got it
+so it is
+kind of like a con see this sometimes
+it is even more long
+see this kind of thing see this label
+this line is so long see this
+how much CSS it they have put
+in over here how much CSS
+right
+so what I am trying to say is
+sometimes
+now you know in tailwind
+if we if we try to
+understand right properly what we are trying
+to do is we are trying to merge
+our CSS file or CSS
+code inside our HTML
+or JSX file right
+we are trying to put in some CSS code
+inside our JSX file in form of
+classes so what happens is when you
+put that so our JS file
+becomes overloaded with
+these CSS classes right
+so it the code
+I feel that the code becomes a little
+less readable but apart
+from that everything else
+is super amazing about
+tailwind this is the only
+you know the two major
+disadvantages it makes the code
+look a little ugly and the first
+disadvantages it comes with the
+initial learning curve apart from
+these two disadvantages I don't see a
+disadvantage in tailwind I just love
+it and let me tell you I am
+going to use it in the next
+project whatever I am going to build
+right whatever I am whatever
+I may build later on right I am talking
+about my personal project not this course
+or something right if I have been
+want to build some personal project I will
+definitely use tailwind that is how
+right I am just I am just telling you
+that I like it so much right
+but then yes it makes
+the code look a little ugly right
+think of it right think of reading this code
+right it it because of these
+class names it it makes it look a
+little ugly but I am okay with it
+right because it is offering a faster
+code it but
+this does not mean that
+I am pushing to use it right I
+am pushing you to use it it is upon
+your call whether you want to use it or not
+but what I want to say is
+please please please
+when you are doing assignment
+please use tailwind right
+unless you use it how will you make
+your own opinion right
+just don't watch my video and make
+opinion about tailwind use it
+you might like it
+you might not like it it is your call
+to take I want
+you all to use tailwind and
+write down in the comments I want to know
+go to the discord server write down
+over here write down in the
+comments whether you like tailwind or not
+whether you like tailwind or not I would
+love to love to hear from you
+I would love to hear whether you will use
+tailwind in your future projects or not
+right I want to have your call on this
+I want to teach tailwind that is why
+I wanted to teach you and personally
+I like it right
+so this is how the code will look
+otherwise it comes with a lot
+and lot of amazing stuff right
+now when I am talking about the
+advantages of tailwind CSS let me
+tell you one more important advantage
+that tailwind CSS offers to us
+that is that tailwind CSS
+is very lightweight
+when I say it is very lightweight
+that means that suppose in our
+code right suppose in our code
+I am just using these 5
+6 class names suppose I am using
+m4 p4 flex item center
+so
+when parcel will make the bundle
+of CSS right when
+parcel will make the bundle of CSS
+it will only include
+the CSS that is
+required on our web page
+what do I mean by that is see
+tailwind library has thousands
+of CSS classes
+right thousands of CSS classes
+so but we are not going
+to import thousands of CSS classes
+on to our web page when I am loading
+our app it will only
+import the CSS
+that is absolutely
+required for our app
+suppose if I have not used
+shadow anywhere right suppose
+if I have not used shadow anywhere in my
+app so
+shadow code will not be there shadow
+CSS will never be there in your app
+right
+but if so why I am telling you
+all this is because it is very dynamic
+it will only include
+the CSS that is required
+minimum CSS
+right minimum CSS only the
+CSS that you are using
+that is a major advantage my dear friends
+I am telling you this is a very major
+advantage suppose if you are using
+m4 over here and you have
+written one more class m4 right
+so it will just
+include one time right
+this was the question you know a lot of
+students you know last time when I was teaching
+tailwind so a lot of students ask me
+Akshay we have used m4 a lot
+of times we have used p4 a lot of times
+will it include padding margin like
+four times whenever like how many
+times we have used it no it will just
+include one m4 class
+and that m4 class will be
+just written one so if you are
+using m400
+times in your code it will just
+import one class out of it
+right so it is very
+lightweight very very lightweight I am telling
+you I have seen
+UI libraries and framework
+CSS libraries and framework
+they just dump all the code onto your
+browser
+and all the classes that they
+have all the companies everything they have
+is into your project
+so it keeps the bundle size
+small it is very
+lightweight tailwind is very very
+lightweight right this is one major
+advantage of tailwind CSS
+and you know there are so many more
+advantages if you just go to the website
+right go to this website scroll down
+see right it will
+tell you all the all the
+advantages of tailwind CSS let me
+explore it for you right let us read it
+right first of all you can
+build whatever you want to right
+see this build whatever you want to
+if you will think that ok
+with these classes I can build complex
+UI you can build complex UI see how
+beautiful this looks right
+they have given you examples right
+see you can build
+complex complex UI
+like you know some people feel
+that ok with these classes I am
+restricted right I am bounded I am
+handicapped I can't use
+I can't use my imagination to create
+something new no you can
+build whatever you want to there is
+a class for everything that you can
+think of everything
+you can use class for hover
+also right so you must be thinking that
+ok how can I
+put a class name if I hover
+on to this it should change color
+yes you can put that
+you can put that hover kind of things
+suppose if I take my mouse on to this
+card it should become a little darker
+bold or something you can build that
+you can build that like
+let me show it to you right let's do that
+I forgot to show it to
+you right so if I hover
+the card it should just
+change something right let's let's do this
+right so if I go to my
+restore card how do I write this
+suppose if I want to write some
+CSS on hover I will write see this
+I will write hover hover
+right hover and color
+now whatever CSS I will write it will
+be implemented on hover right
+if I hover then I want
+my let's make the background color to
+something right let's make the background
+to maybe gray
+right maybe darker shade of gray
+right maybe let's make it background
+gray 400
+so what does 400 means basically
+see all the colors go to
+900 right if you will see
+all the colors go to not even 900
+goes beyond 900 950
+right so as the
+number increases it increases the
+what will say the
+solidness right of that color
+right it makes the color look
+more bolder right so if I
+use background BG gray
+400 that means I am using a darker
+shade of it right so go back
+right let me hover it right if I
+hover it is not changing the background
+color why it's
+not changing the background color
+why let
+we make it background color as 900
+maybe I am not putting the right
+class
+okay there's some issue
+with this why let
+me just figure this out
+oh we have
+found a bug because we have
+given the background color over
+here right I have
+okay I have I oh
+I have hard coded this background color
+I have hard coded this
+background I don't want to use this
+background color like this right
+sorry my bad
+right so if I'll use it like
+this see this right if I'll go back
+see this see
+this now it has become very ugly
+okay so now that background
+color has also gone right so
+how do I write it let me just show it to you
+if I have to give it
+see this when I what I am writing
+is background gray
+50
+in normal case when I hover it
+turn it to background gray
+200 right
+normally right when I am
+not hovering over it just use
+background gray 50
+when I am hovering on it use background
+gray 200 got it
+so it is background
+see this right if I am hovering on it
+it is background gray 200
+right otherwise it is background gray
+50 50 is barely visible
+let's make it 100 maybe right
+let's make it 100
+and see this now background
+gray 100 if I hover on it it becomes
+darker right
+if so similarly
+you can give you can give
+CSS you know whatever you
+can think of you can do this inside
+Tailwind right so
+that is why Tailwind is telling you
+that build whatever you want
+seriously right you can it can be used to
+build complex UIs as well right
+it's see this it's tiny
+never shipped unused
+CSS see this
+if I am writing flex it is just adding
+this CSS it will
+not ship a class
+that is see this it is
+again and again
+right it is rebuilding again and again
+what I am trying to show is whenever
+you add some class to your app
+then only it adds to the CSS
+file
+it does not bloats up your bundle
+right it is very amazing feature
+I don't know how to
+emphasize more on this but
+it is a very important feature
+you know I have seen
+code bases where people
+have included like thousands of classes
+and those classes are redundant
+you know I will tell you right
+what happens is
+I will tell you a story right take a moment
+right to listen to me what I am trying to say
+suppose if 10 developers are working
+I am a developer
+I want to make my button green
+so I will add a class
+btn-green
+and I will make a background color green
+I will make the button green
+and I have shipped the code now what
+happens is another developer in my
+team right he also
+wants to make the button green
+so he will definitely
+not put an effort to find out
+whether there is a green button already
+there in our app or not whether somebody
+has made a green button or not
+and what is the class for it so he will
+write another another class
+which is again creating the button green
+so there is a lot of redundant
+CSS which
+ships in production I have seen
+that happening a lot of
+developers right there is a lot of redundant
+developers lot of
+unused CSS there in the code
+right so
+tailwind you know using tailwind
+all the developers
+will come into a sync of writing
+code right all the developers
+will be kind of using similar kind of
+classes right
+because whenever they have to give it padding
+they will give it in a certain way
+right this is a very beautiful
+thing right
+no need of thinking about
+whether your CSS bundle
+will bloat or not right
+only the CSS that you will use
+will be shipped very
+very amazing advantage
+right let's also see the more things
+just see this right responsive
+everything right you can
+build responsive designs however
+you want to you can write
+media queries as well
+right you can write
+media queries over here as well
+suppose if I want to load something
+on mobile I will write SM
+that means small
+medium devices
+LG means large devices
+should I
+show you an example let me show you an example
+I am not in any hurry I am here
+to teach you let me show it to you right
+so we have this header color of pink
+right so suppose
+if I have my mobile phone then my
+header color should change right how to
+write that let's go back to header
+code right so if I have
+so I will change
+if my device
+is SM right
+if my device size is greater
+than SM I will make
+my background color as yellow right
+BG yellow
+right let's
+do that right let's do that
+see if my device color
+is greater than greater than
+smaller device if my device color
+is greater than SM right
+is greater than SM make it yellow
+right let's make
+my device size less
+than SM right so it will make
+it will be pink see this
+right so what it is trying to do
+is
+if my
+device is
+greater than SM
+use this background color
+yellow otherwise
+use it as pink
+got it if it is
+greater than SM use this
+if it is greater than
+LG let me write it even more right it will
+be more clear to you if my greater
+than if my device size is greater
+than LG it is greater than
+a larger device so on larger
+device make my background
+color is green let's make it green right
+green 50 okay on
+the larger device so let me just
+go pink yellow
+and then green see
+this do you see this
+so you can basically write
+different CSS for different type of
+devices you can write different CSS
+for mobile phones different CSS for
+tab different CSS for
+your
+for your desktop
+application you can you can customize
+whatever you wish to tailwind
+offers everything that you can think
+of that is why I am telling you it's
+amazing right you can even
+configure light and dark themes
+also right see
+this let's let's go one by one right so
+there is hover and focus state
+suppose if you want to focus upon some
+input box and put some CSS you can
+focus it everything that you can
+think of tailwind offers
+you worried about duplication there
+will never be duplication of CSS
+right read about it read about
+it right so CSS
+and see this this is the most
+amazing feature which I really like
+you know today
+your website should
+always have a dark mode
+you know
+a lot of people are moving from
+light mode to dark mode right
+all the websites all the
+mainstream websites that you see
+always have a dark mode because
+people are preferring to use dark
+mode right so today if
+you are building a web app and it does not have
+a dark mode
+not acceptable my dear friends
+not acceptable dark mode is
+necessary in today's time if you are
+always made a dark mode and
+you know it was
+a pain in our ass
+to write the code for dark
+mode as well
+it used to be you know
+I have built a dark
+mode feature for our
+existing app and it was such a pain
+all the CSS was messed
+up all the CSS was
+messed up and it was a very
+painful activity with
+tailwind CSS you can do that very easily
+very very easily
+very easily how just like
+we write hover or something you can write dark
+see this
+similarly you know what you can do
+see this if you apply dark
+mode like this right so it
+automatically turns into dark and you
+can provide the CSS for dark
+mode over here like this
+you can provide the CSS
+for dark mode over here along the
+go
+along the go
+how let me show it to you
+see
+let me show you an example
+so right now
+right now where is is see this
+this is H2 right this
+H2 is the text is
+text slate 500
+right and in dark
+mode that the
+the color of this
+text is different
+right this is how you give the
+text color in dark mode see this
+on the light mode the text color is
+text slate 500
+this scaling CSS
+at hero cutie little class
+this is text
+slate 500
+this is text slate 500
+now when I will move to dark mode
+this is text slate 400
+so what I am
+trying to say is you can configure
+CSS differently for dark mode as well
+so whenever you
+are writing components right how it
+makes are like easy right
+you can see this right read all
+these things right read all the
+website you will be amazed by the
+features that tailwind is offering to us
+but you know the best
+part that I like is when I am
+you know when I am building a new component
+suppose I am building a shimmer UI right
+or maybe I am building a user
+component right I can write
+I can write CSS on the
+code right suppose I am
+creating a user card I can directly write
+version 4 padding 4
+and I can give it a
+background color of something right
+background slate or background
+gray of 50 and I can
+give it a rounded corner on the
+card rounded LG so see
+when I am thinking about building that
+card right I
+now you can think right how I am building
+that card I can give CSS
+on the fly that is the
+most important superpower it you don't
+have to go back and forth between your
+files and all that stuff and everything
+happens very fast
+just a little
+initial learning curve and it will make your
+life easier trust me my dear friends
+I am advocating about
+tailwind CSS because I
+want you to use it in your
+project at least the project that you
+will build inside Namaste React
+go ahead
+use tailwind I
+am just tired of explaining
+why it is very useful what
+is pros what are cons I have also
+explained the cons of it I am
+not pushing you to
+make an opinion whether it is good
+or bad right make
+your opinion only after
+you use it but trust
+me in my opinion I just love
+tailwind right
+so this is what it was in
+today's episode I wanted to discuss
+all these things all
+these cool things that
+you know in front end
+market right in you know front end
+community things come very
+fast and things go away very fast
+today we are using tailwind
+one year down the line
+maybe we are not using tailwind or
+maybe one year down the line tailwind
+will become mainstream that everybody
+is using tailwind right
+so what I would try to say
+is that always
+always try to keep up with the technology
+always try to use new things that comes
+into market that is why I wanted
+to teach tailwind to all the students of
+namaste react batch right
+that is why I chose to use tailwind
+to write CSS over here
+and hope you would have enjoyed it
+hope you would have liked it
+and now you have not used
+tailwind ever right so just go back
+go to your project
+try to make your code look
+beautiful trust me you can do a lot
+of things over here I have just
+in half an hour one hour I have just
+tried to do my best
+to explain you all the type of features
+that tailwind has to offer right
+so what I am trying to say is
+go back do your homework
+make your app
+delete all the CSS code
+install tailwind into it
+and start using tailwind classes
+right whenever you are stuck
+use this intelligence extension
+use this tailwind extension it is
+very very important and then
+if you find it very tough
+then go to that website tailwind's
+search for it right tailwind has
+a very good website tailwind has a very
+good search option also right
+if you want to search for something right
+suppose if you want to search how to give
+a border so just search for it
+how to give a border width
+border style border radius border color
+tailwind has a very good search
+right this is a very cool search
+which I found out so you can search it
+over here also otherwise you know
+once you have started using it
+you will not need to go to tailwind
+again to search for the class names
+okay so you will be able to do it
+in your code intelligence vs
+code itself right
+so this is all in this episode
+hope you would have liked it hope you would
+have got some motivation to start
+using tailwind please use it
+and then once you have used tailwind
+then go ahead go
+and comment down below whether you like
+tailwind or not you have to answer two questions
+whether you like tailwind or not
+and what was your experience
+first is your experience of tailwind
+and then one more question
+is that whether will you use tailwind
+in your future projects or not
+did you like it enough
+or whether you won't
+use it or whether you will use it
+just write it down I would love to
+read your opinion I would love to hear it
+and thank you so much for
+watching this video and that's all in this
+video and thanks for watching
+and see you in the next episode
+very soon
+thanks for watching

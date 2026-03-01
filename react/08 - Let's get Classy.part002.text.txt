@@ -1,0 +1,724 @@
+FILE: Episode 08 - Let's get Classy.part002.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+They don't know they just know okay there is this empty bracket it will just happen after one render
+It will just render once it will render two or three
+Ask any react developers. They are they're confused with this use effect. They just know that okay
+I have to write this so they always write this. They don't know what is happening
+I'm telling you
+React already people who are working in react developers
+I'm not roasting. Sorry. I'm not roasting. I'm just telling you the truth, right?
+I am also a react developer. I'm not roasting anyone and trust me don't
+Like don't go after the class and tell people that Akshay, you know Akshay roast other youtubers and
+Akshay roast other react developers. No, I am not roasting anyone. I am very respectful to all the
+YouTube teachers who are doing that and I know why they are teaching the way they are teaching because
+Because in 20 minutes you can teach like that only, right? It's it's I I don't want to offend anyone, right?
+Please don't do that, right?
+Okay, what will happen if I write count over here?
+What will happen if I write count over here?
+What will happen if I write count over here?
+Every time my count changes
+This will be called does that make sense?
+How will I do something like this inside my
+class base component? How will I do something like this in my class base component?
+Now in class base component, we know one thing. We know that one life cycle method is called
+after every render. What is that life cycle method?
+What is that life cycle method? You are absolutely right.
+That life cycle method is that life cycle method is that life cycle method is component did update.
+We know that component did update is called after every update.
+Make sense? So you know now we can do a cool thing.
+Okay, now we can do a cool thing that if we write count
+over here, so that means after whenever this count is changed, this will be called.
+This use effect will be called. Okay, easy. Everybody understands this.
+But before how pain it was, I'll tell you the pain of doing that, right?
+I'll tell you the pain of it, okay? I'll tell you, okay?
+What we used to do earlier was I'll tell you, you will say that Akshay,
+why are you writing bad code? Okay?
+You used to do something like previous props here and previous state.
+There was this nomenclature of doing previous prop and previous state.
+And then we used to write if this dot state, suppose if this is state, right?
+If this dot state dot count is not equal equal to is not equal equal to
+basically my extension, my font makes it like this.
+If it is not equal to my previous state dot count, then do something.
+Oh my God, such a blunder it was, such a blunder it was.
+Like I used to pull my hairs every time I have to do something.
+I have to pull my hairs, I have to do something.
+It is very painful if you have to do this, right?
+If you have to do this, you have to write if else.
+Suppose if you had to rely on count two also, count two, how will you do that?
+Suppose if count changes or count two changes, how will you do that?
+You will have to write like this.
+If this did not change or this did not change, then you do this, right?
+And you write your code inside it, right?
+Here you write the code, right?
+It is, it is so much painful, right?
+The people who are writing in old version of React would know this pain.
+Are you there?
+Are there people who are already writing like this?
+Tell me, yes or no?
+Oh, Divya is here, Sanya is here.
+See, Ashish, he's writing.
+I am here, yeah.
+See, so many people, they write like this.
+It is very, it is very painful to do that.
+So, basically what is this doing is, this basically checks if the previous count
+is equal to the latest count, then do this, right?
+Over here, you just give it to this, React and React takes care of it automatically.
+React says, okay, you write like this, I will take care of everything.
+I will take care.
+You know, some, you know, some senior developers, some senior developers
+also hate this way of writing code.
+Why, you know, why senior developers or architect hate this way of writing code?
+Because, you know, people who start their React journey by knowing this, right?
+They never bother to understand what used to happen before.
+And that used to make a major difference in their head.
+When you just write code using this, right?
+And you don't, see, if I did not have today's session, okay?
+If I did not teach you all that, you would have always thought, okay, this is a good way, right?
+But you understood, right?
+Why, why, why this was all built?
+What were the fundamentals which React developers used to build all this use effect?
+Right?
+Okay, now did you understand that why is this an array?
+Did you understand why is this an array?
+Did you understand why is this an array?
+Because, you know, earlier people used to write this like this.
+So React developers said that, okay, let's make it as an array because there can be
+multiple, multiple state variables, multiple state variables where might,
+my if else might want to do.
+You know, there was so much React code that used to follow this convention.
+So React developers said, oh my God, this is such a bullshit code.
+Let us improve our APIs and they came up with this API.
+Got it?
+Got it?
+Awesome.
+See, that is what I wanted to dive deep.
+Okay, suppose if I want to do next one more, let's dive even more.
+Let's dive even more.
+Okay, are you ready?
+Should we dive more?
+Okay, let's dive even more.
+Okay, I'll tell you.
+Suppose if I want to do something when my count changes and I want to do something else
+when I count two changes, how will I write that in functional component tomorrow?
+No, I won't teach class based component tomorrow.
+There is a separate session tomorrow.
+Okay, I won't.
+So we use to use effect.
+Why do we use to use effect?
+Suppose if I want to do something when we change count something else,
+if we have to something else, we are doing something else over here, right?
+Suppose there are use cases where you might have to write to use effects.
+How you used to do over here, you know how you used to do?
+How you used to do this?
+So you used to write to if else condition, right?
+One for count and one for count to think of the code like this.
+You will see this written on production so many times, right?
+Think of a code like this.
+Think of the code like this.
+Such a mess it used to be, such a mess and you know these if else condition are not very small.
+These if else condition used to go for like 30-40 lines.
+So you don't even know where this end, where is the another if else starting, where is it?
+It was, it was.
+But you know, lucky are the kids today that who has not written code like this.
+Trust me, I have written code like this.
+I have written code like this.
+Okay.
+The kids today, sorry if you get offended if I'm talking, telling you kids,
+but I am telling you kids because kids means the newer people who have
+started writing functional components in their life.
+You should have respect for the old developers.
+You should have respect for the old developers.
+They used to write like this.
+Okay, so I used to write like this and I know that, okay, but we did not have any other way
+to do this, right?
+So that is why we used to do this.
+Okay, okay, okay.
+Should I dive more deep?
+One more thing is coming into my head.
+Should I dive more deep?
+Last thing, I'll tell last thing, okay?
+This will, this will be amazing thing.
+You will love me, right?
+You would love react.
+Okay, do you love react?
+Write, I love react if you love react.
+I love react, love you.
+People are writing, I love you.
+Don't love me, love react.
+Yeah, I am, see I am just a messenger.
+React was built by somebody else.
+You are coding in react.
+I am just a messenger.
+I am just a teacher.
+Right?
+So love react.
+Yes, yep.
+Let me make you fall in love with react even more.
+Okay, I'll tell you one more important thing.
+Now, okay, you understood, right?
+Why, what was the use of component did mount, right?
+You understood it clearly.
+You understood the use of component did update.
+Clearly, right?
+Clearly you understood.
+Let me tell you amazing thing.
+When will we use component will and mount?
+Akshay, you, you might be getting that question.
+Akshay, is it even useful?
+What would I have to do
+while unmounting?
+What will I do?
+Now, a lot of people say cleanup.
+A lot of people say cleanup, right?
+What type of cleanup?
+What cleanup?
+What cleanup should we do?
+What cleanup should I do?
+Now I will tell you amazing thing
+that will blow up your mind.
+Okay.
+You have, you would have not never seen that.
+And teachers don't teach this also.
+A lot of teachers won't teach you all this, right?
+Okay.
+Let me just collapse my, all of these functions.
+You know, sometimes I used to, you know,
+when I used to code, I used to keep everything collapse
+because otherwise you can't read where you are in this.
+See the component went till what, right?
+It, it was very, very lengthy, right?
+See what we did in 30 lines.
+We wrote 20 lines extra, 32, 52.
+We wrote so much extra.
+One important thing.
+Okay.
+One important thing.
+What did we do in component will unmount?
+Okay.
+First of all, let us go to component did mount.
+Okay.
+Okay.
+Let us remove all this.
+Let me make this empty, right?
+Let's not do an API call here.
+Let's not do an API call here, right?
+Let me just remove this.
+One important thing.
+This is the last thing in today's session.
+I am feeling like telling you what is the use case
+of component will unmount.
+Component will unmount is called when, quickly.
+Component till a plant is called when.
+Component will unmount is called when.
+When we are leaving the page, right?
+Kind of what is react?
+How many pages does our application have?
+How many pages does our application have?
+Some people are saying three, three pages.
+Oh, is it?
+Four pages.
+Okay.
+Some people are saying four pages.
+People, you, how many times I have puri?
+Since five days, I am talking about SPA, SPA, SPA,
+single page application.
+It's a single page.
+It's a single page, right?
+People are saying that we don't know what is like,
+how many pages?
+Anyways.
+So we have just one page in our app.
+Now you would say, Akshay, what is this?
+It is just a single page.
+We are just changing the component, right?
+So what will happen is when we are doing all this, right?
+When we are doing all this.
+So see what happens is, see when we go from home to about page,
+or about page to home page,
+right?
+What is happening is we are changing the page.
+Eventually the concept of the page we are changing,
+but it is a single page itself, right?
+So there are lots of things we need to clear when we are leaving the page.
+Lot of things we need to clear when we are leaving the page.
+Listen to me once again, like very important concept,
+otherwise you won't understand this.
+Please, please, right?
+We need to clear things up.
+What will be clear?
+I'll show you important thing.
+I'll show you amazing thing.
+So suppose if I have a set interval, okay?
+Let us create a set interval, set interval.
+You know, single page application also have some cons in it.
+I'll tell you the cons of having single page application.
+Suppose if I have a set interval,
+and I said that, okay, do a console log of,
+Namaste React, Namaste React OP, right?
+After every second.
+After every second.
+What will happen?
+What will happen?
+What will happen?
+Let me just refresh my page.
+See, it started printing Namaste React OP
+after each second, right?
+After each second, when we load this component,
+in component did mount, it started calling
+Namaste React OP after each second, right?
+It is just calling it.
+Now an issue with a single page application is
+that if I move to a new page, right?
+See, if I move to home page,
+if I move to home page, it is still calling.
+Did you expect that?
+Did you expect that?
+It is still calling.
+See, this is what I wanted to show you, right?
+Not all teachers will teach you all this, right?
+Not a lot of people will not teach you all this, right?
+Mind is blown, right?
+I'll tell you awesome stuff.
+This is a single page application.
+It started calling.
+Now, I'll tell you one more amazing thing, okay?
+One more amazing thing.
+Suppose if I went to about us page once again, okay?
+Now see, now see, this is calling twice, seven, nine, 11.
+Can you guess why it is calling twice?
+It started two intervals.
+It started two intervals, why?
+Without our permission, it started two intervals.
+This is the problem of a single page application.
+Because when you are changing your pages, right?
+When you are changing your pages, it is not reloading your page.
+Did you understand this?
+It is not reloading your page.
+It is just changing the components.
+It is just rendering.
+The react is reconciling.
+It is the power of SPA,
+but it is a bad thing about single page application also.
+See, now it has, now it is calling thrice.
+Do you see?
+Now it is calling three times.
+See, three, three set interval is there now.
+Three, bad thing, right?
+Bad thing.
+Every time I'm coming to this page, it is creating a new set interval.
+What if there was a set timeout?
+It will again keep set timeout.
+And these set timeout will be just hanging in the browser.
+After a while, this will blow up your app.
+Suppose if you left your code,
+if you left your code something like this,
+and if there is a user, right?
+User often goes to one page from another page.
+Think of it.
+How much performance loss you are doing?
+How much performance loss you are doing?
+You know, this is what is maturity of a senior developer.
+This makes you a senior developer by knowing that why, what can,
+you know, if I don't write console log, right?
+If I, if I don't write console log and do something inside it,
+you will never get to know that there are like tens of set intervals hanging around.
+You will never know.
+I'm telling you, right?
+You will never know this.
+Because this will, this will, this will work the same way.
+It will work like you expected.
+It will work like you expected, right?
+So I wrote this to show you that you become a senior developer when you exactly know
+when will this be called?
+Why we need to unmount things?
+If suppose tomorrow an interviewer asks you a question,
+why do we unmount?
+Do you know?
+Will you be able to give an answer?
+People talk about scalable application.
+This is a scalable application.
+Can you make a scalable application by avoiding this small thing?
+No, you need to take care of every single line of code that you write.
+You need to take care of it.
+This is what makes a difference between a senior developer and a junior developer.
+Junior developer will write this code and will go away.
+Senior developer will know that I have to, I have created this mess.
+I have to clean up.
+Senior developer will know that okay, oh, every time I will load my component,
+every time my component did mount will be called.
+There is a set interval that will be triggered.
+There is a new set interval created every time and it will stay.
+Right?
+So this is an important thing you should know as a senior developer.
+Whenever you are finding anyone writing like this,
+tell them that you have to clear your interval.
+Give them a, give them a coding comment.
+Give them a leave a comment on their PR.
+I am not approving this.
+Okay.
+How do you clear this interval now?
+How do you clear this interval?
+How do you clear this interval?
+People are saying I am hungry.
+I am also hungry.
+Yeah.
+Come on.
+Let me, let me finish this up.
+Please.
+How will I clear this interval?
+I will use clear interval.
+Where will I use clear interval?
+Where will I use clear interval?
+In my component will unmount.
+Now you understand, right?
+Give yourself a clap.
+If you exactly knew that I will write my clear interval in component will unmount.
+If you will write clear interval.
+Let's do a clear interval.
+But how will I reference that interval over here?
+How will I reference it?
+How will I reference it?
+How will I reference it?
+No, not ID, not ref.
+How will I reference it?
+Variable.
+Yes, exactly.
+One person is right.
+Myuri is right.
+Myuri OP.
+Myuri is right.
+Myuri said this dot.
+One more thing to tell you that this is shared between all these functions of this class.
+This is shared with this.
+This keyword is shared with all the functions, all the methods of this class.
+So whenever you write this dot, let's call it as timer.
+Okay.
+Let's call it as timer.
+This dot timer.
+So I can use this dot timer over here.
+Does that make sense?
+I can use this dot timer over here.
+Now let us just go and see now.
+See if I am refreshing my page, it starts my interval first time.
+Let us just go back to home.
+It stops.
+This is the behavior that we wanted, right?
+Amazing.
+Awesome, right?
+Cool.
+This is amazing thing.
+This is what you have to do.
+This is the proper use case of...
+Let me show it to you once again.
+Some people are saying show it to us once again.
+If I go to my about, what will happen?
+Will it start a new set interval?
+Yes or no?
+Yes or no?
+It will start a new set interval.
+See, see it started a new set interval.
+Now it is running after one second.
+Now if I go back to my contact page, it stopped.
+This is the exactly same behavior that I was expecting.
+So if you are a senior developer, you should know that when you are creating a mess,
+you have to clean your mess also.
+You are creating a mess.
+You have to clean your mess also.
+Oh my God, I did not even prepare all this for you.
+But it just came in.
+Amazing.
+You people are amazing.
+Now one last thing.
+Okay, one last thing.
+Just bear with me for one last thing.
+Okay.
+Now what if I created a set interval over here?
+So let me get rid of this set interval.
+Okay.
+Let me just remove this.
+What if I create a set interval over here?
+What will happen my dear friends?
+What will happen my dear friends?
+Just give me a moment.
+Let me just remove all this console.
+What if I create a set interval inside my use effect?
+What will happen my dear friends?
+Where is my set interval?
+Here it is, right?
+What will happen my dear friends?
+What if I created this, right?
+What will happen my dear friends?
+What will happen my dear friends?
+It will start the interval.
+Let me refresh the page.
+Let me go to about page.
+It will start the interval.
+And it will start printing.
+Namaste, React OP.
+Now one question I have for you.
+Okay, listen to this important question.
+If I click on home, will it stop?
+Will it stop or not?
+Stop, not.
+Stop, not.
+Stop, not.
+Some people are saying yes, it will stop.
+Some people are saying no, it won't stop.
+If I go to my home page, it is not stopping.
+Is it?
+Is it stopped?
+Let me refresh the page once again.
+Let me go back.
+Here is once again.
+Let me refresh it once again.
+Just a moment, just a moment.
+Give me one moment, okay?
+Give me a moment.
+If I start it over here, let me go to my contact page.
+It stopped.
+Why?
+It should not stop.
+Because this is coming from,
+this is coming from enough dose for today.
+I think enough dose for today.
+So basically we have not rendered this component onto our page, right?
+This profile should come from our,
+so basically I have to render my profile-based functional component.
+So that component is not even there.
+Okay, okay, okay, okay.
+Understood, right?
+Cut, yeah, okay.
+Now this is, now this code is there in the call.
+Now tell me, will this stop or not?
+Will this stop or not?
+Now see, now this console log.
+Are, why is it not refreshing?
+Okay, I'm on contact with, sorry, sorry, sorry.
+It is coming from profile.js.
+This is the functional component.
+Now, now will this stop?
+Yes or no?
+Will this stop?
+Now people are so confused.
+Oh my God, actually tell me very fast.
+You know, now I can like close the session right now
+and you will curse me.
+That actually, no, I want my answer right now.
+I want my answer.
+I'll tell you.
+Let us just see.
+If I go to my contact page, it won't stop.
+Why will it stop?
+Why will it stop?
+It won't stop because we are not cleaning up things over here.
+We are not cleaning up things over here, right?
+We are not cleaning up things over here.
+In fact, it will behave the same way, right?
+If I go to my contact page, come back over here.
+Now see, it happens to me very fast.
+Now, if I go to contact once again, load about us once again, see.
+Now it is happening like, see.
+So, how will you destroy this in your functional component?
+Lot of React developers don't know this.
+You know?
+You know?
+You know, I did not tell you at that moment.
+You know, at that moment when I was teaching use effect,
+I did not tell you this because I was waiting for this moment.
+Now you will appreciate this moment even more.
+I have a very different style of teaching, you know.
+Sometimes I don't tell everything in one go.
+I tell you slowly, right?
+So, there is something known as return inside.
+You can return a function from use effect.
+This function is basically called when you are unmounting this component.
+Take that up.
+Knowledge.
+Amazing, right?
+This function is called when you are unmounting it.
+Oh, bhai.
+So, you will clear your...
+Okay, let us see what is happening in this.
+So, okay, let us just remove this set interval for now.
+Okay, I'll write...
+I'll play with you once again, okay?
+I have my console.log render.
+Okay, I have my console.log render.
+I have my console.log use effect.
+Use effect.
+And I have my console.log use effect return.
+What will be the first thing that will be called?
+What will be the first thing that will be called?
+Render.
+Render?
+Sorry. Sorry, I got cold.
+I have been speaking since three and a half...
+Three hours and 15 minutes now.
+My God.
+Even I joined 15 minutes before.
+Three hours and a half, three and a half hours.
+But anyways, let me finish this.
+Let us finish this quickly.
+This is the last thing.
+This is the last thing, okay?
+We call render.
+What is the second thing that will be called?
+Use effect.
+And the third thing will be use effect return.
+Use effect return, okay?
+My class is about to end.
+Let me extend the class by...
+I am extending the class by 10 minutes, okay?
+Okay.
+Cool.
+So, use effect return.
+Now, let me just see.
+Now, does this make sense?
+Render, use effect.
+Where is my use effect return?
+Where is my use effect return?
+Where is my use effect return?
+After I leave my page, exactly, you people are right.
+See, now you understood clearly.
+Will you beat your interviewer now?
+I want you all...
+You guys are on fire in the interview.
+I mean, interviewer...
+If an interviewer asks you use effect, right?
+You screw the interviewer, right?
+You screw the interviewer because you know almost everything about it now.
+Screw the interviewer.
+You should be fire in your interviews.
+You should be fire in your interviews.
+Watch this session once again.
+This is kind of the unmounting phase.
+This is the unmounting phase in...
+Where will I clear my set interval?
+You know, today, if you want to...
+If you want to go, go ahead and ask your friends.
+They won't know that, okay, this is being called if I change my page.
+Okay, first question is that they won't even know that, okay,
+this set interval is new once again, right?
+And forget about cleaning.
+Forget about cleaning.
+Okay, so how will I clean it?
+So I'll basically use a constant timer
+and I will just do a clear timer, clear interval.
+Does this make sense?
+It is the easy stuff.
+Once you understand this...
+Understand this concept properly, everything will make sense to you.
+Everything.
+Let's go to about us page.
+See, about us page is rendered.
+It is printing Namaste React OP again and again.
+If we go to contact page, it stops, right?
+If I go to about, it starts once again.
+Expected behavior.
+Amazing.
+If I go to contact, now tell me, do you love react or not?
+You know, you will love react.
+And did you understand class-based component or not?
+Did you understand these life cycle methods or not?
+This is the main thing, which I wanted to tell you.
+You know, there were, there were...
+Listen to me once again, once again, just ending the session.
+When react was developed.
+So see how many life cycle methods are there?
+One, two, three, four, five.
+We have studied about five life cycle methods.
+Five life cycle methods.
+But when react was created, there were even more life cycle methods.
+Even more life cycle methods, which have been deprecated long back.
+This is react version 16.4 and above.
+This is react version 16.4 and above.
+If we go to react 16, 13, there used to be different cycle methods.
+And see, if I click on this right, so less common life cycle methods.
+See this.
+Now you will appreciate the pain taken by the older react community, guys.
+It will be even more mess.
+Okay, if you had to study all this, why react is very,
+you know, why react is very popular?
+Because react, when, you know, when react was building,
+they built all these life cycle things.
+But they realized that if we continue doing this,
+developer will stop writing react.
+That is why react came up with a better way of doing it,
+functional component, hooks.
+And since then react picked up again, picked up once again.
+React is amazing.
+People ask me, Akshay, do you like react or angular?
+I like react so much.
+I don't know about angular.
+I have not worked on angular much.
+But I love react because I see that react has taken severe steps,
+very important steps to make the developer experience very fast.
+Right?
+React, react experience, developer experience very good.
+And it has done amazing stuff.
+That is why I bet on react.
+And the way react matures, it will mature even more.
+In react 19, they are coming up with even more better API.
+Even more better things to do.
+Okay. Awesome.
+So if you want to, if you are a UI developer,
+then learning react can accelerate your career.
+But you should know the internals of react.
+This is the namaste.
+React, my dear friends.
+Now you would say, Akshay, what about this?
+So let me tell you, if you are interested,
+if you really want to dive deep in, read about this.
+Read about this.
+Otherwise, in your interviews,
+you can just study whatever I taught you.
+Click on this and forget about everything.
+You should be very good at this.
+This is non-negotiable.
+You can skip these extra ones.
+These are very not used and most of them are deprecated.
+Okay.
+Okay.
+Just study this.
+Your homework is to whatever I did, right?
+I was doing console log at every life cycle method
+and playing with it here and there.
+This is what you have to do.
+Cool.
+Awesome.
+Homework understood.
+And there are two, two more things that we studied.
+Two more research topics.
+First research topic was,
+first research topic was super props.
+Why do we write super props and constructor props?
+Second research topic.
+Second research topic.
+Async.
+Async component did mount.
+And why can I not use async in the use effect callback?
+Okay.
+In my use effect callback, where is my use effect?
+In this callback, I can't make this async.
+If I make this async, right?
+See, react will complaint.
+React will, react throws this error.
+You have to, you have to find the reason why react is giving up.
+It has something to do.
+Right.
+Okay.
+My dear friends, amazing stuff today.
+This is what I wanted.
+I covered so much more than what I planned for today's session.
+Hope you would have enjoyed the session.
+So this was the clip.
+I hope you would have opened up your eyes
+and would have seen what we used to do earlier
+and how we write code now.
+And you would have loved this episode.
+Thank you so much for watching.
+See you in the next one.

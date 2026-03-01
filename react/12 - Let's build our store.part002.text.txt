@@ -1,0 +1,732 @@
+FILE: Episode 12 - Let's build our store.part002.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+perfectly fine.
+But behind the scenes, Redux is actually doing something like this and React, Redux uses
+something known as imr, there is a library known as imr, this imrjs.
+This library imr, Redux uses this imr library to do this.
+So basically, imr library is kind of like finding the difference between the original state,
+the mutated state and then gives you back the new state which is a immutable state, a new
+copy of the state.
+Whatever I was writing that logic, all that logic has been abstracted, we as a developer
+don't have to take care of it and imr takes care of it.
+Go read it.
+You know, I did not want it to go dive deep into all this, this is so much deep and let
+me tell you, 99% of the people won't know about all this, who are using Redux in their day-to-day
+life.
+Very less people know about it, but I want you all to be really good developers, be curious.
+I am curious, I want to tell you, imr in itself is a huge library, Redux in itself
+is a huge library.
+I don't want to go into very much detail, dive much deep, but I want you all to, you know,
+I have kept one episode for Redux, I can't teach Redux in one episode, it's huge.
+And this is not Namaste Redux that I dive deep into like every small corner of Redux,
+but I want to cover as much as I can in this episode.
+I want to cover, otherwise there is so much to learn inside Redux.
+Every library comes, you know, when I was building Namaste React, I thought I will not
+even cover Redux, but then I thought, okay, let me keep one episode for covering Redux,
+because you know, Redux needs a separate Namaste Redux in itself.
+It's so huge, it's so impressive, it's so amazing.
+So I want you all to go and read Redux documentation, see what Redux has to offer.
+See, EMR, Redux behind the scenes uses EMR, and EMR basically, you know, I'll show you,
+they have a good diagram also in their website somewhere.
+See, it's a tiny package that allows to work with immutable state.
+Is it visible?
+Let me just expand it, immutable state in a more convenient way, read this.
+If your interviewer ask you, or I don't think interviewers themselves don't know,
+but if you are an interviewer, tell your interviewer, they will be impressed by your knowledge, okay?
+So this is a EMR, where is the diagram?
+There is one diagram also here, yes, see this.
+So what EMR does is basically takes the existing state, takes this new state,
+and then gives you the diff of that state, right?
+Kind of, it's find out the diff of this state, whatever you have mutated,
+it will take the original state, it will take the new state,
+it will calculate the diff and it will give you a new state, right?
+To the redux, and redux uses it.
+So behind the scenes, things are still working the same,
+but for developers, we don't have to worry about writing a pure function, right?
+Lot of people used to make this mistake.
+Lot of developers used to make this mistake.
+I'm telling you, right?
+And I am telling you that people who have used redux sometime would also know this, right?
+Making a mistake was very common over here, right?
+Reducer function used to be very large, big and all that stuff.
+Many developers don't even know how to actually write an immutable object.
+You know, the problem is many developers, you know,
+who don't understand JavaScript properly,
+they don't even know how to create an immutable state object here.
+If the object is nested, right?
+See, right now the object is very easy, right?
+Suppose if the data is huge, nested at a lot of levels,
+people don't even know how to create a deep clone of it, right?
+They don't even know how to create an immutable copy of it, right?
+It's very sad, but then people don't know JavaScript properly
+and then they just start writing redux.
+But anyways, right?
+We don't have to worry about them right now, right?
+We can directly mutate the state, even do whatever you wish to, right?
+And return is also not mandatory, right?
+Return is also not mandatory.
+And redux toolkit uses imr behind the scenes,
+imr behind the scenes, b behind the scenes, bts.
+Got it, uses imr.js, right?
+Imr is again a library.
+So this is why, and let me tell you one more thing, okay?
+Okay, I keep, it's coming to my mind.
+That is why I told you, right?
+We cannot do something like state is equals to this.
+Because if you will modify state is equals to directly, right?
+It won't work.
+If you will write state is equals to this, it won't work.
+If you will write state is equals to Akshay,
+this won't work, right?
+This won't work.
+Should I show you, right?
+Let me just show it to you once, right?
+If I clear my cart, it won't work, right?
+If I do a cart, won't get this, right?
+Let me refresh the page, let me go back.
+Let me add some items to the cart.
+Let me add some items to the cart, right?
+Let's go to Magna Foods,
+and let me add this item to the cart.
+Let me add this item, let me add this item.
+Come over here.
+See this, and let me just,
+let me just do a console log, right?
+Let me just do a,
+huh, let me just click on clear cart, right?
+If I click on clear cart, see nothing is happening.
+Why?
+See, why nothing is happening in clear cart, right?
+I am doing this, state is equals to Akshay.
+It won't work like this,
+because Imer, you know,
+you will get answer to this question
+when you will go through Imer, right?
+You will have to understand how Imer works, right?
+So basically when you do this, right?
+So basically you are not modifying the state.
+You are just changing the reference to it.
+I am giving you a hint out of it.
+You are not actually modifying,
+you are not mutating the state.
+You are, you are not mutating the state.
+If you are doing it like this,
+you are just adding a reference of it, understood?
+So there is a difference, right?
+I don't know, it is very tough for me to teach also
+with half knowledge, right?
+I have to give you a lot of context
+if I have to explain you.
+See, so basically, you know, what I'm trying to say,
+it is not actually mutating the state, right?
+You are, when you do like this,
+it is not actually mutating the state.
+It is just adding a reference to it.
+Got it?
+It is just adding a reference to it.
+So in this case, if you have to make it empty,
+you have to actually mutate the state, right?
+You have to actually mutate the state
+and you can mutate by using this, right?
+You can mutate by using this.
+Got it?
+This will basically make your state as,
+state is equals to this, okay?
+This will basically, you know why?
+Because see, when an object will be passed into this,
+see this state is a local variable.
+Let me try to explain it in one more way.
+This state is a local variable, right?
+This state is a local variable, right?
+What value will it have?
+It will have a value which will be a original state, right?
+That original state, right?
+That original state will be passed in over here.
+So you actually have to modify it.
+You actually have to modify it.
+If you do something like this, right?
+So it will change the value of this state, right?
+And this state is a local variable, right?
+This state is a local variable.
+And it will just do the changes locally.
+It will not modify the actual state
+which was passed over here, right?
+Suppose, okay, I'll try to explain it.
+Over here, what will be passed, right?
+Redux will pass in,
+suppose our cart has some item already inside it, right?
+PIZZ, I am working very,
+I'm trying as hard as possible to explain you.
+Suppose if this pizza passed over here, right?
+If I do this, right?
+So I am not actually modifying this.
+Let's call this as original state, right?
+Original state is equals to this, right?
+So now when I pass this originals,
+I receive a original state over here.
+What is this state?
+This state is a local variable, right?
+So now this state will become,
+if I do a console log of state over here,
+console log of state over here, right?
+Console log of state over here,
+it will give me what?
+It will give me pizza, right?
+It will give me pizza.
+Suppose if I do state is equals to empty
+and do a console log again over here, right?
+If I do a console log of again over here, right?
+let me just comment this, if I do a console log of state over here, it will give me empty.
+But when I did this right, it actually did not modify this array, this array is different
+than this array.
+So I actually have to modify my original state, okay, I have to actually modify my
+original state.
+If I will do something like this, state is equals to empty, it will just make my
+state empty.
+So it just made this local variable empty, but then pizza remained the same pizza remained
+the same.
+Got it?
+Pizza remained the same.
+Make sense or not?
+Make sense, right?
+Cool.
+I'll show it to you, right?
+It will make this empty, but things won't change, right?
+Let me just show it to you.
+Let me save it and show it to you, right?
+If I go back, see, if I if I add some items in the cart, right?
+So I'll show you what happens, right?
+If I add some items in the cart, right?
+Let me add two items, right?
+In the cart, if I go back over here, right?
+If I try to clear it, see this, right?
+It showed that earlier we had earlier we had some two items in the cart, right?
+Earlier this state had two items, right?
+There are two items.
+Basically it is reduced.
+That is why it is not showing it properly, right?
+Okay.
+And now sometimes, okay, glad that I got over here, okay?
+One more thing, one more interesting thing, I can't see it right now, right?
+I have just tried to console log my state and I can't do it, right?
+It is not letting me show it properly.
+So you know what you can do?
+If you have to show it properly, you can do something like current state, okay?
+You can do something like this, okay?
+So basically, you know, Redux, Redux has a different way to handle this state
+over here, right?
+So over here in your reducer function console.log won't work.
+So you will have to do console.log of current state, okay?
+Now when I am teaching you, let me also teach this, right?
+Current state.
+Now it will be printed properly, okay?
+And this current will come from, this current will come from here, right?
+This current will come, oh, sorry.
+This current will come from my Redux toolkit, correct?
+This current will come from my Redux toolkit.
+If I go back, if I add some items to the cart, oh my God.
+I can add some items to the cart, recommended, paneer, golden, babycon.
+If I go back, see, right now we have two items, right?
+Let me just get rid of this.
+If I clear the cart, see this.
+If you will do a normal console log, it will not show you.
+It will show you some proxy object, right?
+And you can't read it basically.
+So Redux creates a proxy object, right?
+In the scenes, I don't want to dive deep into now
+what is proxy object and all that stuff.
+Leave it for this class.
+Just understand that you cannot read it,
+read the state directly like this, right?
+You cannot read it like this.
+But if you want to, sometimes we need to use
+console log for debugging, right?
+So if you want to use, just use a current state.
+And this current comes from your Redux toolkit, right?
+Then it will give you proper items, right?
+Now our items basically has two cards, right?
+And then if I made this state as empty
+and then console log, now my state is empty, see?
+But actually my store did not change
+because this is just a local copy.
+This is just a local variable which has been updated.
+The original state is still this.
+Got it?
+This is the reason.
+But if I do this, but if I do a state.items.length
+is equals to zero, it actually modifies this, right?
+It will do a this.items.length.zero.
+Got it?
+Small, it is basically, you know, it's basically JavaScript.
+I don't know.
+This class, since 15 minutes,
+I'm just explaining JavaScript.
+It's neither Redux nor React, it's just JavaScript.
+Oh my God.
+But this is important.
+I'm telling you, you will run into a lot of bugs
+if you don't understand this.
+If you will ever encounter a problem with your reducer,
+you are doing something wrong with mutating this state, right?
+So always mutate it, try to mutate it, right?
+But suppose if I have to, so, but how can I,
+you know, what else you can have done?
+You can either do a state.length.zero
+or you can do one more thing.
+You can return an empty object.
+Now, what a, see, see this,
+I'll tell you one more cool thing, right?
+So when you are doing a clear cart,
+so redux says, redux toolkit basically, redux toolkit
+or newer way, RTK, let's call this as RTK, right?
+RTK says that, right?
+You have to either mutate the state,
+mutate the state or return a new state, okay?
+RTK says either mutate the existing state,
+existing state or return the new state.
+So basically, either you can do this, right?
+So I'll explain you, wait, right?
+So you can do either of these things.
+So if you have pizza over here,
+if you will do this, you are mutating this state itself
+and you are making this as zero, right?
+This array, this original state will become,
+this original state will become empty after this line, right?
+You can either do this, right?
+I am keeping this code
+or you don't even need state
+because you are just clearing the cart, right?
+Just send an empty object.
+So this is a new object.
+If you return something, now this,
+whatever you return from your reducer,
+whatever you return from this reducer,
+will replace whatever is there is original state,
+will replace whatever is there is original state.
+So you can either return it, right?
+Or you can do something like this, got it?
+So suppose if I return empty from here, right?
+So it will just make, it will just clear my cart.
+So you don't have to mandatory return it,
+but if you'll return it,
+it will just modify the original cart with that value, right?
+It will pass this thing to your original cart,
+to your original state, right?
+It will basically now this original state, right?
+Original state will be empty, right?
+This new object, this new array will be empty.
+Will be replaced, right?
+Replaced inside original state, got it?
+Hope this line makes sense, right?
+I am keeping my code like this
+so that when you will see this code, right?
+You will be able to understand this properly, got it?
+This is a small thing, but a very important thing.
+If you'll clear your cart now, it will work, right?
+Okay, reading length of undefined, okay?
+Cart items.length, okay, okay, okay.
+My bad, my bad, my bad.
+So this will replace the state, right?
+So basically you will have to do something like this,
+items of, my bad, because see,
+this will replace your original items, right?
+You will have to, basically if you return over here,
+you will have to return full state from now, got it?
+That is why it was not able to find the items, got it?
+Either you modify it like this,
+so your original state basically was something like this, right?
+Items, right?
+And if you do state.items.length, so it will modify this,
+it will modify this, or else you can return a new, right?
+This will just replace, right?
+Now basically it will just replace
+the original state with this, got it?
+This new object will be replaced.
+So now let's just test this, right?
+So we have added this.
+Now if I go back and if I go back
+and let me just add some items into the cart, right?
+Let me go back to Magnafords.
+I went over here, I added Paneer 65,
+Golden Babycon, went to the cart, right?
+We have two items here.
+If I click on clear cart, see this, right?
+We have got an empty array once again, right?
+So basically it changes this item to empty array once again.
+So this is what I wanted to show you.
+This is really very important to know
+that all these things Redux is taking care of
+behind the scenes, got it?
+It's very, very, very important my dear friends
+to know all these things.
+And oh my God, it's been a great episode this time.
+It's a very long episode, but again, right?
+I'm okay with dealing with it, right?
+Few more things which I wanted to tell you
+about Reduxes, right?
+Few more things which I wanted to talk
+about Redux Toolkit is.
+Now I want to introduce you to something known as,
+which is known as Redux DevTools, right?
+You know, an important advantage of using Redux is that
+Redux helps us in debugging a lot, right?
+There is something known as Redux DevTools.
+Install it, this is a Chrome extension.
+It will be available for all the browsers
+that you use, right?
+There would be extension for it.
+I have already installed it.
+Once you will install it,
+you will get access to this, right?
+This is Redux DevTools, right?
+And it will activate once you have a Redux app with you, right?
+So let's go back to our app, right?
+Let's go to home, right?
+Let's go to home.
+So see this.
+So here we have our Redux.
+Here we have our Redux Toolkit.
+See, see this?
+It gives you this nice view.
+Are you able to see this?
+This is amazing, right?
+What, and it helps us so much in debugging
+that I can't tell you, right?
+I can't even think of using Redux without this DevTools.
+First of all, let me just explain you
+a important thing.
+You know, Redux is used for very large scale applications.
+When your application grows huge, right?
+There are so many components.
+First of all, when should we use Redux?
+When your application grows huge,
+there are so many components.
+Managing data between components is very tough.
+There is a, and then, you know, some components,
+like there are so many components
+who are subscribed to so many states,
+so many portion of apps,
+and mutating the states from somewhere.
+So that kind of, suppose that there are so many components,
+assume that there are thousands of components in your app,
+and there are multiple components
+who are mutating the same state, right?
+Mutating the same portion of the store, right?
+And there are so many components
+that are subscribed to some portion of your store, right?
+So that is where debugging is very tough, you know?
+And Redux gives us very good debugging tools.
+There is a Redux DevTools
+that gives us very good debugging tools.
+Please play with it, right?
+Please play with it.
+This is really good debugging tool, right?
+If I refresh the page, let me just show it to you.
+See this.
+Initially, it shows us basically, see this.
+Initially, our state is, see this.
+This is cart and our items is empty, right?
+This cart is empty at the initial load.
+Let's go and try to add some items into the cart, right?
+If I go back and I try to add some items into the cart,
+just see what happens inside this, right?
+Just see what happens inside this.
+If I click on this ad,
+it will basically show you the log of everything.
+See, this was initialized.
+Now, and now, are you able to see this?
+I don't know, right?
+I can't even zoom this.
+Hope you are able to see this, right?
+So basically, so these are the actions.
+So this is the action, which is cart slash ad item.
+Basically, it's like slice slash ad item.
+So ad item action, if I click on this,
+now it will show that the state has changed.
+See this, the state now has one item into the cart.
+If I click on add once again,
+if I click on another item, if I added one more item,
+see one more ad item action was called
+and now my cart has changed to two items.
+And if I see this action, right?
+If I see this action,
+I can even see the diff of this action.
+See this, this was the diff in this.
+So it's like a get diff, right?
+So it is showing that this card,
+this item was added in this diff, in this action, right?
+If I do a, if I go to the cart now
+and if I do a clear cart, let's see.
+See this, if I do a clear cart, right?
+Now the cart is empty.
+Let's go back to our store.
+See this, it basically shows you the log
+of everything that we have done so far.
+It will show you the log of everything
+that we have done so far.
+It becomes very, very, very helpful for debugging.
+You know, when a user is,
+when a user is doing so many,
+so suppose if there are like tons of,
+like there are dozens of slices in your application,
+there are so many components mutating the state
+from random places, subscribing to it.
+It becomes very difficult to see, right?
+What happened because of what, right?
+It is very hard to debug.
+But with this tool, we can do a lot of amazing things.
+We can, we can see actions, right?
+See, this is the action which has a type.
+There is a state, there is a diff.
+There's a trace, right?
+It gives you a trace, right?
+Where this is being called.
+See this, it basically shows you the line of code
+where we have dispatched the action, right?
+Cancel, right?
+Very, very powerful.
+It gives you the test case also.
+See this, it is writing the test case for yourself, right?
+It even writes test case for yourself.
+See this, a test case for a reducer.
+I mean, you know, I don't know whether how beautiful, right?
+Can I use this test case directly or not?
+I know that this is not a full-fledged test case,
+but still this thing is really very good.
+This extension is really very good, right?
+And please explore it.
+There is a log monitor.
+See, it is monitoring the log.
+See this, log monitor.
+See, initially we did add item.
+Action.payload had one key.
+Add item, see this, action.payload had one key, right?
+Clear item, so it shows you basically everything.
+Everything it shows you, right?
+You can see a chart, right?
+The state chart items.
+You can see the items chart, right?
+It is empty right now.
+You can see it in a different fashion,
+in a tree kind of scenario, right?
+If I go back, see, you can play also.
+There are two items.
+You can see this.
+This is one item.
+It shows you, it gives you a beautiful view.
+It gives you a tree kind of a view of your store.
+It is really very good.
+And another important, amazing thing
+which I like about it is you can replay things up.
+See this, initially my cart page used to look like this.
+Initially my cart page used to look like this.
+See this, I was not even in the cart page,
+but I can simulate the behavior.
+See this, then what happened?
+I added one item into the cart
+and the cart was looking like this.
+Do you see this?
+I can jump to different states.
+See, if I can click on jump, I can jump.
+If I click on jump here, so see this,
+I am jumping on this state.
+If I click on jump here,
+now my cart page looks like this.
+Remember, when I was adding items to the cart,
+I was not even able to...
+See, I was on my main page, right?
+I was on my Magna Foods page.
+I was trying to add items into the cart.
+I was trying to add items into the cart.
+I was not even on the cart page,
+but I can still see that how my cart page would look like.
+How my cart page would look like if I was here,
+if I was at the second call.
+It would look like this.
+It had one item in the cart, right?
+It had two item in the cart.
+It had three item into the cart.
+So we can have a trace of all these actions
+which we have performed.
+We can have a life journey of all these actions
+which the user is performing.
+Amazing, isn't it?
+You can exactly know at what action did your code fail.
+And you can change that.
+You can debug it easily.
+It's very powerful, my dear friends.
+When you will work in a large application,
+you will realize the importance of it, right?
+You can even skip it, right?
+Suppose if we had skip an action, right?
+See this, if we have skipped this action,
+and let me replay it, right?
+If we have skipped this action, right?
+So if I skip this action, how it will work, see this.
+It will add one item to the cart.
+It will not go to this cart.
+It will skip this action.
+It will clear the cart, right?
+Go forward, it will clear the cart.
+So see, we can even skip that.
+Now we would say it is very helpful for debugging
+because you might have, see,
+suppose if this action was not performed in some way, right?
+So it is helpful that it gives you to...
+So basically what I am trying to do with this is,
+I can simulate the behavior of the user,
+which the user is doing on the app, on a Redux Store.
+So basically, see, the UI is dumb, right?
+So basically this UI is very dumb.
+Dumb means very static.
+And we have a data layer.
+So Redux work on the data layer
+and it basically takes care of,
+it takes a snapshot of all these data layer modifications,
+right?
+You can just play with it,
+see how it works.
+It is very amazing, my dear friends.
+I can't stress on it enough, right?
+This is your homework.
+Go ahead, you have to play with your Redux Store.
+See, you should know the meaning of each
+and every icon buttons you have seen over here, right?
+Try to do it.
+You can use Live, you can use 1x, 2x.
+You can do a lot of stuff, right?
+You can play this up, right?
+See this?
+It basically shows, see, it replays things up, right?
+How the user was doing it added item,
+it clear card, see this?
+I can replay it in 1x, right?
+See this?
+I can replay it in 1x, right?
+I can do a lot of things over here, right?
+I can do a lot of things over here.
+I'm telling you.
+So please play with it, right?
+Another homework, note down yourself, right?
+Note it down is that
+you have to go to Redux Toolkit website
+and you have to read about,
+you have to read about RTK query, right?
+There is something known as, see,
+this is the basics of Redux
+which I have taught you already,
+not even basics I have taught you a
+kind of advanced kind of thing,
+but it's not 100% of Redux
+that I have covered in this episode, right?
+Obviously it's not Namaste React,
+Redux is very huge,
+but I have tried to cover the
+major things inside Redux, okay?
+Now go back and read about RTK query.
+There's something known as RTK query.
+In the older versions of Redux,
+in the older versions of Redux,
+we used to use middlewares.
+We used to use something known as Redux thunk, right?
+There were things like that, right?
+Complex things, right?
+For asynchronous operations, right?
+It's very confusing.
+I can't explain you in a short, right?
+But there used to be middlewares and thunks.
+Basically, suppose if you want to make an API call
+and want to store the data inside Redux Store,
+so there used to be a design pattern,
+a coding pattern which used middlewares and thunks, right?
+So note down these keywords earlier,
+we used to use middlewares and thunks.
+Now, with React toolkit,
+we have something known as RTK query, right?
+This is RTK query.
+Go ahead, read this documentation.
+Try to follow this, you know,
+there is a quick overview, yes.
+Go to this link, RTK query quick start, right?
+This Redux toolkit, RTK query quick start,
+go to this page, right?
+Note down this URL and read it.
+Try to make an API call,
+follow all the instructions whatever you are shown over here, right?
+You will be able to make an API call along with it, right?
+To be very honest, I personally really don't like, right?
+It's a very bad thing to say, right?
+But then I am after this session,
+but I'm saying that I personally don't like Redux much, right?
+And you know, I don't even like to teach it, right?
+Because it, Redux is very complicated, right?
+In itself, Redux library in itself
+has become very complicated.
+It is very difficult to teach also,
+but I had taught you, right?
+As much as I can.
+And I don't even really like it, right?
+This RTK query is a way of fetching data, right?
+It gives you a lot of cool features,
+but I really don't use it in my projects.
+I really don't like it, right?
+So I don't even want to teach you,
+but what I want you all to take it up as a homework,
+go and explore RTK query.
+Follow this example, you know?
+I have given you enough of information.
+You, when you will read this, right?
+You will understand when you are doing a,
+when you are adding a reducer over here in your store,
+you exactly know, right?
+How do you write configure store?
+So when you will read this,
+you will be able to follow this properly, right?
+With all this knowledge of this episode, right?
+Please experiment with it.
+See if you like it or not.
+If you want to use it, if you are using Redux,
+try to use RTK query also.
+It comes out of the box.
+It gives you a lot of good feature, right?
+But for now, in this episode,
+let's keep it this much.
+And thank you so much for watching patiently.
+It has become a very large episode, very long episode.
+And thank you for patience if you are still watching.
+And this is what I wanted to cover in this episode.
+This was Namaste React.
+I wanted to teach you Redux
+and I wanted to teach you the new way of writing Redux,
+the Redux toolkit.
+And this is what I was teaching you.
+Hope you would have understood it.
+Please go back, revise this diagram, right?
+And see you in the next episode, right?
+In the next episode, we will be writing test cases.
+So be prepared for writing test cases.
+We will be testing our app in the next episode.
+This was it in this Redux toolkit, right?
+And Redux store and hope you would have enjoyed it.
+Thank you so much.
+If you would have liked it
+and you are watching it right now
+and if you have learned something from it,
+please go share your experience over social media.
+Please tell your friends about Namaste React.
+I want, you know, I don't have a marketing team.
+You are my marketing team, right?
+Please spread this word.
+It will help me grow as a creator.
+It will help me grow as a teacher, right?
+And wish you the best in your career.
+And thank you so much for watching this episode.
+Thank you so much, my dear friends, right?
+Try to read these tutorials
+and that's all in this episode.
+Thank you so much.
+Thanks for watching.

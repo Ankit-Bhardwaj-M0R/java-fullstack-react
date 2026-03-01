@@ -1,0 +1,2570 @@
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Welcome to Namaste React. This is the second episode of this series which is igniting the app.
+Take down your notebook and pen and we are going to go ahead in this journey of amazing beautiful React
+and you will see that a lot of things we will study in this episode is very essential,
+very crucial to build large scale React applications. Got it?
+So let's just begin.
+So before I begin to teach anything, let us just push this code to GitHub, isn't it?
+Let's just push this code to GitHub. It will be very easy for us.
+So for that, I am just creating a new repository right now.
+Okay, so let's go to github.com, create a new repository.
+I am just creating a new repository and let me name it as Namaste React, okay?
+So Namaste React.
+So if you don't know how to create a repository on GitHub, Google it, right?
+So I am just creating it one over here.
+So I have created this new repository Namaste React and I am making this as a public repository.
+Okay, let me push all the code so that you can also see that code, okay?
+So let me push that up.
+I have created a Namaste React repository.
+I don't want to read me file, let it be, right?
+I am just creating a basic public repository.
+Cool, so a repository will be created.
+Now I have got this repository but we already had a repository in our local, right?
+So let us just configure, right?
+Let us just configure that remote to our local project, okay?
+How do I do that?
+First of all, let me go over here, right?
+And let me first of all initialize git.
+This is not a git repository right now, okay?
+This is not a git repository right now.
+I will have to do a git in it to make this repository as a git repository.
+Isn't it?
+So let me just do git in it.
+So I have done git in it.
+It has now become a git repository, isn't it?
+Now I will first of all, my main branch is master, right?
+Let me just create the main branch as main, okay?
+So I will do a git branch, I think hyphen m, right?
+Yes, hyphen m, so this basically creates main as the main branch, right?
+Now the main branch is named as master, right?
+On GitHub, the default branch is main, right?
+So this is how you change the default branch to main, okay?
+So I have created this main branch.
+Now let me push all this code to GitHub, right?
+And let us also create a readme file, right?
+It's good to create a readme file.
+Let's create a readme file by ourselves, readme.md.
+So this is a markup file.
+So let's write something inside it.
+Namaste, react or something, right?
+Namaste, react inside it.
+And I have created this readme file with us, right?
+And now let us just push all this code to GitHub.
+How do I do that?
+Do you remember, right?
+So first of all, I will do a git add dot, right?
+This will add all these files, right?
+And then now what I will do is I will just do a git commit, right?
+So commit with a hyphen m and a message, right?
+Hyphen m and a message.
+So what is the message?
+Let's give it as episode one, right?
+This is all code of episode one.
+So I should have ideally done this in the last episode itself, but it's okay, okay?
+So let's just push this code.
+It's a good habit to push all the code to GitHub, right?
+So git or GitHub, right?
+I am using GitHub, but yes.
+But you know that.
+Git is different than GitHub.
+Don't you?
+Go ahead and read it out if you don't know this.
+Oh, my God.
+So, okay, so Git and GitHub is different.
+You know, a lot of, when I teach, right?
+I have seen there is so much gap in understanding of software engineers.
+They don't understand.
+They think that GitHub is same as Git.
+No, Git is different.
+GitHub is a client, right?
+GitHub is a place which can host Git repositories, right?
+Most people think that GitHub and Git is same, right?
+So this is Namaste React, not Namaste Git.
+I would have otherwise explained you everything in detail, but anyways, it's fine, right?
+I think I should create a Namaste Git also.
+Anyways, some other day.
+For now, okay, I'll do git, commit, hyphen and episode one, okay?
+So all the code of episode one in the same commit, okay?
+I have pushed this code in it, right?
+Now I have pushed this code.
+Now my, this local, right?
+Local Git does not know what is remote, right?
+So first of all, I'll have to configure.
+So if you go to GitHub, right, it will give you this command itself, right?
+Git remote add origin.
+Let's do this.
+It's easy, right?
+And if you don't know any step, when you create a new repository, right?
+GitHub already gives you all these steps, okay?
+So you can just copy paste if you wish to.
+But you know, I don't believe in copy paste.
+I want to tell you every small thing, right?
+So if I'm doing git branch hyphen, that means I'm creating a default branch as main instead of master.
+Git add dot, it is just adding all our files which needs to go inside the commit, okay?
+So, and then I'm creating a commit.
+Now I'm adding remote, right?
+So this step I have to do once.
+Just once, right?
+To set up our local to the remote Git repository, okay?
+So that's what I'm doing right now.
+So now I have added origin.
+Now, when I have added origin, I can push all my code to remote, okay?
+So how will I push?
+Git push origin main, okay?
+So this basically Git push.
+I am pushing the code onto origin.
+Origin means the remote origin.
+And main, main branch on the origin, on the remote, right?
+So if I do this, it will just push all the code to our repository.
+Let us just see if it works.
+Yeah, so 100% done.
+Cool?
+So you people, if you are doing this, right?
+You people might face some issues while doing SSH or it will ask you for username, password or something.
+So please configure your GitHub, Google it.
+It will be very easy, right?
+Follow these steps, okay?
+It will have to do some, you might have to put in some SSH, public, private key.
+I have already done that for myself.
+So that is why it just, it's a very smooth process.
+But if you are doing this for the first time, you might get that error, right?
+Otherwise, you will write emails to me.
+Akshay, I can't do this on Git and all that stuff, right?
+So it's not my problem.
+It's your problem, right?
+Set up your Git first of all in your system.
+If you are doing this for the first time, okay?
+Just giving you a disclaimer because, you know, most of the times the errors you will get,
+I already know answers to it.
+I have taught React already to a lot of students.
+So I almost know that you will be stuck in this problem, right?
+That is why I'm telling you, okay?
+Just go to Google and find out that how do you configure Git?
+There's a public key, there's a private key that you have to set up to do a SSH, right?
+So just do that, right?
+Okay?
+So set up your GitHub SSH.
+If you are not, if you are facing problem in this step, set up GitHub SSH properly.
+Otherwise, and once you have reached over here, right?
+That means your Git is configured properly.
+Got it?
+And keep pushing your code to Git, okay?
+Keep pushing all your code to Git, keep pushing your nodes to Git, right?
+You can create a, you can create a nodes folder over here and keep creating nodes by episode also.
+That is the best way to do.
+Got it?
+It will be helpful when you will, like, revise yourself, right?
+So do that as your wish, right?
+How you want to put it up.
+But I am telling you that a lot of people will be stuck at this place.
+So search for how to set up SSH inside GitHub in your system.
+Got it?
+So this is what you have to do.
+Now I have pushed this code.
+Let me refresh it and see if the code came over here.
+Cool.
+So I have got my code over here.
+In the main branch, I have got this comment.
+So if you'll go, if you'll click on this comment ID, so it will show you this comment, right?
+So I have pushed all the code to GitHub, right?
+This is the URL, okay?
+Note it down for yourself.
+If you wish to pause the video, note it down.
+Got it?
+So we have pushed the code over here.
+Let me close this up now.
+The code is on origin now.
+I have created a Git repository.
+Let us start igniting our app now.
+Okay?
+Let us start igniting our app.
+This is episode two.
+We will be igniting our app.
+First of all, let me tell you what I have put the school name, right?
+Igniting our app.
+But what does it actually mean?
+Can you guess what does it mean?
+Igniting our app.
+Right?
+Guess it once.
+Let me tell you, okay?
+I don't know what you are guessing right now.
+But let me tell you, see, the code that we have written till now is our HTML file,
+a JS file, a CSS, a readme.
+That's all right.
+But is this code ready to push to production?
+Is this code ready to push to production?
+I want to ask you one question.
+No, right?
+This code is not ready to push to production.
+What is the issue in this code?
+What is the issue in this code?
+Tell me.
+Come on.
+Tell me, what is the issue in this code?
+So basically, what needs to be done is this code needs to...
+You know, this code is not a really optimized code, isn't it?
+It has a lot of random comments coming in over here.
+We don't want to put in those comments into our production code, isn't it?
+We don't have to put in these comments into our production code, isn't it?
+We don't want to put in these console logs into our production code.
+We want to minify our code, isn't it?
+We want to bundle our code, right?
+Suppose if my project has thousands of files, I want to bundle those files up, isn't it?
+I want to compress those files up, isn't it?
+I want to minify those files up, isn't it?
+Suppose if my app has a lot of images, I want to optimize those images, isn't it?
+Isn't it, right?
+So to make your app ready to go into production, you need to do a lot of processing in your local
+or a lot of processing before you push the code to production, right?
+So you need to basically do bundling, you need to basically do code splitting, you need to basically do chunking,
+you need to basically do image optimization, you need to basically remove the comments,
+you need to minify the code, you need to compress it, you need to do a lot of things, right?
+Before you can make your code go to production.
+And I in Namaste React don't want to just teach you that how you can write a basic, how you can make few elements or components inside React.
+No, I want to teach you from the scratch that how you can build your project which can scale, which can go to production.
+What is needed to make your app ready to go to production?
+That is why this episode is named as igniting your app.
+We are going to fire our app, we are going to put in energy into our app, we are going to light this app this time, okay?
+This is what we are going to do in this episode.
+Got it my dear friends, let us just see.
+So, but let me tell you, okay Akshay, you have hyped it so much, you have told us like so many things.
+And let me tell you we are going to do all that, right? Whatever I have done, right?
+We need to cash before going to production, right?
+So, we will do all that thing, we will do all that thing right now.
+I will show you how to set that thing up.
+You know what is the problem?
+A problem with a lot of tutorials out there outside, right?
+Is that most of those teachers or most of those tutorials start with NPX create React app.
+Most of the online React tutorials, they will start by creating a create React app.
+They will create a React scaffold and those React scaffold are already ignited, right?
+When you create a create React app, it is already ignited, it has all these superpowers.
+But I want all my students to, you know, you understand that what it takes to bring, build that create React app.
+What is actually inside it?
+What it takes to go to production?
+You know when you do, when you create a create React app, right?
+What happens is, it creates a scaffold for you.
+It gives you a basic React app which is already production ready.
+But now in this Namaste React, I want to show you that how you can create your own create React app.
+How cool is this, isn't it?
+In this episode, I will show you that how you can create your own small create React app.
+How you can create your own React production ready app instead of using the already existing ones.
+Then you will appreciate the beauty of a lot of things.
+Got it?
+We are, I am not, you know, I want to dive deep.
+I don't want to do small stuff.
+No, I want to go dive deep and teach you every small thing from scratch.
+Got it?
+This is the mission.
+That is how you will fall in love with the process.
+And we'll see that how so much engineering goes behind the scenes when you build a production ready app.
+You should know exactly what is that engineering, right?
+You should appreciate that a lot of things are working behind the scenes to make this large scale application.
+Got it?
+So talk is cheap.
+Let us just dive deep into the code and see.
+Let us build stuff, right?
+Oh my God.
+When I start talking, then I just start talking.
+Sorry for it.
+Okay.
+Sorry if I bored you.
+Anyways.
+Okay.
+Let's just go back.
+Now, first things first, you know, when, okay, suppose if you have to build a fast production ready app can react itself do it.
+I want to ask you one thing.
+Our project is configured to use react.
+Can react itself do it?
+No, right?
+You know, a lot of developers don't understand that they say that, okay, react is making our app fast.
+No, there are a lot of other packages, a lot of other packages that are required to make our production ready app.
+Lot of other libraries, lot of other code JavaScript that somebody else has written makes our code fast and scalable and production ready, not just react.
+A lot of people say that, okay, react is making our app fast.
+No, react is making your app fast.
+Yes.
+But to an extent, there are a lot of other things that we need to make our app fast.
+A lot of other packages that we need to make our app fast.
+We will now see how we can get those packages into our app.
+Got it.
+So, first of all, first things first, let me introduce you to one special thing which is known as NPM.
+A lot of you people already might know if you are from a front-end background that what is NPM, right?
+So NPM basically, what is NPM?
+A lot of people would say, what is the full form of NPM?
+If you said it is Node package manager, you are wrong.
+You are absolutely wrong. NPM is not Node package manager.
+Let me tell you what it is, okay?
+Let's Google, okay? Let's Google. Let's go to the official website of NPM.
+I'll show you an interesting, crazy stuff, okay? Let's take two minutes to see, right?
+NPMjs.com, this is the official website of NPM.
+NPM is everything but not Node package manager.
+You know, go to NPM's website, official website.
+There is no place where it has written that NPM is Node package manager.
+NPM does not stand for Node package manager.
+A lot of people don't know this small fact about it.
+And you know, it is to that level that, you know, in this NPM website, they have done a fun stuff, okay?
+They have written what is NPM?
+Pedestrian mesmerized. If you click on this, numerous pools merged.
+Narcissist preening monarch. If you click on it, right?
+Nepotelian pizza maker. So NPM, NPM developers, you know, so many people say this,
+it is Node package manager that they said that, okay, it is everything but not Node package manager, right?
+This is cool stuff, right? If you click on it, see, it is, no, no, no, no, no, no, Pacman.
+NPM stands for, no, no, no, no, no, no, no, no, Pacman.
+NPM stands for never, never rending prototype mode, right?
+NPM stands for novelty polygonal mathematics or random things.
+So basically, this is just a way for NPM to tell that it is not Node package manager but anything else.
+NPM does not have a full form, okay? NPM does not have a full form.
+But if it is not a Node package manager, then what it is?
+So basically, NPM manages packages, right? NPM manages packages but it does not stand for Node package manager.
+Just a cool stuff I wanted to tell you, otherwise, right, it is of no use.
+Nobody is going to ask you in interviews that whether NPM is your Node package manager,
+stands for Node package manager or not, no.
+So NPM is, NPM behind the scenes, you know, works as a Node package manager.
+It manages the packages but it does not stand for Node package manager, okay?
+Oh my God. Now a lot of you would have been confused.
+Akshay, what are you talking since five minutes?
+Let me recap. So NPM does not stand.
+It's not an abbreviation for Node package manager, okay?
+Nowhere in the website you will find it and for the fun fact, they just call it random stuff over here.
+If you click on it, just do this, right? Nobody packages more.
+If you click on it, right? It also has a GitHub repository, okay?
+Where you can give your own name to NPM also.
+You can do, you know, this is an expansion.txt file.
+So see, people have submitted their random names for NPM.
+Cool, isn't it? Right? It is like native Pappon mask, native penguin milk.
+This one is quite crazy, natural potato magnet.
+So people have submitted like crazy names for NPM.
+So no need to know that information but I am telling you, it's a package manager, right?
+It's a package manager. What actually, now let's get serious, okay?
+This was a fun stuff I wanted to tell you but let's get serious. What is NPM?
+So NPM basically is a repository, is a standard repository for all the packages.
+Right? It's one of the biggest, right? It's biggest package managers.
+Any package you need to include in your project, you can use NPM.
+Right? All the packages are hosted over there.
+What kind of packages? We will soon see it.
+All the libraries that you would need, all the utilities that you will need comes from NPM.
+Okay? And NPM basically manages that for you in your project.
+Right? When you create a create react tab or when you create a basic react project, right?
+When you create a create react tab basically a scaffold, it automatically has NPM inside it.
+So you don't have to configure it.
+But I wanted to show you that how you can make your project use NPM.
+Okay? This is the beautiful thing. I want to dive deep and do from scratch, okay?
+Let us just add node package manager to our project.
+Okay? Let's just make our project use node package manager.
+So how do I do that? Let's just do it, right? Let's just use NPM.
+So I will do something known as NPM init, right?
+So you can do, a lot of people will say that use NPM init-y.
+So it will skip a lot of things. But no, I don't want to do NPM init-y.
+I don't want to skip anything, okay? I'll do NPM init, right? I did NPM init.
+Now it will ask you few questions, right? Just read this. It asks you for a package name.
+It says shall we keep it as namaste react? Yes, let's keep this as namaste react.
+So this is basically asking you few things before it can configure a node package manager for you.
+Okay? Oh my God, I called it as node package manager. Let it be, okay?
+I am still processing that it's not node package manager.
+Okay? But it is NPM, right? Okay? So let's configure NPM.
+The project package name is NPM, right? Oh, namaste react, sorry.
+Version 1.0.0. Yes, let's keep this version. Description. Let's give it a description, right?
+Let's give it this is namaste react by Akshay Saini.
+Got it. So we can have our description over here, right?
+So this is the description. This asks you for an entry point, right?
+Our entry point is not app.js exactly, right? It's index.html.
+But let's keep it like whatever is there by default, okay?
+Test command, okay? It will ask you for a test command.
+So right now, just write just over here. We will be using just for testing, okay?
+If you don't understand this, just write just blindly.
+In the further episodes, when we will talk about test cases, we will see what is just.
+Right now, just write just over here, right? In the further episodes, when we will talk about test cases,
+we will be very helpful for now. Just write just over here, right?
+And it also shows that, okay, this is the GitHub remote origin, right?
+This is the GitHub repository, okay? So yes, this is the GitHub repository.
+You can give some keywords if you wish to. Let it be.
+Like let's give react or maybe namaste react or something. I don't know, right?
+Give any keywords if you wish to or give it like Akshay Saini. What's that, right?
+Some keywords, some author name, right? I can write author name over here.
+Now I can write license ISC is fine, right? Just go with the default.
+Now it is asking you, is it okay? Yes, it's okay.
+And once you do that, my dear friends, do you see a difference?
+We have got a new file over here.
+We have got a new file with us package.json. What is this package.json?
+Right? What is this package.json file?
+This package.json file is basically a configuration for our npm.
+This is basically all that configuration of our npm, whatever we gave over here, right?
+Whatever data we gave, the name of the package, the version, description.
+It has created a json file for us, right?
+In the json structure, we have got this, right?
+Oh my God, it has created keywords like this, okay? Let's get rid of these keywords.
+Oh my God, I did not intend to put in keywords like this, okay?
+So this is basically a package.json is a configuration for npm.
+Listen to me very carefully. Take it down as your note in your notebook.
+package.json is a configuration for npm.
+Why do we need this package.json file?
+package.json will see what is npm.
+It's a package manager, right? It will manage all the packages that we will install in our system.
+And sometimes these packages are also known as dependencies.
+A lot of people don't know about the difference between what is a package, a dependency and whatnot.
+It's one and the same thing. You know, our project is dependent on a lot of packages.
+Those packages with the project is dependent on, right?
+Are the dependencies and npm manages that, right?
+npm will take care of what is the version of that package, right?
+Suppose if I am using some other library or some other package, what is the version of that package?
+npm will take care of it and where it will take care, it will take care of it in this package.json, okay?
+So it is very helpful. As in when we go ahead, you will understand the more beauty of it, right?
+How beautiful npm is. For now just understand that this package.json is a configuration for npm.
+Got it? So we have configured our project to now with npm.
+Now we can get packages into our projects, our dependency into our projects.
+Got it? So now we have got this npm.
+Now let us just start installing our dependencies, okay?
+Now you would ask me, Akshay, what dependencies are we going to install?
+I will tell you the most important package in our project.
+The most important package in our project is what?
+Let me tell you, it is a bundler, okay?
+What is a bundler?
+See, when you have this normal HTML, CSS, JS file, our whole code needs to be bundled together, right?
+Our whole code needs to be minified, our whole code needs to be cached, our whole code needs to be compressed,
+our whole code needs to be cleaned before it can be sent to production, right?
+So a bundler helps you do all that thing.
+What is a bundler? Have you heard, you must have heard of a name, something known as webpack.
+Have you heard of it? Webpack? Have you heard of parcel? Have you heard of wheat?
+So when I say webpack, parcel, wheat, these three things and there are more bundlers out there, these are bundlers.
+What is the job of a bundler? Bundler basically bundles your app, it packages your app properly so that it can be shipped to production.
+Lot of people don't know this. Lot of developers who are writing code don't know that how we build our app to be able to push it to production.
+Lot of people don't know this.
+When we create a create react app, right? That create react app behind the scenes uses webpack. Webpack bundler, okay?
+Lot of people don't know about it, right? Let me tell you create react app, right?
+Create react app. If you go to create react app, right?
+This create react app uses webpack behind the scenes.
+It uses webpack and babel behind the scenes to build things up.
+Right? So are in our project, now you would ask me in our project, we are going to use parcel.
+So you know webpack, parcel, wheat, right? Wheat is again another bundler which is again a new bundler which is catching up in the market very fast.
+Right? So we will be using parcel.
+Now you can ask me Akshay, why parcel? Why not webpack or wheat?
+It's my choice, right? It's my choice. At the end of the day all bundlers are or bundlers are same, right?
+Almost they do the same thing. They just do it differently.
+Suppose if there needs to be bundling done, right? The algorithm to bundle it can be different in webpack, can be different in parcel, can be different in wheat.
+But at the end of the day they do the same thing.
+I am going to use parcel, right? Parcel is easy to configure and I want to show it to you how to basically configure
+and ignite our app with this bundler, okay? So we will be using parcel.
+And my dear friends, you would love parcel when you will see what it is doing to our app.
+Parcel is one of the best libraries out there which we will use in this app, in our app, right?
+Parcel will ignite our app. Parcel will give, you know, to right now suppose if this app is a skeleton, right?
+A skeleton with bones. Parcel will give it muscles to it, right? Parcel will give it strength to our app, right?
+Okay, so this important parcel is in our app, okay? Let us just try to get parcel into our app.
+How do I get it? So parcel basically comes as a node package, right?
+So we will install that package. Now that we have NPM, we can install parcel to our app easily, okay?
+So how do we do that? For that, basically when you will install any dependency in your app, you would have the same command, okay?
+Any dependency, any package, it's one and the same thing, okay? So how would I do that?
+I will write command NPM install and I will write NPM install and then the dependency name.
+The dependency or a package name is parcel, P-A-R-C-E-L, right? This is the dependency name, NPM install parcel.
+But we will also give it a parameter, a flag which is hyphen D. Now you can ask me, what is NPM install hyphen D?
+Why am I? It makes sense, right? NPM install, so NPM is the command and then install means we are installing, this is the package name.
+What is this hyphen D? Now let me tell you an important difference.
+There are two types of dependencies which our app can have. One dependencies are take it down as a node, okay?
+You know, when I am recording, there is so much knowledge which comes impromptu, okay?
+So keep taking down nodes in the series, okay? So there are two types of packages, two types of dependencies that we can install.
+One is the dev dependencies and one are the normal dependencies, okay? One is the dev dependency, one is the normal dependency.
+What is dev dependency? So when we say a dev dependency, it means it is generally required for in a development, right?
+In a development phase. When we are developing our app, then we require that dev dependencies.
+And our normal dependencies are used in production also, right? Used in production also, right?
+So that is what, that is what means, what that is what is the difference between dev dependencies and a normal dependency.
+Read more about it online but this is the basic difference about it.
+Now this parcel, right? This parcel is a bundler, chunking, minification is done where, is not done on production, right?
+We will do this in a development phase. So we will install parcel as a dev dependency.
+And this is how you tell NPM, right? What is NPM? NPM is a package manager, isn't it?
+So you tell that package manager that I want parcel into my app but I want it as a dev dependency.
+It's not a normal dependency that, that is like on production, right?
+So we need it as a dev dependency. This is why we give this hyphen D. See, I want to go slow and I want to dive deep, right?
+So I want to tell you meaning of every command that I write. I am telling you.
+You know, most of the people will just quickly write NPM, install hyphen D parcel and it will just blow up parcel.
+No, I want to tell you meaning of every small thing that I teach, okay?
+That is why you will fall in love. You would love the beauty of what, how beautiful NPM is.
+A lot of, a lot of you must be using NPM already but would have never known that what is like,
+what are these small things happening inside this code, right? Why are we writing a command like how we are writing?
+I want to tell you everything. Now let it just install parcel and hit enter.
+Now the parcel is getting installed. Our app is, our app is basically now installing parcel from where?
+From that node package manager which is on the remote, right? That NPM, right?
+This NPM, this repository which contains all the packages, right? This, right?
+This NPM, we are just installing. We are fetching parcel from there. Got it?
+So this is what it is doing. It will take some time. Meanwhile, let me tell you that parcel is a beast.
+Yes, parcel is a beast. Where you say parcel is a beast? It will do a lot of things to our app.
+It will give our app, you know, just like I said, right? Our app right now was just a skeleton with just bones in it, right?
+Parcel will give it muscles. Parcel will give it strength. Parcel is such a beast.
+You would be amazed when I will tell you the beauty of parcel, okay?
+So this is what parcel is. We have installed parcel. Now if you will see, right?
+In our package.json, we got this. See, we got this parcel as a dev dependency, isn't it?
+This is the place where you will see all the dev dependencies, right?
+We have got parcel and as I told you, this package.json is a configuration for NPM.
+It basically keeps a track of all the dependencies, all the packages our code is using, right?
+And parcel and it says that, okay, parcel's 2.8.3 version is installed, okay?
+So this is the latest version of parcel which is installed.
+Now you can ask me, Akshay, what is this sign over here?
+I understood that it is 2.8.3. What is this sign over here?
+What is this sign? What does this mean? Right?
+And this is basically known as caret, okay? This is basically known as caret.
+Now this has nothing to do with react but let me talk about it, okay?
+Let me tell you when I have seen this, right? A lot of people won't know what is this, right?
+This is a caret. You can also put in tillday over here, right?
+What is tillday and caret, right? I'll tell you. Let's put caret only, right?
+Go ahead, yeah? See, you know, I want you to be curious about every small damn thing, right?
+Caret and tillday in package.json, okay?
+So read about it, right? I might not be able to tell you every nitty-gritty things
+but I will cover everything that comes on my way.
+But if you get such doubts, Google it. All the answers are available on Google, right?
+So read about it. So basically what it does it, right?
+It will help you manage the... I'll tell you basically in simpler terms what it is doing, right?
+Right now, what is the version of parcel which is there in our project?
+You would say it is the latest 2.8.3.
+Now, what will happen? Suppose tomorrow, right? Today it is 2.8.3.
+Tomorrow, a new version of parcel comes in. A new version, suppose a new version of parcel released.
+Suppose a new version 2.8.4 is released.
+What will happen if you have put this caret into your app?
+Parcel will automatically be upgraded to 2.8.4.
+Listen to me very carefully. I am repeating it once again, okay?
+Suppose if tomorrow a new version, a new minor version, okay?
+So this is basically... Suppose if there is a 3.0.0, that's a major upgrade.
+When it is like 2.8.4, it's a minor upgrade, right?
+So when there is a minor upgrade and if you have put this caret, parcel will automatically updates its version.
+Okay? Parcel will update its version automatically if you have put in caret.
+Got it? That is why we use caret. If you have put tilde, right?
+So it will install the major version of automatically. Suppose if tomorrow 3.0.0 is released.
+If you have put in tilde, it will just install the major version automatically.
+Always it is safe to put in caret. Why?
+Because it's okay to upgrade the minor versions but don't upgrade the major version.
+Because sometimes what happens is when you have a major upgrade, a lot of things will break into your app.
+Okay? So please keep caret over there, right?
+But you should definitely know the difference between the two.
+Very important interview question. It can come to your interviews. Just see, right?
+So read more about it, right? You would just love it, right?
+What it is doing to your app. So this is what is, oh my God, we have learnt a lot of things.
+Today we learnt about what is NPM, what is NPM in it, right?
+We have package.json with us. We have depth dependencies with us.
+We install parcel into it. We learnt about this caret and tilde, right?
+Lot of knowledge today. Keep taking down notes, my dear friends. Keep taking down notes.
+Now, let me tell you one more important things.
+When we install this parcel, right?
+Depth dependencies were added over here.
+But what else happened? We have got another file over here. What is this file?
+This is package.json.
+What is this package.lock.json?
+We have a package.json already. What is this package.lock.json?
+Why is it even there? Are these files the same?
+Do we need both of these files? So many questions come to your head, right?
+If you are curious, these questions will come to your head.
+And these are very genuine questions. Very important interview questions.
+And you know, when I was working, right? I used to take a lot of interviews for Uber, ATM.
+And if I ask these questions to developers, right?
+Most developers are not able to answer all this. What is this package.lock.json?
+What is the difference between package.json and package.lock.json?
+Very important stuff. Very, very important.
+Let me talk about what is package.lock.json.
+So, till now, you have understood that, okay, package.json is a...
+Let's talk about package.json. What is it? It's a configuration for NPM.
+It keeps a track of what version of that package is installed into our system. Got it?
+But it, okay, if there is a caret, that means install any version.
+If there is a minor upgrade, install that also, right?
+If there is 2.8.4, install that also.
+Package.lock.json keeps a track of exact version that is being installed.
+Suppose, if today there is a 2.8.5 released.
+My package.json will stay like this, okay?
+My package.json will can have 2.8.3 and a caret on it.
+But package.lock.json kind of locks the version and keeps a record of it, okay?
+Package.lock.json keeps a record of every, like, exact version of that package, of that dependency which is installed, okay?
+And what is this? Then what is this lengthy thing? What is this lengthy thing?
+Right? I'll tell you everything, okay?
+So if, but first of all, let me just find parcel over here, see?
+Right? Parcel. So it will show you the exact version of parcel that is being installed.
+See this? Parcel version 2.8.3.
+So package.lock.json keeps a track of the exact 2.8.3 version and package.json can have a caret or tilde.
+So why this package.lock.json is useful, right?
+So package.json is basically keeps an approximate version of it, right?
+And package.lock.json has an exact 2.8.3 version which is there.
+What are other things? You should be curious about everything.
+What are other things inside this parcel, right? What is this integrity?
+So why is this integrity? This integrity is basically a hash, a SHA-512 hash.
+This, why is this hash present over there? Why is this hash present over there?
+This hash is present, you should know the answers to all small things, okay?
+I'm telling you whatever is coming to my mind, this hash is because, you know,
+have you heard of that thing? That it is working on my local, I don't know how it break on production.
+Have you heard of that? Right? It has happened a lot of times, right?
+That a lot of developers would say it's working on my local but it's not working on production.
+What kind of sorcery is this? So basically to avoid that package.lock.json keeps a hash
+to verify that whatever is there in my machine, right? Whatever is there right now in my dev machine
+is the same version which is being deployed on to the production.
+It's a very, very, very important file, package.lock.json. It keeps a track of all the versions, right?
+All the versions, exact versions of all the dependencies. Got it?
+So this is what the role of package.lock.json is and it is different than package.json.
+A lot of people don't know the difference about them. You should know the difference about all of them, right?
+It's a very important question, right? You should know it, right?
+Okay? And I want to teach you every small damn thing.
+Now, when I install npm install parcel, right?
+There is one more thing that was created that was node modules. What is this?
+Oh, my God. What is this code? Oh, shit. Oh, my God. There are so many folders out there. What is this?
+What are these? What are these? Oh, my God. I did not do this.
+What are these code? So much code has came in. I did not even write this. What is there in node modules?
+Let me tell you, my dear friends, this node modules contains all the code that we fetched from npm.
+When we did npm install parcel, what happened was it just went to the production that it took some time, right?
+It took one minute to install kind of parcel. What it was doing?
+But it was fetching all the code of parcel and putting it inside node modules.
+If you will go over here, if you will see, there will be parcel or alias.
+This is the actual parcel code which npm has fetched.
+Node modules basically, so, you know, this package.json is a, you understood, right?
+Package.json is a configuration for our npm.
+Node modules is kind of like a database. It contains the actual data of that dependencies of those packages that our project needs.
+That is why there is node modules and it's huge, my dear friends.
+We have just installed one dependency and it has become so huge, isn't it?
+It is so huge that there are so many jokes about node modules.
+So I'll show it to you. I don't know why I'm doing this, but node modules, I'll show you a joke, right?
+But it's a very great meme, node modules meme, right?
+So, see this, yes, yes, this one.
+Okay, so if you will open this, right?
+So there is a great meme, right?
+Heaviest objects in the universe, right?
+It will see heaviest object in the universe.
+This is neutral star, black hole and then there is node modules.
+In all the node projects, in all the web projects, right?
+Generally, node modules is very heavy.
+Very heavy node modules basically fetches all the code of all the dependencies into our system, right?
+And we can now use that code.
+So that is why node modules is kind of like a database where all our packages exist, okay?
+That is why so many jokes exist, right?
+So I just really like that meme, that is why I showed it to you.
+But now you would have one more question, okay?
+Ask a lot of questions to yourself, every small damn question.
+Okay, but I just installed parcel.
+Isn't there should only parcel should have been here, right?
+What are all these things?
+What are these random things? I did not install this.
+Why did it come over here?
+It came over here, my dear friends.
+Because our project needs parcel.
+Our project has a dependency parcel.
+Now parcel as a project has its own dependencies.
+Parcel as a project has its own dependencies.
+And those dependencies can have its own dependencies.
+Those dependencies can have their own dependencies.
+This is known as transitive dependencies.
+Note it down in your notebook.
+This is known as transitive dependencies.
+See, our project has a package.json which shows that parcel is our dependency.
+Now this parcel can itself be dependent on a lot of things.
+Parcel, as I said, is a beast.
+Parcel does a lot of things for your project.
+You would see that in just a moment.
+Parcel cannot do all these things on its own.
+Parcel needs help of a lot of other packages.
+That is why when we install parcel, parcel says that okay NPM, please install other packages also.
+Parcel needs help of Babel also.
+You would see, we will talk about Babel a lot in our next episode.
+Babel is amazing.
+Parcel is a beast.
+Babel is nonetheless.
+Babel is also amazing.
+We will see this in the next episode.
+But for now, see, parcel uses Babel, right?
+Parcel uses all these libraries.
+So that is why parcel installs all other libraries also.
+We will also use browser's list.
+This is an amazing package.
+I just love this browser's list, right?
+We will see this later in this episode.
+So parcel needs a lot of other dependencies, right?
+So that is why we have so many folders inside Node.
+So many packages.
+These are all different packages inside Node, NPM.
+These are different Node packages in NPM.
+Got it?
+And parcel needs all of them.
+That is why they are over here.
+None of that is garbage if you think so.
+No, it's not garbage.
+It's all important stuff over here.
+Parcel will need it when it will do a lot of crazy things for you.
+Got it?
+Now, okay, you know, now I'll ask you a curious question.
+A lot of you won't know the answer to it, okay?
+A lot of people don't know the answer to it, right?
+How is parcel managing all that thing?
+How would we know, how would NPM know
+that parcel has its own dependencies?
+What are the dependencies of parcel, okay?
+And I'll ask you one more question.
+In our whole project, how many packages.json do we have?
+How many packages.log.json do we have?
+A lot of you would say, in our project,
+we just have one package.json, one package.log.json.
+No, my dear friend.
+No, my dear friend.
+Every dependency, every project that you will see
+will have its own package.json.
+If you'll go to parcel, it has its own package.json.
+Isn't it?
+It has its own package.json.
+And it has its own dependencies.
+See, it has its own dependencies.
+It has its own normal dependencies.
+Now, you understood.
+Just like we installed parcel as a dependency,
+parcel is also dependent on other projects,
+other repositories, other packages, okay?
+And it is maintaining its own configuration.
+It is maintaining its own package.json.
+This is known as transitive dependencies.
+A lot of people don't know this, right?
+So our project has package.json, parcel has package.json,
+and all these libraries will have its own package.json.
+Got it?
+So these are the dependencies for parcel.
+And this is how other dependencies are also installed.
+If you'll see this chalk, right?
+This chalk will be here, right?
+Let's go.
+See, this chalk is dependent, right?
+And this package.json, it will have its own dependencies.
+See, it will have its own dependencies.
+So this dependency, dependency, dependencies,
+like a dependency tree, right?
+Whole dependency tree, that is why our node modules blow up.
+That is why our whole node modules is huge, right?
+Node modules is a collection of dependencies, right?
+It is kind of like a database for all our packages,
+all our files, all our code, all our dependencies.
+Actual code is there.
+Oh my God, so many new things I have taught you, right?
+We have seen what is package.json,
+we have seen what is package.log.json,
+we have seen what is node modules.
+We have seen what is node module.
+It's huge.
+Yes, isn't it?
+Amazing stuff, right?
+Now, I'll also want to talk about one more important thing, okay?
+Now, this node modules,
+if you see the size of these node modules, right, it's huge.
+I don't know how to see it.
+Just go in your folder, try to do right click
+and see the size of this node module.
+It will be huge as compared to the size of this code, right?
+We have just written few lines of code, right?
+There are just two, three files in our code
+and we have such a bulky node modules.
+Should I put this node module to production?
+Should I put this node modules to Git?
+Should I push?
+This is an important question to ask yourself.
+Should I put all these node modules, this big whole code to GitHub?
+The answer is absolutely no.
+The answer is absolutely no.
+So, what we will do, I don't want to put all this big,
+all this project code, right?
+All this NC style and then chalk and then parcel
+and then all that code, I don't want to put it on GitHub, okay?
+So, what I will do is, the best practice is to put this inside Git ignore, okay?
+So, people who don't know, we can have a file Git ignore
+which will ignore, right?
+Which will not put some things.
+If you want some files to not go into production,
+not going to Git, right?
+So, just put it inside Git ignore.
+So, what I'm going to do now is, I'll just put my
+slash node underscore modules inside my Git, right?
+So, see, if I don't put inside Git, right?
+So, if I'll go over here, right?
+If I'll go over here, it will show, oh my God, you have changed 3,575 files.
+3,575 files were fetched from the network
+when we were installing parcel, right?
+I don't want to put this 3,575 files on Git.
+No, it is just useless.
+I'll tell you why also, okay?
+Now, you have become curious.
+You would be asking, actually, why?
+Let's put it out.
+It's very important, right?
+We need all that code.
+We need all that code to run.
+I'll answer all of it, just a minute, right?
+But first of all, let's get rid of node modules, right?
+Node modules.
+I don't want to put my node modules onto my Git Hub, okay?
+So, now our Git looks clean, right?
+Only 4 files changed, right?
+These 4 files are important.
+We should put all of them onto Git.
+Okay, okay, okay.
+Now, now, you know, I have, like, oh my God,
+I have been speaking since a long time.
+I need some water, just a minute.
+You also drink water, yeah?
+It's very important.
+Okay, so, now, we don't want to put this node modules onto Git, why?
+Okay, I'll ask you one more question before I answer that question.
+Should I put my package.json onto Git?
+Should I put my package.log.json onto Git?
+The answer is absolutely yes for package and package.log.
+Why?
+You know, package.json and package.log.json
+maintains a note of what all dependencies our project needs, right?
+Isn't it package.json is maintaining that our code need parcel?
+Package.log is maintaining the exact version of all these dependencies.
+Now, you understood why this package.log is so huge.
+It is basically maintaining the log.
+It is basically maintaining exact version of each dependency.
+See, there is some dependency post-html.render.
+It is maintaining the exact version of it.
+It is maintaining the integrity, that hash, that exact hash
+so that whatever is there in my local should be the same on production, right?
+That is why it is maintaining all of it.
+So, it is very, very, very crucial.
+You know, a lot of people do mistake.
+They don't put package.log.json on GitHub.
+It is important to put package and package.log onto your GitHub repositories, right?
+But you don't have to put node modules.
+The answer lies over here itself.
+How?
+Because if I have my package and package.log,
+I can regenerate my node modules.
+Okay?
+Let me tell you one thing, note it down in your notebook.
+If you have package.json and package.log.json,
+you can recreate all your node modules.
+Even if I delete my node modules, right?
+So much code.
+Let's delete it, okay?
+Let me show it to you.
+Let's delete it.
+I am just moving it to trash.
+I have deleted all the node modules.
+Parcel is not here now.
+Nothing is here.
+But because I have my...
+And GitHub will just have this code.
+Because I have my package.json and package.log,
+exact version of all these dependencies,
+I can recreate my node modules.
+I just have to do npm install in my repository, hit enter.
+It will recreate all the node modules for you.
+It will take some time.
+See, it is installing all that plethora of repositories,
+all that plethora of code,
+and it recreates my node modules.
+That is why it is not required to push node modules onto GitHub.
+Understood the answer?
+I have seen developers, my friends.
+I have seen developers.
+They are senior developers.
+They are like 5, 6, 10 years old developers.
+They don't know these basics.
+Very important to know the basic stuff.
+Very important to know all these small things.
+What needs to go inside Git?
+What does not need to go inside Git?
+You know, this is Namaste React.
+I could have just taught you React and go away.
+No, my dear friends.
+I just don't want you to be just a React engineer.
+I want you to be a super good senior React engineer.
+Which knows in depth about every small damn thing
+that you are doing to your project.
+Isn't it?
+I have started everything right from zero.
+I want to take you from zero to hero.
+That is my mission.
+My mission is to make you fall in love with React
+and make you fall in love with whatever we are doing.
+I just love all these things.
+Now you can ask me, Akshay, how do you know all that thing?
+Just I am curious about these things.
+I have read a lot about all of these things.
+Why? Why? Why?
+You know in my head, there is always a question.
+Why this? Why that? Why is it like this?
+How is it doing that? Why is it doing that?
+Why? When it is doing that?
+When you have a lot of questions in your mind,
+you go to Google search for it, go to blogs,
+read about it, go to YouTube videos, watch videos.
+That is how I have acquired all this knowledge over years
+and all this knowledge I want to give it to you
+through Namaste React.
+That is the mission of this Namaste React.
+I want to give you all this knowledge.
+I want to be very transparent.
+I want you all to succeed.
+If you will succeed, if you will be successful,
+that is when Namaste React will be successful, my dear friends.
+Okay, so let's move ahead.
+What we have to learn from it?
+We have to put in package.json, package.log.json on Git.
+We don't have to put in node modules because we can...
+So basically, I'll tell you the basic fundamentals.
+Whatever you can regenerate, don't put it on Git.
+Whatever you can regenerate, don't put it on Git.
+Git should only have essential things.
+If I can regenerate my node modules on the server,
+I don't want to put it up on GitHub or Git repository.
+Got it? This is the learning we should take.
+Okay, so what I have done is,
+let me recap it.
+We have done a lot of things right now.
+Let me recap it.
+First of all, we initialized on GitHub repository.
+We set up the remote.
+We set up the report repository.
+We created a repository on GitHub.
+We set that up.
+What else did we do?
+We installed NPM.
+We saw that NPM is not a node package.
+It does not stand for node package manager.
+It is actually a node package manager.
+It manages the packages.
+But node package manager is not a full form of NPM.
+Got it?
+It's not an abbreviation.
+I don't know why you need that information.
+But anyways, all across the internet,
+people write node package manager as NPM.
+But it's not actually that.
+Just go and see the official repository.
+It's not the same.
+So we have seen that.
+We have seen how do our project can start using NPM.
+We did a NPM in it, right?
+When we did NPM in it, what happened?
+Package.json was created, isn't it?
+Package.json is what?
+It's a configuration file for NPM.
+Package.json maintains the versions of our dependencies.
+Not the exact version.
+It can have a k-rate or tilde.
+It can also have an exact version if you wish to.
+You can just remove this.
+That means parcel 2.8.3 always.
+I don't want any upgrade in parcel.
+No upgrades.
+If I put k-rate, minor upgrades.
+If I put a tilde, major upgrades.
+Got it?
+And package.json contains the exact version of all the
+transitive and all the dependencies that my project
+will ever need.
+Got it?
+No modules contains all the code of it.
+Gitignore contains all the files which I don't want to push inside.
+Github.
+Got it?
+These all things, I showed it to you.
+Even if you delete node modules, we can regenerate it using what?
+Just NPM install.
+If you do NPM install, right?
+It will install everything once again inside node modules.
+Got it?
+This is what we have learned.
+This is a lot of knowledge, right?
+So now please, please, please take a pause.
+Take a pause over here.
+Do all of this.
+Do all of this in your system.
+Right?
+Explore all these things.
+Explore.
+Go ahead.
+See what is there inside this package log.
+What is there inside package.json?
+See what is there inside node modules?
+Go inside the dependency and see what is there inside
+at the parcel.
+Right?
+See all of this.
+Okay?
+And then, and then come back over here.
+I am taking a pause.
+Pause this video.
+Come back after that and rewatch it.
+Because we are going to see what actually parcel is doing.
+We are going to actually ignite our app now.
+Okay?
+So please come back very soon.
+Okay?
+Thank you.
+Let's take a break.
+Welcome back, my dear friends.
+Welcome back.
+Now we are actually going to ignite our app.
+Are you ready for it?
+Are you ready for that?
+Let's just begin.
+How do you ignite our app?
+We will use parcel to ignite our app.
+Okay?
+How do you do that?
+Right?
+We will write a command known as npx parcel.
+And then we will give it and so basically we are
+basically now building our app using parcel.
+Okay?
+So what we write command is npx parcel, the name of parcel
+and then what we will give it?
+We will give it as index.html, the source file of our project.
+Okay?
+Let me just hit enter and we will ignite our app now.
+As I hit enter, we are igniting our app now.
+Oh my God.
+What has happened?
+You would say nothing has happened.
+No.
+A lot of cool thing has happened.
+Let me show it to you.
+Okay?
+Let me just show it to you.
+So it says that now let's see this carefully.
+It says server running at localhost1234.
+Parcel has basically created a server for us and our
+app is now available at localhost1234.
+It took 874 milliseconds to build it.
+My dear friends, by just writing this one command npx
+parcel index.html, we have parcel have in like just ignited
+our app.
+If I go to localhost1234c, our app is now hosted onto a
+server.
+Earlier the URL was this ugly, right?
+This file we had to open.
+This is not a good way to host our apps.
+This is not a good way.
+Our actually when we will host our app onto server, it will be
+there on the server, right?
+It will be there on a port.
+So our code is now hosted onto localhost1234 port.
+Parcel is doing this for us.
+Parcel has basically created a server for us and it has
+given 1234 port and it is hosting our app onto our
+server.
+Oh my God.
+Do you see our app is running?
+It's the same thing.
+Right?
+Now, what parcel did?
+What else parcel did?
+Let me tell you.
+It is not that easy.
+Parcel did an amazing thing over here.
+See, what else?
+As soon as I did npx, so first of all, let me explain you
+the meaning of this command.
+So what is this command npx parcel index.html?
+Just like we have and take this down as your in your
+notes, okay?
+Just like we have npm.
+Similarly, we have something known as npx.
+npm, npm.
+When we do npm, right?
+It means note, it means we are just calling the
+command of npm, right?
+npm means installing, sorry.
+So npm means executing a package.
+Got it?
+npm, npm commands are different.
+If you have to install a package, you need to write npm
+install and then you install a package.
+But suppose if you want to execute a package, right?
+Execute a package.
+You just write npx parcel and something, right?
+npx, any package name, it will execute that package.
+Right?
+So we have done npx parcel index.html.
+That means we are executing parcel now.
+We have executed the bundler, the parcel.
+And let me tell you, my dear friends, parcel is such a beast.
+Don't you believe it?
+I'll prove it to you.
+So now basically when we do npx parcel index.html,
+basically index.html is the source.
+So what happens is parcel basically goes to the source
+index.html and build a development build for our app.
+And it hosts that development build to localhost1234.
+Okay?
+And that's how we are able to access our app over localhost1234.
+Now, let me just show you one more thing.
+Okay?
+When we have npm with us, now what we'll do?
+Let me just close this up and what we will do?
+Now, I will, what I will do is, in our index.html,
+remember how do we inject it, react into our app?
+Okay?
+Let me just move this down.
+How did we inject it, react into our app?
+How did we bring that react library into our app?
+We used CDL links, right?
+And that time I told you that this is one way to do it.
+Another way to get react into our app is via npm.
+Okay?
+Got it?
+Another way to get react into our app is via npm.
+So basically, see what is react at the end of the day?
+It's a JavaScript package, right?
+It's some piece of JavaScript code and it is hosted over npm also.
+So in npm, we will get that react from npm now.
+We don't want to do this.
+This is not a good way.
+Okay?
+Write it down in your notebook.
+This CDL links is not a preferred way to do,
+to bring react and reactdom into your project.
+Why?
+Tell me why?
+Let's explain.
+First of all, see fetching from CDN takes is a costly operation.
+If I will fetch from CDN, it will make a network called to unpkg.com
+and it will get react from unpkg.com.
+Suppose if I already have, I already have react in my node modules, right?
+If I already have that in my node modules,
+how easy would it be to use react inside our code?
+Isn't it?
+So first thing is that we don't want to make another network called to get react.
+We will have it already in our node modules, right?
+That is why we will install it.
+The second thing is today, this is react at the rate 18.
+Tomorrow react 19 came in.
+Tomorrow some other version of react came in.
+What will happen is we will have to keep changing this URL, isn't it?
+So it's better to just have it inside our package.json.
+It is easier to manage all our dependencies
+and it is very easy to manage react also
+as one of the dependencies inside our npm package.json.
+Does that make sense or not?
+So what we will do is now we will install react as a package, okay?
+To our code.
+How do we install?
+How did we install parcel?
+We will install it in the same way.
+Now I will do npm install and I will install react.
+Now listen to me very carefully.
+I am not writing a hyphen d over here.
+I did hyphen d for parcel.
+Now I'm not doing a hyphen d over here
+because I need react as a normal dependency, not as a dev dependency.
+Does that make sense to you?
+Let's install react.
+So if I install react, now you would see, see,
+we have got these dependencies react over here.
+React version 18.2.0 and I care it.
+Suppose tomorrow 18.2.3 comes in.
+It will be there in our code.
+Got it?
+And now when we have this package.log.json will also have react now, okay?
+So if I search for it, you would see react.
+See, react version 18.2.0 is here.
+Isn't it?
+And we will have react inside our node modules also now.
+React will be there inside our node modules also now.
+You go ahead and see it.
+I know it.
+Yes, react is here.
+So we have now installed react as a dev dependency.
+Similarly, let us also install react down.
+Isn't it?
+We needed two files, right?
+React and react down.
+So let us install react down also.
+How will I install?
+I'll again write npm install react down.
+Now let me tell you one more thing now when I'm talking.
+So sometimes you will see a lot of people will do this, okay?
+npm I react down.
+So you would be confused.
+Oh my God.
+And some people do npm I.
+Akshay is writing npm install.
+See, npm I is a short form of npm install, okay?
+So I am telling you all these small things.
+I'm telling you all these small things, okay?
+So npm I is a small version of npm install.
+So if you write npm install or you write npm I is one and the same thing, okay?
+So if let me write it npm I and if I write npm I hyphen ipni space react down,
+it will install react down package for us, right?
+Now if you go to package lock, you would see react and react down as the normal dependencies over here.
+Got it?
+So we have react and react down 18.2.0 in our projects.
+How easy it is to get a library or a dependency into our project using npm, isn't it?
+Right?
+Now let's use this, right?
+Let's use this.
+Now we no longer will need the CDL, right?
+Now we no longer need the CDL.
+Got it?
+Now we no longer need the CDL.
+So we have got react and react domino project.
+We have removed CDL links.
+Will this work now?
+Will this work now?
+Tell me.
+If I go to my browser, if I refresh my page, will this work now?
+It did not work.
+Oh, first of all, we need to just start our server, right?
+We did not do npx parcel, right?
+Parcelindex.html, okay?
+Now we have started our server.
+It's bundling.
+It created our server.
+Let's go back, refresh our page.
+It says Akshay is here.
+It gives you an error that react is not defined.
+Why?
+See, we have just installed a package.
+But our code yet does not understand where this react is coming from.
+Earlier, this react keyword was coming from our CDN links, right?
+Now this react, we have installed inside no modules.
+How do I use that react into my code now?
+I will use it using a keyword known as import.
+Now you understood a lot of people, a lot of react developers since so many years are writing import always.
+But they don't know what does it mean, right?
+This import means I am importing my react from react.
+What is this react?
+What is this react?
+What is this react?
+This react basically refers to the react inside our node modules.
+Does it make sense to you?
+This react basically means that this react is coming from this react over here.
+This react here.
+Got it?
+So this is the meaning when we write import over here.
+This is the meaning of react import, right?
+Similarly, I need react, right?
+I will also need react now.
+So all these will come from my node modules now.
+Okay?
+Node modules now.
+Got it?
+So all both of them will come from my node modules.
+We have react dom from react dom.
+Okay?
+So now if I go back, will this work?
+Will this work?
+Let me know.
+Will this work?
+Let us go back.
+It says that browser scripts cannot have imports or exports.
+I knew that we will get this error.
+What does it mean?
+You know, I don't want to fix everything and show it to you.
+I want to teach you by making mistakes.
+I will intentionally make mistakes and then I will tell you how to resolve it.
+Got it?
+That way you will learn exactly, you know, this is the life of developers, right?
+The life of developers is to face a lot of bugs, issues, here and there, errors and whatnot, right?
+So I want to show you the path exactly how you would follow.
+Okay?
+So when we install a create react app, it just automatically blows up a new react app for us
+and it is already a production ready app.
+But I want to show you the pain of setting up a app.
+Then you will realize the beauty that so much engineering goes behind, right?
+Baking a app production ready.
+Got it?
+It's not just, you will learn a lot of things also that what's happening behind the scenes.
+Okay?
+Let's read this, okay?
+So it's an error, but do you see one cool thing?
+Earlier we used to get a bad type of error.
+Now this parcel is throwing a good type of error, right?
+It looks beautiful, isn't it?
+Earlier we don't use to get this proper error, right?
+We used to see a red thing in console and we have to figure out what is happening.
+Now it is exactly saying the error is over here in this line.
+So it says that browser scripts cannot have import or export.
+What does it mean?
+Browser scripts cannot have import or export.
+Let me explain you.
+Basically in our HTML we are injecting this app.js.
+So it treats this script as a browser script.
+It treats that this is a normal JavaScript file.
+But is it a normal JavaScript file?
+No.
+Basically it says that it cannot understand what is this import, right?
+Browser scripts cannot have import.
+It is considering this script as a normal JavaScript, right?
+And normal JavaScript does not have import in it.
+This import is not a normal JavaScript, right?
+Normal browser scripts cannot have this import.
+Now we need this import.
+So that is why we need to tell the browser that this file is not a normal browser file.
+It's a module.
+How do you tell it?
+You will have to write type module over here.
+Got it?
+If you will write type module it will be not a normal browser script.
+It will be considered as a module, okay?
+Now I will save it up.
+As soon as I save it let's go back to our browser and see, right?
+The error has gone and we have seen our whole HTML back again.
+Now our React my dear friends is not coming from the CDL links.
+Our React is now coming from our node modules.
+The package which we have installed as a dependency in our package.json using NPM, right?
+The import React is coming from here.
+These node modules, right?
+So this is what we did.
+Now if we will see this warning, right?
+This warning says you are...
+Ignore this warning.
+We will fix this later, right?
+You are importing createRute from reactDom.
+So this is...
+So earlier you know.
+I will tell you why this warning is coming.
+So it says that use reactDom slash client.
+So earlier this reactDom used to come from reactDom, okay?
+Like this.
+But now it has started throwing error and it has...
+Sorry, warning, right?
+Developers ignore warning but let's not ignore warning right now, okay?
+Let's see the warnings, okay?
+Generally developers ignore warning but let's see the warning right now.
+It says that, okay?
+You need to import from reactDom slash client.
+It says that import from reactDom slash client.
+Earlier it used to be imported from reactDom.
+Now react says that this is a new reactDom, right?
+Which they have...
+Which they have gotten and it is inside reactDom slash client.
+So let's import reactDom from client and the warning will go away now.
+See, the warning has gone away.
+Now let me show you a magic.
+Are you ready to see the magic?
+I'll show you a magic scene.
+Let me just bring it...
+Bring the browser on the side of the editor, okay?
+Let me just collapse this a little, right?
+Let's go back to our app.js and I'll show you one cool thing, right?
+Over here we have written IML H1 tag, okay?
+Let's write this is namaste react, right?
+Namaste react and I'll show you a magic, okay?
+This is namaste react.
+Let's give it a...
+Let's give it a emoji also, okay?
+Let's give it a rocket emoji.
+I just love this rocket emoji, okay?
+So let's give it this is namaste react.
+And my dear friends, see, I will save this file.
+I am saving this file, my hands are up.
+I'm saving this file 1, 2, 3.
+I saved this file and see, our browser automatically refreshed.
+Our browser automatically changed.
+Isn't this cool?
+Suppose if I'm developing something, I'm writing something, right?
+Let me just remove this child maybe, right?
+Let me just...
+Or not, right?
+Let me just change this.
+This is H2 tag, right?
+So let us write some random stuff over here.
+And as soon as I save this file, see, it automatically reloads.
+You know, this powerful thing is done by parcel.
+I told you, right?
+Parcel is a beast.
+Parcel does a lot of things for you already.
+Okay, let me just...
+You know, let's go to read me, right?
+Let me just create a log or something, right?
+Let me just say parcel, okay?
+Parcel, okay?
+And this parcel, right?
+What this parcel is doing it for you?
+First of all, parcel created a dev build for you.
+It creates a local server for you.
+Isn't it?
+It hosts your app to the server.
+Isn't it?
+What it is?
+It is creating a dev build for you.
+It is creating a local server for you.
+Now, what is parcel is doing for you?
+Parcel is automatically refreshing your page also.
+What does that mean?
+Parcel is refreshing.
+That means it is doing something known as HMR.
+What is HMR, Akshay?
+Can you tell us what is HMR?
+Yes, it is hot module replacement.
+Hot module replacement, right?
+You know, when you save this file, right?
+If you change anything in this file, suppose by Akshay Saini, right?
+I have written Akshay Saini.
+And as soon as I save this file, it automatically refreshes our page.
+This is happening because parcel is doing something known as HMR.
+You should know, parcel makes our development experience so smooth.
+Earlier we used to write that HTML file we were hosting, right?
+It gives us a server.
+It builds a development build.
+It hosts that development build into that server.
+It is giving you HMR, hot module replacement.
+Amazing, isn't it?
+And how is it happening if you make change in any file?
+Suppose if I make change in this namaste index.html, right?
+Instead of this namaste react as the title.
+Suppose if I write Akshay over here.
+So, see the title will change on the top of this browser.
+If I will save over here.
+See Akshay.
+It came in Akshay over here, right?
+Why?
+Because it is doing HMR in all the files.
+It is basically reading all these files.
+It is keeping attack.
+And it is, you know how parcel is doing that?
+I will tell you how parcel is doing that.
+Parcel uses a file watching algorithm.
+Parcel uses a file watching algorithm, my dear friends.
+And this file watching algorithm is written in C++.
+Do you see that?
+Do you see that?
+Right?
+We are writing JavaScript.
+But that file watching algorithm is written in C++.
+It keeps an eye on all these files.
+As soon as we are developing something.
+We change anything into our code.
+Parcel is keeping a track of every save that you do in your project.
+As soon as you do, it will build it once again.
+See, I will show it to you.
+As soon as I save my app.js file.
+See, what you will see over here?
+It will build once again.
+See, if I will save.
+Do you see built in 6 milliseconds?
+If I save it again.
+Do you see built in 4 milliseconds?
+Right?
+As soon as I save.
+It is building it once again.
+And why it is reducing the time?
+Earlier it was 8 milliseconds.
+Suppose if I stop the server.
+And let me build it once again.
+If I built this once again.
+It was built in 3 milliseconds.
+It is even reduced.
+Why it is reducing the time?
+Why it is reducing the time?
+It is reducing the time always.
+Is it reducing the time always?
+Will it go below 3 milliseconds?
+Let's save this once again.
+It takes 44 milliseconds now.
+It takes 9 milliseconds.
+If I save it.
+3 seconds. Why?
+How it is taking so less time?
+Because
+parcel is
+using.
+Parcel is caching things for you.
+Parcel
+is also caching things for you.
+It gives you faster
+builds.
+Faster builds because of caching.
+Parcel
+is giving you a faster
+development experience because
+it is also doing caching.
+Where it is caching
+things up?
+Do you know where it is caching things up?
+I'll tell you.
+Parcel when we installed parcel
+when we build our project.
+Parcel quickly sneaked into our project
+and it also took some
+space. Here is our parcel
+cache.
+So this partial cache will have
+files.
+Those are binary files.
+But I don't know what file it is.
+It's kind of like binary files.
+And this partial cache is
+basically caching everything that you do.
+It is
+supporting
+HMR. It is watching all those files.
+It is caching it so that the
+next builds are developed faster.
+Okay.
+I'll show you one thing.
+Let me delete this partial cache.
+Let me delete this. Now I have deleted this.
+Let me stop my server and I will
+restart it. Okay. I will restart it.
+You will understand the beauty
+of parcel. Okay. Let me just
+explore this. See it took
+495 milliseconds to build.
+495 milliseconds is a
+very fast time anyways.
+It just built everything together
+in 495 milliseconds.
+Development build that
+created. But if I
+will create subsequent builds.
+Suppose if I am changing anything inside
+my files. Let me go to index.js
+App.js. If I
+am saving this file. See
+it will create another build in 19 milliseconds.
+495 was
+reduced to 19 milliseconds. If I
+save it once again. 9 milliseconds.
+If I save it once again. 6 milliseconds.
+If I save it once again. No
+it's not reducing now. Right. So
+6 milliseconds it brought it. Why
+it is caching things up.
+Parcel is
+such a beast.
+Right. It's also caching
+things up for you.
+Right. How cool this is.
+Right. So parcel is
+doing a lot of things behind
+the scenes for you. It has this file
+watching algorithm. It has a lot of
+things. Right. Which we see. What
+is parcel does. I will tell you
+what is parcel will do. Right.
+Parcel will also do your
+image optimization. You know
+what is the most
+expensive thing
+in your web browser is to
+load images in your page.
+And parcel basically
+if you will keep images parcel
+basically do image optimization
+for you as well.
+Parcel basically do image
+optimization for you as well.
+What else parcel will do? Parcel
+does parcel when you will
+make a production build. See
+this is the development build. Right.
+Suppose if I create a
+production build. If I will
+create a production build it will
+minify our file also. It will
+do minification of our file also.
+Parcel will
+bundle all the files also
+for us.
+It will do bundle. It will do
+bundling. So basically parcel
+is a bundler. Its basic core job
+is to bundle things up. Right.
+So it will do bundling. It will
+minify also. It will optimize it.
+And what else parcel will do?
+Parcel will also compress
+your file. Right. Files need
+to be compressed so that the size is small.
+Right. So that we
+can ship these smaller versions on to the
+code. It will remove all
+the white spaces from your code.
+It will minify it. It will
+pack all your JavaScript files and
+ship it on to production.
+Parcel is
+such a beast. Parcel does
+a lot of amazing things behind the
+scenes. Let us give a big round
+of applause to Parcel for this.
+Parcel is amazing.
+A lot of people think that
+ok. React apps are fast
+because
+React is fast.
+But they don't know
+that when we build large scale
+production ready. Remember
+we need a lot
+more things instead
+of just React. React
+makes things fast. We will see that later
+in this episode. Right. But
+let us first appreciate that
+React is not the only thing that is
+making your app fast.
+Not lot of people when I
+ask them in interviews that why your
+app is fast. They will say React
+is making it fast. Yes. React is making
+it fast. But there are so many
+more things that the bundlers are doing.
+You know
+when I build this Namaste React
+I just did not wanted to teach
+you how to write code in React.
+I also wanted to teach
+you that when we build a large
+scale application we should have that
+knowledge. That
+what is making it
+super fast. What is making it
+optimized. Parcel is doing
+so many things. Right.
+When we do NPS create React app
+a lot of tutorials you know outside
+you go watch any React tutorial
+they will start from creating a create React app
+and it will give you a scaffold
+which will have a bundler inside it but will have
+all these things already built in.
+I wanted to show you how
+to build things up for you.
+It will automatically have
+HMR. It will automatically
+have your local server. It will
+automatically have a file watching algorithm.
+It will automatically have minification bundling.
+I wanted to show you that this
+all things are not automatically
+present. These things are
+basically automatically
+not present but it is
+webpack or parcel or
+weed or any bundler that you use is
+doing it for us. Right now
+parcel is doing
+all these things for us.
+Parcel is amazing. Parcel
+is giving muscles to our skeleton
+to our bones.
+Parcel is giving energy to our
+app. It is not
+just React.
+Got it. And parcel in
+itself is also not doing everything
+on its own. Right.
+For minification parcel would be
+using some of the libraries.
+These are the helping libraries.
+Parcel is like a manager of all these
+libraries. Right.
+And parcel is also not doing everything
+on its own. Parcel is using all those
+other libraries. So think of it
+like suppose
+in our Indian government. Right. We have
+PM Modi. Right. I am just taking a
+politics example but
+I don't know why but assume that
+PM Modi is React.
+So Amit Shah is parcel.
+You need
+Amit Shah along with Narendra Modi.
+Right. They don't, they can't exist
+separately. Right. They exist
+separately but they are needed together
+to build that government. Right. And there
+are small ministers. Right. Finance
+minister, health minister, education
+minister, MSME minister and all
+that ministers. These are these packages.
+Nice example. Right. I gave this
+example to my
+when I taught React last time and
+the people just chuckled it on.
+But yes it is like that.
+Parcel cannot do everything on its own
+but parcel is such a beast that
+it is managing everything for you
+and it is giving you so many things
+for us.
+Okay. So parcel is
+such a beast. Okay.
+Let me just go back to that
+whole thing. I don't like side by side.
+It does not gives you a clear view also.
+Right. Let me go back to our
+code. Where is my code? Oh my god.
+Let's bring this code over here.
+Right. Okay. Here is my VS code.
+So parcel is doing all
+these amazing things for you.
+Parcel is not just
+doing this but let me tell you more
+things that parcel is doing. Parcel
+uses something known as consistent hashing.
+Consistent hashing.
+Right. So when you do
+consistent hashing, it keeps
+a track of all.
+Okay. I don't want to dive
+deep into everything. Consistent
+hashing in itself is a huge topic.
+Read about it yourself. Okay.
+Be curious about every small thing.
+Read about consistent hashing.
+I'm not going to dive deep into consistent
+hashing now. But let me tell you it is
+doing a lot of things. It also
+does code splitting for you.
+It will do code splitting for you.
+Right. It will do code splitting for
+you. It will split your files.
+Right. It can also do differential
+bundling. What is differential
+bundling?
+What is differential bundling?
+Parcel is doing that for you.
+Differential bundling means
+see
+when your app will be hosted.
+Your app
+you know, suppose
+your app. Right. I'll tell you one
+good thing. Right.
+Your app can be
+can be
+opened. Your web app can be opened
+inside Internet Explorer.
+Your app can be opened inside older
+versions of Internet Explorer. Your
+app can be can be opened inside
+Google Chrome can be installed inside
+Firefox can be installed inside mobile
+browser something something. So
+Parcel takes care of
+all that and it will give differential
+bundling
+to your app. So that your
+app runs smoothly on older
+browsers as well. Right. To
+support older
+browsers.
+Right. It gives you the
+support of older browsers also. I'll
+tell you how do you configure to support it
+in older browsers. I'll tell you it right away
+right after after some time
+right. But Parcel gives you that
+ability that you will have a different
+bundle for different
+type of apps. Different type
+of older browsers.
+It will add some extra things
+that will help you do all
+of it.
+Got it. So Parcel does a lot
+of things. Parcel gives you
+do you see the error we got right
+that error was beautiful looking error
+otherwise it just
+you know most of the times in your web apps
+you get error but
+the user does not see any error right.
+You do not see error on the page
+just our console gets read.
+Parcel gives you a beautiful error display
+view. Parcel is doing
+some diagnostics behind
+the scenes. Right.
+Of your app it is also giving
+you good error right.
+Good error handling right. It gives
+you it gives you better
+suggestions. Right.
+Parcel is doing a lot
+of amazing things for you my friends.
+Lot of
+amazing things for you.
+This is how beautiful Parcel is.
+Right now our app is hosted
+on HTTP right. This
+is HTTP.
+I can. Parcel also
+gives you a way to
+host your app on HTTPS.
+Suppose in your
+development environment suppose I am developing
+right. Right now I don't need
+HTTPS. But suppose if I want to
+test something which only works on
+SSL. HTTPS.
+Parcel gives you that features also.
+Did you fall in love with Parcel
+or not. Do you see
+do you agree to me or not that
+Parcel is such a beast.
+Parcel is such a beast.
+Now you can you know you can ask me
+Akshay how do you know that Parcel
+is doing all that stuff for us.
+I am telling you my dear
+friends Parcel is doing all of this for
+us. Why because I
+have read Parcel's
+documentation. Let's go
+to Parcel.com right. Parcel.org
+So this is Parcel's
+documentation
+just it is
+you know my dear friends
+Parcel's documentation is one of the
+best documentations that
+I have read. It
+explains beautifully what all Parcel
+is doing it for you. Right.
+If you will see it's a zero
+conflict tool right. It
+gives you a it gives you
+a dev server right. We
+got a dev server. It gives you
+hot reloading, HMR
+hot module replacement.
+It is zero conflict tool
+right. We just installed
+we just ran NPX Parcel index.html
+and just executed Parcel
+zero conflict right
+very easy. It is
+giving you diagnostics see when you will
+do diagnostic right see it gives you
+beautiful errors. Beautiful diagnostics
+of your app in your terminal
+right. If suppose there
+is a app it will give you beautiful errors
+in your terminal so that it
+helps you increase your
+development experience
+right. So I have read
+I have read why I know all
+that stuff. I have
+read all this documentation
+that is why I know Parcel
+does reliable caching
+read about it. Be curious about
+every small thing. I can't
+cover like 100% of Parcel
+here right. But I would suggest
+you to go ahead read about
+Parcel what it is doing. Parcel is such
+a beast. You would be amazed
+about how beautiful
+software Parcel is. What
+beautiful things Parcel give it to us
+such an awesome engineering
+masterpiece of engineering
+these bundlers are. You know
+we have you know
+there is something known as lazy dev builds
+okay. There is something known as
+tree shaking also. Yes see
+there is something known as tree shaking also
+Parcel does tree shaking how
+can I forget this. This is amazing
+this is amazing
+my dear friends.
+You know tree shaking
+algorithm right. What happens
+is see in our whole
+code suppose we have
+hundreds of functions in our code
+but suppose if we are just using
+4-5 functions in our code
+so what it will do Parcel will
+tree shake your files
+Parcel will remove
+unused code for you
+will remove unused code for you
+oh my god
+Parcel is so
+intelligent it will remove
+unused code for you elsewhere
+suppose if there is some
+extra random code which is there
+you are not even using it Parcel will remove it
+it will compress it
+it will verify it it will do all
+of the things for you.
+Read this documentation you will see
+it does minification it does image
+optimization it does code splitting
+it does consistent hashing see I was talking
+about this right. So it will just
+it will just make
+your experience super smooth it will
+make it very fast I just
+love it right. It will do
+transpilation for you it will
+so Parcel will do differential bundling
+for you right. This differential
+bundling means if you have a script type
+module it will generate a no module
+fall back for older browsers also
+so this is differential bundling right
+when you have a script type module it will
+generate a no module fall back for older
+browsers also so Parcel is doing
+amazing thing Parcel have a
+web worker service workers
+read about it read
+such amazing documentation
+right if you do get started
+go ahead read this things out that
+if you go to development right read
+this things. Parcel has a lazy
+mode if you will do
+hyphen hyphen lazy it will load in a lazy
+mode it is doing caching
+it is providing HTTPS
+right if I do Parcel
+hyphen hyphen HTTPS
+right over here if I am building it
+right I included NPX
+Parcel in desktop HTML hyphen hyphen
+HTTPS it will load in HTTPS
+mode. Read about
+all these things right
+when you will read about all these things
+right it will you would
+love it right go to production
+see what it is doing it is doing tree shaking
+it is doing HMR
+is there HMR over here
+where is HMR HMR hot module
+reload no it's not here where is
+HMR
+it must be
+here right just go ahead
+and like just see what amazing
+things it is doing right
+all it will talk about
+file watching algorithms it will talk
+about everything all that I have read
+from documentation okay
+please read these documentation
+you would love it right
+please read it I would suggest you
+to highly read it and next
+time my dear friends
+if you go in a system design interview
+why I am talking about all this
+this will help you in your system design
+interview when you are a senior
+developer you should know
+what makes your reactor faster
+what you make your reactor
+performant what makes your reactor
+fast what makes your developer
+experience better you should
+know answers to all of this
+react app is not just
+react app is not just having
+react react uses a lot
+of other libraries
+lot of other packages lot of other
+dependencies our project will
+need to make it a production
+ready large scale application
+here I am going to teach
+you how to build a production
+ready application using
+0 this is just episode
+2 my dear friends I have not
+even started writing code inside react
+properly but
+I want to spend time
+in teaching you all this thing
+because I feel this is really very
+important next time you will go
+in a system design interview you
+will be able to tell the interviewer
+that oh my god this is
+happening because we will minify
+our app we will bundle we will do code splitting
+we will do tree shaking we will do all of
+this parcel will do it for us
+you should have that understanding of bundlers
+you should have that understanding
+of all these small nitty-gritty things
+how parcel is fast because it has
+a partial dot cache
+it has a different
+build for dev right different
+different build
+for dev and
+production right it
+creates a different bundle
+different dev and production bundles
+ok because
+production build takes a little
+more time than building it for dev
+ok some optimization
+are more on production build
+there are less optimization on dev build
+right so how do you create a
+prod build right we will create a prod build
+also ok I will show you
+how do we create a prod build
+are you ready
+let me show it to you how do you
+create a prod build ok so if you
+have to create a prod build you write
+npx right but
+before creating a prod build let me
+tell you one thing right you have to do
+npx
+npx and you have to do
+parcel oh my god
+where am I writing npx
+parcel and you have to give it
+build and then you have to give
+index dot html the only
+thing here is you have to add this build
+overhead parcel
+build index dot html now
+if you will run this command you will get into
+an error I know this
+right I know this
+right why it is saying because
+see there is a conflict right we have
+this index dot html in our package.json
+we have this main right
+this give you don't need
+this when you are using parcel
+this main basically
+see it is a way to
+tell npm that this is the entry point
+of our app when you are using
+parcel we give the entry
+point like this index dot html
+so parcel
+conflicts with this so
+you will get an error so remove this
+okay
+you will get into this error note it down
+properly you have to remove
+this main okay because
+npm right that package
+dot json it is automatically
+generated it for you main app
+dot js so remove it okay
+you have to remove that line
+I am telling you note it down otherwise
+you will again right you will be
+getting troubled right when
+you will code so remove this
+and save it up and go back
+and do a parcel build index dot
+html let me tell you one thing
+right so what it will do
+is when it builds a production
+idea where does that build
+goes up
+when you do npx
+parcel build index dot html
+it will bundle it will
+do all the crazy stuff
+and it will all it will
+put all those files inside
+this new folder
+which we see which is dist
+folder okay right
+now these files are used
+in our development right we will
+we were doing development right
+so this dist was containing
+development build files right now
+we are generating production build
+right so this dist
+so this dist is basically you know these
+files this hosted thing
+which you saw was right this was coming from
+this dist this dist folder
+okay
+now I think you might be getting
+confused let me tell you what is this dist
+right so what parcel does is
+when you execute parcel right when you
+write npx parcel index dot html
+it generates a development
+build of your project and it
+hosted onto one two three four so
+when it generates a development build
+it puts it up into this dist folder
+right so
+this code was coming from
+this dist this was not coming from over here
+this was coming from this dist
+and when you
+refresh the page when you save files
+it was using parcel cache and
+dist to update it using
+that hmr hot module
+replacement everything is working in sync
+now when you will
+when you will build a production build
+it will build it inside
+dist got it so what I
+do is let me delete it this
+is this can be generated automatically
+again right this will be automatically generated
+I have deleted it
+now if I if I build it for
+production it takes more
+time see remember when
+we were building development build it was
+495 milliseconds
+now when you build a production
+build using this command
+npx parcel build
+index dot html
+what happens is it is
+taking time to build it takes
+1.46 millisecond and it has built
+3 files for you
+it will 3 files
+right it has
+don't worry about other files these are
+just css dot map
+and these are just mapper files
+but there are 3 main files
+which you have to care about
+what is this index dot html see
+do you see it has compressed all our
+index dot html code in one line
+do you see all that html code
+it will give you one html
+file one css file one
+css file don't worry about these
+map files these are just
+different files right these are just
+mappings which are required
+by parcel but there are main
+3 files
+suppose if you have a lot of files
+right suppose if your
+app will have like 10-20 files
+it will compress everything
+and minify everything to these 3
+files and now
+these 3 files will contain
+all the code that you write
+these 3 files are the
+production ready code
+of your app
+production ready code my dear friends
+right if you will see the js
+file see what it has done
+parcel has just compressed everything
+minified everything for you isn't it
+right do you see this
+what is this our code
+is lost inside it
+parcel basically did tree shaking
+also parcel basically cached
+also parcel did minification
+compression everything and built these 3
+files parcel has also
+compressed your css though there was
+nothing to like compress
+inside css right it was just
+two line it was just one line but it
+is compressed it is compressed js
+shall we try to find our
+code inside it right what did we
+write some namaste react or
+something see here is our code
+see what it did to our code
+amazing right
+we wrote it something else right
+we did that create element
+it see it modifies our
+code in such a way
+remember we did root not render
+see it did root not render for us
+it changed the name of the
+variables right remember we did
+render and then we gave the name
+heading right
+this app.js this we gave the name
+ok parent right we gave the name parent
+it has compressed everything
+parcel is
+such amazing right it has
+changed the name for this
+this is
+how amazing parcel is
+it has created a production
+build for you now this
+production build is a highly optimized
+build which you can push
+on to production and serve
+this app to the users it
+will be fast it will be
+performant it will be optimized
+got it
+I wanted to give you all this
+knowledge now
+again I will have one question
+for you
+this parcel.cache
+and this dist right
+this can be regenerated
+suppose if I delete my parcel
+cache let me delete it
+these are temporary folders
+node modules is also
+temporary folder it is not our
+core code ok
+so if I will build my production
+build right if I let me not build
+the production build let me just remove this build
+right let me just build a dev build
+how do you build a dev build?
+npxparcel index.html
+if I build a
+see parcel cache and dist was
+automatically generated
+so these things
+any code that you can
+automatically generate
+you don't have to put in
+github right so we will
+so if the question is
+whether you should put this parcel
+cache and dist inside git ignore
+the answer is yes you will
+have to put because you don't
+want to check out right
+I don't want to push this dist
+I don't want to put this code
+inside my github
+repository why? because
+I already have
+sufficient information to regenerate it
+I will just write
+npxparcel index.html on
+my server and this file will be
+generated once again
+see we just
+take our code and
+post it up on github
+now I know that
+a lot of people will be confused
+I know a lot of people will be confused
+let me help you
+let me help you out
+I will explain you what
+I have bought my pen and paper
+do you have a pen and paper?
+I will teach you
+I have my pen and paper with me
+let me just show it to you
+what will happen is
+suppose this is your local
+got it? suppose we have this local
+so in your local
+you have a
+code right? suppose if you have a code
+now this code
+what you do? we put this code into our
+github repository
+github repository
+suppose this is our gate
+and how
+and then this code is deployed
+onto a server
+this code is deployed onto a server
+so does our local directly connect
+to server?
+no right? this is not the case
+local directly
+does not connect to server
+so we push this code to gate
+and then server fetches this code
+server
+fetches this code
+server fetches this code
+right? and
+this server basically
+will host that app now
+to end user
+suppose this is the end user
+so what happens is
+all the commands that we write
+in our local right? in our local
+in our local
+all the commands npx
+create build npx
+create npx parcel
+build index.html those commands
+will be run inside server also
+server
+that is why so our code
+will have its own package.json
+package.json
+it will have its own node modules
+node modules so we will
+push package.json onto gate
+we will not put node modules
+why? because
+we have package.json over here
+on our gate and this gate
+this server will
+fetch this package.json and it will
+have it will
+do npm install we will do a npm
+install on server and we can
+install our node modules again
+so this copy of node modules
+will be exactly same as
+this copy of node modules but they are not
+the same
+the copy of node modules
+in our local is different
+the copy of
+node modules on the server is different
+this server will have package
+and package lock
+it will have package plus lock
+lock files and it will do
+a npm install
+on npm install
+sorry for a bad handwriting
+it will do a npm install
+on the server
+and you will get all of
+this with you
+got it? so you will
+generate node modules
+server will have
+its own different disk folder
+so we do not have to put
+git you do not have to put
+git parcel cache or
+git parcel cache or disk folder in git
+you do not have to push that
+so that is why you will
+not put disk also
+you will not put
+dot parcel cache also
+lot of developers
+do not understand this
+you do not have to put in all these files
+if you will create a
+create react app that is why I do not
+it will automatically
+takes care of everything for you
+that is why I do not teach
+using create react app
+most of the react tutorials they start with it
+I do not want to because I want to show you
+basic small stuff
+I want to show you that how much
+engineering goes behind the scenes
+when you build
+a production ready application
+want to show you everything that is why
+so listen to be very carefully these things
+are not pushed inside git
+okay so now do you
+see this as like a little
+grayish color that means they are not
+in git all these green files
+will go inside git right and this
+this is the file
+which already is there
+once on git right so
+these are different color coding we have
+right so we have these files right
+so we installed a lot of
+things for us so
+right this is important
+things and now my dear friends at the
+end do you see that
+we created
+a production build application
+for it we have ignited
+our app we have give muscles
+to our app now
+I want to tell you one more thing now when we
+are talking about it now
+let's make our app compatible
+for the older versions of browser
+let's make it okay let's make
+it compatible for older so for that
+you know we will use something known as
+browser's list right
+we will known as something known as
+browser's list if you will go to node
+modules right their browser's list is
+already there now
+but we have to tell
+browser's list that what on browser's
+do I have to support my app
+so for that we will give it some
+configurations I'll tell you so what is
+browser's list so if you will
+search browser's list right
+so this browser's list is a npm
+package right this is an
+npm package it needs
+some configuration it needs
+some configuration don't worry
+if you are not able to understand let's go to
+this go to this website this is a very nice
+website for browser list browser
+list.dev
+so now you have
+to tell your project that
+what all browser's
+should your app be supported in
+you have to tell it
+how do you configure it you will
+configure it inside your package.json
+in your package.json
+you will add something known as
+browser's list right let me tell
+you browser's
+browser's
+list okay if you will give
+browser's list this browser's list
+will take an array of browser
+suppose if I have to
+if I have to just support chrome
+okay so I can write something
+like last two versions
+last two chrome versions
+if I will write like this
+our app will be
+compatible for last two
+chrome versions
+whatever the latest two chrome versions
+will be there our app will be compatible
+for that amazing
+isn't it I can tell
+my app that it should be
+it should be working
+in the last two versions of
+chrome I can write
+last ten versions of chrome
+like I can write last ten versions
+of chrome now
+I can also write something like
+last
+last two versions last
+two firefox versions right
+I can write last two firefox versions
+now it will work on last two
+chrome and last two firefox version
+now you can ask me Akshay
+Does that mean that it will only work on Chrome and Firefox now? Will it not work in Edge? No.
+This means that when you will give this configuration, right? This means that it will definitely
+100% of the times will work in Chrome 2 versions. It might or might not work in
+rest of the browsers, right? But it will definitely work in whatever configuration you give.
+Now, you can ask me, Akshay, how did you get to know what to write over here?
+This is where you will go to this website, right? You can play with it. If you just write last 2
+Chrome versions, you know, it's beautiful. I just love this website. You can play along with it,
+right? You can play along with this website and you can see. See, if I will write last 2
+Chrome versions, it will support, see, Chrome version 109, Chrome version 108. And it will,
+it is only covering 17% of the overall browsers on the Internet. Just 17%. That means only 17% of
+the users have the latest 2 versions of Chrome. 17% of the users. Oh my God. That's so less,
+right? People don't update their Chrome versions, right? People don't update their Chrome. So,
+suppose if I gave in Chrome last 10 versions, so it will support all these 22% of the total
+of browsers. So what I want is my app should work in a lot of, so what is the advantage? Now,
+you can say, let's make it work for everything, right? For all browsers. So what happens?
+Sometimes we don't need to, you know, when you will, it will create different bundles,
+right? It will, it will add extra code to support older browsers, some small, old Internet Explorer
+browsers. Why do you need to do that? If suppose your website, if suppose your website goes till,
+like, is working for like 90% of the whole browsers that exist, it's fine, right? Let's go
+to 90, 95%. Let's ignore the very old browsers, right? It's up to you how you want to configure,
+actually, right? But I am just telling you, it depends on, you know, you can even configure
+for Chrome, for Firefox. Suppose if I just say last 2 versions, right? It's suppose all the
+browsers last 2 versions. It covers 79% of the total overall browsers. Amazing, right? Last
+2 versions, you can give it last 10 versions of all the browsers. It will cover 93%. It's good,
+right? So let's make our app to work on. So I don't need my app to work. So you can configure it
+yourself. I just keep it like this, right? It keeps my app light. Otherwise, it will put in,
+like, random extra code in your system, right? So I just don't want to put in, right? For now,
+see, if suppose now when will we do this, right? Suppose if your app is a government website,
+suppose if your app is a government website, then you might have to, then you can't compromise.
+You have seen, right? So government websites should work on the oldest of the browsers also.
+So government websites should have like 99% of the overall browser coverage.
+But my app over here, Namaste React, all of you are developers out there. I know that you should be
+using latest versions of your browsers. So it's good for me, right? I can just make my app work
+on 79%. That's completely fine. So you can do this also. Let me tell you one more amazing
+things. If you will go over here, go to query compositions, right? So it will take you to
+the, it will take you to the GitHub, right? So now you can even configure that your app should
+work on 99%, 99.5% people in US. You can, you know, browser's list is such an amazing powerful tool
+that you can give it country specific details also. Suppose if a lot of users of my app are,
+my users of my app are just in USA. So let me just configure my app to work on 95% of the people
+in USA. How good it is, right? It will work for like almost everyone in USA. So you can see,
+you can also, you can also work, make it work for, see, you can give it Blackberry 7 and I
+don't know, you can give it browser specific IE 11 and I don't know dead, right? You can,
+you can see all this configuration here, right? You can, you can configure it accordingly, right?
+Go explore this package. But for me, for me, I just want to make it work for last two versions of
+all the browsers that I have, right? This is a decent 80% people. I'm happy with it, right?
+So this is how you can give it, right? You can give, you can make your app work for
+older browsers as well. Amazing stuff, isn't it? Right? How does it happen? Parcel takes care of this
+along with browser's list. My dear friends, now let me tell you an amazing thing. Now, basically,
+with all this parcel, all this Babel, all this browser's list, we have created our own
+create react app. This is what it is inside a create react app, isn't it? We have seen that how
+we can build a production ready app for us. How cool this is? We have learned a lot of things
+in this episode. We have ignited our app. We have given our app superpowers. We have made
+our app production ready. We have made our app intelligent. We have given muscles to our
+app. We have given strength to our app. What I wanted to teach you is that, you know, I just
+don't want to teach you react. I want to also teach you that in your interview, please,
+whenever an interviewer asks, right, why your app is fast, how it is optimized,
+you should be able to answer all of it. In this episodes, I have dived deep into
+exploring what is bundlers, what is NPM, what is Git ignore and all that other stuff,
+what is parcel, what is parcel cache, what is this, what is node modules, why there is package
+lock and package, how it works everything, how HMR is working, so many things. And we saw
+that parcel is a beast, isn't it? Parcel is such a beast. It's amazing. It's,
+it gives superpowers to our app, right? So, I wanted to teach you all of it. Hope you would
+have enjoyed it. This is what I wanted to teach you. Please keep taking down nodes and,
+you know, please keep doing your assignments, right? I will push in the assignments also
+along with these chapters, right? Please keep doing your assignments also, right? And it
+will make you a better developer. And be curious, my dear friends. Be curious about every small damn
+thing. You should know exactly, you know, a lot of developers don't know what React's job is
+and what bundler is doing. They feel that, okay, React code is automatically minified. React
+will minify our code. I have seen, I have asked, I have asked developers in interviews,
+they say that React is minifying our code. React is optimizing our images. React is
+optimizing our code. React is compressing it. No. React is not doing it, my friends.
+I will tell you, and all the Namaste React developers, I say it as Namaste React graduates,
+okay? People who are graduating from Namaste React, you have to not tell all this, okay?
+You have to be confident when you go into the interviewer and tell your interview. I know
+what parcel is doing. I know what react is doing. I know what JSX is doing. A lot of developers
+like, they don't, they feel that all this is happening in React 5 because they just start
+with create reactor. They don't know what is happening behind you, how that code is built,
+what is production built, what is dev built. They don't know I love that.
+I wanted to teach you every small things in a granular way, right? So this is what it is.
+Next time if you go in interview, make me proud. With your heads high, tell the interviewer that
+you know all of it. You know what is preshaking. You know what is HMR. You know what is all that,
+code splitting, bundling, chunking, everything you would know. I will teach you everything,
+my dear friends. So this is what, this is what, you know, React's app are amazing. Why? It's
+not just React that is making it amazing. We will, you know, I wanted to spend just one this episode
+over just bundlers and tools that we will use along with React. We have not even started
+the React. All the other episodes will continue to talk about React. I wanted to keep this episodes
+just to tell you other superpowers. We are going to talk about React a lot in this course,
+right? A lot in this web series. But I wanted to take a moment to also appreciate the how
+beast parcel is, right? So I wanted to take a moment to appreciate that, right? That is why
+I kept this episode just for this. Hope I would have been able to add some knowledge to your
+mind, right? Hope you would have enjoyed this episode as well. I have talked about what are
+transitive dependencies. I have talked about a lot of internal things. Please take down notes.
+Please revise all these lectures. Please do your assignments. I will give you the assignment,
+okay? You will find that assignment where you have seen this lectures, right? There only
+you will get an assignment. Please do, please keep doing all that stuff. And this, my dear friends,
+was episode number two, igniting our app. We saw a lot of things. We saw all these things.
+We go to Git log. We saw all of things what are happening package log package.json. Read me.
+We saw git ignore. We saw how parcel cache work this node modules package package.json.
+So many things we saw in this episode. We also saw that why react why react apps are fast
+when we say that react apps are super fast. It's not just react making it super fast.
+There are so many things which are making it super fast. This was episode two igniting
+our app. We have ignited our app. This is what I wanted to cover in this episode. In the next
+episode laying the foundation, we will start with react till now. We have spent two episodes,
+right? We have spent two episodes and we have not even touched react till now. We have
+learned zero of react. Now in the next episode, episode three, it will be laying the
+foundations of react. We will start the core of react. Are you excited? Are you excited?
+I am super excited to teach you out, right? So we will see react from next episode.
+This was episode two igniting the app. I am signing off. See you in the next episode. Bye bye my dear.

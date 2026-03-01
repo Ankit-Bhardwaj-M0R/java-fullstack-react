@@ -1,0 +1,1532 @@
+FILE: 08. Exploring the world.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+cool so let us just start with the session right are you ready are you excited are you
+excited for today's session yeah cool let us just start show me some energy click on the
+thumbs up button yeah come on let's rise this up yes yes yes so basically we are also
+exploring right from the technical side we are trying to make our platform even better so
+I am constantly working with the tech team to make this a better experience for you all
+right so that if the quality of stream is good the quality of recording is good right
+so I am doing that don't worry about it right in case if you face a lot of issues just
+write to us at support support at the rate Namastitif.com and whenever you are writing
+your queries right whenever you are mentioning any problem report just share a
+screenshot that helps us right right to understand the issue better right sometimes I
+get emails like not working so I don't know what is not working right so okay so please
+do that and thank you so much for all your support and patience right let's just start
+with the session but let me first just let me close my door so that the so that there is
+no echo in my voice okay just just a minute I'll be back yep now it should be better
+yes come on let's study okay so just tell me right I am sharing my screen just let me
+know if the screen is visible or not okay I am sharing my screen very soon okay just
+a minute yep is my screen visible right visible in the chat visible visible okay okay great this
+is what I wanted yep visible visible okay okay visible visible okay cool yep so just a minute
+just a minute I will help you with all right if everything is smooth for you if it is visible as
+well as audible properly just tell me is it visible and audible properly okay I am creating a poll
+okay is it visible and audible properly visible plus audible properly quickly yep
+I want the results to be 100% unless I will keep bugging my tech team here okay okay okay cool
+so let me just zoom it is it better now is it better now better now okay yep cool so let us
+start we were here last time right we were coding our app right so let us just start it once again
+right let me start my terminal where is my terminal okay over here so where is it
+just a moment what happened to this what happened to my VS code where is
+let me restart it once okay where is my VS code minimize it namaste react live VS code right
+I have my VS code with me cool so we have namaste react live over here
+and let me just quickly start so you know there isn't just give me a moment just give
+me a moment let me just set this thing up right cool so you know I can't full full screen this
+right if I full full screen then it becomes bad don't worry yep so let me start my app on
+localhost 1 2 3 4 oh my god okay I did not start it right npm run start okay so we were here
+last time okay we were here last time we had our food ordering app with us thank you for the
+cool name food villa who gave that cool name by the way I forgot who gave that name I forgot
+last time somebody gave that name oh manisha okay okay manisha thank you so much manisha
+for that cool name so we are building food villa and today's session is about exploring the world
+can you guess what we are going to do in this session exploring the world what world are we
+going to explore today what okay people are saying Meenakshi okay whatever manisha Meenakshi
+whatever okay no issue what are we going to explore today
+what are we going to explore yep a lot of people are giving so amazing answers so what we are going
+to do ahead today is last time we had something like you know for people who were not there last
+time and people who have not watched the recordings of last time let me just quickly
+tell you what we did was we were trying to make a food ordering app right we were
+trying to make a food ordering app right kind of like swiggy.com what happened to swiggy.com
+today oh my god okay they are something broke CSS was not loaded anyways so we were trying to
+build a food ordering app for us right here we see a list of restaurants isn't it we see a list of
+restaurants and we saw that what is config driven UI do you remember what is config driven UI do you
+remember that yep yes awesome awesome everybody is amazing over here right so config driven UI is
+is a very powerful way of building web apps and almost every big company uses a config driven UI
+for building web apps so config driven UI means that okay the config or the you can say a configuration
+or a big json object is sent from the backend most of the times see we need a config to generate a UI
+it can come from backend or you can keep it hard coded in your frontend application as well but
+a config or configuration and what is a configuration a configuration is nothing but a
+javascript object or a json data right so any config can power the UI so suppose if we have
+a carousel right so we can have a different config for carousel different config for showing
+all the restaurant and we saw that right we saw that in swiggy.com this config was coming from
+an API call remember there was an API call and we used to get this config let me refresh the page
+delete this and refresh the page so we saw that there was an API call right if we see the API calls
+so we had this API call cool so in this API call we had this config right this config no this config
+right this is the whole configuration it says that our layout has cards there are three
+types of cards the card type can be carousel and card type can be see all restaurants right
+and this see all restaurant basically shows you this these restaurant and these carousels
+show you this carousel so i am not sure why why there are two carousels here but assume that okay
+both of them has a purpose so right now one of them is getting displayed over here right
+one of these carousel is getting displayed over here right so okay some people are saying can
+i reduce my image yes let me reduce it now is it is it good okay cool okay yep so we have this
+over here now we have this configuration see all restaurant this see all restaurant was powering
+this UI right so what we did was we if we see this API right properly let me open it in the new
+tab it will be more visible to you okay so we have this right we have this data now we saw that
+i don't know who is calling me so much today no i don't want to pick calls i i tell everyone
+that don't call me but still they call anyways so cards right in the cards we have three cards
+right this carousel carousel and see all restaurant so this see all restaurant contains
+data of these restaurants see kanur food point right and different type of restaurants so we
+we basically took this data and had it hard coded on to our files do you remember do you remember
+which which file we had this data in which file did we keep this data in yep you are
+absolutely right thank you danish for that thank you akash varnika yep so constants over here
+we had this list of restaurant so this list of restaurant is basically a what a list right
+a list of restaurant is a list and we had these restaurant over here we had i think six seven
+restaurants how many restaurant were there these many restaurant all this data was coming from
+this api this api right and we had this hard coded data with us now when we had this hard
+coded data we went to our body.js in the body.js we we used we used something known as u state
+do you remember what is u state do you remember what is u state yep what is it don't write yes
+write what is u state u state is a hook yep let me explain you once again there was a problem
+there was a issue with a lot of people what is hook actually can you just explain it quickly
+i get a lot of messages from students right let me just quickly revise once again what is hook
+in javascript or in react sorry right so hooks are basically you can assume that there are
+certain okay what is hook at the end of the day what is hook at the end of the day at the
+end of the day all react is javascript and a hook is basically a normal javascript function
+right it's a normal javascript function and this hook is coming from react that means this react
+library is something which is this which has been written by facebook developers meta
+developers right so those developers have given us a functionality this react gives us a
+functionality u state to create local variables in your application to create local variables
+in your applications listen to me very carefully right this is the most important part if you
+understand this you will understand a lot of things okay so when we have to create some
+local variables right so see when you have this when you have a website right when you have this
+website it needs it needs some data inside it right and when we do something on our app
+this data should update our UI should update as in when we are doing something on the website
+isn't it so if there is a website we do something the user is taking some actions
+so the data should be updated so whenever there is something that changes on the UI
+we use a local state to handle that okay does that make sense we use a local state to handle that
+I'll give you an example also okay so let's go to header.com right not header header.js sorry
+so suppose suppose if my title is right so right now my title is a right now my title is a
+image right it's a logo but suppose if my title is a normal const variable right
+const title is equals to let's call it as food villa right it is a normal constant variable
+and how do I show this how do I show this on my page I can show this like this right
+or suppose if I want to show this in my h1 tag how will I show this in my h1 tag I will write my
+h1 tag over here right h1 tag and then I will write a title inside it okay so what will happen
+my food villa will come up over here come up over here okay so my food villa came over here cool
+this you understood right the problem is if you have created this constant variable right now
+suppose if I wanted to change this title on clicking on this search button can I change it
+yes or no can I change it yes or no okay so I'll tell you one example right so
+suppose if I want to let's create a button over here okay button change title okay so if I click
+on this button I want to I want to on click of this right I want to change this title
+right I want to change this title can I change it make the title has new title can I do this
+can I do this can I do this here we have a button change title if I click on it see
+it says assignment to a constant variable it won't work
+suppose okay it was not even constant it was let right or something will it work
+it won't work it won't work right it won't work if you click on change title see
+nothing is happening it won't work why it won't work because react can you know this can update
+the title but then we need to keep our UI in sync with the data we need to keep the UI in sync with our
+state we need to keep the UI in sync with our state okay for that syncing for that syncing
+what do we use what do we use yes we use a state variable did you understand that properly
+now a lot of people had questions Akshay why didn't we create normal variables why do we
+have local state variables so react says that you know let me tell you one more interesting
+story okay so when react was built right react was built react was built with a fundamental
+that okay suppose if okay why react is fast I have to ask you one question why react is fast
+what is one thing that makes react very fast one thing that makes react very fast
+exactly everybody is amazing so it has something known as virtual DOM it has something known as
+reconciliation it has something known as a diff algorithm remember in the last class we talked
+about all that so what happens is how how is recon how does reconciliation process works
+if you understand this small thing everything will make sense how does that work
+yep there is a diff algorithm what happens is okay what is virtual DOM
+is virtual DOM actual DOM is virtual DOM actual DOM no what is it it is representation of your
+actual DOM right let me just quickly revise once again because this is very important right suppose
+if we have an html right suppose if we have an h1 tag right and we have a div over here right
+and suppose if we have a ul over here right suppose if we have a li over here so this
+DOM right this DOM and we can close these tags also this DOM is represented by a tree
+right what is this tree basically this is a representation of a DOM
+it is a representation of the DOM right the actual DOM now whatever happens whenever there is
+a change in the state listen to me very carefully whenever there is a change in the state
+this tree modifies right this tree modifies suppose if we modified this node over here right
+if i modified this node over here right what will happen is react will re-render the component
+and this node will be updated right this node will be updated so what happens is in
+the diff algorithm a diff between the two states right or two different virtual DOM objects is
+compared once again let me repeat it once again when we have a diff algorithm basically the
+current tree is being changed right the current tree is compared with the updated tree or the
+new tree and whatever the difference is there whatever the difference is there that is reflected
+on the DOM does that make sense does that make sense yes or no yes or no once again okay some
+people are still saying it is does not make sense so what happens is in the reconciliation
+algorithm or reconciliation process there is a diff algorithm okay okay what is that
+do you know what is react fiber react fiber is the new and updated latest reconciliation algorithm
+if you don't know about all that read about it in the last session also i covered a lot of things
+but for now understand that okay what happens is whenever you have react right so react may
+right there is a virtual DOM representation right what is a okay what is virtual DOM right
+we call virtual DOM virtual DOM virtual DOM it is a recon this is a representation of a DOM right
+that we understand but what at the end of the day it is what it is in JavaScript what it is
+what it is it's a tree but at the end of the day that is kind of like a very big object
+right kind of like JavaScript object isn't it it is a JavaScript object now what happens is
+whenever there is a state change right whenever there is a state change
+suppose our data are data change from one state to another it quickly calculates the difference
+between these objects and it quickly updates the required node and you know why react is fast
+the answer is if somebody asks you that why react is fast right why react is fast
+it is because of it fast DOM manipulation the most you know the most what you will say
+expensive operation right in the UI state change is DOM manipulation
+wherever you have to modify anything on the UI right suppose if you have to change the list
+or something this is a expensive operation this is a expensive operation so react helps us do
+faster DOM manipulation why it has a faster DOM manipulation how it has a faster DOM manipulation
+yes because of the super powerful diff algorithm the super powerful react fiber right this is the
+core of react this diff algorithm this is the core of react and it it detects that what exactly
+changed in the page and it will just change that it will just change that got my point awesome so
+now if i want to change my title on click on this button right if i want to change my title
+so react needs to know that i have to keep my UI in sync with this variable
+react needs to know that i need to keep tracking the change on title if the title changes it changes
+so react cannot do that on normal variable so we use use state variable does that make sense
+that is why we use state variables if somebody asks you why do we use state variable we can use
+normal variables because react does not track these variables react is not tracking them react says that
+i will only track the variables i will only track the variables which you know i will only
+track the variables which are my local state variables okay state variable that is why we
+create state variable now how do we create state variable how do we create state variable we use
+use state to create state variable use state is a hook right which is given by what do should
+I do should I put curly braces or not when importing use state yes or not quickly quickly
+yep you are lovely my friends what is this known as what is this known as curly braces
+named import yes you are right this is known as named import from react score library
+right if I do a use state now I can use my use state over here how do I create a title
+variable using use state so I will do something known as this this is array destructuring right
+so we have a title and then we have a set title so react gives us access to two things
+a state variable and a function that updates the state variable okay so of state variable
+and a function and we do something like use state right in this use state what do I pass
+in over here what do I pass in over here what is this known as this is the initial value
+with the title so basically if I don't pass in anything over here right this means so
+suppose if I have something like this right it is like not passing in anything but if
+I want to initialize it with some value right we need to pass the initial value to it react
+needs some initial value to put in this variable react needs some initial value default value
+to put in this variable let's call this as food vi la right food villa now react now
+you know this is not a normal constant this is not a normal variable now this is not a
+normal variable now react is keeping a track of this title react is keeping a track of
+this title now because we have initialized it using use state now what will happen is
+as in when title is updated as in when my state changes you know what will happen
+our diff algorithm is super fast and it will just update the UI quickly if my title changes
+it will update my UI very quickly it will re-render this component it will re-render
+this component with the updated title okay let me tell you once again quickly how do
+I update this by using set title so what will I do on click off my button I will
+do a set title okay how do I update my set title to a new name give me a cool name give
+me a new new name right let's call it as new food app right let's give it new food app
+okay so let us let us save it right what I am now doing on click off my change title
+I am updating this title variable and you know you will see your magic now what will
+happen is as soon as we set this title what will happen this whole UI will re-render and it
+will update it on to our UI our whole UI will re-render and it will update the UI quickly
+right let us just see I'll show you quick amazing thing also okay okay I'll show you
+right let's go back to this food villa tag where is my food villa tag yep so now just
+when I click on this title right just see what is here right let me just zoom it a little
+right so just see what will happen over here right just see what is being re-rendered okay
+just see what is being updated over here if I click on my title see did you see that H1
+only changed amazing right it will just change amazing right let me click it once again okay
+just have a look over here in this line right just keep checking this food villa line over here
+right so three two one I am just I am just clicking on it see did you see did you see it
+right so this is the reconciliation process tricking in you know what happened I'll tell you
+one amazing thing as in when I clicked on this button this function was called
+and this title variable was updated and quickly what happened is react just reloaded this component
+when I say reloaded it re-rendered this component and react exactly knows that I just want to
+re-render this I just want to update my H1 tag in the UI I just want to update the H1 tag in the UI
+let me show it to you once again as in when I clicked on this button my title was updated
+this variable got updated the new value and re my UI was in sync react exactly note that only
+only H1 will be updated let me show it to you once again okay refresh the page now just keep a track
+of this H1 right where is this H1 here is this H1 right just see this H1 nothing else will be
+updated but just H1 look at this H1 I am clicking on this button on count of three one two three
+click see this only H1 got updated but but but did it re-render whole component
+what do you think did it re-render whole component yes or no did it re-render whole component
+okay I'll tell you one more cool thing will I do a console log re-render will this be printed
+when I click on that button will this be printed when I click on this button yes or no
+yes or no a lot of people are saying no a lot of people are saying yes
+will it re-render our whole component does it re-render our whole component see this is our
+component right will it re-render everything in print console log every time I change
+yes or no whole component will it re-render no no no let us just see I'll show you amazing thing
+now okay this is something really very amazing in react which I love which I really love okay
+let's go back refresh the page okay so it called render once okay this called render
+once does this make sense why it called render once does this make sense yes okay
+if I click on this button will it re-render the whole component will it re-render the whole component
+I'll break a lot of myths today about react let me click on this button I clicked on this button
+and click it see it it printed re-render amazing right amazing so what happens is whenever
+you change a state variable react kind of like refreshes this component it will re-render the component
+yes this is react and react is doing it super fast assume that whenever you change a state
+it just quickly refresh this header quickly very fast and the amazing thing is it triggers
+the reconciliation process you know what happened when I clicked on this button this happened okay
+this was title right before my title was this assume that my title was this before okay
+my title was this TITLE right this was my food villa food villa right and now this title got
+updated to my new title when I clicked on that button it found out the difference between the two trees
+and what will it update it will just update this node it will just update this h1 node
+amazing isn't it do you find it amazing amazing or not react is super fast it is doing everything
+very fast very fast it takes few milliseconds to calculate all this just a few milliseconds
+this is what powerful it is let me quickly explain you what happened right on click on
+this button see there are two things happening when you click on this button right two things
+that are happening where is my code here is my code right first of all it triggers this
+function and it updates this title right and as in when the title is updated our header component
+is quickly refreshed very quickly you you don't even get to see it and what do I mean by refresh
+when I say refresh that means we are triggering the reconciliation process this process of
+this process of checking the difference between two trees difference between two
+states of the virtual DOM right and it quickly updates it quickly updates this virtual DOM and
+then it is reflected on to the actual DOM as well it keeps in sync that is why react is fast
+that is why react is fast right if you have to implement this the same thing in java script
+it needs a lot of code and it is not performant react does it very fast right so
+it just updates this node right that is why in your h1 taxi when I click on this right food will
+up this this thing will update see only h1 will be changed see that is why I am saying this red
+tree right only this node will h1 will be updated see clicked see only only this changes
+right now and we trigger the render process for the whole component okay this whole component
+is kind of refreshed that is why we use a state variable use state why it re-renders the whole
+component because you might have used title so many times or there could be different state
+variables which are changing right you never know what is you cannot just re-render you have to
+re-render the whole component with the updated state values right it just updates it updates
+the whole UI this is why react is very powerful let just quickly move on right this is what I
+covered last time also and now I am also covering because I wanted to show you right but this is
+what will make your fundamentals very strong okay don't worry let us just move ahead we will be
+using a lot of state if you did not understand it like 100% don't worry we will be doing this
+a lot of times so you will understand everything don't worry about it don't worry about it we will
+be doing it a lot of time so you will understand it so let's go back to body so what we did last
+time was we created a state variable restaurant right we created a state variable restaurant
+now this restaurant was given the initial value of these restaurant variables right this
+restaurant list is coming from this restaurant list is coming from there are a lot of questions
+who are a lot of people who are asking questions like what is the difference between reconciliation
+and dif algorithm and what is dif algorithm what is reconciliation please please go back read it
+up if you did not understand what's this video once again it is not it is not breaking what you
+will learn now don't worry this is in-depth things right it is in-depth concept it will
+not break anything so okay read it up I just told you right for your reference a lot of people
+are writing react without even knowing it okay it feel good that okay you at least know it right
+what is happening behind the scenes so read it up right you will you will understand cool so
+let us just move ahead and don't worry if you did not understand the updates you will understand it
+very well okay so now what I did was we had this restaurant these restaurants were coming
+from this restaurant list this restaurant list was this object right which we got from the
+swiggy's api isn't it this restaurant list was coming from this now what we did we did
+something known as restaurant map and we rendered our component with this data we rendered our
+component with this data whatever the restaurant were there now we also had a state variable
+search text right and we use the use state over here right these are the two local variables that
+I created okay now we bind the state variable to our input box we bind the state variable to our
+input box so whenever I am changing my input whenever I am changing my input my state variable
+is getting updated so my search text will always have updated value of my input box what do I mean
+by that what do I mean by that whenever I am writing something when if suppose I'm writing
+test over here so on every change on every change on every change my state variable
+this search text will have the updated value right will have the updated value
+listen to me please listen to what I am teaching don't ask your questions please like listen to me
+so on click on when we are changing this search text what will happen is it will always have
+updated value this variable will have always have updated value should I show it to you
+once again amazing thing right let's go to the input input field over here right in the search
+container we have this input right now just see what is happening when I type something here right
+just see what is happening when I type something here I am writing T see do you see this getting
+updated this value thing getting updated just see this right T E S T test search right S E A R C H right
+it always keeps UI in sync react is doing this very powerful react is quickly re-rendering
+everything it is just re-rendering on every key change this is why react is fast this is
+why react is fast okay if I if I do a console log over here will this be will this happen
+on every key press on every key press will this be updated or not yes or no
+re-render will this happen on every key press do you think every time I am typing something it is
+just re-rendering again and again is it happening is it suppose if I write my four characters here
+four characters T E S T how many times my re-render will be called how many times four
+times or one time four times or one time see it has called one time first time right four times or
+sorry five times or one time if I write test over here five five exactly you are absolutely right
+so when I am writing right T E S T C it called four times amazing right so what is react doing
+is whenever anything changes in the state it just it just quickly re-renders everything
+this is what the beauty of react is and it is doing it very fast every time I am pressing any button
+T E S T it is each time it is triggering this reconciliation algorithm it is modifying
+the virtual DOM it is finding the difference it is updating the DOM actual DOM and it is
+happening very fast on every key press every key press go back try this in your laptop you will be
+amazed every time right so some people are saying that why is it just why is it just
+changing this value over here so basically it is reloading the whole input you just get to
+see the value it is reloading the whole input okay don't worry it is okay it is just Chrome
+showing you this right so yep so but it exactly knows what needs to change cool awesome so this
+is what is state and we need state for almost everything in react every UI change that we
+have to do we need state suppose if I don't want to change anything in my UI suppose if I
+don't want to change anything in my UI right then I can use a local variable suppose I had a normal
+text right then I can use a normal state variable when you don't have to change anything
+okay then you can use normal variable got it awesome now let us just go ahead and see
+last time we built this right last time we built a search functionality let us just see was that
+search functionality working right how was it working let us just try to do dry run of it right
+dry run of it okay so if I write my king over here if I write my king over here and if I click
+on this search button see what will happen it searched king how did this happen how did this
+happen how did this happen right so yes it was not working properly see it was not working properly
+if I if I search for anything else now if I search for kfc now it won't search see it won't search
+I'll tell you both of the things why it was working initially why it's not working now
+okay I'll tell you both the things let's go back refresh the page right what happens let
+us just see what happens if I am doing king and clicking on the search button let us see what
+happened in our code when I clicked on this search button right when I clicked on the search button
+it called this function this on click handler what did this on click handler do it called the
+filter data this filter data right now this filter data took two variables in it search text
+basically the text this king right this king and it's also took the restaurant list this
+restaurant list the initial value of restaurant list was this right and now what happened is
+once we have this restaurant list we pass this now it filtered it right now it filtered it
+suppose there were eight restaurant right there were eight restaurant so it filtered out restaurant
+list eight restaurant list it filtered out filtered out restaurant with the name king right filtered
+had restaurant with king inside it inside the name right and it returned this list right
+it returned this list over here in this data and what we did I just set this list over
+here in restaurant I just set this list over here in restaurant now what happened as soon
+as I set this list to the restaurant it triggered a re-render now the updated restaurant is what
+updated restaurant is all the eight restaurant or just one restaurant it is only the filtered
+list it is the data which is over here now this restaurant variable became only single
+isn't it let me just console log and show it to you okay let me just console log and show it to
+you restaurants right this is my restaurant let me console log and show it to you okay so what
+happened is let me refresh my page we had six restaurant over here right six restaurant now
+when I click on this KING right when I click on this KING why it is printing again and again
+because it is this re-rendering at each key press okay don't worry if you don't understand okay everything
+will make sense to you when I will teach don't worry everything otherwise you would be confused
+or why is this printing again and again it is re-rendering again and again okay awesome
+now we have six restaurant there right now if I hit the search hit the search see
+it re-rendered the component and now my list had just one restaurant
+got the answer you will get all your answers eventually don't worry I know what you will ask
+here I know what you will ask don't worry trust me as a teacher I am a teacher I have taught
+this so many times you will you will all your answer will get right people are saying oh my
+got my answer oh you told this you know because I teach right I try to cover everything
+don't worry you will get all your answers so what happens is every time see now see this behavior
+okay if you understand these small things right learning react will be a piece of cake for you
+smooth journey okay see when I refresh the page now you see right why it is getting printed six
+you already know because it rendered first time and it logged restaurant when I am clicking when
+I am writing over here k i n g it is re-rendering again and again cool so it is just printing again
+and again but when I click on the search when I click on the search it will re-render with the
+updated restaurant value and the updated value is the filtered value click on it it will just
+re-render by one and the UI will be in sync with the state the UI this see what is UI over here this is
+UI right this is UI right this JSX is UI this UI will be in sync with this every time it refreshes
+so my restaurant got updated and it returned this and a new list changed react quickly refresh
+the or page this page was quickly refreshed make sense awesome now but why it is not working now
+suppose if I write kfc why it is not working now if I click on this search it got
+empty list empty list because we changed our restaurants already we changed our restaurant
+with just one data which is king and it is trying to find out kfc inside my burger king
+will it find my kfc inside my burger king it won't it will not exactly it will not
+that is why this is not working I will tell you one more cool thing right one more cool thing
+you know why I made mistake I make mistake I make mistake and tell you because these
+mistake you will encounter and you won't get answers to it I may miss I make mistake I will
+make mistake a lot of times and I will correct myself and I will tell you why why this mistake
+happened okay so now I will show you one more quick thing if I write king over here and if I
+search right so now my restaurant became one right this now suppose I am searching for
+ING inside my search what will happen if I click on search will it be empty or will it be one
+will it be empty or one because this is my restaurant now this ING is searched inside
+this list this data and when it tries to side ING inside burger king it will find once again
+and it will remain the same see again it remains the same every time I click on search
+makes sense but what if I tried to find kfc inside my list kfc inside my list
+it won't do anything no data inside burger because it is it is trying to find kfc inside
+this list right there is no kfc inside this list there is just burger king kfc is not there
+right if I click on search it won't show anything make sense amazing okay right so we should know
+that why our app is behaving the way it is behaving a lot of rehab developers don't
+understand this they pull their hairs when they get these type of bugs they pull their hairs
+why it is not working let me let us make it work now should we make it work let us make it work
+some people are saying akshay please move fast but please right there are a lot of people who don't
+understand small things so I don't want to miss anything I don't want to miss anything when I
+am hurrying I want to cover every small damn thing in your head every small damn thing
+whether it takes a lot of time if I have to compromise between the time taken
+and if I miss something I will never miss something I let it take more time understood understood if I
+have to compromise between not teaching something and taking a lot of time I will take a lot of time
+instead of not teaching something right so I will move slow I will move in depth because
+you know when I am teaching right a lot of things I tell you which I I have not even planned
+those just come randomly because I want to give you all the knowledge I have okay now let us just
+try to make this work try to make this work using actual data you know why the name of this
+you know why the name of this lecture or this chapter was exploring the world because today we
+are going to explore the world today we are now going to explore the whole world when I say explore
+the whole world that means we are not limited to the data inside our constant files I don't want
+this I want my restaurant to come live I don't want my restaurant to come from a local state
+variable let us explore the world when I say world right when I say world that means I am now
+talking to some other API the outside world which our application does not know our application
+does not know okay does it make sense so just like swiggy.com right it has its api here right
+okay what is this okay what is this swiggy.com slash the api is it a react project
+is it a react project no see I don't just want to tell you react over here in these lessons
+I want to tell you everything that how swiggy or any website would build would be built right
+I'll tell you everything about it okay let me teach you an important concept which we use in
+industry keep your react aside I am talking about an important concept industry concept okay
+which is known as microservices anybody should I tell you what is microservices
+did I tell you you know when you have to build large application like swiggy
+or uber or amazon flipkart do you think there is only one react project
+which is working behind the scenes only one react project which is working behind the scenes
+it is not possible you know a swiggy or a uber okay guess how many microservices would be
+there inside uber how many microservices will be there inside uber 4 20 10 600 10 crore you know
+there are hundreds of microservices inside uber hundreds what do I mean by a microservice
+can somebody tell me what is microservice what is the microservice api docker no
+not api not docker not server no nobody knows about it nobody knows about it see
+there would be a lot of people who knows about it the experienced people in the industry right
+but let me tell you what is microservice architecture you would have known you would
+have heard a lot there is microservice architecture there is monolith architecture
+there is monolith vs microservices world is moving towards microservices I will demystify
+everything right now everything okay just listen to me very carefully now I won't repeat it
+thousand times I will tell you one time okay what is a microservice you know when you are
+building a big app so what used to happen in older days older days long back right what used
+to happen was there used to be a single big application there used to be a single big application
+suppose this is a java application or right java application java app right there is to be
+java app right so this application itself used to have everything apis even the UI
+used to reside inside the apis even the UI used to be inside this so java application you know when
+I was working in my first company right when I started so when I was working right when I came
+on to so I was a java developer I was a basically a java developer so I used to write an api
+so everything used to be there inside it so in one project there used to be only one project
+one project okay there used to be just one project and this one project right there used to be apis
+so suppose if I have to send sms so sms also was sent from this this this only right in this
+same project there used to be the code for sms sending for notification the same app was used
+for notification notification right the same was used for UI the UI was written in the same project
+there used to be something known as jsp pages jsp pages everything used to be in the same thing
+everything used to be in the same project a java project and how we used to deploy we used to
+how we used to deploy we used to build the whole application suppose if I have to change one button
+right suppose if I have to change one button what is jsp it is java servlet pages you don't
+have to know about it it's okay right don't know it to know suppose if I have to okay so suppose
+if I have to change one button inside the UI you know what we used to have to do
+one button just one button we used to deploy the whole java application just for one button change
+just for one button change we have to deploy the whole application everything was kept in one
+repository everything was just one project every like hundreds of developers are working on one
+project it used to be such a mess it has its own advantages that you don't have to maintain
+different projects different repositories but this architecture was mostly known as something known
+as monolith see there is a lot of lot of data to it now a lot of senior developers would get
+offended that akshay it is not just this there are so many advantages of monolith yes there
+are advantages of monolith right and today also there are so many big applications which are
+running on monolith only so many big applications which are running on monolith so many big applications
+which are running on monolith right but the world is moving towards microservices that means
+the world the newer startups when we say world is moving towards a newer startup everywhere
+you will find microservice architecture microservices what is microservice now see instead of
+having just one project instead of having just one project we now have small small different
+projects small small different projects so we have this ui project we have this back end project
+or maybe call this as one project for apis we have this notification projects notification are
+just sent by this we have this logs project the logs happen over here only we have an
+authentication project this project is just doing authentication managing authentication for
+your app the login logout okay and there are so many more not just one ui project there are
+so many more ui projects there can be 10 ui projects 20 back end projects everything can be
+hosted on different ports that is why we have different ports suppose the ui is running on one
+two three four right port one two three four the back end can run on one two three five
+the back end can run on one two three five now some people are saying there is only one
+database no even the databases i have replica and there are so many databases so what happens is
+now suppose if i have to change now what is the advantages of this microservice architecture
+there are lots of advantages one of the major advantage can you list down major advantages
+of microservices yep easier to test yes so you don't have to worry see suppose if you
+have to change just one button just you have to change just one button what will happen what will
+happen you just have to deploy your ui project this is a separate project in itself easy to maintain
+every team can have a separate responsibility a back end team can just clone one project
+and you he doesn't have to worry about ui ui team does not have to worry about the code of
+back end ui team does not have to worry about when back end people are deploying so it is like
+we are separating the concern this is a very important thing which is known as the industry
+which is known as separation of concern right separation of concern or single responsibility
+right so basically separation of concern every small microservices have their own work to do
+they don't have to worry about what is happening in other microservices now now with this knowledge
+this is how big applications are built and you know what how swiggy would have been built
+how swiggy would have been built this dapi swiggy dot com slash dapi do you think don't you think
+this is a new application is it a new application or not it is a new application or not
+you never know these api can be can be and you know the best part is you can use a different
+text stack over here the ui can be written in react back end can be written in java
+notifications can happen through python python script lock can happen by python
+or go authentication can be handled by golang all different projects these are different
+projects all together this is how big companies work this is why this is why
+when you ask that what is used in uber does uber uses golang or does user uber uses python
+does user uses java that's a very bad question to ask it's a very bad question to ask that is
+why big companies use everything it depends on what is the best use case right what is the best
+use case for it suppose one project is built in react they can build another ui microservice
+in view they can build a new ui microservices in in angular they can build a new microservices in
+whatever they can use java for back end they can use whatever but in ui but see companies
+make their own standard that does not mean that everything is written in different different
+languages no so in uber whereas uber right most of the back end microservices were written in
+were written in most of the microservices back end microservices were written in what
+golang golang we used to use a lot of golang in uber but that does not mean we just have golang in
+it lot of microservices were written in different different architecture okay java also used python
+also used lots of libraries frameworks are used depending on the use cases but mostly golang
+got it this is the micro service architecture understood does this make sense okay with
+this knowledge i want to ask what is this food villa how does this food villa lie in this architecture
+it is a ui microservice that we are building do you understand it does it make sense it's one
+project ui microservice so basically we are just kind of building what is deployed on swiggy.com
+does that make sense we are deploying what is deployed on swiggy.com awesome let us just move
+ahead now how these all applications are connected how these all applications are connected very
+good question you know what happens suppose there is swiggy.com swiggy.com so different port
+suppose port number 3000 is mapped to slash swiggy.com slash suppose port number 4000 is
+matched to slash dapi suppose port number 5000 is matched to slash notifications now understood
+how they are how they all work right all these projects are deployed in different ports
+but the same domain name different ports but the same domain name some companies what they do
+they also change their domain name also so in github you will see the apis come from api.github.com
+right the apis come from api.github.com and there is different github.com these two domain
+names are different sorry for my bad handwriting it's very cold over here so my hand is not
+working properly but you understood right so what happens is and you know what happens they can call
+each other using these different URLs make sense now we will be exploring the world so when I say
+exploring the world so now our UI project what is the world the world for UI project
+is exploring other services we will explore the world we will go back and talk to other world
+okay what is the time now oh my god it is already 12 i have to cover a lot of things come on
+people have started asking for break already oh my god you people can't sit for a while
+okay one hour let's take five minutes break but come back very fast i have to cover a lot of
+things okay please okay four minutes no let's let's do it five minutes okay five minutes break
+drink water come back very fast okay we have to cover a lot of things we will be exploring the
+world today quickly let me walk and come okay i am muting this i am muting muting my uh mic
+yep okay 50 seconds here discord link yes let me give you the discord link please join quickly
+people who have not yet joined on discord let me send you the link and if you are not able to
+join discord right we will you know what happens is a lot of people spam these links okay they just
+send it to people who are not authorized to join right so what i do is i will i will close this
+link very quickly okay i will close this link so uh please join it right now please join this discord
+like right now right and if you are not able to join with this pinned link then send us an email
+on support that is the best way send us an email on support at the rate number state app.com
+will give you access to discord we will verify that you are registered or not
+and we will give you the access to it right i don't know what is what has been called
+just give me a moment yep so yeah so do you did you got right timer stopped google timer
+i thought my phone is ringing anyways okay so let us just start okay discord link is there
+this discord link will be disabled if you don't get access to this discord link or people who are
+watching recording send us an email on support at the rate number state app.com you will get the
+access let us go back and learn from exploring the world are you ready to explore the world
+but before that i'll just quickly explain you the important concept okay and then i will
+explore the world make sense okay okay so how do we explore the world in javascript
+how do we explore the world in javascript can you tell me how do we make an api call in javascript
+okay simple question yep yep fetch promises ajax yes so fetch fetch is a important where does this
+fetch come from where do i get this access to this fetch yep window right so basically this is
+available to us through javascript engines window object right it is pre-built it is javascript
+function which is there in javascript okay it's a browser api okay it's a superpower which is
+given to us okay it's a superpower which is given to us so we can call this fetch function and we can
+pass in a api and it calls that api and it calls that api does it make sense does it make sense
+everybody knows that right if you don't know this please read about fetch i am not going to
+explain you are not here but before making an api call let me tell you one thing right where should i
+make my api call where should i make my api call you know what i am going to tell you right now
+many react developers even experienced react developer don't understand this basic concept
+basic concept okay where do i call my api i where do i need my data from the api
+i need my data from the api here isn't it i need the data of my api over here restaurant list over
+here so should i call my api over here should i call my api over here people who know the answer
+don't write okay people who already know don't be smart okay you are being smart you know the
+answer oh nice okay so suppose if i called my api over here what will happen what will happen if i call
+my api over here what will happen if i call my api over here it will quickly re-render on each time
+how many times are are re-render how many times are a component re-renders
+are component how many times it re-renders re-render okay re-render or maybe render right
+how many times are component re-renders see whatever you are doing right suppose see it
+rendered one time if i am writing something over here test it is rendering again and again
+it is rendering on every state change anytime my UI is updated it re-renders
+it re-renders for every small state change it re-renders right it is not a good place to call api
+if i called my api over here it will just re it will just call an api for every key press
+it will call an api for every key press i don't want that
+do we want that that's not a good way i'll tell you the best way to call an api a very good
+way where you can call an api over here right if i need to call an api inside my body i'll tell you
+one more thing okay i have to call an api right so let me tell you the feature that i'm going to
+build so the feature is as in when are page loads as in when this body component loads
+it used to call an api and fill the data make sense as in when my page loads call an api fill the
+data make sense as in when my page loads call the api fill the data now there is a different way
+to handle this in react i'll tell you what is a good way to handle this in react right how we
+do it in react applications let me get my whiteboard once again right now there can be two ways that
+we can do suppose the user loads the website right loads sorry my bad suppose the user loads the
+website right this loads the website so there are two cases just let me know what case makes
+sense this is the first approach user loads the website make an api call render the data
+render page right what will happen is as soon as the user makes the call it will take sometimes
+maybe suppose 300 milliseconds to call an api and then it will render the page the page will
+be rendered it will take suppose 200 milliseconds to render so the whole time will take 500 milliseconds
+this is one way listen to me very carefully there are two ways we can do that first is
+as soon as the user loads the page call the api it takes some time suppose 300 milliseconds
+and then render the page in 500 milliseconds this is one approach the second approach is
+as soon as user loads the page what to do show the user something on the page
+load the page or maybe render the page render the page render the initial page
+then call the api then update the ui which is a better way which is a better way first or second
+first or second everyone first or second why is some people are saying first why is it second
+the best way let me tell you second is the good way why second is a good way why second is a good
+way because of the user experience and because it's good right because your page will be available
+see here the page will be available after 500 milliseconds here the page will be available
+in suppose in 50 to 100 milliseconds let's call it as 100 milliseconds here it is 500
+milliseconds now what we did is we rendered the page along with that the api call is made api call
+takes 300 milliseconds and it updates the ui in 500 millisecond once again so we quickly
+ui came in right ui came in quickly now we make an api call and update the ui
+does that make sense everybody understands that we will do this a lot in react
+lot of times in react and react is very powerful in what you should have this by heart you should
+remember this by heart what is the powerful thing in react what is the best superpower of react
+it's it's reconciliation algorithm that is what is the best part of react is it just quickly
+find the diff update the dom it is fast very fast react fiber is very fast okay so let's
+so in react we generally always do something like this and react knows react tells us to do this a
+lot of times and react has given us a functionality to make this happen okay react okay react op no
+doubts right so react makes this functionality right to make this functionality happen react
+gives us access to the most important second most important hook which is known as use effect
+okay react gives us this amazing functionality which is known as use effect now you understood
+why we will be using use effect we will be using use effect to see what we will do in react is a
+lot of times we will do this we will first render something on the ui something right
+and then we will make do something and then we will update the ui we will render something
+quickly then we will keep updating it react says that i can do dom manipulation very fast
+so don't worry about it about the re-renders i can re-render it very efficiently once again
+so let's just update it quickly okay let me repeat it once again listen to me very carefully
+there are two ways that we can do to load the page and call the api right i load the page
+call my api then render my page so what will happen it will take 300 milliseconds to call the api
+then it will take some time to update the y paint the frame and build it build the
+dom structure and all that thing right it will take some time but what what what generally what
+we will do today is we will render our page very quickly then we will make an api call
+and then we will update the y with the data that we get from the api does that make sense
+does that make sense awesome and to do this to do this react gives us a super powerful hook
+which is known as use effect hook okay let's see how use effect hook works okay what is hook
+at the end of the day what is hook at the end of the day it's a normal function right so it is just
+a normal function and just like use state use effect will also come from this react library
+we will get something like use effect from the react library now it's a named it's a named
+import okay if you did not understand it you will understand it once again just listen to me very
+carefully let me close this filter data first of all right and let me remove this so that
+our code looks better okay we can see a lot of code at once right so this is the place right
+this is our body use effect is here how do I use my use effect listen to me very carefully
+so use effect is a function right use effect is a function how do you call a function like this
+but you call this function by passing another function to it this another function is a
+callback function this another function is a callback function what do you mean by callback
+function this will not be called immediately it will be called whenever use effect wanted to be
+called okay does that make sense let me tell you once again use effect this callback function
+will be called not immediately not immediately but whenever my use effect wants to be called
+so this use effect whenever use effects want to call this function it will call it
+and react will make sure that it calls it at a specific time I will tell you what is that time
+whenever our component renders and re-renders and re-renders and re-renders right whenever it
+re-renders what will happen is first of all are this code of this function will be called
+and after every render after every render it will call this function that we pass inside it
+after every render okay when will my component render when will my component render
+when will my component render when will my component render on state changes right
+see there are two ways there are two times when my component re-renders
+either my state changes or my props changes or my props changes don't forget
+these props that we passed in right suppose if I change this it re-renders
+okay so basically this is what happens right so whenever it re-renders after
+every re-render this use effect will be called but we can we can but that's a
+bad way to call it right we don't want to call it on every re-ender right we don't
+want to call it after every re-render so if you don't want to call it after re-
+render pass in a dependency array into it pass in a dependency array into it this
+is known as a dependency array okay this is known as a dependency array so
+coming back once again what is use effect quickly starting from it once
+again repeating it once again what is use effect it's a hook at the end of the day
+hook is what a function how do you call that function you call this use effect function
+giving two parameters one is the callback function and one is the dependency array
+one is the callback function one is the dependency array you need to import this
+use effect using a named import from the react library okay so now this callback
+function is called when upon every re-render but i don't want to call
+something in every re-render then we give a empty dependency array
+suppose suppose there was a case that i only want to call this use effect
+when my search text changes suppose if i want to call this use effect
+whenever my search text changes i will write my search text over here
+is it making sense does that make sense now this means that my use effect is dependent
+on search text let me repeat it once again okay my use effect has a callback function
+when will this callback function be called whenever my search text changes this will update
+so call this when dependency is changed right so whenever my dependency is changed
+whenever this search text is changed this will be called does that make sense
+cool let us just see this as an action okay we have our use effect let us just refresh our page
+right let us just repress our page this is called one time why on the first load
+now let us just say in something in search text see now do you see this it is being called at
+every search text update it will be called at every time my state of search text changes
+it will be called suppose if i don't want this to be dependent on anything
+if i don't want this to be dependent on anything what is the difference i'm telling you
+if this is not dependent on anything it will be called just once it will be called just once
+it will be called just once because this is not dependent on anything
+right this will be called just once because it is not dependent on anything right
+and if I change something over here see nothing is it is not called again it will be called
+just once, some people are writing okay understood use effect okay now let me play with it okay
+I will play with it your all answers will be your all answers will come again right
+your all answer everything will make sense okay it will come again suppose if I want to call
+this only when my restaurant changes only when my restaurant changes let us see when
+will this be called okay it called first time because my restaurant was updated the first
+time right my restaurant was updated the first time okay now will this be called when
+I type something when I type something in the search bar will this be called yes or no
+yeah amazing new people are amazing some people are saying yes it will be called let us just
+see T-E-S-T no it's not getting called why because dependency is restaurant restaurant
+is not getting changed when I am typing something if I click on my search if I click
+on my search suppose let me write King Burger King right if I now will this be called yes
+if I call this will call my use effect so basically this anything which you need to
+do on some dependency of a state variable you use this use effect and suppose if
+I don't pass any dependency over here that means how many times it will be called
+remember this very important concept how many times this will be called one time now it will
+be called once but when will it be called before render or after render will it be called
+before render or after render Chetan says Naman says before Sumit says after Pail says
+before Vipin says after lot of confusion let me resolve your confusion okay so okay I will
+give you one more cool thing okay this is my use effect let's print use effect here let's
+log this use effect here right and let's log my render over here right render happens
+a lot of time right render when I load my page what will be called first render or use
+effect render or use effect one render or use effect render or use effect some people
+are saying use effect some people are saying render so let me tell you it will call render
+first then use effect does that make sense because use effect is a callback function and it is
+not dependent on anything this will be called just once and after initial render just once
+and after initial render listen to be very carefully when you have a callback function
+inside use effect with a empty dependency array right let me write it down for you right
+it will be easy for you empty dependency array it will be called once after render if suppose
+my dependency array is dependency array is search text right so then how many times it
+will be called once after render plus every time my search text changes changes after every
+render sorry after every time once after my first render first once after initial render
+and every time after re-render every time after re-render when my search text changes does this
+make sense when my search text is updated if my dependency array has search text no it does
+not make sense it will make sense let me show it to you okay right now when I refresh my page
+it just renders first then use effect right over here if I put my search text over here
+so when will this be called let me refresh my page right it will call once again now every
+time I press something every time it will render and it will call use effect every time see
+T E S T it will be called every time my state or search text is getting updated now let's play
+with restaurant okay let's play with restaurant everything will make sense to you restaurant
+now tell me okay now we got render use effect now if I type in now if I type in will use
+effect be called yes or no will use effect be called no will it call render will it call
+render yes this will call render so let us just see T E S T see it called render four
+times but use effect was not called why because use effect is dependent on restaurants when
+the restaurant will change then only my use effect will be called so if I click on
+my search right if I click on my search will the use effect be called let me remove everything
+from the console if I click on the search what will be printed when I click on the search
+it will first print render then it will use effect it will first print render it will
+use effect and it will update make sense awesome now now suppose I want to make an API
+call as soon as my paid loads and just once where should I make an API call understood understood
+where should I make an API call I should have a empty dependency array right and I should
+make my API call over here right any doubts till now right no doubts right so empty
+dependency array let me explain it once again empty dependency array means this callback
+function will be called once after your render once after your render okay cool so what will
+happen is one my render will happen now my API call will be there inside my use effect
+okay this use effect will make an API call here use effect will make an API call it will
+render the component okay we will see this so now let me just show it to you once again
+okay before making an API call suppose if I make an API call and I did my set yep can
+I have use multiple use effect amazing question I will come on to it just wait for a while
+okay so now let me just okay let me just quickly let me just quickly show it to you how it works
+how do you make an API call how do you make an API call yep fetch awesome let's just fetch
+some data where should I fetch my data where should I fetch my data where should I fetch
+my data Swiggy API okay okay let us just try to use this API okay let us just try to use Swiggy's
+API by the way again a disclaimer Swiggy is not sponsoring this bootcamp I am not promoting
+Swiggy okay so let us just try to call or maybe let's let's write a function right so the call
+happens asynchronously right so let's create a async function I am using a should I use async
+await or promises should I use async await or promises let us use async await async await is
+a good way it's one and the same thing but async await is the most preferred way right you will
+find a lot of code in async await get restaurants okay get restaurant function right this is a
+async function now let us make an API call fetch right and let's call this API here okay so I am calling
+this API by fetch and let us just await for it let us just await for it right and what will it return
+JSON right let us convert this data to JSON also right so data.json so it will return a readable
+stream this readable stream needs to be converted to JSON object so that we can read it now we
+have this JSON data okay let us just log this data let us just log this JSON data okay and let
+us call this get restaurant from our use effect let us just call this get restaurant from our use
+effect what do you think will this work error handling and all we will see don't worry okay
+will this work yes or no yes or no yes or no some people are writing yes some people are
+writing no we are calling swiggy's API let us go back to our app oh my god something failed over here
+oh my god something failed over here what failed it cannot call see the error that is we are
+getting it cannot call because can we just call swiggy like this why did it not call
+because of security parameters who is blocking this who is blocking this is swiggy blocking us
+is swiggy blocking us in any way is swiggy blocking us yes or no swiggy blocking us yes or no
+yes some people are saying yes some people are saying no who is blocking us is our browser
+our browser says when you are talking from local host to swiggy.com it look
+we cannot let you happen, we cannot make this happen, we won't let you call Swiggy like this,
+we can't call Swiggy like this, browser. For to modify this, there is a cool plugin,
+okay, which is known as Kors Chrome. This is a plugin, install this plugin,
+so the browser won't complain. I have already installed this plugin over here, right?
+You can add to your Chrome, okay? So what will happen is, it lets you bypass the Kors error,
+okay? It says that, okay, now I can, what is Kors, okay? What is Kors? If you don't know what is Kors,
+so many people are asking what is Kors, right? So if you don't know what is Kors, right? Watch
+this video, you have to, in the YouTube, yes, I am promoting myself, my YouTube video, okay?
+Watch this video by a cool guy who made a video three years back, okay? A cool guy made this
+video, you will get answers to all of the answers, right? About Kors, okay? So if you
+don't want to get Kors error, right? People who have seen it, thank you so much, okay? Cool. So
+will this work now? Will this work if I refresh the page? Will this work? Let us just refresh our
+page. Awesome. Our page worked and we got some data out of it. Awesome. We got data out of it.
+Is this the same API call that Swiggy made? Is that the same API call that Swiggy made?
+Yes. Is this the same API call? Yes. So this is the API call that we were using. Remember,
+we got this API call. If we go to our network, we will see that we made an API call, right?
+It returned us some data, right? This is the Swiggy API call that we made.
+Right? This is the Swiggy API call that we made to this path, right? DAPI restaurant and it sent
+us some payload over here, right? So this is how we can explore the world. This is how we can,
+some people says Swiggy do not have a security. This is Swiggy's public API. Try to call their
+private API. It won't allow, okay? Swiggy has a lot of checks in place.
+You people are like, we are hackers. No, you are not hacker. If you feel that doing this make
+you a hacker, then shame on you. Okay. Shame on you. You are not a hacker. People, you know,
+some people think they are cool. You are not a hacker. Okay. This doesn't make you a hacker.
+Shame on you. If you call yourself a hacker, at least have some respect to the word hacker.
+Okay. This is not hacker. This is the Swiggy's public API. You can call this API in an
+incognito mode also. This is a, see if you call this API in an incognito mode, it works, right?
+It will work. See incognito mode, it works. So this is a public API. You can call it,
+right? They have this security titan place. Okay. Don't worry. But now let's do the amazing
+thing, right? We got this data and you will see an amazing thing that whatever I do, this is not
+being called once again. See our component is being re-rendered, but we have got our data,
+but we have got our data. Should we insert this data onto the UI?
+Should we insert this data onto the UI? Let's just insert this data onto the UI
+and power our app with real world Swiggy API data. Let's just do that, my friends. Okay.
+How do I do that? How do I update this data in JSON into my
+restaurant, right? Now we need this restaurant list. No. I don't need this restaurant list now.
+Okay. I don't need this restaurant list now. What we will do is we will push new data from
+our JSON into my restaurants. What will I use to put this data? What will I use to put this data?
+Quickly. Tell me. I will use a function which is given by react to us. This function
+set restaurant. Okay. This set restaurant and I will push my restaurant data inside it.
+What data I will push? I won't push directly this JSON. I will put JSON.data.cards of two, right?
+We use this data, right? This data, which data I have to put this data and cards. Actually,
+this data I have to put. Okay. We have to push this data. How will I write this in Java? JavaScript?
+Sorry. JSON.data.cards of two.data.data.cards. I will forget. I know which is, you know,
+when you are dealing with real world API, right? This is how you get data. That is why I
+actually wanted to show you real life examples. I can make a mock API, which has normal small fancy
+data. Don't want to do that. Let's work with the real world application because suppose if you
+get job in Swiggy, Amazon, Microsoft, Flipkart, this is the data you will have to handle,
+right? I want to teach you everything. Okay. So let's just do that. So in my restaurant,
+I will push something known as JSON.data. What was it guys?
+Cards. Sorry. Sorry for using guys. I want to be inclusive.
+Friends, what is it? Data.cards.data.cards of two.data.data.cards
+Okay. So we have this whole restructuring one thing to remember. This is a bad way to do that.
+This is a bad way to do things. You have to use something known as optional chaining your
+homework. If you don't know optional chaining, so suppose, you know, this code will break.
+Suppose if my data was not here, it will break. If my data was not here, it will break.
+So to do optional chaining, we use something like this. Now, if you don't know what am I writing,
+then go read. Okay. Go read it up. Right. It will, it will help you. Okay.
+Optional chaining, read about optional chaining. If you don't understand what I'm doing,
+but it is like figuring out what are cards. Now somebody is saying, how do you do optional
+chaining over here? Homework. Find out. This is JavaScript. This is not react. Let's,
+let's figure out react things. Okay. We have to move fast because I have to cover a lot of
+things. We are moving slow. Okay. Cool. So will this work? Will this work?
+Let us refresh our page. Oh my God. Do you see we have new restaurants coming up?
+Do you see this amazing thing? We did not had Grameen with us. We did not
+have roti wala. We did not have make the foods. But one more cool thing is,
+one more cool thing I wanted to show is, you know, why did, why I did not remove
+this restaurant list? Because I wanted to show you one important thing about react.
+Hold down your excitement. We will get excited. Hold down your excitement right now. Listen
+to me very carefully. I did not remove this restaurant list because you will see
+a important thing over here. What I will show you is this happening. First of all,
+in the first render, when we render the component first time, it will render with
+the restaurant list our old data, right? Our old data. Then what our code will do,
+it will make an API call. Once the API call will have data,
+once our API call will have data, it will set restaurant. So it will set this restaurant.
+When the restaurant is updated, what will happen when my state variable updates? What
+happens? What happens when you, when the state is updated? What happens? It will
+re-render my component. And when it re-renders, it will update my UI. It will update my UI.
+Amazing things. This isn't it? Amazing things. This is the beauty of react.
+Let me refresh the page. Now, now look at it very carefully, very carefully what is happening.
+And, and you know reconciliation process is sticking in and everything is happening very
+fast into the UI. See this. Okay. When I refresh the page, I will refresh the page on count of three.
+One, two, three. Listen to this. See our old data and the new data. This I wanted to show you.
+This is use effect. This is use effect my friends.
+Okay. This is use effect. Give me a thumbs up if if if you understood how we render our page.
+Give it a thumbs up. Give it a thumbs up. Give it a thumbs up over here. Yep. Let's blow this up.
+Yes. 1.3, 1.4, 1.5. Awesome. 1.7. Cool. Let me repeat everything once again. Okay.
+Everything once again. What is use effect? Use effect is a hook. Let me drink some water.
+See this is normal JavaScript async of it. If you don't know this, read about async of it.
+This is a Namaste react class. So I don't want to dive deep into teaching you what is async,
+right? Not await. What is fetch? I don't want to tell you all that. Read it. It's
+your homework. If you don't understand why I did that JSON read it. It's it it gives you a readable
+scream. It's a promise. You have to await it and then you get this JSON data. Once I get my JSON
+data, I can render it like this. Okay. So this is the rest get restaurant logic.
+Now let me repeat it once again. Okay. Repeat it once again quickly. I will repeat it once
+again. When you use, listen to me once again. When you use use effect, what happens is I react,
+you know, I react, renders are component and then our use effect is called
+once, right? And suppose if my dependency array has some search text. So now our component
+will render use effect will be called once. It will be called every time my search text is updated
+every time if I have my dependency array. If I don't have this dependency array, it will be called
+once and just once after the initial re-render. Okay. Cool. Some people are very smart. They are
+saying what happens in class based component? What is the life cycle methods? Hold down,
+why are you so excited? I will teach you everything. I'm not going anywhere. I will teach you
+everything when we go to the class base components. Okay. Please don't disturb the class when I'm
+teaching. It's, you know, there are some people in the class where it's like, oh, sir, what is this?
+Oh, sir, they read something like from the future. They know something and then they will just
+keep on putting it up. Don't be like that. Okay. I will teach you everything. I will
+talk about class components when I will talk about class components. I don't want to
+confuse everybody right now. I have my own style of teaching. Don't interrupt with it. Right.
+I want to teach how I want to teach. Let me, okay. Cool. So use effect has a callback function
+which will be called whenever a component renders initially and then whenever my dependency is
+update. If I don't have any dependency, it will be called just once. This is the best
+place to make an API call. Okay. This is the best place to make an API call. Now,
+suppose I made a API call after my re-render. That is why, see on my load, initial load,
+first of all renders quickly carefully see what is happening right now. First of all, it renders
+with the old data. Then it makes an API call. Then it renders once again. Does this make
+sense? Why it is happening? Does this make sense? Does this make sense? Thumbs up quickly. When I do
+like this, you have to press the thumbs up over there. Okay. Awesome. So what is happening?
+When we call this, when we call this, right? When we, I'll tell you the flow of the,
+okay. I'll tell you the flow of the program in an amazing way. You will never ever in your
+life get doubts. Never ever in your life. Okay. I'll show you. Wait, wait, wait. My, you know,
+everything is, everything is amazing in react, right? Let's just go. If we can go to my body.js.
+My body.js. I got my code. Okay. I will put debugger inside my use effect. Okay. Let us see
+when the API call is made. Okay. And let us also see when is the render, render happen here. The
+render is happened when, when you return something from this function, this will be rendered. Let
+us see in what order does this happen? Awesome. Let us see the order of it. Your mind will
+be blown when you will see code executing how this code will be executed. Okay. Let me refresh
+this page. I am refreshing my page. Sorry for less space. I am clicking on the refresh
+button. See it did not print. See it print render, right? And right now it did not print
+use effect. It did not print anything inside use effect. Where is my code? Sorry sources.
+It did not print this use effect. No, it not, it did not print anything inside use effect.
+It just went to this line and it printed this render, right? Over here in the console.
+Now what will happen? When I will move to the next step, right? When I will move to the next step,
+it went inside the use effect and see what it load. It see what it loaded. Do you see something?
+We haven't made any API call yet. We have not made any API call yet.
+Old data. It rendered your component with the initial value that we passed in this initial value.
+This is important to note. Not all teachers will teach you. I want to go dive deep into it.
+When you are rendering for the first time, it will render from initial data. It will render
+from initial data. I have not made any API call till now. No API calls till now.
+Now I will make an API call and let's see what happens. When I will make an API call,
+I made an API call. Let's go to the network.
+We go to the network. See API call is made. We successfully got the data.
+It makes sense. Our data will be printed over here.
+And what will happen is it now it stopped. It says this how I want to re-render once again.
+It is re-rendering once again. And if I place this, now see everything updated quickly.
+This is how this is how React works. Now a lot of people ask me,
+how do you have such knowledge? How do you know when is render happening? When is use effect
+happening? I do this. I spend time on code. I spend time on browser. I spend time on my dev
+console. I spend time on my curiosity and hunger for learning. Everybody over here.
+Now you would say that okay, a lot of people won't even know. Okay, how many of you
+tell me honestly? How many of you did not know that we can make an API call? If you did not
+know, tell me. Did you know that you can make an sugi API call? Did you know? I don't know.
+See, it's because of curiosity, right? One day I was just trying. I saw that, okay,
+let's make an API call. I tried it. It worked. So if you are not curious,
+things won't work for you. Your mind should be open. There are people who are spending their time
+in piracy, in pirating the content, in doing random stuff. Put your mind into good things.
+Put your mind into good things. Don't go into telegram channel piracy. Spend time in your browser,
+in your dev console, in your code. Right. You know, I feel bad. I am very sad for those people who
+do piracy and all very, and the people who are learning also, they, you know, some people will
+just wait. When will this lecture get pirated? And they are not realizing that they are just
+messing up with their life. Okay. Spend time in your learning. That is the best thing you
+can do. Give to yourself. Read it. There is nothing which is not available on internet. Nothing.
+Karma is a lot, right? Let us just repeat it once again. Let me show you
+how code works inside the browser also. I don't want to get distracted once again. Okay. Once
+again, let us do before we render. Let me, let me see before I render, I will put my debugger
+here before I render. And I will again put my, put my debugger before making an API call.
+Makes sense. Two times I have made API calls. Let me clean this up. Let me clean my network.
+And I will show it to you on this demo once again. And otherwise, if you don't understand
+this time, listen to me very carefully. If you don't understand, do it in your browser. You
+will understand it. But let me show it to you once again. Okay. What is happening?
+If I refresh my page, what will happen? Not rendered. Oh, did you understand why it got
+not rendered? Did you understand amazing thing? Why it got not rendered? Did you understand
+this cool thing? Yes. Because we have not rendered anything yet. This is coming from,
+if you did not understand, what's the first class? What's the first class? Give me a
+thumbs up. Who understood this? We haven't loaded anything right now. We haven't loaded anything.
+Right. Let us just run it. So it will do a initial render. It will do a initial render.
+Okay. And now it loaded the normal initial basic render with basic data. Makes sense.
+Makes sense. Now it stops over there. It has rendered in our console. We see render.
+There is no API call made yet. And we are at the point. Now it has rendered. Now it will call this
+use effect. First render, then use effect. First render, then use effect. Remember this.
+Remember this for your life. First render, second use effect. First render, then the second one.
+Now some people say that why no images is your homework. I will tell you. I will tell you
+why no images because, because see this images are still at hold. We did not give a chance to render
+it properly. We are holding our control. See the images came to our browser.
+Right. This images over here. Do we have images here?
+IMG. Yep. Are these the images? No. So yep. So images are there, but we have
+hold it. Right. We are not allowing the browser to do its whole job.
+We are not allowing the browser to do its whole job. Right. That is why it is
+showing this inconsistency, but assume it is loaded. It is loaded properly. Right. It has rendered.
+Let us just now make the API call and let's see what happens. Now when we make the API call,
+we made the API call. Now see we made the API call over here. If we see the network,
+we made the API call. If we see all right, see all the restaurant images came in. Right.
+This restaurant images also are there now. Right. It rendered properly. Right. We gave it time.
+It takes some time. Right. That's why take your time after the class to do the same thing.
+Take your time. See why it the images did not render. There is a different.
+You will have to go into how browser paints the DOM not the DOM. Sorry.
+View. Viewport. In the browser it paints. Right. There are paint cycles. There are,
+you have to go into detail of how browsers work. Okay. Don't get into those details. Right.
+There is something known as yes everybody critical rendering path and
+that will be like whole browser session then namaste browsers. This is not namaste
+browsers. This is namaste react. Let's stick to react. Okay. Okay. So it
+re-rendered. Now it make it an API call. We got the data. We got the data now,
+but this is old data right now. Now when I release this, right, it renders. What happened? Come on.
+Cannot read properties undefined of map. Something messed up. Let me refresh the page.
+Yep. Because I am holding some data here. Right. Yep. It works. Right. It works.
+Just play around. Right. It will work. But basically what happens is see it renders.
+It makes an API call. Then it renders once again with the data.
+Makes sense. It renders once again. Cool. Okay. Awesome. Awesome. My friend. Awesome. Now
+what if let's not old use the old data now. Right. It looks bad if I have my old data.
+Let, let me not use the old data over here. Right. Let me not use the old data.
+Why it is happening this? Why it is inconsistency like this? Why it is the inconsistency?
+Because we have not handled errors. We have not handled errors. We have not handled errors
+in our code. This is why there is an inconsistency. Right. Try to find out how do we handle
+errors inside this. Okay. This is your homework. Will you not down? Tell me. Will you do your
+homework? How many of you are doing homework? There are so less people who are doing homeworks.
+Are you doing homework? Yes. Those who are not doing right know. Right know that I am not
+doing homework. Right know over here. I want you to write know. You should feel guilty about it.
+Write know over here. You should feel guilty about it.
+See so many people saying no. Why are you not doing homework? Do it. I can't come to your
+house and scold you with a stick in my hand and do homework. I don't want to be that Master G.
+Okay. I don't want to be that Master G. Do it. It's for your good. The whole Namaste
+react will complete and you won't understand anything. If you don't do homework, do that
+and also take part in discussions. Again, thank you so much. Everyone who is helping people in the
+community. You know, I just love the community. The vibe of the community is the best. You know,
+I have got so many compliments. I have never seen such a community. You post your doubt.
+There are so many people ready to help you and people are learning so much out of that
+community. Learning so much from it. Right. Cool. So let's just go ahead and do some crazy things.
+Let us just okay. So let's first of all have this empty. Now I don't want my old data.
+Right. It looks bad. So see now what, what it happens. See if I refresh my page,
+it shows ugly UI. Right. It is a bad thing. Right. It's a bad thing. It's a bad thing.
+What should I do? What should I do? I should show a loader. Right. I should show a loader.
+Isn't it? Yeah. If, if I refresh my Swiggy page, let's see what they do. Okay.
+Let's see what they do. I'll tell you an amazing thing which we use in the industry.
+If I see, do you see this? Are these the restaurant? Are these the restaurant?
+What is this blank thing coming up? The API call hasn't responded. What is this blank thing?
+What is this known as amazing thing? Have you, have you ever,
+you know why? Because I am curious. I see every small thing what they are doing.
+I see every small thing happening in the website whenever I'm exploring something.
+This is a basic skeleton that we load. Right. Read about, this is about UX and UI.
+When I say UX and UI design, that means the designers. Right.
+It has to do something with known as, you know, I'll give you an example. Listen to me very
+carefully. Otherwise you will say that, okay, you, you are actually, you are not,
+you have to repeat it. Okay. Listen to me very carefully. What is this?
+You know, there was a research done, right? There was a research done and we figured out earlier
+people used to show spinning loaders, spinning loaders, right? Earlier people used to show
+spinning loaders. So what used to happen is when you refresh the page, when you load a website,
+it used to show up spinning loader and suddenly everything used to come up in the,
+suddenly everything used to show up. All the restaurants showed up, everything showed up.
+Right. This is a bad user experience. This is a bad user experience design.
+Right. So now human psychology, right? Our brain works with images.
+They don't want a lot of fluctuations in the UI. We don't want a lot of fluctuations in the
+UI. Suppose if our API is taking five seconds, right now my internet is very fast. So it is
+still taking less time, right? I think one or two milliseconds to load this, right?
+Oh my God, what happened? See, the carousel did not load, right? Something happening
+with that CG API. I don't know. This is the power of, this is the power of your
+config driven UI, config driven UI. See the power of it. They can disable
+whenever they want to. Okay. So anyways, so what I am telling you is when I refresh the page,
+if you show a loading spinner, that's a bad user experience. So psychologist,
+psychologist figured out that, okay, let us show them empty boxes, empty boxes till our data is
+loading. So when you see a place holder or an empty box at the place where the data
+needs to be loaded, then it, it is a better UI experience because see our eyes won't hurt.
+Suddenly something does not change on the UI. Suddenly something does not change in the UI.
+We feel that, okay, yes, there are some blocks. This will be filled. Yes, it filled.
+Right. This is known as progressive loading. Is this the word? I don't know the exact word,
+but this is known as progressive loading or something. Is it? No, no, this is not progressive
+loading. This is PWA. This is something different. Not this, not this. There's a UX design, UX design.
+This is a UX design principle. I don't remember the exact name for it. Shimmer effect. Is it
+known as shimmer effect? Shimmer effect in UI. Yes, exactly this. Yep, shimmer design. See,
+read this, read about shimmer design. See, a UI resembles, let me zoom in. A UI resembles actual UI.
+Shimmer UI resembles actual UI. So this is a basically a skeleton about it.
+And every big company is following that. Every big company is following this great user experience.
+Every great company is following that user experience. If you load Amazon, is Amazon
+following? Now you will say, Akshay, which companies are following? Tell me example.
+Let's see if Amazon is following it or not. Let's see it. It's, does it follow? Refresh the page?
+It just load very quickly. Following, not following, not following. See, see, do you see?
+Amazon is not following. Amazon is not following. It is, it is not loading.
+It is following the, see it is following this blocks. It is creating empty blocks,
+but it is not creating empty cards. See this. See this. It is not creating empty cards.
+This is still a bad experience. This is still a bad experience. Isn't it? Is it bad or
+bad or good? Bad or good? Write in the comments, bad or good? It can be improved, right?
+It can be improved. Let's go to youtube.com, youtube.com, right? Did you see this?
+Do you see this? It does not hurt your eyes. It does not hurt your eyes.
+I exactly know my mind knows that, okay, here the video will pop up. Here the video will
+pop up. Here the video will pop up. Okay. Awesome. So this is known as shimmer UI.
+Take that up as a homework. Now here we should show a shimmer UI. So your homework is you will
+show a shimmer UI over here until our page loads. Where do you write code in shimmer UI?
+Where will I put my shimmer UI? Where will I put my shimmer UI? Where will I put my shimmer
+UI? People are writing use effect. The whole thing I have taught you and you are writing use effect.
+You can pass in your shimmer effect. Where? You have to render it. But how do you render it
+if the data is not called yet? How do you render it when the data is not called?
+How do you show loading? How do you show loading? How will you show loading? I will tell you. Don't
+worry. I will now tell you one more important concept. The last concept which I want to
+teach in today's class. This concept is known as conditional rendering. Okay, conditional rendering.
+You have to, when we render it, right? We need to render either a shimmer UI or a normal UI or
+a API data UI, actually UI, shimmer UI or API data UI. Okay. So how do we do that?
+We know that our restaurant is empty. So can I write something like this?
+Can I write a condition? If my, if my restaurant, I am writing a pseudocode restaurant is empty,
+right? What should it load shimmer UI, right? If my, if my restaurant has data restaurant
+has data, then load actual data UI, make sense. Make sense. Okay. Let us, let us do
+how do you code shimmer UI, your homework? I'm not telling you why you can code actual data,
+but you can't code a shimmer UI. Come on, you are okay. Let me tell you. Okay. Let me tell
+you. You are asking, let me tell you. Let us make a, what is, okay. What is everything inside
+React? There is a famous statement. What is everything inside React? What is everything inside React?
+A component. Let's create a shimmer UI component. Okay. Can I create this shimmer UI
+component? What should I do? Const shimmer. You should be very good at making components,
+right? Very fast and very good. Constant shimmer, right? Let's create a shimmer UI.
+Okay. And what should it return? It should return some JSX. Let's call this JSX as,
+okay. For me, I am making my shimmer UI as loading. Okay. I am very lazy. I will make you
+do homework. I'm a bad teacher. Shimmer UI loading. Do, do, do, do, do, do, do, do.
+Okay. So now I want to export default shimmer. Does that make sense? If do you understand
+each and every word of it? Right? So in shimmer UI, now I want to load this shimmer UI if data
+is not there or I want to load this UI if the data is there. How will I do that?
+What will I do is I have collapsed this up, right? This react dot fragments. Okay. So
+before I return, right? Here I can write some conditions. I can write some conditions.
+Okay. You can do conditional rendering over here, right? Do you know ternary operator?
+Yes or no? Do you know ternary operator? Let us just do that. Cool. In ternary operator,
+how do we write? If my restaurant dot length, right? If my restaurants dot length is what?
+Is what? Do you write like this? Nobody is complaining. Nobody is complaining.
+In JavaScript, you do not do like this. Okay. You write a condition like this.
+If my restaurant dot length is greater than, is, what will be my restaurant dot length over here right
+now? What will be my restaurant dot length over here? Zero, right? You can write it either greater
+than one and put this or I am reversing the condition is equal equal to zero, right? So I want
+to render what? So I want to render my, what I want to render now? Shimmer UI.
+How will I get my shimmer UI? Will this work like this? I need to import my shimmer UI.
+Now you might feel I am importing shimmer UI. I am just importing a component,
+okay, which is exported by default. Okay. Is this right? Is this right way to export?
+Is this right way to export? No. Why? Because you don't have to, you people are amazing.
+Yeah. Love you all.
+You exactly know what I am trying to tell you. I also want to see that is why I try to code
+because you know, most of you will make this small mistake. I know that when you will code.
+So if my restaurant of length is equal equal to zero, shimmer UI, else normal.
+Does this make sense? Will this work now? Tell me, will this work? Yes or no? Yes or no?
+Yes or no? Let me refresh my page. Yes or no? Shimmer UI loading?
+Now in this place of shimmer UI, you have to show that shimmer. Okay. Understood your homework.
+So I made my loading screen until my page loads.
+So we will make our shimmer UI. This is your homework for today.
+What the homework is not just this. See, you know, I might not write that, okay,
+you have to practice seeing in the network tab, source code, put a debugger,
+but you have to do that. I might not write in your assignment that the assignment that
+I submit, right? I might not write it. What will I write? Do, do, do this,
+do, open your dev console. I don't want to write this, but you practice. You understand, right?
+Have your curiosity with you. Do this. You have to do this. Okay. You will learn a lot.
+I'm telling you, you will have a lot of questions. You will learn so many awesome
+things when you do this. Shimmer UI loading, then you load our data and my search functionality is
+working fine. K, I, N, G, search. Oh, but our search functionality isn't working fine, right?
+Our search functionality isn't working fine, right? Our search functionality isn't working
+fine, right? Should we make our search functionality work? What is the issue?
+If I write my king, something will break. Search. It is loading Shimmer UI for some reason. Why?
+It broke something because there is no data inside my restaurant. Why there is no data?
+Because there is no king. Is it? Awesome. I'm reading all the comments.
+You know, whenever something breaks, everybody is ready to help. Such an amazing audience we have.
+Everybody is, oh, many God, so many things making, I just, if you were given a chance,
+you would come over here and give me, Akshay, I'll make this work. This is the great thing.
+Why it is not happening? Because we changed the layout of the data, right?
+It won't work like this now. We'll have to update our list, right? So it was not working
+because our restaurant gets filtered out, right? Our restaurants get filtered out, right? Every
+time we don't have to update this restaurant, right? So we will have to maintain two variables
+in state. One is, oh, one is, see, you know, we want at a certain state, right? I want my list of
+all restaurant and I want my filtered restaurant. Does it make sense at any given point of time?
+I want my all restaurant. I want my filtered restaurant. These are two separate things.
+Whenever I am filtering, should I filter from filtered restaurant or all restaurant?
+Should I filter from filtered restaurant or all restaurant? All restaurant, right? So we will
+maintain two copies of my restaurant, okay? So one is this restaurant. Let's call this as filtered
+restaurant. And what should I show in the UI? All restaurant filtered restaurant.
+All restaurant filtered restaurant. What should I show? I should I show filtered, filtered
+restaurant, okay? Filtered restaurant set filtered restaurant, okay? So filtered restaurant right now
+is empty, okay? And I will show in my UI filtered restaurant, okay? Now I will keep a copy of
+all restaurant also. How do I keep a copy of all restaurant? How do I keep a copy of all restaurant?
+So let me create a state variable. All restaurant, okay? All restaurant set all restaurant, okay?
+All restaurant set all restaurant. This will come from U state,
+okay? What should be the initial value? Empty, okay? What I will do now is I will
+populate my all restaurant. When I make an API call over here, I will instead of set restaurant,
+I will do a set all restaurant. So my all the restaurant are set at one place, right?
+Will this work now on UI? Will this work now on UI? No, it won't work. Why? Because it will
+show me empty, right? See, first of all it is saying restaurant not defined. Why? Why? Because I am
+rendering my filtered restaurant over here, isn't it? I am rendering my filtered restaurant over here.
+And filtered restaurant is empty. Filtered restaurant is empty. So first time, on the first time,
+let us make my set all restaurant also like this and let us set my filtered restaurant also from here.
+Does it make sense? Anybody has questions around it? Does it make sense? Okay. Does it make sense?
+See, I want to maintain two copies at any given point of time. I want my all restaurant. I want
+my filtered restaurant. So here I am showing filtered restaurant. But first time, I want to
+make my filtered restaurant is all because there is no filter. So I want to show all restaurant
+here, right? I want to show all restaurant here. Restaurants is not defined. I'll tell you why
+restaurant is not it is coming because I have changed the name of this, right? I have changed
+the name of my filtered restaurant to filtered restaurant, right? So over here. Now, now,
+now, where is my code? Where is my on click? First of all, I have to zoom so much. So
+I forget, like it's so less code in the UI. If I see this, right? Remember, when I click,
+I do filter in my filter in my search text over here, I pass in restaurant. What should I pass
+in over here filtered restaurant filtered restaurant all restaurant filtered restaurant all restaurant
+What should I pass in? I want to filter always from my all restaurant, right? And over here,
+I want to show my shimmer. I want to show my shimmer when all restaurant length is zero or
+filtered restaurant less than zero. Come on, man, whosoever is saying all restaurant, right?
+Do it in your UI and you will get to know why it is filtered restaurant.
+See, you have, see what you are rendering over here. I'll tell you a small thing, okay?
+What you are rendering over here? Over here, you are rendering filtered restaurant.
+If any time this list is not there, right? Show a shimmer UI. When do you show a shimmer UI?
+Is it good? Is this code right? When should you show your not right or right?
+So basically, the shimmer is only shown, the shimmer is only shown when,
+the shimmer is only shown when, when you don't have any data. If I have my all restaurant,
+shimmer is shown, otherwise filtered restaurant is shown. Make sense? Now, suppose if I,
+I'll tell you, okay? So now refresh the page shimmer UI loading,
+showed all the restaurant, right? Now let us just try to do a search. Will this search work?
+We will come on to, we will come on to that discussion. We will come on to that discussion.
+Does this make sense? If I write King and press search, will it work?
+Will it work? Yes or no? Set restaurant is not defined. Okay, sorry. I have to,
+I have to change the name of my set variables also, right? I've made set all restaurant,
+set filtered restaurant, right? Okay, okay. What a set from there. Where is that condition?
+Sorry, I am doing live coding so bugs can happen. What should I do over here?
+What should I set? Set filtered restaurant, set filtered restaurant, right? I want to update
+my filtered restaurant, click of it. Make sense? Cool. Let us just go back, refresh my page,
+shimmer UI is loading and I got my, okay, let's search roti wala, okay? Let's search roti.
+Roti, search for it. It showed. Cool. It showed. Awesome. Awesome. Right?
+Now if I write my hotel empire, will this search work? If I write my hotel empire,
+will this search work? Yes or no? It works. Now it will work for everything
+because we are searching from all, see we had very small thing, very small thing.
+See this is not even react. This is about normal coding practice. Some people are
+showing some people, you know, when, when they joined react bootcamp, they said that
+Akshay, I don't get confidence when I write code. I don't know what code should I write.
+I'm teaching you writing logic also over here. I'm teaching you to write logic also a little,
+right? See what you know is, what you know is you have to, what you have to show over
+here filtered restaurant or search restaurant filter restaurant or all restaurant. Tell me
+filter restaurant or all restaurant. What do you have to show here? You have to show all
+restaurant. You have to show filtered restaurant. See if I do a roti vala, I need to show filtered
+restaurant over here at any given time. Why is this not working? You should know because I
+have written small R. We will fix it. We will fix it. Give me a, give me a moment. I will
+fix it. At given point of time, our UI should show filtered restaurant. When my page loads,
+what my filtered restaurant should have? When my page loads, what my filtered restaurant should
+have? We will fix this error also. We will fix this error. When my page load, what my
+filtered restaurant should have? All restaurant. Okay. It is complaining because when my page
+loads, there is the length of all restaurant is, there is nothing like all restaurant, right?
+Right? So what we will do, this is known as, this is known as, how can you avoid
+rendering component? I will tell you one important thing. Okay. How do you avoid
+rendering component? How do you avoid rendering a component? How do you avoid rendering a component?
+You can use optional chaining as well as you can say that when you are rendering, right? When you
+are rendering, if, if my all restaurant, right? If my all restaurant is not there, right?
+What the error was, it says all restaurant dot length is undefined. So there are two ways you
+can do this, right? But to handle it properly, you can do something like this. If my all restaurant
+is not there, if all restaurant is not there, return null. It won't render or you can return
+some JSX that, okay, all restaurant are not there. Some message also, you can render anything.
+But what I want to tell you, you can even do this. You can even do this. This won't break.
+This won't break the UI. Got my point. Got my point. This is known as early return.
+This is known as early return, not render component. When I don't have my restaurant,
+don't render anything. Early return. I have returned from the component early.
+It has not even, here is when we start rendering, right? This return is rendering JSX. Early return.
+Okay. Now, suppose my all restaurant is there. If my all restaurant dot length is zero,
+then show a shimmer UI, right? What if, see, it shows the shimmer UI when we are loading
+the component. What if my filtered restaurant, suppose if I wrote XYZ, suppose if my filtered
+restaurant is empty. Is this a good experience? Is this a good experience? No, right? We should show
+no restaurant found or something like that. We should show no restaurant found, right?
+How do we do that? We will do it here. If my filtered restaurant filtered restaurant,
+how do I write filtered restaurants off length is equal equal to zero. What should I return?
+Should I return a H1 tag? No restaurant match your filter. Does this make sense to you?
+Does this make sense to you? Does this make sense? Will this work?
+Will this work? Yes or no? Let us just see. If I refresh my page, it says no restaurant match
+your filter. It loads, right? When we have data, it loads. Your homework, your homework is
+now note down your homework that you have to first check for all restaurant show the shimmer.
+Then you have to show whether the filtered restaurant is not there. Make sense?
+Make sense? See, you know everything. You know everything. You know how to render the component.
+You know what is happening with all filter, all restaurant. You know what is happening with
+filtered restaurant. You know what is shimmer. You know how to early return. You know how to
+show no, no restaurant matching. Can you make this UI smooth? I don't want this experience
+on the first go. I should see a shimmer over here and I should see my no restaurant match
+your filter only when my filter length is zero. How will you make it? There are thousands of
+ways to do this. Thousands of days. Where will you add it? Where will you add it?
+I'll give you a hint. Add it over here. Add it over here. Okay. Will you be able to add it over here?
+Will you be able to add it over here? Should I show you? Should I show you?
+Write show in the comments if you want me to show this. I'll do that. But it will be a great
+challenging homework for you, right? So you have to. So I am giving you a hint. Okay.
+Let me write a condition, right? Okay. Over here. You have to write logic for no restaurant found
+here. Okay. Cool. I will show it to you tomorrow. Okay. And please do this homework.
+You have to write some condition over here. Cool. So if I see, but see it, the variable,
+now this works fine, right? If I search for random state, it says no restaurant match your filter.
+Okay. One more thing you have to do. One more important thing you have to do.
+My search went off. Is it a good? My, my restaurant is not matching filter rates.
+My search went off. Search should at least be there. You have to make this UI smooth.
+Tomorrow we will make this UI smooth together. Okay. But right now assume that, okay, things are
+there, right? Now why it is so, you know, if you write small r roti, r roti, small r, small r,
+it won't work. So let us write code for matching the matching our lower case and upper case.
+How would you do that? See, I'm telling you all these small things. A lot of experienced
+people on this call will be thinking, Akshayar, you are just wasting our time. You are just telling
+these small things, but it is important. Some people don't know it. Sorry for that, right?
+If you are feeling that I'm teaching you very small things, but I just want to take some
+time to teach small things also. Okay. So when you filter out, we are just checking
+our name, match the search text. So I am checking something like this, right?
+If our name matches the search text, if our name matches the search text,
+so it is basically checking if roti, if capital R O T I matches my small roti is it is false in
+JavaScript. It is false in JavaScript, right? How do you make this work? You do something like
+this. You convert both of them to lowercase. Okay. You convert both of them to lowercase.
+How do you convert a string to lowercase in JavaScript to lowercase? Okay. So now will this
+work? See, it says true. If I'm checking the lowercase of both, you can do uppercase also.
+To uppercase over here also to uppercase make everything uppercase. It will work.
+So now everything will work. Whether you do R O capital T I and you do a
+R O capital T I, everything will work. Make sense? Make sense? Okay. So
+now I will do something like this name dot to lowercase. You know people always remember to
+put optional chaining, always remember to put optional chaining. Otherwise things will break.
+Otherwise it will say dot found undefined to lowercase of undefined. Okay. If you don't put this.
+Okay. So it's a good practice to have it, right? In the search text also I want to do it in
+to lowercase. Okay. Let us just, huh, some people are saying I face this issue. Yes,
+you will face this issue. I know, I know as a teacher that what issues you will face.
+You would have faced this type mismatching issue, right? So if I write my roti and search now,
+roti is coming, right? This is how you develop small things in UI. Slowly, slowly we do a lot more
+things. Okay. We still have 15 minutes. We still have 15 minutes. Okay. I won't leave you
+before 2 PM. I have three years, three, three hours, not years, sorry, three hours. Okay.
+Let me drink some water. I will teach you one more thing. Some people are confused with conditional
+rendering. I will cover it once again. Yes, I will, I will revise also. Don't worry.
+Suppose if we have to build a button of login logout, let's build login logout.
+Okay. Let us build login logout in our app. Let's build login logout.
+So where should I build login logout in my header?
+Yes, in my head, right? In my nav, not in my head, in the head of the app, right? Header,
+right? So we will do that. Okay. So over here I have my title and I have my,
+uh, uh, I have this list items. Now I want to build a login logout button here.
+Right. So let's build two buttons, button. Okay. Let's call this as login.
+Right. Sorry. Button. Let's call this as login and let's call this button as,
+this button as logout. Okay. Now I have my login and logout. Should I show both of them?
+I should show login button when I am logged in. When I have law, when I am logged in,
+then I should show login button if I am logged. Sorry. When I am not logged in,
+I should show login button. When I am logged in, I should show logout button.
+Sorry. My English or so many things running in my head. Okay. So how do you do, right?
+Suppose if you have a, how I'm telling you how do you write code in like, how do you write code,
+right? So suppose if you have a authentication API, okay, let us, let us create a function,
+something like this, authenticate user. Okay. Suppose if there is a function authenticate user,
+right? And suppose you make some API call to authentic, to check whether the logged in user
+is correct or not API call. I'm not doing that. Make to check authentication, check authentication.
+You can do a API call, right? If the API returns success, it is authenticated. If it is success,
+then return true, right? If, if the thing is success, return true, else return false. Okay.
+Learn, sir, learn, sir. I still have 12 minutes. Give me. I also haven't written anything.
+Please. I'm wrapping this up. So if, if there is an API call for authentication,
+I will return true or else I'll return false. I am just hard coding it.
+Let's assume that the user is logged in. Authenticated user is true. Okay.
+If so, I can do conditional rendering for over here. I can log in over here, right?
+How will I write that code? Remember, what, what can I write inside these curly braces?
+What can I write inside these curly braces? JS, JS, JS. You know, there was in the community,
+I got in the discord community, I got amazing. There was a, there was amazing person. I don't
+remember his name. He asked a doubt. Akshay, if we can write any JavaScript over here,
+can I do something like this? So can I do something like this? Yes or no?
+Can I, can I do something like this? Yes or no?
+Can I do? Can I take a variable and write something over here?
+And can I do a console log over here? Can I do this? You cannot do this over here.
+Now you would say, Akshay, my whole life was a lie. You told me that, okay,
+any piece of JavaScript code will work over here. So any JavaScript works over here. Listen to me
+very carefully. Any JavaScript works over here, but a JavaScript expression, right?
+Expressions work over here. JavaScript expressions. There is a difference between
+note down your homework. There is a difference between JavaScript expression and statement.
+When you write something like this, this is one statement. This is second statement.
+This is, these are two different JavaScript statements, right? This, what is an expression?
+This is an expression. This is an expression. This is an expression. This will work. But
+but there is a cool way. You can do that too, right? You can do, you cannot do something like this.
+A is equals to 10 and console log A. You cannot do this, but you can do a cool thing. What you
+can do? You can do something like this. You can do something like this. Now we became,
+now this whole thing became an expression. So ultimately at the end of the day,
+you can run any piece of JavaScript code, right? You can run any piece of JavaScript code
+at the end of the day, but you can run only JavaScript expressions, not statements.
+Not many people will teach this to you. I'm telling you,
+out of the pavilion, I'm hitting the balls out of the pavilion, isn't it?
+See, you know, if I will wrap up everything, these things won't come up. Right now,
+I'm just teaching you so these things are coming in my mind. Let me teach, please.
+If you want to leave, if you are very hungry, go back, watch the recordings.
+But yeah, please let me teach. Otherwise I will not teach this. You will never know in your life
+because you are not as curious as I am. Otherwise be curious like me.
+Here, small things, right? These are small things.
+Many people don't go ask your friends who have learned react from like who are working in
+react. They won't know all this. Ask them. Take their, take their test, react test.
+And Abhitha, you're two o'clock. Who are we in here? It's not even two yet, right? I will
+leave you by two. Don't worry. Okay. So what I'm trying to say over here in these curly braces,
+JavaScript accepts expressions, right? So if there is a, there is, there's something
+known as, see, if you write JSX curly braces, right? Go read, read from the documentation.
+How will you get to know source of truth? Go over here. You will, you will, you will
+hear somewhere they would have written, right? See, read this once, right? You will, you will
+get to know. I am not able to find, but if you will read, right? Or everything is written,
+right? Everything is present in documentation. Okay. Okay. Let's go back.
+So here you can write JavaScript expression. You cannot write statements, right? This is a
+statement. If you do something like this, right? And a semicolon, you can not write multiple
+statements like this, but there is a way to do it, right? Okay. Now, now I want to
+write a if else condition to render this. I want to write a if else condition to render
+this. So I can write a ternary operator. See, this is a statement. This is a statement. I cannot do
+this. I cannot do this ternary writing ternary operator is a expression. There is a difference,
+right? So what I'll do, you know, you can do almost everything in JavaScript
+in these curly braces. It is just that you have to write it in an expression way. Okay.
+Okay. That's how it is. Okay. So over here, I will check for authenticated user. If my authenticated
+user is true, what should I show? If my authenticated, if the user is authenticated,
+if the user, sorry, not authenticated, let's check for logged in user,
+yeah, logged in, right? Not authenticated logged in. Okay. Otherwise it won't make sense.
+Logged in user. If the user is logged in, what should I show? Which button should I show? Logout
+button, right? What can I show? If it is not there, I can show my login button. Does this
+make sense? If logged in user is true, let's see. This is a logout button, right? If I change my
+authenticated user to false, it will show my login button. Let's make this work. Okay. So let's
+do a practice of everything. How do I, suppose if I click on this, if I click on this, right,
+it should go to logout. It should come to login. How will I make this functionality?
+Quickly. Let's just build it in one minute. How will you build? If I have to build this
+functionality in one minute, okay? I will create a state, right? Let's create a state quickly.
+How do I create a state? I'll create a state constant logged in user, right?
+Right. We'll check is logged in, okay? Logged in, right? If my user is logged in,
+right? If my user is logged in and set is logged in, my typing speed is low. That is why I'm taking
+more than a one minute, okay? If you'll do it, if I do without speaking, I can do it even faster.
+Initially, what should be the initial state? Let's give it is logged in false, okay? It
+should not be, it should be false, right? If my is logged in, right? So I'll write, right? If
+there is is logged in is false, is logged in is false. So it will show me my login button, okay?
+You status not defined. Why am I getting this error? Tell me everyone. Why am I getting
+this error? You are absolutely right, okay? So I'll do a import off.
+I will import off my use state. Will this work? Will this work?
+Will this work? No, it won't work because you can't pass in, if you pass in Boolean over here,
+it can it converts it to numbers and it messes up, okay? It doesn't work like that
+or it will work or it will work. If I write a false over here, if I write a true over here,
+will it work? Many people, you know, many people have, you know, this is why I leave
+some scope of thought and curiosity in your head that why it works and why it doesn't work,
+right? You have to be curious and find things out yourself. What will happen if I do a string over
+here? What will happen? So basically this is a Boolean. I can use a Boolean directly like this.
+I can use a Boolean directly in my condition, right? I can use a Boolean directly in my
+condition and it will work properly. Now let's make it toggle. Let's make it toggle. How do
+you know how on click off my logout button, what should happen quickly? Let's build it up. We had
+to build this in one minute, right? On click off logout, what should happen? It should just
+set is logged into. Okay, on click off my logout, right? Set is logged into logout false, right?
+And on my login button set is logged into. Does that make sense? Right? You understood, right?
+How I wrote this code? Refresh the page. I have my logout button. Why I'm seeing my logout button.
+Let's set this by default false. I'm not logged in. Okay, so I have my login button. Let's
+click on it. Logout, right? Worked. Cool, right? If I click on it again and again, it is toggling.
+Cool. I'll also show you cool thing. See, React is doing this very fast and it is not changing
+many things in the DOM. See, header, right? See, header has a lot of things over here, right?
+Header has a logo. Header has a home about a skirt. Header has this button. But see, what is changed?
+Now, see, this is my logout button. When I click on the button, just see what will happen. See,
+do you see what is happening? Reconciliation, my dear friends. Amazing, isn't it? See this,
+my button is getting reconciliated. It is finding the diff. Whenever I click on it,
+oh my God, this component is re-rendering. It is just triggering the reconciliation algorithm.
+It is finding the diff between the trees. It is checking and React is so powerful, so fast that
+okay, it exactly knows that which node needs to be replaced. Exactly that node it will touch
+and it will just change the button login logout over here. Only that button.
+This is reconciliation. This is why React is fast. Siddharth writes FBDevOP. Yes,
+Facebook developer team is amazing. They have built this algorithm. They are constantly improving it.
+This is why React is fast. When somebody says why your application is fast,
+then you have to say that okay, there are so many things that makes application fast.
+There are bundlers which is doing minification, which is doing transpilation, which is removing
+the console logs, which is doing the image optimization, which is doing a lot of bundling,
+everything. Parcel is the beast. Parcel is doing all that. And we also have in our application
+React, which has virtual dome, which has reconciliation, which has a diff algorithm,
+which changes, which tracks the on every state update, a diff of the trees are calculated.
+Only that particular portion on my dome is changed and React does it very fast. The dome updates in
+React are very fast. You have to explain the interviewer like this. And when you explain
+your interviewer like this, what will happen? He will ask you where did you learn all this
+and what you have to tell them?
+You have to tell that curiosity. Yes, be curious, learn a lot of things. So this is how React works.
+You should exactly know what is the use of what you are writing? What is the use of JSX?
+What is the use of Babel? What is the use of Parcel? What is the use of React? What is the
+use of different libraries? React and react down. Okay, one more thing which came to my mind.
+Where do you think that react fiber or the diff algorithm is written? Where is it in which library?
+Where is that diff algorithm? Where is that diff algorithm? React or react down?
+Where is that diff algorithm? Where is that diff algorithm? Everybody is writing react down.
+Diff algorithm is basically the core of react. It's written in the react core.
+And this dome updates happen via react down. And you know that diff algorithm
+works the same way in react native. Okay, does that make sense? React native also
+does the same diff when you are building your react native mobile apps. Understood?
+You know, all these small things, I am just telling you because this is coming to my head,
+parse it down, right? Note it up. I mean, because I don't come, you know,
+that's why I don't prepare myself much when I'm coming to the class. I just come.
+I don't even know what resource I can give it to you. I would have read it somewhere. I would have
+and I remember it. So I'm telling you just it's like Ganga Vairi. We are just flowing in flow
+flow. I'm teaching you everything, right? Cool. So let us just quickly once again wrap things up.
+We have built this login log out button. Your homework is to build this login log out
+button. You have to make your search work. You have to explore the world today, my friends. You
+have to explore the world. You have to handle shimmer. You have to do you have to handle edge cases.
+You have to make a loading screen. You have to make a you have to do early return. You have to
+do use effect. You have to do so many things today. Oh my God. How will you do all that?
+Do this. This is your homework tomorrow. We will learn amazing things. Your head will be blown
+even more. Okay. I right. So let's do this new things tomorrow. Let me just quickly recap what
+we did. Right. I am seeing the diff. Right. What what code did we write? You know why I made
+this shimmer UI. You have to fill it with the actual shimmer UI. Okay. You have to fill
+the shimmer UI with the actual shimmer UI. You're, I'm telling you, right? Not tomorrow.
+Basically do your homework next week. I know that there is very less time now left. If you
+can do it. If you cannot do it in the next week, right? The coming week till our next Saturday
+class. Okay. And also be active on the discord channel. Let's revise. We searched about
+use effect. We read about use effect. Right. This use effect is a different hook that we studied.
+You know, most of the times I'll tell you 99% of the times you would be using these two hooks only.
+There are many more hooks. There are many more hooks in react. Most of the times you will use
+this. So be perfect in those two hooks. Be perfect in these two hooks. You should know
+everything in and out about these hooks. Read about it. Right. So we had filter data. We
+used optional chaining over here. We because our function was not working for uppercase lower case.
+So we made it work like this over here with this code. We had so earlier we just had one restaurant.
+Now we had two lists. One list is for all restaurant. One list is for filtered restaurant.
+Right. But what we are rendering filtered restaurant or all restaurant what we are rendering
+filter restaurant or all restaurant filtered restaurant we are rendering right filtered restaurant
+in the render function. Okay. All restaurant why is all restaurant required? Why is all restaurant
+required then? Why is all restaurant required to search exactly Chitra? Chitra is absolutely
+right. Mansi is absolutely right. Satish is absolutely right. Praful is exactly right
+to search to filter. We will need this right. Use effect. When will this callback function be called?
+When will this callback function be called if we have this dependency arrays empty?
+How many times? Once after initial render. What if I do this? How many times this will be called?
+Each time my search text is exact changed. Okay. Each time my search text changed
+once and then every time my search text changes. Once every time it will be called.
+One time will be called always. But it is dependent on search text. That means
+it will call each time my search text. Then we made an API call. We used async
+await. We created a function. One more note down one more homework. One more homework.
+Right. Read about it. It is a JavaScript homework. Not a not a react question.
+Why do we do this twice data.json and why do we do this data.json after our fetch?
+Okay. Read about it. This is a good homework. Then we are setting our all restaurant and set
+filter right on the UI right set restaurant and all filter for once. Then we were just doing
+conditional rendering. This is what we studied. We saw we saw in the UI. Oh, I forgot to revise.
+We also studied this. How can we forget this important thing in your interviews.
+You have to use this piece of information when you are telling your interviewer.
+Microservice architecture. Read more about it. What I told you is a very short description of
+it. I just told you in very small time because I want you to at least know the
+terms terminologies. You can Google it whole big world of microservices and micro micro
+monolith right. So find out the difference between two what we are building. We are building one
+microservice UI microservice understood one project one one microservice to build a website
+like Strigi. We need a lot of microservices right. We are building just the UI portion of it and we
+need to explore the world and that is what we see today. This is what it is right. There is
+there is a class. Come on your people are just saying no class. No, you have a class tomorrow.
+You have a class tomorrow. No. Don't do Mars bunk. Okay. Don't do Mars bunk.
+I also have a festival at my home. It's okay. I enjoy festivals with learning.
+I enjoy festivals with learning. So what? I enjoyed my new year by teaching you react here.
+I enjoyed my new year by teaching you react. I'll teach on every festival whatever
+comes I'll teach you. Okay. So microservices connect to each other. That is what was exploring the world.
+Okay. We explored the world outside world. We made the API call. We saw that we also studied this
+right. How are these microservices connected or something right. We also saw that this process
+right. First the app loads then make an API call then render not a good way.
+We do this in normal JavaScript right. A good way is to render quickly render quickly then
+make an API call then update the data into the UI because the act is fast. We can render
+any number of times you want to quickly renders right. You want to render it.
+So this is what we studied. This was all about our this class right. Before I forget,
+let me just make a commit right away. This was chapter, chapter six.
+Right. I am making the commit right away. By the way, some people asked me that what is,
+what are you using to do this? I'm using something known as git lens install this
+plugin. This is very easy to make a commit in your git repository. But you know, if you don't
+know git and you are using this, don't do that. Learn git after that use it. Once you
+know how to do this in terminal, then do that. Okay. When you know how to, how to do this
+in command line, then use this. Okay. First you have to learn to use in command line.
+Don't use shortcuts. Okay. So this was the revision. Then we studied about the is logged
+in button. We, we did this toggle build this login button also when you do. Okay.
+course plugin. Yes. Some people are saying repeat the course plugin name course plugin
+name is just right. There are many plugin just right course chrome course chrome use the first one.
+Just enable it in your browser that will help you make API calls to different servers.
+So we are 12 to 12, right? I'll, you know, after this class, I will spend some time in the community
+today. I have reserved my two hours for the community. I will be there on discord, right?
+Please join discord on the pinned comment right now if you haven't because we will
+close the link in five minutes, right? We will close the link in five minutes.
+Right. There is no particular time. I will take out time. I don't know,
+but I have kept two hours in my schedule. I have some work to do right now. After this,
+I will have lunch. I have some pieces to finish. After that I will sit. I will spend two hours in
+discord community. I will check all the doubt forum. I will see where I can contribute.
+You know, most of the times I don't pitch in myself because I feel that struggle and find
+out answers wherever I feel that this is a really nice doubt. I will pitch in. I will
+answer your questions, right? So don't worry. Cool. So do that and repo link. If you want the
+repository link on discord announcements, it's there, right? Or I'll put this in your homework
+as well, right? That assignment thing, which I give you, right? Don't worry about it. Cool.
+So play with it. Have a nice day. Happy Makar Sankranti to everyone. You know,
+some people are celebrating Makar Sankranti tomorrow also at my home. It is tomorrow,
+but it's okay. Whenever you are, whenever you are doing it, right? Fly the kites. Eat good stuff
+and happy Makar Sankranti to all of you. Happy Lodi. Happy Bihu and all the festival. Happy
+Pongal, right? Okay. Is it this Pongal also? Okay. Happy Pongal and awesome. Eat Chikki. Keep
+yourself warm in this cold winters. If you are from Delhi, Uttarakhand, Haryana and the
+North region, it's very cold over here and thank you so much for joining in. Let's connect tomorrow.
+Same time, right? 11 o'clock. Join before 11 so that you don't have any issues. Don't rush at the
+last moment and hope you would be getting notifications. Are you getting notifications
+on your email about the class reminders? I am spamming you with notifications. I don't
+want you to miss any class. You would have got like, how many emails did you get? You would
+have got two, two mails, I guess, one or two mails or three emails. I don't know.
+Whatever three, four mails you will get. Okay. Some people are getting five. Oh my God. Sorry
+for that. Sorry for bugging you, but I want to bug you for each class. I want you all to be there.
+Every class. Come. Attend it. Live class is a very different experience. If you will
+watch the same recording, you will get bored. Suppose if you are not able to come,
+watch the recordings, watch it into X, watch it into X. Okay. So try to do that.
+And let's meet tomorrow with a new concept. Bye-bye everyone. See you tomorrow. Okay.
+Bye-bye. Happy festivals. I am ending the class now. But before going to my,
+let's, let's hit the thumbs up. Show me some energy. Yep. We will close this at 2K.
+1.5, 1.6, 1.7. And I am ending the class. Bye-bye my dear friends. Nice to teach you.
+I just love teaching you such an awesome audience.

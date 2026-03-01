@@ -1,0 +1,1384 @@
+FILE: 13. Data is new oil.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+one the recording has started and today we are with chapter 11 data is the new oil are
+you excited are you excited today we are going to study data is the new oil okay so let me
+just first of all share my screen okay are you able to see my screen are you able to see
+my screen okay awesome this is amazing are you able to see me down there yes thank you
+so much let's quickly have a poll also and then we will begin in very quickly right I
+just take this poll to understand whether you are able to hear me and am I visible
+properly or not am I visible and audible properly true or false I am visible and audible properly
+true or false come on be honest with your answers be honest there are still people who are struggling
+to join people who struggle to join please check your internet once if your internet is proper
+write an email we will figure this out right don't worry to the support okay cool so let us
+start today's session which is data is the new oil what do you think what do you think
+what do you think we are going to study today what do you think we are going to study today
+a lot of people are just saying redux redux redux state management context api use context
+redux toolkit use reducer oh my god why have you come to this namaste react course when you
+know already so much okay oh somebody is writing okay we just know the we just know the names of
+it okay okay okay so you know the names of it okay cool cool this is amazing so let me first of all
+tell you that you know handling data for a web app is one of the most critical pieces right when
+you are developing a web app whether it is a react application or an angular application or
+any web application handling data is one of the most crucial part of it okay and you know
+there are various ways you handle data okay I'll tell you one more thing okay I'll tell you one more
+thing the recording has started don't worry okay I'll tell you one more thing so basically
+when you have a web app right when you have a web application or let us assume that we have
+a react application so there is a UI layer onto it right there is a UI layer onto it that UI layer
+is what that UI layer is everything that you see on the browser the things which are visible
+that is the UI layer the buttons that you see the headings that you see the colors that you
+see the divs the body the all that all that thing which you see is the UI layer of it right the view
+the view that you see on the screen is the UI layer and there is one more layer there is one more
+layer what is that layer can you guess what is that layer yes sanya is absolutely right
+rishabh is right mayank is right it is the data layer so we have this UI layer and we have this
+data layer right this combines build our frontend react applications or any frontend
+web applications to be very honest when I say web applications I am talking about
+single page applications not plain html pages no when I say web application that means
+applications which are built single page applications or applications which are built
+using these frameworks react angular and all that stuff right so we have this UI layer we
+have a data layer right so everything that you see on the UI right on the UI is the UI layer
+which is built by what in react what do we write to build UI layer exactly kavya is right ashish
+is right barat is right it is the jsx right what is jsx at the end of the day right what
+does jsx convert to what does jsx converts to what does jsx converts to it is what okay who can
+who converts jsx who converts jsx yep you people are amazing bevel right so bevel converts this jsx
+jsx at the end of the day is converted by react into objects right javascript objects
+and what is that object structure a big object structure known as what is it
+it what is it that that big object structure what is it okay a lot of people are saying
+dumb dumb dumb it is virtual dumb it is the virtual dumb okay it is the virtual dumb
+and then what does that object is helpful for what is the role of that virtual dumb
+why do we have it exactly ashish is absolutely right it is reconciliation right it is the diff
+what is the diff calculated between diff is between what what two things what two things
+what two things between the renders it checks right whenever this data is updated right
+so it checks the previous virtual dumb and the new virtual dumb it finds out the diff of it
+suppose if there is a node which has been added now in the new tree so what happens is this new
+diff is new diff is then replicated into the html does that make sense first of all there are
+two virtual doms which are being compared the previous one and the current one
+whatever the diff is is then kept in sync with the actual html dom the actual dom that you
+that you see on the page got it give me a thumbs up if you if you understood it
+right i have been explaining this so many times this is not something new for you
+let me quickly repeat it once again okay there are still people who don't understand they see
+the jsx that you write is then converted into a big plain javascript object right it is a big
+object i i think people who who are saying no they haven't watched the previous videos okay
+go back watch it right it i have covered this in detail but let me just quickly tell you once
+again two virtual dom the previous virtual dom the new virtual dom that object difference is
+calculated the difference is there then the diff is synced with the actual dom that you see on the
+webpage okay that is it give me a thumbs up if you understand that awesome more more yes yes
+yes keep on hitting it awesome nice so that is the ui layer but that whole ui layer is powered
+by a data layer the whole ui layer is powered by the data layer what does data layer consist of
+what does data layer consist of in in in ui in react application what is that data how
+how your how that ui is rendered with that data how what what is used people say json
+rest apis so rest apis are back-ending right so you make an api call you get the data from
+external world i am saying that how your data within the application is maintained
+what do we use exactly rucha is right kavya is right chavi is right mamta is right nithu is right
+awesome so it is the state and the props it is the state and the props
+okay so we manage these ui with state and props suppose if on the ui we have a card a
+restaurant card so that data is held somewhere right behind the scenes it is held somewhere
+and the data is data is handled where in state and props okay does that make sense so there is
+ui layer there is data layer but do we only manage state with state and props do we only
+manage this data layer with state and props there are more things to it there are more things to
+it okay before doing that before covering that let me just tell you one let me ask you one more
+question let you ask me one more question lot of people don't understand that also right
+i was just going through discord channel and when i see the questions and all the stuff
+there are people who are still confused what is the difference between a state and prop
+okay tell me a difference between state and props tell me difference between state and prop
+state can change prop value can't change is it okay prop is an argument state is local variable
+okay okay okay so let me tell you a difference right a basic difference is suppose if you have a
+container you want a variable which has a scope just within that container or okay within that
+container or that component what is it known as only within this component it is known as state
+it is the local variable it is the local variable what is prop what is props
+state everybody understands what is props prop is the value passed from one element to another
+element absolutely right you people are writing it properly right i mean i i i am reading it very
+fast right but yes so basically most of these answers come from if we have to pass data from
+one component to another component we can use props isn't it we can use props if we have to pass data
+between one component to another component we can use props okay let me now start my app first
+let me start my app and then go back over here refresh the page okay so suppose if i have
+to pass one data data from one component to another component we use props everybody understand that
+but but but but but but but but okay let us see where we use props we use props in our body right
+in not our body our apps body right in body
+we passed in this this right what was this this is prop right these are props
+these are props which are passed to restro card right if i open my restro card so this are
+these are props right and the props are kind of the local state for our parent isn't it kind of the
+local state of our parent so don't get confused right some people get confused so basically
+state is the local variable so this see the restaurant is all restaurant is a local state
+variable for body but this can be passed as a prop over here right this is a bad example not all
+restaurant but a restaurant right here this restaurant is coming from filtered restaurant
+so this filter restaurant is a local state local state for body so it lives with within the body
+now inside body i am passing it down as a prop okay suppose suppose if at the root level
+what is the root component that we had what is the root component that we had
+in our app exactly app.js it was app layout suppose if i have a local state over here
+let's create a local state okay what state can it have what state can it have oh suppose it has
+user data okay let's call it as user logged in user info right logged in user info user and set user
+maybe right it is the local state use state right in this use state we have this user info
+let's have this user info as name let me give the name as namaste react okay and suppose
+suppose if the email id support at namaste dev dot com okay so we have this as local state
+this local state is of app layout okay i'm not keeping password here
+okay sandeep says keep password no okay so we have this local state here
+suppose if i want this state if i want this state
+you state is not defined oh my god import you state okay so suppose if i want that user
+information inside my restro card it is saying right i i don't know why you would need that
+information but assume assume you have to pass that information right below you have to show the
+name of the user right below one kilometers one kilometers minute below that you should show
+namaste react how would you pass that data how would you pass that data so i want to pass
+my data from app layout to where to my restro card here how will i pass the data how how will i
+pass the data so a lot of people are saying props props props props props props props so how will i pass
+it from my app layout to my restro card is the question because app layout does not have my restro
+card right okay where is my restro card my restro card is inside body isn't it my restro card is
+inside body right okay so what we will do is what we will do is we will pass this data
+we will pass this user first of all to our body right to the body where is the body here
+isn't it can we pass like this can we pass like this
+user is equals to user how do we pass in props can we pass like this yes now my body has it
+now this body receives a prop which is user i am destructuring it on the fly you can use
+props dot user also right so this user is in body now does that make sense from our app layout i passed
+into body now from the body i will pass into restro card can i do this can i do this and now
+and now in my restro card i can get this user will i get this user here will i get this user here
+suppose if i want to display it let us just display this user here user dot name okay
+so i showed it over here why is it saying not rendered user is not defined
+oh oh oh we have already gotten error user is not defined okay okay okay this is okay this is basically
+this is basically inside app router this is basically inside app router it is not here
+right we are not passing it passing it from here right it is outside the scope of this function
+see it is outside the scope of this function that is why it is not working did you understand that
+okay but you understood right suppose if we had this user right instead of this user let me pass
+this object directly okay right now we don't have it here i just want to demonstrate it right
+so let me pass this user like this right so if i wanted to pass it from the top level
+to the children how will i do one by one we pass it like this and now see we got namaste react
+over here where is this namaste react coming from it's like a chain it is coming from app layout
+to body then to your restaurant card right one by one it is coming up so basically if i have to tell
+you okay so we have app layout it has its local state right local state user now this app layout
+has a child what is the child it has body so we passed in this user inside our body right user is
+equals to user who is the owner of this variable user who is the owner who maintains this state
+app layout is the owner or the parent or the state right this state state is user
+over here this user is prop inside body in the body in the body in the body we have
+restaurant card okay in this restaurant card we again passed in as the user
+right and in a restaurant card in a restaurant card we had a h4 tag where we display this user
+right so do you see this from parent to child to child and in a real world react application
+this hierarchy can grow to a lot more level suppose this body had restaurant container
+that container consists of a lot of card so we could have a component in between as well right
+it can have a restaurant container right which takes user and it passes this user below the
+chain so it is like a chain isn't it it is like a chain so when you pass in data
+from this parent to child and then to its child and then to its child and then to its child and then
+do it all of this process is known as props drilling okay write it down in your notebook
+this is known as props drilling okay let me let me recap it once again suppose
+if you have a state variable inside your parent like the top most parent
+right and okay I'll tell you one more thing okay do you know what is react dev tools
+I'll show you react dev tools react dev tools so this is react dev tools a chrome extension
+please install it please note it down this is a very important chrome extension
+very important chrome extension you have to install it today okay when see I am not telling you
+I am not I don't want you all to be a developer who just built small applications
+when you build large scale application right the UI layer and data layer it's very tough to
+wrap up your head around it so these tools come into picture when your app grows large
+okay so you have to install react developer tools write it down on google you will find it on
+chrome web store I have already installed it I have already installed it okay once you will install
+it you have to just open do inspect you have to open this developer console what will happen is
+you will get these two new things components and profiler you will get these two new things
+component and profiler if you click on this component right it shows you the whole hierarchy
+of tree this is kind of like a mini virtual DOM you can say right this shows you the
+representation of a DOM in this fashion awesome okay oh some people already use it right and what
+you can do with this is you it helps you debug your app a lot this help you debug your app a lot
+okay see on this left hand side you will see this big tree of things so see it exactly shows you
+what is happening so there would be a lot of things lot of things which you don't have to worry
+about you did not write that code react is doing behind the scene or some libraries are doing
+behind the scenes so you see this right router provider which library would be doing this
+which library would be doing this exactly you people are exactly right react router down would
+be writing it we did not write it we started our app over here app layout we started our app over
+here app layout so app layout has this header it has a outlet and it has a footer isn't it
+it looks cool right so basically this is a small structure of your code over here
+we had inside app layout we had header outlet and footer this outlet had body see don't forget this
+right this is done by this is done by some other libraries but assume we write the code
+right in the outlet we had this body in the body we have a restock card isn't it and if you hover
+on to it see if you hover on to it it will show you this card is this canure food point do you
+see this canure food point this card is as a defense this card is as a defense now see
+and it has unique keys it has unique keys that we gave in right so this will help you this tool
+will help you in debugging the data layer this tool will help you the debugging the later layer
+now if you want to see what data is this card being powered by what is the data of this card
+so if you click on this it shows you the props see this is the props which it is receiving
+this is the props which it is receiving this is the data layer this is the data layer
+right see when you have a large scale big applications you won't remember right which
+component is having what props what state what right it it would be your head will mess up that from
+where this data is coming in right when you will have a big whole big application think about a
+application as large as facebook.com you won't know that on the sidebar there is a small ad
+which is coming up where is the data of that ad coming up from what is the state and props of it
+right what is the state and props of it so this tool will help you debug very fast
+this is the react dev tools this is the react dev tools suppose if suppose today if it is showing
+dash qms suppose if the api stops sending data for stop sending data for see let's see this only
+see in this kanur food point right in this see in this asha tiffins we have indian south indian
+beverages 4.4 minutes suppose if it stops showing you kilometers for one restaurant right if it is
+if it stops showing you kilometers for one restaurant right then how would you figure out
+that what is the error you can directly find out that it is not the problem with my code
+it is not the problem with my code it is the problem with the api got it so this will
+help you debug a lot of things this will help you debug a lot of things and please please be respectful
+in the chat don't take names and call out people all the answers all the questions are genuine
+please okay thank you thank you for being respectful please please don't take names
+in the chat and okay so some people are asking for discord link if you want discord link
+write an email to support at the rate namaste dev.com with the with you know what was happening
+our discord channel if i if we give the link right then what will happen is people share it with
+random people outside i don't want random people to join in our community it will just spam our
+community so we have so we first of all check whether you are a verified user or not then
+only we give you access to your discord right so so what we have done is write down an email to
+support at the rate you know i have to get a person who is sitting behind support and
+everyday doing that right so okay so write an email to support and please
+that's how we will get into the community cool so what will happen is this so assume this
+is the UI layer and this is the data layer which powers the UI got the difference did you were you
+able to see it now where is the UI layer where is the data layer right so if you want to see
+that where is this restro card coming from what is this restro card powered by right what is
+powering this restro card you would see that okay this is the data which is coming here
+why is this kerala and chinese coming in from here it is coming in from this cuisines
+it is coming in from this cuisine okay so this is what it says so you have to install this
+install this chrome tool extension and you have to play with this to see what is happening in
+the UI and data layer got it now suppose if there is a data inside your app layout right
+which we are passing down so if we go to body right if we go to body now it is loading
+timed out let me retry it right let me refresh the page retry it
+let me maybe refresh the page once okay if i refresh the page if i go to body see in the
+body in this body we have props as user email right we have props in the body we have props
+what are these props so basically this this tool will show you exactly what is your state
+what is the prop it has see and you know you suppose right i will tell you very big use
+case of it suppose i Akshay and suppose Sandeep right Sandeep over here in the chat Sandeep Rao
+is working on the same app now i wrote this code for passing in props now Sandeep
+does not have any clue about where this data is coming from he can come in over here he
+can go to this body and can see oh somebody has written props and hooks and straight over here
+okay this extension is helpful right now you understand why this extension is helpful cool
+right right cool if you understand that right so this is where this extension is very helpful
+so we exactly without even seeing the code see how could you have find out that okay body
+has props or state so you would have gone to body you would have found where is the body
+body tag where is my body tag it is inside app.js and sometimes you don't even remember right
+what place did we write where isn't it so we went to body where is my body i found out
+now i figured out oh okay this user is the prop okay okay okay how easy how easy would that
+would it have been if i just click on this body it tells me the prop these are the props
+props means which you are receiving inside the component props is the properties that you are
+receiving inside the components these are the props what and it also shows you the state
+and hooks exactly right amazing thing isn't it it shows you the state if you go it is showing
+you the state what is the state there are three states why is it showing three states can you
+tell me why is it showing three states can anybody tell me Sandeep is saying that it got
+updated three times no this is not the answer it is not updated three times no no no you are
+so basically it is showing you three states because you used three u state inside body
+see we don't remember right when we are writing code we don't remember it but this tool can
+exactly tell you what is happening under the UI layer this tool tells you exactly what is
+happening and how do you see it if you click on this right if you click on this it shows you
+the name also okay it will take some time but it will show you the name also so if you click
+over here it shows you the name it takes a little time why is it not showing up wait I'll I'll just
+let me refresh the page once okay so if you go over here this tool right it says parse hook names
+right so we use the hook state right use state hook so what it will do it parses the name of
+the state also it is not able to do but it shows you in the bracket what is the name of
+that hook okay it is a little slow because it has to go back to the code and figure out what
+was the name of it right so it takes a little time but it works it works a lot of times right
+it works generally it works so let us see the let us see the rest of card okay this rest of card
+has this props right this are the props so this is very helpful in debugging cool awesome
+so let us just go back so now okay I lost the context so basically what I was telling you was
+when suppose we have this whole hierarchy we have a state inside app layout right we have a state
+inside app layout and we want to access this state we want to access these data inside our
+rest of card see this rest of card is very down the hierarchy right it has it has outlet inside it
+see app layout has outlet this outlet has body this body has link this link has rest of card
+now I want this data to be inside this so what we do we first of all pass in as a prop inside body
+then a prop inside rest of card then a prop inside it so this prop from one parent to child
+to child to child is known as prop drilling do you understand what is prop drilling
+do you understand what is prop drilling yes or no give me a thumbs up if you understand what is prop
+drilling this concept is known as prop drilling if the interviewer you know once I went for an
+interview and an interviewer asked me Akshay what is prop drilling and you know he I never knew
+I was writing reacts in a long time but I need not know that okay this is known as prop drilling
+okay I have been writing this all across the while right I have been doing this but I did not know
+the exact name of it and I was rejected from the interview right I was rejected from the interview
+so that is why I keep on telling you these jargons also right I keep on telling you the jargons
+also because you know sometimes your interviewer will just ask you what is prop drilling and you
+won't be able to answer even though you know it okay so now when I said it has been asked in
+interviews now everybody wants me to repeat it once again okay let me let me repeat it once again
+okay prop drilling so suppose if you have data in your parent you you want to access it
+into your grandchild or even grand grandchild right so what you will do is you pass one prop
+to your children then that that that will pass into its children and then its children
+it is kind of like passing the data down the chain that whole chain that whole
+props passing in down is known as props drilling so basically you are drilling the props you are
+drilling all the components to access the props okay got it so this is the way we can pass in data
+from parent to child but what if I need to pass data from child to parent what if I have to pass
+in some data from child to parent how would you do it what if you want to pass data from
+child to parent how would you do it because because it is one way right the data flows one way from
+parent to child how would you do it there are various ways to do this right there are various
+ways to do this but let me tell you my dear friends let me tell you my dear friends
+that there are very less cases where you need where you need data from your children to parent
+there are very less specific cases where you will need data from children to parent
+okay there are very less cases so basically your body component has your body component has
+user info so your card might need that user info this namaste react but it is very less likely
+that this kanur food point info would be needed by your parent very less likely
+so first of all there are only small cases where you need it now what are the other ways
+what you can think of how can we use it right one way is some people are seeing local
+storage yes we can use local storage but it's not a good way one way is we can build we can build
+we can build our custom hooks isn't it we can build our custom hooks you people already know that
+isn't it you can use our custom hook anywhere you wish to you can read from anywhere right
+isn't it you can use your hook anywhere we want to just like we have used params right
+you can use use params anywhere in your code and it will give you the url param isn't it
+but building hooks for all these things is also not a good viable way so I'll tell you various
+ways to do this okay and why I am stressing over all this is because data is the most crucial
+part of managing your in your application data management will decide whether your app
+to a certain level whether your app is good scalable reusable or not okay so always
+always don't waste your data use it wisely structure your data well right data is the
+new oil use it wisely okay cool so so now okay so what is the now we saw this is props drilling
+we can keep doing this props drilling right but but but okay but is prop drilling a good way
+what do you think is this a good way I just needed this namaste react inside my component and see
+how much code did we write we changed three files we changed three files and every file
+had this random user my body component does not even need this user info my body component
+does not even use this user info but still we have to pass in right it's no it's of no use
+how so so basically it just makes your code cluttered it makes your code cluttered so if
+you have a hierarchy of two level three levels it is okay to pass props but if suppose you want
+this data under 10 levels it's not a good way if suppose your data is needed under 10 levels
+suppose if you have a parent now you want to pass the data inside your child's child child child child
+child so it's not a good way not a good way okay because one more thing okay what is the what is
+the bad way okay what is the corn of using it some people are writing redux yes so we use
+redux to solve this problem there are other ways to solve this problem also we use redux for one of it
+today we are not going to cover redux let me tell you first of all redux we will study in our next
+session make sense today we are going to study more ways of handling data okay so now one more
+disadvantage of using this props drilling is what one more disadvantage of using this props
+drilling is what suppose if you have this data passing in from a lot of components right so you
+change you change one thing in a single component one time prop so it renders a lot of components
+which all of those components that are using those props and it makes our code cluttered as well
+right it is unnecessary code unnecessary variables into our app which we don't want
+so suppose if somebody is debugging our app and goes to our body component right body component
+so this body component you will find there is a prop user right but we are nowhere using user
+inside body component right this user is needed for restock card here cool so this is the way
+now let's just move on to another thing right hope you would have understood props drilling
+this is what I wanted to tell you let's just quickly move to another thing I'll show you one
+more thing okay I'll show you one more case which I personally really like let me just remove
+this okay this is not a good way to drill the props always okay now now I'll tell you one
+one amazing thing okay I'll tell you one more concept for that I'll have to build one scenario
+let's create a let's create a okay let's create a just give me a moment Instamart page okay let's
+go to our Instamart page okay let's go to our Instamart page and build something inside it
+suppose in my Instamart page I want to show information about Instamart right suppose I want
+to show information about Instamart okay right so suppose if my Instamart has different different
+components suppose if my Instamart has different components first component is about Instamart
+okay suppose if we have about Instamart got it suppose if we have about Instamart
+or maybe in our Instamart right about Instamart and then when we have another section where it
+talks about the details of Instamart or something right details of Instamart I am just making a random
+example on the fly okay so don't don't worry about it details of Instamart okay next is it shows
+team of Instamart right then it shows the product of Instamart right suppose we have
+different components right suppose we have different components about and details makes two
+two difference careers of Instamart okay let's have a careers of Instamart so basically these
+are different sections inside Instamart how would you build components for these
+how will you build components for these we can build separate components for this
+but at the end of the day these are sections onto our webpage isn't it these are different sections
+inside your webpage can I make a reusable component sections let us make a reusable
+component section okay section what is one section right what is one section
+right it returns some jsx each section has a heading right let's give it a h3 heading and let's give it a title
+title of that section right and instead of rendering this right instead of rendering all of this
+we can now render over here what we can now render over here section right we can now render
+section over here isn't it so now I'll tell you one more thing okay now this is one section
+right this section has title this section has a title what was the title about us
+about Instamart right will this work will this work let us just see no why title is not defined
+okay so title we haven't received here right okay we haven't received this title over here
+so now if we see Instamart we have about Instamart and footer here okay we have about
+Instamart and footer over here so let's give it a heading also okay let's me give it a heading
+and let us use tailwind okay it doesn't look good Instamart and let's make a h1 so let's give it a
+class name tailwind guys tailwind what should I write let's make it a big heading what was the
+text for making big big heading what was the class text three excel okay so it is Instamart
+let's give it a padding margin how do you give a padding margin p2 margin m2
+right let's make it bold how do you make it bold font bold cool so we have our Instamart header
+here now let us make small sections inside it so this is one section right let us make a section
+let's make a section div right and after this section okay so we have this title over here
+right let's let's make a section let's give a border to the section how do you give border
+border red let's give it border black border and border black okay see we have one section over here
+right let's give it padding margin padding of two margin of two cool so we got this about
+Instagram about Instamart sorry about Instamart section everybody understood this or not yes or
+no has or no cool nothing new I am doing if you did not understand this that means you have not
+focused upon the previous session I am not doing anything fancy over here right suppose if we have
+this title now suppose if we have a p tag which displayed some information this is the about section
+of Instamart this is the about section of Instamart or something okay this description is coming from
+here this description is coming from where here right suppose if we wanted description to come
+from here how how can I pass that description this is a hard coding description how can we
+pass it as a we can pass it as a prop isn't it I can pass this description as a props right
+description is equals to and we can pass this description as a prop does this make sense
+because this is hard coded right I wouldn't I would not be able to use it for another section
+because if I write hard coded over here do you understand why did we use props does it make
+sense why do we need props if I would have written this then how would I create a new
+section it will be hard coded there right got it suppose if I want to create a new section
+how will I do I will just create a new section now I can just have my other section let's call
+about team team of Instamart this is the team section of Instamart team section of Instamart
+the team contains the team has 50 members and whatever like I mean just write whatever you wish
+to will it render another section will it render another section yes we have another section over
+here we are reusing the same okay so this is what it is right suppose if there are a lot of okay so this
+okay so don't you think that this description would be a long description not a short description
+it would be a big description right it would be a big big description let us use some random text
+let us use some lorem if some text lorem if some text so we have supposed this big text right
+I am just using some random text in here let me copy this or let me copy this paragraph okay
+suppose the about us page has this okay and suppose my this page also has big text okay so
+now we have now it looks good right now it actually looks looks looks like there is some sections inside
+it let us make the sections title a little bold and big right how will I make this section title
+as bold or big how will I make this h3 class name font bold and text as excel okay we have
+about insta mart team insta mart suppose if we had one more section over here right this is the career
+section let's call this as careers right we have career section now this can have a lot of sections
+inside this page suppose if we want to build a feature to show and hide the description
+if we want to build a feature of show and hide the description how can I do that
+how can I do that if I want to build this description of show and hide how can I do that
+if suppose I want to display my description not always I want to build show and hide how
+will I do that oh some people are saying state where should I keep my state where should I have
+my street where should I have my state in this section isn't it let us have a hide or unhide
+option over here got it got it so let's have a constant visible right visible or let's call this
+as is is visible generally when you are using a boolean right so use is visible not just visible
+okay it's just a normal convention okay it's is show no is hidden not is show
+is show does not make sense actually right is show does show
+show is hidden makes sense I don't know is visible is look sounds cool and looks good right set is
+visible okay and then initially let us just use a state right and and let us just use a state
+what should I give it let's let's hide it right initially let's keep this hidden
+okay let's have a button let's have a button after it right let's have a button with say show
+right and let's and let's render this description only if is visible is true how will I write this
+only if is visible is true how will I write this how will I write only if is visible
+tell me tell me what should I write over here I just want this description to be visible
+only when is visible is true yes some people are writing it correctly some people are not
+exactly you people are amazing you are understanding things up so basically you wrap
+it inside a bracket so it it allows you to use javascript it allows you to use conditions here
+right so you just write is visible and and right so this will only render if this is true this
+will only render if this is true make sense make sense awesome so let us go back and see
+you state is not oh my god I am bad at see generally when we use auto import right
+I have turned off auto import for me because I like to write it because I know exactly where
+all these packages come from all these hooks come from right so now all of these are hidden
+this show doesn't even look like a button but anyways it's completely fine let's just make it
+a little better let's just give it a cursor pointer okay so that it actually looks like
+clickable cursor why it is not cursor pointer okay and let's make it underline also okay
+underline or something I don't know underline does this work oh yep yep so if I click on show
+it should show me the details if I click on show it should show me the details how do I build that
+how do I build that yep you people are amazing you said on click is not written sir thank you
+so much for reminding me let's write on click what should happen on click what should happen on click
+it should set is visible to true does that make sense does that make sense if I click this cool
+right cool cool isn't it right now we build this now I want to hide this how will I hide this
+how will I hide this how will I hide this it should have been toggle is right show hide
+let's try to write code for it so this is the show button let us create a hide button also
+okay I am just copying pasting things we have a hide button what is the difference between
+this hide button is it just said is visible to false okay just said it visible to false
+so we have show and hide if we refresh the page we have show we have hide we have show we have
+hide what I want this button to change according to right according to what is the state how will
+we give that how will we give that I just want to suppose see suppose if it is already shown
+there is no point of showing show button right right I don't want to show show button now
+what will I do I will render it conditionally how will I render it conditionally I will
+write the condition if is visible is true then what should we show if is visible is true
+then we should show the hide button I am writing ternary if it is false then show the show button
+got it does this make sense does this make sense will this work will this work
+see now it is showing show if I click on show it shows this and it says hide click on hide cool right
+we have built our own did you realize that we have built our own accordion component isn't it
+we have built our own according component isn't it how much time did it take five minutes
+because we exactly know what we need to do isn't it what is an accordion accordion you don't know
+material UI accordion we built our own accordion right we built our own accordion this is what
+it is right see we built it right you just have to put in some CSS to make this arrow and
+arrow up down right it is show a hide button isn't it it is just show show hide button isn't it this
+is what we built isn't it this is what we built just now isn't it cool right you can just put in
+some CSS to make it smooth and card and all those stuff but we built this now now one problem
+with this accordion is one problem with this accordion is I want to build a feature I want to build a feature
+suppose if I click on show over here now if I click on show over here so it should collapse
+other accordions it should collapse other accordions got it now this is a challenge
+now it is not as easy as you would think now this is not as easy as you would think
+okay I'll tell you one more thing this is a challenge what is the challenge did you understand
+what we did over here do you understand this I'll repeat it once again did you understand this
+what we did okay you understood this got it now suppose if I clicked on show it showed this
+if I click on show here it showed this if I click on show over here but what I wanted is my page is
+looking ugly right it is just looking ugly what I wanted is I want to build a feature where if
+I click on it it should if I click on it it should open one at a time
+it should open one at a time suppose if you click on this it should collapse this
+so this is known as a collapsible accordion if you will see see right we built this accordion
+basic accordion right suppose if we want to build a collapsible accordion they would
+have a collapse yes this see this is a collapsible accordion see if you open one all other collapse
+if you open one all other collapse interesting right this is not as easy as you would think
+how will we build this this is playing with data I am not giving this to you as a homework
+I will show it to you because I want you I want to show it how it is done there is a important
+concept that you have to fit in your head you have to understand it how we are going to do this
+okay now that is really very important it will help you in a lot of things
+right so let us clearly see what are these about team career what component it is
+what component it is it is a section component right let us go back to our
+data layer and see what is happening behind the scenes right if I go to this section component
+right if I go to this section component so we have a section component
+okay so we have this these three section component isn't it all of these are section
+components and all of it has its own copy of props and own copy of state isn't it do the share
+state or not do the share state or don't share yes or no they don't share state they don't share
+state let me finish this first we will build this feature then we will take a break okay first
+we will build this feature then we will take a break so these are three sections they have
+different state different props different state different props this is like a new version of
+section every time this is a new version of section every time we have it right this is a new
+section it has its own state it has its own prop it has its own state it has its own prop
+Ok, at this time, at a particular time, this about Instamart, this is section 1, ok, suppose
+this is section 1, this is section 2, this is section 3, ok, so when I have this, now
+what is the is hidden, is visible value of section 2, what is the is visible value
+of section 2, is visible of section 2, section 2 is visible, over here section 2 is visible
+is what, is true, at this state what is the is visible of this section 3, this third section,
+it is false, so what we see is all of these section maintain its own state, a new
+copy of its state, right, every component has its own state, what we have to do is, now
+is to try to suppose if I click on, suppose if I have shown this, right, shown here, now
+if I click this, now what I want to do is, suppose if I click on this, I want to modify
+the state of its sibling, do you understand this, we have to modify the state of its
+sibling, we have to modify the state of its sibling, right, so this section has state true,
+this section has state true, right, so when I am changing my state, I want to modify
+for another section, how do we write it in code, how will we write this in code,
+can I write it, think about it, take a moment to think, take a moment to think,
+so we have this state is visible, right, now I want to change my is visible for about us
+from my career section, how can I do that, how can I do that, how can I do that, everybody
+is trying to write things up but Mansa is 100% correct, Mansa is 100% correct that
+we cannot do that, we cannot directly modify a state of another sibling from one component,
+we cannot do like this, we cannot do like this, what we have to do is, we have to play a smart game,
+right, instead of these sections maintaining their own state, instead of each and every
+section maintaining its own state, right, what we can do is, we can maintain the state in its parent,
+right, because now parent has control over all its children, now parent will decide whether to
+show what, got it, let me repeat it once again, this is a very important thing, right now all
+these children have a control over it, all these children, see this about us component has a control
+over whether you want to show this description or not, who has this control about a section,
+who has this control of this show button, team component, so if I want to modify about us,
+see assume this, okay, you have brothers and sisters, these are brothers and sisters, right,
+these are siblings, they have the same designation in the family, right, so if I tell my brother to
+do anything he might not do it, right, he won't listen to me, so because, so what will happen
+is now if we have a parent, right, if the parent maintains the state, then what will happen is
+every children will listen to it, got it, so what I will do is, I will take the control,
+I will take the control of this show hide from this section to the parent, I will take the
+control of show hide from these children to the parent, okay, and this concept is very important
+concept and you will use this a lot of time, this is known as lifting the state up, okay,
+this concept is known as lifting the state up, give me a thumbs up if you understand this,
+I will explain you, okay, exactly, hit this up, blow this thumbs up, we will see how do we
+write this in code now, so see why we are doing this is one another question, right,
+I wanted to create a scenario where we have to do this, right, so now we have stuck to a point
+where every component has a control over whether I want to show description or not,
+but I want to take control over all of these components, all of these sections,
+right, all of these sections, okay, so right now the control of show and hide is with
+individual section, I want this control for all of it, so my parent will control all these
+children now, so this section have, see all these sections have its own state, right,
+this section has its own state, this section has its own state, this section has its own state,
+now what I will do is instead of these section individually controlling themselves, my parent
+Instamart will control all of them, my parent Instamart will control which need to show,
+which needs to hide, which needs to show, which needs to hide, got it, this is known as
+lifting the state up, we will lift the state up, lift the state of the section to Instamart,
+okay, it is a very easy concept, we have fancy names to it, lifting the state up,
+random thing, okay, it's very easy, I'll tell you how to do this, don't have to worry,
+we're concerned about the names, right, so now what I want to do, I won't give this control of this
+is visible to this section, I want my parent this Instamart to control which section to show or not,
+okay, I want my Instamart to tell you show and you hide, you show you hide, how do I do that,
+I want my Instamart control component to control, exactly, Yelendi Shuresh is right, Saroj is right,
+Tanishk is right, we will just control it, how these section, you know, this parent wasn't
+aware of whether to show or hide, right, now my parent want to control it, so parent will
+tell this section that will you be visible or not, I'll say no, this will be visible,
+will this section too will be visible or not, parent can control it, right, now we are writing this
+as Instamart, parent will say no, false, you hide, you hide and then my parent will say
+okay, you are visible, okay, so it, my parent now has control over what needs to show,
+what needs to hide, does this make sense, now what I will do is I will go to my section,
+I will take up the power of, take up the power of this, right, from the parent,
+I will take this power from them, I will take this power from the children,
+how do I take this power, how do I take this power, power is gone, now the parent will tell you
+whether you will be visible or not, okay, parent will tell you whether you will be
+visible or not, now see my parent is controlling it, now they don't have power,
+you keep clicking it, it will throw an error, right, it will throw an error because now you
+cannot do that, set is visible, you have taken away the power, the power is gone,
+the power is gone, okay, let me refresh the page once again, but we want this to work,
+right, but we want this to work, so what will happen is now my parent will tell,
+now this is hard coded, right, I want my parent to maintain the state of their children now,
+parent to maintain it, how can I maintain the state of these children, how will I maintain the
+state of its children, I will create a state for Instamart, okay, I will create the state of
+section, right, let's create a section config, let's call this as a section, section config,
+right, let's create a section config, I am trying to replicate the same behavior that
+we did last time to this time, okay, let's create a section config and now set section config,
+okay, now what should be inside my section config, how do I represent this state,
+how do I represent this state, how do I represent this state, what should I give it,
+give inside you state, true false, should I give true false, true false, everybody who is
+saying object, Rajmani, Renu, you are absolutely right, it will take object, right, and we
+can have how many, how many keys would this object have, how many keys would this object have, three
+keys, now my parent will control these three sections, okay, my parents will control what three
+keys show about, we can maintain it as true, right, show team, we can do this as false,
+right, and we can have show career, show careers make this as true, now can I do this,
+what should I do over here, section config dot about, show about, right, here section config dot
+show team, here section config dot show career, cool, will this work, see it still works,
+right, it still works, now my parents config is controlling all of these sections,
+if I want to show the team and I want to hide all of them, what should I do, I will just do this,
+it will just hide it up, I want to hide all of them, I will do this, got it, suppose if I want to
+make this, suppose now if I want to only show one, only show one at a time and hide all others,
+if I want to show only one and hide all others, how will I do, how will I do,
+I will have to hide set section config, right, when will I set section config,
+how will I set section config, on click, on click of what, on click of this button, right,
+on click of this button, set is visible, right, so suppose and now, now this button is inside
+my component, isn't it, my button is inside my component, so now if I have to click on this
+button and change my parent state, how will I do that, how will I do that, how will I do that,
+I will give, I will keep, see what will I do, I will say set is visible, right, this is set is
+visible, so what I will do is, this I will pass in this set is visible from my parent,
+this control will also be passed in as a prop, do you understand, do you understand this,
+now I will say when this set is visible is there, when this set is visible is there,
+what should it do, what should it do, it should just set my section config to what,
+set my section config to what, set my section config to what, it should just show about
+and false for everyone, right, does this make sense, when I will do set is visible,
+show about, here it will just show team and it will hide all of them, it will just show this
+and it will hide all of them, does this make sense to you, let us refresh the page and see,
+if I click on show, it shows, if I click on this show, see it got hidden, isn't it, cool right,
+what it did is, as soon as I clicked on this career, right, it showed career and did a false
+for both of the children, this when I clicked on this, it show careers became true and both of them
+became false, isn't it, let me tell you once again, what I did is, in my section now I am passing
+this set is visible, right, I am passing this set is visible from my parent, my parent is controlling
+this child now, my parent is controlling this child, okay, my parent is controlling this child,
+what I want to do is, whenever you click on that button, my about us, see this is the first
+section, this is the about us section, it should only show about us, it should only show about
+it and it should collapse all of them, right, it should only and similarly, in my team section,
+it will it should only show true and in my career it should only show true and collapse all of them,
+got it, but do you see this, okay, suppose if I had more sections, I can have more sections,
+suppose if I had my product section also and detail section also, how will I create product and
+detail section, let's create two more sections, okay, I created my product section and my how easy
+it is, right, in react to create new sections, product section and my detail section, right,
+if I go over here, so I have see five, six sections now and now, oh my god, I want to
+calculate this also, so what should I do, I will create my show product, show product
+and I should have this as false initially and I will have my and I will have my show details,
+oh my god, is this a good way of writing code and I will again have to take the pain
+of doing this false again and again, right, for each and everything, how tough it is to add features,
+right and I will make this true and make this false and what, you know what this type of code
+is called as, you know what this type of code is called as, can you guess, you know what this
+type of code is called as, see it will work, right, see it works, oh it is not working,
+there are some bugs also see, I did not write it properly, this, what is this type of code known
+as, this type of code is known as shit, piece of shit, utter shit, okay, so this is a very bad
+code, that's why there are jokes and I have literally seen people writing code like this,
+I don't want any of my student of Namaste React badge, go and write code like this,
+you don't have to write your code like this, this code is neither maintainable nor readable,
+nor reusable, nothing, I have seen this code written, that is why people say that okay,
+we don't, all code is garbage, right, that is why people say all code is garbage and that is
+why people don't let interns push to production, interns push to production, okay, so that is why,
+okay, so now how do we optimize this, how do we optimize this,
+so what I exactly know is, let us not get into the jokes, keeping the jokes apart,
+what I want to do is, see what I wanted you to realize is that data is the new oil,
+there is a UI layer, there is a data layer, you cannot do, you cannot build a large scale
+application by not having control over a proper data mechanism, your data should be very well
+maintained in your app, what looks, see what, see it looks fine, right, this looks so cool,
+isn't it, how cool this looks, who a person who is using this application will see that okay,
+this is completely working fine, right, the code is not breaking anywhere,
+the code is, come on here, I will take a break, let me finish this at least, we have not finished this,
+let me finish this concept, what I am trying to say is, I am not taking a break here,
+I have also not taken a break, please, okay, listen to it, otherwise you will lose the
+context, okay, please, I don't know why you keep on taking a break, wait, wait, wait,
+let us fix this, this is not a bad code, if you want to go, go on a break,
+then you will write code like this only, okay, so see, a person who is using this,
+your web application will feel, oh, it is working properly fine, as expected, it is working fine,
+so they would think that the code written is okay, right, but the code is not written well,
+okay, the code is not written well, your data is the crucial part of it, how do I go about fixing
+this, see, if you think logically, what is the condition of this feature, if you think logically,
+what is the condition of this feature, some people are saying we can do array.map,
+we can keep a list, what is the condition, the condition is that we just have to show
+only one at a time, we have to show just one at a time, so how much effort, how much data would
+we need to show just one, we just need to track what I need to show, we just need to track what
+I need to show, so there are multiple ways to do this, right, either you can create
+different keys for your section, right, you can create different keys for your section or else
+what you can do, those keys can be the name of your sections as well, and we don't have to
+maintain this big old configs, I will just maintain what section is visible, okay, visible section,
+okay, what is my visible section, set visible section, I will just keep the info about which
+section is visible, I can over here, do I need an object now, do I need an object now,
+no, I don't need an object now, I will just need, you can either keep indexes for sections
+or you can keep it as a key for your sections, either keep it as indexes or sections, but
+because these are sections, let me name it and keep keys for it, right, suppose my visible section
+right now by default is about, right, so at a time only one section will be visible,
+at a time only one section will be visible, right, so suppose if my visible section is about
+visible, right, so how do I make it visible and make others not visible, I will have to change it a
+little, I will have to change it a little, I will pass this, I will pass this information
+what section is visible, so see there are multiple ways to do this, I am just telling you one
+way, right, there are multiple ways you can fix this, you have multiple ways you can fix
+this, so what I will do is I will pass this visible section information over here, right,
+so now my section gets whether is it visible or not, right, whether it is visible or not,
+how, how will you, how will you visible, how will you make it visible, what does this is visible
+takes in, what does this is visible takes in, it takes in is visible, what is this is visible over
+here, this is a Boolean, if you pass through to it then it becomes visible, if you pass false to it
+then it becomes hidden, right, so if I will say that okay is visible what I need to pass in is
+visible, I will pass in a Boolean here, how will I pass a Boolean, if my visible section is equal
+equal to about, does this make sense, if this will be equal equal to about it will be true,
+perfect, right, now how do I modify it, how do I modify it, set is visible, okay, set is visible,
+how do I modify it, let us first do that for other sections, okay, let us first do is visible for
+other sections, so is visible about, okay, visible section equal equal to, sorry, is visible team,
+oh yeah, just give me a moment, is visible careers, okay, career is visible, is visible is, okay,
+let us remove these two sections, this is completely fine, yeah, let us remove these two sections,
+thank you for the advice, okay, so now what I did is, now see I did my, because my this visible
+section is about, so my about is visible, now suppose if I change this default value to team,
+right, and I save it, so my team section is visible now, we are just controlling all these
+all these sections with just one state variable, which is a string, this is a better code,
+isn't it, this is a better code, so what I want to say is, you have to do like this, now we also
+want this height to work, right, this height to work, it is not working right now, right,
+let us go to Instamart, this height should work, what should happen, what should happen,
+it takes set is visible and it sets it to false, and it sets it to true, if it is the other
+button, right, what should it do, however here, what code should I write, we definitely don't
+will not do this right now, we definitely not do this, and we will set our visible from here,
+we will set visible section, right, we will do something like this, what should I write inside
+this, can you guess, can you guess what will I write inside this, right, if I write a key name
+over here, will this work, if I write a key name over here, will this work, huh, will this work,
+some, oh a lot of people are saying yes, yes, no, no, yes, yes, no, no, if I write a key over
+here, will this work, if I write, okay, let's write keys, and let's see if this works, okay,
+let's see if this works, okay, let us see if this works or not, got it, if I click on my show,
+it shows and it hides it, it works, oh my god, it works, right, if I click on careers, oh it works,
+but wait, wait, wait, but wait, wait, wait, wait, wait, don't, don't celebrate too early, if I
+click on my hide, it's not hiding, if, do you understand why the hiding is not working,
+don't tell me this solution, but did you understand why the hide is not working, if you understand
+why the hide is not working, give yourself a clap, pat your back, amazing, you have understood
+react, you have understood what I was trying to explain, it is not updating the state properly,
+now is the time for your homework, now is the time for your assignment that now you have to fix this,
+there is a very small fix for it, very small, very small fix for it, you know I wanted to
+excite you, tempt you a lot and then give you the assignment, okay, cool, so I will repeat this once
+again, then we will take a break and move on to newer concept, I want to hurry up because I mean
+I have to teach a lot of things today, okay, let me repeat it once again, so did you understand
+is visible, see is visible takes a, see think of these section component as a black box,
+the section component is controlled by its parent term, the parent will say is visible
+true, so it will be visible, if it says is visible false, so it will not be visible,
+that's all, this is visible is a Boolean, if the Boolean is true, it is visible,
+if the Boolean is false, it is not visible, that's all it does, got it, now the major thing is
+and you can even see and you can even, you can even modify this, right, this is not a good code,
+I have written this condition twice, right, this is not a good code,
+this is not a good code, what I can do is, I can just directly write this p tag inside my
+is visible isn't it, does this make sense, does this make sense, why it is complaining because
+it is two children, you have to make a parent, it should just return one, okay, but you can
+optimize it, got it, so I am just telling you, so is visible controls whether it is
+visible or not, set is visible controls, right, set is visible controls what is visible, right,
+what is visible, okay, so now what you will do, you will have to write it, I will give you a hint,
+I will give you a hint, you have to modify this function, you have to modify the logic
+of this function to make this work, so the show works but the hide doesn't work, why,
+think about the signature, think about the signature of this component, what it does on click,
+what it is doing on click, you have to modify this logic, think about it, this is a homework
+for you, got it, this is a homework for you, I am not explaining this, okay and I don't want anybody
+in the community to explain this either, okay, please let people struggle and figure this out to
+yourself, awesome, so this was it and we see that okay we have built our own accordion, was it
+cool or not, was it cool or not, we built our own accordion component, you can just see modify it
+and make it fancy, look like cards and all that collapsible stuff and all by using CSS
+but I just wanted to show you how it actually works behind the scenes, you can actually build
+your own component library with this framework, you would know exactly how material UI would
+be built, somebody would have written these components, right, isn't it, this accordion is this,
+this is accordion, see this is what we are trying to build, right, if you expand one,
+the others collapse, if you expand third, other collapse, this is what we are doing here, right,
+if you expand this, others collapse, if you expand this, others collapse, so we studied today
+props drilling, we studied today lifting the state up, we studied today that data is the
+new oil, data is the most important part of managing your UI layer, data layer, important,
+right, now we will be diving deep and studying more, come back after a five minutes break
+and we will talk about that, right, five minutes timer, go drink water, take some time
+off your screen, right, take some time off your screen and please, let us just come back
+after five minutes, okay, oh, there is a YouTube video with some music, are you able to hear the
+music, okay then let it be, some problem with some system sound, that's okay, cool,
+see even Google is maintaining state, see if I open this, I go back, it is maintaining the
+state, can you build this feature now, can you build this feature, see, you know, once you
+know react, once you know powerful tools, then you would, when you browse the website, right,
+you exactly know how this would have been built, how Google would have written this code,
+cool, right, let's go, I'll come back in five minutes, oh, I got late,
+sorry, sorry, sorry my dear friends, I just got late, okay, now hope you would have enjoyed whatever
+we studied till now, now we are, I did not had lunch, come on, protein shots, yeah, protein powder,
+nice, nice, no protein powder, yes, it is, it is, it is almost raining, not raining,
+it's very, very, it's drizzling outside, it's very, it's very close, right, it's very cold,
+cool, so, Neetu says here as well, where are you from, I am in Dharadun right now,
+so it is raining over here, not raining exactly, but it's drizzling and it's very cold, no sun
+today, it's very cold, cool, anyways, let us just start, okay, let us just start, oh, lot of people
+are from Dharadun here, nice, awesome, let's plan a meet up guys, let's plan a meet up, okay,
+let's plan a meet up, so please stay connected on Instagram, I'll soon plan a meet up,
+let's meet next week sometime, okay, today's Sunday, let's meet next week, cool, so let us just,
+I'm not sharing my Instagram ID here, people will think I'm doing promotions,
+find it out yourself, anyways, cool, let's not waste time, I have a lot of things to cover,
+so we studied, props drilling, we studied lifting the state up, we studied how data is very
+important, we studied that, how do we actually modify the UI layer using data layer, we studied
+about React DevTools, right, we saw this cool thing, we saw that okay how React DevTools helps us in
+debugging, React helps us seeing the data which is powering our UI, we can see exactly what data
+is powering our UI, we see what are the state props and like how everything is doing it, right, so
+cool, so this is what it was, so some people are saying commit this code, I'll commit it at once,
+don't worry about it, I'll commit everything at once, okay, so anyways I just have made changes in
+just one Instamart file, it is separate, okay, so I'll commit all the coded ones, now what we will
+do is, I'll show you one more important cool thing about React DevTools that is a profiler,
+this profiler my dear friends, you have to go back and play with it, when you build large
+scale applications with so many components in it, large scale applications with
+so many components in it, what happens is, what happens is, you know, it becomes tougher to debug,
+it becomes very tough to debug, let's go back to our home, so what we do, this profiling comes
+into this picture, this profiling basically records the whole session, records the whole
+user journey, right, what are you complaining, come on, okay, no complaints anyways, you are just,
+hey, come on, come on, stop sharing my Instagram IDs and all that stuff, focus over here, otherwise
+you will be the one who would be saying repeat again Akshay, please, focus over here, we have
+less time, please, please, so if we refresh the page, this profiling basically shows you how
+this, how the page was rendered, okay, so let us start profiling, if I click on start profiling,
+right, and if I do something in my app, right, I can just go to home page,
+right, I can move anywhere in my app, right, I can come back, so basically this React DevTools,
+this React DevTools is kind of like seeing what is happening in your application,
+right, it is React DevTools profiler is watching, this profiler is watching what you are doing
+on the web page, and it is recording it up, I am stopping the recording now, see, if I stop the
+recording, it exactly shows you this flame graph, this flame graph shows you what happened,
+right, this flame graph actually shows you what happened, if you go right, it actually shows you
+at how much time every component took to load, does that make sense, amazing thing, right,
+this location provider, see, we are using router, right, from react router DOM, it is,
+it exactly says that, okay, it took 0.1 millisecond or 1.6 millisecond of it,
+and you know with these small things, you can exactly make your app performant,
+these are the small things you have to do my dear friends, these are the small things,
+should I show you one cool thing, I will show you one cool thing, okay, I will show you
+one cool thing, see, do you see the shimmer, do you see the shimmer, it took 0.1 millisecond
+of 0.3 milliseconds, it basically took, see, it rendered at it, this shimmer right over here,
+if you click on the shimmer, it exactly shows you properly, that it was rendered after 4 seconds
+for 2.4 milliseconds, this shimmer basically was rendered after 4.4 seconds for 2.4 milliseconds,
+now you, suppose if there were people right, who were using those shimmer from an external library,
+there were people right, now you understand that writing our own shimmer is so less cost effective,
+if you would have, if you would have got that shimmer from some other library,
+if you would have got that shimmer from some other library, it would have been more time,
+it would have taken more time, it is always good to have less libraries as possible,
+right, so basically this profiler basically shows you this flame graph,
+this frame graph, right, this flame graph basically shows you how your web app was loaded,
+if you go over here, right, see, if you go over here, it exactly shows what you were doing, see,
+after that what happened, your body was loaded, then your link tags were loading on the top,
+right, go over here, right, what happened, so this shows the whole journey, this shows the
+whole journey, it exactly shows you how much time did it take to render, how much time the
+layout effect took, what caused this update, see, what caused this update, amazing level of detail
+this extension gives you, now you have to go and see this is not Namaste React Dev tools,
+right, so I am just, I just wanted to show you, right, I want you to be amazing developers,
+I wanted to show you, I can't tell you everything inside this, because there are thousands of
+things inside this only, how to use it, you have to go back, play with it, read its documentation,
+watch whatever, watch videos which are covering about this, right, I want to give you brief
+idea that something like this, something like this super cool thing exists, lot of
+ureact developers don't even know about it, what is the benefit of profiler, again you are
+still asking me the benefit, it is exactly showing you how your component is rendered,
+how things are moving, when you are moving inside your UI, you can exactly, I will share
+you the links, like I will share you the references that you have to go to their
+website and read it, right, please read it, please do your own job, right there,
+right, it is a big thing, it's not very small, when you play with it, it will make more sense to it,
+it basically does all the profiling for you, it exactly shows you that see, see there is a
+suspense, how much time that suspense took, why was there a suspense, why was there a
+suspense because I moved to this about page, right, it was lazy loaded, right, so if you would have
+not done suspense, so it would have loaded in fact a little faster, this exactly shows you what is
+happening, how much time Shimmer is taking, how much time restro cards are being rendered,
+everything it shows you, now how does it help even more, you can rank your component, see
+if I rank it, right, it says that body is taking the most amount of time, body is taking the most
+amount of time, then link is taking some time, so basically you can see this and you can optimize
+your app accordingly, you can figure out the points where you can optimize things up,
+right, then do we need to, yes, yes exactly that is what you need to do,
+this is just tracking the metrics, right, earlier, see if this was not there, how would
+you know what is taking much time, which component, suppose if there are thousands of component in
+your big whole app, there are things you have developed, there are things some other developer
+have developed, there are things some interns have developed, you don't know where your app
+is taking more time, it looks good, right, it looks good on this page, it works well,
+but you don't know what is happening behind the scenes, so basically react dev tools give you a
+picture of in what order things are being loaded, how you can do profiling and all that stuff,
+right, let me just do that once again, I start the profiling, I refresh my page,
+okay, I have to start the profiling, I go to the home page, now I let me search something,
+let me search coffee, right, if I search for coffee here, see I clicked on search,
+there is no result for coffee, let us go back and search for something, let's search for food,
+if I search for food, if I search here, right, see three restaurants came in,
+I went to my about page, I came back to my home, right, and let me stop my profiling,
+so it basically, it basically shows you everything that I was doing,
+how my components were rendering, how many milliseconds it took to render,
+right, what was the priority, see how much time each component took, you can go here and see each
+and every step that I did, while I was typing in things were happening, right, so it is tracking
+all of that, everything, right, and this is react dev tools, so it does not work on production
+for obvious reasons, right, so Renu is saying that, thank you so much Renu for
+Renu for confirming it, you can't just go and profile somebody's website,
+there are tools to do that too, but this is, this is for development purposes,
+this is for developers to make their apps performance, to see why it is taking,
+what time it is taking, and amazing things, a lot of react developers also don't know about this,
+lot of react developers don't know about this, and people who know don't know how to use it,
+I want you all to exactly know that there is something like this that exists,
+and you should use it also when you have to make your app fast, okay, cool, that is why I showed
+you, right, because I, you know, see, I want to give you all the knowledge, what I have learned over
+years, this tool has helped me a lot, so I'm telling you about it, it's your choice,
+whether you want to use it or not use it, but I really liked it, so I'm telling you that,
+okay, this is what I'm doing, right, cool, so there is also a timeline, I just use it,
+you will get to know there is a flame graph, so fame graph and ranked, these are two things which I
+have used a lot, it gives you the information when your app grows a lot, so you exactly know
+what to optimize and when to optimize, where to optimize, okay, so it's a good thing to do
+that, right, cool, let us now see another topic, right, let's now move on to another topic,
+so one more thing, right, suppose, suppose, suppose, suppose, I want to build a feature,
+now I am starting a new topic, okay, so listen to me very carefully, suppose, suppose I want to
+build a feature, right, suppose I have some piece of information, okay, so we had this
+user info, right, we had this user info, where was our user info, our user info was in, where,
+where did we put that user info, app, yes, app.js, right, oh, I think I removed that code,
+I think I removed that code, anyways, so suppose if you have this user info, right,
+suppose in the app layout you have a user info, okay, this is a user info, how do you build this
+user info, so basically it's like a logged in user info, suppose if you log into Swiggy,
+you, I'll show it to you, okay, you will understand it, suppose if you have this
+user info and there is some set user info, set user, okay, set user and we have a use state,
+right, I need to import this use state also, listen to me very carefully, this use state has
+what, object, okay, this object had name, let's give it a name Akshay Saini, okay, and let's
+give it at an email id or something, right, support, add the rate, Namaste Dev, Namastedev.com,
+okay, suppose there is a user info, this is the logged in user, okay, this is the logged in user,
+now how do I, how do I check for logged in user, see initially you can have dummy names over here,
+how would you, how would you build a login type of a flow, how would you do that,
+what do you use, what do you use to build it, let me import use state here, local storage,
+no, how, okay, there would be an API, suppose if there is an API which takes username, password and
+returns you this user info, this name, email and all that stuff, where will you write that API call,
+use effect exactly my dear friends, exactly, so there will be a use effect, right, in the real
+world you will have a use effect, right, where you will make some API call inside it and you
+will do this one time when you load the app, isn't it, you will make an API call and then what you
+will do, you will basically authenticate user and what you will do after authenticating, you will
+set, you will set this right, you will set this up, cool, so you understood right what am I doing,
+I am not writing logic for that, assume that this is here, now suppose the user logged in,
+you have this user info in your app layout, now you want this user info, you want this user info
+in my card, so what did we see, how we can get this user info in my card, how can I get
+props drilling, exactly you people are amazing, you remember everything what I tell, exactly,
+thank you so much for telling me, thank you so much everybody who is writing it here,
+you have understood it, so we can do props drilling, suppose if I wanted it inside my,
+so because app layout is child now I wanted it inside my, suppose if I wanted this info
+inside my header, right, suppose if I wanted this user info all across my app anywhere,
+all across my app anywhere, I want this info in my footer, I want this info in my header,
+I want this info in my search container, I want this info in my restro card, I want this info
+everywhere, right, so how you can do that, I can keep drilling my props everywhere, right,
+I can keep drilling my props everywhere, okay, I can pass my props to parent, to children,
+to children and everywhere, I can use this, but that is a bad approach, that is not a cleaner
+approach, whenever you have a use case like this, where you need data, same data across
+all your app, you have to store it in a central space, that central space is, can be local storage,
+a lot of people are saying that, but local storage is not reliable, local storage is something
+inside browser, I am talking about react state and updating the local storage is a,
+updating the local storage is a heavy operation, updating the local storage is a costly operation,
+it is a pain, so you need to have this data in your react app, so you will store it in a central
+space, react gives us access to the central space which is known as context, which is
+known as react context, there are various ways to do this, some big companies also use redux store
+to handle this type of thing, but you understood why redux store comes into patcha,
+it is like a shared state for whole app and any component can use that data, any component
+all across the app can use the data without seeing things, so react context is one such thing
+that we are going to study today, in the next session we will cover redux, we will study redux,
+don't worry my dear friends, we will don't worry, yes so people who are saying ngrx it is same,
+right there are, there are different state management library, have you heard of mobex,
+have you heard of mobex, mobex, yes, so if you, so these are similar libraries which do a similar
+stuff, react has now built its own, react has its own context, so you can do a lot of stuff
+using context, okay there is also something known as flux, there is also something known as mobex,
+there is also something known as ngrx, there are so many things, I don't know much I haven't used ngrx
+or something, but I know that angular also would have its own, so react context helps us with it,
+now let us just see how do we use this context, what is the context, how do we use it, why
+do we use it, oh why do we use it you know right, why do we use it you know, because I want some
+piece of data to be accessible anywhere in my app, awesome, so this is kind of like a central
+place where we keep things up, now suppose I want my user info across all my app in various
+other things, so what I'll do is I'll create a context, right context is kind of like okay
+some people are saying can we create global variables, can we create global variables,
+I'll create a global variables, I'll create a global javascript variable, wire variable which
+will be accessible everywhere in my app, not secure okay, what is what is the bad thing about
+it, it will not work, I can make it work for sure, it will work, you can read it yes, but react
+is not tracking it, it is exactly the same question why we have state, why we use use state instead
+of normal variables, because react is not tracking it, react is not triggering its reconciliation
+process, react is not watching it, react is not spying over things, trust me react context
+is a very super powerful thing offered by react and I'll show you right away in the next 15-20
+minutes, I will show you, you will be amazed by that, you will be amazed by how react is doing
+all that stuff okay, I'll show you up, so let us try to create our own first context, so because
+context is shared let me create the context inside utils okay, so assume context to be a big
+object or some piece of data that's all right, so let us create a context, let us create a context,
+how do you create a context, so I love to create all the context in separate new files,
+this is a good practice, suppose I want to create a user context, let me name it as user
+context.js okay, constant files, see you can keep it anywhere you want to, I love to keep
+a new context in a new file, I don't know why I just love it right, so somebody has already
+started asking what is context at the end of the day, amazing, now when I tell you what is
+this at the end of the day, you understand this properly right, what is context at the end of the
+day, wait you will understand it, you will understand it, don't worry, I'll tell you what
+is context at the end of the day, yes because you know when you understand that what is at the
+end of the day, what it is at the end of the day, it becomes very easy, very easy right,
+wait for a while, how do you create a context I'll tell you, it's very easy to create a context,
+very easy, you just have to import something known as create context, create context from
+react, so just like any other hook, just like any other superpower, react gives us access to
+create context as well, so we have create context from react, what is this create context
+at the end of the day, it is basically, it is basically, it is basically a function,
+this create context is a function okay and it takes in some data that you need all across
+your application, this create context takes in some data that you need all across your application
+okay, so basically it takes the default value of your context, default value of your context,
+let us give it some dummy default value okay, we can give it name okay, we can give it name,
+oh I misspelled it, thank you so much for reminding you people are amazing, thank you so
+much, it is context not content, oh my god, VS code is drunk okay, so basically I can give it
+give it a default state, so I can give it a default state, let's call it as dummy name
+right, dummy name right and a dummy email also right, I can I can give whatever you want to
+I just writing it randomly, dummy at gmail.com okay, so this is how I have created this context
+in here, this is how I have created a context in here, easy right, just have to call a function
+create context, you got this context from react right, what should I do, I will just export
+this context, export default context right, user context cool, easy peasy stuff right,
+now we have got this user context, how would I use it, how would I use it, how would I use it
+right, so let me just, suppose if I wanted to read this info in my header okay, suppose in instead in
+next to my login right, next to my login I want to show my name right, logged in username,
+how will I show this, how will I use this context data into my name,
+how will I use this data into my name, let's go to header.js, I will as you understand you know I
+love react, why I love react is I don't have to remember anything, I don't have to refer to
+documentation a lot of time because it is very easy, all of all of its API, all of its hook,
+it is very very easy, very easy, so you just have to import a use context okay, you have to import
+use context, easy right, to create context, create context, to use context, use context, easy
+right, from react, oh we already have a react here, so let us just import it there itself
+right, otherwise it will complain, use context got it, so I have imported my app right, so this
+use context is what, this use context at the end of the day is what, a hook and hook at the end
+of the day is what, a function right, so create context is also a function, helper function,
+use context is also a function at the end of the day, how would you use it, how would you use it,
+you will just write user right, you will just write user info from it right, how will you get
+this user info, how will you get this user info, where is that user okay, so let's
+create it like this right, this is a big object, let's create a user from here right,
+let's create a user, so I am just modifying my data a little okay, so I am just modifying my
+data as user right, I am getting a user and then user name right, so otherwise I will have to write
+dot name here right, so it doesn't look good, cool, so what I will do is I will have my user
+from my context right, I will have my user, now use context, now the question comes,
+can I have multiple context or not, can I have multiple context in my app, yes why not,
+because this is just for user info, I can create a lot of context, what all context
+can I create in my food will app, what all context do you think, I can create a context for my card,
+I can create a context for some other info, I can create a context just for some random
+location info or footer or rating or so many things I can do right, so many things I need
+all across my app, so I can create a context for it okay, for roles and all lot of things,
+so when I am using a context I need to specifically specify what context I need to use,
+so this user should come from my user context, so I need to pass in the context here right,
+first of all I will just import my user context that I created, it was a default
+import right, user context, it was a default export, so it's not a named export, so this
+user context is coming from user util slash user context right and I will use my user context
+in here, does that make sense, I get this user now okay, I get this now awesome, now I end this
+user context when I will use this right, it will give me a user here right, now can I show this
+user name next to my login logout button, let us just try to use it right, let us just try
+to use it, here I can put in my login logout button, where is it okay, just before this button
+I am just using this, user right over here, user dot name, user dot name cool, so let us see
+oh it did not turned up, oh I think user, oh I have to extract this user, it was a user
+object right, so I have to extract this user, you understood right, it is giving us the whole
+object what I am writing over here, it is extracting user from it right, where is my header,
+this is the user destructuring and I will write user dot name, I hope it should work,
+yep see you got this dummy name over here right, you got this dummy name, so I don't have to pass
+in any props, I don't have to do it anything, I just had this user context somewhere, we don't
+even know where it exists, somewhere in utils, it is like a constant file right, it is like a
+constant file somewhere sitting in and I can use it anywhere I want to, amazing right, I don't have
+to pass any props, I don't have to manage any state, I don't have to do anything, this is just
+some piece of data in a central store, it is independent, assume that this is a react app,
+your context is outside your app right, so it does not, it is not tied to a component,
+see a difference between a normal use state and props and all those things is they are tied to a
+component right, they are tied to a component, does that make sense, please right, please I mean I will
+don't ask your questions I will cover, I have yet to cover, I am just starting context right,
+please I will cover, I know what doubts you will be having, trust me I am the teacher right,
+I know what doubts you will have, everything I will cover, I will tell you how to have dynamic
+data, how to update, I will tell you everything about context, don't worry okay, so state and
+props are tied to components, context is separate, context is not specific to any component,
+okay, you can have it in a central place, okay, now we have this dummy name right,
+this dummy name, let us just have inside my header right, we have got this dummy name,
+let's write it inside a h1 tag or something right, it's looking ugly, it's looking a little ugly,
+let's give it some padding margin and make it beautiful okay, what class name should I write,
+see how cool it is, when I am writing user name I can just write in directly, I don't have to write
+a class name, go back to my CSS file, come back over here, I can just give it a padding of, padding
+of 10 right, let's give it a padding of 10 and let's give it a font bold, let's give it a color,
+how do you give it color, text red, can I do that, I can do a text red of 900, cool,
+cool right, it's so easy, right, we have dummy name here, okay, right, so yeah,
+I should ideally not put these h1 tags in here right, I can put it, you can put anything right,
+even if you can just put in span also, it hardly matters, because what will happen is your tail
+wind is anyways going to override it right, okay, let me put a span, cool, so we have a span,
+it has dummy name, cool, so we have this span, now let us see how we can use, can I use this dummy
+name inside my restro card, let us try to use the dummy name inside my restro card, the restro
+card is inside my app layout, inside my body, inside the body we have a restro component,
+we have a restro card inside right, let us just use inside restro card, let us just
+use inside my restro card, where it shows right 2.9 kilometer minutes, oh my god,
+did I mess up something I wrote 2.9 kilometer minutes, this doesn't make sense, so let us
+remove the minutes, okay sorry my bad, so let us have a h5 tag and let us give it a class name
+of font bold and let us just write my, I want my username over here, I want my username over here,
+how will I give, how will I get my username over here, what should I write, what should I import
+quickly, use context, easy api right, it is very easy, I never have to remember this is the
+best thing I love about context right, I will extract my user from my user context is equals to
+what should I write here, use context, what should I pass inside use context, what should I pass
+inside use context, user context right, which is coming from util slash user context right,
+I will get my user info and I can start using it, see how easy it was, I can just start
+using user dot name, see dummy name came in all, came inside all that cards, cool right,
+can I write email, can I use email, let us just write email also right, I will put a dash and
+I will put this email right, let us put an email, I have got my dummy name and dummy email also,
+I am loving this, cool right, let us put it inside footer also okay, let us try to put it
+inside footer, it is so, I am doing this because I want to show you that this is so easy, see how
+do you do, use context, use context from react and how do I use my context right,
+so I will have, I will grab my user, user is it from my use context right, which takes a
+user context, user context right and now I have my user, I can just use it in the footer,
+let us and how do I write it in tailwind, I will just give a padding margin see,
+see how fast things happen right, how fast things happen when you combine the power of
+jsx, tailwind, user context, react, amazing things right, this site is developed by,
+and then you can write the username right, user dot name and hyphen user dot email right, see
+it's easy right, how much time did it take to do that, how much time did it take to do that, see
+this site is developed by dummy name, dummy email, this is so easy than drilling the props,
+think of you drilling the props and putting it here, this is so easy than drilling the props,
+this is so easy than drilling the props, now the question comes, Akshay why do we even need props
+then, why do we even need props, can I keep everything inside my context, no, context has a
+separate thing and you know context has a separate thing and state and props are separate,
+state and props are tied to the components, context is central store, so you don't use
+context for everything, you use context for data which is required all across your application
+in different different places, it's like a central data for all your components,
+got it, assume that context is a use state for your whole application, does it make sense,
+I'll tell you one more time, one more time listen to this very carefully, context is like
+use state for your whole big application, context is like use state for whole big application,
+the most amazing part is you can use context wherever you wish to, wherever you wish to,
+got it, it's like a user store, like it's like a data store, awesome, now let us just see one more
+thing, let us just see one more amazing thing, this is how we use the context inside our,
+what is this use context, what is this use context, quickly, it's a hook,
+does class components have hook or not, does class components have hook,
+why are you forgetting class components, it does not have a hook, it does not have a hook,
+okay, it does not have a hook, what was the class component that we created,
+do you remember it, it was about I guess, yes, this is the about us was the class component,
+this about page was the class component, how do I use my context over here,
+how do I use the context over here, suppose in my about us I needed context,
+we don't have use context here, so what we will do is we will import the context that I want to use,
+because functional, because see use, okay, I'll don't do a use context, user context is here,
+I want to use this user context in my about us page, how will I do that,
+I will, so see this user context is a, we will use it as a component,
+we will use it as a component, do you understand this, we will use it as a component,
+so what I will do is I will write something like this, user context dot consumer,
+okay, this is how you use to do inside class components, when I say user, because you don't have a use
+component, use context over here, right, you do something like a user context dot consumer,
+now what you have to do is, this takes in a jsx, which is a function, right, this function
+will have a value of this context, I'll show it to you, this function has value of whatever
+the value this context holds, this function has value of whatever the context will hold,
+do you understand, this is how you do it in class based components, let me close this up,
+let me close the constructor, in my render function what I am doing is, I am just writing
+user context dot consumer, it is consuming things up, right, value I am just logging in value,
+and let us go to about us page, open my console in from here, right, if I go to my about us page,
+so see, oh my god, oh remember this, remember this Namaste React OP set interval, it is still there,
+okay awesome, but we got this thing, right, see we got this user context here, right, I can show
+my user context over here, let us just use my user context here, so this basically has some data,
+right, so basically I can destructure it once again, I can just extract my user from here,
+and I can just have a h1 tag inside it, or something, h1, h2, h4 whatever, right,
+h4 tag, right, and what I will do is, I will put a class name here, I will do a font bold,
+let us do a font bold, let us make a text excel, right, excel, oh, let me move myself up, padding
+of 10, okay, let's try to do this, why it is complaining, why it is complaining, oh,
+I have not closed the tags properly, cool, and what I will write inside is user.name
+and user.email okay, hyphen user.email, let us see if this works or not,
+if we go back, we have our data inside our app, do you understand this, do you understand this,
+it is a central place, I am using it inside my footer, I am using it inside my footer,
+I am using it inside my about us page, I am using it inside my header, if I go to home page,
+I am using it inside my restrop page as well, amazing thing, right, amazing thing, how do I use it,
+let me repeat it once again, it is a little, I really don't like this pattern in class-based
+components, that is why I don't, I actually don't like class-based components now,
+I have written a lot of class-based components, I am fed up now, once we have functional
+components and hooks, it has made our life so, so, so much easy, isn't it, it is, somebody wrote,
+context is like God, it is everywhere, Abhishek, it is everywhere inside React,
+so it is everywhere inside React, right, now, now I will tell you one important thing, right,
+we have read the context anywhere we want to, but I don't want my dummy name, I don't
+want my dummy email, I want to make an actual authentication, authenticate the user info,
+get it and then pass in to the context, right, how will I do that, where was I,
+where was I making my API call, where was I making my API call, I was making my API call
+in my app.js, right, where is the API call, yes, so here we have this user, suppose we don't want
+dummy value, I want my data to be a real data, right, which comes as a, comes over here,
+we will make a API call and come over here, I will tell you how to do that, now what you
+can do, you can modify your user context using a provider, okay, so just like we had a user context
+dot consumer, we also have a user context dot provider, so what you will do, you will pass this user
+context dot provider, right, of value, right, user context provider, just like we have this
+user context dot consumer, we also have something known as user context dot provider, do you understand
+this, what will I do, I will pass in, I will pass in this user, I can modify the default value of
+this user provider, right, I can modify the default value, how do I do, I will pass this
+component a prop, which is known as value, and what I will do is, I will just pass my user here,
+right, I will pass my user here, this user is basically, assume it to be exactly same as
+user context, so we, this, this user basically is this object, right, so suppose we had to pass
+this, so we will pass it like this in the value, right, now instead of this dummy data, I want
+this data to be my user, right, so I can do something like this, right, I will tell you once again,
+what you can do is, in your user context provider, you can provide, you can override
+the default value, this is how you override the default value, got it, this is how you
+override the default value, I have not done much, right, I have just imported my user context,
+I have just did user context dot provider, I have overrided the default value, right,
+now what will happen, this user, see, I will tell you why I did that, this is a hard coded
+value, right, this is a dummy hard coded value, but I want my data to be dynamic, right,
+I want my data to be dynamic, so let's go to app.js, what is dynamic, this user is dynamic,
+isn't it, it will modify according to my use effect, it will modify according to my use effect,
+does that make sense, so I am not writing the use effect, but this is a modifiable
+state change, so whenever this state will modify, whenever my user will modify,
+what will happen is, all the places will modify, this is the beauty of context,
+this is the beauty of context, now one more question is, where should I use this provider,
+why did I wrap everything inside my provider, because I am using this data inside header,
+footer, outlet, everywhere I want to use it, right, I want to use it everywhere, what if I
+what if I did not put it inside footer, I put it inside footer here, what will happen,
+what will happen, first of all let us see if we put inside footer, then we will see the second case,
+so let's go back to home page, now if you refresh the page, see Akshay Saini,
+the user object is everywhere, right, see, it modified everywhere, it modified here also,
+see, it is inside footer, it is inside restaurant card, it is inside header,
+everywhere it got updated, now suppose, suppose if a header did not had this,
+header was outside this provider, what will happen, can you guess,
+let me create a react fragment first, right, can you guess what will happen, if my header was
+outside, can you guess, see this my dear friends, now you understood it, now you understand why it
+is coming over here, I can modify my context for smaller portion of my app, do you see the beauty
+of it, do you see the power of it, it is very powerful, very very powerful, I can use the same
+context but I can pass in different data into different portion of my apps, I can pass in
+different data to different portion of my apps, but logically should I do this,
+logically I should not do, right, I want my whole context, I want my whole user context to be
+everywhere, so I am wrapping it all across, amazing, right, react is super powerful and you know,
+suppose, suppose if there was a button, I will tell you, okay, suppose if I will do an amazing
+thing, now let us try to modify this context, okay, let us try to modify this context,
+how cool would it be, how cool would it be, right, let us try to modify, see we have used
+this inside header, we have used this context inside my restaurant component, we have used
+it inside footer, oh, so what should we do, let us search container is written, right,
+let us create an input box to modify this context, okay, should we create an input box,
+let us create it in our search container, okay, so we are doing random shit which does not even
+make sense, we are doing random things which does not even make sense, let us see how it works,
+right, it is amazing, we are just complicating things up, random components are updating
+random things in your app, right, this is how big app looks like, I want you all to have,
+you know, if your basics will be strong, right, my dear friends, if your basics will be
+strong, right, nobody can defeat you, if your basics are strong, nobody can defeat you in your
+interview, how much ever complex situation is given to you, you will handle it if your basics are strong,
+right, if you exactly know that user context value was my default value, what is my provider
+value doing over here, what is my provider value doing over here, what is this doing,
+it is overriding, overriding, so nothing can, nothing and why did I put in over here,
+if I put my header outside what should happen, nobody can question you about, like, it's very genuine,
+it's very easy if the basic concepts are clear, okay, so now let us just try to modify it,
+you will be amazed to see, right, amazing thing, right, I always end my session with
+amazing cool stuff in your head, let us dive deep and play around with context today,
+so I'll have my search container, where is my search container, randomly in some random
+hierarchy, if you just go back and see the hierarchy, right, in my react dev tools,
+where is my react dev tools, right, if I go back in my components, right, so if I search for my
+search container, search container here, right, see how it is here in my body,
+it is here in the body, right, so deep, now I will try to modify my context from here,
+okay, I'll try to modify my context over here, right, let me close this up,
+so let us go to search container, where is my search container, it's inside,
+where is the body, here it is, right, in my body, suppose if I have the search bar,
+this is the search input, this is the search input search button, next to my search button,
+let us create a another input box, okay, let us create another input box, right,
+now this input box should have a value, what should be the value, this value should come
+from context, right, what was the context, how do I use my context over here in the body,
+how will I use my context, let me collapse this, right, let me remove this also,
+let me remove the comments also, I am removing the comments,
+okay, how will I use my context, I will get my import, my use context, okay, use context here,
+right, from react, use context from react, I will import my user context,
+not named import, normal import, user context from user context, how will I use it,
+I will extract my user from here, right, use context and user context,
+do you understand this, and I will have the value of this as user dot name, okay,
+user dot name, right, user dot name, okay, so now oh we have got this input box,
+but it is not doing anything, I can't write anything over here, why, because we don't have
+a on change, we have this on change, how should I modify it now, this on change takes e right,
+that synthetic event, now I need to set my context somehow, I need to set my context somehow,
+so what we will do is, how do I modify this user in my app, this is my app.js,
+how do I modify this user, how do I modify this user by set user right, so just like we have
+passed in our user over here, can I pass my set user, does this make sense, I will just pass
+my set user also right, I will just pass my set user, how will I get this set user inside this
+component, how will I get my set user over here, I can just get my set user like this, isn't it,
+I can get it via destructuring, cool, does this make sense, right cool if that makes sense,
+I can just like see once again I am repeating it up, in my app.js we have overridden it right,
+so user is this, set user is this, isn't it, now what I am doing over here,
+I am just extracting my set user here, sorry, how do I set user now on change of this
+right, on change of this I will just do my set user, what should I update in my set user,
+it will update that user object, it will update that user object, isn't it, it will update my
+user object, this user object, I can give a name and email id here right, I can give a name,
+now name should be e.target.value, does this make sense, why do I write e.target.value,
+awesome, now I can modify my email also, email is my, let's give it as new email,
+right now I am just giving it new email, email at gmail.com, okay, you can give it a new value
+also I am just doing it randomly, okay, so I have written this up, now let us just try to
+modify our context and let us see, let me refresh the page once, right, let us try to modify the
+context and now you will see a magic, see this, I am modifying it on the go and see this,
+everywhere it is modifying, do you see the header, do you see the header, do you see the
+components, it is amazing, react context is doing an amazing thing for you my dear friends over here,
+if we see right, see this is the footer, this is the search bar, this is the header,
+if I write in namaste react over here, see everywhere it is modifying on the fly,
+think about the reconciliation process, think about the reconciliation process,
+it is kind of like a two-way binding, isn't it, very fast, react is very fast, within second
+see, if I write N, A, M, A with each key press it is modifying my header, it is modifying my footer,
+it is modifying my restaurant cards, everything is getting modified, right, so this is how it is,
+now some people are saying that how can I modify just my email and not just name,
+how will I do that, just my email, just my name, it is very easy, come on, why are you even asking
+this, you should do that yourself, you should do it yourself, it is so easy, let us create one more,
+okay, let's play with it more, okay, I did not plan for this, but let's play with, okay,
+let's create another one for email, what I will do is, I can write something like this,
+if you don't know this, then I don't know, you study JavaScript, okay, you should study JavaScript,
+so what I can do is, I can modify my email like this, does that make sense, I have two now,
+one input box is for name, one is for email, one is for name, one is for email, got it,
+let us refresh the page, okay, access any and then email is this, see, if I modify access any,
+so only access any is modifying, see now let me, let us play with this, will this work, if I modify
+my email id, will this work, see if I modify my email id, see my email id is modifying, see now
+random components are modifying random things in my context and it is super smooth and super
+fast, each and every key press is just, it is crazy right, each and every key press is
+finding out the diff algorithm, reconciliation process is triggering, all this virtual DOM
+comparison is happening, then the actual DOM is modifying and keeping things in sync
+and that there is a context provider which is now doing that, now think about what will happen to
+my, what will happen to my profiler, what will happen to my profiler, it would, it would just mess
+up it head, right, it has to track everything, it has to track everything, isn't it, profiler
+is gone now, great, let us try to mess up our profiler, see this, let me start the profiling,
+if I do this you can profile everything, see you are doing this right, you are modifying this,
+let us modify this, right it is recording everything, let me stop recording, see my profiler
+caught 56 events, 56 times reconciliation happened quickly, 56 times, do you see the power of
+react, the speed of it, 56, we can see each and every update here, profiler is recording each
+and every update for us, each and every update, it is 2 o'clock just give me 2 more minutes,
+few more minutes I will just wrap my session up but this is the amazing thing which I wanted
+to show it to you, we can modify anywhere from anywhere in my app, this is the power of react
+context, right, you can debug it and now I will show you one more amazing thing okay,
+with the information about context, now let us go to flame graph, no not flame graph,
+let us go to components, now let me refresh my page, now do you see something amazing,
+now do you see this data router dot provider, now do you understand
+how routing is happening, now do you understand how routing is happening, how react router down
+would be doing it, do you see this dot provider, do you see the navigation dot provider, right,
+do you see this, they uses context behind the scenes, I want you developers to be so strong
+that you can develop the next router for react, okay, so you know react router DOM is using
+context behind the scenes, react context behind the scenes, so somebody now somebody would have
+written this logic using context and we always used to think how is routing happening,
+how is use params working, everything you should know, exactly basics remain the same,
+at the end of the day it is all JavaScript, JavaScript does not have any context,
+JavaScript does not have any hooks, it is all functions, it is all objects, it is all
+basic JavaScript, that's all it is, all these super powerful frameworks have been built using
+it, smooth, right, this is why I love react, I hope you would also have fallen in love react,
+by now this is chapter 11, data is the new oil my dear friends and this is what I wanted to
+show you that data is the super powerful thing, your UI layer is powered by a data layer,
+UI layer, tailwind is making it super powerful, data layer, our data layer, our context and
+state and props and hooks and everything is modifying our data layer and we will see redux
+also which works in our data layer, not the UI layer, data layer and there is parcel who is
+wrapping everything up, bundling up, taking help of Babel, taking help of a lot of libraries,
+this is how these all small things make your react app as powerful as possible,
+not just one thing, okay, now this is how you know you when you open this right you should
+understand where is your provider, where is your provider, where is your consumer,
+you should understand when you will open your react dev tools, you should understand why
+this is coming, I did not write this, who wrote this, you know that react router
+down wrote this, you should be that smart of a developer, I want you all students of my batch
+should be proud of their knowledge of react, they should be very good at basics, okay,
+come on, let us just find out our context, where is our user context, where did we put
+our user context in our app.js, right, where is it, let us find out, this is the body,
+this is our context provider my dear friends, see, this is our context provider, is it,
+no this is not, this is our context provider in our app layout, see, we had set user, right,
+you can see this, we have children, we have value set user and a user object,
+if I open this, this is what it is, right, this is what it is, right, so this is, but why is the name
+not, it is just saying context provider, how will I figure out whether it is, suppose if I have
+10 context provider, so it will just say context provider, how will I figure out
+that it is a user context, how will I figure out, I won't go and check on the data for
+everyone, right, suppose if there are 10 context provider, so you can do one more cool
+thing, right, note it down, right, note it down, when you are creating a context, right,
+this was a problem with a lot of developers, so react basically gives us a way to give a name
+for this context, right, so we have a name as user context, but react does not track this name,
+react does not react dev tools, right, this react dev tools isn't tracking that user context
+name, right, so what you can do is you can make it track by giving user context dot display name,
+okay, you can give it display name as user context, so now if you give it a display name,
+your react will, react dev tools will make it as user context, see, make it as user context,
+okay, so this is a way you can give it a display name for debugging, this, see, this has nothing to do
+with your, how the app works, this is just for debugging, suppose if there are 10 context that
+you are using in your app, right, it will become very difficult to find out, right,
+what context is what where it is, right, so you can give it a name to debug it, got it,
+right, now how do you manage more than one context, can a context come inside another context,
+this is your homework, okay, do you understand your assignments, this is your homework,
+there is a long time there is one week, play with context as much as possible,
+right, you have to give me answers whether a context can come inside under context,
+can we have multiple nested context, amazing thing, right, amazing stuff,
+before moving on to you are still not, you are still not, you are still underestimating the power
+of context, let me show you the power of context once again, right, let me show you the power of
+context, okay, I'll show you the power, the context are so powerful, the context are so
+powerful, suppose if I gave this new name as Namaste React, I am modifying, I am modifying
+my component here, I am modifying my component over here, has the about page loaded yet,
+has the about page loaded yet, is the about page in our app, no, why it is not there,
+the about page code is not even there, it is lazy loading, right, it is lazy loading,
+if I click on my about, then the about page will come, right, if I have my inspect network,
+if I click on about, my about page will come, right, let me show it to you, if I click on
+about, my about page will come now, right, see, about has come recently, but my dear friends,
+the context is so powerful that it updated Namaste React, which I updated from my search component,
+search container, I updated it from the search container, isn't it cool, it is amazing,
+even when the code is not there, you don't underestimate the power of react, my dear friends,
+don't underestimate the power of react, let me refresh the page and show you one more magic,
+right, see, this about page is, the code is also not there, that component is rendered,
+leave it, the code is also not there with us, it will come after loading, like I have reloaded,
+the code of about page is not there, but it is using the context, but it is using the context,
+right, so my context is modified, I said Namaste React, right, my about page is not even there,
+if I go to my about page, it is still holding it, this is because the UI layer
+is different than a data layer, the data layer stays, the UI layer does all the work of reconciliation
+and making and rendering the component, do you understand the meaning of virtual DOM now even more,
+do you understand the meaning of virtual DOM even more, the amazing part of react,
+it is keeping the data layer intact, it is moving the react, the user, the UI layer,
+it is moving the UI layer, the UI about us was not even there, the data state,
+the data layer state, the context state, because it is not tied to a component,
+it is not a state variable of about component, the UI layer and data layer works in parallel,
+works independently, reconciliations, everything is managed by react and let me tell you my
+dear friends, if you have to implement this in pure javascript, write it down, make this,
+you will take 10 days to build this and your code will look, react is giving you in
+very fast, right, it just doing crazy stuff, super fast way, amazing thing,
+okay, if I refresh the page, what will happen, if I refresh the page, what will happen,
+think and tell me what will happen, if I refresh the page, it will reset the value of context,
+so it will come with a default value, right, what value will you show, what value will it show,
+so it is very obvious, right, if you know the basics, if your basics are clear,
+everything will be awesome, everything will be amazing, okay, it's a single page application,
+everything works, suppose if I modify my context from here, right, try it out,
+have an input box here and I go back to my home, it will modify it still, this is the beauty,
+this is what I want to say, this is the beauty of context, got it, so this was all my dear friends
+for today, this was chapter 11, this was data is the new oil, data is the new oil for our app,
+why did I name it like that, data is the new oil, the world doesn't work without oil, right,
+so your app doesn't work without oil, you have a UI layer, you have a data layer,
+they work independently, you have to keep them in sync, you should know basically what we should
+do, today we studied about props drilling, today we studied about lifting the state up,
+today we built our own accordion, today we saw how important data is, today we saw how
+do you create a context, today we saw how do you update a context, today we saw
+a lot of things about data and today we saw about react dev tools, today we saw about profiler,
+so many things did we cover today, everything about data, the sessions are going critical day
+by day, the sessions are going advanced day by day, request you all to please keep doing
+your assignment, please keep doing your assignment, right and you know when you will do your assignment
+that is when you will be able to appreciate the beauty of it, that is when you will get
+confidence as a developer, right, people who are not doing assignments nothing will happen,
+first step is to attend all the life classes, second step is to go back,
+watch the recording, take down notes, do the assignments, practice, five step, I am giving
+my 120%, whatever I know in the best possible way, in the easiest possible way, I am breaking
+down every complex piece to you so that you can understand it very beautifully, that is the
+job of teacher, okay, so thank you so much everyone for joining in live, you people I have a
+special place for you in my heart, thank you so much for joining in and please keep doing your
+assignments, assignments are very important, I will upload this session, thank you so much
+and thank you so much people who were writing about Namaste React over LinkedIn, right,
+thank you so much everyone, like you know when you appreciate it it just motivates me so much,
+right, I come more prepared for the next session, the next session we are going to study Redux,
+the most important topic and let me tell you Redux is again complex, Redux is complex,
+so come with a fresh brain, revise all the topics you have covered till now
+in 11 chapters, it will be tough, right, it won't be tough, I will make it easy,
+my job as a teacher is to make things easy, I will make it easy, don't worry about it,
+but keep come with a fresh mind, you should have all the knowledge of all these 11 sessions
+before you come for the next class, this is me signing off now, thank you so much,
+this was Data is New Oil session, right, let me just push the code right away, it was Chapter 11,
+let me just commit it, right, yes and sync the changes, okay, right, so the code is pushed,
+go ahead, read about context, read the official documentation, thank you so much,
+can we have the energy for Sunday, thank you so much for joining in on a Sunday morning,
+I know it is tough to join in every live session, but thank you so much for coming in,
+I really enjoy teaching you all live, thank you so much, I love the vibe in the comments,
+can we hit the thumbs up, let's blow the thumbs up to 3K and we will end this session
+and let's have some energy because we are moving on to more advanced topics,
+there are so many more new cool things about React coming up, you are self-sufficient to build
+strong React applications now, you already know a lot of stuff, use React now, build your own projects,
+right, so amazing things, let's do, oh 3K is already done, let's do 3.5K and we will end this,
+3.2, 3.3, 4 and 5, thank you so much everyone, love you all, see you in the next class
+with Redux, we will study Redux, so be prepared for Buckle Up,
+right, chalo, bye bye

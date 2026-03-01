@@ -1,0 +1,1371 @@
+FILE: 06. Let's get Hooked!.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Let's just start today's session, okay?
+So let's just start, right?
+Let's not waste time, let us just start, okay?
+So how do I start my app?
+Quickly, let me know.
+I want some energy in here.
+Yup, let us just start with this.
+Just give me a moment.
+NPM start.
+Yup, I have my app running,
+let me just pull up things, right?
+So today, we are going to study amazing things, right?
+We built our Food Wille app yesterday, right?
+We built our Food Wille app, and it was crazy, right?
+I mean, we built a lot of stuff yesterday, right?
+Oh, yeah, I am smiling.
+Why not?
+Don't worry.
+Okay, so we built the Food Wille app, right?
+And we saw a lot of cool things, right?
+And I was going through the Discord community also.
+A lot of people were saying that, okay, Akshay,
+I did not understand a lot of things, right?
+But I request you, right?
+I tried to see what doubts you were asking.
+So basically, most of the doubts were around, you know,
+the most of the doubts were around
+related to topics related to JavaScript, right?
+So what I would suggest is that, please, please, please,
+brush up your JavaScript skills
+along with working on these apps, right?
+So, okay, so brush up your JavaScript skills
+and please be active on Discord, right?
+We would be, and I would be spending a lot of time, right?
+In Discord also, I was not getting some time, right?
+Because I was busy fixing these technical issues.
+I'm busy dealing with piracy and all.
+I'm doing something about it.
+So I just want to deal with everything, right?
+So I just did not get time,
+but I'll be very active in the community, don't worry, right?
+So, and don't worry, I am not going anywhere
+unless you learn React, right?
+I'll be here, I will teach you whole React.
+Don't worry, okay?
+Cool, so let us start with today's session.
+So yesterday, yesterday, right?
+So let us just quickly revise a little bit
+for just five minutes about what did we do yesterday, right?
+So I'll ask you few questions, okay?
+You have to answer, okay?
+Discord link I'll share in a while, okay?
+Let's not divert, right?
+So what is these?
+What are these empty brackets?
+What is this?
+What are these empty brackets?
+What are these empty brackets?
+React.fragment, absolutely.
+And we also saw that, okay, we can write React.fragments.
+Where does this React.fragment come from?
+If I write here React.fragment,
+where does it comes from?
+Yes, it comes from our React library, right?
+That we had.
+Okay, so what is this create root?
+Okay, we are not using this.
+Let us just get rid of this create root.
+I think it's just a news thing, right?
+Just kept over here.
+This is our react down, okay?
+So we also saw that, okay,
+we started building a food ordering app, right?
+We started ordering, building a food ordering app,
+just like Swiggy.
+And I really wanted to use the actual live data, you know?
+Sometimes when we build mock data, I wanted,
+first of all, I thought that, okay,
+I'll use Firebase and just create a small API
+with some dummy data.
+And we will do that, right?
+So, but I thought that, okay,
+I thought that, okay, let us use the live data, right?
+It was a good decision, isn't it?
+You would have learned something new
+out of this live data.
+Yes, because a lot of people don't want to use it.
+So I use the public API of Swiggy, right?
+And I just saw that, okay, the data structure looks like.
+And you know, when I'm teaching you,
+I want to teach you with exact how you work, right?
+How you work in real life.
+In real life, the data would be somewhat like this.
+It won't be easy.
+There won't be so many things in the data, see?
+Like you would understand a lot of things over here,
+that, okay, why would somebody has given
+this short description list?
+Why would some, the data would have
+these aggregated discount info V2, right?
+So this is some aggregated discount info V2, right?
+There is some aggregated discount info, right?
+So there are, there are a lot of new things
+and nuances that you see in the live data.
+So I always love to teach with live data, okay?
+But if you want, I can teach you
+with like random mock data also, right?
+So I'll take that up, right?
+Cool, so let's just start,
+okay, no mock data, no mock data, live data only, okay?
+Yeah, let's use this live data only, okay?
+So we will see all that, right?
+Right now we have just hard coded it.
+Today, today, today, okay?
+So today, let us just start it, right?
+We also saw something about virtual DOM, right?
+So virtual DOM, so what is, what is,
+what is, what is the reconciliation, right?
+Okay, people wrote reconciliation.
+So everybody, right?
+Everybody who does not know if you are not able to answer
+what is virtual DOM, what is reconciliation, right?
+What is reconciliation?
+And what is react fiber, diff algorithm?
+These things you should be able to answer.
+How does diff algorithm works, right?
+So are you able to answer that yes or no?
+I don't want to see any no's.
+If there are no's, then watch the previous lecture, okay?
+And thank you so much, right?
+For participating, this feels like I'm talking
+not to camera, but to students I'm teaching, right?
+So I am super excited right now.
+Let us just begin today's session.
+So I created a folder over here, SRC.
+Do you know a folder which is named as SRC?
+You would have seen, right?
+In almost every project, we have this folder SRC, right?
+In every project, and everybody just tells us
+that this is a source folder, right?
+And we don't know why we created it.
+We don't know who told us to create it.
+Nobody, it's just always there, right?
+So I'll tell you, so it is not necessary
+to create any folder in your app as well.
+Everything can be done inside one project folder
+every file can be here.
+But we need to wrap our code into a proper folder structure.
+That gives us better modular approach, right?
+That is how your code becomes modular
+and findable also, right?
+Otherwise, when there are 1000 files in your app, right?
+Sometimes your app goes very big, right?
+It has like hundreds of files.
+So it becomes very difficult to find things out.
+And this is a common convention
+which is used in the industry.
+It's not something which is very much required, right?
+But we always, generally, it's a practice
+and all developers relate to it.
+So I think that it's just now
+how everybody in the developer community has picked up, right?
+So the file organization.
+So that's why we have this folder SRC.
+I just created it before the class, right?
+So now what we will do,
+we will put all our files,
+all the files related to our app inside SRC folder.
+Does that make sense?
+Does that make sense?
+Okay.
+So we will keep, you know, now there is no, you know,
+there is no hard and fast rule for this, okay?
+If you go to the React documentation, right?
+It is not working somehow.
+I'll fix this up because I moved the app.js inside, right?
+So it broke the import.
+Let's fix this, okay?
+So basically I moved the app.js inside SRC.
+So now what you will have to write over here?
+What you will have to write quickly?
+SRC slash app.js, you are absolutely right, right?
+So basically if you write SRC slash app.js,
+so it should work, right?
+So now our app works smoothly.
+Now let us just, okay?
+So now what we will do?
+I'll show you one more thing, right?
+React folder structure.
+I want you all to read this, right?
+File structure.
+So in the React's official documentation,
+React says that is there a recommended way
+to structure a React project?
+So React says that React does not have any opinions
+how you put files into folder.
+React says however you want to keep your file,
+keep it like that, right?
+However, you want to keep your file,
+you can keep it like that.
+We don't want to enforce anything, right?
+Zooming in, zooming in.
+So we don't want to enforce anything, right?
+React does not have any opinion.
+But, but, but there are a lot of people
+and a lot of architect, right?
+When they build project,
+so they like to categorize their files
+in different folder patterns, right?
+They use different patterns in different projects
+when we build a big, large app, right?
+So some people, right?
+Some architects, some developers
+like to group their, right?
+Like to group their files by features, okay?
+Suppose if you are building a food ordering app,
+what all features can you have?
+Can you just tell me about some features?
+Yup, exactly.
+It can have a cart, it can have a search,
+it can have a menu,
+it can have a user, right?
+User profile, food details, so many things.
+Order, order history, exactly.
+So, you know, not check out, right?
+Not check out.
+Maybe check out can be inside cart, right?
+So basically you can distribute,
+distribute your files according to the routes also
+or the features.
+But am I in the current folder?
+I want to import it from component slash title, okay?
+I want to import it from components slash title, okay?
+There are a lot of plugins,
+something like auto import and all that stuff.
+So it automatically figures out the file path.
+But I don't want you to use this.
+Don't use those.
+Write it yourself, write it yourself.
+Now when you have imported, will this work?
+This will not work.
+This will not work.
+Why?
+Because you have imported something, title from title.
+But we need to export it from here as well.
+We need to export it from this file as well.
+We need to tell that I am exporting this title
+so that anybody can include it, okay?
+You cannot just directly go into this file and read title.
+No, you need to export it.
+How do you export it?
+There are two ways of exporting.
+There are two ways of exporting.
+I'll tell you both the ways, okay?
+There is something known as export default,
+export default and title, okay?
+If you do a export default title,
+if you do a export default title,
+it will export this title component by default.
+That means if I try to read title from this component
+like this, it will work, right?
+It will work, okay?
+So let us just go back, okay?
+So if I refresh the page, this works, right?
+My title component, my logo loads properly, okay?
+Now, why to use this word default?
+Do you have this question?
+Why to use this word default?
+You should know that, right?
+Because there is one more way to export.
+There is one more way to export.
+So, okay, I'll tell you one more thing.
+Your doubts will be cleared.
+So instead of title.js, let's make a head.js,
+header.js, okay?
+Let's import our header only, okay?
+So instead of my title.js,
+let's rename this to header.js, okay?
+Header.js, right?
+And now, let me include my header like this, right?
+Header from header.
+And let us keep our header as well as title from there, right?
+I have kept my header as well as title
+inside the same file, okay?
+I can do this as well, okay?
+I can have my header as well as my title in the same file.
+Now, I have an option.
+Suppose I want to export both of them.
+Can I export both of them using default?
+Can I export both of them using default?
+No, you cannot export it like this, right?
+So, I can just export default one thing.
+I can just export default one thing, right?
+And most of the times,
+suppose if I exported default header, okay?
+So I will be able to import my header wherever I want to.
+How?
+Like this, right?
+I can import my header like this
+and my header can be found over here, right?
+Here, right?
+I can use my header here, right?
+If I save my file, I'll refresh the page.
+It works fine, right?
+Listen to me very carefully.
+You like keep on bugging over here, right?
+Just hold on for a while, okay?
+Suppose if you want to export multiple things
+from the same file.
+So one way or to export is to export directly.
+So you can export constant title.
+This is another way to export, right?
+This is another way to export.
+Now, if you export by default,
+you import like this.
+Suppose if you are exporting it by name, right?
+See, this is exporting by default.
+This is exporting by name, right?
+This is exporting a constant variable title, right?
+So when you do this,
+so whenever you are importing,
+you have to do something like this.
+You are basically extracting it from our header file, right?
+From our header file, okay?
+Does this make sense?
+You have to use this curly parenthesis, okay?
+So and this is known as named import.
+This is known as named import.
+And this is known as default import, default import.
+Does that make sense?
+Named import, default import.
+So a lot of times,
+you will see that sometimes we write this curly parenthesis,
+sometimes we don't write these curly parenthesis
+and you will get a lot of error.
+You will get a lot of error, right?
+I'll repeat it once again, okay?
+I'll repeat it once again, okay?
+Now, now, now, now, okay?
+Suppose if we created a new file,
+which has two components, right?
+Two components.
+And I want to export both of these components.
+I can just write export default header, one component only.
+There are multiple hacky ways
+to send out two components also.
+But how?
+If I wrap these two components into a single object,
+can go, right?
+I can wrap all these components into an object
+and can export.
+But, but, but,
+you can only export one thing inside from a file, okay?
+You can do some hacky ways
+to export multiple things from here, right?
+But then we generally do it like this, right?
+So you always have an export default.
+So basically, assume it like this.
+So suppose if you have a header.js file,
+what do you want it to export by default?
+Title component or header component?
+Title component or header component, right?
+Export it by default.
+It exports header, right?
+And if suppose I want to also export title component,
+I can do that using this.
+I can do that using this.
+But the way you can include it
+becomes a little different.
+The way you can include it, import it,
+becomes a little different.
+In default import,
+you don't put these curly parenthesis, right?
+And from, from your named import,
+you have to use this curly parenthesis.
+This is known as named import.
+Does that make sense?
+Awesome.
+Now you would ask me when to use what?
+When to use what?
+You will get to know,
+you will get this answer
+as in when we move ahead in this course.
+We would be using this import export so many times,
+don't worry.
+Okay, you will get your answer.
+Now I'll tell you.
+So what is this thing known as?
+What is doing this known as?
+What is doing this known as?
+A lot of people will say,
+this is known as destructuring, object destructuring.
+Object destructuring.
+Do you agree?
+Is it object destructuring?
+Yes or no?
+Is it object destructuring?
+Yes or no?
+Yes, yes, no, no, no, no.
+Let me tell you my dear friends,
+this is not object destructuring.
+This is not object destructuring.
+This is not object destructuring.
+Okay, it looks like I am destructuring from an object,
+but it is not object destructuring.
+If it was an object destructuring, right?
+If it was an object destructuring,
+we should be able to do something like this, right?
+Suppose if the file exported an object, right?
+Object, I could be able to do something like this, right?
+constant my title right from object will this work will this work will this work no this
+won't work this won't work right so that is why that is why but now you know that is
+why we generally don't do that and you cannot even write OBJ dot title this is not that is
+not a valid thing but suppose but suppose if you have to do if you have to export everything
+over here suppose if there are two three exports right if you have to export everything from
+here and use it over here so then you can do something like this export star as my OBJ
+what you can do does that mean does that make sense you can do export star at OBJ and then
+in your code you can write OBJ dot title cool you can do something like this so it will import
+star means everything and then you can use OBJ dot title okay let me repeat it once again
+everything right let me repeat it once again everything okay everything let me repeat it
+once again so I moved my okay listen to me very carefully you know I will answer your
+questions I know please I can't take all the questions like this let me explain it you will
+get your answers I know what you are trying to say I I know you know I am a teacher I
+have taught react so many times I know exactly what questions you will bug bill bug you I am
+telling you your gag you will get your answers right so don't worry about it I will tell
+you everything some people are writing why do you writing JS can we write JSX I will
+answer all those questions just a moment give me some time I can explain you like
+slowly only right please don't try to run fast in the discord channel also I see that
+a lot of people are just asking question me which I will explain you in fifth session let's
+go slow let's learn in deep right ask me questions let me finish come on like I mean I know you
+are so excited to learn I am not saying it is bad to ask questions please okay so but
+listen to me right once again I have not taught anything till now in the class if
+you will do like this I won't be able to teach also okay cool so when I say fifth
+session means fifth session from now right I will explain you after five sessions and
+then like you will understand so what happens is I just created a file header dot
+JS and I put put both of my components over here header dot header and title now I need
+to import it in my app dot JS file suppose I was using like this right if I had my title
+like this if I had to use my title like this right title as well as header but I have my
+but I have both of these components in one file so how would I import it first of all
+let us see how do I export from here I can do something like this okay I can export
+both of these files like this okay export constant title export constant header okay
+export constant header let us just do right and I can import it right let me just
+collapse the code for now see I have exported both of the files I will import
+it using the name import I can import it like this right I can import my
+title like this I can import my title from my dot slash components slash header right
+header I can import it like this okay and I can also I can also do something like
+this right I can export import both of them when I have my named import okay I can export
+both of them using my named import with these parenthesis so assume that this is like extracting
+these two components from this file right when it is a named import when it when you use
+export like this then you have to do it like this but suppose if my right suppose if my
+header is a suppose if my header is a default export right default means it is exported
+by default right it is exported by default from this class right is it exported by
+default from this class right now what will happen you can you can import it without
+destructuring let's not call it destructuring without extracting it from here so you can do
+something like this does this make sense does this syntax make sense cool guys has this
+mixed syntax make sense so this means you would see a lot of times you know when I
+started learning react I went to the project and I saw people doing all this right people
+doing all this and I used to wrap up my head what are they doing I never understood
+this concept but this is the same thing like because now I'll write something and let me
+know if this makes sense okay if this makes sense to you or not I am teaching you amazing
+stuff right so if I do something like react comma create root right no sorry react
+dom comma create root right we did write something like this create root now you
+understood why we are doing this understood why we are doing this because create root will
+be exported as a named import here somebody would have in the react team written like this
+got it got it so that is why we follow these type of conventions and if there is a default
+export then you can just use it without like this right we don't want this you can just
+use it like this if there is a default export here make sense okay okay right now there is
+one more way okay so one more way is right one more way is does your okay I'll tell you
+one more thing okay does your does your does this name has to be the same right does this
+name have to match this name No in the default export when you export by default you can rename
+it you can rename it new header right let's rename it new header right so if you give it new header
+you can just use your new header here right you can just use your new header over here
+let me remove this title you can just use your new header over here understand these
+are very small things you can use your new header over here right and because i have exported it by
+default it does not need to have the same name but this needs them to be same should this be same
+yes or no yes because otherwise it won't get to know which file we are calling right this needs
+to be same don't mess up with this file you can play with this but but but always try to
+keep it the same because it's a good practice otherwise you know you will write new header
+and some other fellow developer will mess up it head where is my new header okay so try to be consistent
+try to be consistent okay don't try to do random stuff in your code okay so try to be predictable
+okay cool right and there is one more thing i'll tell you one more important thing i'll tell
+you now you can ask me akshay why did you write whenever we import right whenever we include anything
+we include the file names right we include file names wherever we want to but here i am not
+including file name should i write header dot j s this works great this works great this will work
+this also works okay many people don't know it many people don't know it right you can
+write header dot j s over here it will work fine right i am telling you all the different type cases
+right all the cases right so you can write your header dot j s now there is one more thing right
+some some people some people there is a debate in the developer community in the react community
+there is a debate some people like to rename their files right they like to name their files as
+header dot j sx right because it is not a normal javascript file right this contains react code
+this contains j sx code so sometimes some people want to use dot j sx some people say that i will
+always put a j sx so when you put a j sx can you use something like this header dot j sx
+yes this is also valid in the industry every people do all sort of things in the industry
+people do all sort of things right so i want you to be capable suppose if you went to a company
+and the company is using this convention of writing j sx after every file it is also fine
+right it is also fine there is no difference it's just a file format it is one and the same thing
+kind of like the same thing right but but but some of the libraries right the external libraries
+that you use some of the libraries track your file using the extensions track your files
+using the extensions so sometimes this can break sometimes this can break when you are using
+an external library but don't worry normally it is completely fine to use a dot j s or dot j sx
+you know i i personally now you would ask me akshay what should i do now you would ask yes
+if you're using typescript you write t sx right so now you would ask me that akshay what should
+i do what should i do what you will do i will always name my file as header dot j s
+now don't ask me why it is just my convention of using it i like to do it this way okay so
+header dot j s is one i will use you can use whatever you wish to over in your project and
+you can skip to write this and you can write j s also if you wish to it's completely fine
+right completely fine i like j s so i am just putting it dot j sx right so otherwise you
+can use both cool and then over here i will use this convention but that does not mean that you
+cannot put j s over here you can put this right following the convention okay understood right
+don't ask me again when i will code right so i will just use this quickly quickly you should be able
+to do it now let us just quickly revise things up right right let us just quickly revise some
+things up okay quickly so i have my export okay i am i am writing you have you you have to answer me
+okay export default right i have exported two constants here right how will i import both of them
+how will i import both of them write full write full exactly everybody like people are right
+so you have to do header and title something like this okay header comma title
+makes sense okay everybody understood now you can do something like this also star as
+star as my x y z component star as x y z okay and let us try if this works or not
+can i write x y z dot x y z dot header will this work do you think this will work
+do you think this will work now understood why we did now understood why we sometimes
+write react dot fragment did you understand that was this cool right cool in the chat if this was cool
+cool right now you understood what is happening behind the scenes understood okay so whenever
+you see something don't panic you know whenever you see something don't panic there are different
+ways like developers code always try to understand that what they are doing if you know the basics
+never will you worry a lot of people were getting doubts like why sometimes i use my
+brackets and why sometimes i use this so you can do something like this right so basically like this
+right so now right you can you can write this header as well like this if there is a named
+import right but generally generally what i will do now akshay what should i follow
+so i try to follow export default right export default from my components right export default
+header i always try to follow this convention i do not export whatever i don't need it i don't
+need title right i don't need my title in my app.js i need my title inside my header file over here
+so i don't want to export it okay i will keep it like this and my export default header i will
+try to always use export default my component from my file so that it is very clean i i don't
+like this curly braces i will only use curly braces when it is required and i will tell you
+when it is required and when i will use it i will most of the times most of the times right
+i will try to use it like this okay make sense okay let me drink my drink a little water 30 seconds
+break drink your water okay go drink your water and we'll come back i have a lot to cover today
+i can't stop no five minutes just one minute break it is 12 11 right now okay it is 12 11
+i just quickly want to start yeah okay let me just give you the discord link okay i'll give you the
+discord link don't worry so the discord link i am just pinning the comment okay join the discord
+discord community with this link okay join the discord community with this link do it right now
+okay join the discord community with the link over here whosoever has not joined
+have you joined yes or no people who haven't joined right know in the comments people who
+haven't joined right know in the comments no okay shubham join it shubham please join it shubra
+please join it hemanta please join it sukh mitha aditya please join the discord right now
+do it right now hi shubham thank you so much man okay so and whosoever finds the link
+invalid please write an email to support okay we'll help you come on let us just start again okay
+so you understood what is the like write down your homework in your notebook named import
+different ways to export export default how do you import a default export how do you import a
+named export how do you what happens when you write a star as and what happens how can you name
+your files everything you should know okay these are things that we know right we should know right
+let us now try to create different components for the other files as well let us create a new
+file for body component you know as in when we will do more we will understand all of that
+right so right so now some people are asking akshay you did not export it title how will
+you use it inside app so i am not using title in my app i am using title over here only right in the
+header file so you don't have to when you are in the same file you don't have to export it right
+okay so let's go back over here in the components let's just quickly create a body.js okay body.js
+and i will have you know you will understand it properly you know it is very easy it is the
+first time you are doing that is why it is taking time but otherwise in our whole classes right we will
+be doing so many times this import export that you will understand it so much right you will never
+have a problem with it default body right so i'll just have my export default body how will i
+import it over here how will i import it over here i'll just import my body right import body
+from here right so i have imported my body let me just quickly do it for my footer as well right
+let's create a footer.js right let's create a footer.js and now i want to have my footer
+over here right so now i want to have my footer.js file and let me just export default footer
+okay some people are asking what can i create my app.js inside components yes you can create nobody
+is asking you to like you can restructure our folder as much as you can i like to follow this
+convention so i'm doing this you can try it out in your projects try out different
+folder structures whatever you like now listen to me very important thing now listen to me very
+important thing right okay now listen to very important thing are you there with me listen to
+me very important thing we also have to create a config file i love to create a config file in
+my project okay i love to create a config file in my project what do you put in the config file
+what should i put in my config file so i put all the hard coded things into my config file
+i will put all the hard coded things into my config file that's a good convention to use it
+now i'll tell you why right you people are so curious i just love your curiosity you can
+say that actually what should i put in config file and why do i need a config file right
+so suppose if you have this url right we have this swiggy url and we were using this hard
+coded string so suppose today i am having this url at one place in my app right in just i am
+just using this url in my app.js right suppose tomorrow i want to use it right suppose tomorrow
+i want to use it in some other folder right so i will again copy paste this right again copy paste
+this thing right i can if suppose there are thousand components out of which 10-20 components
+needs this link right leaves this url right so i i want to just import it from the one place
+i want to put this into a central place kind of like a global variable not a global variable
+but kind of like a place right one place so that is why i create a config file
+right okay so some people say that okay akshay why are you not naming this as a constants
+file so in some companies you use the word constants file as well it is one and the
+same thing you can use constants file as well okay don't worry about the names it's it's
+okay to use any name call it config call it constant some people you know create different
+files for different environments you know some people like to create these files different
+for production different for staging and different for testing different for development
+other other right so i just want to create one file right now to make things easy right
+and let us just put this url into my config or a constants file okay let's just use constant
+only now okay when we have named the file constants let's use constant let's call this as
+what should i call this as give me a good name let's call this as let's call this as
+image cdn img cdn url okay let's give it as img cdn url right let's let's give it right
+you can give any name now if i want to use this in my app.js how will i use this
+will writing this work will writing this work image cdn url will this work
+no because you need to you you need to import it import from your constant file and now i want
+to import it do you think that it is a good idea to export default image cdn is it a good idea
+yes or no no it's not a good idea right so what should i do named import or default import
+named import or default import we will do a named import over here i will do a name sorry
+export not import sorry right so name export right and then i will just import over here right
+how will i import it now what will i use now what will i use quickly tell me should i use
+curly parenthesis or not right so i can use my img cdn url from my .constants does that make sense
+okay let me go back and see if that works okay footer is not defined yes footer is not defined
+why is this error coming quickly why is this error coming because i did not imported my footer
+import footer from footer okay so we have my footer now it says now it says that restaurant list
+not defined okay basically i have changed my name or something yeah yeah so it is saying
+restaurant list not defined inside my body so now my restaurant list is over here
+and my body needs this restaurant list right my body needs this restaurant what should i do
+i'll ask you what should i do i'll ask you what should i do
+exactly so i'll put my restaurant list in my constants file right let us put all the hard
+coded data into my constant file okay let us put all the hard coded data into my constant file
+does that make sense okay and i will just export it from here right i will just export
+this from here and i will just import it into my body i think this is spelling is not right
+restaurant pardon my spelling stress i don't exactly write this a lot restaurant list right
+so i have exported this and now i am importing it in my body right not in my body i am importing it
+in the body.js file okay restaurant list from from my constants right now where is my constant
+file what should i write in over here data slash constants okay and let us use the same
+what is this issue restaurant card is not defined okay why did i use dot dot over here
+did you understand that okay you understood right if you don't understand that then just
+find it out this is your homework okay now let me import my restaurant card also where is
+my restaurant card my restaurant card is in app.js is it a good idea to keep this over here
+should i make a new file or not yep let us create a new file okay so let us create a new
+file let us create a new file for it right let's create a restaurant card.js right oh
+shit i did i did something i missed something out okay we will need this image cd and url
+also let me copy this also okay right and now let me just export default okay and let me just rename
+this also right i think the spelling is not correct restaurant card.js okay now where do i
+need to include this in my body right let us just import any doubts till now any doubts
+now does the code look cleaner i am going very slow i need to rush fast now okay i will go a
+little faster now should i do this am i doing it right nobody is complaining nobody is complaining
+in the chat i did a default in default export you should tell me okay cool let me just use my name
+cool why is it bugging now it says dot slash constants oh did i did i do something over here
+it should be dot dot slash constants okay okay okay my dear friends yep yep so we have our app
+working now the code looks cleaner isn't it now if you see my app.js file i am super happy
+now i can totally understand now i can totally understand that what is happening inside my app
+so always keep your code cleaner and maintainable okay this is what i wanted to tell you the first
+part of this today's session let us move to the second part very quickly because i have to cover
+a lot of things okay i have covered a lot of things already but let me just uh go ahead right
+some people are asking where should we keep our css files right so generally we will be using
+tailwind css later on right we will be using tailwind css and later on for that you don't need
+any css files right don't worry we will be using tailwind you don't have to use it for now
+just keep your css over here only in one file okay keep your css one file okay cool so let's
+just go ahead and build something today right what did we leave to build right last time we did
+something right last time i told you that we we were building things up what was left to build
+what was left to build where is my where is my app.js okay i don't see it right
+it was up here right so we were left to build this search bar component isn't it we were
+so let us today build a search functionality on with me understood should i explain what is
+search functionality no right okay let's build search so where do i need my search i need my
+search inside my body okay let's go to body.js file okay now i want my search to be just above
+my restaurant list okay so i want my search function to be over here can i write a div like
+this right let's give it a class name search container i'll give a class name search container
+now it is bugging me what do i need over here to fix this quickly tell me react dot fragment
+right so let's wrap it inside a react dot fragment okay so let's wrap it up like this
+let's wrap it up like this right okay so now this ugly thing came up right so we have
+this search container what should my search container have let's build a input box inside it
+right how do i write my input box input tag type text right and let's give it some class name also
+class name is equals to search input right placeholder is equals to search right and then let me just
+close this right and what should my input also have what should my input also have
+right input should also have my value isn't it some value which is there for now let me keep the value
+as empty right so now if i see we have our input box over here right let us also build
+a search button quickly right search button right let's call it as search
+right and let's give it a class name is equals to search btn okay so we have got our search input
+and search button with us now if i try to write something inside my input box see i am trying
+to write something it's not working it's not working why it is not working why it's not
+working it is not working if i write the same code inside my html okay let me just show you one
+important let me just show you one thing right if i write the same code in my html okay html
+do you think this will work let us just write the same code inside my html okay here do you
+think this will work see it's working it is not working over here why this is one more way to prove
+that that input is not exactly this input right this is somehow being controlled by a react
+okay this is somehow being controlled by a react okay so now how will i make this input works
+listen to me very carefully okay one more thing right what happens in jsx if i write these parenthesis
+what happens what can i write inside this any piece of js right so suppose if i have a variable
+which is known as constant search txt search text is equals to my maybe let's name it kfc right
+i am searching for kfc okay and i put my search text over here right i put my search text over here
+will the value go inside this value will the value go inside this value yes or no
+see it went but i am not able to edit it why am i not able to edit it
+why am i not able to edit it because it is a hard coded value oh somebody wrote this is
+a constant that's why we can't change the constant so if i make it let yeah nice question
+right if i make it a let it will it work will this work if i make it a let
+so if i save it will this work no it won't work right so react uses react you know react
+uses one-way data binding okay you need to bind your data you know you need to bind
+one-way data binding there is one-way data binding in react what does that mean
+let me explain you listen to me carefully okay so you can you need suppose if you have a variable
+right you can put the value variable but you need to somehow modify this variable as in when
+i am writing as in when i am writing you need to modify this variable to make it work right
+you need to modify this variable understood does that make sense yes or no so this is one-way data
+binding okay this is kind of like one-way data binding that you have this you have put in value
+so this value will come up but from this input we can't change my search text
+from this input if i write something it won't change the search text right so we need to
+change this search text somehow how will i do that on change if i write on change over here
+okay and i write my update or maybe on change input okay i am creating a function on change input
+so this is how you write a on change method in your react right on change input so this
+on change input right takes a function right it takes a function right and this function basically
+is a callback function which has a event over here right so whenever input is changed this
+function will be called okay whenever input is changed this function will be called how do i
+see it let us just see once okay i'll show it to you otherwise you will ask me akshay it is not
+making sense to me right so if i if i write something over here my c this is being called
+do you see do you see the console yes or no right so my input will change right this on
+change when my input is changing i am writing console log right now if i i also get a e over
+here you know this is provided by react now i can do something like e dot target dot value
+target dot value right e dot target dot value right now what will happen is what will happen is
+if i now write something right if i write q w e r t y i am writing q w e r t y now see what is what is
+it showing whatever i am trying to write is being showed over here right because the value was kfc
+and i am trying to write kfc and i am trying to write q over here or a over here so it is coming
+over here does that make sense yes or no e dot target dot value is also available in javascript
+yes right so see kfc is already a value okay right now we already have a value kfc now if i am trying
+to write something extra apart from kfc a s d f see it says kfc a kfc s kfc d kfc f but
+why is it not getting printed over here very important question very important question
+very important question yeah like if you understand this you will understand a lot of things in react
+if you understand things right what happens is whenever you change right whenever you change
+something whenever you write something inside this you know react re-renders this component
+but the value is always kfc the search text we have hard coded it right how will it go right
+we have hard coded this value right we need to somehow modify this value did it make sense
+cool so now what makes sense is okay so if i am changing and i know what am i typing
+can i just can i just change my value from here right will this work let us just change it
+let us just put our search text right let us just put our search text is equals to e dot target
+dot value right and then my search dot text becomes this and then this will like this will like
+go on updating and it will update everything it won't work right it won't work like this as well
+it won't work like this as well right it won't work i am typing it's not working so how will you
+make it work how will you make it work right to make this work what i am trying to say is
+that local variables like this are not preferred in react whenever you have to change any variable
+inside react whenever you have to change any variable inside react that you use suppose if
+i have to just use my search text one at one place over here right if i just wanted to have my
+search text rendered here right search text then i can use this right but if we need to
+maintain a variable that changes right if you need to maintain a variable that changes itself
+then you need to maintain a variable that is a react kind of a variable right that you need to
+maintain a variable that is a react variable what is a react variable what is a react variable
+the react variable is kind of like a state variable okay every component listen to me very
+carefully very carefully if you don't understand this then it will be very problem for you okay
+so every component in react maintains a state okay every component in react maintains a state right
+so you can put some variables onto that state every component i am repeating it once again
+every component in react maintains a state and you can put in all the variables into your
+state and every time you have to create some local variables you use state in it
+every time you have to create a local variable you use state inside react
+now let's come on to what is state right what is state right state maintains right i'll tell you
+so suppose if i have to create a local variable like this search text so i will create it
+using something known as use state hook okay listen to me very carefully this is something new
+we will we will use something known as use state hook now where does this use state hook come from
+right we will use something known as use state hook how will i create let me show you the
+latest way new way of creating variables okay so this is how i create my variables search
+text okay search text this is how i create my variable and i will use something known as use
+state hook right this is a use state hook right now there are a lot of questions in your mind
+i'll i'll take it up what is state what is hooks what is use state what is use state right everybody
+will ask these questions and then one question is what then is why right then is why right every
+question will have a why is state there why we need hooks why we need to use use state
+right i'll i'll answer all of them wait wait a while right so suppose if you have to create a
+local variable in react you need to use this state variables okay those state variables are
+created using a use state hook right so hooks are nothing hooks are nothing but kind of like
+normal functions right at the end of the day a hook is just a function what is a hook
+what is a hook it's just a function isn't it it's a hook is just a normal function
+now this function right see that is why we call it like this right now that is why we call it
+like this where do i get this function from right hook is nothing right it's very like it's it's
+easy right a lot of people get confused hooks right react hooks is something very tough no
+react hook is just a normal function just a normal function understand this right just
+like functional components what is functional component at the end of the day what is functional
+component at the end it's just a function hooks is just a javascript function react is built using
+javascript javascript does not have fancy things javascript just works on basic stuff function
+variables cons this that that's all right so hooks is just a normal function where do i get this
+use state from i get my use state from i get my use state from my where can you guess can you
+guess where i'll get my use state from i get it from react i will get it from react because react
+and see just be careful you know just see this carefully i am exporting this as a named import
+i am using a named import for it okay i will get my use state from my react can you guess who
+wrote this use state who is who wrote this use state facebook developers wrote it for us and gave
+it to us right so i have answered your questions about what is hook hook is just a normal function
+nothing fancy thing but it has a specific function for it right every hook has a specific
+function for it what is the function of this use state to create state variables to create
+state variables now i'll tell you what is state variables before you ask me wait on hold on for a
+while use state is used for create variables where does this use state come from it comes from
+react library how do we import it we import it using a named variable okay you got answers to
+these questions how do i use my use state so this function this function returns a array right
+this function returns a array the first element of array is your variable name okay the function
+this function returns a array and first variable of this array is the variable name
+right and let me tell you that this search text search text search text is a local variable
+local state variable okay let me explain come on let me at least explain let me at least explain
+right search text is a is a local variable okay so local state variable because it is very
+distracting i will forget what i have to teach then it won't be it you won't even understand
+right just give me a moment now i have i have hidden the chat for a while now listen to me
+carefully listen to me carefully won't let you say anything give me 15 minutes okay so what i'll
+do is see once again first question what is hooks right what is hooks so hooks are nothing
+but normal javascript functions at the end of the day these functions are written by Facebook
+developers and this gives us some functionalities this hooks give us some functionalities there are
+different types of hooks that we will use across our live course one of such one of the most
+important hook is use state hook this use state hook is used to create state variables
+is used to create local state variables okay how do you create local state variables how do you
+create normal javascript variables you create normal javascript variables using const or let
+right like this but in react we create local variables like this this is the syntax now you
+might have a question why the syntax this is very ugly looking this will make sense to you
+in a while just wait on hold on for a second just hold on for a second this will make sense to you
+okay so but this use state variable comes as a named import from react library okay this comes as
+a named import from this react library now how do i use my this use search text variable i can
+use it like a normal variable right i can use it like a normal variable instead of this search
+txt right i can get rid of this now i can use this variable right in a simple manner in a simple
+way we can use it like this right right now you would ask me akshay but i gave a default value
+of kfc over here right and if i write search txt so kfc came in over here right kfc was there
+right so how do i give a default value to my use state variable how do i give my default value this
+kfc value to my use state variable right so i'll tell you let me write search text so you give the
+default value like this okay you give the default value like this over here okay so assume that
+this is how you create a variable in normal javascript this is how you create a local state
+variable in react okay this is how you create a local state variable in react right does that
+make sense now tell me i am i am i am repeating everything once again okay i am repeating
+everything once again okay react has something known as react hooks at the end of the day all of
+these hooks are functions right functions we will learn to create our own hooks also we will learn
+to create our own hooks also right don't worry about that we will learn to create our own hooks
+we will understand everything even if something doesn't you don't understand right now we will
+learn it properly we will dive deep and create our own hook don't worry we will create our own
+custom hook then you will understand why we are creating those right but these hooks come with
+some functionality it is used to create local variables so just like i have written search text
+kfc and i wrote search text and that kfc was there right similarly i can so assume that this
+is how you create it in javascript this is how you are creating it in react okay now i will just use
+this right let me comment it down for reference okay for reference i am just commenting it down
+now when we did an on change we were modifying my search text like this search text is equals
+to e dot target dot value right we will modifying our search text with e dot target dot value
+right but but but react says that you cannot directly modify your variable over here like this
+so if i want to modify this variable i cannot directly modify it something like this i cannot
+do that if i try to modify this variable like this i cannot do that how do i how can i modify this
+variable i can only modify this variable using a function where will i get this function the
+u state gives us that function and we call that function as set search text okay this is a good
+convention to follow again there this is a good practice to write set and then the variable name
+so suppose if your variable is search text then you can write set search text okay you can write
+set search text okay this is not a hard check right you can write any name over here just verify it
+once okay react might have you know react might have like enforced you to write set over here
+but i don't think so you can maybe name anything you want to but if you are going into the
+industry if you are working on some projects then always try to follow this naming convention set
+and then the name of variable in a camel case okay so it's a good practice to write so suppose if my
+variable name was search input what what should be my variable name over here this function name
+it should be set search input right and now now let me tell you how do i modify my variable
+right how do i use this function so when you have to modify you don't do a search text is
+equals to whatever value you want to feed it you do a set search text set search input
+and then whatever we need to fill into this input you give it like this fill into this input
+you give it like this what i want to fill it over here what do i have to fill in over here
+e dot target dot value basically e dot target dot value what is e dot target dot value
+e dot target dot value is basically your whatever i am writing in the input box okay now if you
+don't know this go read javascript this is not react this is javascript whatever you write in input
+okay so whatever i am writing in input i want to put it inside my search variable right this
+search input and my search input is now a value for my input box okay cool so
+now let us just go and see if this works so if i go and see now kfc xyz now see it is working fine
+it is working fine cool so now i am able to type in but but but let us just see whether it is
+even working or not right whether it is working or not right so now there must be a lot of
+questions right let me answer one by one why do i need state i'll tell you why do i need state right
+but let me finish this first okay so let us see it working how will i get to know whether
+i am getting whatever i write inside it suppose if i write akshay inside it
+does this akshay went into this how will i get to know how will i get to know i can do a console
+or let me just write something like this can i use like this yes because it's a local variable
+it's a normal javascript variable okay let us just try to write in like this okay and let us write
+it inside a button okay let us write it inside a button search hyphen okay search hyphen i am
+doing it like this right this is just a normal variable okay so if i write in over here if
+i change in see my search input is changing see do you see this happening does it work
+see this cool thing it's just expanding the text search bar
+cool right so whatever i am writing it is getting updated in my local variable right
+okay so let people just read it for a while i will repeat this once again this full thing
+i will repeat it once again okay full thing once again okay just give me a moment i will
+repeat everything full once again okay i know this is important and if you understand this
+your journey to learning react will become super smooth super smooth don't worry we will
+take in a lot of important questions as well don't worry okay i'll repeat it once again
+everything right from scratch okay right from scratch so you know input does not work like this
+okay input does not work like this in react right input does not work like this in react
+input does not work like this in react right so when you write input you need to do
+data binding to it you need to do a manual data binding in angular and some other frameworks
+there is two way data binding in AngularJS I remember I used to code in AngularJS there
+used to be two way data binding so if I used to write something like this right if I used
+to write something like this now const search text search text right is equals to KFC right
+and if I give in search text something like this it's not exact what what used to happen
+and if I change my input so this variable used to change automatically it used to happen
+in in Angular a lot of people might understand there is two way data binding there is something
+known as ng model and whatnot right in react it does not work that way in react it does not work
+that way and I we will we will see that why is it that I will I will discuss those things
+also just let me finish it okay so there is one way data binding in react it's not
+right it's very easy once you understand this it is very easy okay so if I have to make a normal
+variable I can't do it right this search text KFC if I write this value right it will go inside this
+value right it will go inside this value it will come in over here but it won't work
+it won't work right it won't update in itself why it is a good thing let me tell you
+why it is a good thing that it does not updates you know when we do this right when we update it
+in two way right what happens is your app becomes unpredictable because you might be using search text
+at so many places right you don't know where in your app this variable is getting modified
+you won't understand that where is your how is your search text getting modified right
+you won't know right it will be very tough for us to like wrap our head around
+and it will not be good for optimization also you will get to know later so that is why react
+said that if you have to create local variables created using a use state variable use state hook
+right this use state hook this use state hook is a normal function right this use state hook
+returns a array right this use state hook this use state hook right returns a array right this
+returns a array what what does the array looks like right what does the array looks like array has
+the first item as the variable name variable name and the second item is the set function
+how do you update the variable function to update the variable okay and we call this as a state variable
+okay that is why we use destructuring to do something like this we do when we write like
+this right we are destructuring it search text and we use set search text right if you
+find the syntax confusing okay i'll give you one more thing suppose if my use state is giving me
+search variable search where right i can do something like this i can destructure like this also
+is equals to search where does this make sense now does this make sense not many people know this
+not many people know this because most of the times you will find this written in your code
+you will always find this written in your code just to simplify i am showing you that you can do
+something like this also you can do something like this also i am just showing you try it out
+you should be able to do this see as per my javascript knowledge i am just saying that this
+should work okay i can be wrong also sometimes but this will work for sure right this is destructuring
+that is happening okay it's normal normal javascript destructuring okay so now in the local variable
+so this is you know this this variable this this way of creating a local variable in react
+is equivalent to creating something like this okay is equivalent to creating like this right
+const sr search text okay s text okay is equals to this these two lines you can assume are similar
+this is javascript this is react now if i have to give it some value by default it is hello right
+by default if it is hello then you have to give your default over here does this make sense
+does this make sense does this make sense right so if you have to write see this is equivalent to
+this in is just initializing not giving any default value initializing a variable not
+giving any default value right small thing i am just telling you very very small things
+very very small things okay so this is basically initializing it but not putting any value in it
+if you have to declare a variable like this right hello so you do it here okay understood
+now some people would some people are asking that why did why is this an array does it make
+sense this is a convention which react follows right because you know you have to given two
+so react could have done it like made an object because see anytime you create a variable react
+gives you the variable and then a method to update it so you always need some way to do it
+either it could have given an object either it could have given have array so i don't know why
+but react k i don't know right i mean to be very honest i don't know but this is how this is how react
+facebook developers made it like this okay because it's a compact way right it makes sense
+you know once you get used to it it's very easy to write right it's very easy you understand
+exactly what you are doing right and now set search state right you need if suppose you want to
+set something you need to use set search state how do i update my search text first of all when do i
+need to update it i need to update my set search state whenever i am typing something over here right
+if i am typing something over here i need to update my this variable how do i update it
+i will write a on change method okay on change method so in html remember in html if i write
+an input tag right if i write an input tag so how do i write on change i write something like this
+right and over here i call some function i call some function like this right but in react you use
+a camel case you use on change and then here you can use jsx right that is react okay let's go
+back to react i am just telling you a difference don't get confused right i am telling you very
+small things so on change here you get a function i am using arrow functions you can use normal functions
+also and this function automatically gets an event property right from this event property
+i can read whatever i am typing whatever i am typing over here i can read it i can read it okay so
+so i can do a e dot target dot value and my e dot target dot value will contain whatever i am typing
+in so i want to update this variable with this value right so i will do a set search text
+right set search text and then i will do it like this and this will modify my search text
+variable does that make sense read about synthetic events read about these events this is javascript
+not react okay does that make sense and now my variable works properly right now my variable
+also gets updated suppose if i write something like this right suppose if i have my h1 tag
+let's have a h1 tag over here h1 tag and in my h1 let us just see how my input box is getting
+updated right how my input box is getting updated search text right let us just see i
+have printed it inside my h1 tag i can use this as a local variable any like normal local way
+see it came over here right so i can write anything it is updating real time what is this
+what is this thing known as what is this thing known as this is known as two-way binding
+binding this is known as two-way binding because i am updating my search text and it is getting
+updated and it is putting the value inside it also right putting the value we are reading
+as well as writing here i am reading search text here i am writing search text here i
+this see here i am reading search text here i am writing search text both at the same time
+quickly quickly quickly quickly and people who know javascript try to write make such functionality
+in javascript you will mess up your head when you do that you will mess up your head when you
+have to write this code in javascript and if you write that code in javascript then
+what will happen is it will just mess up your head and it will be very non-performant
+if you try to build the same thing in javascript it will be very non-performant right okay cool
+so always use your state variables this is what i wanted to know now let's come back to
+few questions clarifying questions okay let's come let's come to few clarifying questions okay
+now now now we have got this search text variable okay now i have got my onchange method
+which is updating my state variable now what does use state return what does use state return
+come on quickly array array has two first is variable second is this how do i put my default
+value i put my default value here if i don't put my default value it is like initializing
+variable like this a colon so i have just said that s is something i have not given any value
+if i don't put any value here it will be like that right so this is the way react creates variable
+now now a very important great important interview question what is why do we need
+the state variables when we had local variables why do i need these state variables right why do
+i need these state variables because you know react whenever a variable changes right
+suppose if you have a normal variable suppose i made a constant right suppose i made a constant
+let const right is equals to 10 and and my const somebody updated my const somebody
+updated my const react would not know that i have to update the DOM suppose i am using this
+const variable right over here if suppose i am using this const variable over here right
+let's name is at constant okay let's name this variable as constant suppose i am using this
+variable over here right suppose i am using this variable so my react will not know
+react will not know when i have updated suppose if some function updated this to 11 right
+so my react would not know that i have to change it in ui right react will not know i have to
+change it in ui suppose this is 11 now i clicked on this button suppose i clicked on home and
+my variable got updated to 12 will this re-render will this update in the ui
+will this update in the ui once again once again once again react has no idea react has no idea what
+is happening to all your variables right react does not have any idea about whatever variable
+you have created you can create thousands of variable in your app react does not know about
+them right and react can't keep that can't keep tracking each variable so react says that i am not
+keeping a track of these variables right if suppose constant suppose i wrote a wrote a on click on home
+button right suppose i am a crazy developer i have written if i click on home home just update
+this variable right so react won't re-render react will just print 11 it won't go to 12
+or it won't go to whatever you update this variable to right to do that react says that
+every time you want your variables to be in sync with the ui every time you want your
+variables to be in sync with the ui you need to use your state variables does that make sense
+does that make sense yes or no right yes or no does that make sense yes some people are saying no
+let me repeat it once again for you otherwise go go see the recording once again it will make
+sense so react has one way winding right you need you can use local variables right why so there
+is a question in interview that why do i need this state variables why do i need the state in
+itself right so suppose if you have a local variable a is equals to 10 right suppose if somebody some
+other component just changed it right just change this a variable right so what will happen is react
+will not know that i have to update a over here because this is gsx right react will not know that
+a got changed suppose if some in header or somewhere i just changed my a react will not know
+react will not know so what will happen is react will not know so what will happen is
+i have to create a state variable and all the state variables that you create react
+keeps keeps a track of all of them react is watching these state variables and whenever i am
+updating my search text whenever i am updating my search text what will happen is it will automatically
+re-render it will automatically re-render my component okay i am not taking a break right now
+otherwise this will like go off right i want to finish it right i don't want to take a break
+right now so stop asking for a break okay so okay i'll tell you one more thing okay i'll tell
+you one more thing make it very clear because this is important okay let's create one more state variable
+you will understand okay let's create a state variable okay call it as search clicked search
+clicked and let's make it false right now and if i click on my search button it should be updated to
+true does that make sense does that make sense okay okay so if i have my search clicked it goes to
+false now let us just create this in react way how do i write this in react way i'll write an array
+i'll build a search clicked right and i will do set search clicked what should i write it inside
+you state what should i write inside you state false right let's use a boolean false in here right
+so i created a variable local variable search clicked now i will modify now let us just see
+what is the value of this search clicked how do i see let me just render it somewhere
+let me just have a h1 tag to see that right search clicked h1 tag where is my h1 tag
+h1 tag right so i have my h1 tag so what will get printed over here this is my local variable
+what will get printed over here false right where is it where is my h1 did i save this cool okay
+just a minute just a minute okay okay it is false because it is it won't print right it's
+it won't print because boolean are not printed okay so let's let's create it false
+that's what i understood it is it is javascript at the end of the day right
+so it it just said true right it did not print i was afraid what happened so it should print
+false right now what will i do is now i want to when i click on search it should change to true
+how will i build this functionality right so some people are asking why why why tell me
+why akshay why did not got printed why did not got printed because what what will it got printed
+have you ever tried to print console log true have you ever tried to print console log true
+just try to print console log true once you will get your answer okay so find it out yourself
+this is javascript and i'm i'm just just listen to variable okay so i have this local variable
+i set it to false okay now when i click on my search it should set to true okay it should set to true
+okay so okay if it should set to true here i'll write on click does that make sense if i write
+on click now on click takes a function do i need a event over here do i need a e over here
+i don't need a e over here i don't need a e over here why i don't need because i don't like
+i don't want that event i don't want to read value or something right you can write a empty
+function here when so this function will be called when this search will be clicked on click call
+this function when you on click i want to modify this variable how will i modify this
+i will use my set search clicked set search clicked so if i write my set search click
+and i will set my search clicks to true and my save it okay now let me just go back refresh the
+page and let us just click on search see it changed to true does that make sense does this make sense
+yeah okay so so basically this is how you update now how did my UI got updated
+how did my UI got updated what is happening behind the scenes what is happening behind the
+scenes i'll tell you i'll tell you what is happening behind the state i'll tell you what
+is happening behind the state okay this will this will strong this will strong this will make your
+concepts foundation very strong okay when i click on search right so you understood right first of
+all why is it printing false why is it printing false because this is a local variable the default
+value is false right and i have used it like this right now when you create a variable using
+use state react is watching this variable react is watching this variable react keeps a track of what
+variables did you create in your app now whenever my variable is updated my whole component
+re-renders my whole component re-renders do you know react what it is doing it is just
+destroying this body component and creating the body once again and it is happening very fast
+it is happening very fast and it is updating this it is updating this h1 reconciliation is
+happening exactly i was looking for this time yeah this is what is happening you forget everything
+you forget everything so i told you in the last class that react will create your tree
+and virtual dome and it will keep a track of what is getting updated isn't it
+right so that diff algorithm is happening behind the scenes and when the diff algorithm happens
+the react says that earlier the value was false now the value is true so what should i re-render
+what should i re-render what will be re-rendered it will just re-render this h1 component
+react is very smart react is very smart it will just re-render this h1 it will just
+replace this h1's false to true let's just see it in elements okay if i click if i click on see
+where is my false let's go to body i think it should it should be visible here right
+this is false right let me click on it just keep watching don't watch on the top watch here
+okay keep watching this keep watching this now i'll show you the reconciliation happening in life
+are you excited see this h1 h1 h1 will change okay let us just click one two three see did
+you see it changed did you see it changed quickly so react just re-renders this portion of your
+DOM this is why react is fast this is why react is fast it is doing a diff algorithm it has created
+a virtual DOM of what is virtual DOM it is a representation of this actual DOM right it
+is kind of like a tree it finds out the difference it finds out oh my god okay only this h1 is
+updated okay then let us just change h1 over here it is very quick right this is what is react doing
+right let's show let me show you once again some people are saying show me once again okay
+so this is false right see nothing will be changed this whole component h this whole
+components html will remain the same only this will change okay just see it once okay
+and i'll just show you i'm clicking on search okay three two one click did you see it yep
+some people are asking can i make it change once again yes you can make it change once again
+you can create a toggle okay how will i create a toggle so if it is false change it to true
+if it is true change it to false how will i do that how will i write that kind of code
+let's let's try to do that okay let's try to write that so in my on click right i will set it to true
+but i want to only set it to true if it is already false how will i do that i will write
+if my search clicked if my search clicked is equal equal to true true what should i make it
+what should i do what should i do i'll make it to false listen to just understand these small
+things if you understand these small things it will be very easy for you else just set it to false
+i am writing it very naively right you can use a ternary operator and whatnot okay
+does this make sense does this condition make sense give me a thumbs up give me a thumbs up
+give me a thumbs up okay this this statement makes sense search clicked is true make it false oh sorry
+i wrote it wrong sorry sorry my bad guys my bad and let us see this in action okay let's refresh
+the page it's false now let's go back to our body let's go back to our root let's go back to our
+body component let's go back search container sorry search container and here is false right
+if i click on my search see what is happening it happened true now if i click on it once again
+it happening false now see what what portion of dom is getting updated isn't it amazing
+right it's amazing right this is why react is fast because it is using a diff algorithm
+behind the scenes it is using reconciliation it is using everything right that is why i say
+reconciliation op that is why you have to watch my previous lecture and read about reconciliation
+understood now some people are asking does angular change everything i really don't
+know about angular i have not read a lot of angular i am not sure what they are using behind the
+scenes now people are saying where can you see virtual dom i really don't know it is hidden
+behind the scenes it's that react code which is doing something working inside the scene it's
+not it's not abstract that you can see it anywhere no you cannot just see it like that
+okay so now that is this is this is reconciliation in action this is your diff algorithm in action
+right okay so virtual dom is not a it's a concept but at the end of the day this whole
+dom right html dom is represented right maybe it's it's assume that it's a very big object and it is
+kind of finding a difference between two objects it's like a git diff right assume that the diff
+algorithm is somewhat changing this right and it only said that okay my h1 has changed see only my
+this is changed okay assume it like that okay so i don't know how to see that behind the scenes
+right but you understood right i have stressed it enough nobody takes one hour to teach state and
+props okay so i have i have spent a lot of time on this very right let me just let me just
+why let me just let's make this search work i am not going anywhere i am not taking any
+break until i make this search work i want to search here and my restaurant should filter out
+i am not going anywhere you are hungry you go watch the recordings i am also hungry but i am
+waiting over here to learn i am hungry to learn okay i am hungry over there in my stomach also
+but i am hungry to learn okay i'll make this search work because i have to move fast i i have to
+move fast right let's move right okay so i will make this search work let us make this search
+work okay cool so let me get rid of this second variable okay so now with all the knowledge
+we have right let us just try to write now when we click on the search button what we need to do
+let's keep the on click here what i need to do when we click on the search button
+need to filter the data right what is this data what data we need to filter this restaurant list right
+this restaurant list i need to filter right so need to filter the data right so we will
+filter the data let's create a function filter data right and let's filter the data okay and
+what after that what we will do when we have filtered the data then we want to update this
+restaurant list can i update this restaurant list how will i update this restaurant list
+how will i update this restaurant list i cannot update it directly i cannot update it directly
+we will have to make a state variable for this okay we will have to make a state variable for
+this so basically what we will do is to maintain the list of restaurant we will maintain a state
+we will maintain a state variable okay so earlier i was just importing it directly right
+i was importing this directly right over here and i was rendering all these components
+but now what i will do i will use a local variable okay i will use a local variable
+how would i use a local variable i'll write something like okay restaurant restaurants
+okay restaurants and a set restaurant right and then how do i create my variables
+use state now quickly tell me what should be the default value over here quickly tell me
+quickly tell me what should be the default value by default my restaurant should have
+the dummy data right that data that we had so let's have this as default value isn't it
+i'm just creating a local variable don't no need to be afraid right
+no need to be afraid right i'm removing this also okay what i have done is i have created
+a local variable i have given the default value can i use my restaurant dot can i use this now
+will this work will this work i'm refreshing the page yes or no right what happened oh
+search click is not defined okay let me get rid of this old old code here see this worked
+right so i created a react variable restaurant and i i am now restoring the restaurant now what i
+will do if i will if i will suppose if i will in my restaurant pass in filter data
+suppose i i updated my restaurant with filter data will the list change will the list change
+right yes so what i will do i will just modify my restaurant because i am doing a restaurant
+dot map modify this local variable with the filter data how will i do that i will do it on
+click of this button so i'll do a filter the data and then update the state and what is the state
+state is my restaurant variable rest star rent variable okay this restaurant's variable i'll update
+how do i filter the data right let me write that function filter data let me write that function
+filter data okay let's create a function filter data okay let's create a function filter data
+where should i create it let's create it over here so this is a separate function all together
+this is a separate function it has nothing to do with anything right let's just quickly write
+okay our filter algorithm how will i write our filter algorithm filter data right
+what do i need to filter what do i need to filter we need to filter these restaurant list
+using the using the input whatever i am typing over here how will i get my input
+how will i get my input my input is inside my search text right so i will give my search text
+right i will give my filter data my search text that this is the text you have to search
+and where you have to search this text in your list of restaurant can i do this does this make
+sense does this make sense i will search my text inside my restaurant and give me the filter data
+this is what this function is going and whatever data we will get right suppose if i get this
+data here right i will update my restaurant with that data i will update my how do i update my
+restaurant with that data quickly for the people who don't know so i will just filter my
+data and i will get the data and i will just update my restaurant how do i update my restaurant
+local variable using set restaurant what do i pass in over here i'll pass in my data okay
+and what will happen is now i can write my filter algorithm this has nothing to do with
+react this is normal javascript now okay let me repeat it once again let me repeat it once
+again quickly i'll repeat everything once again okay what did i do let me repeat it once again
+so what did i do earlier i was directly using my list which was coming from constant that data we
+data we took from swiggy right so that data was just rendering normally right we will just
+importing it and we will rendering it directly and this is a constant file i cannot modify
+this restaurant list right but here when i click on the search i need to filter data here right
+i need to filter data over here so what i will do is i need a way to modify this restaurant
+so if i have to modify this i have to create a local variable here i created a local variable
+i created a set restaurant variable this is a function that will update this restaurant
+right and now we will use this right so how do i use this on click off my search button
+if i click on this search button what should happen is my search text this search text should
+filter in the restaurants i will pass in my restaurant and the search text now i will
+write a filter algorithm here right some filter algorithm but assume that filter algorithm gave us
+some data here right this is filtered data this is filtered list of restaurant this list of restaurant
+is what array of objects here we have six restaurant info suppose my filter data will
+have only three three list three restaurant right suppose my filter data only has three restaurant
+so only three restaurant will be updated here okay so let us just try to filter it what will i get
+over here search text restaurant okay how will i filter okay how will i filter we will do something
+known as restaurant dot filter those who don't know how this filter works right go read javascript
+right this is a normal javascript filter method right so i am just filtering these restaurant
+so some people are saying can you just directly filter this can you write it like this yes you
+can do that too you can do that too but i will use my local variable right i will use my local
+variable this is a this is a genuine practice right you need to be consistent that what you
+are doing here so i am using my local variable so restaurant dot filter and now i need to pass
+in some filter check right suppose i have my restaurant okay restaurant and how do i want
+to filter i want to filter if my restaurant right what is the structure of data over here
+what is the structure of data if you see one restaurant it has restaurant dot data dot name
+right restaurant dot data dot name if my restaurant dot data dot name
+what will i do if my name includes my search text does that make sense right cool if that
+makes sense right cool in the comment if my restaurant dot data dot name includes my search text
+just filter out all the restaurant right and then return it and then return it i have written
+i i have written a lot of i have written a lot of code in one line okay you can maybe write
+it in a better way okay so maybe you can do it like this filter data is equals to and then return
+your data right return filter data right and this is the filter algorithm what happened oh i wrote it
+inside sorry my bad my bad my bad my bad yep so basically what i am doing is restaurant data
+dot filter is restaurant dot data dot name if it includes search text so what it will do is
+it will go to the restaurant one by one suppose the restaurant name is what is the name of restaurant
+uncle g restaurant okay suppose if the name is uncle g restaurant uncle g restaurant so it will
+find if my and the search text is j i right if my search text is j i okay my search text
+is j i so it will find my j i inside my uncle it will find that okay uncle uncle dot data dot
+name includes search text okay this is normal javascript don't want to explain it a lot right
+so go read out right you will so now you will get a filter data over here right so let us just
+save and see if it works do what do you think will it work we have written a lot of code already
+let me first get rid of this ugly hello over here right so by default i will have my search bar to be
+empty search input box to be empty okay this is empty will it work will it work yes or no
+yep let us just see let us just try to find out king right let us just try to find out king
+okay i am just experimenting it fingers crossed if it breaks yep it worked right it worked isn't it
+right so it just quickly re-rendered what happened now right i'll explain you what happened
+when you click on this button it saw what is the current it it went to this what is the current
+search text what is the current search text it was king right so it passed king as well as the
+list of all the restaurant as well as the list of all the restaurant to my filter data my filter
+data then find out in all my list of restaurant does it does the name includes the search text
+yes if it includes filter it and my filter data filter data just gave back some data to me over here
+now i just set my data to my restaurants and what is happening is this component re-rendered itself
+and it re-rendered this whole thing again re-rendered itself and it re-rendered everything
+again okay now people are saying that okay let us filter it okay let us just go back empty
+search it once again right we will we will if we search it right so it won't work search won't
+work here it won't work why why because the state is updated why why the search won't work
+because it lost the original state but did you understand till here did you understand till
+here we will make that work also did you understand till here if i write my king right if i write my
+king if i search over here it worked right if i write kfc right and i search it did not work
+it should ideally work right i feel that i have taken a little tough example but i want to basically
+build real world features i want to build real world features enjoying it okay nice so basically
+okay if i write my king it worked it won't work if you do anything else right so okay
+so i think we are already 140 okay let us just wrap this today right and we will this is your
+homework to find out why this was not working okay let us just wrap this in the next session
+take this thought with you right i i have really covered a lot of things today right take this
+thought with you right take it up play with it that is why this session was a little heavy
+i wanted to actually teach you this thing and i also wanted to teach you with you know with
+the actual real data and i have picked up a very hard example here right i have picked up a hard
+example so the homework for you is to first of all you know make that toggle thing remember i did
+that search true false true false true false true false right this is what is exciting this is
+what is exciting you have to question yourself at every moment and don't worry a lot of people
+are saying that i have not understood it properly don't worry just practice whatever i have done
+i'll revise everything once again i'll revise everything once again don't worry if you did not
+understand but take this curiosity with you ask yourself every question that why things are
+working the way they are working why it is not working what will happen if i write
+something else over here right suppose if i have my restaurant list can i use my restaurant list over
+here can i use my restaurant list over here can i use can i use my restaurant list and some people
+would be and you know my main aim is to make this a little frustrating for you as well you
+must be thinking your react is so tough but but but in the next class when i will tell you
+all this once again you would just love it don't worry don't worry if you did not understand it 100
+percent but you have to go do whatever i did today in the class don't worry if you understand it what
+is your level of understanding give you a give a marks out of 100 how much percentage would you
+have understood this 100 100 100 99 100 100 160 okay 60 is decent right 60 50 okay 75 percent
+some people are saying 0 oh my god you need to watch in recordings and do everything what i did
+once again you will understand it don't worry we will do it right we will do it but you should
+be able to answer me few questions before the next session what is state why do we use state
+what is state why do we use state what is a u-state hook why do we use a u-state hook
+right and right and what is what is u-state what is a hook at the end of the day
+what is u-state at the end of the day just a function so you need to remember
+these small things right you should also be restructuring your folder now
+what you have to do this is your homework to restructure this folder put it down into components
+okay right and then you need to also play with your imports and exports you have to play
+with your imports and exports right okay cool and then you need to also read about clear the
+basic understandings of javascript if you don't know what is this e why i am writing e.target.value
+these questions you have to find out these are javascript questions okay cool and then
+those people who will do this can also find out and in the channel in the discord channel
+just write down why this did not work what can i do to make this works will you do that
+will you take this challenge in the next class when we come will you fix it up i will ask you
+we have so many people over here we have to fix this search box
+see i don't want to extend my session a lot because it has become very heavy today right
+and in the next session join on time we will start at 11 and i will make sure that the
+session works i will go and first of all talk to the platform team talk to the an academy team
+why the why i always get delay right why is it breaking all this i'll do that right
+we will start at 11 right if everything works fingers crossed right we'll start at 11
+okay one more thing i wanted to tell you i will also be active on the discord channel
+discord community right please join the discord community if you haven't from the pinned comment
+i will be active there right i'll try to give the recording as soon as possible right it takes
+time you know three hours of hd recording is can you guess how many gb it is
+people who want to leave can leave right i am done with the session today
+2 gb 10 gb 15 gb 12 gb you know for my screen it comes out around 55 55 gb the last recording
+was 55 gb so that is why it takes so much time to render that all then i need to
+convert it then i need to compress it a little because i have to convert it takes time then
+it uploads then you have to like process it that is why it is 55 gb i am recording it
+my screen right it takes it takes some time so please please have some patience i want to
+give you everything as soon as possible don't worry okay and then that recording i need to
+compress it so that it becomes it does not lose its lose its data like lose its quality
+but compress the file right there are options so it takes a lot of time everything right
+try to fix this up but make the search bar work if you can if you cannot i will cover everything
+i will cover everything i will build the search functionality everything in the next session
+okay cool so thank you so much for today's session right and thank you so much for joining
+i hope you would have learned a lot about imports export named import when you use a star as when you
+use a curly parenthesis when you don't use it when you use a default keyword when you use all
+that small things how do you modify your folder right if you have two two components in one
+file how do you extract it when do you use a .js when do you use a .js can you use it can you
+not use it how do you make state variables how can you give default value what is a hook
+what is use state read more about it i will give you all the reference links in the homework
+read all those links when you come in the next session you have one full week do that right
+please do that read everything right i will revise everything and it will fit into your head
+100% okay and i will also be available on discord community right next week i will start taking
+out time i was not getting much time to be active on discord but i will be there don't worry i know
+a lot of people say that okay akshay you are not answering our doubts i am not running anywhere
+yeah i am not running anywhere i will answer your doubts but sometimes you just google things up
+i know a lot of people are asking questions around their basic understanding of javascript is not
+correct and they are asking questions i will answer javascript question also no issues
+this is namaste react i will answer javascript question also i will try to answer as much as you
+can don't worry you you must be doing your job you must be studying in colleges for me this is
+only what i'm doing this is my job now this is my profession this is my profession that is why
+i have chose to do this right don't worry i am not running anywhere right i will come up i will come
+to and you know i will try to hire tas also if i am not able to answer i will hire tas it does not
+take much time it does not take much time but i want you all to also participate see if i will
+ask if i what i'll tell you what will happen if i'll hire ta i have done this right i have
+seen other educators also when they hire teaching assistants when they hire teaching assistants
+so you know people realize that okay when somebody's asking doubt i don't have to reply why ta should do
+ta ta's job is to answer their questions right ta should help them right why would i why would i
+go and help anybody in the community and the community won't survive if the community
+participant don't encourage indulge with each other if you are not learning from each other
+then the community won't survive i want you to be good developers you know when you work in a company
+you work with fellow developers you should be so good that if you see somebody else's error right
+you should exactly know your node version is wrong you should know you should exactly know
+that your node version is wrong i got into that issue your node version is wrong see when you
+get that confidence as a developer right when you get that you have to be a ta everybody is a ta in
+my team everybody over here is a ta sometimes what will happen is some other people will get some
+doubts right so and you know because they have stuck they they tried something new right
+they tried something new that is why they are getting that doubt okay so if you avoid that
+if you will avoid that then it will be tough for you and you know teaching assistant who
+does not know ta it is a teaching assistant that means somebody will be there to answer your
+doubts that's all and and you know eventually when we go ahead right if i will feel need i
+will hire tears i will hire tears no issues you know i have so many people out there i i you
+know i will just go ahead and write down that okay can you help me with react there are so many people
+from industry they can come up right no issues i'll hire ta they won't even take they won't
+even take money from me right and i don't have issues with money don't worry yep and people
+okay yep one thing what we can do is suppose if you want to be a ta then you know i'll ask some
+i'll ask the moderator or someone to like i mean roll out a form you can fill it we will see we'll
+just give it but i want everybody everybody to be a ta over here okay cool and i will anyways be
+there there would be so many questions that ta is might not able to answer i will help them
+don't worry i'm not going anywhere i will be there this is my job i have come here to teach react
+i won't go unless you learn react cool so i don't want to give this a lot of
+gyan to you now otherwise people will start saying ki akshay just gives gyan and all that right
+no issues let me get a little free i will just come back you will see me so much active on
+discord i will be there what else i do i'll do that cool okay so i will share the code of this
+right away i am pushing the code on bid bucket right people who don't have access to bid bucket i'll
+put that once again in your you know on discord right in discord i have already posted the
+bid bucket link people who haven't joined discord discord join this link right now join this
+discord community right now either because you know i will i will close this link right after
+the session you won't be able to join it after the session okay over here if you go on to this
+announcement channel here this is the github repository this is not github repository
+this is bid bucket repository but yes this is git repository okay here it is right
+i am posting it once again now don't ask me again okay and when you have your hd recordings
+and assignment ready i we will post it on the announcement channel keep watching this announcement
+channel i am posting this bid bucket code repo don't ask me okay and i'm marking everyone
+as well you will get a notification i am posting it right here is the link of the repo i am
+pushing the code right away okay i am pushing the code in front of you okay react live what was the
+here is react live see you can see this bid bucket is exactly like github right
+so if you go to commit i have committed chapter one session two session three chapter four
+today is chapter five right so let us just go over here okay let me commit everything
+i have committed everything pushed right the code will be here right okay i was not planning
+to give you the code also but i am giving you code right take the code but don't copy it you know
+the major mistake people do is they will just see my commit now and they will just try to copy
+paste whatever i did don't copy it write all code yourself write all code yourself okay
+okay some people are saying that i don't know how did you push it i am using an extension over
+here there is something known as git lens this extension use this git lens it will give you
+integrated vs code okay right and you know i will i will try to get in tas also don't worry i i know
+that some people are still asking for tas but when i get tas don't don't just stop engaging in the
+community because i have seen that you know big communities don't survive because when the tas
+come in nobody interacts with each other they just don't do okay okay so people are saying no
+ta no ta okay don't yeah so let's let's see right let's grow it up right no issues if i'll feel
+i'll get the ta okay don't shoot and thank you so much everyone right i want to take out name you know i
+want to say thank you to a lot of people they are so like they just go and help each other see
+i when i went to doubts forum right almost every post has like four comments seven comments
+24 comments people are coming up to help each other this is what is the power of this
+community right this is what the power of community and i feel that you will be great in react if you
+know answer to each and every question which is being posted in this doubts doubt forum
+i want you all to be this this great this amazing that you should know answer to each
+of these doubts forum questions right every one of you should know all of these answer
+don't think that i have not faced this doubt that does not mean that like i don't want to know it right
+i really love the community thank you so much everybody who has like who has come here to help
+see now this cat dot gta right see somebody has written a question they are replying it right
+cool so thank you so much everyone right i just don't want to take much of your time
+right and we will be active here if you have doubts right if you have doubts just please post
+it in the community right we will take up it take it up right if we will need if we will need
+i will take up extra sessions also to clear your doubt happy now i'll take up extra session
+to clear your doubt i'll take up extra session all of the most important questions
+which i will get in my doubts forum right all of the most important questions that i will get in
+the doubts i feel that everybody should know about their questions i'll try to make a doc or
+something where i will put down all those questions or i'll come take extra sessions to do that
+happy don't worry okay i mean a lot of time has been taken it was a knowledge heavy session
+so please from the next session finish your homework finish your assignment i want everybody's
+assignment to be here everybody's assignment to be here see people make such beautiful apps people
+have made beautiful apps see why are you not making it everybody is doing it please do that
+please do that okay chalo bye bye okay oh i have stopped sharing the screen sorry
+go to the discord channel and go to the assignment section you will got to know okay okay cool chalo
+bye bye bye see you see you in the next session

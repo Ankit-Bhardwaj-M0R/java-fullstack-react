@@ -1,0 +1,2836 @@
+FILE: Episode 08 - Let's get Classy.part001.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Welcome back to Namaste React, this is episode 8, let's get classy.
+As you would have already guessed it, in this episode, we will be studying about class-based
+components.
+Okay, so before I start this session, I want to tell you a little bit things about class-based
+components.
+So, first thing that class-based components is a older way of creating components inside
+React.
+So in the latest way, in the 7 episodes which I have taught before this episode, we were
+using functional components, isn't it?
+So that is the new and latest way of writing code, that is the new way of creating components.
+But class-based components is an older way of creating components.
+If you are building a project today, a React project, you would never need to use
+class-based components.
+But then, you might ask the question that why Akshay, why are you teaching us then, right?
+So let me tell you that class-based components are very important to know.
+Why I say this?
+Because first reason is, it is asked a lot in interviews.
+If you are giving interviews, you will be asked class-based components a lot, why?
+Because a lot of companies are working on older projects which are already using
+class-based components, right?
+They are not using the latest of React.
+So I don't want you to fail in interviews.
+I don't want any of my students to fail in interviews.
+The second reason is that if you know class-based components, right?
+Understanding of React will become very, like very strong, right?
+Because see, you know, functional components is a new way of writing code.
+But if you know that earlier, why, how we used to write code, your understanding
+of today's concepts will become even more stronger.
+In this episode, you will get that, right?
+You will get to know how painful it was earlier to write code and now how easy it is to write
+code with functional components, okay?
+So one reason is that and the third reason is that it's amazing, right?
+It will exactly tell you that how React lifecycle works, how React components, like, render
+onto the webpage and then what is the beauty of React components, like it, you know, it
+is more on a deeper level.
+So without wasting any more time, let's get started with the class-based components.
+Let's go back to our project, Namaste React, and let me open this project in our VS code,
+right?
+We have our Visual Studio code, we have our app.js and let us just start our project.
+What is the command for starting our project?
+Yep, you're right.
+Let's start this NPM start, right?
+If I do NPM start, we have our project running over here on localhost1234.
+Let's go to the browser, here is our localhost1234.
+Let me refresh the page, yep, this is our project.
+So now we are going to see that how we can create class-based components today, right?
+So let's go back to our code.
+So what I'll do is, okay, so here we had about us page, right?
+So let us use this about us page, and here we will experiment with class-based components,
+okay?
+So what I'll do is, now I will just create another component over here, and that will
+be a class-based component, got it?
+So in our about section, so you know, what I'm going to develop today is, in our
+about us section, right?
+In our companies page, you must have seen a about page in the company's website,
+right?
+Where in the about section, they give the information about team members, isn't it?
+So let me make similar kind of stuff, right?
+Just to showcase and just to demonstrate class-based components, okay?
+So in our about us page, we will show information of the team members, right?
+This is a feature which I would like to add, that I will over here show the, like show
+the information of team members, isn't it?
+So and I will fetch the data of these team members from GitHub, got it?
+So basically what I'll do is, I'll just showcase, like I just fetched data from
+GitHub APIs and will showcase the team members information over here, right?
+So maybe like I'll just fetch data from my GitHub profile, my photo, my name, my
+location and all that stuff and will show in the about us page, right?
+It's a very simple feature, right?
+That we are going to develop and we will be using class-based components for
+developing that, right?
+So in the about us page, right?
+Over here below, I will show basically a team member's card, right?
+Kind of like a card for each team member, right?
+So let us just create that card component.
+So now what I'll do is, first of all, I will make this component as a
+functional component and then I will convert it to class-based components, okay?
+That way you will understand it much more better, okay?
+That's kind of my style of teaching, right?
+So this H2 tag, I will create a user component, right?
+This is the user component.
+This user means the team member, right?
+In the about us page.
+So this user component and first of all, I will develop the same component in
+functional component way, right?
+I will write a functional component for this and then I will show you how to
+modify that to class-based components, okay?
+I will show you the like relation between the two.
+I will show you the comparison so that you beautifully understand it, right?
+That's how I teach this concept, okay?
+And you would love it, right?
+So let's create a user component, first of all.
+That will be a functional component.
+How do you create a component in a functional way, right?
+User component, okay?
+Let's call it as user.js, okay?
+So user.js and now what is a functional component at the end of the day, right?
+It's just a normal JavaScript function, isn't it?
+Let me create a user component.
+User is equals to I'm creating an arrow function.
+So a functional component is basically nothing but a function that returns a piece of JSX,
+isn't it?
+So over here, I will have a div and then this is basically a card, right?
+This is basically kind of like a let me give it a class name as user card, okay?
+User card, okay?
+So this is a user card and then in this user card, in the about a section, let's
+add few details, right?
+Name of user or maybe location of that user or something like that, right?
+So let's add it, H2 and then basically let me give it name and then name is Akshay, okay?
+Name is Akshay and then maybe like let's say H3 of a location, right?
+Location of maybe let's give it as Dehradun, right?
+And let me also add some information about my contact information, right?
+Contact information, maybe basically maybe my Twitter handle or something, right?
+Let me add my Twitter handle, right?
+So basically it's about us user card, right?
+Kind of a card.
+So let me create this.
+So this is a functional component and what do we do?
+We will then export our component, export default user, right?
+So that's how I create my functional component, isn't it?
+This is our functional component, our user component and how do I show this component in
+my about us page?
+I will just import it, isn't it?
+This is our about us component, right?
+So over here, I will just import my user card, right?
+Import user from dot slash user, isn't it?
+So we have this user from our user file, okay?
+So now I will use this user component over here, right?
+So let us see how it looks on our web page.
+So over here, we have got this, right?
+Name, location, contact us, okay?
+So let me just decorate it so that it looks like a card, isn't it?
+So over here, can you see, right?
+We have this name, Akshay, location, contact, right?
+So let me just decorate it, right?
+Let me put some CSS so that it looks like a card, right?
+So let's put some CSS, let's go to our index.css.
+Over here, I'll like just write quickly some CSS for my user card, right?
+So we have this user card, let me give it a padding of maybe padding of 10 px, okay?
+Let me give it a padding of 10 px and then let me also give it a border, right?
+Border of one px solid black, got it?
+So basically, we have got this card, right?
+So now we have got this card, this is a functional component.
+This card is coming from this user js.
+Now what I'll do is, I will now convert this user component.
+What if we have to write this user component using class-based component, right?
+Okay, so for that, let me create a component.
+How do you create a component?
+Let me create one other file, right?
+Let's call it as user class, okay?
+Because a class-based component, so I'm just using this convention.
+You don't need to actually, but then I'm just following this convention user class.
+So whenever I say user class, it's a class-based component.
+The normal user is a functional component, got it?
+So now I will use a, I will write the code for my class-based component.
+So for reference, okay, let me just put this user file on the right side, okay?
+In this half, and here is my class-based component, okay?
+So now watch clearly how I am writing code for my class-based component.
+First thing, okay?
+Now listen to me very carefully.
+First things first, one question I have is, what is functional component at the
+end of the day?
+At the end of the day, what is a functional component?
+It's a normal JavaScript function, isn't it?
+What is a class-based component?
+It's a normal JavaScript class, got it?
+So it's a normal JavaScript class.
+Let me just show you how we can create this class-based component and what is a class
+component, right?
+So when I say class, so how do you create a class in JavaScript?
+Class keyword and then the name of the component.
+What is the name of this component?
+User class, okay?
+User class.
+And then we will, to make this a component, what we will do is, we will extend, so I will
+extend, right, extends react.component, okay?
+So this is the way for react to tell that this is a class-based component.
+So what you will have to do, extends react.component, okay?
+So now when you do this, this becomes a class-based component.
+Let me repeat it once again, you use a keyword class, name of the component and then write extends
+react.component.
+So basically this extend react component will make react know that this is a class-based
+component, okay?
+So now react will start tracking it, got it?
+So this is the way we create a class-based component and what do we do over here is?
+What do we do over here is remember this is very important that now I will have
+a render method inside over here, right?
+I will have a render method inside over here, right?
+And this render method will return a piece of JSX which will be displayed onto the UI,
+okay?
+So render method will return some piece of JSX, got it?
+So this returns some piece of JSX, right?
+So similarly, if you compare it with class-based, if you compare it with this functional
+component, right?
+So what is a functional component?
+It's a function that returns some piece of JSX, right?
+Returns some piece of JSX, class-based component is a class which has a render method which
+returns some piece of JSX, that is the difference, right?
+So just like we returned this JSX over here, similarly I can copy this whole return and
+I can just put this over here, right?
+I can just put this over here, right?
+And okay, so see the difference, see the difference between the two.
+So this functional component is, let me repeat it once again, so the functional component
+is basically a function that returns some piece of JSX.
+A class-based component is a class which extends react.component and it has a render
+method that returns some piece of JSX, okay?
+The only, the major difference over here is that we have this render method which
+returns some piece of JSX.
+And this is the JSX which will be converted into HTML and rendered onto the webpage, right?
+This will be converted to HTML and will be displayed onto the webpage, okay?
+So this is how you write class-based component.
+Now remember one important thing, what is this react.component?
+This react.component is basically a class which is given to us by react and user
+class is inheriting some properties from it, right?
+So basically this react.component is given to us by react.
+That means we will have to import it from somewhere, right?
+Where is this react.component will come from?
+So basically this react.component will come from, from react.
+Got it?
+So important thing to notice, this react.component is a class which is there inside react, right?
+This react package, right?
+This JavaScript react package, it has react and we extend react.component over here like
+this and then we will just render this, render this piece of JSX, right?
+This is how we write class-based component which is equivalent to this functional component
+over here, this functional user component.
+And now similarly, just like our functional component, we will also export this component,
+right?
+Also export default and then user class from this file, right?
+And now let us just see how we can use this in our about us page, okay?
+Let us just see how we can use this in our about us page.
+In our about us page, what I will do is I will just import my user class, right?
+User class.
+We will do it exactly how we used to do for functional components.
+There is no difference in importing, exporting, right?
+From our user class.
+Now we have this user class.
+What I will do is I will just below over here in this user, I will just also add a user
+class, got it?
+So user is there and user class and let me just save my file, go back to our browser
+and if you will see, see this, we have these two cards.
+So this first card is our functional component.
+The second card is our class-based component.
+Was this hard?
+No, my dear friends.
+It's not at all hard.
+It's just a change of a little syntax, got it?
+Let me quickly revise it once again.
+So in this functional component, it's kind of like a function which returns some piece
+of JSX, right?
+So this function, arrow function was returning some piece of JSX, isn't it?
+So in this class-based component, you have to remember few things.
+First of all, you make a JavaScript class.
+The name of the component is coming over here and you extends it from react.component
+and this react.component comes from our react library, got it?
+This class has a function, this class has a method render, right?
+This render method returns some piece of JSX, that's all, right?
+And then we export our class and we use it the same way like we used to use our normal
+functional component just like this, got it?
+So this is what is a class-based component and this is how you write a equivalent functional
+component and an equivalent class-based component for a functional component.
+It was easy, right?
+So now let's dive in a little more into it.
+So now I will show you how we can pass props into this component, right?
+So we had this functional component, right?
+How do we use to pass props inside it, right?
+So how do we use to pass props inside this functional component, right?
+So we used to pass props over here like this, right?
+So suppose I want to pass this name and location from my props, right?
+Over here, I want to send names as a prop, right?
+So let me just send you this information, right?
+Name, let me give it passing this props, right?
+This is a functional component, right?
+This is function, right?
+So how do I pass in this props inside functional component like this?
+And how do I receive it over here in this functional component?
+How do I receive it over here in this functional component?
+I used to do something like this, right?
+I can write props over here.
+And over here, if I write my props.name, props.name, I can access it, isn't it?
+This is how we used to do.
+If I save this file, go back to my browser.
+So here we have got this Akshay Saini function, isn't it?
+So this is coming from this props, OK?
+And what we can do is sometimes we also destructure it like this, isn't it?
+You would have seen it, right?
+Instead of props.name, I can just destructure it on the fly, right?
+There are various ways to write it.
+I can write it like this as well.
+Over here, I am passing name and we are getting this as a parameter.
+This is this name is a parameter, right?
+This is going as an argument to this function, isn't it?
+As a props, right?
+So this is how we used to do in functional component.
+Now I want to show you that how I can do the same thing inside my class-based component.
+So suppose if you want to pass a prop name over here in my class-based component, right?
+Let me just pass in over here Akshay Saini and now let me write over here class, right?
+So this is coming from my class-based component.
+This is going inside the class-based component.
+Now, how do I receive this component inside my class-based component?
+What is that component?
+Here is my user class.
+Now how will I receive it over here?
+How will I receive it over here?
+Listen to me very carefully, right?
+So in this class, we will create a constructor.
+This class will have a constructor and this constructor will now receive this props,
+right?
+This constructor will now receive this props, right?
+Over here and over here, listen to me very carefully, we have to do one more thing.
+So we will receive this props over here, over here in the constructor and we will also write
+super props, okay?
+We will have to use this keyword super props, right?
+We will have to use this keyword super props and now if I do a console log over here,
+right?
+console log over here of props, so I will receive these props over here in my user class, okay?
+Let me go to the browser and show it to you.
+So here you can see, see this.
+In user class, I have got these props over here, got it?
+I have got these props over here, got it inside my constructor.
+So let me repeat it once again in functional component.
+If we pass in like this, we get inside this functional component as an argument, right?
+So over here, we will get name, I can use it like this, right?
+So in the class miss component, we get it over here inside this constructor and we
+definitely have to use super props.
+This is important, right?
+So this is the time for your homework.
+Now you would ask me, Akshay, why we write super props?
+Can I avoid writing it?
+No, you cannot avoid writing it.
+If you don't write super props, it will throw an error.
+So you will always have to write super props over here.
+This is your homework.
+Go research, do your research and find out why do we always have to write super props?
+This is your homework.
+I can, you know, I can tell you in one line, right?
+But I want you to do some effort, right?
+Go back, go on the internet, just find out why do we write super props?
+You will get the answer in just one or two Google search, but I want you to make that
+effort and just brush up your underlying concepts, right?
+Okay?
+So please go ahead.
+I will give you two homeworks in this episode, right?
+Two research homework, two homeworks, right?
+The first one is why do we write super props?
+Note it down in your notebook and then remember this.
+Now once I have received my name inside this, inside my constructor over here,
+how do I use the name over here?
+Right?
+Inside my render function.
+So over here, you will have to do something like this.props.name, okay?
+You will always have to use this keyword inside your class, right?
+So that this props can be accessed anywhere inside my class.
+Got it?
+So I am giving you a hint.
+So because we need to use it over here as this.props.name, that's why we kind
+of use this super props.
+Go back and research it yourself.
+I am just giving you a hint, right?
+But now this props can be accessed anywhere inside my class using this.props.name or whatever
+you must have passed in from your parent component, right?
+So now let me go back to the browser and show it to you if it works or not.
+Let's go back.
+If I see a name has been replaced from here, right?
+A name has been replaced from here.
+So let me repeat it once again.
+If you have to pass in props inside a functional component, you do it like this and you receive
+it like this, right?
+Over here, you receive it like this and you can use it like this.
+In the class-based component, the way of passing is same, right?
+But when you receive it, where is my class-based component?
+Here it is.
+When you receive it, you receive it inside the constructor and then you can use it like
+this.props.name.
+Remember to use super as well.
+So now let me tell you an important thing.
+Whenever this class is initialized, right?
+This constructor is called, right?
+Whenever you create a, you know, instance of a class, right?
+Not invoked, right?
+Functions are invoked.
+But whenever the instance of this class, this particular user class is created, a
+constructor is, you know, a constructor is called.
+This constructor is called, isn't it?
+This is a normal fundamental of classes, right?
+So whenever the class, a new instance of a class is created, this constructor is called
+and you know what happens?
+This props is extracted over here, over here like this.
+And now you can use this props anywhere in your code if you use this super props
+like this.props.name.
+Remember to do this, okay?
+So this is how you get props from the parent component, okay?
+So now if you have to pass in more props, you can pass in more props as well, right?
+I can pass location as well.
+Location is equals to Dharadun, right?
+Or let me write Dharadun class, right?
+So that you can say.
+So we have this location Dharadun class.
+Why it is complaining?
+Because it's piece of JSX.
+I have to give this, I have to give this over here, okay?
+Over here.
+Got it.
+So we have this location as Dharadun class.
+Now I will use it over here.
+We have got this props.
+I can use it this.props.props.location.
+Got it.
+We have got this.
+If I go over here, we have got this Dharadun class over here.
+And if I log this console, we have got this object, right?
+This is the props object.
+So basically what happens is all these, all these you will pass over here, right?
+Let me just show it to you.
+All these props you have passed in like this will be combined into a single object.
+And that object will be, will be passed over here in this props, right?
+Remember this props.
+Got it.
+So now, so now we can use this.props.name, this.props.location.
+One more thing we can do is we can destructure it also, right?
+This looks ugly to use this.props.name, this.props.location.
+So I can destructure it.
+How do you destructure it?
+Very simple.
+I can just do const, right?
+And I can extract name and my location, right?
+This is a better way to write code.
+Location from this.props.
+Got it.
+So I've got my name and location.
+Now I don't want to write this.props every time.
+I can just use name and location like this.
+Got it.
+So this is how you extract your props and it will work.
+This is how my class-based component receives some props
+from its parent.
+Got it.
+So let's take a break over here.
+Let's take a break, go back to your code, right?
+Go back to your project, implement this, right?
+Get make two cards, right?
+Write a functional component first of all, you know?
+You must have already got used to of writing
+this functional component like this,
+a functional returning some piece of JSX.
+But this time you have to create a class-based component
+also just like I did, right?
+User class and use it, pass in some props
+and see if you can get this props over here or not, right?
+See this once again, go back, do it yourself in your code
+and then we will come back once again very soon.
+Welcome back, my friends.
+Now I'll show you how we can create state
+inside our class-based component, right?
+State variables, local variables inside our class-based
+component.
+Isn't it?
+Creating state variables is an important thing in React,
+isn't it?
+So we need to create state variables
+and update our UI when the state changes.
+We do that a lot in our functional components, isn't it?
+So let me first show it to you.
+Remember, how do we create it inside
+our functional component?
+We use a hook, you are absolutely right.
+We use a hook which is known as use state, right?
+So over here, right?
+This is our functional component, okay?
+So we create a hook, right?
+Import use state, right?
+Import use state from our React
+and we create a hook like this, right?
+This is how we create a state variable.
+Let us just create a dummy state variable, right?
+So I can create a state variable like this, right?
+We have this array and we write,
+suppose the state variable name is count, right?
+Count and then over here is use state
+and then we used to give a default value inside it, right?
+Let me give a count a default value of zero, okay?
+So over here, we do it like this, isn't it?
+Let me just show it to you and how do we use it?
+How do we use this count over here, right?
+How do we use this count over here?
+Let me create a h1 tag for count, got it?
+So count is basically count, right?
+So if I have to use it, so count, got it?
+So this is how we use it, right?
+This is a state variable count
+and we have this zero over here, got it?
+So this is count is equals to zero over here, right?
+So now we will see how we can create this state variable
+inside our class over here, class component, okay?
+Let me get this functional component also over here, right?
+So here is a class-based component.
+I will now show you how you can create a state variable
+just like we created over here, right?
+Using use state, how we can create inside class.
+But let me tell you, functional component,
+this hooks is a very new concept inside React.
+Earlier, there used to be no hooks,
+there used to be no functional component, right?
+So there was an old way of creating state
+that we are going to see over here now, right?
+And let me show it to you how to create state.
+So state was created whenever a class instance was created.
+So whenever you create an instance of a class,
+whenever the, so what do you mean
+by when you are creating an instance of a class, okay?
+I'll tell you, you know, when we have this,
+listen to me very carefully,
+there is a very small difference between them, right?
+So when I say I am rendering a function,
+rendering a functional component,
+what does it mean basically?
+So basically on your web page,
+if there is a functional component, it loads, right?
+So that means you are mounting that function.
+You are mounting that functional component.
+You are kind of like calling that function.
+You are invoking that functional component.
+Got it?
+So whenever I say invoking a functional component,
+that means you are loading or mounting that function
+onto that web page.
+Got it?
+That is known as mounting or invoking a function.
+When I say you are creating an instance
+of a class-based component,
+this is my vocabulary, I teach it like this, right?
+When I say you are, you know,
+loading a class-based component means
+you are creating an instance of this class.
+Got it?
+Let me repeat it once again, listen to me very carefully.
+When I say I am loading a class-based component
+on our web page, that means I am creating
+an instance of that class.
+Got it?
+So basically, when I am loading this class-based
+component onto the web page,
+that means I am creating a new instance of this class
+and giving it, right, and giving it some props, right?
+So whenever you create an instance of a class,
+this constructor is called.
+And this is the best place to receive props
+and this is the best place to create state variables.
+Got it?
+This is the best place to create state variables.
+So if you have to create a state variable
+for your class-based component,
+so you will create it over here.
+In the functional component, we use useStateHook.
+Earlier, there were no hooks.
+There was a way to create state variables
+and that was using something known as this.state, okay?
+So this state is a reserved word over here.
+So you use this.state and then this state
+is basically a big, whole object, okay?
+Big, whole object which contains state variables.
+So just like we had count over there,
+how do I create a count here?
+I can create a count
+and how do you give it initial value like this?
+Got it?
+So let me show it to you in our functional component,
+just like we did count useState0, right?
+We gave initial value over here, count here.
+Similarly, we can give this.state
+and we can write count with zero over here.
+Got it?
+So this is how we create a state variable
+inside our class component.
+How do I use my count over here?
+How will I use my count over here?
+Let me create a h1 tag over here also.
+You know why I am showing you functional component
+in that class-based component?
+Why?
+Because your understanding will be very clear.
+You know, a lot of people start teaching
+class-based components in the first class itself, right?
+In the, I could have taught class-based component
+in the first class itself,
+but I would have just confused you.
+I would have just confused you.
+This is the right time for you
+to know class-based component,
+because now you know how we write code
+in functional component.
+It is very easy for you to pick up like this.
+This is my teaching style.
+That's why I prepared my curriculum like this, okay?
+I introduced class-based component in episode eight, right?
+Because I don't want class-based component
+to be the primary way of writing code for you.
+I want you to be,
+I want you to write functional component always.
+I am teaching a class-based component
+mostly for interviews
+or if you are working on some legacy project, right?
+So you should not be clueless that,
+oh my God, Akshay did not teach us class-based components.
+No, you should know how to write class-based components
+because, you know, React was built like this.
+When React was built,
+there used to be class-based components always, right?
+So you should know the beauty,
+how React was like doing things earlier, isn't it?
+From the foundation itself.
+So let me just show it to you
+how we can use this count over here now
+instead of giving you a lot of ground, isn't it?
+So how do you use it?
+Count, right?
+Count and then, oh, I wrote these,
+I wrote the wrong spelling over here, right?
+And then how do I use it over here?
+This.state.count, got it?
+This.state.count.
+So just like we use this.probs.name,
+we can use this.state.count.
+If I save it, go back to my browser,
+see count is equals to zero, okay?
+This count is equals to zero is a state variable now.
+Got it?
+So I can also destructure it if I want to, right?
+Let me show you how to destructure it.
+I can just do something like this, right?
+I can pull out count, right?
+From this.state, got it?
+I can pull out count and I can do this.state.
+If I remove it from here, this will work, right?
+This is great, isn't it?
+Now, suppose if I had to create two,
+if I had to create two state variables,
+how do I do it in functional component
+and class component?
+This is an important thing, right?
+There's a subtle difference between the two.
+If I have to create, suppose second count variable, okay?
+Let me create a count two, okay?
+Count two and let me give it maybe initial value of one,
+okay?
+How do I use it?
+I can just use it like this, right?
+Count two and I can use it count two, got it?
+Count and count two.
+This is how we do it in a functional component, right?
+This is how we do it, right?
+You already know it.
+We can create as many state variables we want to.
+Now, let me show it to you.
+How do we do the same thing inside our
+class-based component?
+So in our class-based component,
+we have this state, this object, right?
+So you must be thinking we will do something like this.
+No, my dear friends, this is a wrong way to do.
+Instead, the state variable is a big object
+which contains all these state variables
+that you will create.
+This is an important difference.
+This state is basically a big object
+which will contain all,
+which will contain all these state variables.
+So if I have to create count two,
+I will create it inside over here, right?
+If I have to create it, right?
+And let me give it a default value of two.
+So if I have to create count two,
+I will create it inside this state, this dot state.
+This is a big object
+which holds all the state variables.
+Over here, we created count and count two like this.
+You state.
+Over here, we do it in the same object.
+Got it?
+And let me tell you one more thing.
+In our functional component, behind the scenes, right?
+Behind the scenes, React uses a big one object
+to keep the state, right?
+For us, when we are writing, we write this two times, right?
+We write this two times.
+But behind the scene,
+React makes it as a one big object only
+and we put in all the state variables like this, right?
+Behind the scenes, React is doing that for you, right?
+The syntax is this,
+but behind the scenes, it works like this.
+So basically, this is how we do it
+in class-based components.
+How do I use it?
+I use it the same way.
+Just like we have this count,
+I can destructure it,
+count two, or I can directly write
+this dot state dot count two over here, right?
+Let me just use count two over here, count two,
+and then let me give it count two and save it.
+And if I go back, we have this count zero
+and count two two, right?
+So this is coming from our class-based component.
+So this is how we create multiple state variables
+inside your class-based components, okay?
+Now we will see how we can update these state variables, right?
+We should know a way to update these state variables, right?
+Let's take a quick break now, implement this,
+and when I come back from the break,
+we will just see how we can update these state variables.
+Got it?
+Do this in your code and let's come back.
+Welcome back, my friends.
+Now we will see how we can update
+these state variables, isn't it?
+So if I have to update these state variables
+inside our functional component, how we used to do?
+We had one more method, right?
+Set count, right?
+We did something like this and we used to do a set count.
+We used to call this set count
+and update these count variables, isn't it?
+I won't show it like this over here
+in the functional component.
+You already know it, right?
+But let me show it to you how we can do this
+inside our class variables.
+Got it?
+How we can actually do this inside our class variables.
+Now, if this UI is looking very messy, right?
+Let me get rid of this functional component first of all, okay?
+Let me get rid of this functional components.
+I have shown you the difference
+between functional component and class-based component
+and the difference in the syntax, right?
+Let me get rid of this, right?
+Because it is just making things very complex, right?
+So let me just get rid of this for now, right?
+Let me just get rid of this, right?
+We just have a class-based component now, okay?
+Now, I'll show you how we can update these count variables, right?
+How we can update these state variables, got it?
+So we have this state count zero, right?
+Let me just pull it a little down, right?
+And I want to update these variables.
+How we can update these variables, right?
+So let me just create a button
+and if I click on that button, this count will increase, okay?
+Let's build that, got it?
+So let me also get rid of this count two, right?
+We just need one count variable.
+That would be enough, isn't it?
+Let me just get rid of this count two.
+So we just have this count
+so that it does not messes up our code, right?
+It was not looking clean.
+So now we have this count variable.
+Let me just get rid of this count two also, got it?
+So now I'll show you, if I click on a button,
+how do we update our count variable, right?
+For that, let me just add a button
+and we will add an onClickHandler to that button as well, right?
+We have an onClickHandler.
+So if I click on this button,
+I should just do something, right?
+We will just increase the count.
+Let me give the name of the button as count increase, right?
+Count increase, got it?
+So if I click on this count increase button,
+so we have this onClickButton
+and we have a clickHandler, I will add it over here.
+If I click on this button, the count should increase, right?
+What should happen if I click on that button?
+I will define it now, but let me see.
+So if I click on this count increase button,
+this count should increase.
+What logic will I write?
+So this onClickHandler takes a callback function, right?
+This takes a callback function
+and when I click on this button,
+what I'll do is I will update my state variable.
+I will update my state variable, right?
+So I will update this state count.
+How will I update this?
+How will I update this?
+A lot of people must be thinking
+that I'll do something like this.
+This.state.count to count is equals to
+this.state.count plus plus, right?
+This.state.count plus one.
+Can I do it like this?
+Does that make sense?
+If I click on that button,
+this.state.count is equals to this.state.count plus one.
+It will increase by one.
+No, this is wrong.
+You cannot do like this, right?
+This is the mistake which a lot of people make.
+That is why I wanted to make a mistake and show it to you.
+This is not how you update the count, right?
+So we don't update the state variables directly, okay?
+We will never modify our state variables
+using equal to and putting some value, right?
+This is an important thing to note.
+A lot of times, a lot of new React developers
+make this mistake while using class-based components.
+Never do this.
+Write it down in your notebook.
+Write it down in your notes.
+Never update state variables.
+State variables directly.
+Never ever do this.
+Never ever do this.state.count is equal to something.
+It will not update, right?
+It will not update.
+It will create some inconsistencies in your program.
+Never directly update your state variables.
+What is a way to update them, right?
+Similar to this, right?
+And if you remember in the functional component also,
+you never used to do count is equals to something, right?
+We used to have a set count, right?
+We used to have a set count
+and this set count is a function
+where we used to pass an updated value, isn't it?
+Suppose if I have to change the value of zero to one, right?
+We used to do set count one, isn't it?
+Similarly, we will over here not update it directly.
+Never update state variables directly.
+How do I update my count then?
+So React gives you access to an important,
+React gives you access to an important function
+which is known as this.setState, right?
+This.statState and you can use this did.statState
+anywhere inside my class, right?
+This.statState, setState, this.setState.
+So we have this this.statState
+and over here in this this.statState,
+we will pass in an object.
+This object will contain the updated value
+of your state variables.
+This object will contain the updated value
+of your state variables, right?
+How do I update it?
+I will write count and now I will modify my count.
+I will write this.stat.count plus one, got it?
+I won't modify this this.stat.count directly
+but I will use this function this.setState, right?
+And I will pass in this object over here, right?
+And this.stat.count plus one, got it?
+Now, if I go back, if I refresh my page,
+if I click on count increase, serious.
+The count is getting increased, amazing, isn't it?
+So basically, if I have to increase my count,
+I will do it like this, got it?
+And whenever this state variable will update the count,
+this will re-render.
+React will re-render the component
+and it will just, whenever I'm clicking on this,
+React is re-rendering the component
+and it is just changing the count value.
+Let me show it to you over here in the elements, right?
+If I go to my count variable, right?
+React is quickly re-rendering things up, right?
+Where is it? Count 28?
+If I increase the count, serious.
+This count is getting changed, isn't it over here?
+So basically, React is updating,
+React is re-rendering this component
+and it is just changing this portion of the HTML, got it?
+So this is how you update your state variables.
+What if I had to update count two also?
+How do I update my count two?
+Suppose you can do it like this, right?
+You can do it like this, like this, right?
+So some people, you know,
+some people do it like this, okay?
+Let me tell you the wrong way of doing it.
+Some people create this.
+If we have to update the count two,
+some people will think I will do it like this.
+No, don't create it again and again.
+You can batch it up.
+You can batch these two things up
+and you can update both of them together
+if you have to update together.
+Generally, you won't get a case
+to update both things together,
+but if you have to do it,
+you can do something like this also, right?
+So how it works behind the scenes is,
+let me tell you how it works behind the scenes.
+Whenever React will see, okay, right?
+The button was clicked
+and this dot set state was called.
+So React will take this object
+and will find out what over here.
+Suppose if there are so many counts, right?
+Suppose if there was count three,
+there was count four, right?
+We had count three, we had count four,
+we had like 10 different state variables, right?
+Suppose if there were 10 different state variables,
+but if you are sending just two,
+two variables inside this object,
+it will only update the two
+without touching all of them.
+Important thing to note,
+the state variable is a big object, isn't it?
+So what we'll do?
+Suppose if you have just sent count
+and count two over here,
+so React will not touch the value of others,
+it will just update the value whatever is passed
+from this set state, right?
+I want to tell you these small things
+because this is very important, right?
+If I am sending, right?
+If I am sending just count over here,
+so it will only update my count
+and it will not touch the value
+of any other variables over here.
+Got it?
+This is some small things,
+take down the note
+and why I'm telling you these nitty gritty things
+because it will help you in your interviews.
+You know, some interviews are smart
+and then they will just, you know,
+they will just try to ask you random questions.
+You should know how it works behind the scenes
+and nobody, you will not fail in your interview.
+Nobody can challenge your knowledge
+if you know these basic things
+that how it is working behind the scenes, right?
+In the behind the scenes, this is the object
+and it will update only the portion of this object, right?
+It will kind of find the diff
+between the two objects, now you understand?
+Whenever this onclick button is clicked, right?
+React will retrigger that reconciliation, right?
+Reconciliation process.
+It will find the diff of that object,
+it will update the state variables,
+it will re-render the component.
+That's how React will work.
+Amazing, isn't it?
+So basically this is how we update these state variables
+and now take a break,
+apply this in your code, right?
+Apply this in your code and in your project
+and then we will come back
+and then I will show you
+when you update these state variables,
+how basically React re-renders?
+What is that render cycle?
+What is the life cycle of this class-based component?
+You will be amazed, you know?
+This is one of the most important questions, right?
+In the interviews that what are React component
+life cycle methods, right?
+In the class-based components
+and a lot of interviews ask this,
+I will tell you everything in detail,
+I will tell you everything in depth,
+come back and we will continue with this class
+and take a break, implement this in your code
+and come back very soon.
+See you once again.
+Welcome back, my dear friends.
+Now I'll show you what is the life cycle
+of this React class-based component.
+Got it?
+Very important interview question
+and I'll show you basically
+how this React class-based component,
+you know, when I write this code,
+how this component is put up in the webpage, right?
+How this component is loaded in the webpage
+or we use the word mounted on the webpage, okay?
+How this class-based component is mounted, right?
+How this component is mounted, right?
+So I will just show you what is that life cycle,
+what are these life cycle methods?
+Got it?
+So we have already seen what is props,
+what is state variables,
+how do you update your state variables?
+Hope you would have understood that.
+Now I will show you the cycle,
+how it is put onto the webpage
+or how it is mounted onto the webpage, right?
+Into your application.
+So whenever, you know, you can use the word loading,
+you can use the word mounting,
+it's one and the same thing, okay?
+Just to keep us on the same page, right?
+Just so that everybody on the same page,
+whenever I say loading the component,
+that means I'm mounting the component into the webpage.
+Got it?
+So what happens?
+How does React component works behind the scenes?
+Okay, so suppose whenever in this,
+so how, right?
+Let me show it to you.
+Let me get rid of this,
+not to get rid of this functional component.
+Let me move it over here.
+So we have this about, right?
+This is our parent.
+So basically, this is our parent component,
+about us component, right?
+This is the about us page.
+This is our about component.
+Now, whenever this about component
+is rendered onto the webpage
+or maybe mounted onto the webpage,
+so it basically starts rendering this JSX, right?
+It starts rendering this JSX
+and whenever it is rendering, it sees,
+oh my God, there is a user class over here, right?
+Which is imported from user class.
+Now, what happens?
+This parent is mounted, right?
+This parent is mounted
+and then as soon as it sees
+that there is a user class component there,
+so it starts to load user class now, right?
+It starts to load user class now.
+Let me repeat it once again, right?
+If you have not understood,
+listen to me very carefully.
+This is an important thing.
+Suppose, see, about us component
+is the parent component, right?
+And user class is inside this about us component, right?
+So when you load this about component
+into the webpage or maybe you render it, right?
+So, you know, when it goes line by line
+and it sees, oh, there is a class-based component there.
+So it starts loading the class-based component,
+starts loading, right?
+It goes to this class-based component.
+Now it will go to the class-based component.
+Now a new instance of this class is created, right?
+And what happens when this class is called
+or maybe this class is instantiated, right?
+So what happens is the constructor is called.
+The first thing when the class loads
+is a constructor is called, you know?
+When I say class loads,
+that means I'm creating a new instance of that class, okay?
+So whenever that class is instantiated,
+the constructor is called.
+Remember this very important thing.
+This constructor is called.
+Once the constructor is called, then render is called, right?
+Then render is called.
+First constructor, that render.
+First constructor, this then render, got it?
+So if I do a console log over here, right?
+Console log of constructor, okay?
+If I say constructor, right?
+If I say constructor, so this constructor is called
+and then I will do a console log inside my render.
+So let me just show it to you
+that first of all, my constructor is called,
+then my render method is called, got it?
+That's how this class is instantiated.
+If I go back, see this.
+First the constructor is called, right?
+Let me refresh the page.
+First the constructor is called,
+then the render is called.
+Simple, got it?
+Now, let me show it to you.
+What if, now this becomes a little complicated
+when you add, when you make this class-based component, right?
+When you make the parent also class-based component, okay?
+Let me show it to you.
+This is a functional component.
+How can we make it a class-based component?
+Let's just quickly create it a class-based component
+and then we will see how the life cycle
+of everything works.
+Got it?
+This will make your concepts very clear.
+Got it?
+So this is a functional component.
+I want to make this as a class-based component.
+How do I do that?
+Let's do it in the same file, okay?
+So I'll create a class, name of the class about
+and then I'll do a extends
+and then I'll do a react.component,
+react.component, right?
+Isn't it?
+And then I will create a class like this
+and this class will have a render method, right?
+Easy, right?
+We have a render method, render method
+and then this render method will have,
+will return some piece of JSX, right?
+Let me return the same thing.
+Let me return the same thing.
+Got it?
+And now this is about class component, right?
+About class component, it will return, right?
+And then, so basically this is the same thing.
+Let me get rid of this.
+Got it?
+This is the class, has a render method
+and it returns some piece of JSX
+and it extends react.component.
+So we will need this react to come from somewhere, right?
+So I can do something like this,
+import react from react, right?
+Not react, react.
+Got it?
+So we have got this react from react.
+So now this works.
+This is now the about class component.
+Got it?
+So let me tell you one more thing separately.
+So some people do react.component over here
+and some people would also write like this, right?
+Component and what they will do,
+they will destructure like this, right?
+They will destructure it like this, right?
+You can do something like this also.
+Some people love to write react.component,
+some people write like this.
+Why I'm telling you all small things?
+I'm telling you this
+because a lot of times in your project, right?
+You will see, go in the industry,
+you will see some people write react.component,
+some people write component.
+So I don't want you to like get confused anytime, right?
+So what happened?
+Did I click on something?
+Okay, I clicked on this git.
+Okay, cool.
+So what I'm telling you
+that some people do react.component,
+some people do component,
+I don't want all,
+I want all my students to understand everything, right?
+So I was just showing you,
+now we have converted our about component
+into class-based component.
+Suppose this component has render method.
+Suppose this component also was getting some props, right?
+So we will need constructor, constructor props,
+and what should I do?
+We are just quickly revising everything,
+and over here we would also need super props, isn't it?
+It is very important.
+Homework, hope you would have done that already, right?
+So now let me show it to you
+how this component is loaded and how,
+so basically this is the parent component
+and this is the child component.
+Now I will show you
+how constructor and render functions are called
+between these two.
+Got it?
+So what will happen is
+I will do a console log over here.
+I will do a console.log over here, right?
+Console.log
+and I will do maybe,
+let's call this as constructor, right?
+Constructor, constructor, right?
+Okay, and over here,
+I will write console.log render, okay?
+Console.log render,
+or maybe let us write parent constructor over here, right?
+This is a parent, okay?
+So that we can distinguish it easily, parent,
+and this is a parent render.
+And this user class is a child, right?
+So let me write it as child constructor and child render.
+So I'll now tell you how this works, right?
+How this works, right?
+How these components are loaded
+or mounted onto the DOM.
+Got it?
+So what will happen is,
+when the about component is loaded, right?
+This is a parent component.
+So first of all,
+about component is initialized, right?
+It's basically a new instance of this class is created.
+So the constructor of this parent is called.
+Then the render of this parent is called.
+Then it goes to the children
+and then it again trigger the life cycle
+and now the constructor of this child will be called
+and then the render of this child will be called.
+Did you understand that?
+Parent constructor, parent render, child constructor,
+child render.
+Easy.
+So if I go back, if I refresh my page,
+see parent constructor, parent render,
+child constructor and child render.
+Got it?
+This is how things work over here.
+Got it?
+So this is how the life cycle of React works.
+This is how the life cycle of class-based components works.
+But now you would say,
+Akshay, this was very easy.
+Why were you saying
+that this is a very important interview question?
+I'll show it to you in a while
+and you will be confused now, right?
+I'm not confusing you,
+but I will tell you that why things work the way it works.
+Now I'll tell you one more important thing.
+Just like we have constructor and render method,
+class-based component also have one more method,
+one more very important method
+that is known as component-did-mount, right?
+Component-did-mount, okay?
+This is another method which React gives to us,
+React class-based component gives to us,
+which is component-did-mount.
+So basically what happens is,
+when this component is loaded,
+first of all, the constructor is called,
+then the render method is called
+and once the constructor,
+once this class-based component is mounted onto the DOM,
+once it is there on the DOM,
+then this component-did-mount is called.
+Then this component-did-mount is called, right?
+I'll show it to you, right?
+How this works.
+So when I do console.log,
+I'll do child component-did-mount,
+component-did-mount, right?
+Component-did-mount, got it?
+So this is child component-did-mount.
+So how it will be called is,
+first of all, when this class loads, right?
+When this user class components is loading,
+first of all, this constructor is called, right?
+Then this render is called,
+then this component-did-mount is called.
+First of all, this constructor will be called,
+then the render method,
+then the component is mounted, right?
+This is the mounting cycle.
+This is the life cycle of this React component.
+Constructor, render, component-did-mount.
+That is why the name is there, component-did-mount.
+This will be called
+when the component has already mounted onto the webpage.
+Got it?
+So if we see, see this, child constructor, child render,
+and child component-did-mount,
+this is the way, this is the order,
+how this component will be called.
+Got it?
+Suppose if we had this component-did-mount
+inside my parent also, right?
+Inside my parent also, right?
+Parent will also have a constructor,
+parent will also have a render,
+and parent will also have a component-did-mount, right?
+Let me just copy this up, parent-component-did-mount.
+Now, can you guess?
+Now, this makes an important interview question.
+In what order will these functions be called?
+In what order will these methods will be called, right?
+If there is a parent and there is a child,
+how these functions will be called?
+This is an important interview question.
+Take a moment and think about it.
+Take a moment and think, pause the video over here,
+and then think, and then I will give you the answer.
+Now I'll tell you how parent and child relationship works,
+right, over here.
+Now, what will happen is,
+when the parent will be loaded,
+when this about component will be loaded,
+so what will happen is, this constructor will be called,
+then render will be called,
+and when the component is rendering, right?
+So it will render this,
+and it will go to this class-based component.
+It will see that there is a class-based component,
+children, inside this parent.
+So, it has not yet finished mounting.
+It has not yet finished mounting.
+It will go to the class-based component,
+and it will trigger its lifecycle methods.
+You know, before the component is mounted, right?
+It has not finished rendering yet, right?
+This about component has not finished rendering yet.
+So, it will just go to class-based component,
+it will trigger this class-based component's lifecycle.
+Now, class-based components constructor will be called,
+then this children render will be called,
+then the children mount will be called,
+component did mount,
+and once the children has been mounted properly,
+then the parent component did mount will be called,
+then the parent component did mount will be called, okay?
+So this component did mount is called,
+once the component has been completely mounted,
+once the component has been completely mounted
+onto the web page, got it?
+That is an important thing.
+If you will go refresh the page,
+first of all, parent constructor is called,
+then parent render is called,
+then the child's lifecycle methods are triggered,
+then the child lifecycle methods are triggered,
+and then once the child has been mounted successfully,
+then the parent component did mount will be called, got it?
+So this is the lifecycle of a parent-child relationship.
+Understood it or not?
+Let me repeat it once again,
+because this is really very important, okay?
+I am not lazy to not repeat it once again,
+I will repeat it once again
+so that it sticks to your head.
+I will show you very slowly,
+if you have not understood, please pay attention,
+you will be properly understanding it, right?
+So when this component is loaded,
+first of all, the constructor is called, right?
+And we print parent constructor, right?
+First of all, the constructor is called,
+then the render method is called, right?
+Now the component starts rendering, right?
+So the component render, parent render is called,
+then what happens is when it is rendering, right?
+It sees that, oh, there is a child also.
+So now what happens it?
+It triggers the lifecycle methods of the child now, right?
+So now it goes to the child,
+now the child constructor will be called
+and it will print child constructor, okay?
+Now once the child constructor is called,
+then the render of that child is called, right?
+Then the child will be rendered.
+Now, because there is no more component inside it,
+it just properly renders it.
+Once the rendering is finished,
+once the mounting of this component is finished,
+now the component did mount.
+When is component did mount called, right?
+Component did mount is called,
+once the component has been mounted,
+now this component did mount will be called, right?
+Now you would ask me, Akshay, what is the use of it?
+I'll tell you the very important use case of this,
+wait for a while, but just see the lifecycle,
+how it works, right?
+So when this component is mounted,
+then the component did mount is called, right?
+When the component did mount is called,
+now this whole component has been mounted successfully, right?
+Constructor, render, component did mount,
+now it has been mounted successfully.
+Once the child has been mounted successfully,
+now the parent component did mount will be called, right?
+Now the parent is rendered properly,
+once the render function is finished of the parent,
+now the component did mount of parent will be called.
+So that's how the lifecycle method works.
+Over here in this parent child relationship, got it?
+So this is how it works, okay?
+So now this is how it works,
+and let me just go back over here,
+and let me just show it to you, this is how it works.
+Parent constructor, parent render,
+and then all the lifecycle methods of children,
+constructor, render and component did mount,
+and then parent component did mount.
+This is how it works, right?
+Now I will tell you the most important use case,
+why this component did mount is used?
+Why it is there?
+Why reactors given this to us?
+So there are some things that we do
+once the component is mounted successfully, got it?
+What are those things?
+A lot of people who have studied react from somewhere else
+or who know basics of react would already know
+component did mount is used,
+component did mount is used to make API calls.
+Very important use case, to make API calls.
+You know, a lot of react developers,
+if you ask them what is the use of component did mount,
+they say to make an API call.
+Component did mount is used to make an API call, right?
+How an API call is made,
+they will say it is made inside component did mount,
+but they don't know why it is made
+inside component did mount, very important thing to note.
+They don't know why it is made
+inside component did mount, they know that, okay,
+if you have to make an API call,
+make it inside component did mount, right?
+But they don't know why we do that, right?
+To know the understanding of this,
+let me take you back to our functional component.
+Let me take you back to our functional component, right?
+All the knowledge of class based component aside,
+now let's go back to our way of writing code
+inside our functional component.
+How we make an API call inside over here?
+We make an API call inside use effect, right?
+Use effect, isn't it?
+Use effect, we pass a callback function over here
+and over here, we make API call, right?
+And we had a dependency array also,
+an empty dependency array.
+That means it will just make an API call once.
+This is how we used to do.
+You all know that already, right?
+Remember that lesson, finding the path, right?
+Not finding the path, basically, exploring the world.
+Remember that episode exploring the world?
+I taught you that, okay, we make API calls over here.
+Why do we do that inside use effect?
+Think about it, remember it.
+We do that because remember,
+I showed you the diagram once, right?
+Let me open that diagram.
+Here is my notes, right?
+Let me go back over here.
+Remember this diagram?
+Remember this diagram, right?
+Remember this diagram?
+If you don't know, go back to that episode
+and see it once again.
+So what we try to do is, first of all, we,
+you know, first of all, we load our component.
+Once the component is loaded with basic details,
+then we make an API call and fill the details.
+Why?
+So that react component loads very fast, right?
+React does not wait for API call to return the result
+then load it, right?
+So basically what we want to do it,
+let me repeat it in two lines, okay?
+If you don't understand it so that it is revised.
+So in react component, if you make an API call,
+we don't want to, you know,
+we want to render the component once,
+make an API call and then fill the data
+inside the component, right?
+This is how we do.
+Instead of waiting for the, you know,
+we don't want to wait for API to return the data
+to render the component.
+Otherwise the component will not render
+and it will keep on waiting for the data
+to come from the API, right?
+So what happens is react wants to quickly render it,
+then make an API call and then fill the data, right?
+React wants to quickly render it,
+then make an API call, then render the data.
+So this is why we use use effect
+and similarly in the class-based component,
+I want to quickly render my component.
+I want to quickly render my component,
+then make an API call, fill the data.
+I want to render my component as fast as possible,
+then make an API call, get the data.
+So what we will do over here is,
+if we have to make an API call,
+I will first render my component, right?
+Constructor will be called, render will be called,
+now my component has been rendered.
+Now I will make an API call over here, right?
+I will make an API call over here
+and then fill the data of the API call
+inside my component, right?
+It will re-render the component, got it?
+So this is how we do inside class-based component,
+very, very important.
+A lot of people don't understand
+why we make an API call inside component that mount.
+They know that we make, but they don't know why, right?
+Very, very important.
+This is like pure gold knowledge I'm giving you.
+I'm telling you, ask your friends who have studied,
+ask a lot of React developers in the industry
+don't know about this, a lot of developers,
+they don't know about why we make an API call over here.
+They just know that we have to make an API call
+inside component that mount.
+They don't know the reason behind it, right?
+So this is how we make an API call over here.
+So now I will also show you
+how we can make an API call over here,
+but wait for a while, do this, right?
+Do this console log component did mount
+and console log of parent and child in your code
+and come back.
+See, absorb it clearly.
+Whatever I have said, if you did not understand this,
+go back to the video, right?
+Where I started teaching you, see it once again, right?
+Go back to the video, see it once again
+and once you have understood this clearly,
+the order of life cycle, first constructor,
+then render, then component did mount
+and how it works between parent and child,
+then come back and now I will show you
+how to make an API call inside our class-based component.
+Got it?
+So we'll come back once again very soon.
+So let's take a short break and I'll see you very soon.
+Welcome back, my dear friends.
+Now I'll show you an important thing,
+how to make an API call.
+But before that, I want to make,
+I want to give you a little more twist
+and let me make your understanding a little more clear
+about these life cycle methods, right?
+Because I will confuse you a little now, okay?
+I will confuse you a little.
+Now you would say, Akshay, are you mad?
+Why are you confusing us?
+You have to teach us.
+I'm confusing you because if I will confuse you now,
+the interviewer will not be able to confuse you.
+If you will get confused now,
+the interviewer will not be able to confuse you, okay?
+So if you want to pass interviews,
+listen to me very carefully, okay?
+So let me go back to our parent.
+Let me confuse you a little.
+Right now, we just have parent
+and then we have one child, right?
+We have parent and then we have just one child user class.
+What if we had multiple children?
+Let's see how that life cycle works now, right?
+If we had multiple children,
+how can we have multiple children?
+I am just copy pasting it once again, right?
+Now we have two user classes,
+two instance of the same user class,
+two instances, right?
+Two instances.
+How does it work?
+I'll show it to you, right?
+So this is user class one.
+This is user class two.
+Got it.
+So now, how will this get rendered?
+How will the life cycle of these will work, right?
+How will the life cycle of this will work, right?
+So now I will tell you once again, right?
+In theory, can you guess, right?
+Pause the video and then see that in what order
+are parent constructor, parent component
+and parent render will be called over here, right?
+Over here, what will be called?
+In what order they will be called?
+There are two components now.
+Remember, there are two instances.
+Now, a lot of people would be confused now, I know, right?
+So you would be thinking that what,
+Akshay, can we use this multiple times?
+Yes, this is a normal component.
+So when we are using this class component twice, right?
+That means we are creating two different instances
+of that class.
+Remember, once again, I'm repeating it once again,
+two instances of the same class, right?
+Two instances of the same class.
+I can have the same class,
+but I can pass in different props, right?
+One is Akshay Saini.
+The other one can be something else, right?
+Let me call that as Elon Musk, right?
+Elon Musk, right?
+Elon Musk is in my team, right?
+Let's add Elon Musk to our team, right?
+And where he is location,
+let's give it some place in the US, right?
+So Elon Musk is on our team now, right?
+So I can use the same user class
+and I can pass in different props over here.
+Got it.
+So now we have these two, right?
+These two cards, right?
+We have Akshay Saini and we have Elon Musk, right?
+We have two childrens now.
+How are these life cycle methods will work, right?
+If I go back, see this.
+Oh my God, I can't differ it, right?
+So how will I differ it?
+Let me just change the console logs, right?
+So let me modify our console logs.
+I will do something like this, right?
+This.props, this.prop.name, right?
+This.props.name plus child constructor.
+So I am adding this name in front of our console log
+so that we can differentiate which one we are,
+which class base component we are referring to, okay?
+So now the question is, right?
+The question is to confuse you
+in what order will these console logs be printed, right?
+In what order will these console logs be printed, right?
+There will be Akshay child constructor,
+there will be Elon child constructor, right?
+So how will these be printed, right?
+Let me go back, refresh the page and we'll show it to you,
+right?
+Let me not show it to you.
+Let us just reason how it will be printed, right?
+Now you would be thinking that, okay, Akshay,
+first of all, our parent will be rendered,
+that is for sure.
+Listen to me very carefully, parent will be rendered, right?
+And parent, now when the parent lifecycle method
+will be triggered, first of all,
+the first thing will be parent constructor, right?
+Parent constructor, parent constructor will be finished,
+right?
+Then let me write it down, right?
+Let me write it down over here, right?
+First of all, what will happen is,
+parent constructor will be called, isn't it?
+Then what will happen?
+Parent render will be called, isn't it?
+But once the parent is rendered, right?
+Now, it sees that there is a child also, right?
+There is a child.
+So what it will do?
+It will trigger the lifecycle methods of child, isn't it?
+It will just call Akshay's constructor, right?
+Akshay is the first child, right?
+Akshay constructor.
+And then what will happen is,
+now it will call what Akshay render, right?
+Akshay render.
+Then what happens will, what will happen?
+It will call Akshay component did mount, isn't it?
+Akshay component did mount.
+What will happen is,
+once the Akshay's lifecycle method has been finished,
+once the Akshay's lifecycle method has been finished,
+now it will trigger the lifecycle methods
+of Elon Musk, right?
+So what will happen is,
+now what will happen is,
+Elon constructor will be called, right?
+Listen to me once again, right?
+Then you would assume that it will be Elon,
+render will happen, right?
+Then you would think that Elon component did mount
+will call, right?
+Component did mount will be called, isn't it?
+And once, both the components, right?
+Both the children components
+have been rendered successfully, right?
+Once this Akshay is rendered, Elon is mounted.
+Now, what will happen is,
+once both of these children are mounted successfully,
+now the parent component did mount will be called, right?
+This is what you would be thinking, right?
+Right?
+And let me show it to you,
+let me tell you that this is wrong.
+This is wrong, my dear friends.
+This is not the order which will be called.
+That is what I wanted to tell you,
+that is what I wanted to confuse you,
+that my dear friends,
+this is not how life cycle methods are called
+when there are multiple children's.
+Why?
+You would now pull your hairs, Akshay.
+I was expecting this,
+but why react is confusing us?
+React is not confusing us,
+react is just optimizing.
+React is just optimizing.
+And let me tell you why this happens,
+and what happens, first of all, right?
+If not this, then what order these parent
+and child will be called, right?
+So let's go back and see in the browser console,
+let me show it to you, right?
+Where we make the mistake, right?
+So first is parent constructor,
+second is parent render,
+then what happens is child, right?
+This is Akshay's child constructor,
+then Akshay render,
+then Elon Musk constructor, Elon Musk render,
+and then component did mount of Akshay,
+and then component did mount of Elon,
+and then parent component did mount.
+So basically, it first of all,
+called the constructor and render of parent,
+then it called the constructor and render
+of the first child,
+then they called,
+let Akshay and Elon is confusing, right?
+Let's give it like first and second, right?
+Let's name it as first and second.
+It's very confusing like this, isn't it?
+Oh my God, let's give this the name first and second, right?
+So first and second, now it will make more sense, right?
+See the logs now, now the logs will be better, right?
+So first parent constructor, parent render,
+first child constructor, first child render,
+then, you know, first child component did mount
+is not called second child constructor,
+second child render, first child component did mount,
+second child component did mount, parent component did mount.
+This is the coder these life cycle methods are created.
+But why?
+Why did the life cycle method work like this?
+Now for this, I want to dive deep
+into one more concept, open your ears,
+listen to me very carefully.
+There is something known as
+react life cycle method diagram, right?
+And this diagram will make you clear everything.
+If you understand this important react life cycle diagram,
+note this website, right?
+Projects.votech, votechmas.pl, I don't know how to,
+I don't know how to pronounce it,
+but this is the place where you have to refer.
+If you understand this diagram, right?
+This react life cycle methods diagram,
+if you understand this diagram, nobody can defeat you, right?
+Your understandings will be solid, okay?
+This is react life cycle method, right?
+Now, first of all, I want to tell you one thing
+that only focus upon this first box, mounting phase, right?
+Just focus upon this mounting,
+and I will tell you that how react works, okay?
+How react works.
+So in the react, when the component is mounted, right?
+When the component is mounted,
+it is mounted in two phases, right?
+You know, people say that react is fast.
+This is the actual knowledge which I want to give you
+and tell you that why react is fast, my dear friends.
+I want to give you this knowledge why react is fast.
+React is fast because react has two phases, two phases.
+First phase is render phase.
+The second phase is commit phase.
+What happens in render phase
+and what happens in commit phase, let me tell you.
+This is how the life cycle works.
+When the component is mounting,
+first of all, our constructor is called, right?
+Then the render is called.
+This constructor in render is the render phase, right?
+Then the react updates the DOM.
+Then the react actually updates the DOM
+and then component did mount is called.
+Understood it?
+Let me repeat it once again.
+Let me actually repeat it once again for you.
+First of all, constructor is called.
+Then the render method is called.
+Got it?
+Then actually react updates the DOM.
+Then react updates the DOM.
+Once the DOM is updated,
+then component did mount is called.
+Got it?
+So what happens is,
+suppose if we have this user class,
+so first of all, constructor will be called.
+Then the render will be called.
+Then the react will update the DOM.
+Once the DOM is updated, once the DOM is loaded,
+then component did mount is called.
+Then this component did mount is called
+and that is why this is the best place
+to make an API call, right?
+Once the, see the user class, right?
+This component is quickly rendered onto the web page, right?
+Quickly the DOM is updated,
+then the component did mount is called.
+That is why we make an API call over here, right?
+So this is the life cycle of it, right?
+This is the life cycle.
+Only focus upon the mounting phase right now, right?
+Constructor is called, render is called,
+react updates the DOM and component did mount is called.
+And this mounting cycle happens for every child,
+every parent, every component in the react.
+Every child, every parent, every component in the react
+goes through these life cycle methods.
+Got it?
+One is the render phase, one is the commit phase.
+Repeating it once again, remember it.
+Render phase, commit phase.
+Render phase has constructor, render.
+In the commit phase, react actually updates the DOM
+and then component did mount is called.
+Got it?
+Now, this will make a lot of sense to you.
+Now, this will make a lot of sense to you
+if you will refer this diagram, right?
+If you will refer this diagram,
+everything will make sense to you.
+Got it?
+So let me just get it on the side, right?
+Let me get this diagram on the side, right?
+Let me just get this diagram on the side.
+Mounting constructor, render and then component did mount, right?
+Now I will show you how this whole code will work.
+This is our parent, right?
+So first of all, this about will start
+this mounting phase, right?
+About component will be mounted.
+When the about of this mounting happens,
+what will happen?
+Constructor will be called.
+So parent constructor will be printed, right?
+This is correct.
+We also said parents constructor will be printed.
+What will happen now?
+This component did mount is not printed, right?
+What will happen now?
+Our render will happen, right?
+Now our render will happen in the render phase.
+Now parent render will happen
+and now parent render will be printed.
+Now the parent is rendered, right?
+Now it sees that, okay, there is the,
+there is the turn for our first child, right?
+This is the first child, user class.
+It goes to the first child
+and it starts the lifecycle method of this child.
+It starts the lifecycle method of this child.
+So it will call the constructor of the first child.
+It will call the render of this first child.
+Now, because there are two children over here,
+React optimizes this.
+React will not call the component did mount
+of the child, first child first,
+but it will, what it will do is
+it will just batch the render phase
+for these two child.
+Remember this once again.
+React will batch the render phase for these two child.
+So what will happen is these two child's
+render phase will happen,
+then commit phase will happen together.
+This is an optimization of React.
+So what will happen is the first child,
+constructor will be called,
+the first child render will be called
+and then render phase is finished.
+Now it will start the render phase of the second child.
+It will finish the,
+it will call the second child constructor,
+second child render,
+and now the commit phase will be batched together.
+So this render phase is batched,
+the commit phase is batched.
+Got it.
+That is why the output will be in this order.
+That is why the output will be in this order,
+my dear friend.
+Let me repeat it once again.
+There are two phases.
+Okay, let me expand my diagram once again.
+Okay, let me expand my diagram.
+Okay, let me expand my diagram.
+So here is our diagram, right?
+So what will happen?
+Constructor and render, this is the render phase.
+In the render phase we call constructor,
+then we have render, this is the render phase.
+Now actual DOM update happened,
+then this is the commit phase
+and then component did bound.
+This is the commit phase.
+Render phase, commit phase.
+So what happens is parent constructor is called,
+parent render is called,
+then the first child constructor is called,
+first child constructor,
+then the first child render is called, right?
+So the render phase is completed,
+it will batch the render phase.
+Now the second child constructor is called
+and the second child render is called, right?
+Second child render is called.
+Then what will happen?
+Once the render phase is batched and completed,
+then the commit phase will happen
+for first child and the commit phase for second child.
+Why React is doing that, right?
+This is how React is doing that.
+Why it is doing that like this?
+This is an important question.
+See, I am diving deep into these concepts.
+Nobody will teach you, trust me.
+These are very important things.
+I have got this knowledge by studying the documentation,
+reading it here and there,
+reading Stack Overflow Answers,
+reading random blogs from React, right?
+And learning how that reconciliation process works.
+Why React is doing all that?
+React is doing that.
+React is batching up the render phase for multiple children.
+React is batching because once the commit phase starts,
+once the commit phase starts,
+React tries to update the DOM
+and DOM manipulation is the most expensive thing
+when we are updating a component.
+When we are loading a component,
+DOM manipulation is very, very expensive.
+It takes a lot of time.
+So React want to batch the render,
+you know, render phase is what, right?
+Render phase is what?
+Render phase, remember the reconciliation process
+I told you?
+Finding the def, what happens, right?
+When React calls the constructor,
+React, when the React is rendering, right?
+In this render phase,
+React is basically triggering the reconciliation
+and in this reconciliation, that object, right?
+There is a object and then there is a object.
+It finds out the def between these virtual DOM, right?
+Virtual DOM is created.
+So everything in the render phase
+is happening inside a virtual DOM, right?
+Why virtual DOM is fast?
+Because virtual DOM is just JavaScript, right?
+It just deals with objects, right?
+So in this render phase,
+React is just finding the def of that, right?
+And then what happens is
+when it tries to update the DOM,
+it says that, okay,
+let me find out all the children's batch the render phase
+because render phase is very fast.
+Commit phase takes time.
+So the commit phase takes time.
+That is why it just batches the render phase.
+All the child components are rendered.
+Then the commit happens.
+Then this commit phase is happens.
+Then the DOM is later on happens
+because, you know, DOM is expensive, right?
+Manipulating the DOM or updating the DOM is an expensive task.
+So React tries to batch up that task, right?
+React tries to batch up render.
+React tries to batch up the mounting, right?
+DOM, right?
+Updating the DOM.
+React tries to batches things up for all these children.
+And that is why React is fast.
+This is the knowledge which I want to give you
+and this is how you have to tell to the interviewer
+and interviewer will be amazed.
+Interviewer will not be able to confuse you.
+If you know this,
+any number of child component comes in,
+any number of hierarchy comes in,
+you will never fail in your interviews, okay?
+So this is how it works.
+If I go back over here, if I refresh the page,
+now see this, parent constructor makes sense.
+Parent render, it makes sense.
+First child constructor, first child render,
+render phase is finished, right?
+Render phase is batched.
+Second child constructor, second child render.
+Now the first child component did mount, right?
+After the second child, right?
+After the second child render happens.
+So over here, right?
+Over here, the DOM manipulation begins, right?
+Over here, the DOM manipulation, DOM is updated, right?
+And it is updated in batching, right?
+Batching happens in batches, in a single batch, right?
+In a single time, right?
+Our DOM is updated, right?
+The virtual DOM is now, the diff is calculated, right?
+Over here, after this, the diff is calculated,
+reconciliation has triggered,
+and now after that it is batched
+and the DOM is updated now, right?
+In a single batch, both of these children's DOM is updated,
+so it will optimize the performance of the React app, right?
+React is optimizing the performance like this, right?
+Instead of doing that commit phase, right?
+So this is the render phase for both the children,
+this is the commit phase for both the children, right?
+So React is first of all doing the render phase,
+then the commit phase for both the children.
+Hope you would have understood this.
+This is a complex example, and if you understand this,
+nobody can defeat you in the interview.
+I wanted to teach you, I wanted to dive deep
+just because this is important for the interviews
+and you will not get confused.
+If you are still confused, practice this on your own.
+Or maybe before I move ahead, right?
+Let's take a break over here, go back,
+create your first child, second child,
+and then we will come back, right?
+See, right?
+Try to make sense of it,
+try to add one more child inside it, right?
+And then see that how these are built, right?
+So if you just try to make three child over here
+and try to reason why it is happening,
+create more hierarchy, do that, right?
+Practice it, your concepts will be very clear,
+I am telling you, right?
+Your concepts will be very clear, see this?
+Then you have three child, right?
+So render phase of all these three child,
+then commit phase of all these three child.
+So this is batching up,
+you have answers to all the questions, right?
+In-depth questions, you can confuse,
+now the interviewers will not be able to confuse you,
+you will be able to confuse the interviewer now, right?
+If they don't know,
+if they don't have a proper knowledge, right?
+So this is how it works, my dear friends,
+and this is what I wanted to tell you,
+we will come back, take a break,
+let take some time to absorb this in your head,
+come back and then we will see
+how we can make an API call, right?
+So let's get back very soon,
+let's get back very soon, practice it and come back.
+Welcome back, my dear friends,
+now I'll show you how we can make API calls
+inside our class-based components, isn't it?
+You already know where we have to make an API call,
+but now let us see how to make an API call,
+get the data, put it into the class-based component,
+let's see everything quickly, right?
+And this will not take much time, right?
+Because you already know a lot of things.
+The most important thing is to remember
+this lifecycle method, right?
+The mounting phase, remember this,
+we will see the updating, unmounting everything, right?
+Just see this, right?
+Mounting phase is the most important phase right now, right?
+So you have understood these lifecycle method,
+I'm just keeping the comment over here,
+I will push the code so that you can also see this,
+refer this, right?
+Or maybe let me just remove this, right?
+Otherwise it won't make sense,
+and let me get rid of these random components, right?
+So there are multiple components over here, right?
+So let me just get rid of all this,
+let me show you how to make an API call now, right?
+So only one component, right?
+This name and location is here, right?
+So let me just go back.
+Now what we'll do, we will make an API call
+and get this data, right?
+Get this user data,
+let me also get rid of this count, right?
+It is just making things very messy, right?
+Let's get rid of this count, right?
+Let me get rid of this count
+and let me get rid of these props also, right?
+We don't need props, right?
+Or maybe let's keep the props, right?
+It's okay, let's keep the props.
+So where is the state variable?
+Let's get rid of this count, right?
+Let me get rid of this count.
+Yeah, let me get rid of this count also,
+let me get rid of this button also, right?
+Now it looks very clean, right?
+Count increase, okay?
+I did not, yep.
+Now it looks good.
+Let me go back and let me see, yep.
+So now we have this card, right?
+So we have these logs and we have this card also, okay?
+So now let me get rid of these console logs
+also randomly, right?
+Let me get rid of these console logs also.
+For a while, let me just do this,
+otherwise it will just create a lot of nonsense over here, right?
+And let's get back to the parent,
+let me also comment this down, right?
+Otherwise it will just confuse us a lot, right?
+Now we will make an API call, okay?
+So now you already know what happens is
+there are two phases, render phase, commit phase, right?
+So once the render phase completes, right?
+Once it is rendered, right?
+And the DOM is updated.
+Now we will make an API call, right?
+Right now we are getting these first Dehradun class
+as the props inside our component,
+but now we will make an API call to GitHub API, right?
+We will call the GitHub user API,
+GitHub user API, right?
+GitHub user API, right?
+This user API, where is that?
+Get a user, yes, this API, right?
+This is the GitHub user API,
+api.github.com slash username, right?
+If I show you this API,
+api.github.api.users slash username,
+let me put my username over here, Akshay, March 7th, right?
+If I hit enter, this is the data,
+which we are getting from API,
+this call we will make from the code now, right?
+This is the data which is written
+from api.github.com, right?
+This is the API, right?
+Let's make an API call inside our component,
+date mount, got it?
+So now how we used to make an API call
+inside our functional component, right?
+Remember, we used to create a async function, right?
+Async function, async function, right?
+As, y, n, c, async function, right?
+Async function, get data, get user info or something.
+This is how we used to do, right?
+And we used to have a, right?
+And we used to do const data is equals to await.
+Remember, we used to do something like this.
+So how do we do that in class-based component, right?
+How do we do that in class-based component?
+In class-based component,
+you can make component did mount function as async, right?
+You can create this function as async,
+and over here, what we can do,
+we can do something like,
+const data is equals to await, and then fetch,
+and then we will make an API call over here, right?
+We will make this as async,
+and we will have this await, right?
+And then we got this data, right?
+And then we will convert this data to JSON
+is equals to data dot, data dot JSON, right?
+We have got this JSON over here.
+Now what we'll do?
+Now we will just see, right?
+Let me just console log and see
+if the API call was made successfully or not.
+Did we get the JSON data or not over here, right?
+So this is what, and I'll have to do await also,
+because that will return a promise, right?
+So this is how we make an API call.
+Let me go back to the browser
+and let me refresh the page, and let me see.
+We have successfully made an API call
+and we have the data with us, my dear friends.
+If you go to the network call,
+and if you see the fetch calls, right?
+This is the API call,
+and if you see, we have got the data with us.
+We have got the name over here, right?
+We have got the name Akshay Saini over here.
+We have got the, we have got the photo also, right?
+We have this avatar URL, right?
+We have got the bio, we have got the blog.
+We have got a lot of things, right?
+So let us now use this data to show inside our card, right?
+Let's show this data over here.
+Now let me show you that how we can update
+this JSON data onto our webpage, right?
+Now we will show you how to update
+this JSON data into our webpage, right?
+How do we update that?
+What I'll do is now I will create a state variable.
+How do I get the JSON data over here?
+I will create the state variable
+and I will update that state,
+which will just get our data over here, right?
+I'll show it to you.
+For that, I will be using local state variables, right?
+Now I have got this data over here.
+So I will create a local state variable
+and we'll put that data into that, right?
+So in this data, right, I will just do some user info
+and then I will create a state variable user info, right?
+And then this user info will contain some dummy data, right?
+Initial state, right?
+We have to give this initial state.
+Let me give some dummy data as name, right?
+Name as maybe call that a dummy name or something, right?
+I'm just creating a basic, right?
+This default state is basically the same state, right?
+Suppose if I have to do over here, right?
+This use state, right?
+We used to pass over here the default value of the variable, right?
+Of the state variable.
+This is how I pass the default variable over here, right?
+And then the location of it, right?
+And then the location of it, right?
+Default location, let's give it default, right?
+Default location, right?
+So we have created the state variable
+with some dummy data.
+Now what we'll do?
+We will now update our state variable
+after I have got the data inside my API call.
+How I will update this state user info?
+How I will update?
+Remember I told you, what was that method?
+It was set state, isn't it?
+Set state, and now I have got this set state.
+This set state will have this object, user info,
+and now I will put in my JSON inside this user info.
+I am updating my state, right?
+And now how do I use my state variables over here?
+Let me get rid of this props, right?
+How do I use my state variable over here, right?
+I will just use this dot state dot user info, right?
+Dot name, right?
+I can do this dot state dot user info dot name,
+this dot state dot user info dot location.
+Instead, let me just destructure it, right?
+That will make more sense.
+I will just destructure my name
+from my this dot state dot user info, right?
+I will just destructure it,
+and I will just use my name and location from here.
+If I save this file, go back to my page, refresh it.
+Oops, something went wrong.
+There was some error.
+What was that error?
+Let me just see.
+Let's just get rid of.
+Objects are not valid react child.
+Objects are not valid react child, why?
+Objects are not valid react child, okay?
+I think I have not given location over here.
+Location like this.
+Yep, now it works, right?
+So basically this location was not there,
+so that's why it was causing problem.
+So I get over here.
+Now we have location and Akshay
+which is coming from live API, my dear friends.
+This Akshay, Saini and India is coming from here, right?
+From this API.
+So what we did was we updated our state variable.
+We created our state variable over here,
+and then we updated that state variable with the data.
+And now once the state is updated,
+this will update, this will update the component
+with the latest data over here.
+Let me also, let us also,
+let me make this card a little more cool, right?
+We have this Aftar URL.
+Let us show the photo also, right?
+Photo will look cool, isn't it?
+Photo will look cool, right?
+Let's use this Aftar URL also.
+How do I use my Aftar URL?
+Aftar URL will come over here in the data.
+Let's give a dummy Aftar URL, right?
+Basically, HTTP dummy, dummy, dummy photo, right?
+So if you want to give dummy photo, right?
+If the user has some, the photo is not loaded, right?
+If the Aftar URL is not coming properly,
+you can give the dummy photo, right?
+Over here, right?
+And then what we will do,
+I will just use my Aftar URL over here, right?
+Let's give it an Aftar URL.
+Let me create an IEMG tag, right?
+Let's show IEMG tag and SRC Aftar URL, right?
+Let's go back, right?
+Cool, right?
+This looks cool, isn't it?
+We have got our Aftar URL also from our dummy data, right?
+Okay, so it was trying to load this also,
+so it throwed an error.
+Instead, let me not give it and see
+if it breaks or not, right?
+It works fine, cool.
+So this is fine, right?
+So what happens is, right?
+So we have got this image URL over here, right?
+We have got this image URL over here
+and now we have made this card.
+Now, I will tell you that why this works
+and how this works, right?
+I have written this code quickly.
+Let me just show you that how the whole life cycle
+of it works, how the data was phased,
+how the component was updated, right?
+I will show you now very, very important.
+Got it?
+I will tell you properly how that life cycle worked.
+Got it?
+So what happened first is,
+let me just get my diagram once again,
+like life cycle diagram over here once again, right?
+Where it is, right?
+Over here, right?
+So what happened is, first of all,
+listen to me very carefully, very, very carefully.
+First of all, what happened?
+As soon as this user class was loaded, right?
+As soon as this user class was loaded,
+the constructor was called
+and when the constructor was called,
+this state variable was created with some default value,
+okay?
+The constructor was called in the render phase.
+Then what happens is, render happened.
+After this constructor, render happened.
+Now, this state variable had default value, right?
+So the render happens with a default value.
+Our component renders with a default value.
+All the default value, right?
+Whatever was there, the name was dummy.
+So this name dummy,
+this whole component is rendered
+with the default value onto the web page.
+That means React will update the DOM with the dummy data.
+Got it?
+React will update in our code, right?
+Basically, React will update it with dummy data.
+If I refresh very quickly, right?
+See this?
+Do you see dummy data for a while?
+For some milliseconds, we see dummy data, right?
+We see dummy data, right?
+So maybe let's put a debugger here, debugger,
+and let me show it to you, right?
+Bugger, right?
+If I put a debugger, let me refresh the page.
+See this, not rendered.
+See this?
+We have loaded this component with some dummy data.
+How?
+First of all, our constructor was called, right?
+With some dummy data.
+Then what happened?
+I debugger, right?
+This component was rendered with the dummy data.
+The component was rendered with some dummy data,
+the dummy data, okay?
+So now let me get rid of this debugger.
+Now let me tell you what happened after that, right?
+Now let me tell you what happened after that, okay?
+So cancel it, right?
+So we were over here, right?
+Constructor was called, render happened,
+and this React updated the DOM with some dummy data.
+Now our component did mount was called, right?
+Now our component did mount was called,
+now our component did mount was called,
+and this component did mount was called over here,
+and API call was made.
+Now that API call was made.
+When this API call was made,
+it, this component did mount was called,
+it called set state.
+When this set state will called,
+see the mounting happened,
+this mounting cycle happened.
+Now we will see the updating cycle.
+When we call this set state,
+the our updated cycle begins, okay?
+Now it makes sense, right?
+Now it makes sense in the life cycle diagram.
+So mounting cycle finished
+when the component was rendered once.
+Our component was rendered once with some dummy data,
+very quickly.
+We did not wait for API call to finish, right?
+We are not waiting for API call to finish.
+Component is rendered quickly with the dummy data,
+quickly with the dummy data
+so that user sees something, right?
+That is the point we saw some Simmer UI or something,
+right?
+So instead of this user info, right?
+You can show some Simmer effect, right?
+You can show some dummy image and that loading things.
+So component is rendered quickly with the dummy data
+in this mounting phase.
+When we do this set state, updating phase start.
+See this, that is why we have set state over here, right?
+So updating happens when the set state is called.
+Now our set state is called
+and now set state updates the state variable.
+This state variable is updated now.
+When the state variable is updated,
+react triggers the render once again.
+React triggers this function render once again, right?
+Constructor is called just once.
+React triggers the render once again, my dear friends.
+React triggers the render once again, right?
+Once again the render happens.
+Now the render happens but this time the state variable
+has been changed it with the updated value.
+This state has been changed with the updated value, isn't it?
+Let me just go over here, let me show it to you.
+In this updating, react state has been changed, right?
+State has been updated, right?
+This state has been updated with the new value.
+So react will render it now in the update cycle,
+react will now update the DOM.
+So see this, react will calculate the diff
+and it will update the DOM with the new value now.
+So the react will update the DOM with the new value
+and now this image, this new image, this new name,
+this new image, this new name, this new location,
+everything will be updated.
+This new image name will be updated over here.
+And then the update cycle says
+that now it will call component did update.
+Oh my God, we had component did mount.
+Do we have component did update also?
+Yes, my dear friends.
+When react has updated our DOM,
+there is something known as component did update also, right?
+Component, just like we had component did mount,
+we had component did update also.
+We had component did update also.
+And then this component, this update is called later on
+at the end, right?
+We can do a console log component did update, right?
+This is called component did update.
+Got it, component did update is called.
+And that's how our update cycle is worked.
+Let me repeat it once again, right?
+Let me make it first of all, let me expand it, right?
+Let me go back, right?
+Let me explain you once again in the browser
+what happens is, what happens is,
+let me write and show it to you, right?
+Let me write and show it to you.
+This will make more sense, okay?
+This will make more sense.
+First of all, what happens?
+Constructor is called constructor.
+If you understand this, my dear friends, right?
+You will be, you will love react, right?
+You will love react.
+Constructor is called, constructor is called.
+And there is a glitch also, I'll tell you, right?
+Constructor is called.
+And then what will happen?
+Constructor is called, now my render is called, right?
+Now we render the component, right?
+Constructor is called render this component.
+And this time, render happens with the dummy data, right?
+Constructor updates the state with dummy data, right?
+Now constructor and render happens with dummy data.
+Now, when the render happened,
+now the web page is loaded, right?
+HTML, now the HTML has dummy data, right?
+The component has dummy data onto the web page
+for few milliseconds, right?
+Then what happens?
+Then what happens?
+Then component did mount is called, isn't it?
+Component did mount is called, right?
+Now, when the component did mount is called,
+when the component did mount is called,
+we make an API call, right?
+We make an API call inside this component did mount, right?
+Component did mount.
+API call is called.
+When the API call is called,
+after that we do a this state, right?
+After that, we do this state, this dot set state, right?
+This dot set state.
+Now, this finishes our mounting cycle.
+This was our mounting life cycle, right?
+This was our mounting life cycle, right?
+This was our mounting life cycle.
+What do you mean by mounting life cycle?
+Happens like this.
+Mounting constructor, render update.
+Component did mount, this dot set state.
+This mounting cycle is finished, right?
+Mounting cycle is finished.
+Now, what happens is once the mounting cycle is finished,
+now set state was called.
+So set state, whenever there is a set state,
+it triggers the reconciliation process
+and the update cycle.
+Now this update cycle is called.
+Now this update cycle is called.
+When the set state is called,
+now the render method will be called once again, right?
+Now the update cycle begins.
+Update cycle, right?
+In the update cycle, what happens?
+Set state render method is called, right?
+But when the set state is called,
+this render method will happen with API data, right?
+Because now with this dot set state,
+state variable is updated, right?
+State variable is updated, variable is updated, right?
+Now the render is called with the new data,
+updated data, right?
+Render is happened, render is happened.
+Now the React updates is done.
+Now the web page is loaded, right?
+HTML is loaded now, right?
+This render happens.
+Now the HTML is basically loaded.
+Now the HTML is loaded.
+HTML is loaded with API data, new API data, right?
+So now at this point, the user will see
+that image and name and everything on the HTML.
+And now after this, what will happen?
+After this, what will happen?
+It will call component did update.
+Then it will call component did update,
+component did update, okay?
+So this is how the whole lifecycle method works, right?
+This is how the whole lifecycle method works
+and then this is how the whole lifecycle method works.
+And now if I will remove,
+I will enable all the console logs.
+Let us see this working, right?
+Let us see this working, right?
+Let us see this working, okay?
+So let's see this working.
+If I go back to our page, if I refresh the page,
+if I refresh the page,
+it is not making an API call, what happened to it?
+API rate limit exceeded.
+API rate limit, oh my God,
+we have made a lot of API calls,
+so the rate limit exceeded for this API, right?
+Can I call it some, oh my God,
+this API rate limit exceeded?
+But no worries, we can anyway see the lifecycle method,
+even if the API rate limit exceeded.
+So, you know, when you are using GitHub APIs,
+make sure you don't update,
+you don't finish the API rate limit.
+But we can obviously see the lifecycle methods anyways, right?
+So first of all, the constructor is called,
+render is called, right?
+Constructor is called,
+render is called,
+DOM is updated with dummy data, right?
+And then we will call the component did mount,
+component did mount is called,
+and we have got the API call,
+we have got the API call,
+once the API call is made,
+we have done set state,
+now the set state did not happen
+because set state did not happen,
+the data did not change in the set state, right?
+So then render is called,
+then the component did update is called, right?
+So there is what I wanted to show you is that,
+there is something known as component did update also, right?
+So that is also called after the update cycle,
+and that's how React works.
+First of all, mounting cycle happens,
+then the update cycle happens, right?
+First of all, the mounting cycle happens,
+then the update cycle happens.
+So that is how our component is mounted,
+and that is how the update happens.
+Got it?
+This is how it works.
+Now you would say, what is unmounting cycle?
+There is something known as unmounting cycle also.
+Let me quickly finish this up,
+wrap this up, right?
+The life cycle methods,
+unmounting happens, right?
+There is a function known as component will unmount, right?
+So let me add that also.
+If I have component did unmount, right?
+Component, remember, it is component will unmount.
+Component will unmount, right?
+Component will unmount.
+Remember, this is component did,
+this is component will.
+So basically, this function is called
+just before our component is unmounting.
+What do you mean by unmount?
+Unmount means when this component will go from this,
+then when this component will disappear from this HTML,
+from our web page,
+when this component will be unmounted.
+Mounting means showing onto the UI.
+Unmounting means disabling, right?
+Removing from the UI, right?
+So then unmount will be called, right?
+This component will unmount will be called.
+Let me console long, component will unmount.
+So let me save it, right?
+Let me save it, let me refresh the page.
+So see this, component did update is called,
+component did unmount, component will unmount will be called
+when this component is gone from the page.
+When will the component go from the page?
+When I go to the new page, right?
+So let me just go to the contact us page.
+If I go to the contact us page, see this.
+Component will unmount was called.
+Got it?
+Component will unmount was called in this state, right?
+So when I was in about us page,
+when I was on about us page,
+our component was mounted properly, right?
+Component was mounted properly, update cycle happened.
+Then as soon as I went to contact us page,
+as soon as the component will unmount,
+before that component will unmount will be called, right?
+This is how the life cycle method works.
+Mounting, updating, unmounting, all of this works, right?
+So this is how it works.
+And this is a lot of information, my dear friends.
+Lot of information.
+And earlier we used to write code like this.
+You know, earlier we used to write code like this, right?
+Now we write use effect and we do a lot of things, right?
+We can do all of these things in small lines,
+very less lines.
+Earlier we used to write so much code to make this works,
+right?
+Earlier we used to write so much code to make this works
+and we were confused with component will mount,
+component did mount, component did update,
+component will unmount, render cycle, this cycle,
+that cycle and everything was a mess in React.
+The best part of React now is it has simplified a lot, right?
+React has simplified itself a lot
+and that is why React is gaining popularity
+and that is why it is the most loved framework right now.
+Right?
+React realized, earlier React realized that, you know,
+when I was in, when I was in job, right?
+When I was coding, I have written all this,
+component did update, component did mount, component this,
+like I used to mess up my hairs, right?
+So why I'm teaching you all this
+because this is important for your interviews,
+that is why I wanted to teach you all this, right?
+So this was it, you know, I wanted to dive more deep
+but this much of information is enough for you, right?
+This much of information is enough for you
+if you are preparing for interviews
+but if you are curious to know more,
+if you are curious to know more, what I will do is,
+you know, when I was teaching my live batch previously,
+so I told them, I dived more deep into these concepts.
+I dived more deep into the concepts
+and then I told them more information.
+Right now, I feel that this much information is current, right?
+Because anyways, class-based components are now outdated,
+nobody uses them, this much information
+is enough for your interviews
+but if you are curious, then what I will do is,
+I will just take the clip from my live batch
+and I will put the clip now, right?
+After this session, I will put the clip now, right?
+So if you are interested, go ahead and watch that clip
+and make your foundation even more strong.
+This was it in the video
+and now you can see the clip from the live batch,
+that's it, right?
+And I would say that if you have time, please watch it.
+It will just increase your foundations so much
+that you will not be able to be defeated
+in any interviews, right?
+You will be able to answer all the questions
+if you will dive deep, right?
+You will get a lot of Eureka moments
+if you will see that clip also, right?
+You will get a lot of AHA movement, right?
+When you will see that clip.
+So if you want to get those AHA movement,
+if you want to get that excitement
+and exciting stuff, see that clip, right?
+I am attaching it now, should I go more deep?
+Yes or no?
+Do you have some time?
+I'll go more deep inside this, okay?
+Let's go more deep inside this, okay?
+Awesome.
+Okay, I'll show you more cool stuff, okay?
+You know, this is what I prepared for today's session,
+but I am feeling that you people have a lot of energy, okay?
+So let's go more deep, okay?
+Let's let me teach you more, okay?
+More heavy stuff, okay?
+Cool.
+Now, I have one great question for you.
+One amazing question for you, okay?
+One amazing question for you.
+You know, you know, you, do you see this?
+Do you see this code?
+How messy did it go?
+See this code?
+What are we doing?
+Just easy peasy stuff we are doing
+and it has become messy.
+Think about React developers writing this code.
+If you go to the old, you know,
+if you go to the old repositories of React,
+you will find the code like this only.
+You will find the code like this only, right?
+You, it just used to mess up your head
+about these life cycle methods and you have to remember.
+But let's, let's go back, okay?
+This was our profile component.
+There was a profile functional component also, right?
+We have a profile functional component also, right?
+This was our functional component.
+Remember this functional component?
+So one disclaimer I would love to give you,
+one disclaimer I would love to give you, one disclaimer.
+Okay, the disclaimer is important thing to remember.
+Never ever compare React's life cycle method
+to functional component.
+What will you do?
+Never compare your React's life cycle method to,
+you know, I see that React developers have a bad habit.
+They say that, okay,
+use effect is equivalent to component dead mount.
+Is this equivalent?
+Don't say this, please.
+I don't know if it is equivalent or not, right?
+But I don't want my students to say this, okay?
+Keep my respect, okay?
+There are lots of, there are lots of, you know,
+there are lots of bloggers, right?
+They write blog posts where they mention that, okay,
+use effect is equivalent to component dead mount.
+It is not, it is not,
+because if you are making a mental map,
+if you are putting in your head that, okay,
+component dead mount may be API call,
+like we used to do an API call in component dead mount,
+we are making an API call in use effect,
+they are not equal.
+Use effect is not using component dead mount
+behind the scenes, no.
+It's completely different.
+It's a new way altogether.
+Never ever compare.
+Can you give me a thumbs up?
+Can you think, a lot of teachers teach you like that.
+I'm telling you, a lot of teachers teach you like that,
+because it is confusing to teach, right?
+On YouTube, if I make this, see, you know,
+how much time did I take to teach you all this?
+Classmates component, it took me like
+two and a half hours already.
+If you go to YouTube, you will find tutorials
+for 20 minutes.
+If you have to teach in 20 minutes,
+you will teach like this only.
+You will teach like this only.
+So that is why it does not go deep,
+never compare both of them, never, okay?
+I don't want my students to compare it.
+Gotcha?
+Okay.
+Now let me tell you one more thing.
+But I'll tell you all the things
+that you can do inside use effect, how it is done.
+Let us just see, okay?
+Okay, I'll ask you a few questions.
+What happens?
+What happens when I don't put a dependency array?
+When will this function be called?
+When will this use effect will be called?
+After every render, isn't it?
+After each and every render,
+my use effect function will be called.
+Now things are different in class-based component, right?
+Things are different in class-based component.
+What will be called at the first time, first render?
+After first render, component did mount is called.
+And after every subsequent render,
+after every subsequent render, it is updated.
+It is not mounted, it is updated.
+There is a difference between mount and update
+and unmount, mount, update, unmount.
+Mount, update, unmount, there is a difference.
+You should know that difference, okay?
+Awesome stuff, right?
+And okay, this is what I...
+So suppose, okay, in use effect,
+we do like this, empty dependency array.
+Empty dependency array, right?
+Empty dependency array.
+What does this mean?
+When will this be called?
+Yes, it will be called just once
+in the initial render.
+So you know, React developers made the API very easy.
+React developer says, okay, you just have to call
+after one initial render.
+Don't have to remember about lifecycle methods.
+So you know, when we write modern React code,
+they remove the concept of these lifecycle methods.
+They remove the concepts of these lifecycle methods.
+They don't want new developers to know
+that what is component did mount,
+update, all that took off.
+That is why all the new React developers
+don't know React to the core.
+They don't know.
+They just know...

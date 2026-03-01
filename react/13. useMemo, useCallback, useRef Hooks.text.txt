@@ -1,0 +1,686 @@
+FILE: Bonus - 4. useMemo, useCallback, useRef Hooks.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+This is the newest documentation of React okay, this is the new documentation follow this always
+refer this documentation now the previous documentation which you get in the React ORG
+you know now a lot of people say where do you learn I come back here right it has a lot of
+it is the source of truth for react isn't it react people who are building react are writing
+this so now let's go to references this gives you hooks see there are there are a lot of hooks
+right see these these all are hooks but I have told you the in the second or third class I don't know
+I have told you in the third class itself that there are only two major important hooks inside
+react only two major important hooks inside react use effect and use state first one is
+the use state use state is the most important hook that you will use you will use it so many
+times that you will become best at it second most important hook which you will use a lot
+is use effect and rest of the hooks are very less used this is just like this is just like
+the google search page number of chances of clicking on the first icon the second link
+the third link and then second page right so 90 90 percent time you will use this 99 percent of
+the times you will use this two hooks very few times you would need the other hooks right so go
+ahead don't have a form or that you don't know some it's okay you can know it whenever you wish to
+okay when I talk about use params use context those are not core react hook okay I'm just
+talking about core react hooks those hooks are given by other libraries use params is given by
+react router right so use context is again react hook use list we use less right if you are using
+redux you might not even need it right so some hooks are used let me talk about them okay I will
+teach you two three hooks okay let's see how much time we have I'll try to cover one good hook which
+increases the performance okay one hook that will increase your performance and I'm talking about
+an important hook which can increase performance of your app see you would have seen me talking
+a lot about performance because these are important right so that is why I want to show that
+you know there is a hook which is use memo okay this is the hook use memo which will increase the
+performance of your app let me take up on this right let's let's give a demo about it okay cool
+cool so we will see what does use memo do so as the name says right read this one line
+use memo is a react hook that lets you cash the result of calculations between
+re-renders important thing to note over here two important words cash the results between re-renders
+what do you understand by this if you did not go through namaste react you won't understand a clue
+out of it what it writes to say what it is trying to say but now let me tell you what it
+will do it will cash the result between re-renders what does this mean what does this mean when does
+my component re-render when does my component re-render when I update my state it re-renders
+isn't it suppose if I want to cash some result so that it does not do some result
+do some result every time I call the api if every time my state changes every time my re-render
+happens I don't I want some things to be cashed I don't want react to do all the work once again
+okay what could be the use case why I don't want to do work again why I don't want to do work
+again what could be a case yes it can be expensive operation right if the operation is expensive
+it will if react will work again and again it will take some time right but now you can ask me
+akshay but react already optimizes a lot of things isn't it but you can ask me akshay react
+automatically optimizes a lot of things isn't it okay so let us try to see examples of it okay
+what what we can do okay let's see examples without example you won't understand so basically what it
+is so so saying is there is a filter to do so there are tabs so if you go to different tabs
+okay leave it I'll I'll tell you the example if I if I'll read this you will it will be like
+another course right I you know I'm not a teacher who teaches by boring PPTs or
+it's like it's right have you ever seen me from the first day we have dived into the
+vs code and code I don't like you know if I read this I find it boring myself okay so
+I try to I try to like demo things up right less theory no less theory more practical
+let me teach use memo in my own way okay so let let me tease that okay let's go back to our code
+something let's create a demo component okay demo.js okay we have this demo.js component okay so this
+is the demo right RAFC we have a component ready let us create a new page maybe right let's create
+a page let's create a demo or something okay app.js I am creating a new page demo okay let's have a
+demo component here I have my demo component let's go back to the browser let's go back to demo
+up cool so we have our demo component with us did you understand that right
+cool do you see this demo right so let's quickly create a box right let's create a box out of it
+first let's create a div and let's give it some padding margin let's give it a class name let's
+give it a margin of four padding of maybe two I don't know width of what is the maximum
+width I can give what is the maximum width 96 okay let's give it 96 height of 96 I'm just
+building a box let's build a border let's give it a border of black cool how does it look cool so I have
+a box with me got it got it I have a box with me now basically I want to do some state changes
+so that we re-render the component again and again to show the memoization I want to do a
+lot of state changes right right so that is why I'm taking this example so what I'll do I want to
+change the state again and again okay in Anshul says input state okay so let's change the input
+state right input state is a great example okay let's change input state let's change the input
+state let's create a div and let's have a input inside it right input box if I type in something
+the state changes everybody knows that isn't it right if I have a input type text and then we have
+a value for that we will create a state variable also isn't it we will create a state variable
+let's create a state variable give it a name let's give it a name let's call it as text right
+let's call it as text why to make it let's make it simple super simple text and then set text
+set text and is equals to use state use state right and we'll give it empty right now okay
+so the value is equals to text right and then on change of this text what happens my dear friends
+what happens if I change this text it will do a set text of e dot target dot value got it so we
+have an input box and the input box won't be visible you know some what happened you provided a value
+prop without on change okay if it's the page okay gone so we have this input box let's give it some
+let's give it some CSS okay let's give it some CSS let's give it some CSS
+class name border border black right and width is equals to 96 right let's make it 70 something
+is that 70 width 72 okay cool so we have this input box with us right on change of it I am
+setting the target value so now if I click on a c if I'm writing over here let me give it some padding
+also so that it looks beautiful padding of x as 2 right now it will look better right so now as in
+when I'm typing what is happening when I'm typing what is happening I am when I'm typing reconciliation
+the component is re-rendering every time I write this my component is re-rendering isn't it
+let's see the elements see if I'm writing oh my god it's why it's not showing if I'm writing
+anything it should show right it should blink where it is let's go through the HTML of input
+box inspect here right so if I am writing something inside it see this this value is
+getting updated isn't it it is re-rendering how do I see this like let me show it to you
+once again let me log this up okay if I'll write this console log here that means it will be
+called after every render right rendering dot dot dot cool so now see first time it called
+when the initial render happened and now every time my state changes if I'm writing hello see
+every time it is calling why it is calling twice react dev tools react dev tools is calling
+where is react dev tools let us close it for now how do I remove it info okay I am in strict mode
+because I am in strict mode okay cool it that's why it is calling twice
+yep you are right you people are right so this this automatically adds this strict mode right
+that is why my component is being called twice so people who did not understand remove this strict
+mode because the components get called twice if you don't remove the strict mode why find it out
+yourself Ankita okay so basically basically you know this find it out yourself right I will
+have to explain a lot of theory out of it but in but in you know but in production it won't
+happen in production you can keep that strict mode so if you are keeping this strict mode over here
+this will call your component twice just to be sure that it is updating it properly
+just to be sure if it updates properly right it's a way for react to confirm that whatever
+you are doing the reconciliation is happening properly okay react does their internal checks
+and it only happens on dev if I have put this this component is being called twice
+it is only happening in dev okay in your dev machine why it is happening you know sometimes
+what happens if you have not written code properly sometimes you know these two render
+cycles mess up if you are not if you are not right if you have not written code properly
+these two they will see inconsistency between these not in production this will not happen
+in production even if I push the same code to production with strict mode it will not
+happen on production okay this is just happening in dev okay it is similar to kind of like using
+strict right not exactly similar to using javascript strict but this is react's way of doing
+script right so cool so now we have I have removed it for now for main application keep it
+right cool let us focus on it so whenever I am writing he ll o see it is rendering my component
+again and again it is rendering my component again and again everybody understands this
+everybody understands this cool now suppose if I have to do a heavy operation
+if I was doing a heavy operation over here right heavy operation over here right this rendering
+if I did a heavy operation here heavy operation what will happen every time my state changes
+that heavy operation will happen isn't it every time my state changes my heavy operation will
+happen so what I ll do is I can memoize that heavy operation I can memoize that heavy operation
+that is what we use use memo for okay I okay I think this is more of theory right let me
+let me show you think of some example let me let me show live chat is not a heavy operation right
+live chat is not a heavy operation so heavy operation means calculation heavy which is
+operation heavy for browsers what could be heavy calculating square roots or calculating
+factorial prime yes let's calculate something like calculating nth prime number okay so
+let's calculate nth let's see if it works right nth prime number javascript
+okay so if I am finding the nth prime number this is a heavy operation isn't it
+let me let me just write it up cool right so
+let's calculate a prime number every time okay let's let's do that okay or maybe let's okay
+so let me have add this prime number to a helper function first of all okay
+let's calculate a prime number okay this is a heavy operation do you do you do you
+agree this prime number is a heavy operation do you agree calculating nth prime we will see
+if this is a heavy operation or not okay export fine prime okay so this is prime number
+I am calculating nth prime so let us calculate nth prime okay
+so let us calculate nth prime okay let's write it down okay let's create a div in this div
+let me just add a h1 tag right with nth prime and suppose in this nth prime right I have
+suppose I am calculating a prime number here right how do I calculate a prime number
+find prime find prime of 1 2 3 right find prime of 1 2 3 right so if I if I am doing this
+and if I am writing prime right cool so now what will happen what will happen
+right see my if I refresh my page oh it came quickly because it's a very small number
+okay let's type in something okay whatever I am typing in over here it should calculate
+the prime number of that number okay cool okay so let's change this so we have text right
+so in that text instead let me put it as number right zero right I have put in zero
+and let me set this up text instead of text let's have number can I have number here yes
+let's make this input field as number and calculate prime number for my text got it
+calculate prime number for my text so okay so my nth prime of zero is zero right nothing
+if I write one so one cup prime number one so the first prime number is two right
+one 12th prime number is 37 three 123rd prime number is 677 four five six seven oh see my page
+froze now do you see when I write this my page froze for a while let me make this bold right to
+show it to you just a minute okay class name is equals to margin top of four and then give it font bold
+okay and then give it text excel I am increasing it l so you can see right cool so this is nth prime
+see now my page will in hack hand for a second see whenever now I will write one letter and see my
+page guessing hand see my page is hanged after a while it is getting the results isn't it see if I'm
+increasing it by a digit once again let me show it to you I have pressed it it changed it after a
+while isn't it and let me add one more digit see I have in I have added one more digit I have
+added one more digit I have added zero it is still calculating it is still calculating
+it is still calculating what happened oh my god is it even calculating I don't know if it
+is calculating or not right but this is a heavy operation okay do you believe this is a heavy
+operation now or not let me write more oh my god see my page froze now my search is not working
+my context my my tab is not working nothing is working now it is I have calculated the I don't know
+my my see now even my page is not even refreshing this is heavy this is heavy it is right when it goes
+beyond seven digits it becomes very heavy right when it goes beyond seven digits one two three
+four five six seven after seven digits which is gaya my browser is gone come on come on
+repress the page at least okay let's not waste more time here
+I can't even close the tab it takes time okay cool okay cool so let us not go beyond seven okay
+let's go one two three four five six now I think it will slow seven see it it does after a while okay
+it does after a while right so this is a heavy operation but now now what will happen is
+every time I am keep pressing it is changing it in in every render okay how do you show
+cool cool I'll show it to you one more thing okay suppose if there was one more state variable
+which it is not dependent on okay kind of let's build a black and white theme okay
+light theme and dark theme inside this box okay let's build a dark and light theme inside this
+box okay so for that I actually need one more state variable okay let's create a black and
+dark and light theme okay is dark theme something like that is dark theme is dark theme set
+is dark theme okay is equals to u state of initially the dark theme do you want dark theme
+let's give it false okay initial value is false now if and let's add some background
+if there is a dark theme right let's update this class name how do you make it conditional
+maybe I can add one more class to it right if I will if is dark theme is dark theme
+then is dark theme is true then add a class name okay so do you understand what am I writing
+quickly right so I will use is dark theme then let me add a class bg
+background make it dark how do I make it dark let's make it background gray no let's make it
+background gray 900 okay is dark theme is true so if it is false it is like this if it is true
+cool right so this will okay let me make it text white then let us also give it text white
+it is not visible right text white cool right so we have nth prime one two three four
+it hanged again oh I refresh quickly otherwise my page will freeze okay so it it is dark theme
+now let us create a button to toggle this okay let's create a button to toggle this let's have
+initially as false right let's create a button to toggle this theme okay I have created a div inside
+that I have a button I want to toggle my theme okay so I want to toggle my theme on click of the
+okay let we have one more no I will just change my is dark theme right so button on click on
+click of this just change my set is dark theme is dark theme how do I toggle is dark theme to
+not off is dark theme right and I will have my button toggle toggle let's give some css to this
+button see class name is equals to margin of 10 and then padding of 2 and then let's give it background
+color of green or something okay background green I don't know why am I obsessed with green color
+background 200 I don't know cool so we have this toggle if I click on it see it changes the
+theme why is that curly braces coming in something messed up oh okay this one okay cool so now
+this is my light and dark theme now let me show you one one amazing thing whenever I am toggling
+it is rendering whenever I am toggling it is rendering right whenever I am toggling
+this is rendering right now if I will write one two three the problem is the problem is
+suppose if I toggle my theme now it is again rendering that means it is calculating the
+prime number calculating this prime number every time I am changing my theme is it required
+it's not required do you understand the problem do you understand a basic problem basic problem
+right suppose if this prime number is a c suppose if this was a function right let me
+which returns right let me create it so let us see that how when this function is called right
+this function returns the prime number okay and let me log it console.log
+calculate prime number let's see calculate prime number number off and then comma our text
+okay so just see the if you understand the problem we will solve it right first of all you
+should understand what am I trying to show show it to you right what is it problem function are not
+valid as react child we have written right what is the problem this is a function right okay let me
+call it over here right let me call it over here got it so what I want to show you is that
+right refresh right so calculating prime number of zero if I if I calculate prime
+number one two three right so it should calculate my prime number it should calculate my prime number
+but when I am toggling my theme why am I doing that heavy operation why am I doing that heavy
+operation okay let's see let's make it heavy four five six and then seven oh see seven takes some time
+right now when I calculated this prime number of one two three four five six seven it takes some time
+if I change the theme see it see it takes time to it takes time to update right clicked I clicked
+it it takes some time to update I clicked it it takes some time to update is it a good user
+experience I just wanted to change the theme why is my why is my find prime being called again and
+again right do you understand the problem give me a thumbs up if you understand the problem
+and we will solve this now now because you know the reconciliation now you know the
+render cycle you would understand first of all did you understand right why it is calculating prime
+again and again because that's how react works because that's how react works isn't it that's
+how react works wherever there is a state change it will it will re-render the component it will
+do everything once again right and this is such a common feature you know so many times you
+will have to do this but suppose if this number is one two right if this number is one two three
+four five one two three four five right if this is one right if I toggle my theme it works very fast
+why because that operation is very fast right so these type of problems will only come when
+you are doing heavy operations so when you are doing simple operations then react is very fast
+then react is very fast right then react is very fast rendering but if I have some heavy
+operation with me what is the heavy operation calculating number one two three four five six
+right let me click on toggle it changed some time if I click on toggle once again it changed
+some time so I and between that heavy operation it is freezing my old page I cannot do anything
+else it's a very bad UX so such type of such type of issues can be handled such type of issues
+can be handled using memoization using views memo got it so now let's go back to documentation now
+now you will understand use memo is a react hook that lets you cache the result of a calculation
+between re-renders it caches the result between re-renders what is that calculation we are
+doing simple right did you understand this it's simple right we are calculating some value so how
+do I use it we this calculate value is a function and there are some dependencies okay now now let's
+let's use this syntax okay so what it is showing we have a cached value then use a use memo then
+pass in a function and then dependency okay I'll show it to you so this is a heavy operation
+this function is a heavy operation isn't it this function is a heavy operation
+so I want to memorize the result of this function what is the result of this function prime number
+right so how I want to memorize the result of this function right so what I will do is
+what I will do is I will just what is this function this function returns my find prime
+right, let me make this function short first of all, okay, so this is my function that
+give me, so how do I memoize this value returned by this function, I will use a use memo hook,
+right, this use memo hook is imported from react, right, this use memo hook, this use
+memo hook takes in as first parameter as a function that needs to be memoized or
+the value which it returns, see this function is returning me a prime number, so it will basically
+memoize the result of this function, got it, it will cache it, got it, now I can use my,
+this prime will now have a memoized value of a prime number, now this cache will have
+a memoized value of a prime number, okay, so it's not a function anymore, it returns a
+value, right, so it is a value, read this, it's a hook that cache the result of the calculation,
+so our calculation is finding the prime, it results, now it also gives you dependencies,
+what is this dependencies, dependencies means that sometimes we need to not cache it, right,
+it is dependent on some variable, so it is just dependent on text, so basically memoize
+it and only change it when my text changes, easy, right, keep memoizing it in every render,
+see, it caches the result between re-renders, cache the results between re-render until my
+text changes, until my dependencies changes, got it, until my dependencies change, cache
+my results, so now I use this memoization, let's go back to our example, right, let's
+refresh the page, now let's see, now let us go back, toggle it, right, so now the
+toggle is working very fast, right, it's completely fine, one, two, three, four, five, six, right,
+and then seven, on seven it freezes the page, it froze the page as expected, but now if
+I toggle my themes, see how fast it goes, how fast it goes, right, it is caching
+the result between re-renders, what if I change my, what if I change my value once again, if
+I do one five six eight, it again takes time, it is taking time when it is required, right,
+we have changed the text, but when I am not changing the text, when I am just updating
+some other state, see, the problem with React is it re-renders the component every
+time any state variable changes or any prop changes, isn't it, any state change, any prop
+change it will re-render, what happens is because of this, because of this state, because of
+this state variable, my other things are also getting called, so we are kind of like memoizing
+the heavy operations, got it, we are kind of like memoizing the heavy operations, amazing,
+right, did you understand it properly, did you understand it properly, okay cool, now let
+me show it to you, what change did we do, okay, if it was not memoized, how would it look
+it was not memoized, if it was not memoized, it would look something like this, okay,
+okay, we were just calling this find prime, right, so let me see, it was, we were calling
+this find prime and calculating the prime number, right, let's go back, if I go 1, 2, 3, 4, 5,
+6, 7, it freezes the page, if I toggle, see it freezes the page, it freezes, again it
+freezes the page, again it freezes the page, see my hands are not there, every time
+it freezes the page, but just by memoizing, see, see the difference, see the difference
+in code, just by adding a hook, how much, right, we are just memoizing this function, we are
+just memoizing this function and depending on the text, what it will do now, it will,
+oh my god, I did not save it, okay, I did not save it, let me save it, if I save it,
+it refreshes the page 1, 2, 3, 4, 5, 6, 7, it freezes the page, but now I can
+toggle it properly, cool, right, oh it was so heavy that the video was lagging, what's
+the video lagging, oh my god, it is affecting browser, right, anyways, so, but the video
+won't lag because it is in a different, different browser tab, so in a different browser tab
+Chrome allocates a different memory to each and every browser tab, okay, because a lot
+of people don't understand how browsers work, okay, so it will not lag, every browser tab
+Chrome allocates a memory, it does not mean that, okay, one tab can freeze the whole Chrome,
+doesn't happen most of the times, sometimes it can, okay, so, teaser of Namaste browser,
+cool, cool, yes, yes, yes, I should, I should make it, so now even though, see, and it
+is not that it is not, is it rendering, is my component still rendering, is my component
+still rendering, yes or no, yes, it is still rendering, the React is doing its job like how
+it does, every time it toggle it is rendering, see, but now React gave us control that,
+oh, it is, it is lagging your application, put a memoize, do a memoize, if the nth
+prime operation is not that heavy, don't use memoize, got it, we can achieve the same with
+use effect, how, how will you achieve the same with use effect, yes, kind of there could be
+hacky ways to do it, yes, you can do that too, but right now I am teaching with use
+memo, then it is the problem, right, how you can, how you can separate the concern
+is also that create a different component for changing the theme, create a different component,
+so that component will have its own state, keep just this one state variable to optimize,
+right, there are different ways you can optimize, but use memo is used for this, okay, I wanted
+to show you use memo, so I gave you this example, got it, did you understand it, let
+us move to next example, there is one more hook which is use callback, so see use memo
+is caches the result of calculation between re-renders, what is use callback, caching
+a function definition between re-render, that is result of calculation, this is function
+definition between re-renders, did you understand it, it is very, very, very similar, just
+like use memo, you will cache a function, not the value, over here we are caching the value
+which is returned by fine prime, isn't it, we are caching the value which is returned
+by fine prime, here you cache the function, here you cache the function, here in use
+memo you cache the result of calculation between re-renders, here you cache the function
+definition, this is the difference, okay, I am not going into example of this detail, right,
+it will take a lot of time, okay, let us go to some other hook, okay, you understood the
+basic principle, right, you explore it yourself, okay, it is easy, it is easy, try
+some example, okay, so we will do that, it is used for again, right, it is used for skipping
+re-renders, find it out, read this page, okay, you will read this page, you will understand,
+don't worry, okay, cool, now let me take one more hook, right, let us take use ref, let
+us talk about use ref, okay, let us talk about use ref, okay, so read this, what
+is use ref, some people say when do we need to cache a function, so you can cache a function
+for prime also, read the examples, when you are doing a heavy operation you can cache that
+function also, right, it is okay, right, you can cache, there are use cases, right,
+so that is what I am saying, these are less used hook, right, when you are building
+a very large scale application which has a lot of operations which are very performance
+heavy, then you need all these things, for small applications you don't need, let me tell
+you I have never used a use ref in my life in the production code, let me tell you I have
+never used a use ref, I have used a use memo once or twice, I have never used a use ref,
+but still I am teaching you, let me teach it to you, right, it is okay, yes, I have
+toast messages, yes, okay, yeah, there are use cases where you can use use ref, but not
+much, right, but let me teach it to you, right, it lets you reference a value that is not
+needed for rendering, okay, so why are these hooks, okay, why do we actually need this
+hook is a most important question, not how we can use it, why do we use it, right,
+why do we use it is a question, not because how do you use it, right, so basically,
+look, when is the case when you won't need to re-render, okay, if there is a case where
+you want to keep some data in your component which you don't want to re-render, then
+you will use use ref, do you understand, suppose if you want to, does it understand, suppose
+if you want to, if you want to store some value in a variable which you don't want the
+component to re-render, listen to me very carefully, you want some value in your, value in a
+variable in your, in your component, right, in your component, but you don't want component
+to re-render, you want some value, but you don't want it to be re-render, but you want that value,
+okay, so now you can say that you can use a local variable, right, so I can, I can use
+a constant, constant, okay, I can use a constant variable, right, constant V is equals to 10,
+right, I can use this, right, I can use this value, right, I can say toggle 10, right, I can use over
+here, isn't it, so this is the value I needed in my component, but I don't want this to
+re-render, but the problem is I can't change my V, how will I change this variable, how will I change
+this variable, how will I change this variable, U state, right, but if I use U state, what will
+happen, if I use U state, what will happen, it will re-render, I don't want, I want to change
+the value of V, but I don't want to re-render, I want this value 10 to be updated to 11, but
+I don't want to re-render, let me take a good example, okay, let's create another demo,
+right, demo 2 or something, right, demo 2.js, R-A-F-C-E, okay, this is demo 2, let's
+render this demo somewhere, apt.js, let's create a demo 2 URL, let's render it here only, right,
+after demo, what's there, demo, cool, so I would need to wrap this up in a react fragment, right,
+that is why it is complaining, is it coming, yep, we have demo 2 over here, right, so
+let's take demo 2 on this page, let's close this CSS, let's close helper, let's close index,
+let's close demo 2, demo 2 is here, now let us give it some CSS, let's give in some CSS,
+let's create another box, okay, I don't know why I am obsessed with box today, margin 4,
+padding of 2 and let's give it background of slate or something, background 50 and let's
+give it some border, border of, border and then border of black, cool, oops, I need to give it height,
+I need to give it width of 96, height of 96, okay, border black, width of 96, height of 96,
+save, cool, so I have my demo 2 ready, okay, I don't want to give shadow, some people are
+saying shadow, let me remove this rendering log also, okay, let me remove this rendering log,
+where is my demo.js, let me remove this rendering log, okay, now, suppose, suppose if I have
+a, in this, suppose, okay, so this is the variable, okay, so now support let me have a,
+let me have a let variable, okay, let, let x is equals to, let x is equals to 10, okay, let x is
+equals to 10, now I have a, let me have a div and a h1, right, let me have a div and a h1 inside
+it, h1 tag, okay, in this h1 tag I am printing down my x, right, x and let me give it a class name
+is equals to font, bold and text, let me make a text a little bigger, excel, cool, so we have 10,
+right, so this is my let variable, okay, let is equals to, now I want to change this value,
+I want to change this value, how do I change it, how do I change it, let me create a button,
+okay, to change it, can I create a button to change it, let me check, right, button,
+update or increase let, increase, increase, okay, increase, increase let, right, increase x, okay,
+increase x and on change of this button, on change of this button, what should I do,
+what should I write on change of this button, let me update the value of x with x plus 1,
+okay, let me update the value of x with x plus 1 or x plus plus whatever, right,
+now, now what will happen, what will happen, oh my god this button doesn't look like a button,
+okay, let me make it like a button, okay, let me give it some class, class name,
+class name is equals to background green, green and 200, background green 100, okay,
+and then let's give it padding of x of 2, I don't know, oh where am I, where am I writing, padding
+x of 2 and then margin of 2 and then of, and then margin of 4, let me give it a little bit
+difference and let me, okay, I have increase x, right, okay, okay, on click, okay my dear friends,
+you have like spammed the chat, sorry my dear friends, sorry, now it is fine, okay, on click,
+are you happy, let's get this value, right, instead of h1, let's put it span, right,
+so that it comes like this, span, cool, so increase x, if I hit on it, it is, is it increasing,
+is it increasing the value of x or not, is it increasing the value of x or not,
+is it increasing the value of x or not, no, no, yes, let's have a poll, okay, let's have a poll,
+let's test your knowledge, is x increasing or not, is x increasing or not, is x increasing,
+a lot of people say yes, it is increasing, 75% people say, now let us see if it is
+increasing or not, how will I see increasing or not, how will I see, let me do a console log,
+right, I can write any JavaScript here, right, let's do a console log of x,
+get it, right, let's do a console log of x, refresh the page, clicking on it,
+I am clicking on it, oh it will not print console log, right, because it's not re-rendering,
+let's put a console log, let's put a console log after click, right, cool, I have a console log x,
+right, if I click on it, see, do you see, where are the people who said it won't increase,
+where are the people who said no, it won't increase, it increases, it increases,
+but it does not re-render the page, it increases, but there is no way I can update this on the UI,
+isn't it, there is no way I can update it on the UI, right, see, what am I teaching you is very
+core fundamental, very very cool, people don't teach you this, nobody will teach you, I am telling you,
+very very core thing, because nobody uses this, right, everybody uses state variable here,
+so why will they teach you, right, but if you will use let, it will increase, now,
+now, if I will do a const, what will happen, what will happen if I do a const,
+yes, error will also come, it will give you an error, why it will give you an error, see,
+because I am assigning it to a constant variable, assigning it to a constant variable,
+everything that you see, right, makes sense, all javascript, pure javascript, javascript inside
+react components, nobody is teaching this lesson to you, ask your friends, you know, ask a lot
+of friends who are already working in react, they will not be able to answer this, but
+it's a let variable, okay, this we understand properly, let variable, okay, we understand
+properly, now let us create a state variable, but when we create a state variable, it is a const,
+it works, why, why does it works, let's create a const y, okay, and then set y, let's create
+another variable y and create a use state, state variable, okay, this is a state variable,
+let's give it the value zero, let's also make it, right, let's make a button to increase that
+state value, okay, let me copy paste, can I copy this paste, oh, I am doing a shortcut, okay,
+don't do this shortcut, okay, increase y, increase y, and on click of this button increase y,
+and y is my not let variable, let's call the state, state, it is coming from state, right,
+and on y, right, and on click of this button, I want to update my y, how do I increase my y,
+how do I increase my y, I will do a set, right, set y to y plus one, got it,
+set y to y plus one, right, let me see if this refresh the page, cool, so if I see,
+if I increase my y, it is getting increased and it is rendering also again, it is getting increased
+and it is rendering also once again, state variable, if I click on my x, it is getting,
+it is getting updated behind the scenes, but it is not getting rendered,
+but it is not getting rendered, it is not getting rendered, but there is one more thing,
+but there is one more thing, right, what is the value of x right now, what is the value of x
+right now, x, let variable right now, what is the value of x right now, yes, 15, right,
+I have clicked on it 5 times it is 15 now if I click on my y let me click on my y my y has increased to 36
+now if I click on x the value is again 11 why do you see a difference because whenever my
+component re-renders whenever my component re-renders it refreshes my let it refreshes
+my let do you see that amazing thing give me a thumbs up if you like it if you like
+it if your mind was blown by this knowledge give me a thumbs up cool right cool in the
+comments nobody will dive deep into teaching you these minute small details back to class
+one this is the last that is why I say right this react is infinite right if we go into
+small details of Java this is not even react this is JavaScript right you have to explore
+this yourself okay you have to have some curiosity let me let me revise revise it
+once again okay okay instead of 10 right I have set the initial value of x to 10 let me
+set the initial value of x to 0 okay I am setting the initial value of x to 0 let me set the
+initial value of y to 0 both of them are 0 my let variable is also 0 right my state
+variable is also 0 got it now if I am clicking on my x right so it is it is it is updating
+the value right behind the scene it has become 3 right behind the scenes it has become 3 okay
+it has become 3 but it is not rendering it is not re-rendering so it is not showing the
+value it is just showing the old value but when I click on this button if I update
+my state right now I am updating the state what this state is doing what this state
+is doing what this state is doing it is re-rendering the component whenever whenever you re-render now
+what if I click on x what will happen if I click on x it will be 1 2 3 4 once again
+whenever my component re-renders right whenever my component re-renders x is refreshed x is
+deleted wiped off why it got wiped off because at the end of the day what is this component
+at the end of the day at the end of the day it is a function what happens when a function
+is called in JavaScript a whole new execution context is created a whole new memory space
+is created a whole new thread of execution starts in right and then that execution context is
+pushed into the call stack everything works right what is react react is built using JavaScript
+isn't it react is built using JavaScript whenever you call this function again
+whenever the component re-renders new memory space is created all these variables are new
+first principles if you have your basics right nobody can defeat you if you have
+noted down write it down in your notebook write it down in the chat if your basics are right
+nobody can challenge you if your basics are right nobody can challenge you okay cool so if I
+update now you can understand the inconsistency right let me log it down like this right so that
+I can show it to you clearly log it down properly see x is equals to 1 x is equals to 2 x is equals
+to 3 I clicked on it my state updated my state updated to 13 now I click on it x is equals
+to once once one once again right it starts from the new new challenge once again right
+it starts from the cycle once again do you understand the proper difference between a
+normal javascript variable and a state variable do you understand you know ask the friends your
+friends would be learning react right ask them why do we need a state variable when we have let
+they will not be able to answer in depth they will not be able to answer I'm telling you most
+react developers don't know these things now why am I telling all this theory why am I telling
+all this theory to you what we were about to teach ref right now I'll tell you that what is use ref
+because you know people don't understand the difference between normal variables state
+variable and ref variable okay people don't understand the difference I'll tell you the
+difference that you will never forget in your life and I will ask you this question that will
+you be ever able to forget this after this you will not be right you will have a crystal clear
+understanding of use ref when I have taught you telling you okay now use use ref okay so now
+what is use ref let us go back to the definition once again you would have forgotten it I know
+that you would have forgotten it because I have put in some heavy stuff in your head already
+now it lets you reference a value that is not needed for rendering
+suppose if you want some value which is not needed for rendering
+you don't want to render that right you don't want the component to be rendered
+but you want some value okay suppose see now what is the use case I have increased the
+value of x my x has become 7 right but I don't want my component to let me increase the class
+timing right it has again bugged me okay so what happens is now my x is getting but when I click
+on state what happens to my x what happens to my x what happens to my x it resets right
+it resets but I don't want it to be reset but I don't want it to be reset this is use ref
+I don't want that value to reset I want that value to persist between the render cycles
+just like my state variables right what happens is if I increase my state variables right it is
+re-rendering it is re-rendering my component right let me show it to you right let me do
+a console log then you will understand properly console.log let's do rendering right rendering
+so okay if I increase my state see it is rendering again and again right it is rendering again
+if I increase my x right it is increase the x if I click on state once again it is rendering again
+it refreshes the value of x if I click on x see x start with one but it is holding that state with
+me right it is not forgetting the value of y right so basically I want a variable
+I want a variable which should not which should not get reset when my re-render happens
+but it holds that value still react should track it got it react should track it
+this is this is my use ref you will if you have not understood you will understand it with
+an example wait I am giving an example why to do shortcut right I am not here for
+shortcut my dear friends I am not a teacher with shortcut I will teach you the best of your
+you will be the best in the industry you all you people have to make me proud there is no other
+chance you won't make me proud right when other people the interviewers will tell right where
+you have studied react from tell that you have studied from no one's there react
+okay so let's use use ref right so when you use use ref let's see the syntax of use ref I am also
+teaching you to read documentation how do you read documentation okay so when you do use ref
+ref is use ref initial value do you understand this do you understand how how I use use ref
+it's not a array it's not like state it's not nothing it is used like this right
+let's have a const ref is equals to use ref let's call this as ref only right initial value
+let's give initial value as 0 to its also right let's build one more counter okay this use ref should
+come from my react right it should be imported from here use ref got it now let us create one
+more button and button and let's call this as z right z or let's call this as ref like what's there
+now this is ref right this is ref and let's print ref over here you know why am I doing all this you
+have to do this yourself once again I want you all to build this example in your laptop
+then only you will understand increase ref now let me tell you this is an important stuff right
+that ref is ref is ref is not you know ref is not just a normal variable ref returns
+ref is like a you know this initial value ref is like an object that react gives you
+you when you do a ref right when you do a ref of use ref it does not give you a value variable
+with ref it is not like ref is equals to 0 it's not like this okay that's how they have developed
+the API I don't know why right I don't know why did they do that but that's how it is right
+got it so ref it is not like that not like ref like this right but when you create a ref variable
+it behaves something like this ref is equals to object current is equals to whatever value
+you pass in the initial value here okay so instead of a value when you create a use ref
+it comes as an object with a current hard coded inside it got it got it I can show with a console
+log ref right exactly let me show you as a console log of ref I should be printed right if I do it
+where is my console log of ref see where is it where is it where is it where is it
+it is not creating right see see this it is did you understand this
+we will fix the errors don't worry did you understand this when you do a use ref
+when you do a use ref it returns you a variable but it's an object with a current in it and
+that initial value is zero okay so what do I print over here I can't print my ref right
+I would print my what what should I write to print the value
+print the initial value ref dot current exactly you people are amazing right ref dot current
+now if I go back refresh my page ref is equals to zero ref is equals to zero now
+on click off this button on click off increase ref how do I update my ref variable
+I don't have a set function just like a set function I have got for you state I don't have
+a set function so what I can do because this is just like a normal variable I can directly do
+something like ref dot current I can directly mutate it I can directly update it does this
+make sense ref current plus one did you understand it small difference I don't know why react
+built it like this it created an object with a current in it right react built it like that
+it is not a normal variable this is the thing you have to keep in mind got it this you understand
+now let us see everything in action okay now whenever you are updating the ref count
+let me also console log my ref okay now okay instead of this like let me refresh the page
+now what happens if I it has re-rendered right let me remove the console log of ref here right
+console log of ref here okay so refresh the page it has rendered right rendering if I
+increase my ref if I am clicking on this button what is happening is my ref changing
+is my ref getting changed is the question yes it is getting changed let us log it down right
+let us log this wherever I am doing a on click of ref let me console log right just like I console
+logged x right I let me console log ref is equals to my ref dot current ref dot current cool so let
+me refresh the page if I increase ref see my ref is getting my ref is getting updated
+do you see this right let me bring my console on over here right on the right side so that
+you can see it properly now is it properly visible cool so my ref is getting updated 1 2 3 4 right
+if I click on ref but it is not triggering the re-render it is not visible in the UI
+it is not visible in the UI if I click on my x what will happen if I click on increase x
+x is equals to 1 2 3 4 right it is no is it is x re-rendering is x re-rendering
+is x re-rendering no it is not re-rendering x is not re-rendering
+is ref re-rendering no ref is not re-rendering what will re-render what will re-render my component
+if I click on this y let me click on this y see if I click on this y it re-rendered the
+component rendering but what happened see this see this magical thing the ref is now visible
+the ref is now visible it persisted the value the ref is slow right because it re-rendered
+it was persisting the state see if I increase my ref see now if I increase my ref it was
+remembering the value of 6 the last value before re-render right its sabun slow
+see my ref is 8 now right my ref is 8 now it is not re-rendering my component
+right it is 8 now it is not re-rendering my component
+but the value is being persisted behind the scenes right now if I click on my x
+so x was 4 last time what will be the value of x now
+now what will be the value of x it will again start from 1 2 3 4 5 right the value of x will
+again start from 1 2 3 4 5 but ref is 7 8 but ref is 7 8 now if I click on state what will happen
+what will happen my ref will quickly update right because it will re-render right
+let me quickly update it see ref became 8 and it rendered right it rendered and if I click on my
+ref again see my ref is 9 so basically my ref is 9 my x is again 1 2 my ref is 10 and if I click
+on state once again I am rendering so I hope this makes sense right was this amazing or not
+did you understand it till the depth or not will you be able to tell the difference between
+let ref and state right but did you understand this that after rendering my ref persist between
+the renders now now this definition will look very easy to you now read this definition
+lets you reference a value that is not read it for rendering
+now this one line definition looks very easy so we have covered use memo use callback is very
+similar to use memo and the third one is use ref we have studied use state and use effect five
+hooks are enough right out of I think there are 10 to 10 hooks right I guess major 10 hooks right
+more than 10 maybe 10 12 right so very less you will not use this use sync external store
+very less very less now a lot of people are saying that what is the use case of use ref
+okay so I have not I told you that I did not use use ref in my life in my production code
+but I know how to teach you use ref you know why why why it is used so sometimes you know
+there are things which we want to do what let me show it to you I don't need those variables in
+my render let me see what react has to give me that example right let's see oh yes so it is it is
+storing my use interval like this okay got it got it got it got it got it got it got it got it got
+it got it got it got it understood understood right let me show it to you I understood you know
+when you practice a lot you know I just saw this example but I understood what see suppose if you
+had a use effect you will understand that too suppose if you had a use effect and there was a
+so suppose if you have a use effect which you'll call now suppose if you have a remember we
+use set interval or something set interval right suppose if I have a set interval
+and every five every one second okay every one second suppose not five seconds
+every one second I want to do a console log okay let's write namaste react right
+every one second I am writing namaste react okay let's go back I'll show you a very good use case
+not a very good use case but like namaste react one two okay I want I want it to print
+on my next line okay see it is clubbing these up how to how to not club this up is there a browser
+setting for this okay let me add something here right math dot random okay cool cool so
+see this is rendering twice why why it is printing twice okay so it is namaste react
+right now now the problem with this hook is if I go back to my home page it is still running
+oh my god we saw this right earlier why it is still running
+why it is still running why it is still running I am not even on that page right
+that was in the demo page right that was some page demo
+that see the page was demo but it was still running because I have not garbage collected
+so how do I go garbage collect I do a constant I return clear interval
+I right clear interval I cool so now if I go back to my home page oh it's still running why
+did I not save it let me refresh the page let me go to demo where is my demo
+slash demo right so it is printing once again right it is printing once again if I go to my
+home page see it stops printing it stops printing got it let me go back to my demo
+it again starts printing okay this is the one which we understood now let me tell you
+suppose if I don't want to stop if I don't want to stop this interval if I don't want to stop this
+interval when I am changing the page but I want a button over here to stop this interval how will
+I build that button how will I build that button suppose if I have my button right let's build
+a button below increase ref let me clear we will build a button right let me build a button over here
+but it on button of color let's give it a color red okay stop stop printing stop printing okay
+let me give it a class name of bg color red color red bg red sorry why do I write bg
+red 900 or something right and let's give it some padding of two and let's give it padding
+of two and margin of four and let's give it padding of four and then right let's see if that button
+comes in oh stop printing okay this looks ugly right looks ugly let's give it text white text
+white and font bold let's make it a very very dangerous looking button okay let's give it
+rounded corners okay let's make it more I since I have learned this since I have learned this
+tailwind right I love to write CSS I'm telling you right I rounded corners like cool see how cool
+my button looks isn't it looks cool right stop printing I want to click on this button and
+stop printing it okay so now if I want to stop printing on click of this button let me write
+on click on it on click of this button right there is a function which should stop printing this
+how will I stop print I will do a clear interval right but my dear friends how will I clear
+interval of I how will I clear interval of I what is the scope of this I what is the scope of
+this I what is the scope of this I it is just valid inside this function isn't it
+I want the I to stay behind this function also right so some people can say I can do something
+like this right instead of set interval I can make it as a let I let I is equals to null
+let I is right okay I have just defined I on the top and now my I becomes this
+right let I I can do this let I and now I can clear interval I here right so let us see if this
+works so if I am click doing this I clicked on it is it work it does not work why it does not
+work why it does not work because I have not set I is equals to sorry it should have worked right
+I should set I is equals to clear interval right I is equals to set interval assignment to I
+variable from inside react hook will be lost after see react is telling you already right
+see but if I click on stop rendering see it stopped printing
+it stopped printing amazing but the problem is but the problem is as soon as my state changes
+right let me click on this increase why I clicked on this increase why as soon as my state changes
+or my component will re-render anytime right why it did not start okay because use effect
+is called just once right on the initial render but what I am trying to say it does not persist
+after re-render it does not persist so this is not a good way understood okay I am not able
+to give you a like a very proper example but you understood right using let is is not a very
+trusted way right you cannot use whether you can use let but this see react itself wants you
+that I variable from inside react hook will be lost after each render this is a good place
+where I can use my use ref right I can make a use ref constant I is equals to use ref
+right and my use ref initial value let me give an initial value as null or something okay let's
+give it null okay so what will happen it gives me a I now how do I update my I I will do I dot
+current does this make sense I can update my I dot current and I can use I when I am clearing
+this interval I can do a I dot current when I am clearing my interview with this button I can do
+a I dot current so basically this is like a local temporary variable which won't re-render my component
+local temporary variable which will hold the value between states got it let me show a good
+demo to you also right once let me let me do on my left side what was the sidebar right let me
+create a demo demo page link over here okay let me create a demo page link I think I can give you a
+good good good idea let me create a demo link link to demo demo demo and then home demo
+right created a demo page link let me refresh the page right so if I have my demo page let's go to
+home I went to home this tops right I went to home this tops I went back to demo it starts
+got it suppose if I use let variable okay let me use let variable instead of my I is equals to
+use ref let me use a let variable let I is equals to null and I is equals to or else let's just
+let's just make this let I is equals to object only right so that we don't have to change it again
+and again current is equals to null got it so I have this let variable right see the problem
+okay I'll tell you the problem with this so I have this working I have this working
+okay I have this working it is it is printing if I click on stop printing it stops
+if I click on stop printing it stops it works fine right now if I go back to my home page
+and come back to my demo it again starts right okay let's not flush it out let's not return
+okay let us only clear the interval I am only clearing the interval now when my button is
+clicked okay I am not clearing the interval when we move to the pages got it I am only clearing
+the interval right I am only clearing the interval when I click on this button if I move to
+home page I am not clearing this interval right I move to demo it is again it is again right
+it is again printing if I clicked on stop printing it does not stop it does not stop
+it is faster it has created multiple copies
+let's create it two copies right if I go back to home if I come back once again to demo
+it is even faster see now right but let me refresh the page let's make this as a userf right
+suppose it started right if I go back to my home page and come back over here
+oh it is again starting here this is it is again starting so let us write something wait
+it is actually creating a new ref variable and it is starting an interval let us if
+my I dot current is not null right return got it if we already have a set timer a set
+interval see it it is it is printing let me go to demo let me go to home
+let me come back to demo oh it's again printing twice why
+okay it it it is basically basically it is unmounting the whole component and mounting
+it once again that is why it is happening it is unmounting the whole component and
+mounting it once again so it is creating a new variable every time but what I wanted to show you is
+what I wanted to tell you that if you use this ref right and if you change any state if this
+component re-renders updates right so it will stop printing it will stop printing
+why ref does not persist between mounting and unmounting because do you think that this
+state will persist after mounting and demounting it won't write everything that whole component goes
+off and comes back right so that is why all that state ref everything is right but this state is
+persisted between every render cycle that reconciliation that update cycle right okay cool
+but did you understand the use case right this is not a very good use case I don't know a live
+example of it but you understood the working of it right why why it is needed for the way it is
+needed right you understood the working of it did you understood the working of this see
+the major important thing is let me just remove this right I don't want to console log now
+let me remove this right the major thing is the major thing is you should understand oh my god
+why it is printing again and again let me save it right refresh the page the major thing you have
+to understand is the difference between this let right x123 ref 123 nothing is updated as soon
+as I click on state ref will update let won't update now I can increase my state to four
+if I go back increase my ref it will start from four five six increase my let 123
+increase my state increase my ref it will start this is the major thing that you should
+understand you have to practice you have to you know you have to basically practice this
+and you have to basically be very good at understanding the core basic fundamentals of it

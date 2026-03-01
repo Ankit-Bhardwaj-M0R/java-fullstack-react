@@ -1,0 +1,3340 @@
+FILE: 01. inception.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Hello everyone. Hello. Do you see me? Do you see me or not? Just tell me, am I visible?
+Just let me verify it once on my system and hello, hello everyone. I can see myself on
+the 11a dashboard as well. Good potting everyone. We are going to start this new series of
+videos. Namaste, React and my mic is connected and I hope the audio and video both are clear.
+Just give me a thumbs up if it is clear, right? Audio video clear? Yep. Awesome. Awesome.
+Let me get some more people in, right? I mean, let other people also join. We will start
+in a minute. Super excited for this new class. See, I am very new to this platform
+as well. So we will be exploring it together. Don't worry about it. Yep. Let everyone join in.
+Should I speak a little bit louder? Okay. Hope it's better now. Yep. Such an awesome vibe, right?
+Awesome. Awesome. Thank you so much everybody for joining. Okay. I see a lot of people
+coming. This is the first class. I want to keep it a little light. Okay. I want to keep it a little light
+and whosoever is wishing me Merry Christmas, Merry Christmas to you all as well, right?
+Today is not Christmas, but yes, right? Christmas Eve. So Merry Christmas to all of you. Maybe
+like in tomorrow's session I will say Merry Christmas to all of you, right? So good
+morning and namaste everyone, right? So awesome to see you all joining in, right? We have
+a good amount. Like, let me just start in two minutes, okay? Right? This is very new, right?
+So other people are facing, I have got a lot of emails, right? You know, on support at
+the rate namaste Dev that we are not able to log in. We have paid the, we have paid
+the fees, but we did not get access and all that stuff. So I was just and you
+would have been bugged by a lot of emails and SMS and all that stuff as well, right?
+emails, a lot of emails and notifications regarding the classes, but I had to do that.
+Sorry. It's like I can't help it, right? There were so many people who are facing
+issues. So I really had to do that, right? But hope you wouldn't be bugged a lot.
+We will reduce the number of notifications, but only when we see that, okay, everybody
+is able to join properly. That is when we will just reduce the number of notifications.
+Okay. So, yep. So hello, hello. Yep. So just give me one more minute. I will start.
+So basically, people over here would be new to this platform, right? I just want you
+all to please, please, please, right? Go explore this platform. See, there is this
+chat which is running on right now, right? I will be seeing this chat, right?
+Along with that, there is one option of doubts, right? So there is one option of doubts.
+So only, right? Only, right? Important questions over there. Don't don't mess up with the
+doubt section. Otherwise, like it will be very tough for us. Like otherwise, it will
+become very tough for us to get proper questions in, right? Don't mess up with
+the doubt section. And you know, so and you can chat over here, right?
+Whatever I am asking, just do that over here, right? And let me, let me wait for a
+little more people to join. I think there are people still figuring out how to join,
+right? And one more thing about joining. I want to advise you are please, please,
+please. Let me know. Are you on mobile or your desktop? Mobile or laptop? Mobile
+or laptop? Write it up. Mobile or laptop? Yep, laptop, right?
+Whoever is saying mobile, it's not acceptable, right? I have asked you to join
+from laptop, your PC or desktop or whatever, but join from laptop because, you know,
+we will be seeing the code, right? And when I will be opening up my VS code,
+my editor, then you won't be able to like read it up, right? So you won't
+be able to read my code properly. So don't use mobile phones. So I am
+running a Namaste React bootcamp also. So some people who joined from mobile
+phone, right? They face some issues when they have to like, when they like see, right?
+So it, there is an issue with that. So, okay. So please use laptop, okay? And
+let us just start in a minute, right? It's 11.5 already. And I would also
+request you all to go grab some water, grab a notebook, grab a pen because
+today we are going to learn React, okay? We are starting with the Namaste React,
+which was a project very dear to me, right? Like, I really loved the process, right?
+And I really loved, just a minute, okay? So I really loved the vibe, right?
+And of the React, right? I have been working on React since six years now,
+right? A little more than six years, but I have been using React in all
+the companies what I have worked for. I have used a lot of React in, in my
+Paytm and then in Uber, right? A lot of React on production. So we will only be,
+we will only be talking about React today, okay? So we will only be talking about
+React. No debates on Angular VS React. No debates over Angular VS React.
+I don't want that people should come in and ask me that whether Angular is
+good or React is good, okay? So I don't want such questions. Please.
+So some people say that, okay, let me just take a few doubts and then we will
+just start. So if you are facing some issues, right? With the loading screen,
+please try to use a better internet connection, right? Or maybe try to
+log in from on the Wi-Fi, right? That would be better, right? And that
+would help you. Okay, okay, okay. Cool. So, you know, I think, I think it's a good
+time to start now, right? So let me just start with the session. I hope you are
+excited. So how's the Josh? First class, first class of Namaste React.
+Cool. So let us just start, okay? So let us just start and let me just tell
+you, first of all, right? I want to start with telling you a little bit about
+this whole course and about how we are, what we are going to do in like the
+whole two months of journey together, whole eight weeks of journey, okay?
+I'm going to tell you about that, right? So first of all, let me tell you
+about myself, people who don't know me. Yes, there are people who don't know
+me. So people who don't know me, let me tell you, I am Akshay, right?
+I have been teaching to people since a lot of time now, right? I have been
+teaching on YouTube, right? I started YouTube in, I think, 2019, right?
+It's been almost three, four years since I'm teaching on YouTube. Before that,
+I used to teach like offline to students, my friends and other people,
+right? So I started teaching, right? And I started teaching JavaScript
+and people liked Namaste JavaScript a lot. So I released a series known
+as Namaste JavaScript on my YouTube and that's how people got to know me
+and, right? And that is where I realized that, okay, I can be a good teacher,
+right? It was because of your love that you have given to me, right?
+So don't worry about this, right? I mean, these sessions will be recorded.
+So don't worry about that. You will find the recordings at the same place
+where you joined this session from. So don't worry about that on the
+dashboard itself, learn.namaste.com. Yep. So coming back, right?
+People, have you seen Namaste JavaScript? Have you seen Namaste JavaScript?
+Yes or no, right? Yep, yep. So people can also choose to use dark mode over
+here, right? If you want, right? So you can, yep, yep, great.
+So I think there are a lot of people who have seen Namaste JavaScript.
+So that is when I realized, okay, I should come up with React as well.
+A lot of people asked me to teach React as well. So that is why I have come up
+with this live series where I can teach a lot of people. And let me tell you that
+we have people joining in from all across the world, right?
+All across the world. We have registrations from Africa, right?
+Dubai, Canada, and so many places, right? So it's amazing.
+So let us just start, right? There are people from Australia.
+Yes, from Germany. Nice, nice, nice. UK here, right? UK, UK, USA from Jammu.
+Nice, nice. Everywhere, right? And that is what I love, right?
+I wanted to teach people across the whole globe. That is what the impact
+of online education is. And I really wanted to teach everything from the
+basic. So that was about me. So I have left my job now.
+I am a full-time educator now. I am into teaching, right?
+I will be teaching up, coming up with more things. And I have not stopped
+doing YouTube. A lot of people say that, have you stopped doing YouTube? No.
+I will be coming up with a lot of YouTube content as well. Just a little time.
+I am just starting up. So it takes some time, right?
+And there are people from electronic city, Bihar, Mehrat and but not like
+just love the vibe of this environment. Okay. So before I start,
+I want to thank you all, right? We will be starting in like two,
+three more minutes. I see a lot of people already joining and our
+support email is just flooded. So just a minute, right?
+Let me get a heads up from my team that everything is good. Yeah.
+So see, again, a lot of people are messaging that where is the link to
+join the course and it's like, I don't know, right? That's why.
+So, okay. So let me just tell you a little bit more about that, okay?
+The mission of this course, okay? I wanted to talk about the
+mission of this course. This is the first lesson. The mission of this course
+is to take you from zero to hero in react in eight weeks, okay?
+For that, I need your full attention in the life classes, right?
+And I need you to do all the assignments, right? Whatever I give you
+after each session, I will be giving you assignments and I will take you from zero to hero.
+When I say zero to hero, we will start right from scratch in this class itself, right?
+I will show you how we start right from scratch, right, right, right from scratch
+and it would be really nice to see, right? How react was built, right?
+Like how small react is, right? And how big things it can do, right?
+And what we need along with react to build those large scale applications.
+We will see all that. Don't you worry about it, right?
+So, we will see all that and, right? So, we will see all that
+and don't worry about that. The mission is to take you from zero to hero, right?
+And we will be starting very soon. And so, if you say that
+if your internet connection is low, please join using Wi-Fi or 4G, right?
+Yup, yup, yes, yes, yes. So, will there be projects? Yes, there will be projects.
+So, what I will be doing is, what I will be doing is, right?
+I will be teaching you the concepts using the projects, okay?
+I will be teaching you the concepts using the projects.
+We will be building a project as we go ahead in this whole session, right?
+And I will be teaching you small nitty-gritty things and stuff along with that, right?
+So, along with that, right? I will cover things from interview perspective as well, right?
+There are few things I will tell you in between that, okay?
+That will help you in your interviews. I will tell you my basic philosophy, right?
+What I use when I teach, right? When I code.
+So, that is what you will learn as well, right?
+So, how this course work is, on Saturday, Sundays, 11 o'clock
+you will have to join these sessions and finish your assignments, right?
+That is what I can do.
+The assignments and all the class details will be available to the place where you joined from.
+Go to learn.tomstedev.com, login, go to the dashboard.
+You see the courses in that click on the courses and see the assignments and schedule, right?
+Don't worry about that, okay?
+And whosoever, okay, so that is the thing, right?
+Let us just now start, right?
+Our whole session, are you excited?
+Are you excited, right? We will be covering issues, right?
+We will be covering hooks and everything, right?
+Are you excited? Yes, let us just start.
+I think people are ready now.
+It's 15 minutes already in and let us just start with the first class, okay?
+So, let me just share my screen first of all, okay?
+And share my screen and here is my screen, right?
+So, come on.
+Hope are you able to see me as well as the screen, right?
+Are you able to see me on the screen?
+Yep, yep, yep, yep.
+So, I am, okay?
+So, I am doing that, right?
+So, write A, B, C, D, right?
+Use this thing, yep, yep.
+So, a lot of people over here, right?
+I just want to see the things, right?
+I mean, yep.
+So, let me just do that.
+Cool, this is really cool.
+A lot of people are from C, D, C, D.
+A lot of people are professionals.
+A lot of people are professionals who are joining in.
+Yep, yep, yep.
+Great to see the answers, right?
+I mean, so, see, this React course, people were asking me
+whom this React course is for, right?
+Who this React course is for.
+So, basically, this React course is for everybody,
+whether you are a student or whether you are a working professional,
+it is for everyone, right?
+And, you know?
+So, see, one more thing I wanted to tell you,
+if I am looking over here, so I am looking at your chat,
+if I am looking at here, I am looking at my screen.
+So, just a reference, okay?
+So, basically, a lot of students are new to React, right?
+So, this course is good for them as well, right?
+Basically, there are students who have worked on React.
+I will talk about what you have to do, right?
+What you have to do to do that.
+Let me see if I can slow down these messages.
+There could be an option.
+Don't worry about that, don't worry about that, right?
+You just have to listen to me. Don't worry about the chat.
+I can see it like properly.
+Don't worry about the chat, okay?
+So, what happens is, you know, see,
+one by one, I will cover it for everybody who is there,
+who falls in A, B, C, D, okay?
+I will cover everything. Listen to me very carefully.
+If you are participant number A, right?
+Students who are new to React, right?
+This is the place where you don't know a lot about
+what happens inside the industry, right?
+And what happens and then React is also new to you, right?
+There are difference between them, right?
+So, basically, students who are new to React,
+who have never done React, will have to focus a little more, okay?
+So, you need a little more attention, right?
+You need a little more attention when you are doing things, okay?
+So, I won't request you all that, okay,
+if you are a student and if you are new to React,
+then please pay a lot of attention to whatever I say,
+whatever I do, right?
+Students who have already worked on React might be familiar
+with a small topic, right?
+Some topics you would be familiar with,
+you would know exactly how to write small, small stuff
+and all that stuff.
+So, don't worry about it, right?
+So, don't worry about it.
+It's completely fine, right?
+And you would brush up your skills, whatever you have learned,
+and it will also fill up your gaps,
+which you have seen in the code, right?
+I mean, you would have seen the gaps in your knowledge
+that would be there, right?
+Sometimes you just write code,
+but we don't know how it works behind the scenes.
+We will be talking about that.
+It will be very good for you.
+Professionals who are new to React,
+there would be a lot of people who would be from Angular
+and coming into React, right?
+So, don't worry about that, right?
+So, what will happen is, right,
+people who are in Angular who are coming to React,
+it's great for them as well, right?
+You already know a lot of things about how you build the components,
+how do you design the system,
+how you architect things up,
+how do you build the project.
+So, it will be really nice for professionals
+who are new to React, right?
+And professionals who already have worked on React,
+sorry, the D is, right, worked on React, right?
+So, like, who have already worked on React,
+there are people who have joined
+who have already worked on React as well.
+So, for them, I would say that, okay,
+so you people are the best people to help each other, right?
+Be active in the community.
+And also, there will be a lot of things
+which I will tell you from my personal experience
+that I have learned working in the industry, okay?
+So, there are a lot of people, right?
+People are writing, we are D, D, D,
+we already have worked on React.
+Don't worry, there will be a lot of things
+that you will also learn.
+We will be going into nitty-gritty details, right?
+Nitty-gritty details of what is there.
+Just listen to me very carefully
+and hold on your horses, calm down, right?
+Everything will be sorted.
+I will teach right from zero
+and we will take you from zero to hero, right?
+We will build applications, okay?
+So, calm your horses down
+and just calm down
+and we will just, we are now starting up with things, right?
+So, let me just go to the desktop, right?
+And let me create a new folder.
+As I said that I will be starting right from zero, right?
+I told you that I will be starting right from zero,
+so I just want to start from a new folder itself.
+And we are starting with React now.
+Hope few people are excited, right?
+So, we have this untitled folder.
+Let me call this folder as Namaste React, okay?
+Sorry for my wallpaper, right?
+It's a little...
+So, I am calling this folder as Namaste React
+and I am opening this up in a VS code, right?
+I am opening this up in VS code, okay?
+So, I am starting from...
+I am starting from very basics, right?
+I have just created a new folder
+and I am opening it up in my VS code over here, right?
+So, people are asking,
+do we have to code along?
+So, you don't have to code along with me.
+Just keep on seeing, right?
+You don't have to code along with me.
+Just pay attention to whatever I am writing, right?
+You don't have to code along.
+Don't code along with me, okay?
+So, some people are saying that there is some issue with the lag.
+Don't worry, I am notifying my team, right?
+I am notifying my team.
+They will be looking into it, right?
+It should be better.
+Yup, so, we will start right from zero, okay?
+We will start right from zero.
+We have a new folder that I created, right?
+I have created a new folder, right?
+And we will be starting right from zero, okay?
+So, let us just see that, okay?
+It's better now, right?
+Yup, yup, it should be better slowly, right?
+Don't worry, right?
+Yup, yup, yup, yup.
+Thank you.
+Don't worry about the chat.
+Don't look at the chat.
+Just listen to me, okay?
+So, over here, right?
+Over here, over here, right?
+I have created a new folder.
+And I am creating a new index.js, index.html file, right?
+I am creating a index.html file, right?
+Here on, I will be writing code, right?
+I am just increasing the font so that it's more visible to you, right?
+Here I have index.html file.
+Now, I want to ask you a few questions, okay?
+So, do you know whether React is a library or a framework?
+Do you know whether React is a library or a framework?
+Yup, yup, everybody calls it as a library, right?
+So, what do you...
+So, let me tell you a difference between what is a library and what is a framework.
+What is the difference between a library and a framework, okay?
+So, basically, when I say something is a library, right?
+So, framework means that it's a full-fledged framework, right?
+When we build our app, right?
+When we build any website, so it needs a lot of things.
+It needs routing, right?
+You will need different routes, right?
+Where you can go on some pages
+and you can have different components inside your app, right?
+So, React comes as a small library.
+Have you... Okay, I'll tell you one more...
+I'll tell you one more example.
+Have you seen image carousels in the website, right?
+Those carousels, right? Have you seen?
+Tell me yes or no, right?
+Have you seen carousels where the image moves on the right, left and things like that?
+Yes, everybody have seen, right?
+There is owl carousel and a lot of things, right?
+So, you know, what is a carousel?
+It is a library or a framework?
+It is a library or a framework?
+It's a JavaScript library, isn't it?
+So, it's a JavaScript library
+because, you know, that carousel
+and a major difference between a library and a framework is
+that it takes minimum effort
+it takes minimum effort to just put it inside our code
+it just takes minimum effort for a library to put it inside our code, okay?
+Let us create a basic HTML structure, okay?
+So, what tools I am using, right?
+Let me also tell you, there are a lot of new developers out there, okay?
+Let me tell you what tools I am going to use, okay?
+Before we move ahead, first of all, I am using Google Chrome
+try to use Google Chrome, right?
+That will keep you things aligned to what I am showing you over here, right?
+The other thing which I am using is VS Code
+So, this VS Code is an editor, right?
+If you are not using VS Code, please use VS Code
+because VS Code gives you a lot of amazing things, right?
+A lot of amazing things
+So, please use VS Code
+Download it from the internet, right?
+VS Code, install, right?
+Whether you are from Mac or whether you are on Windows
+you will find it for every place
+Do that
+Along with that, let me also show you there is an extension section, okay?
+So, sometimes I just use my extension section, right?
+Let me show you what kind of extension do I use, okay?
+Some people otherwise will ask me, Akshay, what extensions are you using?
+So, let me tell you what extension I am using
+So, first extension is better comments
+I just use this better comments extension
+It just makes your comments look better, okay?
+There is one extension which is Bracket Pair Colorizer
+It basically colors your brackets
+So, it becomes very easy, right?
+So, don't worry about your questions
+Everything will be answered
+All the code, whatever I will do
+You will get all the code, you will get all the assignments
+Everything on your portal, okay?
+So, there is this better Bracket Pair Colorizer, right?
+There is this plugin known as React Redux, right?
+Don't worry about this
+You will get to know about this extension a little later, right?
+I will be using an extension Git Lens, right?
+I use Git Lens
+This is a very amazing extension for VS Code
+Which I use, it makes using Git very easy, okay?
+It makes using Git very easy
+The other thing is, I use Pretier, right?
+These are the important extensions which I am telling you, right?
+Pretier makes your code formatted, right?
+Makes your code formats it better, right?
+When you save the file, it just formats automatically, right?
+If I am just messing up playing around, if I am changing anything, right?
+And if I just save it, my code formats automatically
+This is what happens with Pretier
+So, configure this extension Pretier, right?
+And there are other, yes
+One more extension which I really like is VS Code Icons
+So, when you have this VS Code Icons
+Then, you know, these icons over here
+Changes to somewhat colorful, like
+I really like those colorful icons
+So, don't worry about that, right?
+So, I am using all these extensions
+So, these are the tools which I am using
+And along with that, I also use something known as Emit, right?
+There is something known as Emit that we use, right?
+So, what does Emit do?
+Note down the first homework for yourself, right?
+Note down the first homework for yourself
+Of the session, right?
+I will be giving you homework in a written format as well
+But if you are noting it down, just note it down
+Read about Emit, right?
+E-M-M-E-T, right?
+It is known as E-M-M-E-T
+That is used by VS Code to, right?
+I hope that, okay, people would know it
+Write it down, the spelling is E-M-M-E-T, right?
+So, when you use Emit, right?
+So, it just emits a lot of code for you automatically
+So, in my VS Code when I am writing HTML, right?
+So, it just gives me a boilerplate code of HTML, right?
+So, it's a plain basic HTML code
+It's a plain basic HTML code
+So, it is just for boilerplate
+So, I won't be using it much
+But I have just told you that it's good, right?
+It just gives you, you don't have to write all this stuff, right?
+So, let me change the title to give it to Namaste React
+Let me give a basic title about Namaste React over here
+Okay, and we have Namaste React
+And in my body, let us write our first Hello World program
+Okay, I'll increase my font a little more, right?
+So, that everyone can see, right?
+Let me create our first Hello World program in HTML
+I am just using plain HTML right now, okay?
+I am starting right from zero, okay?
+I will just start right from zero, okay?
+So, I am creating my first HTML tag
+And let me write Hello World, okay?
+Or let me write Namaste everyone
+Namaste everyone
+And I am saving it up, right?
+Now, let me just open this file inside my browser, okay?
+Let me just open this file inside my browser
+Okay, so let me go to the folder
+Let me go to index.html
+And I have opened it up inside my browser, okay?
+Where is my browser?
+Let me just get it up, okay?
+So, here is my browser
+So, we have this file inside our browser, okay?
+We have our file inside our browser
+Cool, so this is the basic HTML
+Basic HTML file, right?
+Let me just increase the font so that you all can see
+the console as well as my browser, okay?
+And here is my size also, okay?
+I have increased the size
+So, now what I want to say is that this is the basic
+basic HTML program that you can write, right?
+And this is the HTML code which is very...
+Everybody would be familiar of this
+Are you familiar with all of this, right?
+Right, yes, right, right, yes
+So, how did I run it, right?
+I just went to my browser and just opened it
+Open the file itself, right?
+The HTML file in my browser, right?
+That's all I did, nothing else, right?
+And this is my VS code
+Cool, now we are about to start the awesome stuff, okay?
+The awesome stuff is about to begin
+Now, let me tell you that suppose, suppose, suppose
+Before moving on to React, I want to come from basics, right?
+Come from the basics
+So, suppose if I have to do the same thing, right?
+If I have to print this namaste everyone, right?
+This H1 tag using, right?
+Using JavaScript, okay?
+Suppose if my body has a div which is known as
+Div which has an id equals to root, okay?
+Let me make a div, suppose...
+And everything happens inside my root, right?
+Inside my root div, right?
+So, this is how we write inside my HTML and CSS
+Now, suppose if I have to do the same thing with JavaScript
+How can I do, right?
+How can I do, right?
+Yes, a lot of people are saying DOM manipulation
+Yep, great, great, great
+You can do it using DOM manipulation
+Let us see how do we do this in using
+JavaScript, right?
+React JavaScript
+So, we can write JavaScript in our JavaScript tags, right?
+I am starting right from basics, right?
+I am starting right from basics
+So, I can write some JavaScript to do the same thing
+Suppose this H1 was not there, right?
+Now, how do you create this H1 tag inside my root?
+What do you use?
+You would obviously know, right?
+If you have written JavaScript, document.createElement
+Isn't it?
+Do you know about it?
+CreateElement
+And then we write H1 over here
+This is how we create a H1 tag using JavaScript, okay?
+This is how we create a H1 tag using JavaScript
+And let's give it const heading, right?
+We have created a heading which is H1 tag
+Now, what I will do is
+In this heading, I will do heading.innerHTML, right?
+InnerHTML
+And I will just give it some name, right?
+Let me give it namaste everyone
+From JavaScript, okay?
+From JavaScript
+Namaste
+From JavaScript
+Okay, so
+Now, this is how I create my H1 tag
+How do I put this inside root?
+Can anybody tell me how do I put this inside root?
+Yup, yup
+Everybody is right, right?
+People over here append child, right?
+So, let us just append child
+So, what I will do in JavaScript
+I can pick up this root element
+And I can append the child inside it, right?
+So, how do I do that?
+Let me just quickly show it to you
+Document.getElementByIdRoot, right?
+GetElementById
+And let me give it root
+So, here I got my root, isn't it?
+And now, I will have my
+ConstantRoot is equals to
+Document.getElementByIdRoot
+Now, what I will do is
+root.appendChild
+AppendChild
+Right? AppendChild
+And I will write heading inside it
+Right? I will write
+Heading inside it
+So, if I write this heading inside it
+So, what do you see on the
+Do you think that this code will work?
+Do you think that this code will work?
+Yes or no? Yes or no?
+Yup
+So, let us just go to the browser
+Yes, everybody is correct
+If I refresh the page, this code
+Works perfectly fine
+Isn't it? So, this code
+Works perfectly fine
+So, we have this printed
+And now we are not using
+It from this
+H1 tag over here, right?
+But we are using it using JavaScript
+Now, my dear friends
+This is what everybody would know
+And now people would be thinking that
+Right?
+Now people would be thinking that
+Right? Why Akshay?
+Why are you teaching a JavaScript? We all know all that stuff
+Because
+I just wanted to tell you that
+How we can do the same thing
+Using React
+I want to tell you that
+How used to be used to do using normal HTML
+Right? Now, how do we
+Use to do in JavaScript
+And now I will show you how we can do the same
+Stuff using React
+This is the cool stuff I want
+To show you, right? This is the cool
+Stuff I want to show you, that is why I am teaching you
+Right from the basics
+As the name suggests, right?
+We are a zero to hero program
+As the name suggests
+We will be going from zero
+And I am starting right from zero
+Where I am showing you how to do it in JavaScript
+Now we will see how we can do the same thing
+Using React
+But before that, let me go to elements
+And see what happened in our elements
+Inside my root, I got this H1 tag
+And this H1
+This H1 came from
+My root dot append child
+Right? This H1 came from
+Root dot append child
+Okay
+Now, let's go back
+Right? And now
+Let me tell you that
+How we can do the same stuff using
+React
+So now, let's come back to the same thing
+And remember
+That I told you that React is a library
+Right? I told you that
+React is a library
+If I go over here
+And if I see this
+React.js
+I am opening the documentation of React
+Okay? So it says that
+It is a JavaScript library
+And when it is a library
+It is just like any other library
+And you can
+Inject this React into your code
+By using bare minimum things
+Right?
+One more thing I wanted to tell you
+Right? One more thing
+I wanted to tell you is that
+One question
+Let me go back to JavaScript
+Can you tell me that how does browser run
+This code? How does browser get to know
+That what is this document
+What is this create element
+How does browser get to know
+How does browser get to know
+Right? Yep
+You are absolutely right
+That comes from browser APIs
+Browser knows what is document
+Right? Browser has a JS engine
+It knows basically what is happening
+Inside your browser
+Browser knows about a window
+Right? You told about the window
+There is something known as window
+Right? Window.
+If we do a window document
+This is where it is coming from
+Right? And who gives us this
+Who gives us this
+Functionality
+Who gives us
+JS engine, right?
+So everybody who has seen
+Namaste JavaScript would know this thing already
+Right?
+Similarly, you know
+Let us try to see now
+How we can do things and react
+So react is a JavaScript library
+And we can just inject react
+Into our code with bare minimum things
+Right?
+So now
+Do you know what is a CDN
+So let's talk about react CDN
+To inject react into our code now
+We are getting into react now
+Get excited and listen to me very carefully
+So CDN
+Another homework note down this homework
+What is a CDN
+A lot of people won't know what is CDN
+But let me tell you this are the content
+Delivery networks, right?
+These are content delivery networks
+Read more about CDN
+I don't want to go in deep about
+How you can use CDN
+So I will copy this react from CDN links
+And I will try to inject this
+Right? Over here
+In our code
+How do you do that? You just put it
+Over here
+Now I have injected
+Two
+Two scripts from CDN
+Yup, you all are right content delivery network
+So now
+We can inject
+This from the CDN
+Right?
+If you don't know CDN just please google it
+Right? Now
+What are we injecting this? What are these files?
+You know
+These are and you know
+Okay, if I have to ask you one more question
+Okay out of curiosity
+Let me ask you one more question
+So one more question is that
+What do you think
+Right? What do you think will be inside
+This JavaScript files
+These are inside these JavaScript files
+What do you think will be there inside JavaScript files?
+Code, right?
+Let me tell you that
+People, you know, get panic a lot
+People panic a lot when they hear about
+We want to learn react, what is react
+And everything, right?
+This is basically simple code
+Not simple code, obviously
+It is a very much intense heavy code
+But at the end of the day
+It is JavaScript
+You don't have to panic about
+What is react and what is going on inside react
+Basically
+It is at the end of the JavaScript
+And this is the JavaScript which someone else
+Wrote for us
+This is the JavaScript which Facebook engineer
+Wrote for us
+And they have given us these superpowers
+Right? Just like in JavaScript
+That window object, right?
+That superpower we get
+Similarly, these is the superpower which
+Facebook developers
+Gave us, right?
+It is very similar to jQuery
+So any other library
+Suppose if you have to inject your
+You know
+If you have to inject
+What you will say
+A carousel into your app
+What do you do? You just pick it up from cdn
+And import it, inject it inside your code
+And this is how you inject these script tags
+Okay
+This is how you inject these script tags
+Yup
+So I am just coming
+So I think there is a lot of things
+Which are going on in chat, right?
+So, okay
+So, I have
+I have raised this concern about the
+I have raised this concern about the quality
+Quality to my team, right?
+So I have raised this concern about the quality
+To my team, everybody who is seeing the video
+A little unclear, right? I have raised this
+Right?
+We are looking into it, right? Don't
+Don't worry about it, right?
+Now, a lot of people might get
+You know, and I want you to be
+Very curious about every small thing
+That I write, right? So there would be
+And who would ask me that what is cross-origin?
+Take that down as a homework
+We will discuss it in the next session
+Take this down in a homework
+As a homework, what is cross-origin?
+You have to find it yourself
+Okay, and we will discuss it
+In the next class assignment as well
+Right? So what is cross-origin?
+But assume that this has something
+To do with different origin, right?
+Because it's not on the same
+URL, right? That you are using
+Right?
+So don't worry, right? I know that
+Video is a little
+Unclear for a lot of things
+A lot of people, right?
+We are trying to, like, I mean
+I have told my team, right? They will be
+They are working on fixing it, right?
+It can mostly happen
+Because of your internet connection as well
+I have a learner dashboard with me
+It's looking good inside it
+But I am on a very stable connection
+So
+It is clear for
+Like, people can you write
+If you are able to see it properly
+Right? Okay, clear, clear
+Okay, clear, clear
+Yep, it's clear for
+Some people it's not so clear
+For a little bit of people
+Please try to use a better internet
+It should be very good, right?
+For you, right?
+Please, and you know, like
+Please, right? I mean
+Yep, yep, okay
+Okay, so please try to
+See, right?
+What internet connection are you on?
+Right? Okay, okay
+Cool, so basically, let me
+Let me not get
+Distracted, right? It's very distracting
+Because, right?
+So let me not get distracted
+Okay, let's go back
+So basically, if we have a library
+And you know, trust me, this is just happening
+In first session, it will be better
+As we go ahead, right? In the next sessions
+So because everything is
+New for me as well, right? It's new for me
+As well, okay
+Yep, we will see if
+Things doesn't work like if this is not going
+Great, we can use something else
+Or we will try to improve it, okay
+Don't worry, so
+But try to see if
+You can have help some
+Like if you can get a better internet
+In that case, right?
+Okay, cool, so
+When I say it's a library, we can
+Just inject it something like this
+Right? Just like a carousel or something
+And we can just start using React
+Right?
+Okay, so one question which I wanted
+To ask everyone is that, okay
+What is the shortest program of JavaScript?
+What is the shortest program of JavaScript?
+What is the shortest
+Program? An empty file, right?
+A lot of people said it's empty
+File, which is the shortest program of JavaScript
+Right? So let me tell you
+What is the shortest program of
+React is? This is the shortest program of React
+This
+Is the shortest program of React
+We have kind of
+We have just injected React into
+Your code. This is the shortest program of React
+And to be very honest
+Now you would say how this is not
+The shortest program of React
+How are you saying that this is the shortest program of React
+Let me tell you
+Right? Let me tell you
+Okay, because
+Once you injected React into your code
+Right? Once you injected React into your code
+Now if I go back
+To my website
+Right? And if I refresh my page
+If I refresh my page
+Then
+Then you know, we get something
+Like React over here
+Who gave this thing to us?
+How did this come up?
+Earlier it was not there
+It was not there earlier
+We got something like React
+Right?
+This is the code
+Which that CDN file gave it to us
+And this is what
+I wanted to show you
+From the basics
+This is the library that we injected into our code
+It's not a full-fledged framework
+That requires your node modules
+And everything inside it
+React is very simple
+React is just like another library
+React is just like
+A normal JavaScript file
+And this code is written by
+Some Facebook developers
+If you saw that code
+This code is written by some Facebook developers
+And
+We have just got our code into our app
+And now we get access to this React
+And
+Whatever we do happens using React now
+In our code
+Whatever we do happens inside
+React using React
+And we get access to a lot of utility functions also
+There is something known as
+React dot create element
+Create context
+And all these things came up
+By just writing two lines of code in our app
+We just injected
+This is always React
+Now you will say that
+Akshay
+You would be kidding
+You need to go to create react app
+Why didn't you build the create react app
+We need to do NPM install
+We need to do NPM
+NPM install
+No, don't have to do anything
+It is just
+We just have to inject this
+Using this and it comes up
+Don't have to do it
+Now people ask me that Akshay
+Is this React a global object
+Yes, it's kind of global
+You can use now React dot anything
+Anywhere in your code
+This is what the beauty of
+JavaScript library is
+And I wanted to start with basics of it
+Basics of it
+Since I am teaching you
+And what I wanted to tell you is that
+Ever
+You feel that you panic
+Don't never panic
+React is nothing but a piece of JavaScript code
+It's that easy
+It is that easy
+React is just a piece of JavaScript code
+And React library
+When we inject this JavaScript code
+Into our app
+Now there is one more script
+We added
+And
+With this script, what are we getting from this script
+What are we getting from this script
+This script
+Gives us access to something
+Known as
+React DOM
+We get access to something known as React DOM
+And the cool thing is
+Just see this
+I was very fascinated when I saw this first time
+There is something known as secret
+Internals or you will be fired
+There is this amazing thing
+Internals do not use otherwise you will be fired
+I don't know why
+React people
+Just came up with this
+Crazy idea
+And I did not write it
+I really did not write anything
+I just imported my React library
+Into my code
+React and React DOM
+And it's like secret internals
+You will be fired
+Facebook developers would have written it
+For some reason
+That's what I wanted to do
+In this whole session
+I just don't want to dive deep
+Into React
+I want to show you
+Even basic stuff
+The whole motivation
+Of this session is to get you familiar
+With React and remove
+A panic situation for you
+A lot of people are not able
+To study React just because they feel
+That it's very complicated
+Because a lot of tutorials
+Everything is being recorded
+Everything is getting removed
+A lot of people feel scared
+When they see React
+You don't have to seem scared
+It is nothing at the end of the day
+This is just some piece of JavaScript code
+Which Facebook developers wrote it
+And gave it to us
+We can inject it to our code
+Using CDN links
+And this is the first React program
+That we have written
+That simple
+That easy
+Don't worry about it
+Everything I will teach you
+From basics about React
+And how it was developed
+Now the question comes to us
+A lot of people might ask that question
+Why there are two files
+Inside React and Reactdom
+Why there are two files
+Why there are two files
+Inside React and Reactdom
+A lot of people might ask that question
+And that's a valid question
+Let me tell you the answer to that
+When React was developed
+There is something known as React Native
+Yes in the chart if you know
+There is something known as React Native also
+There is something known as React 3D also
+So React
+Is not just limited to browsers
+React also
+Works on mobile devices
+React also works on rendering engines
+There are so many things where React has come up
+That is the reason
+These two script files
+One file is
+React at the rate 18
+That means that React at the rate 18
+Means 18th version
+The latest version of React
+I have injected the latest version of React
+In the whole course we will just be
+Seeing the latest version
+We will be studying the latest version of React
+And
+This is the development file
+And there is something known as Reactdom
+So DOM means
+The web version of React
+We have injected the web version
+Of React to us
+Assume that
+This first thing is the core library
+Of React
+And this is the library
+Which gives you
+Access to
+The document object model
+The DOM
+Suppose if I want to write some React code
+Which goes into the browser
+So
+Right
+So
+That is why
+Now let's move a little further
+And let's see how we can do stuff
+So now we have React
+And all the React superpowers with us
+All the React superpowers with us
+So let me give you a quick recap
+So
+We just injected two files
+In our code
+And React came into us
+Now we got access to something known as React
+To React DOM
+Now we basically got
+If all the superpowers of React over here
+We got all the
+Superpowers of React with us
+Right
+Now
+We got this
+Let's start using these React things
+Let's build our first Hello World program
+Are you excited
+Are you excited
+Write us
+Let us just see how we can build that first
+Hello World program
+So what we have to do is
+Now let us just try to
+Do whatever we did in JS
+I showed you that how we did things inside
+JavaScript
+Now let us just see how we can do the same things
+Using React
+Because now we have React with us
+We have all the superpowers of React with us
+Right
+We have all the superpowers of React with us
+Right
+So
+Let us just form an H1 tag
+Right
+So how do we write in JavaScript
+We wrote something like document.createElement
+And then H1
+That created a H1 tag for us
+Right
+So don't worry
+We are not using JSX as of now
+You know that is the problem
+A lot of people have already
+When they start learning React
+So all the instructors just obfuscate them
+With a lot of stuff
+I just want to go with
+Very small detail
+The name of the course is
+Zero to hero program
+So zero to hero means
+I will start from zero
+No fancy stuff
+No JSX right now
+We will study everything
+We will go on building large scale big applications also
+We will just go on building
+But I want to go slow
+I want to go slow because these things are important
+And nobody
+A lot of people won't tell you these small things
+A lot of people won't tell you these small things
+So
+Now let us just try to build an
+H1 tag using pure React
+I am using pure React
+No JSX nothing
+Just pure React
+So how do you create a heading
+Just like the last time we wrote something like
+Document.createElement and H1
+No I won't be doing that
+How do I do that
+React.createElement
+Right
+React gives us
+This API which is known as
+React.createElement
+Now in this React.createElement
+We pass in
+Three arguments to it
+Three arguments right
+So this React.createElement takes
+Three arguments first of all
+The tag that what we are going to
+Create so that is
+H1 right
+I am just keeping it as an empty object
+I will tell you
+What these things are
+And the third thing
+Is what you need to
+Put inside this H1 tag
+What you need to
+Put inside this H1 tag
+And let me tell you
+Namaste everyone
+Namaste everyone
+Right
+I just wrote namaste everyone
+Over here
+So basically this is how
+I create a heading
+Right and
+Now I need to put this
+Heading into my root
+Into my root
+Now how can I do this inside
+React that is what we are going to
+See now
+How we can do this inside a React
+Just hold down
+I will explain you each and every word
+You won't get doubts
+You won't have doubts when I explain you each and every word
+That I write
+So this React you know where it is coming from
+And this create element
+Is also coming from react.createElement
+When we injected React
+We got access to something known as react.createElement
+When I explain you every word
+That I write
+Then I don't think that you will face an issue
+With the doubts
+I will cover small and nitty gritty details
+So now we created one H1 tag
+Assume that this creates an H1 tag
+Now I want to put this H1 tag inside my root
+Let me just tell you
+How I do that
+So first of all
+I will do something known as root
+Remember we did document.getElement
+By id root
+So now
+In react I have to
+Assign root to something
+So suppose
+If I have a div root
+Let me explain you once again
+I have this div root
+Now I want to run
+React code inside this root
+I want to modify this
+So I will create this div id root
+As my root
+How do I tell react that this is the root
+So basically we have to
+Tell react that this is the root
+Element
+This is the place I want my react to run
+How will you tell react
+So react gives you an API
+And now just check it once
+I am writing react DOM now
+Why am I writing react DOM
+Any guesses
+So now I will
+I am writing react DOM over here
+I am writing react DOM
+Because now I am going to modify my DOM
+I am reading something from DOM
+This heading
+This H1 tag
+This comes from React
+The core library
+Whether you go into
+Building react native
+Or something
+This will always be there
+The core of react
+What changes is how you
+Modify data on to the DOM
+That is when this second library comes into picture
+Which is react DOM
+This is the second library
+So I will write something known as react DOM
+Create root
+So this is the way
+Now when I write create root
+This tells react that what is the root
+Element inside my app
+So what is the root element
+It is a div root
+So this div root ID
+Is the root element of our app
+How do I tell react is create root
+react DOM.create root
+It's a very easy API
+You can easily remember it
+And now I will tell react
+That this is my root
+How do I give it
+I will give it something like document
+.getElementById
+root
+Now see this very carefully
+Whatever I am writing
+See this very carefully
+See this very carefully
+What I did is
+Let me explain you once again
+I am going very slow
+This is react DOM
+Where is this coming from
+Because we injected our react DOM
+Inside our code
+This file
+And there is something known as create root
+This tells react that
+This is something that we are going to do
+Inside DOM
+And this create root takes in
+The element
+This is a normal html
+This is the html root
+Where I want to run this react code
+Where I want to run this react code
+That is what I see in overhead
+So create root
+And then this document.getElementById
+root
+Now
+Now
+I have got my root
+And I have got my heading
+Now what I want to do is
+I want to put this heading inside my root
+How do I do that
+Any guesses
+People who are already familiar with react with already know
+I will take a break
+Don't worry
+I am into
+Let me finish a concept then I will take a break
+Don't worry
+Now what I will do is
+I want to put my heading inside my root
+So how do I do is
+root.render
+root.render
+And what I will put inside it
+Can you guess
+The best thing I like about react
+Is its API
+It's very easy and very intuitive
+The reason why react is so popular
+Is because its API is very easy
+Very easy APIs
+Everything that you write makes sense
+You exactly know when you are doing react.createElement
+That means you are creating an element
+You are creating a
+In react we call these tags as
+Elements
+So H1 is an element in react
+So this is react
+Now when we do root.render
+And I will put my heading inside it
+Now what will happen
+Now this will just three lines of code
+And if I go to my browser
+Let me just refresh my page
+And we saw namaste everyone
+Isn't it nice
+Exactly did
+What we were doing
+Inside our JavaScript
+Using react
+Right
+So basically you built your whole
+Hello World app using react
+And you don't have to learn
+JSX, you don't have to use a create react app
+You don't have to use
+Random stuff, you don't have to use
+So many things right
+I just wanted to start with
+The basics of it
+Basics, basics, basics
+Let's get to basics
+A lot of people don't understand react
+Just because they don't see it
+They just start learning advanced stuff
+I want to start from zero
+And take you to a place
+You will be writing big apps
+And we are slowly building it up
+At least we have got our heading
+Right
+Amazing thing
+Now and I wanted to
+Explain you in a way that
+How do we do
+Inside our plain HTML
+How do we do inside JavaScript
+And then how do we do inside
+React right
+I could have done the same thing
+Using my H1 tag over here
+I can done that
+But no I don't want to do that
+I want to use JavaScript
+Then we saw how we can do document.create element
+The superpower that browser
+Gives you
+Now we did the same thing using react
+So that's how I want to
+And I want to go very slow
+Very basics, don't worry
+I will explain you the meaning of each and every word
+And if you miss anything
+Just go back and watch this recording once again
+You would clearly understand what is going on
+Don't worry about it
+Then
+What makes it complex
+A great question asked by
+Rishab
+What makes it complex
+Why is react so complex
+Without react when it is so easy
+You know why
+It is very hard
+Because people don't learn it in a proper way
+That is what my Namaste React course
+Is supposed to do
+To teach you right from the basics
+A lot of people, let me tell you my experience
+From the industry
+A lot of developers
+Just join the company and start using react
+And they don't even know that
+React can exist without TypeScript
+Or React can exist without JSX
+Or react can exist without Redux
+Some people think that
+React and Redux and JSX
+TypeScript everything is mixed
+No
+No
+Some people are asking what is DOM
+I would say that go read it up
+I don't want to cover very small things
+So DOM basically means
+Document Object Model
+This is basically your DOM is here
+Okay, so let me tell you once again
+Let me recap, when you wrote react.createElement
+It created a H1 tag
+Now I want to ask you one more question
+Amazing question I want to ask
+Just tell me an amazing answer
+What will I see
+If I do a console log of
+Heading right now here
+Tell me what will I see over here
+Quickly
+Some people say H1 tag
+Some people say H1 tag
+Some people say object
+Interesting question
+What is there
+What is there
+What is this react.createElement
+So when we see
+Now let me go back
+And I am excited to show you the console
+So a react
+Element and let me refresh my page
+Don't worry about this warning
+Don't worry about this warning
+So
+It is basically a
+React element is nothing but an object
+Isn't it amazing
+At the end of the day
+It feels that okay
+It's not JSX
+This is a plain JavaScript object
+This is a plain JavaScript object
+And
+Of type H1
+Now a lot of people ask me that
+How does react store these
+H1 elements
+So basically react behind the scenes
+The code that you saw
+The Facebook code that is injected
+This code is basically
+Taking
+Is basically taking these arguments
+Right
+These arguments and making an object
+Out of it
+Right
+Is making an object out of it
+See I won't be going into very deep
+Of why they did this
+Why they write dollar dollar type of
+Why did it happen what is inside owner store
+I want that okay
+I want to cover things which are really important
+Now if I start going into details
+About what is this store
+What is validated false
+Then it will like our course will never end
+Okay so sorry for that
+I want to teach you these stuff
+Which is really required
+That's why I'm teaching you okay
+And please be patient
+We will talk about everything
+We will talk about why we are writing curly braces and everything
+Don't worry
+Now create element
+And this thing
+This thing is taken by this code
+And now they are spitting out an object
+At the end of the day if somebody asks you
+What is a react element
+What would you answer quickly tell me
+What is a react element at the end of the day
+It's an object
+And when you do this
+When you do react root dot render
+And pass in a react element
+Right
+What you are doing over here is
+Passing
+Passing a react
+Element
+Inside
+So when you pass in a
+React element inside this render method
+Right
+When you pass in this render method
+So basically this render method
+Takes in a react element
+And modifies our DOM
+And when I say DOM
+It just injects it into a DOM
+Now let us see what happened
+Now see we got this H1 over here
+How did this H1 came in
+React DOM library
+That render function
+Put this up
+Sorry
+Right
+Now some people are asking
+Can I do an inner HTML now
+Yes you can
+Everything of JavaScript will also work now
+Over here if you just do an inner HTML
+And change the heading it will change
+It will change right
+Don't worry about it
+So that's how we basically
+Put some stuff into our DOM using react
+Right
+Let me take a break for 2 minutes
+And then we will just
+Come back right
+Meanwhile I will explain you once again
+I will explain you once again whatever we did
+Okay
+Let me explain you once again
+What we did from the starting
+From the starting
+Okay
+And don't worry you will have recordings
+You can go back and take
+Don't worry I know
+I am new to a lot of people
+I am drinking water man
+Like I am not drinking anything else
+So let me tell you once again
+So react is a library
+And you don't have to complicate
+A lot of stuff right
+You just need to inject
+Right react using
+Normal script tags
+You do a script src
+And you get react into our code
+That is the bare minimum setup
+That you have to do
+That is repeating stuff
+People who want to take a break
+Who understood the concepts can come back after 2 minutes
+Right
+Because there are people who have doubts also
+So it just comes into our code
+Now what happens is
+We get access to something known as react
+This is kind of like a global variable
+And now this react has something known as create element
+This create element
+Is responsible for building our h1 tag
+How does react store it
+When we console log and saw that
+At the end of the day a react element
+Is nothing but a normal object
+This is the normal object
+And now we have something
+Known as react DOM which is responsible
+For all the DOM operations
+When we say DOM
+It is the normal DOM
+This is the document object model
+It is html
+But how browsers conceive it as
+Is a DOM
+So we do a react DOM
+That create root
+Tells that
+Whatever you pass in inside it
+Becomes the root
+Becomes the root of it
+Becomes the root of the app
+Right
+This is the root
+It tells the react that this is the root
+And everything I do inside
+Whatever I want to render
+Our heading will render inside my root
+So everything that
+Whatever we pass in inside here
+Will go inside this root
+And we saw that
+Our root
+This h1 came inside the root
+Right
+Why do we need to create root
+So basically react needs to know
+Where you want to put in stuff
+React will need to know
+Where you put this stuff
+Some people are asking
+Can we have multiple roots
+That is an amazing point
+That is an amazing point
+Right
+In our app
+You will just see one root
+You will always have almost every time
+You will have one root in your app
+That is a single place
+Where you are injecting react to
+We are injecting react inside the app
+Right
+All applications
+Whether how big it is most of the time
+Will only have one root
+And one render method
+This is the stuff that you do once
+In your app
+And this is the place
+And everything we will build
+Will be built inside this
+Don't worry about it
+Everything we will build
+Will be built inside this
+Cool
+Now let us just see one more thing
+I wanted to show you
+One more thing
+Don't go to advanced stuff
+We will talk about all the advanced stuff later on
+Portals and everything
+Don't worry about that
+Okay
+Now
+Now some people are asking
+That okay
+We have this root
+What if there was something on top of it
+Suppose if we made root
+See, I will tell you the best part
+About react and why it is a library
+See
+When you build a whole
+Website
+When you build a whole website
+When you build a whole website
+Using html css javascript
+It gets huge
+Suppose if we have
+A div which has
+Which has id equal to
+Header
+I will tell you important stuff
+Header
+And this header has header inside it
+Suppose this header had h1 tag
+And let us call it as
+Header
+Writing basic stuff
+And then suppose we had root
+This is the body of it
+And we had footer
+And this is our footer
+Now what I want to show you
+Is that
+Let me refresh the page
+We can have a header footer
+And react can run just inside this root
+What is root
+See
+I am telling you that root
+Is the place where react runs
+We can even
+Segregate our code
+We can just tell react that only
+This is the root of our app
+Whatever we want to render
+We just want to render inside this root
+And there can be a header
+There can be a footer
+There can be any number of html
+That is the beauty of react
+You can add react to your existing projects also
+Suppose if
+Suppose if you have a big project
+And you want to just use react in your search bar
+You can do that
+Just make
+Search bar as the root
+You can just use react in your footer
+Just make
+Just make this root as the footer
+You can just use react inside it
+You can just change an id here footer
+And you can just use react
+Inside your footer as well
+Right
+And we generally
+Have just one rule inside our
+Code
+Right
+We generally have one root
+But
+I am just telling you
+To show you an example
+Most of the times
+When we are building a react app
+We just build it like this
+This is the only code that we write
+Right
+In our index.html file
+And everything happens
+Everything that we do inside our code
+Happens inside our root
+Everything that we do
+Happens inside our root
+Here using react
+React renders everything
+We don't write on the top
+I am just telling you
+When I tell you that we can have header and footer
+And we can have body
+We don't do that
+That's how the apps are built
+See there can be
+Very minute details
+About what you can do here and there
+And all that stuff
+Go much deeper into it
+But this is the bare minimum information
+Let's just move ahead
+Otherwise this session won't
+I am telling you
+People honestly that I can teach you
+React for an year
+And I can just teach you very small
+Small things
+I just want to teach you
+Major stuff
+I don't want to waste a lot of time
+And a lot of experienced people
+Would already know a lot of things
+So let's do that
+Let us just go to the next question
+Akshay
+What is this empty ring
+Why? I understood that this is a H1
+Tag
+What is this?
+What is this?
+What is this here?
+And you know
+A lot of people would be asking me
+That okay
+A lot of people are asking me that okay Akshay
+We have very small doubts
+See no teacher can
+Answer all your very small doubts
+No teacher can answer
+I am trying to cover every word I write
+So don't worry
+Whatever you should be able to do
+If you have small doubts
+Go Google it
+We as developers Google it
+There can be a lot of things
+There is a reason why
+In React
+Before React 18
+There was a different way of doing that stuff
+Now a lot of people might feel that
+Okay
+Why are you writing this render
+There was a different way
+If you see older React apps
+There is a different way of rendering this
+But I am teaching you the latest version of it
+What is cross origin is a homework for you
+Go search it out
+And see it
+What is this?
+The next topic is what is this?
+What is this object here?
+I will also tell you one more thing
+You are having very small doubts
+So how will I find
+Suppose if I am a developer
+I don't know what should be there
+So how will I find
+That what can I write here over here
+As a developer I am just asking
+As a developer
+How should I go and find out
+How should I go and find out
+Yup
+You are absolutely right
+We can go to React, docs and just
+Google it
+Suppose see I can't explain you
+Every small thing
+But you as a developer
+I want your efforts also here
+That go find out these small things
+Be curious about every word you write
+So go search for it
+Write create element
+Create element
+Inside react
+Create element
+React
+You will go to react docs
+You will go to react docs
+Here is the react docs
+See this is the area
+Is it tough?
+It's not tough
+Go read react documentation
+There are a lot of things that you can do
+Inside this create element
+Create element itself
+I can teach you
+At a limit
+I can't just teach
+A lot of things
+I will just teach you basic stuff
+But whenever you get stuck
+Into anything related to create element
+Just go to the documentation
+Best place to refer
+Best place to refer
+So
+Here we pass in these props
+Here you can find out what we can pass in here
+Let's go back
+To our code
+This is used
+This object is used
+To pass in
+I will tell you what
+Suppose if we have a h1 tag here
+So h1 tag
+And we write
+Hello world
+Hello world
+So we give some things over here also
+ID is equals to
+ID is equals to suppose title
+So how do we do this inside
+React
+So this is the place
+That we give
+This object is for
+This object is to give these parameters
+Hope you would have got it now
+So I will do something like
+ID
+Title
+So whatever I pass in over here
+Whatever I pass in over here
+Goes into my h1 tag
+Like this
+Whatever I pass in over here
+I am just repeating it once again
+Goes over here
+So
+Let me go back and let me see
+My DOM
+The page
+Body
+Root
+And we see
+We got this ID over here
+Where is this ID coming from
+So all our tag
+Attributes
+Come from this object
+All our tag attributes
+Come from this object
+And let me tell you an interesting stuff also
+We did a console log of heading
+Let me see that how does
+Object changes
+How does the object changes
+So if I refresh this is a React element
+This React element
+Will now get props
+There is something known as props
+You will get to know as we go ahead
+So in this props
+We got this ID as title
+We got this ID as title
+Amazing stuff
+So we can pass in something like this
+So this is how we do things inside
+React
+Now there could be a question
+Now there can be a question
+When we do root.render
+Now listen to me very carefully
+People like
+I know there can be very impromptu
+Doubts which you can get
+So very impromptu doubt
+What is small things
+We can't take all that doubts
+We can't take that
+Otherwise I won't be able to finish whatever I am teaching
+Note down your doubts
+In your notebook
+Keep it with you
+Most of the doubts will be answered
+As I go ahead in the session itself
+You are asking
+A lot of people are just asking the doubts
+Which I am just telling the answers for
+Please don't do that
+Let me focus on teaching
+So
+Which we got
+Which is coming from these attributes
+Now I will tell you
+In HTML
+Whatever you
+One more interesting thing which I wanted to
+Now listen to me very carefully
+New thing
+So wherever we pass in inside this render function
+Suppose this heading
+This gets injected inside our root
+This gets injected inside our root
+And suppose if I had
+Already some stuff over here
+Suppose if I had
+A lot of h1 tags over here
+Suppose if my root
+Add a lot of h1 tags inside it
+But what I am doing inside my react is
+I am just rendering my heading
+So what do you think you will see inside
+Our code
+Will this be replaced
+Or will it come below this
+Below below
+A lot of people are saying below
+But let me tell you my friends
+This is the interesting stuff
+That react will override everything
+React will override
+What is there inside your root
+I am just refreshing my page
+Just refreshing my page
+React will override whatever is there
+Existing inside your root
+And react will replace it
+With whatever you give inside render
+A lot of people are asking
+To give inside render
+A lot of things
+Interviews also this question is asked
+So note it down as a question
+That's why
+We call it as react root
+And how react is doing that is
+We are making this root
+We are giving this root as a
+We are passing this inside create root
+And we are telling react DOM
+That this is the root
+Whatever we want to do
+We want to do inside this
+How it happens
+A general practice
+In our world
+We kind of sometimes
+Not rendered here
+And just keep it like this
+We just write not rendered
+And keep it like this
+Any time in your app
+Any time in your app
+If you see not rendered
+That means
+If you see in the page not rendered
+That means there is some
+Issue
+This is a smart thing that people do
+There is some error
+Or react is not there
+Or your root is not configured properly
+Sometimes this root is not configured properly
+So you will see not rendered
+That means react is not able to
+Modify stuff inside root
+So this is what happens
+And
+I'll tell you
+Suppose if I mess up with my name
+Suppose if I gave it as root 1
+Now if I refresh my page
+If I save it here
+So go back
+And if I refresh my page
+It says not rendered
+It says not rendered here
+So now
+If I am doing everything
+Correctly
+If my root is proper
+If I have my root as proper
+Then what will happen
+Is if I refresh the page
+It will refresh
+And one more cool thing I'll show you
+Now ready for the cool stuff
+If I refresh my page very fast
+Do you see not rendered
+It comes for milliseconds
+Do you see not rendered quickly
+For milliseconds
+Why is this thing happening
+This is cool stuff happening inside my browser
+So this cool stuff happens
+Because
+Whenever I am reloading my page
+It takes some time
+For react to
+Get installed into our page
+It takes some time
+I'll tell you what happens
+I'll tell you from the basics
+What this code is doing
+I just love to go
+And tell you every small detail
+I'll tell you every small detail
+About it
+What happens when we render the page
+Let me just collapse this header
+So now browser starts
+Reading this page
+And browser comes to body
+And browser comes to body
+So actually our script tags
+Should be inside body
+I don't know why my body is here
+Sorry for that
+Our script tags should be inside our body
+Last statement inside our body
+I'll tell you this cool stuff
+So
+How can I avoid millisecond lag
+You cannot
+You basically cannot
+There are ways you can optimize it to be very less
+You can make it to very few milliseconds
+That a user does not know
+But we kind of cannot minimize that lag
+Because
+It's not
+It can't happen
+So when the browser reads this stuff
+It comes to script tag
+It sees that there are scripts
+So it loads these scripts over the network
+So if you see in the network tab
+I'm going to network tab
+I'm going to network tab
+Let me refresh my page
+If I refresh my page
+Let me cross this up
+If I refresh my page
+I will see
+This is where I got this from
+React is loading these scripts
+And it takes some time
+If you see
+It is taking
+I think I'm blocking this up
+So this is coming from disk cache
+Suppose if I disable my cache
+Refresh my page
+See
+It takes in
+So this is an index.html redirect
+So don't worry about it
+Just see the 200 ones
+Okay
+RGS files maybe
+So it takes
+135 milliseconds to come in
+If you see the waterfall model
+It takes some time to come in
+So
+What happens is
+That is why it takes some lag
+That is why it takes some lag
+And we see not rendered
+So what happens is
+Our browser loads these websites
+And then what will happen
+It loads it
+Then it starts reading this up
+Then it starts reading this up
+And
+When it comes to react code
+It just starts executing it
+And when it reaches this line basically
+This is the line
+Where it actually injects the stuff
+In over here
+This is the line where you see
+Namaste everyone on the screen
+See this namaste rendered
+That is why that millisecond log is here
+But
+I will tell you one more question
+One more amazing thing
+One more amazing thing
+What will happen if I put my script tag over here
+What will happen
+Will it work
+If I put my script over it
+And load later
+Will it work
+That is the point
+Why people are not able to
+Understand react is
+They don't try to play stuff
+And people ask me that
+Akshay how do you learn
+How do you know all that stuff
+Because I spend time in my editor
+To visit things as possible
+And in this session
+In this session
+I want to tell you that be curious
+Be curious about
+Every small thing you need
+Be curious
+And not all instructor
+Even me I can't tell you everything
+Because I don't know how much you know
+Right
+I don't know how much you know
+I can just tell you what I can think of right now
+But I want to tell you every small detail
+And
+You know teacher can teach you like
+100% of this stuff
+But I want you that
+Get that curiosity in your head
+Get that curiosity in your head
+That okay I want to know everything
+So if I do that
+A lot of people say that it will work
+Some people say that it won't work
+Let me just save my page
+Let me go back and if I refresh
+See it says not rendered
+Right
+And over here it says
+React not defined
+React not defined
+Right
+And now I am telling you
+A lot of people get into doubts right
+Because now I am telling you
+All these students right when I will give them homework
+Or when I will give them assignments
+My whole email or my whole chat
+Will be flooded with Akshay
+I am getting stuck into an error
+React is not defined
+Is there a gap in my teaching? No
+So basically
+Okay basically
+You should know every small thing
+Now don't come to me after the assignment
+That okay React is not defined
+Akshay help me I am getting an error
+React is not defined
+Because you are not loading it in a correct order
+These order matters a lot
+These
+Order matters a lot
+So try to play with your code a lot
+The code is your best thing
+I just in this whole
+In this whole session right
+In this whole Namaste React
+Live course
+I just don't want you to teach React
+I also want you to become a better developer
+Find
+Things for yourself
+Explore the web
+Right explore the web
+Will you be curious
+Write curious in the comments if you will be curious from now
+Be curious about small things
+Up down
+And let this new year be a good start
+To be curious and ask everything
+And I am telling you
+People say that Akshay how did you learn stuff
+Why do you know a lot of things
+Because I am curious about things
+I Google a lot of stuff
+Take a pledge for yourself
+You won't write code just for writing it
+Most of the developers write code
+Because they just want to write stuff
+They are like
+They just want to do stuff and then they just code it
+And things work on the browser
+And then they don't care about why it is happening
+You should know
+Every small thing
+Know every small thing
+The order matters
+Now I am giving you a homework
+Once again
+The homework is
+What is the difference between async and defer
+I don't want to tell you
+Homework
+Find out what is async and defer
+There are different ways you can call the script
+What is async and defer
+There is a video on my channel
+If you go to my youtube channel
+If you go to youtube
+There will be async and defer
+Async and defer
+I remember I created one video
+This one
+Cool
+Just try to watch this video
+Async and defer
+This is a very old video
+When I used to
+Teach you on whiteboard
+Watch this video
+You know a lot more details
+Cool
+Writing the script tags in a different
+Order matters
+You can load the scripts in
+Various different ways
+That is what I wanted to tell you
+Over here
+So
+Now
+My dear friends
+I will come on to one more stuff
+When I search stuff
+It comes on top
+Now
+I want to tell you one more
+Listen to me very carefully
+Some people are asking
+What is happening if it is not here
+Nothing will happen
+Here you won't see the props
+Every small thing
+Suppose if you want to write that
+How do I do stuff here
+Play with it
+Play with this code
+Take that down as a homework
+You know how I will learn
+I try to write null over here
+Go to the browser
+And check it, I am not doing it
+You have to put in efforts with me
+Yes, exactly
+The question will come, can I put in style over here
+Can I put in style
+And if I can do
+Then how can I write styles here
+How can I write styles
+Can I put in
+What if I want to put class name
+As well as id inside it
+If I want to put class name as well as id
+So basically play with it
+Id can be title
+And here you can have a class name
+As
+As name as class
+You can do a lot of stuff
+You can write style also
+Play with it, I want you to play with it
+I can't cover like every small thing
+In class
+Play with it
+Yeah
+The chat is distracting because
+People are writing random stuff
+Don't ignore the chat
+Don't worry about the chat
+See what I am teaching
+Don't be distracted with
+Whatever I am teaching
+See me what I am doing
+I am just doing it
+I can't close the chat
+I just can't close the chat
+I mean it's inbuilt
+So let me go back
+I want to teach you the last of now
+Listen to me very carefully
+So
+Now
+We generally just don't create one
+React element isn't it
+We just created one H1 tag
+What if I wanted to create
+What if I wanted to create a complex
+HTML structure
+A complicated HTML structure
+Something like I will tell you how
+So suppose if my div has
+My div has another div
+Which has a
+Basically I am writing emit over here
+Which has
+H1 inside it
+And
+I want to write something like this
+Suppose if I have a div
+I have another div inside it
+Or maybe
+Let's make it a little less complicated
+Suppose if I have a div and inside that
+I have a H1 tag
+H1 tag
+And this calls
+Heading 1
+This is Heading 1
+Suppose if I have a complicated structure
+Suppose if I have
+A
+Heading 2
+Which is a H2 tag
+So how do I write
+This type of code
+Using React
+How do I build this inside my browser
+I will show you this now
+Now
+Listen to me very carefully
+Just like we created this H1 tag
+Right
+And what was the name of that H1 tag
+Let's put in Heading 1 here
+Heading 1
+Heading 1
+Okay
+And then let me create Heading 2
+I am just
+Copying pasting the same stuff
+So we have Heading 2
+And this is how we create
+A H2 tag
+Makes sense
+Right if that makes sense
+Right yes, if it is making
+Right cool if that makes sense
+Cool in the chat
+Yup
+Cool with a K
+So you are doing Heading
+Heading 2
+Now what I want to do is
+I want to create my div
+How do I create my div
+Let me make a constant div
+And let's call it as container
+Div container
+Or maybe let's give it an ID container
+ID is equals to container
+I am just showing you how we write it
+In a react right
+So we have a div
+Or let me call it as a container
+Okay
+Container is equals to
+React
+Create element
+And then I have a div
+And then
+Over here
+Right
+Over here I have to give an ID container
+How will I give my ID container
+ID
+Container right
+And make sure that this is a string
+Now as the third element
+Now as the third element
+The third element is something which we have to
+Put inside div
+Now what we have to put inside div
+So see in create element
+The first is the name of the tag
+The second is the attributes that you want to pass
+The third thing is what you put
+Inside the H1
+This H1 tag I wanted to put this
+Heading 1 inside
+Now in my div what do I want to put in
+What do I have to put in
+Heading and heading 1, heading 2
+We want to build a structure something like this
+Heading 1
+And heading 2 should go inside it
+So what I will do is
+In react we pass in as an array
+When we have to pass in
+Listen to me very carefully
+When we have to pass in multiple child
+Multiple children
+We call it as children inside react
+Then we pass in something like this
+Heading 1 and heading 2
+Heading 1
+And comma heading 2
+This is an array and we can write
+As many children inside it as well
+This is how we do
+And now
+I want to put
+This whole container inside my root
+Let me put this whole
+Container inside my root
+And let me remove this first of all
+Let me put in
+This whole container inside my root
+How do I put in
+I will render my container inside my root
+Container inside my root
+I am just saving my file
+Will this work
+Will this work
+Cool stuff
+Cool stuff
+We got h1 and h2 inside our code
+So if we go to elements
+Now clearly see what is there
+Inside the container
+Our root is replaced
+The content of the root is replaced
+By container and container gets
+The child this is what we expected
+Cool stuff
+Did you understand
+Write cool if you understand
+Write cool if you understand
+Yep cool
+Yep great
+Most of the people understood
+So basically this is how you can pass
+In children
+Right
+But now you know
+This is how we pass in children
+Over here inside this as well
+And this react dot render you can just pass
+In container and it just puts in container
+Over there
+So if we go to console
+Then we are getting
+This warning right so
+We get this warning don't worry about it
+We will cover that too we will cover
+About when we go on to awesome stuff
+I am
+Just loving the excitement
+Of all the people they want to learn everything
+In the first session itself
+Cool like we are
+Like it's almost
+Two hours right it's almost
+Two hours here right wait
+Wait for a while hold on your horses
+We will learn every small thing
+All there would be no errors in your console
+When we will build stuff right
+I just want to go slow
+This is the first class
+Right as we move ahead we are
+Going to build a lot of stuff
+See all these things why it is complaining
+Over here what is this telling about react
+Dev tools and everything we will talk about
+Okay don't worry about that right
+I just want to
+Go slow right
+Because there are a lot of people who are very
+New to react right they are
+Learning from the basics that is why
+I want to go
+Very slow are you liking the pace
+Right is the pace good
+Right pace is good
+Right if you are liking the pace
+Right or
+I just want to go
+A little slow right pace is good
+Right yes I can cover everything
+Don't worry don't worry I will
+Only go once I finish
+React okay I will teach you everything inside
+React
+So if somebody is saying that pace is a little
+Slow that's good right you are experienced
+Then you are amazing people so don't
+Worry that pace will improve because
+It's very basic stuff for you so
+It might
+Feel slow right so
+But I want to go it at this pace
+Because I want to teach from the basics
+Right so
+Let's just go back and people
+Who are finding it a little difficult
+Go back to the recording and
+You would just see it once again
+Okay so this is what I wanted to cover
+And
+My dear friends let me tell you
+One more cool stuff okay one more cool stuff
+So generally
+Suppose if we have to
+Build a big html
+So can do we
+Like do you think that
+Is it complicated or is it easy
+Creating a h1 tag like this
+Is it complicated or it is easy
+It's very
+It's very complicated right
+Like I mean it's
+I hate this right
+If I have to create a h1 tag I always
+Have to write this suppose if I have to
+Build a big big big big
+Container or a lot of
+Suppose if you have to build the whole website
+By doing this right
+It's just it's just not
+Code friendly right it's not developer friendly
+And let me tell you one more
+Interesting thing about react now
+When I'm teaching right it just came into my head
+Right so basically you know react
+Came up when react was built
+Right when react was built
+They came up with a style of writing code
+About that okay
+I will write so basically
+They wanted to write their whole html
+Inside javascript
+Okay
+They wanted to write
+The whole html inside
+Their javascript that is why these are
+Script tags right this is javascript
+This h1 is being created
+By javascript react came in
+With that idea of writing html
+Inside javascript css
+Inside javascript so that you don't
+Have to go to your html file to do anything
+You don't have to go to your html file
+And in our whole session we won't be going to
+Our html file again
+Right and that is why
+And then react came in with
+Building react dot create element api
+Right but this was
+Not very user friendly
+This was not a very user friendly way
+That is why jsx came in
+And a lot of developers
+I'm telling you a lot of developers
+In the industry does not realize that
+jsx is they feel that
+React only has a jsx way of creating
+These elements
+I don't want to
+Obfuscate I don't want to teach you jsx
+Into the first thing
+And people who are getting panic about
+What is jsx I don't know about it don't worry
+We will cover everything
+We will cover everything
+Don't worry about it ok
+So but
+Learn when react was built
+React initially was built
+Using this react dot create element api
+And this is something core of react
+This is how you create
+But generally I know that
+This is getting very complicated
+Don't worry
+You will see a lot more
+Better way of doing the same thing
+But I wanted to take that pain
+To show you that jsx makes our life
+More easy ok
+jsx makes our life more easy
+You will see that in the next session
+Hold down your horses ok
+Now I want to tell you one more thing
+Generally you know if I keep on writing
+My whole file this index dot html
+Will go 2000 line
+So a better way is to split our app
+Inside different files
+So if I have split my app
+So let me just
+Create a new file
+Let me call it as app dot js
+Let's get my app dot js
+And I am doing what is
+I am just copying pasting the whole script code
+Whatever code you saw
+I am just copying this all up
+And I am just putting it inside
+App dot js
+I did nothing
+I did nothing
+So
+And
+Now I go over here
+And I put src
+This is a way to do
+And now I am not teaching
+This is not a react thing
+This is a javascript thing
+So react thing
+It's not a javascript thing
+Here I can just add
+The same way as it does
+If I refresh my page
+The same way as it does
+So this is how we generally do
+We make a whole html
+And we also make
+How do we write CSS now
+We have index dot
+CSS suppose
+I can just import this file
+Into my head
+Now one more question
+Why should I import my CSS
+Into my head
+Basically the
+Head of the app sorry
+So
+Don't import your CSS
+Into your head
+Input it inside your
+Inject it inside your app's head
+So
+So index dot
+CSS
+Over here
+If we have index dot CSS
+This is how you put in your html
+And now let us just give some
+CSS to our app.js file
+Over here we created a div
+Which
+ID is container
+So let me pick up this ID
+And write the basic CSS stuff
+Container
+Okay don't worry about that
+So container
+And I'll give it
+What CSS should I give it
+Let me give it a background or something
+Background color
+Of
+Okay
+Oh and refresh my page
+Yep I know it looks ugly
+It looks very ugly but
+Calm down I just wanted to show you that this is how
+You can split your code into your files
+And most of the times I won't
+Be obviously be writing inside script tags
+So
+Whatever CSS
+Is parsed in over here
+Will be coming over here
+Inside your page
+So that's how it is
+If you have more doubts just google stuff
+There would be a lot of doubts that why CSS came in
+Like that why we write CSS on the top
+Why it is real style sheet
+What is the meaning of this real style sheet
+I don't want to like
+If I start teaching you at that level
+Then I can teach you react forever
+So I just wanted to go faster
+A little faster
+Okay
+And a lot of people are asking that
+Okay we need a community
+So you have a community already
+Login there
+Go to your dashboard
+There is a community section
+There is a community section
+Be active there I will also be active there
+Do you know about community
+Right cool if you know about the community
+Or if you have already seen what am I talking about
+Right cool
+Yep a lot of people know about it
+A lot of people know about it
+So people who don't know please
+Login to the dashboard
+Login to the dashboard
+I know I just
+I don't know how can I show it to you
+Just give me a moment
+I will see if I can show it to you
+So basically
+Okay
+So you go to learn.nomestedev.com
+Okay
+You go to you login
+Right if you log in
+When you log in
+Go continue with my email
+And let me just give my email and hover here
+And I am opening what you will see
+In your dashboard right when you log in
+Right when you log in
+You have to log into the same place
+Right nomestedev.com
+Or you can go from anywhere and just login
+You go over here
+Right you go to the dashboard
+Right so if I log in
+Refresh my page am I logged in okay
+It just logged me out right so if I go
+Click on login so I will just continue
+With my email ID and password
+I am just showing you where is the community
+Right I logged in
+Okay so here we go
+Go inside this section right this community
+This community here
+Right and there is namaste
+React this is open for everybody
+Just go inside namaste
+React and here
+Whatever announcements I will make
+It will come over here so just follow
+These as announcements you will get reminder
+Of your sessions also over here
+Right and there is a discussion section
+And there is a question answer section
+Okay don't mess this
+Right ask genuine doubts
+Don't just do this right this is not
+Acceptable it's a question answer section
+And just like don't just spam it
+If you like I don't know right
+You all are mature people please don't
+Spam these groups please don't
+Spam the community right so
+Yep so this is how
+You join the community right
+And be active on that right some
+And you know for
+All small doubts right for all
+Nitty gritty small doubts no teacher
+Can teach you all that right suppose
+What is real style sheet google it
+A lot of things you will get from google it
+I want to teach you the advance amazing
+React stuff okay advance
+Amazing react stuff so
+This is I wanted to teach okay
+Cool so we are
+Let me just
+See if I want to tell you some
+More things right
+Order of file matters right
+I have shown it to you and
+Let me just see my notes here
+I have not even seen the notes and I'm just
+Giving you the whole session
+Yep yep yep yep I have covered this
+Covered this covered this covered this covered this
+Just give me a moment
+So I have covered a lot of things which
+I prepared for in today's
+Session right and
+Right so I have covered a lot
+Of things so and
+We are almost done with time also right
+But I want to tell you
+Few more important things now when
+We have some issues right
+We have a little time so
+Remember
+Right remember
+This
+This
+URL is right when we went
+To react documentation to
+Pull up the CDN links we saw different
+CDN links so we have
+These CDN links and we have something known as
+React dot development dot js
+And there was something known as react dot
+Production dot js
+What is the difference between both of them
+What is the difference between both of them yep
+Some people say that
+These are the minified files yes
+These are minified files
+This is a way this is the
+File which contains similar questions
+Right similar code
+Which is there inside it the
+Code difference is nothing right
+They will have the same code but it is much
+More optimized for production use
+The size of these
+Files will be very less than these files
+So if you are using in
+Production you should use this if you are using
+On your local use this
+But generally we won't
+Be injecting our react
+Like react code like this
+Never right but
+But now you would say that
+If we never will be injecting our code
+Like this then why did you teach us
+Because it is important
+Very important a lot of people don't even
+Realize that there are CDN links which we can
+Do right amazing stuff
+Right so
+I just wanted to teach you from bare minimum
+Basics, nitty gritty details
+Black bone of things right
+So I wanted to teach you all that right
+That is why I chose to do that right
+So why this cross origin attribute
+This was a homework I am not showing you this
+Let me go back
+Let me go back
+I am just giving you the
+I am just showing you the homework
+So basically I just give it to you right
+So just go over here and read it
+This was the homework
+Sorry
+See that
+See you know sometimes I want to leave it
+Leave it like
+Not known right I mean
+I want you to also put in effort right so
+But yeah you will find your homework
+Here right you don't even have to google
+Search now see anyways
+Now
+This is what it is right
+Don't worry about these things I will talk about
+What the errors are here right okay
+So
+Let me tell you that how does app.js work right
+So okay so now
+I have
+Five more minutes okay so let me
+Just quickly quickly recap
+Everything okay
+Where that we studied cool right
+Right cool in the comments quickly recap
+Everything from the starting in this whole
+Two hours what we did
+Whole two hours right
+A gist of it quickly right
+Summarize pay a lot of attention
+Pay a lot lot lot of attention
+Now okay because I am going to cover
+Everything from the start
+First of all I created
+My index dot html file
+I use something known as emit
+Remember I use something
+Known as emit e-m-m-e-t
+This is your homework don't worry
+Homework right if you don't note it down
+I will give you a homework in your portal
+It will you'll it'll be there right
+So search for what is emit we injected
+Our code now I showed you
+Various ways of
+Writing hello world program right
+I showed you a way where you can write
+A h1 tag inside a div and you can
+Just do it without a javascript
+Also
+Without javascript also you can do it
+You don't need javascript for that
+You can just do h1 tag and do that
+But then I saw that okay
+We used javascript
+To build that up and we used
+Document dot get element by id
+Root and then we also saw that okay
+How do we manipulate them right
+That is a word of it right
+How do we manipulate them right
+That is what we saw right
+How do we manipulate that down
+Using javascript then I moved
+On to show you that how you
+Can do the same stuff using react
+Right how you can do
+The same stuff using react then I
+Also showed you that what is the
+Shortest program of react
+You know right you also
+Got to know that okay why
+Why there are two files over here
+The difference between react and react down
+You know in today's session
+You have learnt a lot of cool stuff
+Lot of cool stuff right
+It was not a very
+Basic basic session right
+You learnt a lot of cool stuff
+Right so what is the
+Difference between react and react down
+What is this development and production
+Apps right you got to know this
+You saw that okay I created a script
+Tag over here and started writing react
+Right and you
+Also saw that okay we wrote something
+Known as react dot
+Create element so this is
+And how do we get react right
+This react is kind of a global
+Variable which comes from our injected
+React js files right
+Now we have
+React dot create element this
+Create element basically takes three
+Arguments first argument is the
+Name of the tag which is we are
+Building the second thing is
+This object takes
+In props
+Don't get confused with the word props
+I will tell you what is props later on in the
+Sessions but assume that these are
+HTML attributes right that you write
+If you have to give your ID color
+Style or maybe class name
+You do it over here
+And then we passed in children over here
+Like this as an array
+These children are what
+What is this heading and heading to
+Quickly write down in the chat
+What is this heading and heading to
+Yup these are react
+Elements
+These are react elements and what is
+React element at the end of the day
+What is react element at the end of the day
+What is react element at the end of the day
+Yup you are
+Exactly right it is
+An object at the end of the day right
+Isn't it it's an object at the end of the day
+And
+When you do
+React render right react
+Render what is the function of render
+Mostly right render will modify
+Your dome this is a way
+Modify
+And what will happen will it
+Override or will it append over here
+Will it override or will it append
+Yup it will override you people
+Are awesome right I mean
+You people are amazing right all the
+Answers are correct I don't see anyone
+Writing
+These are small things you
+And you know trust me after this session
+Go back
+Play along with this code
+Go back play along with this code
+Before the next session
+You have to play along I am telling you
+Play with it
+Find answers to your question queries
+Every answer is available on the internet
+What you need what do you need
+All the answers are available in the
+Available right on the internet
+What do you need
+Right what do you need curiosity yes
+The word curiosity
+Pyaas chahiye pyaas
+Hunger that hunger of learning
+You know what what differentiates
+A normal developer amazing developer
+Is the hunger and curiosity
+Curiosity for learning
+And you would have seen a lot of
+Times that okay Akshay everything
+Is available on the internet yes
+Everything is available on the internet
+It is just that we don't know how to
+Find it and how do you
+Find it by having curiosity
+The first thing is curiosity
+I will take all my code
+And I will put it on github
+Okay I will put all the code on github
+Don't worry you will get
+Access to all the code
+You will get access to all the assignment
+That you have to do right
+Don't worry about that don't worry
+Like I won't you know
+For you you might be a student
+You have to attend classes for other
+People who are working in the industry
+They have to go and work on their own
+I will give my hundred and twenty percent
+For your batch this is all
+I do I have signed up for this
+I am a teacher
+I am your teacher don't worry about it
+You don't have to remind me I will do
+Stuff right I will do
+I will give my hundred and twenty percent
+But the only thing what is
+Required from your end is please
+Keep doing homework please keep doing
+Assignments please
+Because you know a lot of people in my boot camp
+Batch also they were not doing assignments
+Then they will not get doubts also
+And then they will just
+Right I want you to
+Just do assignments and
+No next class will be tomorrow
+Eleven o'clock I am not going right away
+Right let me tell you right
+So
+Let me just
+Let me just try to
+Tell you so what you have to do in homework
+Is first of all I will give you
+Some theory assignments
+And then I will give you
+Some
+Coding assignments right so today's
+Coding assignment is
+Because I want to keep it very light
+You have to build your own html file
+You have to click create a boilerplate
+You have to basically set up first of all
+A lot of people I am sure that
+Their laptops or
+A lot of people won't have their
+What will say this thing set up
+Right there's system setup
+So you have to install your vs code
+You have to make sure your Chrome is working fine
+You have to build an html file
+Right from starting
+Build this boilerplate code
+Then try to do the same stuff
+Using javascript
+Right try to do the same stuff using
+Javascript and then try to do the
+Same like try to do the same stuff
+Using react
+Learn about react dot create
+Element react dot
+React dom dot create root
+Do all that thing practically
+Whatever I did do that
+Explore emit
+Okay install all the
+Extensions right prettier
+vs code icons
+So do that right so cool
+So
+And you know
+One more important thing which I wanted to
+Say is that
+Just give me two three more minutes
+We will just do right I mean
+Before you leave right
+Please give me two three more minutes
+Okay so what you have to do
+Is whenever you do everything
+Right today is a good day
+To start
+Every code you do have to be
+Pushed on github
+Everybody have a github account right
+If you have a github account just say cool
+Do you have a github account
+Right cool in the comments just cool right cool
+It's cool to have a github account
+Right cool in the comments
+Yep everybody has a github account
+So what you have to do is you have to do this assignment
+Right your theory assignment
+As well as your coding assignment
+And make a github repository
+And put it up over there
+Don't hesitate
+Some people just don't create their github repositories
+I don't know right why
+But do this stuff right
+Experiment it a lot
+Note have your github repository as your
+Notebook
+Use that github repository as your notebook
+When I give you theory assignment right
+The theory assignment will be something like
+What is cross origin
+Create a .pxt file
+Or .md file or whatever
+And then put it up inside github also
+Because next time if you want to
+And do it for yourself don't copy paste
+Write for yourself
+So put it up on github
+Now if you don't know how to put it up on github
+Please search it right
+I just can't tell you how to put it up on github
+This is not namaste github
+This is namaste react
+So please if you don't know
+Right
+So do that right
+And tomorrow we will go a little more
+Advanced we will see a lot more things
+We will ignite our app
+Don't worry okay
+So you will get this session will be built
+Once again so you will be able
+To do that right
+Cool stuff right
+I mean this is what I wanted to see
+And see you in the class tomorrow
+As well right and
+Extensions list right
+Just go to the video recording and see it once again
+Or maybe I will tell you about the extensions
+Better comments
+Bracket color
+Pair colorizer
+Take a screenshot of this screen maybe right
+Take a screenshot of this
+Just minimize it
+Take a screenshot of this screen
+And maybe post it somewhere right
+I will tell you
+Cool so these are the extensions that I use as of now
+Maybe we can just
+Use later right
+And I use the default thing because I live
+Inside my VS code so
+It's good so
+So this was the
+First session right
+This was the first session and I really wanted
+To keep it a little light right
+That is why I
+I just
+Did slow but as we move ahead
+The things will get a little more complicated
+Right
+Please keep attending the live session
+Please keep doing your homeworks
+Now I will tell you that okay if you
+Do this stuff on your own you will
+Get a lot of doubts try to google
+As much as possible google
+As much as possible
+Right and
+We will see how we start from the
+Basic and remember right I started
+From the scratch this was the 0 class
+0th class we
+Have to go to a lot more advanced stuff
+Don't worry about that
+Lot more awesome
+Awesome things will be coming in
+Yep yep yep so
+Yeah don't worry about it
+Okay cool
+So
+And today right today's session will be
+Of 2 hours right 11 to 1
+Because
+Because we don't have an assignment to discuss
+Right but next from
+Tomorrow we will discuss whatever I gave
+In the assignment after the class as well
+Okay so thank you so much
+For joining in and
+There is no ending music okay just
+Like you see in my
+Videos right
+So there is no ending music
+But I wanted to just say that
+Okay keep doing stuff
+Right and people like
+Please I am just wanting to say
+I know some people were facing issues
+Trust me right just give just
+Have a little patience
+Right if there are some tech issues
+I am 100% on it right I am
+Using the platform I will
+Just go behind them and
+Will ask them to fix this as soon as
+Possible right if you are facing
+Some lag but one thing which I
+Can request you is that please
+If you don't have a very good internet
+Take a good internet because this is
+Important right don't join from mobile
+Join from your laptop
+A lot of people can see it
+I also have a learner access
+Right so here I have another
+Laptop where I see what is going on
+In the learner side for me everything
+Is working perfectly fine here
+Right so if there is some
+Do in your end then it might be due to
+A network lag or
+Maybe
+I have a high speed connection
+Internet right so
+It could be due to
+Your internet not that great right so
+Please like get an upgrade
+For your internet please like I mean
+It just takes few more bucks and
+Please next time
+Just focus on we will be doing more
+Awesome stuff I wanted to keep this
+Session light and easy
+Because this is the first one and
+As we move ahead in the class
+And
+We will just get better and into
+Learning react right today
+We learned the basics of it where
+You will get the recordings you will get the
+Recordings at the same place where you joined the sessions
+From I showed you that dashboard right
+Go to courses right where you see Namaste
+React click on it and you will see
+A place where you will see the
+Recordings as well as assignments as well as
+Everything right don't worry be
+In the community once I post all the
+Question and answers there once I post
+About the assignments I will notify you
+I will notify you and
+There is no ending music
+Sorry for my side
+And
+This was the chapter one inception
+Of the Namaste react live course
+Okay the inception
+And we incepted from right
+From zero and that's what we covered
+And this is what the aim of session
+Was hope you would have enjoyed it
+And thank you so much for joining in and
+Bye bye see you
+In the next session
+No ending music this time
+I am ending the class
+Bye bye good bye see you tomorrow

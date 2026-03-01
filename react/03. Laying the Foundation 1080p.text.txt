@@ -1,0 +1,3773 @@
+FILE: 04. Laying the Foundation 1080p.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Are you ready?
+I think we are ready today.
+Right?
+Let us just begin.
+Yup.
+So, oh, I see a lot of people writing on discord.
+Let me close this because it is very, very distracting.
+Let me go back.
+So we are starting the session today.
+Okay.
+The name of the session was igniting our app.
+What do you think we will study today?
+What do you think we will study today?
+What do you think we will study today?
+JSX?
+No.
+Create react app?
+No.
+No.
+Create react app?
+JSX?
+No.
+Making our app better?
+Yes.
+Yes.
+Yes.
+Virtual DOM?
+No.
+Yeah.
+A little bit of it.
+Prop state?
+No.
+Yes.
+Yes.
+We are going to dive deep in today.
+We are going to dive deep in today and get ready for amazing things.
+You know, in the last class, in the last class, I talked about what did I study in the last
+class quickly?
+Anybody?
+In the last class, what did we study?
+We are going to dive deep.
+Let me just open my folder also in VS code quickly.
+Let's see the code.
+Okay.
+This was the code that we wrote last time.
+Quickly, let me know.
+Can you see the code?
+Are you able to see the code?
+Are you able to see the code?
+Yes.
+Yes.
+Yes.
+A lot of yes.
+I am super happy.
+Yes.
+So, you know, there will be a little glitches here and there in initial sessions, but we
+get used to all this.
+Right.
+Don't worry.
+We will get used to it.
+Don't worry.
+The recordings will be in HD mode.
+Don't worry.
+Don't worry about it.
+Right.
+So I have zoomed it enough.
+Right.
+Please watch it on laptop and desktop.
+We are going to spend a lot of right and I am in full of energy.
+I will give my 100% today.
+Right.
+Don't worry about it.
+Let us just quickly have a quick summary of what did we study?
+Right.
+Before we begin, because I know a lot of people also faced some issues last time.
+I don't want to miss them.
+Right.
+If you are starting today, that is also great.
+Right.
+I'll just quickly cover what I covered last time.
+Right.
+Okay.
+And then we will start.
+But before that, let me tell you that we are proactive on our feedback in our discord community.
+Right.
+Give us feedback.
+We will improve on two things.
+We will improve on two video quality and join the people who have joined recently.
+Join our discord community on the pinned comment.
+Check the pinned comment.
+Join it.
+Right.
+There is no username password of discord.
+You have to create account.
+Right.
+Create an account.
+So, you gave us a lot of feedback.
+I am just letting you know a little bit before I start my session.
+Right.
+Today we are going to study how do we ignite our app.
+Last time we saw that how can I make my app.
+Right.
+How can I write the basic first react app.
+Right.
+We studied basic first react app.
+Right.
+Now, today we are going to ignite our app.
+Right.
+We are going to make our app deployable to production.
+We are going to give super powers to our app.
+We are going to somebody wrote yes Anish petrol and fire.
+We are going to put in petrol and fire to our app.
+We are not just going to blow off our app.
+Right.
+Not exactly like we are putting fire on to our app.
+But today we are going to launch our app.
+Amazing.
+In an amazing way.
+Okay.
+First of all, join the discord community and join this.
+I think you have joined it.
+Now I see a very less people joining in.
+So, okay.
+That's great.
+But, but, but we are not going to do create react app.
+Oh, we are not going to do create react app.
+A lot of people are saying create react app.
+No.
+We are not going to use create react app.
+Okay.
+How amazing would it be?
+How amazing.
+I have a question for you.
+Slow down.
+Okay.
+I have a question for you.
+How amazing would it be that we build our own create react app.
+We will build our own create react app.
+Is it amazing?
+Yes.
+Cool.
+Right.
+Cool.
+Right.
+Awesome.
+Are you excited?
+I can see such amazing response from you all.
+We are going to build our create react app today.
+Why do we why you know all the react tutorials what generally I see right.
+They start with NPX create react app and then my app and then we just blow up our app and
+everything starts working automatically.
+You get a production ready cool looking react app with a logo spinning.
+Have you seen all that?
+Have you seen that?
+Have you seen that?
+But I don't want to do that.
+I want to teach you to the core of everything.
+I want to teach you.
+I want to give you the knowledge that you can create your own create react app.
+This is the amazing thing which we are going to study.
+And I don't want any.
+I don't want any.
+We are going into the core of everything.
+Okay.
+And trust me.
+I will give you all the knowledge I have.
+A lot of people gave me feedback that the community is not good.
+I have created a discord community that discord community is amazing.
+Right.
+Discord community is amazing.
+Some people said that video quality is not good.
+We are improving on it.
+Some people said that recordings are not good.
+We are improving on recording.
+You will see the HD of this recording when you will see on your dashboard.
+Okay.
+Don't worry about that.
+Some people said that how will you take our doubts?
+Do you have a question?
+How will I take a doubt?
+Do you have that question?
+How will I take your doubts?
+Akshay, you have become a businessman.
+How will you take all our doubts?
+This is not possible in a live class.
+What if I said it is possible?
+What if I said this is possible?
+I will take your doubts.
+Okay.
+If you are getting a lot of notifications on discord then just mute it.
+Right.
+Just mute it.
+Okay.
+It is possible.
+I will tell you how.
+I have been teaching react.
+Just trust me.
+Trust your teacher.
+I have been teaching react.
+Not just the first time.
+I have taught react to a lot of people already.
+I have taught react a lot of time.
+Right.
+What I will do is when I teach right I know what questions you will ask.
+Most of the questions I know what you are going to ask.
+Even before I start the class.
+I prepare myself a lot.
+This is my job.
+I have left over.
+This is my job now to teach you.
+I know what questions you will have.
+Most of the questions.
+90% of the questions I already know.
+Then you will ask.
+Okay.
+And I will cover that in my class itself.
+But you will ask what about the 10% out which I have?
+How will you help me Akshay?
+I will help that to you.
+I will help you with that also.
+How I will help you?
+We will start the class.
+Just give me important.
+Don't worry.
+Okay.
+So how will I help you with those 10% questions?
+You have to go to the community.
+Right.
+After the class.
+I can't take all your questions in this class.
+Right.
+It is not possible.
+So you have to go to the discord community.
+You have to post your questions down.
+And there are so many.
+There are so many people who are there in the class.
+They will help you.
+We have a super amazing community.
+Right.
+They will help each other.
+You people who help.
+Right.
+People who help will also understand a lot.
+So help each other.
+And then suppose if you don't get answers to your discord community also.
+Then also we will where do I find my answers.
+You can go and Google a lot of stuff because you know there will be small here and
+there missing gaps.
+Which might not be part of react might be of JavaScript might be of web.
+I can't cover like 100% of whole it's like whole class.
+Right.
+So I can't cover of 100% of everything.
+Go Google it.
+If you still have doubts.
+If you still have doubts.
+I will be there to answer.
+Don't worry.
+Don't worry yourself.
+Just give me some time.
+Just let me teach.
+Some people say that actually you just you just you just take a lot of time.
+Right.
+I know.
+Okay.
+Aksheda lesson is of two hours three hours and you will not teach everything.
+I will teach everything.
+I will I am not going anywhere.
+I have taken money from you.
+I you know it's my job to give you everything.
+So we are starting now.
+Right.
+And I will teach you everything.
+If we have to extend the session, I will extend.
+If I have to take more sessions, I will take don't worry about it.
+Just be patient.
+Just trust on me.
+We will study everything.
+And let me tell you that please keep trust on me.
+There can be some technical difficulties, but I am always there for you.
+Don't worry.
+Okay.
+Okay.
+So let us just start with today's session.
+I am super excited and let us just start with it.
+So in the last class.
+Okay.
+I'm going very and I will go slow.
+If you feel that I'm going slow, that means you are brave enough.
+You already know a lot.
+Right.
+You already know a lot.
+So bus because if I have to move with everybody's pace, I will do that and I will repeat a lot.
+Don't worry.
+If you don't understand one time, I will repeat everything two or three times.
+So you will understand it in next times.
+Okay.
+Don't worry.
+Okay.
+We will go slow.
+I will keep in mind of everything.
+Don't worry.
+Okay.
+So let us just begin with today's session.
+In the last class, we studied that we created a normal boilerplate of HTML code.
+Right.
+We created our first HTML file and we saw.
+Okay.
+And we saw that we have to inject react into our code.
+We saw that how can I create a basic hello world app using HTML CSS?
+We saw that the next time we saw how can we use JavaScript to create our first hello
+world app?
+Remember that?
+Are you able to?
+Do you remember that?
+Yes or no?
+Yes or no?
+Do you know how to write JavaScript to create that?
+Yes.
+A lot of people said yes.
+Right.
+We use document dot get element by ID and then we were just putting hello world into our
+H1 tag.
+Amazing thing.
+Right.
+We know how to do it in HTML.
+We know how to do it in JavaScript.
+Now we also saw that how can we write our hello world program using react?
+Right.
+First of all, we need to, we need to have react in our project.
+How did we get react into our project?
+First of all, I told you that what is react?
+A library or a framework?
+A library or a framework?
+Quickly in my chat.
+Everybody is right over here.
+React is a library.
+We know that react is a library.
+What is a JavaScript library?
+JavaScript library is just some piece of code with somebody wrote for us.
+It is not something that we wrote.
+Right.
+We were at this place.
+This is the code which Facebook developers, who wrote for us?
+Who wrote for us?
+Yes.
+Somebody wrote for this code for us.
+Right.
+And it has a lot of superpowers.
+When I say that okay, we are using react that means we are using how to use these
+code.
+Right.
+This code to make our code very fast.
+So basically this library exports a lot of functions.
+This library exports a lot of superpowers that we can use.
+Right.
+So just like in our browser, in our browser, we have something known as window.
+And it gives us access to a lot of superpowers.
+Right.
+We can do a window dot location.
+We can do a window dot local storage.
+It gives us all these superpowers.
+Right.
+So please, if you have questions, don't worry.
+Right.
+Don't don't worry.
+It will be covered.
+Right.
+Don't worry.
+Please listen to what I say.
+Otherwise nobody is going to understand anything.
+Right.
+Just listen to me carefully.
+Keep your questions with you for a while.
+Don't disturb me while I teach.
+Okay.
+So what will happen is we get super power to our browser functions.
+Who gives us this window quickly?
+Who gives us this window?
+Who gives us this window?
+I don't want to disable chat.
+I want to see this.
+Right.
+Who?
+Who gives us JS engine?
+JS engine gives us the superpowers.
+Now, suppose if I want the superpowers of react, where will I get that from?
+Where will I get the superpowers of react from?
+Where will I get superpowers of react?
+We will get from the react library.
+We will get from the react library.
+And how do I put in the superpowers of react into my code?
+There are several ways to do that.
+There are several ways to do that.
+One such way is to get the react code using CDN.
+Right.
+There was a CDN.
+Right.
+And there is one more way to do.
+We will see it today.
+Okay.
+We will see that way today.
+But one thing is to inject our code.
+So we got the CDN link.
+People who don't know about CDN, go read it.
+I won't explain you everything.
+Go read it.
+What is CDN?
+Okay.
+So CDN is basically a faster way of fetching that code.
+Right.
+Okay.
+So read it.
+Right.
+Now what we will do is we injected this react like this.
+Right.
+And this gave us access to an amazing thing.
+Right.
+What did this give us access to?
+Just like we got access to window.
+What did this give us access to?
+Yes.
+Exactly.
+This react.
+Where did this react come from?
+It was not present.
+We got access to this react.
+We got access to react DOM.
+We got react X.
+And we got access to something known as this secret internals do not use or you will be fired.
+Amazing thing.
+Right.
+Secret internals do not use.
+This is the code which I did not write.
+This is something which Facebook engineers are giving it to us.
+Okay.
+So we got access to all this because we injected react code into our system.
+Then we also created an app.js file.
+And then we started writing some react code in the agent.
+I told you that in the first session, we will be starting with react.
+This is how we create a H1 tag using react.
+Right.
+In JavaScript, how do you do?
+In JavaScript, how do you do?
+In JavaScript, how do you create a H1 tag?
+Quickly.
+I want you all to revise.
+I will be going slow.
+Create element.
+Yes.
+There is something known as document dot create element.
+Already amazing people out there.
+Already amazing people.
+Everybody knows the answer to it.
+Amazing.
+This is what I like about life classes.
+Right.
+We can like do amazing things.
+Right.
+So document dot.
+I feel that.
+Okay.
+There is someone who is there to listening to me and learning from me.
+Right.
+So we can do document dot create element.
+Right.
+We can do a document dot create element document dot create element.
+And I can create.
+Right.
+I can create my H1 tag like that.
+Right.
+So this is how we can create in JavaScript.
+But in react.
+I don't want to show you how you do it in JavaScript.
+I want to show you how you do it in react.
+We do a react.
+This react.
+And you know, I will explain each and every word which I am writing each and every line.
+So you won't have a lot of doubts.
+Don't worry.
+I will explain.
+Okay.
+Just listen to me very carefully.
+We are diving deep now.
+Okay.
+So and we are going to build the create react app today.
+Okay.
+We are going to build our own mini version of create react app.
+I'm super happy.
+Let's see that.
+We will ignite our app.
+We, we had this react and we use this API dot create element.
+Right.
+Now this creates and react element a react element that is an H1 tag.
+This is how we create.
+This is our heading one.
+So it will create a H1 tag with a title ID with a heading with the data inside it H1.
+This is very much equivalent to someone writing the code like this.
+Right.
+H1 tag and then heading one.
+Right.
+I am going a little slow.
+Don't worry if you are feeling that you already know this.
+Don't worry.
+I'm just explaining it for people who don't know.
+Right.
+It will revise your concepts.
+So this is exactly similar.
+This will be this code.
+This code will produce this in our dome.
+This code will produce this in our dome.
+Okay.
+And then, and then, you know, this is how we create a H2 tag.
+And then suppose if I have to create a div, if I have to create a div, right?
+And in the div, I want my two headings.
+I want my H1 tag in the div.
+I want my H2 tag in the div.
+Right.
+So how do I do that?
+I will do it like this.
+The create element takes the first argument as the tag which we want to create.
+The second argument is the attributes.
+Right.
+Is the attributes that we given.
+And the third argument is children.
+Right.
+Don't worry.
+We will come on to event listener and all that later.
+Right now, just understand whatever I am teaching.
+Okay.
+We will, what we will do is this will create a div and inside our div, we will have heading
+and heading to what are these heading and heading to like this.
+So this is basically the third argument is the children.
+The first argument of create react app is the tag name.
+The second argument of the create react app is the code.
+Right.
+Is the attributes.
+And the third argument is the children.
+Now I have to ask you a question.
+Can I just create ID class only this?
+Right.
+Can we have ID class only this over here?
+Right.
+Can I have something known as hello world?
+Will this work if I write this?
+This is not our attribute.
+Will this work?
+What do you think?
+Will this work or not?
+Yes or no?
+Yes or no?
+Yes or no?
+No, no.
+Yes.
+Yes.
+No, no.
+A lot of people are confused with it.
+I love the energy of this class.
+Let us just go to the browser and see it.
+I am refreshing my page.
+Let me go to elements.
+Let me go to my body.
+Let me go to my root.
+Let me go to my container.
+Let me see that.
+Let me refresh the page.
+And let us just see if we are able to see this or not.
+Let me see this.
+We did not get.
+We did not get.
+Where is it?
+Everybody was saying no.
+We got this, right?
+We got this.
+So basically what I want to say that we can put in anything over here.
+And we get this over here.
+And this is not just known as attributes.
+React has a fancy name to it.
+What do we call that as?
+Quickly.
+Everybody who knows react quickly.
+We call them as props.
+We call them as props.
+So don't worry.
+We will go dive deep into a lot of more things.
+But I want to go slow initially and then we will go it.
+So this is known as props.
+This is how we give any prop.
+And prop can be anything.
+Not just your ID class or whatever.
+It can be anything.
+Literally anything.
+This I wanted to explain.
+So props is basically just like properties.
+Just like our attributes.
+So react passes these props.
+So this is the way.
+So don't worry if it is not making sense.
+It will make a lot of sense as we go ahead and see a lot of things working.
+Now, but tell me is this a production ready app?
+Is this a production ready app?
+Yes or no?
+Yes or no?
+No.
+What is missing inside our app?
+What is missing inside our app?
+Can we like we have a code, right?
+It is running.
+It is running.
+What it needs?
+What it needs to be production ready?
+What is what it needs to be production ready?
+Minify.
+Yes.
+Exactly.
+We need to bundle things up.
+Exactly.
+We need a server to run things up.
+Exactly.
+Very smart people over here.
+We need to minify our file.
+We need to remove our console logs.
+We need to.
+We need to do a lot of our things.
+Amazing.
+Amazing answers.
+We need.
+Yeah, you are right.
+We need to minify our file.
+We need to do a lot of optimization in it.
+We can't just load all this code to production.
+Tell me, can we load or not?
+Can we load or not?
+We can load it.
+Yes, you are right.
+We can load it.
+But then it is not optimized.
+We want it will be slow if we put our app like this.
+So we want a lot of things on our app, right?
+So that is why I named the session igniting our app.
+Now I am going to ignite my app, right?
+Somebody wrote it very good.
+Very good Akash, right?
+He wrote minify optimization, clean console and bundle, right?
+We need to do a lot more things.
+And we need to do a lot more things.
+Do you think we need caching?
+Do you think we need caching in our app?
+Yes.
+Yes.
+Yes.
+Do you think there are a lot more things that we need, right?
+There are a lot more things when we go to production we need it.
+How do we do that?
+And you know, React is a library.
+It is not a full-fledged framework.
+The best thing which I like about React is, you know what, right?
+Which I don't like about other frameworks.
+They enforce you a lot of things.
+But in React, React is so good that you know, React does not enforce you for anything.
+We can use a lot of libraries into it.
+Different type of libraries.
+And it is built by open source.
+It is powered by open source.
+We can ignite it with a lot of things.
+So, to get all these functionalities, we need to use something known as bundlers.
+Okay.
+Something known as bundlers.
+Okay.
+We need to use something known as bundlers.
+So, the job of bundler, now somebody is writing that how do I spell bundler?
+Okay.
+So, bundlers is something like this.
+Bundlers.
+Okay.
+Bundlers or bundler.
+Okay.
+B-U-N-D-L-E-R.
+Okay.
+So, what is the job of this bundler?
+You would have heard the term known as webpack.
+Have you heard of webpack?
+Webpack.
+Don't worry if you don't know about caching.
+We will see.
+Okay.
+Don't worry.
+We will see everything.
+Yes.
+Everybody knows about webpack, right?
+So, webpack is one of the bundler.
+What else bundler do we have?
+Quickly.
+Other people.
+Other people.
+Quickly.
+What except?
+Yes.
+Yes.
+Babel is not a bundler.
+Babel is not a bundler.
+Babel is not a bundler.
+Parcel is a bundler.
+Yes.
+Veet is a bundler.
+V-I-T.
+There are a lot of bundlers available.
+Go read it out about this, right?
+There is something known as veet.
+There is something known as parcel.
+There is something known as webpack.
+Right?
+There is something known as webpack.
+There are a lot of bundlers.
+This bundler is responsible for doing a lot of things which we will see today.
+Okay.
+This bundler is exactly very super powerful.
+It gives us access to a lot of superpowers that we will see today.
+Right?
+We will see today a lot of superpowers that is given by bundlers.
+In this app, we will not be using webpack.
+We will not be using webpack.
+We will not be using webpack.
+We will be using something known as parcel.
+Okay.
+So, these three are alternatives.
+You can use any one of them.
+Any one of them.
+Right?
+It is a bundler.
+But we will be using parcel.
+So, okay.
+So, we are going to make our create react app.
+In the original create react app, you know, the original create react app, the bundler
+that they use is webpack.
+Okay.
+The create react app, the bundler that they use is what?
+Create react app.
+You should know all that, right?
+A lot of react developers don't know about it.
+If you ask them, they don't know what is happening behind the scenes.
+But I want you to be very super powerful.
+Right?
+You should be aware.
+What is this create react app?
+How was this create react app was created?
+Right?
+This create react app, you know, it uses webpack.
+It uses Babel.
+Okay.
+It uses webpack.
+It uses Babel.
+We are not, you know, a lot of, there are a lot of tutorials how you can set up webpack
+and a lot of things.
+We are just going to use parcel.
+Now, a lot of people ask me why parcel?
+Why Akshay?
+Why parcel?
+Because I like parcel and parcel is very awesome.
+When you will see that it gives us a lot of superpowers.
+Let's just see what is parcel.
+Right?
+Then we will realize the important.
+Weat is fast.
+Yes.
+We can use wheat also.
+But I am going to teach you with parcel.
+Okay.
+And webpack is also super powerful.
+That is why it is used in the production apps.
+Right?
+Right?
+So it is an alternatives.
+Okay.
+But I am going to show you everything by parcel because parcel is easy to teach, easy
+to set up, easy to build.
+Right?
+Okay.
+So there is no difference.
+Right?
+There is basically a major difference.
+Right?
+Find out the difference between them.
+It is a slight difference.
+But then most bundlers do the same job.
+Right?
+Most bundlers will minify your code.
+Will remove your console logs.
+Will do a lot of optimizations for you.
+Let us just do that.
+Okay.
+Quickly.
+Okay.
+So let's move that now before, before I can get my parcel into our project.
+Right?
+What do I need?
+What is a parcel?
+What is parcel?
+It's a bundler.
+But what it is?
+It is known as a package.
+Right?
+It is a package.
+Right?
+What is a package?
+Right?
+What is a package?
+Package is kind of like a module.
+Right?
+Or a package of JavaScript files.
+Right?
+Some piece of code.
+Now we want, if we want some package into our code, then we would, then
+we had to use a package manager.
+Then we have to use a package manager.
+So most of the react tutorials will start with just creating your create react
+I want to tell you everything before that.
+Before that.
+Right?
+Before that.
+So we do something known as NPM in it.
+Right?
+We use a package manager which is known as NPM.
+Okay?
+Okay?
+We use something known as NPM.
+What else can we use instead of NPM?
+What else can we use?
+You should know all that.
+You should know all that.
+Yes.
+Everybody is correct.
+We can use yarn.
+We can use yarn instead of that.
+But I am going to use NPM.
+I am going to use NPM.
+Okay?
+You can use others as well.
+So NPM.
+What is NPM?
+Okay.
+What is NPM?
+Quickly.
+What is NPM?
+What is NPM?
+Again.
+Again.
+What is NPM?
+Node package manager.
+Node package manager.
+What if I told you that it is not Node package manager?
+It is not Node package manager.
+NPM stand, NPM does not stand for Node package manager.
+NPM does not stand for Node package manager.
+You know, go to the NPM zip site.
+I am telling you amazing thing.
+Go to the NPM website.
+Find out.
+There is no where mentioned that it is Node package manager.
+No where mentioned it is NPM stands for N for Node.
+P for package.
+M for manager.
+It is not that.
+You know, even the troll.
+Even the troll.
+Even the troll.
+See.
+NPM's nice paintings.
+Mondrain.
+Node-worthy programming master piece.
+This is...
+I have not created this.
+This is NPM's website.
+See.
+Node-worthy programming master piece.
+No problem man.
+NPM stands for no problem man.
+Isn't it cool?
+NPM people are cool.
+I love NPM developers.
+You just no fans mom.
+This one is amazing.
+So, if you keep clicking on it.
+You know, NPM does not stand for Node package manager.
+People who are not able to see let me just zoom in.
+This is NPM's official website.
+I am not doing anything.
+No fans mom.
+Right.
+NIT picking manager.
+Amazing stuff.
+Right.
+Namaste.
+Yeah, we can.
+You know, we can.
+Depot lady and pasta maker.
+Some people are saying Namaste package manager.
+Yes man.
+This is so cool.
+You know.
+So, what we can do is if we want to.
+You know, if you keep clicking on this, right.
+You go to this NPM expansion.
+And you can submit your own name.
+You know, NPM makes fun of itself.
+It says that we are not Node package manager.
+NPM does not stand for Node package manager.
+But everything else.
+And you know, you can.
+They have a GitHub repository for NPM expansions.
+Okay.
+You can just submit your own cool name as well.
+Some people just give a lot of names.
+There is a repository.
+You know, if you go to extensions.txt.
+See, there is something known as Nacho Piza Mandarin.
+They have Pacman and a lot of cool stuff.
+Right.
+So.
+There is no official name of.
+There is no official name of NPM.
+What does that stand for?
+That is what I wanted to teach you.
+Right.
+You can submit a pull request.
+Right.
+If they expect, if they just.
+Right.
+If they just accept, then you will also be showcased on the other official website.
+But let us just come back to our code.
+Okay.
+Nice one.
+Nice one.
+There are a lot of people suggesting cool names.
+I just love the vibe.
+Okay.
+Let's go back.
+Let's not get distracted.
+Okay.
+Let's not get distracted.
+You are distracting me also.
+No.
+No fun stuff.
+Okay.
+Let me move myself down.
+So how do you initialize?
+How do you use?
+How do you use node package manager in your project?
+Right.
+How do?
+Sorry, I also said node package manager.
+I'll say node package manager.
+Okay.
+As you I'm talking about NPM.
+Okay.
+So if I want to get NPM into my app, I will do something known as NPM in it.
+NPM in it.
+That means NPM initialize.
+And then we can use a hyphen why this will skip up a lot of options.
+This will skip up.
+This hyphen why will skip up a lot of options.
+But let us just see.
+Let's not skip anything.
+I don't, you know, all the tutorials you will see, they will just use NPM hyphen
+why and they will just skip everything.
+No, I don't want to see.
+Let us go and see how do we initialize NPM?
+What does it ask for?
+It will ask you a lot of questions.
+It will ask you a lot of questions.
+Right.
+So now it says that package name is namaste react live.
+Yes.
+I want my package name to be namaste react live the version 1.0.
+Yes.
+Description.
+This is a, this is a live course.
+I can write this.
+Right.
+I can give a description.
+The entry point, what is the entry point of your project?
+For now, let us just keep app.js.
+Okay.
+Though it is not app.js is not the entry point index.html.
+It is right now.
+Let's just keep it.
+What is the test command?
+What is the test command?
+So we will be using just for testing right now.
+Just assume what is just I will tell you later when we go to testing.
+Right.
+Right now.
+Just right.
+Just.
+Okay.
+Right.
+Right.
+GitHub repository URL.
+We will have keywords.
+Let me skip the keywords.
+We can have author name.
+Right.
+We can have author name.
+Let's just put in my name here.
+Right.
+We can have a license over here.
+ISC.
+Keep it like that.
+Is it okay?
+Now it asked.
+Is it okay?
+Yes.
+Okay.
+We have done this.
+Right.
+So when you initialize npm.
+Right.
+When you have your package manager with you.
+What does this mean?
+What does this mean?
+Keywords are like the tags.
+Yes.
+Keyword you can give.
+Right.
+We will take a break.
+Don't worry.
+We will take a break after a while.
+Just give me.
+We have just started.
+Not a break right now.
+We are doing amazing.
+Why?
+Why?
+I want your energy over here.
+So we get access to see.
+We got something like package.json over here in our folder structure.
+We wrote npm in it.
+We got package.json.
+What is this package.json?
+This is the amazing configuration which npm needs.
+Okay.
+This is the amazing configuration which npm needs.
+Right.
+To run itself.
+So npm.
+What npm will do is let me take a moment to explain what is npm.
+Who does not understand.
+Npm is basically used to manage our packages.
+Though its official name is not in node package manager.
+Npm does not stand for node package manager.
+But it is basically doing the same thing.
+It manages all your packages with us.
+Now why do we use npm?
+There is a lot of students ask me.
+Why do we use npm?
+So why do we use npm?
+Because we want a lot of packages in our project.
+Because our react app cannot be built by just injecting react into our web page.
+Cannot.
+It is like Maven for UI.
+It is like Maven for UI.
+Okay.
+Drink a little water.
+It is like Maven for our react.
+Right.
+So now when we use a package manager it manages all the packages because we need a lot of things.
+We need to remove.
+We need to minify our things.
+We need to do a lot of things.
+Okay.
+Amazing stuff.
+Cool.
+So now we want to manage packages.
+That is why we use.
+If somebody ask you in interview we want to manage a lot of packages.
+Our react app is a huge app which just does not run on react.
+There are lot of super powers which we need and those super powers come from different
+packages which packages are present by using npm.
+Okay.
+I have spoken a long sentence.
+Go back to the recording and listen to me.
+Let me explain you once again.
+So why do we use npm?
+Because our react app is powered by a lot of things.
+A lot of things.
+A lot of packages.
+Suppose we have to minify it.
+Suppose we have to bundle things up.
+Suppose we have to remove console logs.
+Suppose we have to optimize our app.
+We will see all that.
+So for that we need a lot of helper packages and those helper packages come inside npm.
+Right.
+Don't worry.
+Okay.
+So this is why we use.
+So this is how we initialize.
+Now we got a package.json.
+Now just quickly go and see what is inside our package.json.
+It says the same thing, the options which you gave.
+The same options which you gave come over here.
+The test command, the main, main means the entry point of your app.
+For now we are just keeping it as app.js.
+We will just remove it in a while.
+Okay.
+We have this git.
+We have this URL.
+We have the author and all this.
+Now when we have our package manager, let us just ignite our app.
+Okay.
+Let us just ignite our app.
+Okay.
+How do we, we have done npm in it till now.
+Okay.
+Let us just ignite our app now.
+How do I ignite my app?
+How do I ignite my app?
+I will use something known as parcel.
+Okay.
+Parcel bundler.
+If I go to parcel's website, right.
+This is a zero configuration build tool.
+I personally really like parcel.
+You know, parcel is good for teaching.
+It has almost similar things which wheat has to offer.
+It has almost similar things when which webpack has to offer.
+Right.
+A lot of things.
+Parcel is a beast.
+Right.
+Parcel is a beast.
+You will get to know.
+I will explain you everything.
+Right.
+It has amazing things up here in parcel.
+Right.
+So I will be using something known as parcel.
+Let us just see how we can configure parcel into our project.
+Right.
+So parcel, we will talk about it.
+Don't worry.
+Don't worry about it.
+We will talk their dive deep into parcel as well.
+Okay.
+So to get parcel into my app, what do I write?
+We write something known as a NPM install.
+Now whatever we will do, we will do using NPM.
+Yes.
+So Mallory said that parcel is a beast and quoted by Akshay.
+Yes.
+You know, in Namaste JavaScript, I just randomly said, okay, JavaScript is so beautiful.
+And I just said JavaScript, time tied in JavaScript does not wait for now.
+People started using it.
+So parcel is a beast here.
+Right.
+Parcel is a beast.
+Okay.
+Don't worry.
+Okay.
+So how do we get parcel?
+So we get by installing it using our node pack or parse package manager.
+Okay.
+So we do something known as now listen to me carefully.
+This is an important thing.
+We write NPM install to install a package.
+We use NPM install to install a package.
+And then we can write a package name over here.
+Parcel.
+Right.
+The package name parcel.
+But, but, but, but, but we don't want parcel to be on production.
+We want parcel, right?
+Parcel to be on our developer machine.
+Right.
+We want to when like we don't want parcel to be inside our developer machine.
+So we write something known as hyphen D.
+Okay.
+We write NPM install hyphen D parcel.
+A lot of people don't know.
+They just copy paste the commands and put it up.
+I want to teach you everything.
+Do you want me to cover it in detail?
+Do you want me to cover all these small things or we can skip it?
+I can just skip it.
+I can just copy paste the commands and I can just skip it.
+Okay.
+You want it.
+Right.
+Yes.
+I want to cover everything in detail.
+We can go a little slow, but I can't afford to miss small details.
+I don't know.
+A lot of people might know what is this doing, but a lot of people don't know.
+Okay.
+So I'm just going in detail.
+Okay.
+Trust me.
+So, okay.
+So we have NPM install parcel.
+So now we will install parcel hyphen D means hyphen D means dev dependency.
+Now you will say actually you introduce one more new term.
+First of all, you introduced CDN, then you introduced NPM, then you introduced parcel, then you introduced hyphen D.
+So hyphen D means we are installing parcel as a dev dependency.
+Some people also like to do something known as hyphen hyphen save dev.
+You must be confused now.
+You know, what is hyphen hyphen save dev?
+Sometimes actually you do hyphen hyphen save dev.
+Sometimes you do hyphen D.
+A lot of people know are asking me that.
+So it is one and the same thing.
+It is one and the same thing.
+It is one and the same thing.
+Okay.
+So you can do this or you can do hyphen hyphen save dev.
+One and the same thing.
+What does this mean?
+Let us just install and let us see what happens in map.
+We will see what happens in our project.
+Okay.
+We will see what happens in our project once we do that.
+It is installing parcel.
+So meanwhile, let me tell you hyphen D means we are installing it as a dev dependency.
+Now you can ask me what is a dependency Akshay.
+So dependency is basically all the packages that our project needs.
+Is it clear?
+Yes or no?
+Yes or no?
+Dev dependency means all the packages that my project needs.
+That is a dependency.
+It means that my project is dependent on something.
+That is a dependency.
+And parcel is one of such dependency.
+Parcel is one of such dependency.
+Because we need a bundler.
+That is why we write hyphen D.
+What if I don't write hyphen D?
+I'll tell you what happens because we will be installing packages which does not need hyphen D.
+We will do that.
+Okay.
+Don't worry.
+Okay.
+So what we will do?
+Now you know suddenly something else come up.
+Suddenly we got this package log.json.
+What is this?
+What is this package log?
+It was not there.
+Suddenly it came in.
+And if we see in package log,
+we got dev dependency as parcel over here.
+What is this?
+What is this?
+This is something new which came up into our package.json file.
+And we got package log.json.
+Why there are two files package and package log.json?
+Lot of questions.
+In all my classes everybody ask this question.
+And it is very good to ask.
+Because you know a lot of you know you see the YouTube videos and all that stuff.
+They don't cover all this.
+Don't cover.
+I want to teach you right from basics.
+package log.json is an important file.
+Very important file.
+And you know you see the content of this.
+Let me move myself here.
+Let me move myself here.
+See this content.
+What is all this?
+Why did we got all this?
+You should know the answer to it.
+Interviewer will ask you.
+Interviewer will ask you what is the difference between them.
+You should be able to answer.
+If I see anybody in my batch not able to answer this question.
+Then you see.
+Wait, wait, wait and watch.
+I don't know what I will do.
+I want you to answer that in the interviews.
+So I will tell you what it is.
+So this has a lot of code.
+Now listen to me carefully.
+When I do package npm i hyphen d parcel.
+So then it installed as a dev dependency.
+So this dev dependency means we need parcel in our development environment.
+We need parcel in our development environment.
+What is this?
+This is the version.
+But what is this sign over here?
+What is this?
+This is known as carrot.
+This is known as carrot.
+You can also use something known as tilde over here.
+This is known as tilde.
+And this is known as carrot.
+I want to teach you all this basic stuff.
+Because everybody knows how to create state and all that stuff.
+Find all the tutorials.
+But these are important things that you should know.
+So a lot of people are also answering in the chat.
+But let me explain you.
+Or maybe just go and figure out.
+This is known as carrot.
+Carrot and tilde.
+Tilde in package.json.
+Find it out.
+Whenever you get such questions,
+find it out.
+You will get a stack over from answer with amazing things.
+I am not going to cover this.
+But you go to this site.
+Note down.
+I wrote carrot and tilde in package.json.
+Read this what it is doing.
+Basically it is the way for us to tell which version should we be using.
+This is for a minor and major version of parcel.
+So there are different conventions that we use.
+So suppose if we are running on 2.8.2.
+Suppose if a new version of parcel came in which was 2.8.3.
+So it will automatically, our project will automatically upgrade.
+Our project will automatically upgrade if we use this tilde.
+If we use this carrot.
+And this will happen only for minor versions.
+This will happen only for minor versions.
+If we want to upgrade to major versions, we will use tilde.
+If we gave it without this,
+that means we have specified that I just want this version.
+I want just this version.
+I don't want any updates.
+I don't want any updates to these packages.
+This is what it means.
+And to do that, read this answer.
+You will be amazed to read.
+Understood. Tell me.
+We will see more things now.
+I have explained it 3 times.
+I have explained it 3 times.
+Yes or repeat.
+Yes or repeat.
+Yes or repeat.
+Move or repeat.
+Yes. A lot of people are saying repeat.
+Quickly. Let me tell you once again.
+So we have, listen to me carefully.
+Last time I am repeating it.
+Otherwise watch the recordings.
+It will be clear.
+Def dependencies means, first of all let us understand
+what is dependencies.
+Then what is def dependencies?
+People who are saying move, please.
+Some people are there.
+Let's be collective.
+You will also know that how I am articulating it.
+Because you will have to do this in the front of your interviewer.
+Listen to me how I am speaking.
+Okay.
+Dependency means, my project depends on packages.
+Why do I need packages?
+Because packages, we need a lot of functionalities.
+We need a lot of superpowers in our React app.
+React app cannot be a whole full
+production app just using React.
+It needs a lot of superpowers.
+We need to modify it.
+We need to bundle it.
+We need to do a lot of things.
+We need to do tree shaking.
+We need to do a lot of things.
+I will come on to that.
+So for that I need packages.
+Those packages will be installed
+to our project using npm.
+That is a package manager.
+So I do npm install
+hyphen d parcel.
+So it install parcel.
+Now parcel comes as a def dependency
+because I need it in my dev environment.
+There will be some packages that we need
+in our global environment.
+That we will install it without using hyphen d.
+We will soon see that.
+So this is the def dependency.
+We use this is our version.
+This is the way to specify
+what version should we use
+or should the version auto-upgrade.
+Should the version auto-upgrade.
+If I don't give this
+that means I am specifying a certain version.
+Stick to this version.
+If I am saying this, it will
+upgrade our version automatically.
+So that is why
+we have this def dependency
+and that is why we have parcel.
+Now I said parcel is a beast.
+Should I prove you if it is a beast?
+But before that one more question.
+One more question.
+What is package lock?
+What is this package lock?
+Why do it need to keep package lock?
+What is this package lock?
+Very important question
+in your interviews.
+I will teach you everything
+in your interviews as well.
+I will tell you what your interviewer will ask you.
+Okay.
+Now when I wrote package lock
+so I gave in
+this thing right?
+Carat 8.2.2
+and we don't know if the version changes to
+if the version changes to
+2.8.3
+you know
+it will upgrade.
+My project will upgrade and this will stay the same.
+To
+know what exact
+version we use
+on production.
+To know what exact version do we need
+to use to production.
+We use package lock.
+Package lock will exactly tell you
+what version of the library we are using.
+If you go into package lock
+we will see
+that there is something known as
+parcel here.
+Let us just find out.
+We have parcel here.
+We have parcel here.
+And see the exact version.
+See the exact version.
+Now there is no Carat or tilde.
+Interesting right?
+Okay. So I will tell you one more thing.
+Have you heard of that statement?
+Amazing thing. Have you heard of this statement
+that it is working on my local
+but it is not working on production.
+If something breaks like a lot of people say that
+it is working on my local. It is not working on production.
+I don't know. I am a developer.
+It was working in my machine.
+Okay. I don't know.
+I don't know. I don't know.
+It is working for me.
+Right? Lots of time. Everybody has seen that.
+Right? So why it happens is
+for resolving that issue
+for resolving that issue
+we you know what happens.
+Sometimes what happens is
+we write this Carat 2.8.2
+Right? And now
+suppose if the version upgrades to 2.8.3
+So
+parcel will so this Carat
+parcel will upgrade itself.
+You know, parcel will upgrade itself
+but
+but but
+and what will happen is new parcel will be there.
+So
+we don't want such uncertainties
+we don't want such
+uncertainties on our machine
+and on production. Right?
+So we have a package lock which locks
+the version. Package lock
+locks the version for you.
+It is a proof
+that what exact version do you use.
+Sometimes you might see
+that the that
+over here you have written Carat 2.8.2
+but then
+package lock will have
+2.8.3
+or 2.8.4
+So it will exactly
+tell you that what version
+do you have in your system.
+Right? What version
+does your project depends on. Right?
+It keeps a snapshot of it.
+One more important thing
+Okay? Does it
+move or repeat?
+Move or repeat? Quickly
+Move or repeat?
+Move, move, move, move, move, move, move
+Yes, yes, yes
+There are some repeat also. Let me just quickly
+repeat it. So we have parcel as a
+dependency we used Carat that means
+if the version goes from a 2.8.3
+So my package
+lock will lock the version and
+will keep it safe.
+It will keep it safe.
+Right? It will keep it safe
+and
+you know it will have a lot more things
+if you will see it has something
+known as SHA, Integrity. What is this?
+Does anybody know?
+You know most of the developers don't
+go into these files and see what is there.
+They just feel that
+ignore package lock. Lot of teachers
+say ignore package lock. Should you
+include? No? You should not ignore anything.
+Everything
+if it is there in your
+if it is there in your project you should know
+what it is doing. That is what I feel
+if I can't
+there are so many questions which I might
+also be not able to answer. I want
+you to know Google it.
+Right?
+So sometimes
+what might happen is over here
+it is Carat 2.8.2
+package lock might have 2.8.3
+It will automatically
+upgrade. Right? Because we have a
+package lock in our package lock.
+Remember
+important things about package lock.JSON.
+Do you have a notepad pen?
+Write it down. Write it down important
+things about package lock.JSON that will help you.
+Okay?
+package.JSON is a very important
+file. Right?
+It locks the version.
+You never have to keep it
+and get ignore. Never in your
+life have to keep it and get ignore.
+Never have to leave it and get ignore.
+Some people put this
+package lock.JSON in
+get ignore. You are doing the blunder.
+Then you will run into issues of
+it is working on my system.
+You don't have like it's not
+working on production. It's not my issue.
+Never do that.
+Then you will come. I know a lot of people
+some people are accepting with their mistake
+that I did that mistake. Never do that.
+You should not put in package lock
+in your
+you never have to put in package lock
+in your get ignore. Never. Never.
+You have to
+put in package lock to your
+get project. Because you know
+when you did, you know your machine
+is just a simulated machine.
+Your project runs on a server. Right?
+A random server. Now you need
+to specify, you know a must
+is like I have my dashboard. Right?
+Let me just quickly tell you. Okay? Let me draw
+it and tell you. Right? Important thing.
+You know, suppose this is my machine.
+This is my machine.
+Right? This is my machine.
+And this is the server where
+my app is running.
+This is the server where my app is running.
+Right? So I want
+my package lock
+to have exact version.
+Package lock to have
+exact version.
+Right? So I
+want to ship my package lock
+to my server as well.
+And it won't go. There are
+get servers here. Right?
+There is a gate. Right?
+We will push from our local
+to gate. It does not work
+directly. This is not
+possible. This is not
+possible. We don't directly do we
+install directly from our local to server?
+No. Right? We don't install
+directly from our local to server.
+No. Yes or no. Yes or no.
+So what we'll do, we'll push on
+to gate. Now
+server will fetch from this gate. Right?
+Server will fetch from this
+gate. So we need package lock
+100%. We need
+100% package lock
+in our gate.
+Lot of people do this mistake.
+Never do that mistake. Okay? Will you do
+that mistake? This is the first point
+in package lock.JSON.
+First point in package.JSON which you have
+to remember. The next thing package.JSON
+maintains the exact
+version of it. It keeps a track
+of, it maintains a hash
+of it as well.
+This hash ensures
+that what exactly
+the version of parcel was
+running in my system is
+exactly the same on the
+production. Right?
+If exactly the same
+on production or not. Right?
+It is exactly the same on production.
+It maintains the integrity. That is
+why it has this hash or not.
+Now, amazing
+thing is, okay, did you
+understand that? Did you understand that? Yes,
+if you are able to understand that. Right?
+It maintains the integrity
+because it has a hash. Okay?
+Don't worry. If you have some issues
+go watch the recording. I have
+explained it three times. Okay?
+Other people will get bored and will kick me off.
+Okay?
+Okay, so many people are writing.
+So what is a hash? I don't want to tell
+you. Like, I mean if you go on
+what is a hash? What is SHA 512?
+What is why the URL is
+like this? These are the questions.
+about the answers yourself. I am just
+teaching you the basic stuff. Okay?
+Just take it up. Right? Otherwise, you will
+have to go to cryptography.
+This is not domestic cryptography. This is
+domestic react. Okay? I am telling you
+package lock also. This is not a part of react.
+I just want you to know. Right? Because you are
+learning from me. It's my responsibility to
+make you good at interviews. Okay?
+So, just listen to me. Okay?
+Now, let's go. Now, let's move first.
+Otherwise, we won't be able to complete. Okay?
+Let me just let me do. So,
+we have this parcel. Right? Now, we have
+this package. We have this package lock.
+You understood both of them. Now, let us
+just see amazing thing. As soon as I
+wrote npm-
+So, somebody when I wrote this command
+one more thing happened.
+Package lock changed.
+Package lock changed. Package.json
+added this parcel. One more thing happened.
+What was that? One more thing happened
+quickly. Suddenly
+something known as node module
+sneaked into our code.
+I did not, I did not create this
+node module. Who created
+this node module? Oh my God, what is
+this over here?
+What is this? What are these amazing?
+What, this is amazing?
+What, what is this?
+Each and every folder has like random files.
+What
+is this? What is this?
+Oh my God, I did not
+need this. I don't need this.
+I did not even wanted this.
+Why it is over here?
+Why it is over here?
+Yup, yup, yup
+A lot of people have answers already.
+Because, because, because
+whenever you install something
+right, it gets installed
+into your node modules. So, node
+modules is kind of like a database
+for your npm.
+Okay? It is database
+of your npm. Understood?
+This is where the superpowers are
+coming from. Okay?
+How will parcel minify your code?
+How will parcel minify your code?
+Because
+parcel will use something known
+as a minifier
+over here. Just give me a minute.
+Here you will see a lot of helper functions.
+There will be a...
+See, parcel is over here.
+When I installed right,
+parcel's code came in over here. See, this
+is the parcel in our node modules.
+This is the code of parcel.
+And, what are the other things?
+Then you will ask me, what are the other things?
+Parcel uses...
+parcel is a beast.
+Parcel uses
+a lot of, a lot of
+things to
+optimize your app.
+Right? To optimize your app.
+And node modules become huge.
+Okay? Node modules become huge.
+So, you know, our app
+has dependencies
+on parcel.
+Now, parcel also has dependencies on something else.
+And those dependencies
+can also have something else.
+So, parcel, our project can have dependency on parcel.
+Parcel can have dependency
+on a minifier.
+Right? If you see, parcel is using
+all these things. That is why they are here.
+It has not come like randomly.
+Right? When it was
+taking time to execute this command, right?
+It was taking, at some time, it took
+almost a minute to install parcel.
+Because it was downloading all these things
+for you. These are all the superpowers.
+Your
+minifier will happen because of here.
+Here will be some library which will
+minify your data. Here is some
+library that will parse your HTML.
+HTML parser too.
+Here are different things
+that will minify.
+That will see, this is
+browser list. This browser list
+help us to make
+our app compatible
+for
+you know, to make our app compatible
+for older versions of browser.
+Amazing thing, isn't it? Do you want
+our app?
+Do you want our app to be working in older
+browsers? Do you want your app to work
+in IE, Internet Explorer?
+Don't nobody uses that.
+But that still we want, right?
+I don't know. There could be some
+psychopaths who use Internet
+Explorers, right? Internet Explorer
+Devs, right?
+Internet Explorer users. So
+we want our app to work on Internet Explorer.
+So browser list will take care of them.
+So there are different packages. I don't
+want to go into details of all these packages.
+If you are interested, go ahead
+read it. You know, sometimes
+you would see in your code error like
+Node JYP, not installed properly.
+That error is because this is ribbed.
+This is, this is bad.
+You will get, you will get
+error. I am telling you right away. Then, then
+you will come to me. Akshay, I am getting error
+Node JYP not installed correctly. Install
+this correctly. This should be fixed.
+Okay.
+You know, we have all these things and you know
+this is huge in size. This is huge
+in size. And that is why there are
+jokes also. Okay. Have you
+seen Node, Node modules jokes?
+Okay. Node modules
+memes. Have you seen those memes?
+Heaviest
+object in the universe.
+Node
+modules. Node module is
+the heaviest objects in the universe.
+Sun, neutron star,
+black hole and then node modules.
+It is, it is very heavy.
+Okay. It is very heavy
+that we have a joke. That it is
+more heavier than sun or neutron star
+or black hole or node module.
+Okay. Anyways, I
+really like that meme. So I thought that okay
+let me share it.
+Let's go back to the code. Okay.
+So Node module
+is very heavy. But
+everything is doing something or the other for you.
+Okay. It has something known as Babel.
+We will talk about Babel in detail in the next class.
+Okay. We will talk about it. Don't worry.
+But it has a lot of things. Assume
+that this has helper functions.
+Helper functions, helper code. Now
+one more important thing. One more
+important question.
+Should you add your Node modules to get
+get ignore? Should you
+add your Node modules to get ignore?
+Should you add? Yes
+No. Yes, no. Yes, no.
+Because it is important code. Should we add?
+Yes, yes, yes. A lot of people are
+saying yes. A lot of people are saying
+yes. Should you add? No.
+No.
+Let me tell you my friends.
+It is foolish.
+It is foolish if you install Node modules
+into your code.
+You never have to put in Node modules to your
+GitHub repository. A lot of people who might
+each, they have their Node modules
+into their GitHub repositories.
+Node modules is the heaviest thing
+on the planet. Node modules
+you saw that meme, right? I closed it,
+right? Node modules is the heaviest
+thing to be on Git.
+It will take your
+it will take your 1GV data to put on
+Git, right? If the Node modules
+become very big. We don't want
+that. We don't want
+all that rubbish and to are not rubbish.
+Sorry, sorry, sorry, sorry.
+Oh my God. No rubbish. Everything
+works because of Node modules. It will just
+screw me up right now. I am teaching using
+Node modules. So, no, no, no.
+Okay. So, I have sinned.
+Okay. It is a sin
+to say Node modules is a garbage.
+No, it's not garbage but we don't
+put it on Git.
+Why we don't put it on Git?
+We don't put it on Git because
+our package.log.json
+has sufficient
+information, sufficient
+information to recreate Node modules.
+Your
+listen to me very carefully. You will miss the session
+then you will ask me to repeat. Okay.
+If this topic after this topic
+I will take a break. Okay. I will take a break.
+Okay. Listen to me very carefully.
+We can generate
+everything
+in Node modules if I have my
+package.log and package.json
+and package.log.
+If I have my package.log
+I can regenerate my Node modules
+exactly the same.
+How much heavy it could be.
+How? Because
+Node modules keep a track of
+all these dependencies.
+All these dependencies over here.
+That is why this file is huge. See
+it is keeping maintaining the version of each
+and everything.
+It is maintaining the version of each and everything
+which was there in Node modules.
+Each and everything
+which was there in Node modules
+package.log.json is maintaining it.
+So
+we don't want to
+push Node modules
+over here
+we will
+generate our Node modules
+on our server once again.
+Okay. Because it is heavy
+it will just
+increase our time. So one copy
+of Node modules is on our system.
+Right. That is our
+own local dependency and we just
+ship package.log.json.
+We just ship package.log.json
+and this package.log.json
+will help us to generate our Node modules
+on our server.
+package.log.json will
+make sure that okay Node modules are
+released. Okay.
+It is like that.
+So hope you would have understood.
+Right. Hope you would have understood.
+Does it make sense. Yes or no. Yes
+or no. I want to see your
+energy. I want to see your energy
+here in chat. Okay.
+Okay. Are you liking the session. I want to
+take a quick feedback. Are you liking the session.
+Give me a thumbs up. Over here you see a
+thumbs up. Can we just press the thumbs up
+if you are liking the session.
+Can we press the thumbs up. Let's move it to
+1.2K. Come on. Come on. Let's
+go back. More. More. More.
+Let's press this.
+Let's press this. Let's
+break the systems. Let's
+press this like.
+Let's increase the like.
+Yup. Yup. 1.1.
+1.6. 1.7.
+1.2. 2K.
+2.1. Yes. I
+love the energy. You know the energy you
+give me. This is the energy.
+We will break the system. Come on.
+Hold down. Hold down. Hold down.
+So as well we will break and then you will be
+disconnected.
+They will be disconnected.
+Come on. It's still increasing.
+4.2. 4.3. 4.4.
+Okay. Okay. Thank you so much
+for all the luck. The more energy you
+give me. The more energy will come
+from here. Okay. The more energy will
+come from here. Okay.
+So. Okay.
+So let us just. Let us take
+a break for 2 minutes. Okay.
+2 minutes break and then we will be back.
+Okay. 2 minutes timer.
+2 minute timer.
+Okay. 2 minute timer.
+Go.
+Drink your water.
+Oh my God. You will break the systems.
+Then you will say that people are not
+able to join. 6.8.
+Oh my God. 6.9.
+2 minutes break. Please
+drink water. Please drink water.
+Please drink water. Let me
+advertise. Namaste.
+We recently got this cup.
+Do you want this cup by the way?
+Do you want this cup?
+We will
+give cup to the
+top performers.
+Keep watching our sessions.
+Keep doing your homework.
+Keep participating in 2
+quizzes which I will give you. Keep doing
+your assignments. Keep watching all
+the live sessions.
+We will give cup to
+right. We will give goodies
+to amazing people. Okay.
+And thank you for stopping.
+7.7. Oh my God.
+Everybody has contributed to so many likes.
+Thank you so much.
+Quickly drink water.
+Then we have a lot of important things to cover.
+I really want to go fast.
+We have not even started.
+Yep.
+I am back. Yes. A lot of people are back.
+We have 40 seconds.
+I am here with all my energy.
+And trust me, if there are no technical difficulties
+I will teach you so awesome
+React in 2 months. 2 months is a lot of time.
+Don't worry. I can extend the sessions
+if we can't cover. I will take more sessions.
+Don't worry. Right.
+I will take more sessions. I am not going anywhere
+without teaching you React.
+Okay. I am not going anywhere
+without teaching you React.
+Because this is what my job is.
+I left my Uber job
+to do this.
+I left my Uber job to do this.
+People are asking in comments. This is what
+I do.
+2 minutes. 2 minutes are done.
+Are you there?
+Are you back?
+Right back. Back back.
+If you are back, please.
+Yes. Yes. Yes. People are back.
+And we have almost
+9.1K likes.
+So much energy in today's audience.
+Oh my God.
+Yep.
+So, let's just
+go back to our cold.
+So, right now
+let me just give a quick recap of whatever we
+studied. Thank you for all the energy you
+have put in to press that like button
+and crashing the servers.
+Each and every like call is
+a call to the server.
+It is coming to everybody
+who is present in the live class. Amazing tech.
+I just love this tech.
+We should appreciate some things.
+Appreciate some things about the platform
+as well.
+Sometimes it lags.
+I know sometimes you are facing difficulty
+but then it will be mature.
+We are working on it. We will make it best.
+Right.
+2.4K likes. Oh my God.
+Let us just start this session quickly.
+Come back. Get your mindset over here.
+No more like press.
+No more like press. Okay. Still you are pressing.
+Come on. Focus.
+Focus. Focus. Focus. Focus.
+Okay. So,
+we wanted a package parcel.
+We got parcel into our app. Now let
+us see what amazing things
+parcel can do.
+What amazing things parcel can do.
+So, now
+we had
+brought react from CDN over here.
+Right.
+So, this is not a good way.
+When I say this is not a good way
+to get react into our app.
+This is not a good way to
+get react into our app.
+We want
+to get react.
+Now you would say that Akshay
+like my whole
+first class is wasted. You just showed
+that okay you put react like this. Now you
+are removing these lines.
+Right.
+Now if this is not a good way
+what is a good way? My whole life was a lie.
+No. No. No.
+I will tell you a good way.
+But this was important to tell you because
+you know a lot of people panic when they hear
+the word react. They think that react
+is a monster. React is not a monster.
+You don't have to
+be afraid. You know when people say that
+what is react? You just have to think that react
+is just a library. This is just some
+piece of JavaScript code which somebody else
+wrote for us. That is all react is.
+I want to remove all your
+fear.
+All your fear about react.
+That is why I showed you that it's just
+that. Right. Now
+but the good way is to use
+packages. Now we have our
+super powerful thing packages. Right.
+Why it is not a good way a lot of people ask.
+Because right now we are
+reacting. Right. We have
+reacting. What if
+what if the react moves to react
+19.
+react moves to react 19. What I will have
+to do? I will have to again
+go back to CDN. I will have to again
+change the URL of the CDN. I will
+have to again do all that stuff.
+I don't want to
+get on to all that. I don't
+want to keep on changing my script tags
+for each and everything. No.
+And one more
+thing is this CDN link
+is in unpkg.com
+right.
+And where are these modules?
+Where are these modules? Suppose if I
+deployed my app on to production
+where are these modules?
+On the server or on the CDN?
+On the server or on the
+CDN? Where is the node module?
+On the server or on the CDN?
+On the server or on the CDN?
+People who are writing CDN?
+No.
+It is on our server.
+So what is faster?
+To fetch from our server
+or fetch from somebody else's CDN?
+What is faster?
+From our server right?
+From our server.
+So let us keep the project
+let us keep my react also
+in this node module. Anyways
+we have so many packages.
+Can we also install react and react down over here?
+Why do we need it from here?
+I don't want to use this unpkg.com
+What if it goes down?
+What if it goes down?
+Anyways it does not go down.
+It does not go down. To be very honest
+it does not go down.
+But let us just keep it on node modules.
+So how do I install my
+react and react down in our project?
+How do I
+install my react down and react in our project?
+And you know what?
+You know
+it is optimized also when you do
+It's a better thing to keep it in here.
+How do I do?
+So now I will install one more package
+so react comes as a package as well.
+This script tag was one way to
+inject react. Now let me get
+my react over here.
+So I will write npm install
+react. So look at me
+Now I am not doing hyphen d
+Now you know
+why I am not doing hyphen d
+You know?
+Do you know yes or no?
+Did you understand?
+I am not writing this hyphen d
+because I won't react
+not just on my development environment
+I want it in my global
+I want it in my global environment
+So I am
+just doing npm install
+react. So this is how I will get
+my react.
+Now I will get my react on to
+node modules. I will get my react
+over here as well. See
+Now do you see a clear difference between dependencies
+and dependencies?
+Write dependencies op in the chat
+because if you know
+write dependencies op in the chat
+We have dependencies. We have
+dependencies. There are two things
+Right? We have two things
+Okay?
+So this is how we
+install react into our app
+and this is the right way
+This is the right way to do
+Let us go back and also install one more thing
+What is the next thing that we want to
+install?
+What is the next thing that we want to install?
+React DOM everybody is super
+intelligent
+and you know one more thing let me tell you
+Akshay are you doing something like npm I
+sometimes you do npm install
+this is one and the same thing
+npm gives you a lot of shortcuts
+npm gives you a lot of shortcuts
+I know
+you will have doubts for this
+after the session that is why I say
+you will get less doubts you know
+I will cover all your doubts in the session itself
+I know your doubts
+I have been teaching react since a long time
+How would I not know what you want to ask
+When I write npm I
+it is same as npm install
+Okay? So if I write npm I
+react DOM
+I won't repeat it again again
+I won't repeat it again again
+Okay? So
+npm I in whole course
+assume that I am writing npm install
+Okay? Assume that I am writing npm install
+So I have got my react
+and react DOM in my project
+version 18.2.0 the latest one
+I will teach you the
+latest version of react
+Let us just see
+and I have removed this over here
+Right? Now let us
+just
+Now let us just ignite our app
+with parcel let us just ignite our app
+Are you ready for it?
+Are you excited?
+Right excited?
+Are you excited? I see the thumbs up icon
+moving up again
+Are you excited? Let us just ignite our app
+To ignite our app
+we use a command
+npx
+parcel
+and then we give the
+entry point to our app
+and then we give the entry point to our app
+index.html
+What is the entry point?
+You know what is npx
+Now people will ask me actually you said
+that you will explain each and every word
+What is npx? npx means
+execute
+It means
+execute using npm
+execute using npm
+execute using npm
+Okay? So I have repeated
+three times
+I am saying execute parcel
+and gave the entry point index.html
+Should I hit enter? Come on
+I am waiting for the like button to go to 13k
+to hit enter quickly
+quickly can we have 13k
+and I will hit enter
+and it should work. Yes
+we have 13k in here
+Oh my God
+Now it
+started a server with us and it
+gave us so many things
+it started a server with us
+it started a server for us
+it says that server running at
+localhost 1234
+Now our application
+now we don't have to deal with this ugly
+with this ugly URL
+Right? This ugly file URL
+This is now how you do
+This is not how you do
+We will do it on a
+server. We have created a mini server
+for us. Who created this
+mini server for us? This localhost
+It is coming not rendered but our application
+is here
+Who created this?
+Who created this for us?
+Parcel is doing all that thing for us
+Parcel has given a
+server to us. Amazing thing
+Right?
+Now let me just quickly
+repeat. Some people are asking for
+repeat. I said I will repeat once again
+npx means we have to
+execute Parcel
+with the
+entry point. Entry point of our
+app is index.html
+Just hit enter. Now our server is running
+and Parcel has
+like
+ignited our app. Now it runs
+on localhost 1234
+Okay? If I refresh my page
+If I go to console
+I see some error. It says
+Is it expected?
+Is it expected? Do you know why this error is coming?
+Is it expected?
+React is not defined
+You know right? Why is this error
+coming? Why?
+Why? Because we removed
+the script tags
+React is no longer there
+It says that React is not defined
+on app.js 1
+So it says that in your app.js
+you have used React
+But where is this React coming from?
+It does not know
+We need to import React
+So how we import
+things
+to our app is using a keyword
+import
+using a keyword import
+And this React should come up
+Where was this React coming?
+Why did we get this
+Why did not we get this error before?
+Why did not we get this error before?
+Now we are getting this error
+We did not get this error
+because we had a CDN link over here
+isn't it? So the React was coming
+from here. I have removed it. Now I don't
+want to use it. I want to use
+something which is there in my node modules
+I want to use something which is
+there in my node modules
+I want to use this React and React DOM
+See in my node modules I have got
+this React-React DOM
+Right?
+Now
+Let me go back and
+import my React. When you do import
+React
+React from
+React
+When we do this
+This means I am getting it from
+my node modules
+I am getting it from my node modules
+Let me also import
+React DOM
+Let me also export React DOM because
+we need React and React DOM both
+If I just fix for React
+it will again start complaining
+React DOM. So let me just import both
+of them
+From
+React DOM
+Now I will tell you one more
+important thing. Earlier we used
+to do
+There are two packages that we installed
+React DOM over here
+We had these two things, right? React and React DOM
+People who are
+asking what is the difference between React and React DOM
+Watch my previous lecture
+You have not watched previous lecture
+Don't miss any lecture
+I have told you this before
+Go watch my previous lecture
+This is the core package
+This is the package which is used for manipulating DOM
+Okay? So you should know this
+You are not paying attention
+Either you are not present in the last class
+or
+but I have imported it
+Will my code work now?
+Will my code work? Yes or no?
+Will my code work? Yes or no?
+Yes or no? No
+Because I have got my React over here
+Yes or no?
+Yes or no?
+People are saying it will work
+Some people are saying it won't work
+Our code won't work
+Do it
+Our code won't work
+Do it into our browser
+And I hate this error
+I hate this error
+See, it gave it over here
+And one more cool thing about Parcel
+See, it gives you a beautiful view of error
+See, it also tells you
+Why this error is here
+It also tells you why this error is here
+It tells you why this error is here
+Let me refresh the page once
+See, Parcel gives you a beautiful error
+See, Parcel gives you a beautiful error
+You cannot export it
+It just says that browser scripts cannot have
+import or export
+Why am I getting this error?
+Why am I getting this error?
+I need to export it
+How can I export React?
+How can I export React from here?
+I can't never touch this
+Never touch your known modules
+Never touch your known modules
+You never will have to touch your known modules
+Never ever try to edit something inside it
+Never try to edit your package log
+it down. Write it down in the comments. I will never touch node modules. I will never touch
+package.json. Yes. Sorry, Shaktimaan. Okay. Now listen to me carefully. Okay. I'll tell
+you why this error is coming. This error is coming because, right? Because it is important
+to understand because in our code, we have something known as script tag app.js.
+So browser and our app.js contains import, right? When our browser runs this HTML file,
+listen to me very carefully now. Okay. Just listen to me. Otherwise you won't understand.
+You will ask me to repeat, right? So when you have this HTML file browser just when this
+browser is loading things, it comes to this line and it sees that, okay, I have a script
+app.js. It gets app.js. When it starts reading app.js, it finds something known as an import
+and the browser does not understand import. Browser shows that import is, I don't know
+what is import. I don't know. I don't know. Akshay, what is import browser says that
+browser don't know what is import. Okay. Normal JavaScript browser don't know what
+is import. So what we have to do is we need to tell that this is not a normal
+JS file browser. This is not a normal JS file. This is a module in JS. This is a module. Okay.
+This is a module. This is not a normal JS file. This is a module. This is not a normal
+file. This is a module. We have to specify this. How do I specify? I write something
+known as type module. When you tell this, when you tell this browser is happy. Will
+it work or break? Work or break? Work or break? Work or break in the chat? Work or break?
+Work break. Work break. Some people are saying break. Some people are saying work. Let me
+go back and let me refresh the page. See, it automatically refreshed. Come on. There
+was an error. It automatically got refreshed. How? Isn't it cool? Parcel is doing that
+for you. Parcel is automatically refreshing. Magic. Parcel open the chat. It automatically
+refreshed and everything worked as expected. Right. Everything worked as expected. Right.
+And we also got one warning. We also got one warning. Some people are saying that, okay,
+repeat. Let me repeat it once again. Okay. So first of all, what I did is I just
+imported react and react dom from react dom and react. These react and react dom are coming
+from node modules and not coming from our CDN now. Okay. And now, and now this is coming
+from here. And now we got an error that I can't read what is import. So, so that
+we can use import over here. We need to specify tell our HTML that our script tag
+is module, not the normal script tag. We are not using the normal script tag. We are using
+a module, right? Because we are writing import in it, right? You know, module can import
+and export. We cannot import scripts inside our tag. We cannot import scripts. Okay.
+So, okay. Now, when you write this react, right, it assumes that it is coming from
+node modules. It automatically handles this, right? Now, we got one more warning over here.
+It says that create create root from react dom. We have done, we have, we are using,
+right? We are using this react dom from react dom, right? So earlier, this used to work.
+But now in the recent upgrade of react, they have changed this react dom to come from
+react dom slash client. Okay. So you have to write something like it's client. Okay. You
+have to write something like client. This is a, this is an important thing. Okay. Now
+that warning will go away. React says that don't import from see the warning went.
+React says that don't import from. Okay. Don't import from normal react dom, import
+it from react dom slash client. And now our warning is gone. I will fix this
+warning on this. We will fix this warning in a while. Okay. Just give me two minutes.
+We will fix this. Understood. Let us move to the new topic. We got, we have imported this
+and our app is running finally. We have ignited our app and the super amazing thing is,
+and the super amazing thing is heading one from parcel. Okay. And the super amazing thing is
+if I save this file, it just changes automatically. Amazing thing. Now people are asking why slash
+client ask react developers. Not me. I have not done that. This is something which react says.
+Right. Okay. React says, okay. This is not me. Okay. Please. I can just teach you what is there.
+Right. I don't ask me why they named it a react hyphen dom. They could have just named
+it R hyphen dom. I don't know. Okay. You, you, I mean, okay. So react people gave this name.
+Right. And they wanted to import it from this. They have upgraded it. Right. They have done
+some optimization in this client, which exports this react dom. Okay. So that is why. Okay.
+And we have this parcel. Okay. Can somebody tell that I am saving this, I am saving this
+file and it is automatically reflect reflecting. What is this known as? What is this concept known as?
+What is this concept known as? What is this concept known as exactly live server? No,
+not all live server come up with this functionality. This live server can be done without this thing.
+What is that functionality known as this functionality is and who is doing this? First
+of all, tell me who is doing this? Who is doing this? Who is doing this parcel is doing this for us
+because parcel is a because parcel is a parcel is a beast. Right.
+Parcel is a seriously abuse. Right. It is doing a lot of things for us. So there is something
+known as hot mod hot module reload. Right. Hot module reload. It is also known as HMR.
+This is the thing which parcel is doing. Note it down in your notebooks. HMR hot module reload.
+This means that parcel will keep a track of all the files which you are updating. If you go
+change anything in your index.css right you do it make it yellow right and save it up save it up
+if you go back here it parcel automatically do that parcel you know why I love you know why I
+love front end why I love front end is because you just save it and it reflects I just you know
+in when I used to work in back end you know right I mean when I used to work I still
+work in back end right I mean I work in full I work in full stack but when I work in front end right
+one best thing which I like is I just refresh and it just automatically blows up things right
+otherwise you know when you use Java you have to do wave and clean install then you have to build
+a like you have to do so many things to do that right and it there are back and devs over
+there are back and devs they are sending sad emojis don't send sad emojis don't send sad emojis
+okay oh my god my thumbs up has gone yeah oh my god yeah stop using thumbs up come on
+come on where is the energy yes yes yes it's coming up again anyways okay so what I'm saying is
+so what happens is this is hot hot module reload and who is doing this parcel is doing
+this for us what else is parcel doing and how does HMR works you know how does it work how did it get
+to know that I change something in index dot html or af dot js or index dot css how does it know
+how does it know because there is something known as file watchers there is something known as file
+watchers there is a something known as file watcher algorithm file watcher algorithm who does it for this
+who does it for us who does it for us parcel is doing this for us right parcel uses
+file watcher algorithm and let me tell you my friends this file watching algorithm is written
+in c++ now you would say that akshay we were learning javascript we hate c++ why do we have
+to deal with c++ c++ is a beast again right so I am not going to teach you c++ but you know the
+internal algorithm for file watching is written in c++ right so c++ is also love right c++ don't
+hate any language right we love javascript I love javascript that does not mean I hate c++
+okay so this file watching algorithm is written c++ because it's very fast it just keeps a track of
+all the files which are changing real time and it tells the server reload so see if I press the
+command s just see see this see this this will blink right see it is reloading do you see this
+built-in 6ms built-in 7ms built-in 6 milliseconds built-in 10 milliseconds in 10 milliseconds in
+10 milliseconds it is doing amazing things for us everything parcel is doing it is watching
+file watcher algorithm is watching hot module reloading is happening and there are more things
+happening more things happening more things happening and nobody nobody told me nobody told me an
+important thing nobody told me an important thing come on asshole how will this happen
+how will you learn react nobody told me akshay why is this parcel dot cache came
+in what is this parcel cache nobody told this nobody asked me this question
+question. Nobody asked me this question. Don't you have this query? What is this? What is
+this parcel cache? What is this dist? What is this parcel cache? Why? Why, right? Okay,
+some people are saying I asked it but it skipped. Sorry, sorry, sorry. My bad, my bad, my
+bad, my bad. Okay, if you have asked, but that's a nice question. You are intelligent
+people who asked. Parcel cache. Okay, I'll ask you one more question. When parcel
+is doing all this thing, watching your files, while doing hot module reloading, won't it
+need some space? Does parcel need some space? Does parcel need to do some things? It needs
+some space? So parcel also, we need some space. Everybody needs some space. So we give parcel
+this space. Parcel says that give me some space, Akshay in your project. Give me some
+space. And we give this space and parcel, we actually did not give this space. Parcel
+does not ask for it, right? But parcel creates this parcel cache. And whatever it does over
+here, hot module reloading, file, virtual algorithm, minification of your files, there
+are a lot of things parcel is doing it for you. It just uses all these files. I am
+not able to see these files are like random binary files. So it is tough for me to
+read and it is tough for VS code to also read. So I don't know what is inside them, right?
+But there is a txt file which just says something I don't know about it, but then assume that
+parcel is using this to do all that extra stuff for us. Okay. It is like somebody wrote
+bohat jaga hai, nahi jaga hai, bohat jaga hai, nahi jaga hai, something like that.
+Hot modules and parcel that cache is fighting. Okay. So parcel is using parcel cache to do
+all that, right? And there is also a dist folder. Dist folder basically keeps the files
+minified for us. You know, when we go, right? I'll tell you what is dist, right? So this
+is a development build when we run the command npm high npm px npxparcelindex.html, right?
+This just creates a faster development version of our project and serves it on the server.
+Listen to me very carefully. Listen to me very carefully. Parcel when I write npxparcelindex.js
+it just creates a development build. It just creates a development build for us and it's
+host it on our server, right? It host it on our server, right? Now when I tell parcel make
+a production build, make a production build, how do I tell parcel make a production build?
+I tell it using build command. I tell it using build command, right? To make a, and when you
+when you say this, it creates a lot of things. It will minify your file. It will do a lot
+more things and where it will push this build, where this will push this build, where will
+parcel build this up? Parcel will build all the production files into my dist folder and
+let me tell you my dear friends, let me just delete this dist folder. I am deleting all
+my dist folder. I don't want my dist folder. I don't want my dist folder. Now when I build
+this for production and if I hit enter, will it work? First of all, let me know. Work
+or break? Work or break? Work or break? Work or break? Work or break? So everybody is saying
+work. What if I say that it won't work? Okay? It just created again error. Nobody
+would break. So it says that, okay, you have your package.js and then you have your
+main as app.js. So we don't need this app.js. This basically specifies the entry point of
+our app. This basically specifies the entry point of our app. So when we are using parcel,
+we don't need this because parcel, we give this where to you enter into our project
+as a command here in command line. Okay? Here in command line. Here in command line. Okay?
+So let us just do it once again. Will it build or not? Will it build quickly? Build
+or not? Yes, it built and it created something for us. It created three files for us out
+of all this. Suppose, you know, suppose if there were a lot of files, a lot of files
+in my project, as we grow, there will be so many files in our project. As we grow, there
+will be so many files in our project, but we will just get three files. We will just
+get three files. Why? Why? Why will we get three files? What is parcel? Come on. What
+is parcel? What is parcel? Parcel is a, no, not beast. What is? Yes, parcel is
+a beast, but except for what it is. It's a bundler, right? It is bundling everything.
+When we create a production build and it creates these three files and push it into our
+this folder. And now these, now you will say, Akshay, what is this dot map dot map? So
+don't worry. This map is like a helper files, but there are three main files, which
+is index.css, index.js and some hash and index.html, right? So parcel bundles all our code and does
+it for you. Bundles all our code and does it for you. And what did parcel take? Parcel
+minified it for us here. Where is my code over here? I am lost. What is this code?
+What is this code? You know what is this code? This is the code that you imported. This is the
+code which you imported your react and react dom. Okay. This is the code. You know, a lot of
+people don't dig into this, right? But I want to, I as a teacher want my students to be
+super awesome. I want my students to be super awesome. They should know what is there
+here in every file, you know, parcel dot cache, you know, node modules, you know, package lock,
+you know, package.json, you know, get ignore, you know everything. You should know dist also,
+right? You should know everything, right? This is the react and react dom code. And where
+is my code now? Where is my code? Will you see my, will we see my code over here? Yes or no?
+Will we see my code or not here? No, no, some people are saying no. Yes or no?
+No. We will see our code over here. Why not? These are the only files which are there in the
+production build. But where is it? Let us find out. See, here is our code. Just three, four lines
+our code is done. This much is our code. And there are so much react and react dom code.
+This is our code, right? We wrote these files, right? Create root, we create element and we
+can't read what we write, right? This is our code over here. So what did parcel do?
+Parcel minified everything. Parcel also minified everything for us, right? It bundled us, right?
+It what it did is it did bundling. It build minification, right? We are we are underestimating.
+You are underestimating parcel. I am telling you don't underestimate parcel.
+Don't underestimate. Don't underestimate parcel is a beast, okay? What it also does is we had a lot
+of console log. In this file, you will find how many console long will you find in this file?
+If I search for console log, how many console logs will I find in this file?
+How many console log will be there? Zero exactly, right? None of the console logs.
+Because parcel is removing console logs for you. It is cleaning the code. It is cleaning
+it as a much more, much more bigger fashion. Cleaning our code, right? Cleaning our code,
+parcel is cleaning our code, right? Don't underestimate parcel. There are amazing things which it is
+doing. It is doing hot module reloading. It is watching our file. It is bundling.
+It is minifying. It is clearing our code and it is taking just 1.5 seconds to do this
+when we create a production build. And when we create a development build,
+see how much time it takes. Guess what the time it will take when we create a development build.
+This is taking 1.5 seconds to generate production build. How much time will it take?
+Let us just see. 407 millisecond. Oh my God. This is way less. And if I save it
+for the subsequent series, for the subsequent builds, it just takes 4 milliseconds. Why?
+It is very less. It is very less. It depends on a lot of factors. It depends on my system.
+It depends on your system. It depends on how many projects we are, how many files do our
+project have, how many dependencies do we have. But it takes a very less time to do.
+Who made parcel? Find it out. I really don't know who made parcel. But parcel is a beast.
+That is what I wanted to tell you. Parcel takes care of all the development
+and production differences for you. Parcel does all that for you yourself.
+Parcel is a beast. So let us just move ahead. What it also does?
+Suppose if we had, in the website, I have to ask you one more question. In our website,
+what is the most heaviest thing on the web browser when we load any website?
+What is the most important thing? Akshay is a beast. Am I a beast? Come on.
+Okay. I am a good beast. Anyways, but what does the website, what takes a lot of time to load?
+What does libraries, JS? No, JS is very fast. JS is so small. JS is just few KBs on the
+internet, over the internet. What takes? CSS? Very less. 2, 3 KBs, 4 KBs, 5 KBs, 10 KBs file.
+What takes? Media. Images. Right? Images takes time. Images takes time. Yes, everybody agrees to this.
+Images takes time. Come on, yeah. Why would no module take? Now, you know, I am telling you.
+You people, you know, like you come to my class and you just don't know basic stuff.
+No modules is on server. This is the server. Okay. This is the server. This is our dev,
+dev machine. This is our dev machine. Okay. This is our server. Our website is here.
+How will node module come to our website? Will node module be there in our website? Tell me.
+Will node module be there in the website? Then why are you saying node modules?
+Node modules won't take time because node modules are not in your website.
+The production build is shipped to the user. This is our website.
+Okay. And the production build will come to the website. Production build.
+Okay. Our production build will come to this website.
+Okay. So, node modules comes to this website. But how?
+Node modules comes to this website. But how?
+How? They are minified and come, right? They are minified and come, right? They are minified and come.
+Here, right? Here, right? So, what will happen is we can, we, it, what does parcel do is
+it manages dev and production build. And it is super fast, right? Super fast build algorithm.
+I'm just appreciating parcel. That's all, right? Okay. How long will the class takes?
+I will take one more break. We will continue once again. Okay.
+Initial sessions will be a little longer. See, I, I asked you for your time. 11 to
+1, 3 hours, right? We will take one more image today. Oh, one more hour. Like, I mean,
+we will, we will close at 12, right? We will close 11 to 2. Sorry, not 11 to 1.
+11 to 1 was core teaching. 1 to 2 was your doubts and some assignment discussion. But, but, but,
+I want to use 11 to 12 to teach you today because there are no more questions.
+Like previous session was very less easy. It was very easy. We will teach you.
+Okay.
+Should I take core teaching or assignments, core teaching or assignments?
+Core or assignments, core or assignments, core or assignments, core or assignments.
+Yes, everybody is saying core because I also love. Let's cover everything. I want to finish
+my parcel today. I want to finish everything about my app today. Okay. Let's just focus on it.
+Right. Okay. Come back again. Come back again to learning. Come back again to learning.
+What it is doing is parcel, what it is also doing is okay. Listen to me very carefully.
+It is minifying our app. Okay. It is minifying our app. What does, what does it take? What
+does the most, most, most of the heavy thing, most of the heavy thing on the website happens
+because of images? Isn't it? Do you agree to it or not? Right? Agree if you agree to me.
+Agree if you agree to me. Agree, agree, agree, agree. Yes, you agree.
+So parcel does your image optimization also. Parcel takes care of that also. Right?
+You know, parcel will minify your image. Parcel is a beast. Right? Parcel does your image
+optimization also. Parcel does your JS optimization. Parcel minifies it. Parcel
+compress it. Right? It does your optimization also. Parcel is amazing. Isn't it? Amazing
+thing parcel does. Image optimization. We don't have images right now, but you will see. Okay.
+Parcel does it for you when you build your project. Right? Also, also, also, also,
+also parcel does something known as caching for you. Caching. Caching the Devan. Caching
+while development. Now you would say, Akshay, what do you mean by caching by development?
+What do you mean by caching by development? If images come from back end, then it doesn't.
+Right? Images should be in your project. That is when you come on, this is a question.
+Parcel will only know what is there in your project. Isn't it? How? How?
+Parcel caching. Right? Let us see the example of caching. I'll show you.
+Nobody shows you all that. I'm telling you go to YouTube. Right? A lot of people say that,
+okay, go to YouTube. Like you won't find this knowledge. I have learned it myself
+because I have tried it a lot of things. I have learned this myself. This content is huge.
+All hail to parcel. Yes, parcel is a piece. Okay. So I'll tell you what, what does it mean? Okay.
+When you do npxparcelindex.html, see, how much time will it take? How much time will it take?
+It built quickly. Okay. It built quickly. But what I am saying, because it has cached,
+you know, because it has cached. Do you understand the difference? How much time will
+it take? If I go to my older bills, right? If I go to my older bills,
+if I go to my older bills, see it took 1.5 seconds to build it. Remember? Remember?
+It took 400 milliseconds initially to build. Okay. So suppose if I, if I,
+and it has cached it. Okay. So what if I do? Okay. I'll tell you how. I'll tell you how.
+Okay. If I, if I, if I remove my parcel, you know how it is cashing,
+it is cashing inside this parcel cash. Let me just remove it. Parcel
+does not let me show. I am annoyed by parcel. If you, I have annoyed, right?
+Parcel, I have removed parcel dot cash. Let us just try to build once again. Okay. How much
+time will it take? Guess I will take a break. Just let me finish this.
+How much time parcel will take? It took 515 milliseconds for the development build.
+It took 500 milliseconds. If you, if you make a production build, it takes in seconds.
+It is taking 500 milliseconds. But what if I build it once again? What if I build this once
+again? What if I refresh my page? Let me save it. It is reducing the time. See nine, five, six, four,
+eight. Why it is Lulu. So this means partial is using something known as what parcel has,
+what is parcel doing? Parcel is cashing things. Parcel is cashing things for you.
+Now you write parcel OP in the chat, right? Parcel is a beast. Now you understand,
+like, now do you agree? Some people were not agreeing, right? Some people were not agreeing.
+Parcel, like, I mean, parcel OP, right? Because parcel, you know, in six milliseconds,
+it is doing, like parcel takes just few milliseconds and it takes, it does hot
+module reloading, file watching, bundling, minification, cleaning our code. It
+makes a difference between Dev and production. It builds a super fast build. It does image
+optimization. It does cashing while development. Does a lot of things. Parcel does, parcel, you
+know, does compression also, right? It compression also, right? It compresses your files so that
+it is, it just renames, renames, renames your things. You would have seen it renamed your
+variables, right? It renamed your variables. See it, we wrote some constant heading is equals to
+create element. Remember we wrote constant heading is equals to create element. Do you
+remember this? Yes or no? Yes or no, we wrote constant heading. It just make it F.
+It just made it F. Parcel is doing all that thing for you. Parcel is compressing,
+minifying, rewriting, cleaning your code, optimizing it to give you the best possible
+performance. Okay. This is what it is, right? And parcel also takes care of your older version of
+browsers. Compatible with older version of this important thing. Compatible with older version
+of browser. Okay. Compatible with older version of browser. Okay. It adds polyfills. Some people
+are saying exactly polyfills. It adds polyfills to it. You are right. You are exactly right.
+Okay. So one more important thing. Okay. Suppose, suppose, suppose. Sometimes what happens is,
+sometimes what happens is we need to test our app on HTTPS. Right now our local build is on
+HTTP or HTTPS. Tell me, is this on HTTP or HTTPS? It's on HTTP. And some things only work on HTTPS.
+Some things only work on HTTPS. So parcel gives us a functionality that we can just
+build our app on HTTPS. Parcel gives us that functionality also to enable HTTPS on our local
+development build on dev, on dev machine. Amazing, isn't it? Gives us this functionality also.
+What you have to do is you have to put in HTTPS like this. You have to put in hyphen HTTPS.
+Okay. It takes a lot of things. But right now we won't do that. Why we won't do that?
+Because it will complain. Because we are using local host. We are using local host. Right.
+So it will complain. Chrome will say that we don't trust our local host. Chrome does not
+trust our local host. Chrome does not trust our local host. We are just using HTTPS on our
+local. Right. It doesn't work. See, it just create HTTPS. Let me just show it to you. Some people
+are saying show it to us. Let's just see. So see, now it builds, now it ups the server with HTTPS.
+Cool, isn't it? Cool or not? Cool or not? We can test it. It is useful when we are
+testing something. And see, and see, it took a lot more build time this time. Why? Why?
+Why it took a lot of good time? You know, answer right. Now let me go back to my normal HTTP.
+Okay. Now the subsequent, see it again takes time. Because you know, every time you change
+something in your build process, right, you are including HTTPS. You are including doing
+something. It takes some time. But for the subsequent file algorithms, it becomes very
+fast. See, it becomes very fast. It takes time first time, then it caches and everything happens
+where quickly tell me everything happens where everything happens where what parcel is using
+what parcel is using parcel is using its space, right?
+Parcel is using parcel cash for it here. Everything is stored here, cash,
+caching over here. It's very fast. Now, one more thing, one more question I have for you all
+and a very important interview question. I don't want this you to miss in the interviews. I'm
+telling you, okay, I'm telling you how does parcel handle the port number? It is also inside
+parcel cash. You know, one amazing things what you should do, create two projects, create two
+projects, start the development build over here, start one more project and start the development
+build there. Then you will see that the, you know, this, this thing will, this will change,
+the port will change. Everything parcel will manage. You don't have to do anything.
+Everything parcel manages for you. This is amazing parcel is parcel manages your port
+number and everything also port number manages everything parcel is a beast, right? Port numbers,
+right? So now we have this parcel cash. One question, one important question.
+Should I keep my parcel dot cash and get ignore or not? Should we push partial dot cash and
+get ignore? Yes or no? Yes or no? Yes or no? Everybody is saying yes, yes, yes, no, no, no.
+Should I? Should I? People who are saying yes, you are wrong. People who are saying yes,
+you are wrong. We should not write it down, write it down in your notebook. We should
+not put partial dot cash in your get ignore. Sorry, we should put parcel dot parcel dot
+cash in, oh my God. Sorry, sorry, sorry, sorry, my mistake. I have, I myself get so much confused
+when I'm teaching you so many chat going on. Yes, no, but actually we should, we should,
+we should put in parcel dot cash in our get ignore. People who are saying we should not
+put are wrong. Everybody who said yes, we should put is correct. We have to put
+parcel dot cash in our get ignore. I'll tell you why, okay? So let us just push in our get ignore.
+Meanwhile, those who know, please write it down. Why? Why? Why should we put in?
+Why should we put in dot parcel dot cash in my get ignore? Why? Why? Because see anything
+which can be auto-generated will be put inside, get ignore. Anything which is auto-generated
+will be put inside, get ignore. Anything we can generate on server can be put inside,
+get ignore. Remember this line, anything which we can generate on server will be put inside,
+get ignore, right? We won't push to get. We don't want to push my node modules. Why?
+Because we can generate node modules. How? How we will generate node modules?
+What, what create, what information where we will do an npm install and we can generate
+node modules? How do I, how do I create my disc folder? How can I create my disc folder quickly
+in the chat? How can I create my disc folder using parcel dot index dot html and build
+right? Using parcel commands. How do I, and parcel dot cash is already created for us. We
+don't create this. Parcel uses it, right? Let the parcel offloads that headache from you.
+Parcel will create it automatically on the server. You don't have to push it on to get.
+This are the cache files. Don't have to push into get. Everything will happen on server.
+Don't worry about it. Okay. Parcel will take care of it. Parcel does a lot more things. Now you
+will say, Akshay, stop, you are just appreciating parcel for so many things. Let me appreciate it.
+It does a lot of things. It does a lot of things. Parcel, you know, uses something known as
+consistent hashing, consistent hashing, consistent hashing algorithm.
+You would say that Akshay, these are so weird terms. This is the consistent hashing algorithms
+that parcel uses to cash things up and uses a parcel has a lot more things, right? So
+parcel uses consistent algorithm, consistent hashing algorithms, right? To do all that bundling
+for you. Why am I teaching you all this? Why am I teaching you all this? Tell me.
+Why am I teaching you all this? Is it good or not? Should I teach you all this or not? I could
+have just like, I mean, went on writing react code, right? I would have went in writing
+react code. Should I yes or no? Should I teach you or not? Yes, because it is important.
+I want everybody who is graduated from the Namaste react live course
+to go out in market. I will, you know, open, I will openly tell all the recruiters. I will openly
+tell all the recruiters. Whosoever has a certificate of Namaste react live course,
+consider them. I don't want it to be another Udemy certificate or some random certificate.
+Sorry, sorry, sorry, sorry, my bad. Udemy is amazing. Sorry, my bad. I don't
+want to under appreciate anybody's effort. I don't want to under appreciate anybody's
+effort. Sorry, sorry, sorry. I take my word back. Now just don't go and write on social media that
+Akshay is saying Udemy is bad. No, I learned from Udemy. I am apologizing to Udemy.
+But I am saying that see Udemy has very so many courses. I don't want this. I want this
+certificate to have some value for you in your life. You should appreciate it.
+I am not a big fan of certificates. But what I feel is if you are doing right,
+you are, if you are just are in this class, I want you to dive deep. Tomorrow if somebody ask you
+how you're, you know, if tomorrow somebody asked this question in your interview, why are react
+react app popular, right? Why are react app performant, right? Why are react app performant?
+You should be able to answer this. You know, when I used to take important interview, right?
+I'll give you, you know, this is what I want to give you in this class. I can't tell this
+on YouTube videos, recorded videos, everybody will get bored. I'll tell you important thing.
+When I take interviews, I ask people why is react fast? Why, why is your react app fast?
+So some people say react has a virtual dome and it is fast. Have you heard that question?
+Have you heard that? Have you heard that react has a virtual dome, right? But is it just
+about the virtual dome? Is it just that react is fast that makes it fast? No, no, no, no, no, no.
+React is fast in itself, but, but, but react needs a lot of things for it to make it fast.
+When you say that you are building a fast web application, react is just a small part of it.
+Let me make it very clear. React is just a small part of it.
+React is just a small part of it. React uses so many more things. React uses parcel.
+Parcel uses dependencies. Parcel uses dependencies. Parcel acts as a catalyst.
+Your bundler says there's a catalyst. When I say parcel, replace it with bundler.
+Your bundler does a lot of things and a lot of react developers. Oh my god.
+If you are a react developer already and you never knew all this, you would have started with
+create react app. If you have studied react and you never know all that, say I, I accept I did
+not know because a lot of people don't know and people don't, people don't understand.
+People don't understand that this is important things. I want my students to be
+best when it comes to react. And I will teach you every word. You know, whatever I am writing,
+I will teach you every command. I don't want you to memorize all this command. Don't want.
+I don't want you to memorize these command. You should know exactly what am I writing
+each and every code. I will not use a lot of auto import. I won't use auto import.
+We will import everything. We will understand every small thing here. Okay.
+So just do that. And you know, these are knowledge heavy sessions.
+These are knowledge heavy sessions. Go back and watch the recording also.
+You will learn more because one in one time it is difficult to understand.
+It is one time it is difficult to understand. And whenever I teach react, I teach it in this
+way. Do that, right? The parcel is a zero config, zero config bundler, zero config,
+zero config. What does this mean? You don't need a lot of configuration. If you do,
+if you install webpack, if you install a lot of things, right? So you would need to configure
+a lot now webpack and everything like other bundlers have also reduced their configurations.
+But earlier, it used to be very messy, but parcel is zero config. You just need to
+install parcel, give it an entry point and it figures out everything. Assume,
+see what parcel would be doing going to index.html, reading all the code, then minifying it,
+then finding these modules, then going to app.js, doing compression, doing cleaning of our code,
+doing dev build, doing caching, doing compression, doing, doing all that, right?
+Consistent algorithm hashing, file watcher algorithm is running behind the scene in C++.
+HMR is happening on the scene. Amazing thing stuff, right? Amazing stuff.
+So, okay, I have a, I have a great thing. Okay. What if I say, okay, what if I say,
+what if I say, what if I say that, you know, what if I say that if, if react is Narendra Modi,
+if react is PM Modi, then parcel is Amit Shah. Does that make sense? If, if I say that
+react is, react is Modi Ji, then can I say that parcel is, does that make sense?
+Parcel is Amit Shah. It is behind everything. Your app, right? And, and then, right? Amazing,
+right? No political jokes. Sorry, sorry, sorry, sorry, sorry, sorry, sorry, sorry, sorry, no
+political jokes. Like now you will cut it out. Anybody, like you will, you will cut this thing
+out and you will put it up on social media and everybody will like sue me, right? Sorry,
+don't do this. Okay. Please don't do this. Please don't do this. I'm just cracking jokes.
+Sorry, sorry. I am sorry for anybody who, who got hurt by this. I don't want to hurt
+everybody's belief. Okay. Somebody is writing, view is Arvind Kejriwal.
+See, what I am trying to say is, see, I just want to understand that
+not just react makes your app powerful. Okay. I did not even start with react today.
+Okay. I am not starting with react today. You would say that actually already two sessions
+are gone and you have not taught us react. You know, you can learn react. We, we have
+enough time. We will learn react. And you know, by all this ground knowledge,
+by all this ground knowledge, when you will learn react, right? You would love it.
+You would just love it. I want you to love react, not just code in react.
+I don't want to just teach you coding in react. I want you to love react.
+Exactly. There is no less thing which I expect. Okay. And why, what am I telling is
+with the Narendra Modi and Amit Shah example, because see if up and I am not against someone
+or I am not pro Narendra Modi, I'm not against. I'm just taking it as an example because you
+might understand it, right? If BJP wins, then it is not just one Narendra Modi, which is making
+it win. Yes, it plays a important role, but there are a lot more things. Amit Shah is there
+and just Amit Shah and Narendra Modi is making these things clear. Just those two,
+just two of them, just parcel and react can make our app performant. No, no, no, no, right?
+Because there are so many more these things, right? These are different ministers. You can assume
+that these are different BJP ministers and there are some important ones. There are some less
+important ones. There are Yogi Ji. There is other important ministers, right? And there are
+less important ministers. Similarly, react cannot make performant apps alone.
+React cannot make performant apps alone. It needs parcel and parcel needs the help of everyone.
+Amit Shah needs the help of its ministry and all small things up. Everybody down there in the
+change. Every small minister you see right over here, right? Everyone needs it. VS Code is Ratan Tata.
+No more jokes, please, no more jokes. Like, I just, I don't know. It just came to my mind.
+And I told him, like, now you are making jokes out of it. Please, please, please.
+Now I know that, okay, my LinkedIn and Twitter and everybody will be everywhere you would.
+An academy is Adani. Oh my God. Now a lot of people would write it on LinkedIn and tag me with
+all this. Oh my God. I am still dealing up with TimeTide and JavaScript. Okay, no more political
+jokes. Sorry, sorry, sorry. No more. No more political jokes. Calm down. Okay.
+What I want to say is, react does not make the app powerful in itself.
+It requires a lot of things. It requires a lot of dependencies. Even in the dev, in the dev version,
+okay, I'll distract you. Okay. In the dev version, okay, we have just, we have just less time. Okay.
+We have just 30 minutes. I have to quickly wind this up. Okay. So tell me, do you,
+like, I will, you know, you know about dev dependencies or not? Yes or no?
+Do you understand what is the difference between dev dependencies and product,
+normal dependencies? Where is package log package.json? Do you understand? Yes or no?
+Yes or no? Yes, yes, yes. Do you understand? Okay. I'll ask you a few questions. Okay.
+I'll ask you a few questions to test your knowledge. So if parcel is not responsible
+for doing all this, then what it is? What is, I will take a break just after this. Okay.
+Parcel is not responsible for this. What is this? Yes, the packages, the node modules,
+the packages. Yes. All this parcel is not doing in itself. We think that, okay, parcel is doing
+this, but parcel is orchestrating things. Amit Shah isn't asking you for votes. Amit
+Shah does not directly come and ask you, right? Amit Shah has its subordinates which are doing
+all that stuff. Again, I have to take that joke of political, sorry, man. I mean, not next time
+I'm doing it, right? But you understand, understand, right? What am I trying to say that it is not
+just one package which can do all that. It leverages all the other package which are
+there in node modules. How would I get to know? Now you can ask me, Akshay, I want to see
+what parcel is using. I want to see Akshay. How would you tell me? Okay. Go here and go to this
+package.packages. Go to parcel here. Okay. I'll tell you. Go to parcel here. Where is parcel?
+Where is parcel? Where is parcel, parcel, parcel, parcel. Okay. Let me find out parcel. I'll tell
+you. Amazing thing. Okay. See, this is the parcel and parcel has its own dependencies here.
+See, parcel has its own plugins, parcel has its own utils. And now these dependencies can
+also have their own dependencies, which can have their own dependencies, which can have
+their own dependencies. It's not easy. Everybody using one and the other. Suppose if a prime
+minister wins, there are somebody behind the scenes, then they have smaller subordinates.
+Then inception of dependencies and there is an important word for it. And trust me,
+when you're going in interviews, use this word, which is known as note down in your,
+note down that word in your, note down that word in your notebook. This is known as
+transitive dependencies. This is known as transitive dependencies. It is known as
+transitive dependencies. This is not just parcel thing. I'm just telling you so that you can
+understand the spelling. Make sense. What is transitive dependencies? Will you be able to
+answer whenever, you know, whenever, whenever, you know, you are going in interviews, right?
+Always say, always say, we have our package manager, which handles and takes care of our
+transitive dependencies of our code. Does that sound cool? Right? Cool. If that sounds cool.
+You know what happens? A lot of people, a lot of interviewers, you know, they can answer you,
+you know, they, they ask such silly questions. They ask that I find it silly,
+seriously. I'm saying silly to them on their face. If some interviewer over here is there
+who is asking silly questions, I will say it on their face that never ask a question.
+What is transitive dependencies? You know, once I went for an interview at the interviewer asked
+me, what is transitive dependencies? And I was like, what dependencies? And I was very confused.
+I don't, and you know, these are lame interviewers who ask all this, all these silly questions.
+Every, it is a very easy concept, right? It's a very easy concept.
+But I know, suppose if you, if you get stuck into an interview, where your interviewer asked,
+okay, that what is transitive dependency, then you know how to answer it, right?
+That is why I'm teaching you. Otherwise, I don't intend to teach you.
+These are like the jargons, which people use in interviews. I don't know why,
+but this is known as transitive dependencies. Okay. What is now some, so understood or
+not under clear, clear, right clear if it understood, clear, and I'm taking a break if it is clear.
+Some people are saying repeat, okay, I'll repeat it once again, quickly repeat,
+and then we will take a break. Okay. So see when you have to build a production ready big app,
+which uses minification, which uses bundling, which uses cleaning up of coal,
+which uses compression, which uses image compression, which uses consistent hashing,
+which uses a lot of things, which is minifying our file, right? Then what will happen is we just
+do not, and you know, you have to tell the interviewer in this way. You have to tell
+the interviewer in this fashion. When we are building a production ready app,
+we need to do a lot of things with all these things, bundling, minification, image optimization,
+caching, differential bundling, so many things we have to do, and we can't do this alone.
+We need some dependencies on it. When we need dependencies,
+so those dependencies are also dependent on something three. This is a dependency tree.
+So I'll show you with an example, right? I'll show you here, right? Okay, I'll draw it and
+show you. I don't know, it was, it is an easy concept. Most of the time students understand
+that directly, but right now you are not able to understand it. No issues. I'll explain
+you. Some people takes time to understand no issues. Okay. So there is a package, right?
+There is react. Okay. Suppose this is react, right? And this is your parcel, right? So only
+these things cannot make your app performance. Isn't it? No. Parcel uses lot more dependencies.
+And these dependencies uses more dependencies out there. These dependencies can also have
+more dependencies. This is right. So our app is not just this, right? Our app is not just react and
+parcel, right? Our app is whole. This is our app. Don't underestimate. Don't underestimate our
+performance app. This is known as a dependency tree. Note it down. I have, I am having a
+bad handwriting right now. Dependency tree. Okay. And this is, and these dependencies,
+right? These dependencies. One dependency over another dependency over another dependency.
+Okay. This dependency over another dependency over a, another dependency over another
+dependency, or another. This dependency is known as what? Write it down in the
+chat what it is known as students, transitive dependencies. Okay, I am telling you because
+you know, my, I have seen this in interviews. I don't want you to mess up your interviews
+seriously. And because of all these silly things, there are interviews and you know,
+trust me, if you take interviews, don't ask silly questions. These are very silly
+question, which people ask, never ask like this, right? Like it doesn't matter whether
+you can be a good programmer, but you know, you fail interviews because of all this. I
+hate these type of interviews. Right? Okay, so let me go back to my code. Okay. So let
+us take a break. Do you want a break break or no break? No, right? Break or no, right?
+Break or no break or no break or no break break break break break break break break
+I can see no, no, no, no. Oh, come on. I am feeling thirsty. I need to refill
+my water. Let us take a break. Okay, let's take a bigger break this time. Five minutes.
+Okay, let us take a five minutes break and we'll be back. It is 140. Okay, five
+minutes, five minutes break, five minutes timer. Okay, I'm starting a timer. We will
+come back. Okay. Some people are taking 10 minutes. No, five minutes. It has
+already started. I am muting here, right? I am muting myself and I will
+come back. Okay. I'll get my water bottle filled. Be here. I am just opening up my
+code till then. Okay, you can read all this. I am opening up my code so that
+you can read and revise all this. Okay. Hello, I am back. We have one more minute
+before we start. So some people are saying go fast, Akshay. You are taking
+so much time. Let me take some time, guys. We will go slow. Let's be inclusive. Let
+everybody understand. Okay, so, okay, I see I teach it very like, I mean, let it
+digest so many things I taught today. I know there might be some people who
+already know a lot of things. I know. But please understand, right? There are
+so many people who don't know anything. So I won't. I know I am very hungry. I am
+also feeling hungry. What? Let's just wait for like, just wait for 15, 20 minutes.
+I'll wrap things up. Okay. Just 15, 20 minutes more. Okay. 15, 20 minutes. Don't
+worry. I anyways asked you for 11 to 2. See, you go to my website. Okay. Go to
+our website. Namaste, react. Okay. Namaste, react. I asked you. I have three, three hours
+for you. Right. I asked you there will be three hours sessions. Right. A lot of people. Oh,
+sorry. I said, huh, two hours and one hour after class. Okay. So I asked you for three
+hours session. Don't don't give me three hours now. Okay. And a lot of people were
+saying that Akshay, you said, you said 50 hours, 50 plus. That is why I said
+we are going on in plus, right? Don't worry. I let me dive deep. I don't want any small
+thing also. You know, what you can do is, you know, what you can do is I'm telling
+you, you know, what you can do is either you won't know all this, right? I want you
+to utilize this time. There were some issues initially today in the session, right?
+We started a little late. Next time we will start at 11 sharp. We'll start at
+11 sharp, right? And we will cover all that. I don't want, you know, I am taking
+this opportunity to give you all my knowledge that I have. It is you who
+have to extract this. You have to extract this and and you know, you have
+to extract this. Do you understand this? Give me a thumbs up if you
+understand this. Give me a thumbs up there. Right. You have to extract
+this. Extract all the knowledge from me. I am here for you all the sessions to give
+you all my knowledge. It is upon you how much you want to receive. Okay. Cool. Give me
+a thumbs up. Let's see the energy. Let's get our energy for the next 15, 20
+minutes and I will wrap up the session now. Give me the energy. Come on.
+Thumbs up, thumbs up, thumbs up, thumbs up, thumbs up and some Santas as well.
+Merry Christmas, guys. Happy New Year. How's the Josh? Thumbs up, thumbs up. I will
+start the session at 4k. Okay. Let's keep a, let's keep a count at 4k. Let's break
+the unacademy servers. Then you will be disconnected. Okay. 4k is here. Okay.
+New people are amazing. Let's start. Okay. So we saw that parcel is what? Parcel is
+what? Parcel is a beast, right? Why is parcel a beast? You should be able to
+understand now. I just wanted to tell you see. What if you have to find out that
+Akshay, where did you learn all this? Do you have this question? Yes or no? I
+also want to know where did you, where did you learn this? Hello? You have this
+question? Yes. Please tell. Akshay, please tell. What is the secret of your
+learning? See people, I don't do any black magic. I also have the same internet
+as you have. If you can join this class, you can learn whatever you want to. That
+I need, that I learned. Hey, now, and I'm not answering you by Google. What
+do you think can, where would I have learned this from? How would I have
+learned that? What is parcel doing? Where? Where? Docs, right? Exactly, right? Go
+back. Go to parcel. Everything is there. You know what happens? Nobody goes and
+reads out stuff. Nobody is curious. It is only about curiosity. Yes. Zahibullah,
+Zahibullah shake big hands. Zahibullah said curiosity. Curiosity is the main
+thing. You should have that hunger. You should have that curiosity to learn. You
+go find out. You have that pass, right? If you have that hunger, you will stay hungry,
+say foolish. That is what it is. What is the meaning? A lot of people don't
+understand the meaning of that course. It is a very deep, right? Stay
+hungry means this only. This hungry, he is talking about not stay hungry. I am
+feeling that hungry also. I am feeling that hungry also. But this stay hungry,
+stay foolish doesn't say this. Okay. So hungry means be hunger for learning. Okay.
+And reason, question everything. Remember, if I never question that, why is
+their package lock? I have created, you know, most of the developers do a
+mistake that they start, how they start coding? How do most people start
+learning coding? How do start learning react? They write the first, the first
+command that they write is npx create react app. Done. Everything works. Right.
+You don't have to do that. You don't have to do that. You have to know what
+is inside create react app. And you know, let me tell you, what if I tell
+you, what if I tell you we have created a small create react app for
+ourselves? Are you excited? This is a small create react guys. This is what
+it is. Small create react app. Create react app builds it right there. Now you
+would say, okay, no, this is not a create react app. It has a lot. It
+our app also has so many things. We should understand appreciate what is
+happening. There are we have created a create react up without using
+create react up. Okay. And you know, create react hub has some more
+things which we will eventually build. Don't worry. I don't want to teach
+you my teaching style is very different. My teaching style is very
+different in whole throughout my course. I would be teaching you in a
+very different way. It's my way of teaching. I just want to continue
+like that. So I'm not using create react up. Okay. So give me a plus
+one. If that makes sense. Thumbs up here. I want to see
+thumbs up. Yep. Thumbs up going up. Yes. You people are amazing. So
+many thumbs up. Okay. So we saw that all this is happening. You
+know, because we don't realize when we create a create react
+app, we don't realize that all these things is happening
+behind the scenes. Some people are asking what is Babel? I will
+I will cover Babel. Don't worry. Don't worry. I will cover
+Babel. Okay. Don't worry about it. Babel is again a
+dependency, which is which parcel Babel is a kind of like a
+dependency for parcel. Okay. I'll just give you a and it is
+coming from here, right? Here you will find at the red
+table. Here it is. So Babel is used for transpilation. We'll
+see that in the next class. Okay. Some people saying you
+like the way I might teach. Yes, I have left my job to
+teach. So don't worry. So Babel does a lot of things. It
+creates polyfill and all much stuff. Don't worry. We will
+we will learn all that. So don't don't worry for now.
+Okay. Don't worry for now. We will see all that. Don't give me
+some time. Okay. We will teach you all that. Okay. Okay. Okay.
+Okay. Okay. Amazing things. Amazing things. Let us go back
+and let's just move forward. Let us move forward. I hope
+everybody is here. Okay. Now, you know, parcel, I went
+through parcels documentation and let me tell you that
+parcel has one of the best documentations available. You
+know, every library or package that you will use will have its
+own documentation. Right? But parcel has a very amazing
+documentation. I just love parcels documentation. Right?
+Okay, whenever, whenever I ask for thumbs up, my video
+stops. Sorry, guys. Right. I mean, I'm very sorry. Hit
+less. Don't less. Don't just put a lot of thumbs up. One
+thumbs up is fine. Okay, so okay, so some people are saying that
+okay, actually, you could have created taught us parcel after
+creating create react app. Right? So I don't I will never
+create create react app in our class. Right? There will be a
+class tomorrow. Yes, but parcel documentation is amazing. Where
+did I learn all that? Go read about it. I want you to go
+read about all and I have just told you a few things.
+These are not the only thing it does a lot more things behind
+the scenes. If you want to know how does parcel minify it? What
+does parcel use to minify this? You have these questions,
+right? What does parcel use to image optimize? Why does parcel
+use consistent hashing? What is consistent hashing? What is
+zero configuration? If you have all these questions in your
+head, I know you should have if it is why why why why
+why everybody's saying why why why right? This is your
+homework. You have to you have to read it, right? You have to
+read it. It it tells you that okay, this is the hot
+reloading. This is the HMR I was talking about. Okay, sorry, my
+bad. This is not hot module reloading. It is hot module
+replacement. Understood. This is hot module replacement.
+Actually, your homework are tough because it should be
+tough. You have it should be tough. I don't want to
+listen to this complaint. Okay. What do you mean by
+consistent hashing? Go read it out. This is your homework. This
+is an algorithm. See, it's it's then I will start teaching
+you computer science. If I start teaching you all this, right?
+If I start teaching you what is parcel cache and all that,
+then it will be computer science, right? So read all
+that. See, how do you there is something known as API proxy.
+There are lots of things parcel gives it to you. They see
+there is a file watcher, right? And it uses C plus plus
+file watcher written in C plus plus, right? Parcel
+watches every file in your project route, including all node
+modules, including all node modules. Whosoever is asking
+tomorrow's class cancel. No, we will start the new to like
+what is today? It is 31st, see, 158pm. We will start the
+new year by learning. Come on. This is the new year
+learning challenge. No holiday. No holiday. We will learn,
+we will learn. Our new year should start with a heavy dose
+of react. Today I did not even teach you react. See, today
+I did not even teach you react. Now people are saying that
+actually you are evil. You are evil. I am not evil. We
+will start our new year with such amazing knowledge. We
+will start. If you are saying that okay, we have some plans,
+cancel those plans, go in the evening, go in the evening,
+classes in morning, attend the class, go. I am not canceling
+the app, right? I am not canceling my class. Okay. So,
+unless there are people who are manifesting it to cancel
+and we have technical difficulties, but I'll make
+sure that I am here on time. Okay. No, tomorrow we will
+start the new year with our class. Okay. Let's go. So, you
+have to, your homework is to read you, write it down. You
+have to read everything of it. You have good enough time. You
+have good enough time. Go through whole documentation. Read
+each and every line. Now everything will make sense. If
+you would have, if you would have gone and if you
+would have read this documentation before my
+class, it wouldn't have made sense to you. I'm
+telling you. I have read it like couple of times, right? I
+have gave you, I have gave you, right? This
+documentation. Now read it. Everything will make
+sense to you and you will appreciate the knowledge. You
+will appreciate, you will be able to answer in your
+interviews in a better way when somebody says that how do
+you build a production ready app? You should, you
+should be able to tell that these all things are
+doing and you should be, you know, a lot of people
+says that, okay, react does minification. Does react
+do minification? Is this a right answer to give? No,
+right? Never say that in that interview. I, if I
+heard from an interview that Akshay, people have
+certificate of Namaste Rai of course and they are
+telling me in the, in the interview that react is
+doing all that. No. This is the difference between a
+senior developer and a junior developer. Junior
+developer knows that there is something known as
+minification. Senior developer knows how is that
+minification happening? Who is doing that
+minification? How we will do that minification? What
+algorithm is used for minification? Senior
+engineer will know that. Make sense. Give a
+thumbs up. Make sense. Yes. Some beast is
+doing it. Yes. Yes. You know, in the, in
+interviews, a lot of people say that JavaScript is
+beautiful. Now people will say that parcel is a
+beast in interviews. Anyways. So, okay, let me
+move ahead. Okay. I have told you about
+transitive dependencies. Let me tell you one
+more thing. Okay. Now, how do I make my app
+compatible with older browsers? How do I make
+my app compatible with older browsers? There's
+something known as browser list. Right. There
+is a package which is browser list. Right. And
+parcel automatically gives it to us. If you
+see, we already have a browser list in our
+system. Now, let us see how do we use a
+browser list? How do we use this package?
+Okay. Let me tell you how do we use this
+package? Okay. So let's go to browser list.
+So this is the package that is installed by
+parcel to us. Right. It uses some
+dependencies in it. These are also installed.
+But how do I write? So I write something
+known as browser list inside my package.json
+browser list inside my package.json. Let me
+copy this. Listen to me very carefully. I
+want to teach you this right. How will I
+make my app work on Internet Explorer? I
+will tell you I will tell you don't worry
+my friends. My friends don't worry. I
+will teach you everything. Okay. We will
+write browser list like this. And this
+browser list will take an array of some
+strings. Right. I will tell you what
+strings this will be. Understood this.
+What is this browser list used for?
+Write browser list so that you remember
+its name. Write it down. Type it down
+in the comment. Type it down. Time up.
+Just a minute. Just five minutes more.
+Five 10 minutes more. Right. Wait,
+come on. My 15 minutes were gone. Right.
+In the initial. Then you took break. Please.
+Browser list. Type it down. Right. So
+browser list is a thing which will make
+our code compatible for a lot of
+browsers. Okay. This is the browser list.
+Right. So and what can you feed this
+browser list with? Browser list is
+feed it with some configuration. This
+array. Okay. This array over here.
+What will come in this array? There is
+an awesome website which is known as
+browser list dot dev. I will give this
+link to you. Right. I will give this
+link to you. But I'll tell you. Now it
+tells you. Let me move myself inside
+over here. Okay. I am hiding for a
+while. Is it okay if I hide? Okay. I'm
+just hiding it. Okay. I'm coming here.
+Okay. Sorry. Okay. So. So when you
+write last two versions. Right. If I
+write last two versions over here. Right.
+Like this. Right. My app parcel will
+make sure my app is working in last
+two versions of all the browsers
+available. All the browsers available.
+Make sense. Right. Yes or no. Right.
+Yes or no. If I write last two versions.
+Parcel and browser list will take care of it.
+Right. Now you can say that I just want
+to support my app. I don't care about
+Internet Explorer users. I just care
+about my Chrome users. I just care
+about my Chrome users. I just use
+care about my cross users. So what
+you have to do is you have to write
+something like last two Chrome versions.
+So it will just support these versions.
+Cool. So you can just say that my app
+should work only on Chrome version. I
+don't care about other things. I don't
+care about other versions. I just want
+whosoever updates the browser. My app
+will work. Otherwise, I don't care
+if he's using Internet Explorer, Safari,
+Chrome, whatever. I don't expect.
+Right. Amazing theme. So you can play
+around over here. Use this website.
+Play in this website. And you know,
+trust me, but you should not do that
+because once you write last two Chrome
+versions, then it will. Then it will.
+Then you are just limiting yourselves to
+16% of the whole Internet users.
+Is it good or bad? Good or bad?
+Is it good or bad to use this?
+Bad, bad, bad. Obviously it is bad.
+Right. So when you say last two
+versions, right? So it, it supports
+74% of the browsers.
+Is it good or bad? Good or bad? It is
+decent. Not good, not bad. Still bad.
+Yes, still bad, right? Average. But we
+want, suppose if you have a government
+website, if you have a government
+website, you would have to build it
+for all browsers, all browsers. Okay.
+So that's how you do it. You give this.
+So if you want to go dive deep into it,
+go to this query, query composition
+over here, this link query composition.
+Read this out. See, you can do
+something like this also.
+Greater than 5% in US.
+Greater than 5% in US.
+Suppose if your website is just,
+okay, let me increase the font.
+Right. I'll also go, I am also hungry.
+If you are hungry, I am also same
+hungry. I have not even like, I am also
+hungry, man. Just, just give me like
+two minutes.
+Suppose if you want to cover 99%
+of the powerful populace, all the
+browsers. So you can write cover 99%.
+Suppose if you want to cover 99% in
+US. Amazing, right? Amazing.
+Isn't it? Right?
+Amazing it is. Okay. Don't worry.
+So what is the, what did we study?
+Let's quickly recap. We studied NPM.
+What is the full form of NPM?
+People are writing Nana Patagar movies.
+Oh wow. Namaste Prime Minister.
+Not project manager.
+Yes. So we don't have it.
+How did we quickly write in the chat?
+How did we do?
+What did we do to get NPM,
+to use NPM in our project?
+Quickly. What did we do to do NPM?
+Right? What did we do?
+NPM in it. Exactly.
+People are writing NPM install.
+Waste. Waste. You people are waste.
+Sorry. Don't take it to heart.
+Okay. I am just saying it.
+Just go. We did NPM in it.
+Something known as NPM in it.
+To initialize our repo with NPM.
+What did NPM in NPM in it gave it to us?
+What did NPM in it gave to us?
+Quickly in the chat. I want to revise everything.
+What did NPM in it gave to us?
+Yes. It gave us package.json.
+Amazing cool package.json.
+Right. Why do we write hyphen why here?
+Right. If you try, you know, in your homework,
+try it out NPM in it hyphen why.
+Okay. I did not use hyphen why use.
+It won't ask you for any configuration.
+It will just create your project.
+It will just skip. It will just skip things.
+I don't teach like that.
+I don't teach like that.
+I just use everything.
+Right. So I did.
+Now when we got package package.json.
+Now how do I now I want to install parcel?
+How do I install my parcel?
+What is the command that I wrote?
+What is the command that I wrote?
+Quickly, quickly, quickly.
+Look, people are writing NPM I parcel.
+Did I wrote NPM I parcel?
+Did I wrote NPM I parcel?
+Will this work?
+It will work, but is it right?
+No.
+We have to give it hyphen D and that to capital D.
+Why?
+Why do we need to do?
+Why do we need to give this?
+Why do we need to give this?
+Dev dependency is exactly.
+Where is my dependency?
+Here it is.
+Parcel is over here.
+Now we'll say what is process?
+So process is something which got included along with parcel.
+Don't worry about this.
+So we have parcel is Dev dependency.
+Now after that, what is the command to execute our project?
+What is the command to execute our project?
+Execute when I say execute,
+you have to do NPX parcel.
+And then what comes over here?
+Now people say index.html.
+It is the file, the entry point of your project,
+which is index.html.
+So now what we did?
+We did this, right?
+Now I am doing it, right?
+This will execute it.
+This will run the project.
+What did parcel do in this 329 millisecond?
+What did it do?
+Quickly write it down in the chat.
+Why did it take 329 milliseconds?
+It created a dev build.
+It created a parcel.cache, isn't it?
+And parcel did a lot more things, right?
+It created a server for you.
+It created a server for you.
+What did it do?
+It created a server for you.
+It enabled your hot module reload.
+It enabled your hot module reload.
+It enabled the file watcher algorithm.
+It is doing bundling.
+It is doing minification.
+It's not doing minification on your dev build, right?
+This does not include it.
+It cleans up our code.
+It does a lot of things for us.
+Sorry, hot module reloading the replacement.
+Sorry, sorry, sorry, my bad, my bad, my bad.
+Sorry, sorry, sorry, sorry people.
+Yep.
+Don't screw me up.
+You just screw me up.
+Parcel is a beast.
+Okay.
+That is what it does.
+It does a lot of things for you.
+Now, then we saw that how can we install react in our project, right?
+Our good little friend react.
+That is what, you know, all the sessions,
+upcoming sessions will be on react.
+But I wanted to give one session full for bundler,
+creating your own create react app.
+You don't realize it.
+You, we have almost created a small create react app.
+It is amazing.
+Isn't it amazing?
+Right?
+Cool.
+Right?
+So this is what we did.
+Then we installed our react.
+Then our project broke.
+Remember our project broke?
+It said react is not there.
+And how did we fix that project?
+Remember that?
+How did we fix it?
+We wrote import react and react down.
+Then we got one more error.
+What was that error?
+Remember?
+I want to see who remembers.
+I want to see.
+Yes, Sumit is right.
+Karthik is right.
+Arjun is right.
+Divya is right.
+Yeah, you people are amazing.
+You don't forget everything.
+This is what I want from the classes.
+So it complained that, okay,
+you can't directly use import in your system.
+You have to have your script as module.
+Note down your homework.
+Come on.
+I love giving homework.
+Okay.
+Script type.
+You have to see how many type can we give over here?
+What are the different types of scripts?
+No, this is your homework.
+Script types in your HTML.
+Go to Mozilla developer.mozilla.
+Here you will find everything.
+Whenever I say what you have to refer,
+what you have to refer documentation.
+MDN docs don't go to random websites.
+See the first link was not MDN.
+I don't go to first link.
+I am a good smart developer.
+I will, I know how to read documentation.
+If you don't know how to read documentation,
+read it.
+That is when I will know.
+Try to find out.
+Try to find out that what happens if I write,
+what is this referral policy?
+What are all these things?
+You will find all the information here.
+Okay.
+So do this.
+Why did we write this type module?
+This fix things up.
+Then we executed our app.
+Then we ran everything work perfectly.
+Then we saw what is the difference
+between package and package log dot json.
+Okay.
+So I'll ask you a question.
+Right.
+I'll ask you a question.
+Right.
+I'll ask you a question.
+Are you ready?
+Are you ready for a question?
+Right.
+Should I push package log onto gate?
+Yes or no?
+Yes or no?
+Yes or no?
+Yes or no?
+Let me, let me.
+Let me have a poll.
+Okay.
+Let me have a poll.
+Should I put my,
+should I put my parcel cash?
+Should I put my parcel cash?
+Should I put my parcel cash?
+Should I put my parcel cash?
+True or false?
+Yes or no?
+Oh my God.
+No for false.
+No for false.
+Yes for true.
+Should I put my parcel cash into gate ignore?
+Okay.
+My question is wrong.
+Yeah.
+I mean, there are people got confused with my question.
+Let me end this poll.
+Okay.
+So basically, okay.
+Basically you should put your
+parcel cash because we don't want parcel cash to be on gate.
+You should have your answer that why you should put, right?
+You should know what you should put in gate ignore.
+You should put everything that you can regenerate,
+that you can regenerate on server.
+That is what you can push, right?
+Never you should push, right?
+Then we also saw all these things, right?
+In action, I gave you the example of all these things.
+Hope you remember that
+Hope you remember that we made you see, right?
+That how does our minified file look, right?
+Where was I code?
+How was our code clean, right?
+I told you about image optimization.
+I told you that parcel uses caching and I showed you also, right?
+In the subsequent build, it will just be less, right?
+Then I showed you that parcel also takes care of port number.
+There are a lot more things that parcel does.
+Lot of things that parcel does for you, right?
+So, okay, okay, okay.
+So this is what I wanted to teach you.
+Ending note, right?
+Note down your homework.
+You have to do whatever I did today.
+Make your ignite your app in your local, right?
+I am also feeling hungry.
+You are also feeling hungry.
+Now we will enjoy the food and we will enjoy learning as well.
+Because we are hungry for learning.
+What do you need to learn anything?
+How do I lead?
+One answer to that.
+Bhoog chahiye, curiosity chahiye, hunger chahiye.
+Yes, that is what it is.
+Curiosity, have that curiosity.
+I want everybody to have that curiosity.
+Okay, so this was the session of igniting your app.
+We ignited the app with amazing things.
+Tomorrow we will study react.
+Then we will go into react.
+Now you would say that actually you have not covered react.
+But yes, tomorrow you will enjoy react even more.
+You will even more, right?
+So this was the session on igniting the app.
+We have ignited our app successfully.
+We know how to use browser list to have our app working
+in different type of browsers.
+And a lot more things we learned today.
+Hope you have enjoyed it.
+Did you enjoy it?
+Can I see the energy before we end this session?
+I want to wish you happy new year
+because I won't be there at 12 o'clock.
+Tomorrow also I will wish.
+Okay, happy new year.
+Can we have a like?
+Can we have a like?
+Let's blow it up.
+Anyways, we are ending the session.
+Let's blow it up.
+Let's take our like 2K, 2.5, 4.
+Oh my God, so many people.
+4, 2.4, 2.5.
+Oh my God, happy new year, everyone.
+Yes, happy new year.
+See, okay, okay, okay.
+And you know what?
+One more thing I wanted to tell you is that
+please keep doing whatever I am doing.
+You know what happens is whenever I teach react, right?
+A lot of students, this is a habit of almost in every class, okay?
+People, you know, what they do is
+they just don't code along with me.
+Always code along with me.
+Go, do all that.
+Before the next week, I know that, okay, today
+you might have some plans.
+You might go enjoy your new year.
+Don't work today, tonight, okay?
+In the evening, enjoy your year, right?
+On Monday, you should go back to the recording.
+It will take some time for recording to come up, right?
+Go back to the recording and see that.
+And you know, and you have to build it up
+and appreciate everything.
+You have to try all these small things.
+You have to see your build time also.
+It will come different on your machine.
+It will come on different on windows.
+It will come different on slow laptops,
+fast laptop, it depends a lot, okay?
+Do all that thing.
+On Monday, in the next week, next week, okay?
+The next week, I will take your doubts upon this.
+Tomorrow, we will study React.
+Are you excited?
+Write a thumbs up and tell me, are you excited?
+Yes, yes, yes.
+We are super excited to teach you React as well.
+I am super excited.
+We will start building our app tomorrow.
+We will start learning what is JSX, what is state,
+what is props, what is like random jargons inside React.
+Super excited.
+No holiday tomorrow.
+No holiday.
+New year will start with amazing thing, right?
+Oh my God, people are complaining.
+Some people are complaining, joining from USA
+and it is 4 a.m. there.
+People who are saying that, okay,
+we want to end from India.
+Think about people who are joining at 4 a.m. in the U.S.
+Okay, so hope you would have liked the session.
+Okay, if you would have, and one more last thing,
+last thing, last thing, join this Discord.
+We have a pinned comment.
+I want everybody to be on Discord.
+Then don't say our community is bad.
+In our community, right?
+So don't say join the Discord, okay?
+Join the Discord community.
+Please join the Discord community.
+I request you all click over there.
+I want to see people joining in, right?
+Be active on Discord.
+Because suppose there is a technical glitch.
+Don't write so many messages on support.
+There are so many messages and emails on support channel.
+And it becomes very difficult for us to handle this, right?
+Because, you know, support email,
+like email takes time to reply, right?
+So I don't want you to light on support.
+Bug us here, right?
+This is our Discord community.
+People who don't know,
+go to the pinned comment.
+Where is the link?
+Go to the pinned comment.
+Pinned comment over here.
+Pinned comment.
+Are you able to see pinned comment?
+We will study Babel tomorrow.
+Are you able to see pinned comment?
+Yes, yes, yes.
+Join it.
+I can see people join here.
+I know there will be a lot of people
+who are not in LAMASTERIAC live,
+will also join this.
+I know that.
+Don't worry.
+We are not, we are not doing fishy things here.
+Let anybody join.
+This is completely fine.
+But I want to use Discord for all the announcement.
+Go to this announcement over here, okay?
+If you want, go to this announcement.
+We will post all the announcement.
+Suppose if there is some technical issues,
+I will post it over here.
+See, this issue is on our end.
+We are checking with the tech team.
+I will post about all the issues.
+I will tell you when the,
+you know, recordings might take some time to update.
+Don't write an email.
+I will tell you when the recording will come over here.
+I will write the message that okay,
+recordings are now available.
+Okay.
+I can't make it private.
+There is no authentication that I can put.
+Don't worry.
+People are not going,
+other people are not going to get all that, right?
+Don't worry.
+Okay.
+There are so many people are there in the chat,
+chat with your friends.
+All the people, the amazing thing.
+What is amazing about this Discord community?
+Tell me.
+What is amazing?
+Because everyone who is there in this Discord community,
+is learning React.
+Everybody is with a mission to learn React in this two months.
+Help everyone.
+Help in the Q and A session.
+Okay.
+Help over here, everyone.
+Whenever you see something coming up, help.
+I will pick up a lot of people
+from this community itself to give them gifts.
+People who are helping, right?
+People who are helping each other.
+Do that, right?
+And I will pick up question and answer from here also
+and I will cover them in the next session.
+Okay.
+So that was it.
+Join the Discord community using the link over there, right?
+On the top here, right?
+And I have moderators Jayant and Kunal, right?
+Help, right?
+Ask the moderators for any help.
+Anybody who is abusing the community in the community,
+please be respectful.
+If anybody is abusing, we will ban you
+and we will not give you access again.
+Sorry for that.
+Don't write a support email then.
+Okay.
+So before I end this session, thank you all for joining.
+Okay.
+Thank you so much for joining.
+Join the Discord and we will,
+I'll meet you tomorrow at sharp 11 a.m.
+And we are going to start exactly at the same time.
+11 a.m. Okay.
+Tomorrow.
+So bye-bye all of you.
+Hope you would have liked it.
+If you would have liked it, keep writing.
+Make a blog.
+You know, people say that, Akshay, you don't give me blogs.
+You don't give me notes.
+Yes, I won't give you notes because my notes,
+you won't understand.
+I feel that you should make your own notes.
+Make your own notes.
+Write time.
+Make your own notes.
+M-Y-O-N.
+Write M-Y-O-N in chat.
+M-Y-O-N.
+M-Y-O-N.
+M-Y-O-N.
+M-Y-O-N.
+Make your own notes.
+Okay.
+Because when you make notes, right?
+You will revise everything and that will stay with you throughout.
+When you are giving interviews, you will understand.
+You know, when I read somebody else's notes, I don't understand.
+Because everybody writes in their own fashion.
+Some people like to draw and make notes.
+Some people like to type and make notes.
+Some people like to scribble and make notes.
+Some people like to make notes on PDF.
+Some people like to make notes on Google Docs.
+Some people use Notions.
+Some people use Evernote.
+Some people use iPad notes.
+Random stuff.
+Whatever you use, use it, right?
+But make your own notes.
+Okay.
+And thank you so much.
+Keep following, keep doing your assignment.
+I don't want, I have very less assignment.
+If you, if I go to the assignment section,
+you have to submit your assignments on Discord.
+On Discord.
+Community link is on the pinned comment.
+Join it right now.
+If there are some issues, notifications, announcements,
+I will make here, right?
+Thank you so much for joining.
+Happy New Year everyone.
+I won't be there to wish you on 12 a.m. tomorrow.
+I don't have music right now.
+Signing off like this.
+Thank you so much, everyone.
+Excited for this.
+Can I see the energy last,
+one last time on the thumbs up button?
+Let's break it up.
+Let's break it now.
+And I will end the session.

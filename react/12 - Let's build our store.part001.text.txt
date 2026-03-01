@@ -1,0 +1,1554 @@
+FILE: Episode 12 - Let's build our store.part001.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Welcome back to Namaste React. This is episode 12. Let's build our store. In this
+episode we are going to see how we can create our own Redux Store. As you would
+have already guessed it, right? We are going to study Redux in this episode my
+dear friends and we are going to build our own store. We are going to see how
+we can manage state of our application using Redux, right? How we can
+manage data of our application using Redux and we will also see remember in the
+last episode I told you about UI layer and the data layer? Yes. So Redux works in
+the data layer, okay? There is a UI layer, there is a data layer and Redux
+works in the data layer of our application and UI and the data layer
+works in sync and builds our own React app, right? And Redux works in the
+data layer of our application. We will see how we can handle the data
+effectively using Redux and I will show you all the code examples to create our
+own store, manage our own store and like put data into it, retrieve data into it
+and a lot of exciting stuff. So let's get started without wasting any time.
+Before I start teaching you, first of all I wanted to share my experience of
+using Redux in my career, okay? So I have seen a lot of projects that use
+Redux. I have seen a lot of companies where Redux is used primarily and
+let me tell you what major misconception that I have seen, right? What major
+mistake I have seen in these companies. You know, they start using Redux from
+first day itself, right? And they don't even think about the project and then
+they just start using Redux out of the box. What I mean to say is, see, using
+Redux from day one is not a problem. But I'm saying that Redux is not
+mandatory. What I want to tell you is that Redux is not mandatory, my dear
+friends. I have seen a lot of companies, they just build projects and they just
+use Redux along with React. No matter what the state is, they don't think about
+whether do we actually need Redux or not. They just start using Redux from
+day one, right? Without even thinking whether we need Redux or not. So what
+I am trying to say is, Redux is not mandatory in your application. Please
+understand that. It's been like, it's today's 12th episode, right? We have
+been building a food ordering app and we have built quite average, big, large
+scale application and we have not yet used Redux, right? So basically and we
+were still doing things. So what I'm trying to say is that Redux is not a
+mandatory thing. First of all, first thing, right? You should remember it.
+Note it down. Redux is not mandatory. You know, when you are building a
+small application or even a mid-sized application, you don't need Redux. But
+if you're building a large scale application where the data is heavily
+used, where a lot of what you'll say read and write operations are happening
+in your UI application, in your React application, there are a lot of components
+and a lot of data data is being transferred between these components,
+right? It's it's the application has grown huge. Then using Redux makes
+sense. If you're building a small app, if you're building a very small app with
+few components, you don't need Redux. And let me tell you all the applications
+which are built using Redux can be built without using Redux also, okay?
+So what I'm trying to say is Redux is not mandatory and use it only when it
+is required. A lot of, you know, I have seen in companies, there are
+developers, right? While I used to take interviews, right? They don't know
+the difference between React and Redux. They feel that Redux is a part of
+React. No, my dear friends, if you are the one watching the video and you
+feel that Redux and React are one and the same thing,
+no, my dear friends, Redux is a separate library, React is separate, okay?
+So when you are building a React application, Redux is not required,
+but you can use Redux if you really need to. Got it? So Redux is a separate
+library which we import in our, right, which we basically install in our project
+and then we use Redux capabilities or Redux superpowers, right?
+So it's a different game altogether. So don't assume that, okay, Redux React is
+the one and the same thing. And now in this episode, everything will be
+clear. You would know exactly what is Redux and what is React and how are
+they different, okay? So let us just begin by learning
+what is Redux, but note down one point, right, that Redux is not mandatory in our
+application and use wisely, right? Use Redux wisely and only when it is
+required. And also let me tell you, let me first
+of all, before moving ahead, right, let me also tell you that Redux is not
+the only library, right? Redux is not the only library
+that is used for managing state. There is a library which is known as Zastan.
+Let me just show it to you. There's a library which is known as Zastan,
+Zastan, right? So Zastan is another library
+which is used for state management and it is gaining popularity a lot, right? It is
+becoming very popular these days, right? It's a quite lightweight library
+and a lot of companies and a lot of developers are using this, okay?
+So go check out this also, right? What I am trying to say is that
+don't depend heavily on Redux, right? You might use Redux, right?
+And why, first of all, also let me tell you some advantages that why do we
+use Redux? First of all, when you're building a large
+scale application, Redux offers you a great solution for it, right?
+Handling data, managing your store, right? You will get to know, right?
+When we move ahead in this episode, right? You will get to see a lot more
+advantages of Redux. But let me tell you that there are
+other libraries also which are doing the same thing, okay?
+So there is one library Zastan which is gaining popularity a lot.
+In this course, in this Namaste React, I am not covering Zastan, okay?
+But I would like to, like, I would like you to go ahead and explore it, right?
+It's really nice. We will be talking about Redux in today's
+in today's episode. We will be talking about this Redux, right?
+And what parts of Redux that also I will let you know.
+But Redux is primarily used for handling state of our application.
+Another advantage of using Redux is that when we use Redux, right?
+Our application becomes easier to debug, right?
+Applications become easier to debug. Got it. So there is a Redux Chrome extension.
+I will get, I will tell you about that also, right?
+A lot of cool amazing things I will tell you in this episode, right?
+Remember in the last episode I told you that just like we have React DevTools, right?
+We also have a Redux DevTools with us, right?
+That Redux DevTools helps us debug our application when we are using Redux.
+Okay? So when we are managing state using Redux,
+Redux DevTools will help us, right?
+You will see everything in action with live examples as we move ahead in this episode.
+So without wasting any time, let us just dive into learning Redux.
+So now let us just go to Redux website and let me show you what actually Redux is, right?
+So basically in your Redux website, it says that a predictable state container for
+JS application. So it's not something which is tied to React, right?
+It's not just used along with React, but it is popularly used with React.
+That is why a lot of people say like, a lot of people think that React and Redux are
+like one and the same thing, right? But let me tell you React, but let me tell you, sorry,
+Redux offers state management, right? And it does not need to be a React application itself.
+It works with other libraries and frameworks as well, okay?
+But it is heavily used with React, okay?
+So that is why it is popular, right? React and Redux is a very great combo.
+And a lot of people use it, a lot of companies use it.
+And let me tell you, it's really very great, right? It works smoothly.
+And if you will see the Redux website, right? So they have React, Redux, right?
+So there are two libraries that Redux team offers, right?
+There are two libraries that Redux team offers, right?
+First is React, Redux. So this React, Redux library is kind of like
+a bridge between React and Redux, okay? So we will be using the React, Redux library today
+in our application. And the other library that we will be using from Redux team, right?
+From Redux, that is Redux toolkit, okay? So now, why we are using these libraries?
+Let me tell you that earlier, right? In older days, we used to have a different way of writing
+Redux, right? So there used to be a different way of writing Redux.
+But what has happened now with the modern web development is coming up, right?
+So Redux has simplified itself a lot, right? So a lot of tutorials you will find on the
+Internet, it would be a older way of writing Redux. Today, in this episode, I am going to teach you
+Redux toolkit, right? This Redux toolkit, this Redux toolkit is a newer way of writing Redux,
+right? So I will be teaching you the latest, which is being used currently in the industry.
+And if you are building a product today, if you are building a project today,
+you don't have to use the older version of Redux or older way of writing Redux.
+Today, we will be learning Redux toolkit. It is the standard way of writing Redux now,
+okay? So this is the Redux toolkit, we will be using Redux toolkit, along with React Redux,
+okay? We won't be using like the traditional vanilla Redux, right? Some people call it as
+vanilla Redux, so we won't be using vanilla Redux. We will be using Redux toolkit, the latest way
+of writing Redux, and we will be using React Redux, which is a library which is used to
+bridge the gap between the two, right? So this is what I wanted to tell you.
+Let us just explore what is Redux toolkit now, right? If I go to Redux toolkit, right? So why
+Redux, right? So if you will read this, right, the purpose of Redux toolkit, it says that Redux
+toolkit package is intended to be the standard way to write Redux logic, right? So earlier,
+we used to write it in a different way in vanilla Redux. Now, we used to write in a
+different way that is Redux toolkit, right, using Redux toolkit, and it's now a standard
+way of writing Redux logic, okay? So if you are building project today, you want to use
+Redux, use Redux toolkit, okay? That's my call and please do that. But then you would ask me,
+Akshay, if Redux was there, there is separate vanilla Redux and there is a Redux toolkit,
+what is the difference between the two? Why we use Redux toolkit? Okay, go ahead, read this
+documentation. Everything has been mentioned. I really love their documentation. Please go
+ahead and read it. Let me also show it to you. So see this, right? It was originally
+created to address three common concerns about Redux, right? There were three major problems
+with Redux that Redux toolkit solves. First is, Redux was very complicated. You know,
+Redux used to be very complicated. And let me tell you, my dear friend,
+Redux has a huge initial learning curve. It comes up with a huge initial learning curve.
+You have to learn a lot of things, right? You will get to know, right? As we move ahead
+in this episode and earlier while writing vanilla Redux, right? When we were writing vanilla Redux,
+it was even more complicated. Redux toolkit has, you know, made it a little easier, right?
+It is still a little complicated, I would say, right? But it is much more easier than what it
+used to be, right? So Redux toolkit offers a very less complicated version of Redux, right?
+And you will, you will get to see shortly, right? Other problem which it solved is that
+we had to add a lot of packages to get Redux do useful things, okay? So Redux used to,
+Redux used to need a lot of different packages, right? Then Redux used to become powerful, right?
+But now we do not need much with Redux toolkit. Redux toolkit and React Redux,
+two libraries will make our job done, okay? So that is what, right? That is what Redux
+toolkit has solved, right? And why do we use Redux toolkit is requires too much of boiler
+plate code, right? So Redux used to require too much of boiler plate code, right? And I'll let me tell
+you a lot of people, a lot of developers who use React Redux, they used to copy paste older code
+and paste it, right? And then they used to, right, modify it accordingly. And there used
+to be a lot of copy paste while using Redux, right earlier. Now, if you will see the code,
+right? The code is short. The code is sweet. And it does a lot of things out of the box.
+That is why Redux toolkit is the best and the latest way of writing Redux. So please, please,
+please use RTK, right? So Redux toolkit is also known as RTK. So if I say RTK,
+that means Redux toolkit, right? So use RTK in your applications if you are building it right
+now, right? And in our application, we will be using Redux toolkit the newer way. Got it?
+So this was thing, right? And please, go ahead, read this documentation, you will get to know a lot
+more amazing things about Redux toolkit. But now, let me just go and let's just start with
+learning what is Redux toolkit. Okay, so first of all, what I will do is first of all, I will
+explain you all the architecture of Redux toolkit, how things work, right? How things work
+in the Redux toolkit, right? How things work inside it, right? And I will tell you the architecture
+and the pieces and the components and a lot of jargons. And I will tell you a lot of theory.
+Once we understand this theory, right? Once we understand this theory, writing code is a very
+easy thing to do, right? Once you understand the theory, writing code is very easy, right?
+So let get your notepad, get your notebook and pen quickly go run, get your notebook and
+a pen, right? Because you have to take a lot of notes, I will be drawing and showing you a lot
+of diagrams today. So you have to build those like draw your those diagrams along with me,
+and you have to learn while drawing those diagrams. So get your notebook pen, right?
+And let's meet quickly after a short break. Welcome back, my dear friends. Now, let us
+just use Redux toolkit in our application. Okay, so first of all, let me tell you what
+feature we are going to develop while we learn Redux, because this is project based learning.
+So let me show you and develop a feature that will use Redux in our application. Okay,
+so let us build something known as cart, right? So you already know the cart flow. So let us build
+a cart flow. Where is a cart flow? What does that mean? Let me just show it to you. So let's
+go to a restaurant. Come on, which one to go? Okay, let's go to Magna Foods, right?
+So let's go to Magna Foods, this restaurant. So what we are going to build now is
+if I click on this ad, right? So let us build a cart flow. So when I click on this ad button,
+it should go this item should go inside my cart, right? We have this cart over here, right?
+So it should go inside my cart. And let us also build a cart page, right? So let us build a cart
+page, right? You might have seen on the food ordering website, right? Let me just show it
+to you what we are going to build. So in swiggy.com, if I go to swiggy.com, right?
+So if I add something into the cart, okay? So let me just show it to you. So if I go over here,
+let's go to KFC maybe, right? If I go to KFC, and if I add this into the cart,
+so see this, right? In the cart, it increased to one, isn't it? So if I add this to cart,
+so the cart becomes two. So similarly, what we are going to do is we will add these items
+to the cart, right? So it should show on the top also, right? What we will do?
+We will show something like cart hyphen two items, three items, four items and something like that.
+And if I click on it, we will go to a cart page, right? Just like swiggy has a cart page, right?
+If I click on this, we go to a cart page where we see what all items are there in my cart,
+and we can build this kind of feature, right? And to store all these cart information, right?
+To store all these cart information, we will be using our redux store, understood?
+This is the feature we are going to build, and let us just start building it. But before
+we write any code, first of all, I will explain you the architecture of redux, right? And,
+sorry, not redux, redux toolkit, okay? So if I say redux now, that means redux toolkit, okay?
+So let us just see the architecture of redux, how things work. Let us see a lot of theory,
+right? And then we will go on to writing code. So let me get my notebook and pen with me,
+and then let's get started. So I am back with my notebook and pen with me. Hope you also have a
+notebook and pen with you. So let us just start seeing what is the redux architecture all about,
+okay? So we were building the cart feature. So we will be building something like add to cart,
+right? If you click on the menu item, it should add to the cart, right? So suppose we have
+our website like this, I will be going a little slow. So just pay attention, right?
+Please pay attention. This is very, very, very important, okay? So please pay attention. So
+suppose this is our website, right? So here is our website. This is the header of our website.
+Here we have our logo, right? Suppose here we have our logo, and now here is our cart, right?
+So suppose this is our cart, right? Pardon my drawing, I am trying to build a cart with
+some wheels in it, okay? And then the cart can have multiple items, right? Whatever we can,
+we can add items to the cart, okay? So suppose this is a menu page, right? Suppose this is a page
+of Meghna Biryani, right? So let's let's call this as Meghna Biryani, right? Meghna Biryani,
+this is a restaurant, right? And there is a menu of Meghna Biryani. There are suppose three
+items, right? There are a lot of items, right? But suppose there are three items, four items,
+like there are tons of items which we can choose from, right? And these three items,
+we have an add button over here, right? Suppose here is an add button over here, right? We have
+an add button here, got it? So what happens when we click on this add button, right? So this is
+our Meghna Biryani menu page, right? Or any restaurant menu page, here are the items,
+right? Here are the items that I can add into the cart. What happens when I click on the add
+button? How will this add button item send the items to the cart, right? How will they go in the
+cart? This is what I am going to explain you using Redux Store. Just please pay attention to
+all what I say, right? And in the card, as in when we add, right? If I click on add over
+here, right? If I click on add for the first item, what should happen? Here one should come
+up, right? If I add another item, here two should come up. If I add another item,
+here three should come up, got it? So it should be something like this. Let us see how we can
+build this, right? So in this cart, we also show the number of items over here, right?
+We also show the number of items over here, got it? So now we will be using Redux for our
+application for managing the data of our application. Okay, so what is a Redux Store,
+my dear friends? First of all, let me tell you what is a Redux Store. So Redux Store is nothing
+but a big old object. You can assume that Redux Store is a big object and it is kept in a central
+global place. Okay, so listen to me very carefully. Redux Store is kind of like a
+very big JavaScript object with a lot of data inside it and it is kept in a global central
+place. Okay, so let us just try to visualize how my Redux Store looks like, right? So suppose this
+is my Redux Store, right? This is my Redux Store. Assume that this is a central place, right? And
+any component can access it inside our application. In a React application, any component can access
+this Redux Store, it can write data, it can read data from that store and it is like a very big
+object, right? Very big object and it is kept in a central place and we keep all the data of
+our application, not all the data but most of the major data of our application into this Redux
+Store. Got it? And you know, this is a Redux Store. But I want to ask you a question.
+I want to ask you a question. Is it a good practice to keep all the data inside the
+whole big object, right? In the one big whole state object, is it good to keep all the data inside it?
+Yes. Let me tell you my dear friends, it is absolutely fine. There is no problem with
+keeping a very big object with a lot of data inside it. It is completely absolutely fine.
+But so that our Redux Store does not becomes very big, very clumsy, we have something
+known as slices inside our Redux Store, right? So think of it, right? So suppose this is our whole
+big Redux Store, right? Which we have, which I have made from the red pen, right? So we have this,
+we have parts of our Redux Store, which is known as slices, right? So what I am drawing right
+now are the slices of our Redux Store. So you can assume a slice to be a small portion
+of our Redux Store, okay? Small portion of our Redux Store, right? And we create multiple slices
+inside our Redux Store. This is one slice, okay? This is a slice inside our Redux Store. Got it?
+So now I want to ask you that why do we need slices and what are these slices actually, right?
+So let us take an example of our application, right? This food ordering application.
+What can be different slices inside our Redux Store, right? Let me tell you what can be slices
+to keep data separate, right? To we make logical partitions and these logical partitions are
+slices. So assume that suppose if we want to add card data into our Redux Store, we will
+create a separate slice for a card data. Suppose if we want to keep logged in user info inside
+our Redux Store, so we will create a user slice kind of thing, right? It's a user slice. We can
+create a card slice. What else data can we keep inside our Redux Store? We can keep information
+about like something like themes, right? Dark theme, light theme, and maybe theme colors and
+different type of logos and all that stuff, right? Theme related, UI related. So we can
+create a display card or maybe a user card or a theme card. So whatever you need to
+create, right? We will create logical separations and we will make small slices inside our Redux Store,
+okay? So this is what is a slice. Keep taking down notes, right? This is a slice, right? What can
+be a slice? There can be a card slice, right? There can be a user slice. There can be different
+type of slices, right? There can be theme slice. There can be more, right? Whatever you want
+to do, right? There can be a slice for it. Got it? But so we will create a card slice, right?
+And it, this card slice will now hold all the data of the card, right? Initially,
+initially, this card can be empty, right? It can be an empty array. But later on,
+as we put data inside it, it can just modify the card slice, right? Data inside the card
+slice. Got it? So this is the Redux slice. Now, when I click on this add button, right? When I
+click on this add button, how does the data go inside this card slice? How will the data go?
+It's not simple, right? We can't directly add data to the card slice.
+Redux says that you cannot directly modify your card slice. You cannot directly modify your
+card slice, okay? There is a way we can do that. What is that way? Let me just explain it to you.
+So what suppose if I click on this add button, I will have to dispatch and action, okay? Listen
+to me carefully. There will be a lot of jargons which will be coming up. Keep taking now notes.
+It's really very important. So when you click on this add button, right? When you click on this
+add button, it dispatches an action, right? It dispatches an action. Let me write it down.
+It dispatches, dispatch action, right? Dispatches and action, right? Dispatch is an action.
+What happens after dispatching an action, right? It calls a function, right? It calls a function,
+function right it calls a function I am trying to make a function over here or let me just
+make a beautiful thing right this is an action let's call this as action and here I have
+a function f in right so now first of all when you click on this add button over here
+it dispatches an action right note the word dispatch note the word action right and
+then it calls this function and this function modifies the card got it let me
+repeat it once again when you click on this add button it will dispatch an action
+right and then this action will then call a function and this function will
+actually modify the card we can directly actually modify this card
+redux says that whenever you have to modify your card right I am repeating
+it once again right please take keeping keep taking down notes please keep draw
+drawing along with me okay when you click on this add button listen to me very
+carefully when you click on the if you understand this thing right what am I
+teaching right now writing code is very easy very very easy trust me right so
+when you click on this add button it dispatches an action that calls a
+function and this function internally modifies the card this function
+internally modifies the card let me just show it to you like this right let me
+just make it a little zoom right let me make it a little zoom okay so let me make
+it a little zoom over here right so when you click on this add button it
+dispatches an action right and it dispatches an action this action calls
+a function and this function modifies the card got it now what is this function
+actually right what is this function this function is basically known as a
+reducer okay what is this function known as it is known as a reducer got it so we
+have learned some jargon's first is dispatch an action there is a reducer
+function got it so now if I have to say it again I will say when you click on this
+add button it dispatches an action calls a reducer function and this reducer
+function modifies our card right so basically if I have to repeat it once
+again listen to this very carefully right you know understand this if you
+understand this it will become very easy for you I am repeating it once
+again note down this line proper line right I am repeating this line please note
+down this line when you call then you hit the add button when you press the add
+button it dispatches an action which calls the reducer function which updates
+the slice of our reducer store listen to me very carefully once again when we
+click on this add button it dispatches an action which calls the reducer
+function which modifies the slice which updates the slice of our reducer store got
+it which updates the slice of our reducer store let me repeat it once again right
+one last time for you right one last time for you right when we click on this
+add button it dispatches an action which calls a reducer function which
+updates the slice of our reducer store easy right if you will see it it's very
+very easy dispatch an action reducer function modifies the slice of our
+reducer store right there are a lot of jargons I know dispatch action reducer
+and then slice and then store and all that stuff but it's very easy make this
+diagram with you it's very easy if you understand this it life will become
+very easy for you right redux using redux will become very easy for you right now
+this is kind of like and then our slice will be updated right and then our
+slice will be updated the data will be updated right this item will be added to
+our slice right we can't directly add it we have to go through this path we
+have to go through this path when we are using redux why we do all this
+right now a question would be coming to your head why are we doing why are
+we making things complicated it is not complicated it is it makes our life
+easier right I'll tell you the answer to this later on right when we will write
+code okay so don't worry about it but for now just learn that when we click on
+this ad button it dispatches an action which calls the reducer function
+that modifies the slice of our redux store very easy and we have written the
+data inside it now our cart slice right the cart will have this redux store
+cart portion will have that cart slice will have some data inside it what it so
+this was how to write data suppose I want to read data right suppose now I have
+added this cart item now I want to get this data over here right this item over
+here the number over here should change right suppose if we had three items
+before and I added one more item so it should change to four right how can
+read data right so what we have seen how to write data using this action dispatch
+function reducer now we will see how to read data sorry we have seen how to write
+data now we will see how to read data from this card and get over here right
+how can we get data from this card over here how can we get data from this
+cart over here I will see for that we use right for that we use something known as a
+selector okay so listen to very carefully we use something known as a selector
+okay so note it down selector okay so what will happen is we will use a selector
+to read the data from our store and this selector will modify our react component
+right so this is how you read data let me repeat it once again so you will suppose
+if you want to read this data over here from the cart slice over here right in this component
+in this header component how will you do you will use a selector and this selector will
+basically give you data over here selector will give you data over here right and there is one more jargon
+right the last one trust me it's the last one that is known as when we use selector right
+so this phenomena is known as subscribing to the store subscribing to the store subscribing
+to the store note it down right so basically now let me let me revise the read now right let me
+revise the read now once again right so we say that header component is subscribed to our store
+right subscribe to our store and when I say subscribe the store basically it is in sync
+with the store right if the data inside my store changes my header component will update automatically
+right react will right react this redux will automatically update the data inside header
+as soon as my store changes that is why we call this as subscribing to the store so basically
+our header component over here has subscribed to the store right and how do you subscribe
+using a selector using a selector note down this keyword selector okay so this is all is
+redux my dear friend if you understand this in theory writing code is very very easy my
+dear friends very very very very very easy I'm telling you it will be very easy okay so let
+me just repeat everything once again hold read write everything once again okay so when you
+click on this add button it dispatches an action which calls the reducer function which modifies the
+slice of the store which modifies the slice of the store and this slice of the store and
+and you know this header component is subscribed to this to the store right header component
+subscribed to the store using a selector right so this is how the whole flow works this is how
+the whole cycle works right so when I click on this ad button right see what we will see on the screen
+right our screen will be this only right we will only be able to see this we won't see all this right
+we won't see redux store we will just see this so what will happen is we will click on this
+ad button and this will update right the data over there will be updated to four how so
+basically behind the scenes what is happening this is what I'm trying to say when you click
+on this ad button here the data will update but how the data will get update so when you click on
+this ad button we will dispatch an action that will move that will call the reducer function that
+reducer function will update the slice right and because this component is subscribed to this
+store right using a selector it will automatically update so when you click on this ad button
+and the data on the top will change all this is happening behind the scenes
+and you have to understand this properly I want to make it very easy for you you know a lot of
+you a lot of people use redux they don't understand how they use redux they just copy paste code
+here in their right stuff make it work but now I want to actually tell you what actually
+redux is right how do we how do we write and read from redux how what happens behind the scenes
+okay so you don't just have to copy paste I want you to know what is happening behind the scenes
+okay so once again right once again let us just revise it for the last time and then we will
+go and write code for all of that and let me tell you my dear friends it will become very
+easy to write code if you understand this okay so if you understand this it will become
+very easy to write code now again right so let me tell you let me write it once again right so first
+of all if you click on the ad button right if you click on this ad button right if you click on this
+ad button what happens if you click on this ad button it will call a it will dispatch an action
+what will happen it will dispatch action I am writing it once again it will dispatch an action
+what will happen after that it will call a reducer function right I want to go slow you
+must be thinking that Akshay why are you repeating again again because it is important my dear
+friends when we click on this ad button it dispatches an action right which calls this
+function what is this function this is a reducer function which calls a reducer function
+which updates which updates the this is a reducer store right this is which updates the
+slice of our store right so basically slice of our stores let me write it down like this slice
+of our reducer store right this is our store right this reducer function will update the slice
+of our reducer store and our component right our cart component where is our cart component
+right here is our cart right this cart component or this header component right over here this
+header component is subscribed right is subscribed to the store using a selector is subscribed
+subscribed to the store using a selector.
+So as you so let me repeat it once again this if you click on this add button it dispatches
+an action which calls a reducer function which which updates the slice of the store
+and because this component is subscribed to the store using a selector it will automatically
+got updated right this will be updated right this this when you click on this add button
+when you will click on this add button this card will be the card will be updated right
+and everything all this will happen behind the scenes got it so hope you have understood
+the theory remember this line and remember this diagram in your head things will become very
+very easy now we will take reference of this diagram whenever we are coding and you will
+see that it is very easy to write code if we understand this diagram ok so that's all
+the theory part my dear friends take a screenshot of this if you want to right take a screenshot
+of this on the screen right and then and then let us just dive into the code right and let
+us take a quick break I know it can be a little overwhelming let us take a short break and
+then we will come back and we will now write code for all this you will see everything
+happening inside action this is all is redux right if you understand this redux is very
+easy for you right so if you understand this redux is very easy for you all this is redux
+and please take a screenshot and let's meet let's meet after a break till then please revise
+this please note down this diagram in your notebooks let's take a break I'll see you
+very soon welcome back my dear friends enough of theory we have seen a lot of theory we
+have seen a lot of architecture of our app and we have seen how redux works in the theory
+now let us just write code now let us just build this store now let us just build our
+slices inside our store let us see how we can write code for everything that we saw
+in the diagram remember right whatever we saw our store our slices all these action
+dispatch reducer subscribing selector everything we will see now in the code ok so we
+are going to see all this exciting stuff so let's get started ok so we have our app
+over here so first of all let's build our store let's go with the first step right
+let's go with the first step let's build our store ok so let's build our store ok so let
+me first of all tell you what all we will be doing right so here I am in the read me
+file right in the read me file let's keep taking down notes right hashtag redux right heading
+is redux or maybe let's write it as redux toolkit toolkit so first of all right first
+thing is we will build what we will do ok let us just write down all these steps first
+of all right let's just write down all these steps and then we will write code
+for it right so first thing we will do is even before doing this right first of
+all we will install right first of all we will install install libraries right what
+libraries do we will be install in our project right redux is not there in our
+app what we will install yes we will install redux toolkit and what else there
+were two libraries right the actual library name is at the rate redux
+toolkit right so if you will see the actual name of the library is redux yes
+toolkit so we will be installing redux yes toolkit and we will install second
+library which is known as react redux ok we will install react redux these are
+the two libraries we will install right we will need these two libraries to
+work with redux got it so we will install these two libraries ok now a lot of
+people must be thinking why there is at the rate with the name why they
+have kept the name like this to be honest I don't know redux team thought that this
+name would have been cool for the library so they have kept this but this is
+exactly same as name of some other thing right so basically it's just a name it
+has nothing to do with at the rate or that slash right redux j s redux j s slash
+toolkit is the name of the library so if you'll go to npm right so you'll
+find it like this redux toolkit toolkit right toolkit ok if you'll search that
+so see you have to install it like this right at the rate redux j s toolkit
+right the name of their library is like this right you can keep it like this so
+they have kept it they might have found this cool so they have used this but
+it's just like a normal library don't think that it is something else if we
+are writing at the rate right a lot of students you know why am I telling you
+because a lot of students when I was teaching react right last time a lot of
+students had this question so I wanted to like just tell you the answer for it
+right so basically first of all we will install these libraries then we will
+build our own store okay so we will build our own store then we will build
+our slice or maybe first we will build our store then we will connect our
+store right we will connect our store to our app okay connect our store to our
+app okay so we will connect our store to our app right we have built a store now
+we will connect it right we will make a bridge remember the bridge cool so we
+will connect our store to the app then what we will do we will create a
+slice right we will create a slice or maybe let's call this as card slice right
+We will create a cart slice right to add items to the cart, okay.
+So once we have created these slides then we will basically then we will basically dispatch
+action remember we used to do dispatch action we will dispatch an action when we click
+on that when we click on that add button we dispatch an action right we will do all
+that stuff and then we will also read the data using selector okay we will see what
+is selector okay we will see all of this one by one so let's get to the first one
+which is installing the two libraries okay I will do npm install and I will write
+at the rate redux js slash toolkit okay so this will install redux toolkit RTK in
+our application and it will modify our package.json it will add this redux
+js toolkit to our application the latest version of it we are using the current latest version
+which is 1.9.5 okay so we whatever we are learning we are using the latest of everything
+right which is available today in the market so that we are not working on
+anything old right we want to work with the latest of everything whatever we do
+right let's in let's install the second package which is redux react redux sorry
+right react redux these two packages are super important you know let meanwhile it
+is installing oh it installed already but let me tell you a thing earlier you know
+when we used to have redux so we used to use a lot of different packages to
+make redux super powerful right now we just need these two libraries that's
+all two libraries and job will be done so we also have a react redux with us
+8.1.1 got it so we have these two libraries installed with us now let's
+just start building our own store okay so how do we build our own store right let
+me just show it to you so we will build our own store inside our utils okay so
+we have our components we have our utils so I am just creating a new file and
+let's call that as maybe store right let's call that as or maybe let's call
+that as app store right our application store app store.js okay let's create our
+app store so we'll write const app store over here right const app store and we
+will use a function which is known as configure store to create our own store
+right so basically we will use something known as configure store right
+and where will we get this function right where will we get this function
+this configure store configure store will come from will come from our redux
+toolkit got it this configure store comes from our redux toolkit and this
+configure store will will give us our store of our react application got it
+this is how you build an app store right we have built this store right we will
+add slices to it right what is inside store there are slices we will add slices
+to it later but first of all let me just export default my app store okay so I
+have created this store right right now we have not added anything inside it we
+will be adding inside it right we will add slices inside it don't worry
+about it right so we will add right but for now we have just created this
+app store now let's go and provide this store to our application we will provide
+this store to our application okay now we will add this store to our application
+how will we do that so for that let me go to app.js right listen to me very
+carefully so what is the root of our application our root of our application
+is this right so here is our application div class name application so we need
+to provide our store to this application let me just move it down or maybe just
+let me just collapse it right now we need to provide we need to provide our store
+to our application how do we provide it let me just show you we will need
+something known as a provider right and that we will be importing again from
+provider that we will be importing again from our react redux now see very
+carefully this configure store you know there is a difference between two libraries
+this redux js toolkit or rtk library has has things to do with redux right so creating a
+store is a redux thing right that is why this configure store comes from redux toolkit
+but now right now we have to provide provide this store to our react application right so it's kind
+of like a bridge between our react application and redux so that is why this provider comes from
+react redux I am telling you my dear friends I want to dive deep into these small things right
+what library is importing like what what functions what utilities are you importing
+from which libraries I feel I personally as a teacher feel these things are very very important
+some of these students who are watching this videos might be getting bored Akshay why are you
+telling all these import things right we can use auto import and all these things will come up
+automatically no my dear friends you should know everything question everything keep your
+curiosity alive keep your curiosity alive why provider is coming from react redux why
+configure store is coming from redux toolkit why because this configuring store is a redux job
+providing it to react application is react redux job got it providing we are providing
+inside a react application that is why this provider is coming from react redux got it
+so this is how we do that we will import this provider now how do we provide to our app
+so basically we will wrap whole our application in that provider just like we use this user
+context or provider similarly we will use the provider which we have imported from our redux
+right so I will write provider right I will write a provider over here and this provider
+and we will provide the store right we will pass the store as props over here right
+so we will pass the store as props over here right so this is our provider and this is the store right
+remember this key is very important you know right this provider has been exported from that
+react redux library right somebody react redux library who would have written this react
+redux library they would have exported this provider and it takes store as a prop right
+and what store it will take it will take app store over here right app store right it
+will take app store over here and this app store will be imported from our util slash app store right
+this store we have provided to our application now right we have provided this store over here
+so basically we have wrapped our whole app inside this store now suppose if you don't want your
+whole app to have redux right suppose if you want only small portion of your app to use
+redux so you can just provide your store to that specific portion of the app what it but
+wherever you need to use app right wherever you need to use store you have to like wrap everything
+inside this provider got it just like our context provider right just like our context
+provider we have a redux store provider hope you would have understood it now we have created
+our store we have added we have provided our store to the app now what is the third step
+let us now start creating slices right that small slice let's create a cart slice okay
+let's create a cart slice got it let's create a cart slice so how do you create a cart slice
+I will create another file and let me create a file in utils only right you can basically keep
+a folder for all redux slices and stores but I am just putting it in the utils right you can
+keep a separate folder upon you how you want to manage your folder structure but you can keep
+it inside utils as well so I am just keeping it inside utils this is my cart slice.js right
+so now how do you create a slice so I will create a cart slice cart slice and this cart
+slice will be created by a function which is known as create slice very easy right we can use create
+slice so create slice this again this create slice comes from our redux.js toolkit right
+because it's something which is related to redux now this cart slice is a function right
+this is a function and this function takes a configuration to create a slice right it takes
+a configuration the first thing that we have to give it is the name of the slice right let's
+give it a name which is known as cart right let's name it cart right the first configuration that
+it takes is a cart now the second configuration it takes is initial state right it takes
+initial state the second configuration is initial state what basically initially that cart slice
+will be right basically what will be the cart items what it it takes the initial state right now let
+me give this initial state as items right and let me give it as an items and this items is an empty
+object or maybe empty array right so right now our cart is empty okay so this is our initial
+state of our slice got it and then we have something known as reducers right here we will
+write those reducer functions remember those reducer functions we will write reducer functions
+corresponding to those actions got it we will create actions and reducers over here right so
+there is a reducer and reducer is again an object and now we will write those reducer
+functions corresponding to each action okay what is action what is reducer you will get to know in a
+second right you will get to know so what is a action right an action is something known as
+so so what can be different type of actions inside a cart you can add an item you can
+remove an item you can clear the cart right so these things are actions right actions are
+basically what they will say it's kind of like small apis right you can think of it as apis to
+communicate with reducer right you can think of it as apis to communicate with reducer right
+so if you want to add an item so I will dispatch the add items right so let me create it right you
+will understand it properly so this is a this is an action and there is a reducer function
+which is mapped to this right this reducer function basically actually modifies the data inside the
+slice remember now let me show you diagram once again so basically this dispatch action right this
+action right over here this action is basically this add item right and this reducer function
+right when you click on this add button it dispatches an action and this reducer function
+is basically the function this function is the reducer function right and this reducer function
+basically modifies your cart basically modifies the slice of your store how do you modify the
+slice of the store so basically it gets gets access to this state right the initial state
+is empty array right this gets access to the state and now it it gets access to state and
+it also gets action to it also get it's also get access to this action right so this is our
+reducer function right remember this carefully this is our reducer function it gets two parameters
+a state and an action and now it will modify our state based on the action if you don't understand
+it properly you will understand this don't worry right don't worry you will understand it properly
+now I am going to modify my state this state is basically this state right this is the initial
+state we get access to the state right of our store how do we modify it I will do something
+like suppose if I get an item so I will do something like state.items and items is an
+array right so I will do a state.items.push and I will push an action.payload inside it
+I will push the action.payload inside it okay now you would be thinking that what is this action
+what is this payload don't worry everything will make sense right assume that see when we will dispatch
+when we will click on that button we will we will add item right so we will get this payload
+when we will call this add item when we will dispatch this function right don't worry everything
+will make sense let's just write reducers first first reducer is this let's write another reducer
+and let's call this as remove item right remove item or maybe let's write as clear card right clear our
+card okay so first let's write remove item right okay let's remove item remove item remove item
+okay and this remove item is again we have a reducer it takes state and action and now
+and now right over here I can again do a state.items and I can remove my I can remove my item from
+this array right I can remove my item from this array for now I am just doing a pop right I am
+removing one item from the end right I am removing one item from the end but what you
+can do is you can just find out action.payload.right find out the index right so basically
+if suppose there are three items added so which one so you can figure out what item to add and
+then write the logic over here right write the logic of updating the state accordingly right I am just
+I am just removing one item from the top right for the sake of simplicity right and then let's
+create one more one more reducer function which is clear card okay this is reducer function right
+let's write this reducer function state and this reducer function this reducer function don't need
+an action right so basically it it has this action right but we won't be needing it why
+because we want to clear this card right how do you clear this card I will do a state.items
+and I will do a so basically I have to make an empty empty I have to make an empty array
+I have to make an empty array so I can do something like state.length.zero right this will make my
+items as empty again right suppose if there are suppose if there are 10 items in the card it
+will make it zero right so over here I don't need action so I can just avoid it right I can
+just avoid writing action over here okay over here also I don't need action right I just
+avoid it if you need action then you can just add action right over here right now everything
+will make sense right when we call this for now just understand this is the card slice right
+if you are getting confused don't worry this is the card slice right we have created a card
+slice what will this card slice has the first thing is name right the name of the card slice
+the second thing is initial state what is the initial value of that portion of that store right
+in the redux store what is the initial value and then some some reducers right some actions and
+reducer functions which will modify this right which will modify the state right so how do we
+modify the state we can just modify using these reducer functions this is the reducer function
+got it now what we will do we will export two things from here we will export our actions
+we will export our reducers okay we will export our actions we will export our reducers right now
+now we will do a export default of export default of card slice dot reducer right I will do a
+card slice dot reducer I will do a card slice dot reducer right I will just do a card slice
+dot reducer I will export it export the reducer this is how we export the reducer and I will do a
+export constant right and I will export my card slice dot actions right I also want to export
+my card slice dot actions right I want to export my card slice dot actions but what I want to export
+I see see when I will tell you why I am writing in this syntax react redux redux toolkit gives us
+this syntax right this is not a syntax which I have created you must be thinking why are you
+doing all this Akshay react redux toolkit gives us that this is how you have to use it right
+so don't worry it's very easy by the way right just it might be feeling very tough at the beginning
+but it is very easy you have to just write it once you will understand it so what I am doing is
+I am just exporting by default my reducer and now I am doing a export constant I want to export
+my actions and I want to take out these actions first of all right what are the actions I want
+to export I want to export add item I want to export remove item and I want to export
+clear card right so basically this is how you export the actions this is the slice these are the
+actions and this is the reducer we have exported our actions we have exported our reducer got it
+now a lot of people will be confused Akshay what is this we don't understand this let me
+tell you what happened behind the scenes okay we let's drive deep right so what will happen is
+when you will do a create slice right this create slice functions will return an object in this card
+slice right and this card slice object will look something like this it will have actions right
+it will have actions and this actions will have this add items and all that stuff right add item
+add item okay and there will be reducer reducer right so so card slice will be kind of like a big
+object which has actions and reducers right so we are doing a export default card slice
+dot reducer right we are reducing this we are just giving this reducer and we are doing card
+slice dot actions and we are taking out these actions individually right these actions we are
+taking out individually and exporting it got it it is very simple just play with it you will
+understand it right so basically okay so okay a lot of people might be finding confusing right
+shall I write it once again shall I write it once again let me just write it once again okay
+let me just write it once again and explain everything once again okay it will be very easy
+for you right this time you will be able to understand it right I am not afraid of teaching
+to you again and again right I am not afraid to teach you again and again this is my job and
+I love to teach I love to make complex things easy it is complex for a lot of people right
+a lot of people don't even know what they are writing they just copy paste I want you all to
+be able to write it yourself don't don't just copy paste or memorize it just write it yourself
+it's very easy how do we create a how do we create a card slice card slice right first
+of all I will do a create slice right this create slice will take a config this config will
+have a name let's call it card and it will take an initial state this initial state will be what
+right initial state is an object this object has a items right this items are basically
+card items initially I am giving it as empty array right and then we will have reducers
+right we will have reducers reducers is basically an object right this object has
+different type of actions that we can take right what we can take what type of actions we can take
+we can add item we can do a remove item right we can do a remove item we can clear card right we
+can do all that right we can perform all these actions and for each corresponding this we will
+have this reducer functions right basically this is a reducer function right this is basically a
+reducer function with the name add item but this will map to an action right so we have this add
+item right there is a reducer function how do we modify a state of this right we will modify
+the state based on our action right so we will do a state dot items dot push action dot payload
+okay so whatever we will pass in to this function so we will pass some data into this function
+right we will pass the data into this reducer function we will see it very soon right and we
+will just add this item over here got it similarly how we will remove an item right you can write
+all complex logic over here my dear friends but I want to keep it simple that is why I am just
+doing a state dot items dot pop right state dot items dot yeah you can do splice and all that
+stuff but I want to do pop right just I will just remove it from the end right and how to do a clear
+card right how to do a clear card I will basically do a state dot items dot length is equal to zero
+I will just make my item zero right I will make this items empty again I will do a length of zero
+you know length of zero will make your will make your state as empty array okay cool now now
+now you must be thinking Akshay why you did not do this right a lot of people must be
+thinking why you did not do this there is a reason this will not work there is a reason
+this will not work okay I'll tell you right I'll tell you got it so I'll tell you later on
+but for now keep that thought awake right please hold on to that thought now I have created this slice
+now I want to export right first of all I will export default my create slice dot reducer right
+easy I will I will just and then I will also export my and then all I will also export
+my actions right what actions will I export right and where will I export my actions from
+I will export my actions from my card slice dot actions right card slice dot actions got it
+I will export it from here and it is I have written create slice right it should be card slice
+my bad right card slice dot reducer and here is we have card slice dot actions and what all
+actions do we want to export I want to export my add item I want to export my remove item and
+I want to export all of them basically right I have exported this is how we create a slice is
+it very tough it's very easy just write it down yourself you will you will understand it yourself
+right it's very easy now when we have built this slice I want to add this slice to my store
+isn't it my store is empty right now I want to add this slice to my store how do you add it
+so basically you add it like this you create a reducer right this is basically a main read
+see now let me just tell you why why this is a reducer so if you want to modify a store right
+if you modify a big store it also has a reducer for itself and that reducer combines reducers of
+their slices right so this basically reducer is responsible to modify the app store right
+and this reducer is basically a combination of different small stores right for each slice
+we will have a different reducer right so that is why we will write we will basically import
+our reducer right we will import we exported reducer from here right we will import this
+reducer in our app store right we will import our cart reducer cart reducer from my cart reducer from
+my dot slash cart slice right I will import this reducer and now what I will do I will do a cart
+and then I will do a cart reducer so basically this reducer is basically our apps big reducer
+and it consists of small reducer from different slices each slice will have its own reducer right
+each slice will have its own reducer so this is a big reducer for our whole app suppose if we had
+multiple slices suppose if we had a user slice also so we would have we would have added our
+user reducer also over here user reducer also over here got it so let me repeat it once again
+so we have this reducer this whole big reducer is our app reducer right and then this reducer
+contains small reducers of all each slice right for each slice there is a reducer and we will just
+add all these reducers inside it right and that's all we have to do in our store we have configured
+our slice now that's all we have to do my dear friends we have plugged in all these things
+we have plugged in all these things we have created a let me just rewrite it once again till here right
+so initially I created a store right I use configure store I added a reducer right this reducer
+and this reducer this is a big reducer this reducer contains small reducers we have added
+the cart reducer because we have just one slice right now right we have this cart reducer
+this cart reducer come from our cart slice we created the slice we added a name to the slice
+we added initial state what is the initial value of that cart right and then we added reducers right
+different type of actions right that we can perform and this reducers are basically modifying our
+state note down that we are mutating our state over here right it is important to note we are
+mutating we are directly modifying the state over here mutating the state over here the state
+we are mutating the state over here we are basically the existing state right this state that we get
+we are just we are just modifying that state itself right so this is what we are doing it over here
+and then we have just exported our actions that's all we have done and we have also provided
+our app right we have provided we have added a provider to our store right to our whole app
+right we have added a provider now our app is provided anywhere now let us just see
+let us just see can we read data from our app let us just see can we read data from our app over
+here right let us just try to read the cart oh my god our app is not running our app is not
+running okay let's just start our app with npm start start okay npm start okay and let me just
+close this up again can let me close this terminal again let me just refresh our page got it now let
+us just try to read now let us just try to read the data from the cart right how will I read
+the data from the cart remember how will I read so basically I want to show how many items are
+there in this cart right on the top over here on the top of my app on the header I want to show
+how many items are there in the cart right so how will I show that remember the diagram remember
+the diagram we have to subscribe to the store right we have to subscribe to the store using a
+selector so basically now we will use a selector to subscribe to our store got it how do we
+subscribe to our store let us go to the header.js so this header.js has this cart right over here
+this is the cart right this is this cart over here right so maybe let me just make it bold right so that
+it is very much visible right let me just make it bold and big okay so let me just give it
+font bold okay let me just copy paste font bold right let me just make it bold and let me also
+increase the text right let me give it text excel I am just doing this to show you right and over here
+in front of this cart I want to show how many items are there in my cart right suppose if there are
+zero items initially I want to show something like this see this so here is our cart and we have
+zero item so instead of this cart you can add that cart logo or icon whatever you wish to right
+over here I am just writing cart over here you can add that fancy cart logo okay so icon
+whatever right so add that icon over here right so right now we have this zero items right now I
+want to show basically how many items are there in the cart real time right so suppose if my cart
+let's make this initial state let's add some items into the cart right what what can we add to
+our cart let's add maybe let's add a burger okay let's add a burger to our cart let's add
+let's add a pizza to our cart right let's add pizza to our cart okay let's add burger and pizza
+to our cart right I'm just adding some dummy values now when I will read over here it should
+show me two items it should show me two items got it so it should show me two items
+so how do I read it so basically we will use a selector and what is a selector a selector
+is nothing but a hook inside react right we will use a selector and selector is a hook inside react
+how do you use a hook and what is hook at the end of the day what is hook at the end of the day
+a hook is a normal javascript function isn't it so we will have a selector and that is known as
+use selector right use selector hook right and this use selector hook comes from react redux library
+right this use selector hooks hook is coming from my react redux library so how do we use use selector
+hook so basically this hook will gives us access to the store right give us access to the store
+now we are basically what we are doing is we are subscribing to the store using a selector
+got it we are subscribing to the store using our selector so what happens is this use selector
+hook gives us access to our store right gives us access to our store but we will now tell them
+what portion of your store we need access to suppose I need access to my store dot
+card dot items I just need access to my store dot card dot items so this selector basically
+helps us identify what portion of our store I need to read right and I need to subscribe to
+you can call why I am telling you all this why I am using it again and again
+read the store subscribe the store because this is a common lingo when you will go in the industry
+when you will talk to other developers they will say you are subscribing to the store you should
+understand what does it mean that is why I am diving deep into all these nitty gritty details
+because I want all my students to be very good at redux because you never know right
+I want you to use redux right in your companies wherever you want to manage data in your application
+so be really good at it pick up this lingo right we are subscribing to the store right and what
+portion of the store we are just subscribing to the small portion right that card dot items we are
+just concerned about this we don't want store dot user we don't want store dot theme or
+something like that right I don't want that I just want to subscribe to my items
+quite it I want to subscribe to my items when you write like this now this cart will get the
+data of this items quite it this cart will get the data of this items and that's all my dear friends
+that's all and let me make this as cart items right to make it more easy to read
+so basically this cart items will basically contains this items store items so we have
+subscribed to the store dot cart dot items and whenever my items will modify my cart
+items will modify and how do I use my cart items now I can just use my cart items over here I can
+just write a jsx and I can do cart items dot length right give me the length of my cart items
+and let me just save it let me just save it let me put a hyphen here let me just save it
+if I go back to my UI do you see this my dear friends we have got these two items over here
+we have got these two items over here how did this two come up this is all we have to do to read
+thus read the store this is all we have to do to read the store if I do a console dot log
+over here and do a cart items let's see what is there let me remove this console log login
+user right over here right let me do a console log of cart items right let me do a console
+log of cart items and let us see what we have gotten right if I inspect if I go to the console
+do you see this let me refresh the page do you see this we have got this burger pizza
+we have got this burger pizza with us two items in the cart
+got it so this is how you read items from the store how we have done this right we have subscribed
+to the store using the selector we have subscribing to the store using the selector and the selector
+basically gives us access to the whole store and we just want to subscribe to the small portion
+of that store that is items that is store dot cart dot items right store dot cart dot items
+got it so this is what I wanted to tell you this is how we read it now let us just add items we have
+added dummy items to our cart right let's not use these right let's not use this let's make it empty
+once again let us use the real world items right let us use the real world items in our app we have
+this right we have this magna foods let's let's go over here let's add these right
+paneer 65 320 rupees let's add this item if I click on this add it should it should basically add to
+the cart right it should add to the cart over here can we add it can we add it how do we add it right
+let's write some logic on this add button right where is that add button this add button is
+basically inside my restaurant menu no that add button is basically inside my item list yes
+here is our ad button right the ad button is inside my item list got it so here is my ad button
+now on click of this button right on click of this button okay what do we have to do on click
+of this button remember that whole statement on click of the when you click on that ad button
+what happens yes my dear friends you have to dispatch an action now I will show you how to
+dispatch an action right now I will show you on dispatch and action right on click of this button
+we will call right this is a callback handler right on click right on click just okay right
+on click of this button I want to dispatch an action dispatch and action let's not write it
+over here right it will become very clumsy right let me just add a handle add item handle add
+item right I am just writing this function on the top you can write it over here also but I am writing
+it on the top so that it is very much visible to you okay let me just collapse this okay cool
+so handle item handle add item is on click right I am writing it clearly right so that it's
+visible you can add a function directly over here also right but I want to show it over here
+right so constant it's one and the same thing okay so handle add item so now I want to handle
+the ad item from here got it so basically handle ad item now as soon as somebody clicks on this
+ad button I want to add item right ad item I want to dispatch an action right so I want
+to dispatch an action right I will dispatch an action now see clearly how I dispatch an action
+now see clearly how do I dispatch an action first of all I need access to something known as dispatch
+something known as dispatch this dispatch is a function that we get from a hook that is known
+as use dispatch right and this use dispatch hook is again given to us by react redux just like we
+have use selector for reading for dispatching we have use dispatch right so we have this use dispatch
+hook we get access to the dispatch and this dispatch is a function right and I want to dispatch
+an action now right I want to dispatch an action now and what is that action I want to dispatch an
+action remember we exported some actions from here right remember we exported some actions from
+our slice this ad item remove item clear item so I want to dispatch this action basically
+right so what I will do is I will dispatch first of all I will import that action right I
+will import that ad item action right from my cart slice right I have imported ad item and now I
+will dispatch this action right I will dispatch this action and now whatever I will pass inside this
+whatever I will pass inside this will go inside my cart right whatever suppose if I add my pizza
+over here right if I add my pizza over here that is my action dot payload do you understand
+everything is making sense now you can connect the dots whatever I will pass in over here in
+this action this will go to my reducer function right this will go to my reducer function action
+and that too inside a payload right when you will write right so this action dot payload
+got it so over here this action dot payload will be pizza got it so but remember one thing right
+you must be thinking this state is the first argument this is the second argument
+internally Redux is managing everything I am telling you you know Redux you know to be very
+honest as a teacher right I feel Redux is a very bad library to teach because you know
+it has a lot of initial learning curve and let me tell you this is still easy Vanilla Redux is
+very very like it's it's even more messy I am telling you it's even more complicated than
+this but this is the simplest I can break down I am telling you so Redux has done what right whenever
+you dispatch this action right so what Redux will do it will take whatever data you are passing in
+it will create an you know what it will do it will basically create an object right out of it
+I'll show you what what Redux will do behind the scenes whenever you will call this right
+whenever you will dispatch this action Redux will create a object and it will create
+a payload inside this object and it will add whatever data you have added to this object
+and it will take this object right it will take this object when you will dispatch this action
+right it will take this object and pass it as the second argument over here right it will
+add this object right it will pass the second argument over here so when you will do action
+dot payload you will get this pizza here react has abstracted everything behind the scenes
+react is working redux sorry redux has abstracted everything behind the scenes redux is using
+something like this ok this object could be even more complicated but it is working
+something like this behind the scenes got it.
+So if you will write action dot payload and you might be thinking that I have not
+sent payload over here don't worry whatever you sent over here it will go inside this action
+dot payload ok so you kind of have to remember that there is an action dot payload and whatever
+you will pass in from here will go inside over here right let me just save it right and
+let me just click this let me just click this add button and let us see whether pizza
+got added to our cart or not right if I go back if I refresh my page let me go and click
+on any add item right if I click on this add item if I click on this see this we have
+seen this one items right and pizza got added to the cart if I click on it once again see
+this two pizzas were added if I click on it once again see this three pizzas and
+it is auto magically getting updated do you see this selector we have in the header
+right in the header we have used selector we have sub we are subscribed to the store
+whenever my store is getting modified whenever my store is getting modified it is changing
+it is changing this right whenever my store is getting modified is changing things inside
+header right we have subscribed to the store right over here so whenever I am whenever I
+am clicking on that add button it is modifying the store and it is changing it right this
+whole thing is working behind the scenes. Do you see this? Whenever I am clicking on this
+ad button, an action is dispatched which calls a reducer function which updates the slice of the
+store and because my header is subscribed to the store using a selector, everything is working
+seamlessly fine. Oh my God my dear friends, isn't it amazing? We click on this ad button
+and there is a count increase over here. But behind these scenes, Redux is doing a lot of things for
+us. Redux is doing a lot of things for us. Got it? So Redux is doing a lot of things for us
+behind the scenes my dear friends. Okay, so this is how we basically completed the whole
+loop, right? Remember that whole thing? If you click on that ad button and action is dispatched
+ad item and then a reducer function is called, you exactly know what reducer function, right?
+Remember this reducer function. Now you can map all the theory with practical, right? This reducer
+function is getting called here, right? And dispatching an action which where we are
+dispatching the action in my item list.js, here we are dispatching this action. Got it?
+When we dispatch an action, a reducer function is called which updates the slice. We have
+updated the slice and then we have updated the slice and then because we have subscribed
+using the selector, right? Where is the selector in the header.js? We have this selector. We have
+subscribed to these items, right? So now it is automatically getting updated on the top.
+This is how the whole cycle works of read and write inside Redux. Got it? This is the
+basic fundamentals of Redux. Now I won't leave you like this, right? Let's build this feature
+properly, right? We have just added dummy data, pizza, pizza, pizza, right? Let's not add pizza,
+pizza over here, right? Let's try to add real items into the card, right? Let's try to add
+this real items into the card. And let's try to build a cart page also, right? If I click
+on this, let's create a cart page where we will see all that cart info. Got it? So let's see
+that, right? Let's see that. Let's build it. Why? Right? So right now I'm just passing pizza over
+here where we are passing pizza, right? Right now we are passing pizza. Instead, I want to pass that
+specific item which is clicked, right? I want to pass in this specific. Suppose if I click on
+this, I want to pass in paneer 65, right? So how do I pass in specific item? So over here,
+we are iterating over these items, right? So I want to pass specific item, this item
+over here, right? So let me pass this item into my handle item, right? So let me just
+add it as a function. Don't do this mistake. I have seen a lot of people doing this mistake.
+Don't do this mistake. Don't write it. So if you will write like this, that means you have
+called this function already. You have to do something like this, right? Think, this is also
+an interview question. You know, I ask, I have seen a lot of people. Oh my God,
+they don't know the difference between this. I know a lot of, and I bet, I bet that all of you
+who are watching this video might not know the difference. What will happen if we do this, right?
+They will not know the difference between this, right? What is this, right? Take it down as a
+homework, right? Take this down as a homework. What is the difference between all these three,
+right? What is the difference between all these three? You should exactly know how this will work.
+I am not going into the details of, right? All of them, right? I am not going into the
+details of all of them, but you should exactly know what is the difference. It is normal
+JavaScript, my dear friends. This is not even React. Normal JavaScript. What will be the
+difference if I will write like this, if I will write like this, and if I will write like
+this, okay? So this is basically calling the function right away. I don't want to call a
+function right away. I want to pass a callback function. Got it? So I will be using this, right?
+I will be using this, okay? So, but you should know the difference. I am telling you you should
+know the difference. If any Namaste React batch student does not know the difference between
+this, it is not expected, right? It's not expected, my dear friends. I am telling you I will
+thrash you if you will, if you will make a mistake in this, right? A lot of people make
+mistakes in this, telling you, right? So please use this, right? Please understand how it works,
+but I will now pass this item inside my handle item and I can now use this item over here and I
+can pass my item inside my, I can add this item into the card. Now this item will be a big
+object, right? Big object of this, right? Big object of this, okay? Let me refresh the page,
+right? We have added this item. Let us just go back and let us see if what happens when we
+click on this add button. If I click on this add button, see this? We have updated the card.
+We have got this one card over here, right? We have got this paneer 65 added into our card,
+right? And we have got one item into the card, right? We have got this one item into the card.
+Let me add one more, right? Let me add Golden Babycorn also, right? Let us click on this.
+See this? There are two items into the card. See this? We have added two items to the card,
+right? Golden Babycorn is also added to the card. Got it? We have got these two items over
+here. We have got these two items over here. Amazing, right? We have got these two items
+over here. Now, let us just try to build our card page, right? If I click on this, it should
+go to the card page and let us display the card details, okay? Let's display the card details.
+Let's go build this quickly. Nothing, nothing extra we are doing. We are doing very easy
+stuff now, right? We have already done how to create a component, right? Let's create a functional
+component card.js. We are creating a new page, right? Let's create a functional component,
+functional component at the end of the day is basically nothing but a normal JavaScript function.
+We are writing an arrow function, which returns some piece of JSX, right? This returns some
+piece of JSX. Let's return a div and let's call it cart, right? Let's call it cart and let's
+export our default cart. Got it? So, we have created this cart component. Now, we will have to,
+right? Now, what we will do in this cart and let me just, let me just create a URL, right?
+slash cart, right? If I, if I create a URL, right? Okay. So, here we have this URL, right?
+In our app router. So, let's add one more route. Let's call it as cart, right? If we have a path
+as slash cart, if we have a path as slash cart, then render my cart component, right?
+Element should be cart component, okay? Cart component. And this cart component comes from
+import from cart component comes from my component slash cart. Alright, so we have added this.
+Now, let me go to the header, right? Let me also create a link. If I click on this cart,
+it should take me to the cart page, okay? So, let me create a link. Where is my cart? Where is
+my cart? Where is my cart cart cart cart? Here is it, right? Here is the cart, right? So,
+let me add a link to it. Let me copy paste from on the top, right? Let me just copy paste and
+let me just create a link like this, right? Instead of grocery, I've added cart and slash
+cart. Got it. So, we have created a link to this cart. Got it. So, let me close our header.
+Let me close my app. We have our cart.js over here. Let's go back, right? Let me go to the
+cart page. If I see, it's clickable now. If I click on this, it take me to the cart page. Oh,
+my God, it looks very ugly. It's look very small. Let's add some CSS to my cart and
+make it look beautiful. How can I make it look beautiful? Okay, okay, okay, let's,
+let's add a H1. First of all, let me just add some CSS, right? Let's use tailwind, right? When we
+have tailwind, let's quickly add some CSS. Let me give with a width. Okay, let me first of all,
+align all the content to center, right? Text center. Okay, and then let me give it some margin,
+right? Margin or padding, right? Margin of 10 and padding of 10. Got it. So, I have given
+margin padding of 10. And let me also give it, right? Suppose done like this, right? And let me now
+add a H1 tag. And let's call this as cart, right? This is cart. Okay, and let's give it a text
+Excel, or maybe let's call it as to Excel. And let me make it font bold. Okay, I'm making the font
+bold. Okay, cool. So we have added this cart and it looks beautiful, right in the middle
+and bold, right? Oh, I think I have added a lot of margin and padding. Let me reduce some margin
+and padding from the top, right? M10, it's, it's huge, right? Let's give it M4 and P4 maybe, right?
+M4 P4. Cool. This looks better, right? So we have our cart. Now let us show the cart items
+below. How do I show my cart items below, right? How will I show my card? First of all,
+how will I read my cart? How will I read my cart? How will I read the cart info?
+How will I read that cart from the store? You are absolutely right, we will have to subscribe to
+the store, right? We will again be subscribing, right? I want my cart items over here also, right?
+I will add my cart items. How will I subscribe using use selector, right? If I use my use
+selector, SELE selector, right? This use selector comes from React Redux. This use selector basically
+gives you access to the whole store, but we want access to only a small part of store, that is store
+dot cart dot items, okay? I am just concerned about this, right? So I will get my cart items
+over here. I will get my cart items over here. Now what I have to do is, let me just show my
+cart items below, right? How will I show my cart items below? Here, I will show my cart items,
+okay? I will show my cart items, right? First of all, let me add some cart items, right?
+There are zero items over here. So if I go back to home, so how will I show my cart items?
+Maybe let's go back to my Magna Foods. Where was my Magna Foods? Here is my Magna Foods, right? If I go
+back to my items, let's use the same UI, right? Let's use the same UI. We have already created
+item list, right? There is an item list here. Cool. We have this component already. Let
+us reuse the component, right? So this item list component basically gives us the list of
+this item, right? We can expand collapse. We can expand collapse this, isn't it? We can
+expand collapse this item list. So let's use the item list, which we already have, okay?
+Let's use the same, right? Can we use the same, right? Let us see, right? If we can use the
+same item list, right? Item list. And what does that item list take, right? What is the input
+of that item list? So basically, see item list takes items over here, right? So let's give it
+items, right? Item list, see, this is a good reuse, right? That is why we make our components
+such in such a way that we can reuse it, right? I can make items, right? And then we can add
+an item, right? And then we can pass in our cart items here. Got it? We can pass our cart
+items over here in my item list, right? Let us just see if it works. I am just
+fingers crossed. I am just guessing if it works or not, right? I am just doing a blind thing.
+Add, if I click on this ad, I have added my paneer 65 cart item is one. Let me add one more
+item, right? Let me add golden baby corn. If I click on this button, we have added two
+items to our cart. Shall we go to the cart page? If I go to my cart page, let me click on
+this cart. See this, we have got these two items in our cart. Amazing. It is not looking very beautiful,
+but again, bear with me, right? I mean, it is, it is, we have added items to the cart. Cool, right?
+Let us add some CSS to make it look better. First of all, I do not want this width to be
+full. I want this width to be small, right? Let me give it a width of, width of maybe
+6 by 12, right? Half of it, right? Half of the screen or maybe not even half. I want it to be,
+okay, let us give it half and see how it looks. Let me give it margin of auto, right? Let me give
+it margin of auto. Let us see how it looks, right? Cool. It looks much better, isn't it?
+Or maybe I think we need to give some padding and maybe border or something, right? Here,
+we can give some borders. You can make it as beautiful as possible. I am just showing
+you how we can do that, right? Cool. So we have made our cart, my dear friends. We have got the
+cart data inside our app also, right? If I click on this, I will get all the data of my cart items,
+right? I will get data all the data of my cart items. See this, right? If I log it,
+I have all the info of my cart, basically the price of it, basically the name of it.
+I can build any feature over here I want to, right? If suppose I want to, okay,
+suppose if I want to build one more feature of clear cart, right? We have a clear cart action,
+right? Let us build a feature of clear cart from here, right? Let us build a feature of clear
+cart from here, right? I have a lot of time. Don't worry, my dear friends. Let us build a clear
+cart, right? Let us add a button, right? Let us add a button. Let us add a button and
+and let's add a button and let's call it as clear card, right?
+Let's build this, right?
+Clear card, it's an important feature, right?
+We would definitely need clear card button, right?
+This clear card button, okay, this looks very ugly.
+Let me make it look like a button, it looks like a text.
+So basically let me give it padding margin,
+padding of two, margin of two,
+and then basically I want to give it background color
+of maybe background BG of black, maybe?
+Okay, BG of black, let's give it text white, okay?
+Text of white, text of white over here,
+and then what else?
+Okay, I think that's it, I think this should work.
+Okay, we have this clear card button.
+Let me make rounded corners also, right?
+Rounded corners looks cool, rounded LG.
+Cool, so we have rounded corner,
+we have a clear card button with us.
+If I click on this clear card, it should clear my card, right?
+You can align it somewhere, right?
+Like make it align, I just did a center line over here.
+It should clear my card, right?
+Let us, how do we, if I click on that button,
+what should have happened?
+It should dispatch an action, you're absolutely right, right?
+Let me right on click, right?
+Let me right on click, method over here, right?
+On click, and on click, I can create a function, right?
+Let's handle clear card, handle clear card, okay?
+Handle clear card function, right?
+And then let's add a function handle clear card, right?
+Const function handle clear card, sorry,
+handle clear card, right?
+This handle clear card will basically dispatch an action.
+Hope you are understanding this, right?
+I'm not doing anything new.
+It is all I have already taught you.
+How to dispatch an action from here?
+I will just use a dispatch, right?
+First of all, I need that dispatch function.
+How do you get that dispatch function?
+Very easy, my dear friends.
+Use dispatch, we will, we will use dispatch, right?
+You, we will use dispatch, okay?
+So we have this use dispatch, and then, okay, not there,
+right, we will use this use dispatch,
+and this use dispatch will give me this dispatch function.
+Now I can just dispatch my action, right?
+I can dispatch my action.
+What action should I dispatch?
+Yes, clear card.
+And this clear card will come from my card slice, right?
+We have exported this clear card,
+will come from card slice, right?
+So we have added this handle card,
+I have added this on click.
+You know, once we have set up this store,
+how easy was it to build this feature, right?
+It just took us two minutes.
+Okay, use dispatch is not defined.
+We have not imported use dispatch.
+Import the use dispatch, import use dispatch from,
+import my use dispatch from my React Redux.
+Cool, I have imported you.
+So did you see how easy was it to build this, right?
+Let me click on this button, right?
+If I click on this button, if I click,
+oh, nothing happened, oh my God.
+Something wrong, something wrong.
+In our code, let us see, handle clear card.
+We have handle clear card.
+We dispatch, oh, we did not call it, right?
+Sorry, my bad, right?
+We did not call it.
+We have just passed it like this.
+Now, let me go back.
+If I click on clear card, see this.
+Our card is vanished now.
+Our card is vanished now, right?
+Our card is vanished.
+You can also show if the items are zero, right?
+If our items are zero, right?
+You can just show, right?
+If the items are zero, just display a message
+that add items to cart or something, right?
+How will you add that, how will you add that feature?
+Let me just write it also, right?
+So if the cart items dot length, very easy, right?
+I'm not doing anything extra, right?
+If my cart items dot length is equal, equal to zero,
+right?
+Is equal, equal to zero, equal, equal, equal to zero.
+Then you can say, then you can basically add
+and you can add a H1 tag, right?
+You can add a H1 tag over here, right?
+And say, please your cart, cart is empty, empty.
+Add items to the cart, right?
+You can display a good message, right?
+You have seen Amazon, right?
+When the cart is empty, they say that, okay,
+go do some more shopping and something like that, right?
+You can add these things.
+You can build all these features.
+Why I'm telling you that you can, they see this,
+add items to the cart.
+You can build all this.
+I have already shown you how to build important features.
+You can build these customizations yourself.
+Isn't it?
+Is it hard?
+Since so much time, since 11 episodes
+I'm teaching you react, very easy.
+This is nothing new.
+Let's go and add items to the cart now.
+Let's go to Meghna Biryani, right?
+What happened?
+Cannot read, right?
+Let's go to, let's go to some,
+let's go to this Leon's Burger and Wings, right?
+Let's go to Leon's Burger and Wings over here.
+Let's add some items to the cart, right?
+Let's add this Grilled Lamb Burger combo, right?
+Let's add it, right?
+Jumbo, Royal Burger combo.
+Let's add Grilled Peri Peri Chicken, right?
+We have added three items.
+Let's go to cart, see this.
+Now we have three items in the cart.
+Cool, right?
+So we can build features like this.
+It's amazing and all the data you need
+is already there with you.
+This is what is Redux Store, my dear friends.
+This is all is the history of Redux Store.
+I'm telling you, this is the most important thing.
+A lot of developers just write Redux,
+but they don't understand how it works behind the scenes.
+I wanted to tell you what Redux Store is, right?
+Okay, so hope you have understood this diagram.
+This is what, right?
+Remember that, let me just repeat that line once again.
+When you click on that add button,
+it dispatches an action which calls a reducer function,
+which updates the slice of the store.
+And because this component, right?
+Header component is subscribed to the store
+using a selector.
+It automatically gets updated.
+It automatically gets updated.
+Got it?
+This is amazing thing.
+This is what I wanted to teach you in Redux.
+But is Redux only this?
+No, there are some more important things
+which I wanted to tell you.
+Just hold on for a while.
+Now we have written this,
+but let me tell you one more important interview question
+which a lot of interviewers will ask
+and you should basically know it.
+One interview question is, right?
+I am just basically trying to recap things
+and I want to tell you a few points, right?
+While you are points where you need to be careful
+while using Redux, right?
+First thing is, whenever you are doing a selector, right?
+Whenever you are doing a selector,
+make sure, make sure you are subscribing
+to the right portion of the store, right?
+Make sure you are subscribing
+to the right portion of the store, right?
+Here you can optimize the performance, right?
+So if you don't, see, if you don't subscribe
+to the right portion of the store,
+it will be a big performance loss.
+Let me tell you why, right?
+Remember this, take this down as a note,
+very important thing, very, very important, right?
+See, I can do this, I can do this also, right?
+I can do something like this, right?
+I can do a store, right?
+And I can just add,
+I can just get access to all my store, right?
+Whole store, and now I can extract my cart items,
+cart items from this store.cart.items.
+Both this code is same.
+The code which I wrote earlier,
+the code which I, what was that code
+which I wrote earlier?
+It was this code, right?
+See, and then what was this code?
+See, see the difference between these two code.
+See, earlier we were writing like this, right?
+I want to show you the difference, right?
+It's very important, right?
+See this, so earlier I was writing the code like this.
+Earlier I was writing it like this, right?
+I was just subscribing to the small portion of the store,
+right?
+I was subscribing to this portion of the store.
+Now I'm subscribing to the whole store
+and I'm extracting my items.
+It will work like this also, right?
+If you will do like this,
+it will work perfectly fine, right?
+It will work perfectly fine.
+See this, it is working perfectly fine.
+But, but, but, this is very less efficient.
+Very, very less efficient.
+When you are giving interviews,
+where if you are using Redux in your interviews,
+definitely tell this thing to your interviewer.
+You will impress your interviewer.
+Or whenever you are using Redux,
+please be careful while using this selector.
+What happens is when you write like this, right?
+So basically, this store variable is subscribed
+to the Redux store.
+Whenever anything changes inside the store,
+your cart component will get to know.
+Basically, your store, your store, right?
+This store variable will be updated
+whenever anything changes in the store
+and whole store, right?
+So you don't want to change,
+you don't want updates,
+you don't want to subscribe to updates of whole store, right?
+See, suppose if something is happening
+inside another slice, right?
+Suppose if the user logged in,
+it has nothing to do with cart, right?
+So why is this store variable subscribed to that store, right?
+So it will get, so you know,
+anything will change in store, right?
+Anything will change.
+So when the, when our application grows huge, right?
+Oh my God, I've been speaking since a lot of time.
+But let me tell you, right?
+When our application grows huge,
+our store becomes very big.
+So anything random changes in our store,
+I don't want this component to be affected by it, right?
+I don't want to subscribe to my whole store.
+It is foolish.
+A better performance way is to only subscribe
+to a specific portion of the store.
+Never do this.
+Never ever do this, right?
+Never do this.
+Always subscribe to a small portion of the store, right?
+It is very much efficient.
+When you will write like this, right?
+When you will write a selector, write this.
+Why do we, why is it name selector, right?
+The name is selector, the name is selector
+because you are selecting a portion of the store, okay?
+That's why it is selector, got it?
+So you are subscribing to the selected portion
+of the store.
+Try to speak it up, right?
+Your vocabulary will be improved.
+You are trying, you are selecting, right?
+You are selecting a specific portion of that store, right?
+This items.
+So now when you will write like this,
+this cart items will only update
+when my store.card.items change, that small items,
+it has nothing to do with anything happening
+outside the scope of this, right?
+It is only subscribed to cart items.
+So Redux is a powerful, heavy tool, right?
+Redux is a powerful, heavy tool,
+but we should be careful while using this.
+This is one thing which I wanted to tell you, my dear friends.
+This is a major mistakes with people make,
+major mistake which people make, okay?
+So be careful with it.
+Second mistake that people do a lot is when they are built,
+see, there is a lot of confusion
+between reducers, reducers, reducers and reducers, right?
+So let me tell you when you are creating an app store, right?
+So here this keyword is reducer,
+because this is one big reducer,
+one big reducer for your app store, right?
+And this reducer can have multiple small reducers.
+Got it?
+So this word is reducer.
+Listen to it very carefully, this is reducer, okay?
+But when we are writing slice, right?
+We create multiple reducers.
+So this word is reducers, right?
+I know it is very complicated, right?
+I have been struggling to teach this to my students,
+but when I give them this logic, they remember it
+and then they never forget.
+This is, you know, when you know behind the scenes
+that what is happening, why Redux has named it like that,
+things become very easy, you will not make mistake.
+So when you are writing this store, right?
+This is one reducer for the whole app
+and it can contain multiple small reducers, right?
+This cart reducer, it can have user reducer,
+theme reducer, but when you are creating a slice, right?
+So there are multiple small reducer functions, right?
+That is why this is one reducer function.
+So that is why this is known as reducers, right?
+This is reducers, right?
+And when you are exporting it, when you are exporting it,
+you are reducing, you are exporting
+just one reducer from it.
+So basically, you know, what is a reducer
+at the end of the day?
+Reducer is nothing but a combination
+of different small reducers, right?
+A reducer can be a combination of small reducers, right?
+So this app store is a combination of
+this small reducers of these slices
+and this reducer is a combination
+of these small reducer functions.
+So this is one reducer that I'm exporting, right?
+But here we have multiple reducers.
+That is why it is reducers.
+Got it?
+I don't know how you will remember it.
+How will you keep it in your head?
+But please note it down.
+A lot of people get confused with this, right?
+Two things.
+Use selector very carefully.
+Use this reducers.
+Use this reducer and reducers keyword very carefully.
+Let me tell you one more important thing, right?
+Earlier, right?
+Let me tell you the history of Redux, right?
+I don't know.
+I want to stop this session right now.
+I wanted to stop this episode right now,
+but I am in a mood to tell you a lot of things
+about Redux, right?
+Let me tell you, right?
+What is there, right?
+If you want to leave, you can leave,
+but I would say that don't leave, please.
+These things will be very important
+when you will give interviews
+and it will just increase your foundations very strong, right?
+I am not, I want to teach you, right?
+As much as I can, okay?
+So please stay here, right?
+Please, right?
+I am also getting what I'll say.
+I am also getting a little, what I'll say.
+It's been a lot of,
+it's been a while I'm speaking continuously,
+but again, right?
+Let me drink water.
+Maybe you can also drink water, right?
+And then maybe pause the video, drink water,
+and then come back again.
+So now, let me tell you one more important thing
+with reducers because this is very important.
+So earlier, when we used to write vanilla Redux, right?
+When we used to write vanilla Redux,
+the older version of Redux,
+there was a big, big, big problem with state here,
+when we used to write these reducer functions
+in vanilla Redux,
+we used to, you know,
+Redux used to shout on their website
+and it used to gives us clear warning
+that don't mutate state.
+Don't mutate state, right?
+So we should not mutate the state, right?
+Vanilla Redux, right?
+Older Redux, vanilla Redux.
+Or you can call this as vanilla
+or maybe older Redux.
+Older, older Redux, right?
+Older Redux, in older Redux,
+you know what happens?
+Redux used to say, don't mutate state.
+Don't mutate state.
+This was prohibited inside the older version of state, right?
+This was prohibited.
+Right now, I am just directly modifying my state, right?
+Right now, I am just directly modifying my state.
+Basically, whatever state I will get as an input,
+I am just directly modifying it.
+This is an impure function, isn't it?
+This is an impure function, right?
+It is just, we are taking this
+and we are just modifying this variable as it is.
+Earlier, when we used to write Redux, right?
+So we used to never modify our store.
+Basically, how we used to do,
+let me just show it to you, how we used to do.
+Basically, we used to create a copy
+of this state variable, right?
+We used to create a copy of this state variable
+and then we used to push, right?
+Basically, we used to create a new, right?
+We used to create a new state, right?
+From my state, right?
+Basically, I used to create a new state from my state.
+Basically, somewhat like this, dot, dot, dot state, okay?
+I will create a new state
+and I will now modify my new state, right?
+I will modify my new state, right?
+This is how we used to do earlier.
+I'll tell you, right?
+This is how we used to do earlier.
+New state, dot items dot push
+and then we used to return this new state.
+Got it?
+We used to return this new state.
+We used to do this earlier, right?
+We used to do this earlier
+because Redux used to say,
+never modify, don't mutate the state.
+Don't mutate.
+And you know, so many developers,
+I think so many developers used to make this mistake
+and they used to modify this state directly.
+Because it is very tough.
+You know, I'll tell you, you know,
+we can learn an important thing from here, right?
+Redux is an external library.
+Sometimes, sometimes,
+this library comes with a lot of burden
+of knowledge with us, right?
+If we have to use this library,
+we have to learn a lot of things that,
+okay, I don't want to mutate that state.
+I want to create a store.
+You need to subscribe.
+You need to add action, dispatch,
+then reducers and this, that, so many jargons
+and it just confuses the developer so much.
+And people, a lot of developers,
+so many developers used to make this mistake
+of mutating the state.
+So in the newer, in Redux Toolkit,
+in Redux Toolkit, right, whatever we are using,
+Redux gives us option
+that we can modify the,
+we can, we have to mutate the state.
+And it does not give us option.
+We actually have to mutate the state.
+Mutate the state.
+We actually have to mutate the state, right?
+And you know, when Redux made this change,
+again, there was an army of developers
+who came up and said, Redux, Redux,
+this is very bad.
+Why are you letting people mutate the state?
+It's very bad.
+People who come from vanilla Redux to Redux Toolkit,
+they find it very hard.
+They find it very hard.
+But let me tell you,
+now we can mutate the state over here.
+And in fact, we have to mutate the state now, okay?
+This is what the new API says, right?
+Why I'm telling you all this theory?
+Because you know, people who are working
+in older version of Redux,
+you will know exactly what the pain point is, right?
+And now, Redux has solved this.
+In your interviews, you can explain it, right?
+Because if you do this in the interviewer
+and your interviewer might say,
+oh, you have a mutated this state.
+So you can back your answer up with a solid argument, right?
+Now, okay, right?
+So let me repeat once again,
+in the older version of Redux,
+Redux used to say, never mutate the state.
+Don't mutate state.
+But in the latest Redux Toolkit,
+we have to mutate the state, right?
+Whatever we get the state over here,
+we have to mutate it.
+According to the action, right?
+We change it, right?
+When we do items.push,
+that means we are modifying the existing state over here.
+And then this is how we do it.
+Got it?
+So this is how we do it.
+And we just mutate
+and we don't have to return anything.
+Earlier, returning was mandatory.
+Don't mutate state.
+And returning was mandatory.
+Was kind of mandatory.
+Was mandatory, right?
+Or kind of mandatory, right?
+So basically we used to return this new state.
+We used to take the state, return this new state.
+Now, returning is also not mandatory.
+Now you just modify the state
+and returning is not mandatory.
+Redux take care of it.
+Or to magically react.
+Redux does not force you to return anything from here.
+Got it?
+This is the latest way of writing Redux.
+But now, let me also tell you an important thing.
+If we are mutating over here, right?
+Let me write over here, right?
+We have to mutate it, right?
+We have to mutate the state.
+If we are mutating the state over here,
+listen to me very carefully.
+If we are mutating the state over here, right?
+If I'm mutating my state over here,
+then what is Redux doing behind the scenes?
+You know what Redux is doing?
+Redux is creating an immutable state.
+You know, whatever logic I showed you, right?
+All this, Redux is still doing all that.
+Redux is still doing you all that, right?
+But it is not asking developers to do it, right?
+When I, as a developer, am using Redux,
+I am writing my reducer function.
+I have to just mutate the state.
+And it works perfectly fine.
+But behind the scenes,

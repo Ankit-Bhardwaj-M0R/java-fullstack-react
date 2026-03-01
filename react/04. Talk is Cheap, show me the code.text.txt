@@ -1,0 +1,1647 @@
+FILE: 05. Talk is Cheap, show me the code.mp3
+LANG: en
+PROB: 1.000
+
+--- TRANSCRIPT ---
+
+Come on. Now the recording has started. Yes. So let me just begin today's session. Good
+morning. Yes, before time. I generally come before time, right? I try to start and I will
+come before time in each session, right? So I'll try to start at the exact time, right?
+At 11 o'clock. So everybody, please join on time, right? From all the sessions,
+I have got a feedback that, you know, we should start on time because, right, there are some
+people who are joining from US, right? It's late in night over there, right? So it's tough
+for them. So basically, I am disabling the handrails and doubts for now, otherwise it
+just keeps disturbing, right? So and I am sharing my screen. Okay. How just give
+me a moment. Share screen, screen to share. Yup. I am here. Are you, first of all, just
+let me know. Are you able to see my screen? Yes or no? Are you able to see my screen?
+Visible? Okay. Cool. And am I audible properly? Audible, right audible? If I am audible
+properly? Yup. Okay. Clearly. Okay. Thank you so much for letting me know. Yup. Visible,
+audible, great. So we still have one minute to start, right? 11 o'clock. But before that,
+I would like to tell you all, have you joined the discord community, right? Discord plus
+if you have joined the discord community, discord community, this discord community,
+have you joined discord plus plus and this is an amazing community. Thank you so much,
+everyone, right? With my hands folded because you people have made this community one of the
+amazing communities of react, which I have seen. There are so many communities out there. I have
+been a part of a few, right? People are running other boot camps, other courses, other react
+communities, not talking about the official react community, but I am just talking about
+the people who are working in react. Let's make this a great community, right? And why I say
+this is a great community because see the number of, see the number of people who are asking
+doubts and their doubts being solved, right? See, people come up here and help each other.
+If somebody has some issues, like Harita has some issues. So Harita and then suddenly Sakib came in
+and like they just start asking that why are you getting like all the doubts, right? And they
+just pitched in and they are helping each other. Thank you so much. Thank you so much everybody
+who is helping other people in the community because that is what makes the community best.
+Kishan asked a very wonderful question. Will this discord community be available even after we leave?
+Yes, discord community will always be there with us till discord exist. It's not one time,
+it's not one year access. And let me also tell you that why do I give one year access,
+right? Why is one year access for the course? Because see the storage takes time, right? The
+storage takes some issue, right? I mean, it takes some space. I am not, I am using a platform
+which is Graphi's platform, which is using the Anacademy's backend. So the storage is costly,
+right? So I can only give it to you for one year, but let me trust you. Let me make it very
+clear. If you attend all the live sessions, you won't need this. You won't need this,
+right? After one year, you will be very good after two months itself. Just keep on doing
+your assignments. Keep on participating. But this community will stay there forever
+till discord exist. The discord link is in the pinned comment over here, right? Join it. Join
+it right now. I am giving you two minutes. Join it. Okay, so please do assignments. So one,
+one good thing, please, please help people, each other and ask your questions over here. See,
+everybody and you know, this is one example, like very great example I am telling you, right?
+When how should you seek help? A lot of people are asking question, but nobody helps because
+a lot of people don't understand what you are asking. Okay, so see this guy, Rishab, right?
+M underscore Rishab has asked it very wonderfully. He has exactly said that I have got this
+error. He has taken a screenshot and he has also, he has also given the screenshot of his
+code. This is a great way to ask help, right? So great way of ask help. Rishab says I am working
+in React and I am loving. Thank you so much, Rishab, right? I enjoy teaching you, right? So
+great. Okay, thank you so much, right? So please be active on discord, right? Help each other.
+You will get to know a lot of things, right? A lot of people were facing issues with their
+node version. So please make sure your node version is in sync with, yeah? So node version
+is in sync with the parcel, right? Okay, some people say that video stopped. Is the video
+working properly? Is the video clear? Right? Visible. If you are visible, visible?
+Okay. So so many people are saying visible. Please people who are not able to like join, please
+maybe refresh your page and just like see, right? Go to a stable connection, maybe join a Wi-Fi.
+So please, okay? So let us just start. What I wanted to say is please be active on discord.
+There is a doubts forum. Ask your question, right? If you have a lot of doubts,
+ask your doubts and also participate and solve other people's doubt.
+The more doubt you solve, the better you will be, right? I will pick up few questions from here,
+right? And then we'll pick up other questions also from the doubt section towards the end of the
+class. But let us just start our class today, right? Also, why are you not doing assignment?
+Who has done the assignment? Write assignment in the comment.
+Yes or no? Have you done the assignment? Yes. A lot of people has
+done the assignment. Not done. Why have you not done assignment? Please do the assignments.
+I see that there are a lot of people who have not done assignments, right? Not of people who
+have not done assignments. Please, please do the assignments, right? Okay. So please do the
+assignments, post it here. I want a lot of assignments to be here, right? Okay. Cool.
+So let us just close this and go back to our code, okay? We are starting the session.
+Excited. Excited. You should be excited. Awesome. We have our VS code running.
+We were on this page, right? Remember, we were here. Let me just make myself a little
+smaller so that you are able to see properly. Awesome.
+Awesome. So GitHub Lo Code link will be there in your Discord. Don't worry, okay? There will
+be GitHub link and when I will give you assignment, I will put the GitHub link over there as well.
+Okay? So awesome. Let us just begin. So quickly, before starting with today's session,
+right? Can you guess what we are going to learn in today's session?
+What we are going to study in today's session? The name is
+talk is cheap. Show me the code. Yep. Yes. So basically, you know, a lot of people were
+saying that Akshay, you haven't started building anything. You are just teaching us theory,
+a lot of theory. Yes, because theory is important. Because theory is important,
+that is why I am teaching you theory, right? Now we will be started building an app today.
+Excited. We will be building an app today. I am super excited. Hope you are also excited
+because we are going to write the awesome code today. We are going to start building an app
+today. Our first app, our first project, right? Starts today. Okay? Let us just start. Okay?
+Okay. So first of all, let's just first of all decide, right? What, what should we
+build? Okay. So what should we build? So I was thinking a lot about what should we build,
+right? What project should we build? So, so basically, quickly, can you just tell me if you
+can you just tell me a few sites which you just see online use, use every day, right?
+Use every day. Yep. People are saying e-commerce, e-commerce, Amazon, Amazon, should we build
+Amazon, right? So like, I mean, Amazon is too cliche. Like everybody is building Amazon. I
+don't want to build Amazon. No, not Amazon. Yep. People are saying LinkedIn. Yep. Instagram.
+So Instagram does not have a good, like a web, web view, right? We can build it. Yep.
+People are saying Zomato, Swiggy. Yep. So, you know, let's, let's try to build something
+like a food ordering app like Swiggy. Up with it. Sounds cool, right? Cool. If that,
+if that sounds cool, let's, let's build something like Swiggy or Zomato because
+everybody can relate to food. I don't have to explain you exactly what Swiggy or Zomato is.
+Everybody is using it today, right? Swiggy, Zomato, Uber Eats or something like that. We
+will be building an app where we are building the food ordering kind of app. Okay. So, see,
+and now when I'm building a food ordering app, does not mean that
+with this knowledge, you can only build food ordering app. You can build
+any type of app. It is just an app to showcase you, right? To showcase you that
+what we are going, like how we write code to build it, right? And if you pay attention,
+then you can build anything, not just Swiggy or Zomato. Okay. So, but let's not use the name
+Swiggy or Zomato. Okay. Give a, give a cool name for our app. Quickly. Give a cool name
+for our app. Up. Namaste food. No, no, no, not namaste food. Kana Khazana. Garam Khana. Okay.
+Namaste Khana. Namaste Namkeen. No, no, nobody, nobody great food, right? Up. I don't see any good
+names. Okay. Okay. Eat and fit. Eat and fit app. Okay. Okay. Eat and fit. Akshay eats.
+Namaste. Okay. Somebody said hunger box. Akshay's kitchen. Bukkar. Bukkar is already an app already.
+Let's, let's build something all. Dev eats. Eat, react. Food villa. Yep. Food villa sounds cool,
+right? Food villa sounds cool, right? Let's, let's have the names food villa. Cool.
+Food villa, like it sounds cool, right? Let's keep it food villa. Yep. Let's try to build it.
+Let's not bargain too much. Okay. So let's, let's build food villa. Okay. So let's see if I have food
+villa, right? Something like that. Food v i l l a. Food villa. Oh, there is something known as
+food villa already. But anyways, let's, let's try to build this. Okay. No, no issues. Right.
+So let's try to build it. Let's try to build food villa for us. Okay. We have this
+food for cool food villa restaurant as well. Okay. Let's, let's build this. Okay.
+So let's not waste much time. Let's go back and start coding. We have a lot of people already
+joined in. Should we code along? No, you don't have to code along. Just focus on what am I
+doing? Right? Don't code along. Don't code along. Join with your laptop. See what I am coding.
+Code along later, right? That is why the sessions are only on Saturday Sunday,
+so that you can code along, right? Like you cannot code along. You will code in the rest of your week.
+Okay. Let us just start. So let us just first revise what did we study in the last class?
+Okay. I will ask you a few questions. Okay. What do I run to start my app? What do I run?
+What is the command to start my app? Quickly. What is the command to start my app?
+Yep. NPM run start or you can also do NPM start, right? I hit enter and we have our app running on
+localhost1234. Let me refresh the page. We have this app running over here. Let me just open
+the console because we will need it. Refresh the page. Here is our app running. In the last
+class, we built or we saw that what is JSX. So can you just tell me what does JSX?
+What does JSX use? You know, what does JSX use behind the scene? Quickly. Yep.
+What does JSX use behind the scene? What is exactly JSX? What happens when you
+write some piece of JSX? Exactly. People are obviously write react dot create element.
+Now what and react dot create elements? How does that JSX code is converted into react dot
+create element? Who is responsible for that? Quickly. Quickly. What is Babel? What is Babel?
+One word for defining Babel. People who are writing compiler, people who are writing transpiler,
+both of you are correct, right? Yep. People who don't know any of the answers,
+please Google it. I have covered this in last sessions, right? So please do that. Please
+do your homework, right? And then we also saw that, okay, we can build functional components,
+right? We built functional components. What is functional component at the end of the day?
+What is functional component at the end of the day?
+It's a normal function, right? You don't have to worry about it. It's just a normal function.
+We used arrow function and functional component is just a normal function and it returns some
+piece of JSX, right? So is it, is it mandatory to use these brackets round bracket before JSX?
+Is it mandatory? Yes or no? No. Why do we use it? In what case do we use it?
+Yep. Exactly. Everybody is right. When there are multiple lines, then we need this, right?
+Now, okay. So what is this? Is this a functional component? Is this a, is, is title a functional
+component? Yes or no? Yes, yes. And now what is this? What is this now? What is title now?
+Yes. This is a normal variable. It's a react element, right? It's a react element. Okay.
+When we write react dot create element, what does it end up to? What is it behind the scenes?
+What is a react element? Exactly. It's an object. Everybody of you is awesome, right?
+Everybody of you is over here is awesome, right? So let's just start. Okay.
+Let's just start. This is what we covered last time. So few questions. Okay. If I have this,
+if I have this react element like this, so can I use it like this?
+Can I use this like this? Yes or no? No. How will I write it? I will wrap it inside my
+curly parenthesis, right? And I will write my title over here. And the naming convention should be
+in small letters, right? If it is a component, let's make it capital. If it is a normal variable,
+let's make it small. Will this work? Yes or no? Will this work? Yes or no? Yes.
+Right. If we refresh our page, it says namaste react over here.
+Okay. Now let us just change, right? So let us just write our app's name as food villa, right?
+Why not? Because we have food villa with us, right? Food villa, right? We are building
+a food ordering app. Awesome. So we have our food villa over here, right? Awesome. Now,
+now, let us just, let me tell you one more important thing, right? Suppose if it is a functional
+component, okay? Let's make it a functional component. The only thing it takes is this,
+right? The only thing it takes is I have converted this to a function. I will convert
+my element to a capital letter title. Now this is a functional component. And how do I
+use my functional component? I use it in this way, TITLE. This is my functional component,
+right? And there is one more way we can, we can write instead of writing like this.
+What is that other way? Quickly write it in the chat.
+Just, just revising a little, then we will start with today's new lessons.
+Exactly. I can just do it like this. I can just call my function because at the end of the day,
+it is function, right? It works, isn't it? Right? And what if, so what can I write inside this
+curly parenthesis? What can I write inside this curly parenthesis? J s, any piece of J s,
+I can write inside it. Anything, I can even write a console log over here, right? Hello world, right?
+This will also work. Any piece of JSX, any piece, right? If I do a hello world C in my console,
+I have my hello world here, right? So we can write any piece of JSX over here,
+any piece of JavaScript, sorry, right? I can even do a calculation over here,
+1 plus 2, right? This will give us 3. Why it did not give us? Refresh the page. Okay, here, right?
+See, I have my 3, right? So you can do any piece of JavaScript over here. Amazing thing, right?
+So, okay, okay, okay. Now, one more question I have is a lot of people asked me, you know,
+there were people writing that, Akshay, how can we write comments inside JSX?
+How can I write a comment? Can I write a comment inside JSX?
+Right? So how do I write my comment is, see, it is when I say that you can do,
+you can write any piece of JavaScript using these curly parenthesis. So generally,
+what we do is in this piece of braces, I can write any piece of JavaScript.
+How do you write comment inside JavaScript? By doing this, this, this is our comment.
+So this is how we write comment inside our JSX. Sounds cool? Did you understand that?
+Awesome, right? So we can also do a multi-line comment, yep, multi-line comment.
+Okay, so we can do this also, right? Some people asked me, right? There were some people
+who are asking me, is JSX mandatory? Right? mandatory or not mandatory?
+Mandatory or not mandatory? No, JSX is not mandatory. You know, a lot of people,
+a lot of React developers only know JSX. Okay? They don't know what is happening behind the
+scenes. But let me tell you, if you're learning from me, if you're learning from my class,
+never ever say that JSX is mandatory, you should know what we can do, even if I don't want to use
+JSX. Is TypeScript mandatory? Is TypeScript mandatory? Not at all, not mandatory. Is, is ES6 mandatory?
+Is ES6 mandatory? Is ES6 mandatory? Yes, yes, no, no, yes, no, yes, no. No, even ES6 is not
+mandatory. Even ES6 is not mandatory. Know this, right? Don't not mandatory, not mandatory, right?
+Never get confused. React is just basically giving you, React is a library. React gives you a lot of
+things that okay, it does not put any restrictions on to you. It does not forces you to use TypeScript.
+It does not forces you to use ES6. It does not forces you to use JSX. It is very, very comfortable,
+right? React has a lot of features in it, right? So it's even React is not mandatory. The best part is
+even you can use React. Suppose if you have a website, right? Let's open, suppose, suppose,
+let's take an example of swiggy.com, right? Suppose if you want to use React in just
+this portion, in just footer, can you use just in footer React? Yes or no? Yes, you can just use
+your React code inside footer, right? How will you use that? How will you use that?
+How will you use that? Yes, exactly people are saying root. So our React, you know,
+this create root is right now our root, right? Document.cat element by id root. In our index.html,
+we define this as root, right? So our whole React runs inside this. Our whole React runs inside this.
+If we just had to use it inside footer, so we just use, we just have to make
+our root as footer. Cool. Okay. Is this correct? Right? Cool. If this makes sense.
+Right? Cool. If this makes sense. Cool. Okay. Okay. Let's just move ahead. Okay. So we have
+seen how do we write comments. We have seen that, okay, we don't need JSX, we don't need ESX,
+we don't need TypeScript, nothing. React is a proper library. Now let us just dive deep and
+build something into React. Okay. Let us just do that. This was a good warm up with some interview
+questions, right? So these, these small things, you know, can be asked in interviews and a lot
+of people get confused when, when it's asked. Okay. So now we use title like this. One way
+is to also write it in a different fashion by calling this function title. And there is one
+more way. Okay. You can do something like this. Just like an opening tag, you can do it like this.
+Will this work? Yes or no? Will this work? Yes. So if I go back here, this works. Right.
+So basically we have learned three ways of putting in our component over here. Okay. But
+generally we don't, we generally use this syntax. Okay. What syntax do we use? We generally
+use this syntax. Okay. This is the most common syntax that you will find. Okay.
+Cool. Self-closing tag. This is known as self-closing tag. You can, you choose to close it in the
+next line itself. Okay. So let's just start. Okay. So now let me build something. Right.
+So we have our food villa app. Right. Let us just try to build a header for our app.
+Okay. Let us just try to build a header for our app. So some people are asking that,
+why are we not using TypeScript? So we are not using TypeScript because I want to tell you that,
+okay, we can just code in JavaScript. And this is a react session. So TypeScript is,
+and we have a lot of students who don't know TypeScript. And I don't want to teach you
+TypeScript. I don't want to spend time in teaching TypeScript. I want to tell you
+the superpowers of react. And once you know this, you can easily code in TypeScript.
+You can start coding in TypeScript. Don't worry about it. Okay. So it's, it's just a matter of
+learning TypeScript. Right. So do it on your own. Right. Let us just go to good notes.
+Let us just build our app. You know, whenever I build any app, I do planning. Right.
+Never ever write code without planning. I will be doing planning. So we are building our app
+now. Right. So let us do some planning. Okay. So we are going to build our app,
+which is known as what was the name of our app? I forgot. It was what? It was what?
+Food villa. Yep. Sorry. Sorry. Sorry. Sorry. So it was food villa. Okay. So we are going
+to build a food ordering app. So how will I app look? First of all, I'll just show you how
+will I app look? Okay. So our app is something like this always whenever you are writing code
+do planning. Make sure when you will do planning, you will understand that. Okay.
+What all components will I need in my app? Okay. Now let us our app should have a header.
+Let's build a header. Right. Because almost all the apps have a header. Right. It's a good
+practice on the left hand side. Let us have a logo here. Right. Let's have a logo. Right.
+And over here on the right hand side, let us just have some links. Right. Suppose home about us.
+Right. Contact us. Right. Something like this. Okay. And then many options. Yes. You are
+exactly night. So some people are asking what app I am using. I am using good notes app.
+This is a good notes app. Right. And then, okay. And then we want to have our body over here.
+We will have our body over here. Right. We will have our body over here. Okay. And then
+we will have our footer over here. Some people are suggesting. Thank you so much for
+suggesting. Some people said that we can also have a search bar. Okay. Yep. We will
+build our search bar. Don't worry. Let's have our search bar also. Right. What else can we have?
+Suppose if we have our search bar, this is our search. Right. And then what should we have?
+We should have a. Yep. Filter listing. Cart. Yes. Amazing things. We can have cart also.
+Right. We will build slowly, slowly. We will build everything. Don't worry. Don't worry.
+We will build. Let's. The main thing you did not say. We should also have our food. Right.
+Where is food? We should also have our restaurant. Right. Nobody is telling me. Okay. So we should
+have a restaurant over here. Okay. We can build cards for our restaurant. What should these cards
+have? What should these cards have? These cards should have an image. Right. Let's have an image.
+It has a name. It has some delivery address. Star rating. Right. Star rating. Have an image.
+Name of the restaurant. Cuisines. Star rating. And something like this. And we can have
+multiple things. Price. Yes. Price. Price will be with the category. So basically,
+you know, let's try to slowly build this up. Okay. Enough of the planning for now.
+Understood. Right. Give me a thumbs up. Give me a thumbs up if you understood.
+Give me a thumbs up. Quickly. Quickly. Quickly. Let's hit it up. Hit it up.
+Show me your energy. Let us try to build it. Yep. Yep. Yep. Yep. Yep. Yep.
+There's non-veg type filters and everything. Come on. Let's try to write code for this.
+So slowly, let's start building. Okay. First of all, we will build our header.
+And while I'm building this up, I will be, I will keep on showing you up. Okay. I will
+keep on showing you how do we write code for this. Okay. And I will be teaching you
+new concepts as I go ahead. Right. This will all be project based learning.
+Right now, I'm not diving into authentication. Right now, it is like you open swiggy.com
+or Zomato, whatever you wish to write. I'm just taking this as a reference. So you see,
+we are trying to build our header. First of all, right. And then a list of these
+restaurants. Let us see how we can build that. Okay. Let's just quickly build.
+So we have our header component over here. So, you know, the first thing that I do is
+first thing that I do is I build my layout. Okay. I want to structure my layout. Okay.
+So I want to structure my layout. Okay. So for that, let me build a component
+and I call that component as app layout. Okay. We can give any name. I just call it as app layout.
+Okay. So layout. Okay. We can. So this is a component. Right. What will my app layout has?
+Please stop your chat. Please, please listen to me. Otherwise it will be very tough.
+Right. Listen to me very carefully. Okay. Please stop the chat. Please stop writing. Right.
+Let's build it. So we have this app layout. Now this is a functional component. Right.
+And my app layout will have certain things. Okay. My app layout will return some JSX.
+Right. My app layout will return some JSX. What should it have?
+First of all, it should have a header, isn't it? Let me write a comment. Okay. It should have a
+header. Right. Right. Let me have multiple multi-line comments. Right.
+So it should have my what? It should have my header. Then it should have my what?
+How do you define your components? How do you design? I am talking about the high level
+components. Right. It will have my body. Right. It will have my footer.
+Okay. Does that make sense? And what will my body have? What will my body have?
+Go back to, go back to our design. Where is our design? Go back to our design.
+What will, what will my body have? It has a search bar and
+restaurant. Right. It has a search bar and rest of cut. So body should have my
+search bar. Right. And then we should have our restaurant list, restaurant list.
+Right. List of restaurant. Right. What will my restaurant list has?
+What will my restaurant list has? Restaurant list? Restaurant. Right.
+Restaurant information. Right. Restaurant should have a restaurant card. Right.
+There should be one card for it. Okay. So let's build a restaurant card. Right.
+Card. What should my card have? Card should have my image. Right. Image. So this planning
+is important. When you have your planning strong, you will be right awesome code.
+Don't worry. Okay. So image, image. And then let's have a name. Let's have rating
+for the restaurant. Exactly. You are right. Exactly. We can have star rating for it.
+We can have cuisines. Right. Or tags. So you might have, you must have seen it says
+North Indian, South Indian, Punjabi, South Indian. Right. So those kind of thing.
+It can have distance and whatnot. Let's, let's just stick to these three
+parameters. It can have a lot of things. Right. So these are the things which
+you can have. What should our header have? What should our header have?
+What should our header have? Header should have a logo. Right.
+Header should have our menu list. Right. Or you can call this as not menu.
+What, what do you call these things as? What do you call these things as?
+Nav bar. Yes. Nav bar or offer or I don't know. List items. Let's, let me call that as a list
+items. Okay. List items. Those are generally seen on the right side. Right. Right side.
+Okay. And we, let us also make right side. Right. And we can also have a card rare.
+Right. Card. Because card is important. Right. We have this card. Right. This card.
+This is important. Isn't it? Cool. Nav items. Exactly. These are nav items or list items.
+Okay. Let's call it as nav items. Okay. So we have this header. Right. And what should
+a footer have? Footer should have our links. Right. Reference links or something.
+Okay. Let's, let's just keep it like that. Okay. Or some copyright. Right. Copyright.
+But anyway, let me tell you. Swiggy is not sponsoring Namaste React. No way. No way,
+Swiggy. I have not taken anybody from Swiggy. Okay. So, so if, so Swiggy is not paying
+me anything. Okay. Not neither the matter nor Swiggy. So I just, I am just using this
+as a reference. Okay. Cool. So we have this with us. Okay. We will just refer to this whenever
+we want to. I am just copying, pasting it on the top. Okay. So that we can come back to here and
+see whatever we want to. Now, let us just try to build this header, which has a logo,
+nav items and card. Okay. Let us just see how we built it. Are you ready? Let's build.
+So I will also tell you good practices that we use. Okay. Good practices that we use.
+So we have our header component, right? What should our header component have?
+Our header component should have our logo, right? First of all, or title. So we already
+have a title with us. Title or logo, it is one and the same thing. Right. So let us just
+use our title here, right? This title. Now, how do I make my, how do I make my right side things
+here? The nav items, right? The link items. Okay. So let us just try to build those nav items.
+How will I build that? Okay. So let me just use a div, right? And let me give it a class
+name of nav items. Does that make sense? nav items nav items. Okay. And I have my nav items over here.
+Right. In this nav items, let me just write my
+ul, right list, unordered list, and then some piece of li. Let me give it as home.
+Right. Let me give it as home. And then let me give it as about us contact us about contact
+home about contact, right? Contact. And let us also have cart, right? There is also something
+known as cart. Let's have it as a list item itself, right? Cart. Okay. Let us have a cart
+also over here. So let us just try to see if it works, right? We have our food villa,
+but it came like this. Okay. Let me put some CSS to align it over here. Okay. So I am not very
+good at CSS. I need your help guys. Okay. So we have our nav items, right? Nav items.
+items. I am very bad at CSS. Yes, people are not believing. Okay. So first of all, let me give
+my div as class name header, right? Let me give my class name header, right? Our header. So let
+me give some styling to my header. Okay. Let me make it as display flex. Okay. People who
+don't know about flex read it up and I will. So when I see flex and then let me give my,
+right? What? What? What? People are saying use tailwind. No, not right now. Not right now.
+We will use tailwind later. Not right now. Okay. Okay. So we I want to show you always
+of doing CSS. Don't worry about it. We are beginning right from zero. Don't worry. We
+are, we have two months, right? So we have a display flex and then now I want my justify items to be
+justify content to be what space between. Okay. So if I do that, see I got these things
+moved apart, right? We have our space between now. Let me give it some padding margin,
+right? Let's, let's give it some margin. Okay. Margin of 10px. Okay. Let me give it some margin,
+right? Of 10px so that it does not stick to the walls, right? And let us just give some styling
+to our nav items also. Okay. This nav items, we have our nav items and let me give some
+styling to my ul. Okay. Right. List style type. None or something, right? Do we have none,
+right? I don't want to remove that small dots, right? And then let me make this also as a flex,
+right? Display flex, right? So if I display flex, it came in like this, right? I just want
+some space between them to make it look better. Okay. I want to put some space between them.
+Nav items of ul and then ul li, right? And let me just give it some padding, right?
+Padding of how much padding? Let's give it 10px, right? Cool. Looks good.
+Looks good. My friends. Looks good. Cool. So our, our header looks clean, right?
+Everybody understood, right? Understood? Give me a cool in the comments if you understood this,
+right? And maybe just to demarcate it, right? You can put in all fancy shadows and all that stuff,
+right? Be open to do whatever, right? Whatever CSS you wish to, okay? Just put in CSS. I am
+very like, I don't want to make it beautiful. I want to make it super fast and powerful,
+okay? We will do, we will not focus a lot upon CSS, okay? I'm very bad at CSS to be very honest.
+Let's give it a border also just to identify what is header, right? Border 1px solid black,
+okay? Let me give it a 1px solid black. Cool. So we have our header ready. Awesome, right?
+Let me have our, okay, okay, okay. This, this looks, this looks a little ugly.
+Let us just try to put in some logo, okay? So let me figure out, let me see if I can
+get some logo over here, right? It would look better, isn't it? Let us put some logo quickly,
+quickly, quickly, quickly, quickly. Okay, okay, okay. Let's, let's use this, this or
+something, right? This looks good, right? But this is not, this is not in proper size.
+Let's use this cook, okay? And I am, I am not, see, this is not sponsored by,
+okay? This is not sponsored by this, right? I am using this open images new tab, right?
+This app is not sponsoring us, but let us just use their, let's see. I want to show you that
+how we can put in image over here, right? So where is my image? Here is my title.
+Can I use an image tag over here? Let's use an image tag, okay?
+IMG, I just wanted to show you that how do we write it? IMG, SRC. And if I put this up,
+will this work or not? Will this work? Work or not work? Work or not work? Yes.
+And we should also have an alt text, right? Always have an alt text with your image, right?
+Let's give it a logo. So if I save it, I have used my title over here, right? If I save it,
+I'll use my title over here. Let us just go back to our app. Cool. Oh my God, this became very big.
+Right? We need to resize it as well. IMG tag, right? Let's give it a class, right?
+Class name as logo, right? And let me just quickly focus upon it, right?
+Dot logo, logo. And then let me give it a width of how much width? How much width should I give?
+50px? I don't know. Let's just see. Oh, 50px is very small, right? Let's give it 100px, okay?
+Anyways, okay, cool. This looks better, right? This looks better. I see Manisha and Manisha,
+Mamta and Manisha is not sponsoring this bootcamp, but we are promoting it. Okay, cool.
+So let us just try to build, right? So we have our header ready. Awesome. Cool.
+Change the logo. Please let us just margin padding, logo change, border, shadows,
+do it on your homework. Okay, use your homework, make it beautiful. Let us move on to the awesome
+stuff now. Okay, we have built our header already. And did you understand everything?
+Every line of code, every word of code that we write? Exactly. Cool. And we can also
+give it a anchor tag, okay, to go to our homepage. Okay, how do I give it a anchor tag?
+Ahref, right? How do I give it? Right? Ahref is equals to what should I write here?
+What should I write? Slash, will this work? Will this work? Yes or no?
+I am just showing you how things are built, right? If you click on this, it just loads our page.
+Cool. So we have built this. Now let us just quickly try to build our body, right? Let's try
+to build our body. Okay. So what is our body? Right? What is our body? Right? So some people are
+saying, Jim, Joe, not that body. You people are crazy. Okay. So in our app layout, what should
+our app layout has? What should our app layout has? It should have a header, right? It should
+have our header, right? You can also write like this. Let's follow this. Now, it should also have our body
+and it should also have our footer, right? It should also have our footer, right? So we have
+our header, we have our body. Where is our footer, right? Let us just get in body and footer
+quickly. Okay. So constant body is equals to a functional component, right? Okay. And what we will
+return from here? We will return from here. Let me give it like, let's, let's return a h4, which
+says body. Okay. Just a normal tag, right? I'm just, I just want to see it rendering. Okay.
+This is a h4 tag, right? Body. This is all it is. Let me also create a footer quickly. Okay.
+Let me create a footer quickly, footer quickly, footer quickly. Okay. And let me call it as footer.
+Okay. And now I have my body and footer with us, right? Will this work? Why it is complaining?
+Why it is complaining? Some people are saying video is not working properly. Is the video visible
+properly? Yes or no? Yes, yes. Visible, visible. Yep. Video is proper. Okay. Okay. Thank you so
+much. Okay. So, you know, why is this complaining? Why is this complaining? If you hover onto it,
+it says a very important thing. Listen to me very carefully now. Very carefully now. It says that
+JSS expressions must have only one parent element. Any piece of JSS expression that you write,
+any piece of JSS, listen to me very carefully, an important thing, note it down in your notebook.
+This is, this is very important. Any piece of JSS component that you write,
+any piece of JSS component, there can only be only one parent. What does that mean? Okay. So,
+suppose if you are writing any JSS, constant JSS, right, JSS is equals to, right, if you are writing
+like this, H1, right? This is a proper JSS, right? Suppose if I want to have two tags over
+here, right? If I want to have H1, second JSS. This is invalid JSS. What it says, what it says,
+listen to me very carefully, what it says that you should have only one parent element. Okay.
+One parent element. So, either you can write it inside a div, right? You can write it inside
+a div. Okay. So, you can make a div and you can wrap it inside over here. Let us just try to render
+this once. Okay. Now, this is a valid JSS. Let's try to put this JSS, right? Let me try to render
+this JSS on my screen. Instead of my header component, I am just using this JSS right now.
+Okay. Okay. Will this work? Will this work? Let me just comment this down for now.
+Right? Will this work? Yes or no? Yes. So, we have our JSS and second JSS. If I remove this,
+will this work? If I remove this, see it starts complaining, right? We only can have one parent
+over here, right? Now, let us just see one quick thing. Okay. Let us just see one quick thing.
+Where will it be? It will be inside a root, isn't it? If I go to my body, if I go to my root,
+I have my div and then JSS. But this thing looks ugly, right? We already had a root.
+We again had a div. I wanted my h1 and h2 to be inside root. I don't want this div, right?
+I don't want this div. This is just the extra div that came in, right? So, because JSS can only
+have one root, right? One root, one parent element. There is something known as react.fragment
+that people, that react offers to us. There is something known as react.fragment, right? Which
+react offers to us. What is react fragment? Everybody, you know, please, if you know
+the answers, please don't spoil the chat. Please. I'll turn off the chat otherwise.
+Don't spoil. Wait for me to explain. There are so many people who don't know about it.
+Please. Okay. I know that you are excited. You know a lot of react already,
+but please let me explain it, right? I'll explain you in a better way.
+Okay. And what is, now let me ask you a question. What is react.fragment?
+What is react.fragment? Where is it coming from? What is react.fragment? What is it?
+React, react. Now they don't know. Now they don't know. Now you people don't know.
+So react.fragment, react.fragment is a component, is a component which is exported by this react.
+React.fragment is a component which is exported by this react. Okay.
+And when it is a react.fragment component, how do I use my component inside my code?
+How do I use my component inside my JSX? Something like this, isn't it?
+I use something like this. How do I use react.fragment, right? Does that make sense?
+Will this work? Will this work? A lot of people who are writing react fragments won't know about it.
+Will this work? No, no, no, no, no. Let us just see. Let us refresh the page.
+See, it still works. It still works. This is react.fragment.
+It is react.fragment, right? React gave us and if I go to my root now, now I directly have my H1.
+I don't have that ugly div over there, right? We had one more div earlier, right?
+Because this react.fragment, react developers wrote a code that okay, if you want to use,
+see, JSX can only have, note down few important things about JSX, okay? This is a very important
+interview question also, okay? That JSX can only have one parent, okay? JSX can only have one parent.
+I am revising this once again. A lot of people are saying that please repeat, okay? So react,
+JSX has only one parent, okay? Now, suppose if I want to have two parents, either I can
+have a div over here, right? I can write a div and make one parent. But what if I don't want
+div in my HTML? I did not want a div inside my root. I just want my H1 and H1 inside my root.
+I don't want a div. So react gives us access to a component which is known as react.fragment.
+Where is it coming from? It is coming from the same react library, this react library,
+which we import, right? react.fragment. And if I write my component like this, right?
+react.fragment. So it understands that okay, this is the root element. And it is like a
+JSX, now listen to me very carefully. react.fragment is like a empty tag, okay? It is like an empty tag.
+It is like an empty tag, okay? Okay, so now we don't see any div over here,
+isn't it? We don't see any tag over here. But it is wrapped inside react.fragment.
+Now, when developers got to know that okay, we can do something like this. We can have a react
+fragment, right? We can have a react fragment. Now, people said that okay, this is very lazy
+to write. I always have to write this big whole react.fragment. It makes our code look ugly,
+isn't it? It makes our code look ugly. Does it look ugly or not? Yes or no? Yeah,
+a lot of people said that it is looking ugly. So that is why react developer said that okay,
+don't write react.fragment. Just write like this, empty tags. This is one and the same thing.
+This is one and the same thing. Now a people who don't know react or JSX would feel, what is this?
+What kind of black magic is this? Yes, this is some kind of black magic which we are seeing.
+How does this happen? What is this? What is the name of this tag? It is basically an empty tag.
+But what it is behind the scenes? A lot of react developer don't know what is this called.
+This is known as react fragment. And we can use react.fragment like this as well.
+Okay, react.fragment like this as well. But this is a shorthand for react.fragment.
+Understood, right? Understood, right? Understood. If you understood, not understood if you did
+not understand. Now, some people are asking what is the use of it? I'll tell you the use,
+right? See, either you can only have one parent. This is for sure in JSX. So either I can make it as
+a div. What is the problem if I make it as a div? The problem is that I will see this div inside
+my root. But I did not want my div, right? I did not want the div. This is an extra piece of code
+which is there, right? I don't need my div in the DOM. I just want my h1 to be there inside
+my root. I don't want this div. So that is why I will just use my empty tags or react.fragment.
+Remember this thing, right? It means that it won't show up here and it can again act as
+one parent inside JSX. This is one parent. Okay, cool. Now, it becomes very handy.
+Suppose if you want to give style to it, right? Then you can't give style to an empty bracket
+because where will that style go? It can't go anywhere. So you cannot pass in any attributes
+over here. You cannot pass in any styles over here. If suppose if you have to pass in some styles,
+suppose if I had to make this all correct, so I can quickly write in like this, right? Div style
+or something, right? Okay, so there is one more way to give CSS. I haven't told you that.
+One way is to give it a class name and define your CSS classes here.
+And one way to give CSS is by using a style over here. How do I use to do an HTML?
+Suppose if we have a HTML component, how do we use to give in inline style?
+Do you know what is inline style? So this is known as inline style.
+Okay, so inline style. How do you give inline style in CSS in HTML? You used to do something
+like this, right? Style is equals to, right? And then you used to write something like this,
+right? Background color equal to red, right? If you do this. Okay, so there is some issue
+because there is some error in my code over here, right? So this is how you used to do.
+Where is my route? Okay, because it is replaced by react, that's why it is not taking up, right?
+So basically, react is overriding this, right? So it does not take, but this is how you do in
+HTML, right? This is how you do in HTML. But let us see how you can do the same inside the
+RJSX. This is not happening because react is overriding this, right? So let us see that how
+can you give style inside my react, okay? So how do you give inline style using react?
+We use something known as style, okay? Now this style takes in some object. Now if I have to
+give this style an object, will it work like this? Can I give an object like this? No.
+Object is what? Object is not JSX. Object is what? Object is JavaScript, right?
+Object is JavaScript. So I will have to wrap my object. So you know how do you give it, right?
+Suppose if you have to give, right? See, style object, okay? Style OBJ. And suppose if I have to
+give some style as background color, right? Background color as red, right? Suppose if I
+have to give some, give this style to this, right? So I can't give it, right? I can't give
+my style is equals to style OBJ because it won't understand because this is JavaScript, right?
+So how can I do is, how can I do is I can just wrap it inside my curly braces, right? I can wrap
+it inside my curly braces, right? Looks good, right? Style OBJ and not a semicolon because
+this is the object, right? Style OBJ. Will this work? Will this work? Yes. So we have a red.
+This is how you give styling, right? This is how you give inline styling in React, right?
+This is inline styling in React, okay? This is how it is. And some people write it like this
+also, you know? Some people just cut paste and write the same object over here. So don't get confused.
+If you ever see this in your code, this is one and the same thing, okay? This is one and the same
+thing. Understood, right? Understood? You won't be get confused ever? Understood?
+Yep. Some people are saying not understood. Let me just quickly tell it once again.
+In your HTML, if you have to give styling, so you give it something like this, right? Style is equals to
+but this won't work in React, right? This won't work in React. In React, there is a different way to give
+styling. We give styling using JavaScript object because React or JSX is like writing HTML inside
+JavaScript. So if you have to give your styling inside JavaScript, so you have to use your
+objects, okay? So we can make an object, right? OBJ or maybe style OBJ, okay? Let's call it as
+style OBJ, right? That style OBJ is normal JavaScript object and you can give in any piece of
+style in it, right? So you can give in border, right? Border is equals to one PX, solid,
+red or anything, right? You can give it like anything solid, red, right? Red, right? And
+suppose if you give it like this, right? If you give it a border like this, right? In your object.
+Now, how do you pass in that style? You pass in like this style OBJ because inside these
+parentheses, you can write any piece of JavaScript. That means you can write any variable name as
+well. So when you pass in this object over here, right, style OBJ, so it will give you the border red
+or in some places you just, you just can write an object like this as well, right? You can just
+define your object like this, right? You can give it background color, background color to be,
+let's give it this time yellow, okay? Yellow, okay? And yellow in my letters, right? So this is yellow.
+Works. Cool. Yep. So this is one way. The other way to give styling is, this is one way to give
+styling in React. The other way to give it a class name, right? Other way is to give it
+a class name. Let's call it as my JSX and can write the CSS inside my CSS file.
+Two ways of writing CSS inside React. There is one more way which is by using external library
+like Tailwind, like Bootstrap, like Material UI, like so many other things, right? That is different.
+We will learn Tailwind later in these sessions. For now, let us just stick to writing styles
+inside our index.css. Okay, my friends, hope that makes sense. This is what I wanted to tell you
+about react.fragments, right? What is a fragment? React.fragment. You should know where does that
+React.fragment come from and what are these empty tags? This is basically react.fragment.
+Note it down. Lot of people forget this. Okay. Lot of people forget this. Note it down.
+Okay. Thank you. So, let us just go back to our header, right? We were building something, right?
+App layout. So now, with this knowledge, let us go back to our app and build those things, right?
+I am just removing all this code. This was just for explanation. You know, while we are
+building our app, we are building our food villa, right? Food villa. So, while building
+food villa, I will explain you these small concepts in depth just like this, okay? I will
+take a side break and then I will explain you all this. So, okay. So, over here, right? We have
+our app layout. So now, if I want to give it one root, one root, how will I give it one root?
+How will I give it one root? Yeah, using our react.fragment. So, what I can do,
+I can give it something like this, right? react.fragment, right? Fragment, okay? And we can write
+it like this. Will this work now? Will this work? Quickly, let me know will this work? Yes or no?
+Yes or no? Everybody saying yes, but it won't work, my dear friend. Why? Because I did not
+modify root.render, okay? So, over here, let me write app.layout, app.layout, okay? If I write
+my app layout, now will this work? Quickly. Yes or no? Yes or no? Yes or no? Oh, my God. Again,
+it broke. What? Header is not defined. What did I miss? Don't we have header? Okay. We named
+it as header component. Okay. Sorry, sorry, my friends. Let us name it header, okay? Now,
+will this work? Quickly. Will this work? Yes or no? Once again. Let's keep our fingers crossed.
+Yep, it worked, right? We have our header, we have our body, we have our footer. And now,
+if you see a root, it does not even have a, it does not even have extra div, right?
+It does not have react dot fragment, right? It does not have anything such as react dot fragment.
+Awesome. We have body, we have footer, we have header. We have header, body, footer.
+Makes sense, right? Cool. In the comment, makes sense. I have found some energy.
+Yep. Okay. Right. So, we can use. Now, some people are asking me a lot of questions.
+You might have a lot of questions like, can I use my react fragment inside a react fragment?
+Yes or no? Yes or no? Yes or no? Yes, yes, no, no, yes, no, yes, no. So many questions.
+Take this up as a homework. I'm not telling you. I am not telling you something you should also
+do, right? You should also do something. Figure out yourself. This is your homework.
+Okay. This is our homework. The question was that, can I use my react fragment inside my react
+fragment? Very, very amazing question. You know, the people who are getting such questions in
+their head, you are going in a right path. You are going in a right path. You should get these
+questions in your head. But I can't cover every small things. Google up, write code yourself.
+That is when you will learn. I want you to try out yourself. Okay. I can give you
+give you the answer right away, right? Right away. It will just take me one word,
+but I want you to practice and get the answer out. You will remember it for life there.
+You can remember it for life. Okay. And, okay, so for now, okay, from now, I will always use my
+empty bracket instead of react dot fragment. Make sense? Understood? Yes or no? I will always use
+my shortcut. But you should always know. See, you know, a lot of people write react, they write
+these tag also, but then they don't know that something is react dot fragment. I want you all to
+know what is going on behind the scenes. What is this black magic going on? Right? You should
+know all that. That's why I told you. Okay. Now it works the same. Our logo broke for some
+reason. Okay. It came again. Okay. Cool. So we have this. Okay. Now we will start
+building our body, right? We will start showing our document, restaurant information. We have to do
+that, but quickly five minutes break. We are one hour already into the session. Let us take a five
+minutes break. Okay. Five minutes timer. Okay. And then we will be back. We are going to build
+a lot of amazing things. So please, please, please come back again. Okay. Yep. Meanwhile,
+other people can just see the code. Okay. Take a break. Take, take some time off your screen.
+Right? Your eyes will pain. Okay. Don't, don't, don't just drink your water. Yes. Drink your water.
+Five minutes break. We will be back. There is a lot to learn in today's session. Okay.
+Come back fast. I am putting myself on mute. So you can, you can do a,
+you know, you can do a, you cannot give styling to a react fragment. You cannot,
+because it does not exist inside your HTML. Okay. So you have, you cannot do that. You have to
+give it a div. Okay. If you, if you have to give style, we'll talk after five minutes. Okay.
+I'll be back. I just want to walk and come. Okay. So we have 40 seconds left. Okay.
+Okay. You know, we are going to do amazing things now, right? So I want your focus for
+one more proper hour. Okay. We will code in one hour. We will be building a lot of amazing things.
+15 more seconds. So CSS code. See that. Cool. Are you guys back? Are you back? We are
+done with 15 minutes. Are you back? Let's quickly build this up. Now there is amazing time to build
+up our restaurant cards. Okay. Let us build our restaurant cards. Okay. Yep. So let us go back.
+Okay. And let us just quickly go back to our code in app.js file. And let's go to our header
+component. Okay. So we have this header component in header component. We had title.
+See this, right? Header component. We should have logo logo. We call this as title, right?
+Title and then we have these nav items, right? And then the cart. So we have this
+title, right? This title was again a component, right? And then we can have this nav items
+and then we can have a cart, right? We just had a cart. So this is how it was looking.
+Now let us just build our body, right? What should our body have? What should our body have?
+Our body has search bar, then a restaurant list, then a restaurant card. In fact, a lot of
+restaurant card, right? Lot of restaurant card, right? Restaurant card into many cards, right?
+Many cards and each restaurant card should have an image name, rating, cuisine, right?
+You know, whenever, now listen to me very carefully, right? In header, cart is missing. No,
+cart is not missing. I just put it here like you can make another dip for it. No issues, right?
+It just, okay. So listen to me very carefully. Whenever I have to
+pull in some restaurant cards, right? I need some restaurant cards. So I need some data for this
+card, right? I need some data for this card, right? So first of all, whenever I am doing
+something on my UI, whenever I am doing something on my UI, right? I am always concerned about
+where will my data come from? Where will my data come from? So right now, I will be using
+some hard-coded data and then we will, right now I will be using some hard-coded data,
+then we will learn to integrate from the API as well, okay? First of all, I am using some
+hard-coded data, okay? So let us just try to build a restaurant, okay? Let us just try to
+build a restaurant card, okay? Inside our body. Let us just try to build, okay? So what is a restaurant
+card? Listen to me very carefully because see, you know, time is going away and we have to do a
+lot of coding now, okay? Just listen to me. Don't, don't write inside the chat until I ask you to.
+Keep your hands away from the chat, right? Restaurant card. So let's build a restaurant
+card. How should my restaurant card be built? What does my restaurant card consist of, okay?
+What does my restaurant card consist of? Restaurant card is a functional component,
+right? Functional component. This is a function which returns some JSX, right?
+This JSX should have, let's give it a div, right? Let's make it a div and this div,
+let's give it a class name as my restaurant card, right? Let's give it card only, okay?
+We just have one card, right? So card. So we have given it a card. This should have an image,
+right? This should have a image, SRC equals to some image, right? It should have an image.
+What else should it have? What else should it have? Right? We can have a name of the
+restaurant also. Let's give it a name, name of the restaurant, right? Let's go back for an
+inspiration. Let's give it Burger King, right? Let me see if we can take this image also, okay?
+Let's, let's see if this works, right? Swiggy again, disclaimer. Swiggy is not sponsoring
+neither Burger King, okay? So I just use this because I just wanted to show you,
+right? Burger King, okay? Let's have our Burger King, right? Burger King.
+And let us also have H3, right? What is Burger King? Let's have something, Burgers plus American.
+These are like tags or some labels, right? Burgers, American, okay? Makes sense? Makes sense?
+Now, let us also have 4 star rating, 4.2 stars, right? Let's, let's give it some stars, okay?
+H4. I'm just making it in a very fancy way, right? Stars, right? 4 stars, 4.2 stars,
+okay? And we can have many more things, right? Let us not worry about much more, right?
+These, this information is fine. Will, will this work? Will this work? Yes or no?
+No. Now I'm asking you questions so you can type in, no. Yes, no.
+Why would it work? We have not put into our UI, okay? So let us just put this thing into our body,
+right? We have to put this thing inside our body, right? So let's make body a div, right?
+A div, right? And inside my div, how should I put my restaurant card? It is a functional component.
+So I can put in my functional component as like this. This is my restaurant card. Will it work now?
+Will it work? Yes or no? Yes or no? As a lot of people are saying yes and it worked, right?
+We have our first restaurant on our page. Amazing. But it doesn't look ugly, right? It
+looks ugly, right? So let us give it some styling as well to make it look better, okay?
+So let's, let's just give it some styling. So we have a restaurant card. It was easy, right?
+Because we know the foundation that, okay, this is how I write my functional component.
+This is my functional component. It returns some JSX and my JSX has one root element,
+one parent, which is my div, and then it can have multiple things. Now let me give it some
+styling, right? So if I give some styling to my card, right? If I write my card, first of all,
+let me define its width, right? Let me give the width as 200 px or something. Will it work? Okay.
+I think it should be fine, right? Let me give this a width of 200 px. Okay. Okay. I should
+resize my image as well, right? Image, image, where is my image? IMG tag inside my card. So
+in my card, right? Dot card, I can give some styling to my image. And let's give it a width of 100%.
+Okay. What will this 100% do? What will this 100% do? Right? So it will,
+it will resize itself to the width of the card. Okay. It will take the full width of the card,
+right? And let's also give it some border, right? Let's, let's give it some border to
+make it look a little better. Border and then one px, solid, black, right? Cool. So we have our
+RESTRO card. Let's give it some padding also, like some padding and margin, right? Some padding,
+padding, 10 px, 10 px and sorry for my bad CSS. I know you must be better than me at CSS. I'm telling
+you. So make it beautiful in your homeworks. Okay. Make it beautiful. You will have much
+more time. Looks cool, right? So we have our, we have our RESTRO with us. Now people are saying
+you can write REM instead of px and a lot of things, right? So we have our px. You can put in
+REM also. That's completely fine, right? Do that, right? This is not Namaste CSS.
+Okay. So make it. Some people are saying where is search bar? Okay. We can make the search
+work. Don't worry. We can, we'll make the search bar later. Right now I'm just focusing upon my
+RESTRO card. Okay. This is my RESTRO card. Looks good, right? Looks decent, right? Not,
+not that great, not that bad. It's, it's completely fine, right? So we have our RESTRO
+card, right? But, but, but this RESTRO card is a hard coded card, right? This RESTRO card
+is a hard coded card. Will the image will always be this? Will the name be always Burger King? Will
+the name, will the tags be always this? No, right? So it should be dynamic. So let's see
+how we can make it dynamic. Because we are using JSX, because we are using JSX,
+we can do amazing things. We can do amazing things, right? We can use JavaScript inside our
+HTML. Isn't it? We can use JavaScript inside our HTML. In JavaScript, suppose if I have my
+constant Burger King, right? Burger King, right? Represented as a JavaScript object,
+right? If my Burger King was a JavaScript object, right? And it had an image,
+image, right? I am a GE image, right? Image, which has this URL, right?
+Image as the URL and maybe name as name as Burger King, Burger King, right? And we can have our image
+as this image URL, right? We can have image as this image URL. And then we can also have
+its cuisines, right? Cuisines. Watch, how should I represent my cuisines?
+How should I represent my cuisines? Quickly. Yep, it should be an array, isn't it? Array, right?
+Array of tags. This is how the data comes in, right? It won't come in commas. Burger,
+American, right? Like this? No, there should be different, American, right? And then after my
+cuisines, it should have some rating, right? Rating, how will this rating come in?
+Rating can be a string or an integer, right? You can 4.2 rating. Now, what I want to say is
+our data looks something like this and, right? So, now, how will I use this data over here?
+How will I use this data over here? Yep. In JSX, how do we write
+JavaScript like this, right? So, we will have BurgerKing.name, not name, basically image,
+right? And then we can have BurgerKing.name and something like that, right? Let me quickly do this,
+BurgerKing.name, right? BurgerKing.name and then we can have our BurgerKing.cuisine,
+BurgerKing.cuisines and then we can have BurgerKing.stars. Now, see, we can mix
+mingle things, right? I can write like this, okay? So, this 4.2 will come over here and then
+stars will come over here, right? Hey, audio is muted, okay, sorry. I don't know. When did the
+audio got mute? What was the last thing I said? My bad, my bad, my bad, my bad. Thank you for
+letting me know. Three minutes, okay, okay, okay, okay. One hour back, 10 seconds, okay, sorry,
+sorry, sorry. There must be some shortcut to mute and I would have like randomly pressed it.
+Anyways, so, what I was saying was, see, the data will be generally dynamic, right?
+Data will be generally dynamic. So, what I am saying is, how do you use your dynamic data
+over here? You can do BurgerKing.image, BurgerKing.name, BurgerKing.cuisine,
+BurgerKing.rating and now you can use, if suppose I want my 4.2 to be just here along with stars,
+so you can do something like this. You can mix and match things. You can mix and match things.
+It is just like a string interpolation, right? In JavaScript, okay. Why am I using return?
+You cannot choose to use return and you can get rid something like this also, right? I just
+prefer to use return because it's a good way, right? Like, I mean, it's more readable. I feel
+it is more readable, okay? It won't break if you don't write return. It is working fine.
+So, now, will this work? Tell me, will this work? Yes or no? What do you think? Will this work?
+Yes or no? Yep. We have it working. But the only issue is that it was an array, right? And it did not
+get comma, isn't it? It was an array. It did not get comma. So, when you put in that array
+inside your HTML, right? Like this, you know, it just renders like this, okay? To have it rendered
+properly, you have to do something known as dot join and give it a comma. So, what it will do?
+It will join with a comma. See, it will join with a comma. So, this is how you join items in your
+array. So, this is your homework. Go find it out. If you don't know, join items in array,
+items in array, JS, right? So, you would get to know there is an array dot prototype that
+joined read this about that, right? So, who is not understanding that? But this is how I want
+my data to be, okay? So, we have Burger and American. Now, we saw that how we can make our card dynamic
+now, right? But in the real world, is the data like this? In the real world, the data is not
+like this, right? Is not like this? There are so many restaurants, right? So, how can we render
+so many restaurants, right? Suppose if I wanted more cards over here, right? If I wanted more cards
+over here, right? Can I do something like this, right? There would be so many restaurants over here,
+right? So many restaurants. Let us just save and see how it looks. Oh my god, it looks like this.
+I need to style this again. Can somebody help me with the styling? Can somebody help me with
+the styling? You people are amazing, right? Let me give it some style. Restaurant list, rest
+restaurant list. Okay. So, let me take this class and let us give it some style.
+Everybody's saying display flex. Yep. Flex is cool, yeah. Like, I mean, flex makes our life
+so much easy, right? Let's give it display flex, right? If I give it display flex, now I have all the
+restaurant with me. Cool, right? So, we have all our restaurant with me, but all our Burger Kings,
+right? We can have in more restaurant like this, right? We can have in more restaurant
+like this. They will all be Burger Kings. Oh my god, this is not correct. What should I give it? Flex
+wrap? Okay. Flex wrap, flex wrap, wrap. Cool. So, we have our restaurant listed. We can use
+grid as well. A lot of things, right? Okay. We can use anything. Don't worry about it.
+I'm not good at CSS. This is not Namaste CSS. Let's focus upon the functionality. Okay. Cool.
+So, we have our restaurant, but now I don't want all these Burger Kings. Now, let us try to make
+our whole, all the cards as dynamic, right? All the cards as dynamic. Okay. So, how we can do that?
+And I want to do it in a way by not writing all these restaurant cards here,
+right? Not writing all these restaurant cards. So, let us try to make our data more dynamic.
+So, in real world, the data does not come like this. The data comes in what fashion? Something
+like this. Restaurant list. And it has a lot of objects, right? It is array of objects,
+right? And one of the object is Burger King. Similarly, there would be other objects as well.
+Okay. There will be other objects as well. If you work on the data, okay, let us see the data.
+Okay. Let us see the data. This got broke because I changed the data structure, but let us just
+see the data in the Swiggy API. Should we see it? Yes or no? Let us just sneak peek into
+Swiggy's API and see how they have written their APIs. Okay. Let us just sneak peek
+and just see how Swiggy's API look. Let us just go to the network calls. You can do this
+for any website. So, I have clicked on this fetch XHR. Let us just see this data, right?
+If I click on preview, it shows me the data. See, the data looks, the data has
+cash expiry time. It has cards. See, I got my cards, right? This cards should have,
+it has some configs also, right? It has some sorting things also. Let us just get these cards, right?
+See, now the card says card type as Carousel, right? And then card type as
+see all restaurant. Why are these different card types? Why are these different card types?
+Because we have this Carousel with us, right? So, Swiggy is sending data. My voice is low. Is
+my voice audible? Yes or no? Audible? Audible quickly? Yep. Don't complain,
+man. It is audible. Why are you saying? Okay, cool. Okay. So, this is the Carousel, right?
+So, Swiggy is calling one API, right? One API call, which is the API restaurant list, right?
+And it is sending us data in this fashion, right? In this fashion. Okay, cool. Just give me a
+moment. Let us just go back to my header, right? Where is my API call? Here, right? V5?
+Let me open it a new tab, right? This is the API call, right? I have opened this API call in my new
+tab. Double click on it, right? Don't ask me, how did I do? Right? So, we have this filters. Now,
+let us see their data. Now, why it is looking fancy in your, when you will open, right? It might
+not look fancy. I use a plugin known as JSON plugin or something. I don't remember. This
+one, JSON viewer. Download this Chrome extension, JSON viewer. Okay. So, it will make your
+JSON look better. If I remove this, then it will look ugly, right? So, cool. So, let us see their data.
+So, in their cards, right? In their cards, they have a card type Carousel, which gives us data
+for just Carousels, right? We have our card type Carousel again, right? This is another Carousel,
+right? And we have card type, see all restaurant. This will have our restaurant data,
+right? And each of the restaurant will have its own ways, right? See, this is one restaurant.
+It says Anand Vihar Colony. This is the address of the restaurant. These are the cuisines of
+this restaurant, right? This, where is the name? There should be name also. Where is the name?
+Yep, name is KFC. See, this data, this whole object is KFC object. This whole data,
+which I am closing and opening, is the KFC object, right? This is the KFC object. This is the name,
+city number, right? City number. They must have mapped these numbers to the city names,
+right? 22 must be the city name, right? So, area as Anand Vihar cuisines as we did it,
+right? Similarly. So, now I want to tell you an important thing, which is not,
+which is not, you know, a react thing. Why do we have data like this? Why is this API telling us,
+giving us the data about Carousel as well as restaurant? So, okay. So, if I go back over here
+in my Swiggy's website, let me close this console. So, if I have to render this whole page, right?
+I want to build this Carousel. I want to build this restaurant. Suppose, suppose these Carousels
+have some offers which are running in Dharadun. I am in Dharadun. I am in Dharadun. Listen
+to me very carefully right now. I am telling you an important concept. Don't write anything
+in chat. If I am in Dharadun, I might have some offers running in over here. Mumbai might have
+some other offers. Pune might have some other offers. Bangalore might have some other offers.
+Hyderabad might have some other offers. And suppose Kolkata, suppose I am in Kolkata,
+there are no offers. Suppose I am in Kolkata, there are no offers. There is no Carousel
+list here. It directly shows something like this. Suppose in my restaurant, right? In my UI, right?
+This is the whole Carousel, right? This is the whole Carousel. This one, right? Where is my Carousel?
+This is the whole Carousel. This is the whole Carousel. Suppose in Kolkata, this Carousel
+does not show in, right? Let us delete it. How do you delete? Delete, right?
+So suppose in Kolkata, our website, Swiggy website looks like this. No offers in Kolkata,
+right? No offers in Kolkata, right? So what will happen is we make our UI dynamic.
+And you know this type of UI is known as config-driven UI. What do you call this
+type of object? Have you heard of config-driven UI? This is known as config-driven UI.
+This is known as config-driven UI. And this is a good practice that we follow in industry.
+See, I don't want to just make this a Namaste React live course. I want to give you all the
+knowledge I have. When you work in big companies, big companies use something known as config-driven
+UI, right? So all this UI is driven by a config which is sent by backend.
+Once again, repeating it once again, I know this is important. A lot of people are asking me once
+again. Listen to me once again. When you build a real world application, right? When you build
+a real world application, so you want your website should work in Dharadun, your Kolkata.
+Should we have a different website for Kolkata? Should we have a different website for Dharadun?
+Should we have a different website for Mumbai? No. So what we do is we control our front end
+using a config. That is why it is known as config-driven UI, right? So basically,
+our end that and who is driving that config? Who is driving that config?
+backend and the API which the data which is coming from the API.
+Okay. So, but, but, but the amazing thing is we will be building the whole website in such a
+way that it will be built by config. If you give some data in config, it will show something.
+It will give you another data. It will go something else. So backend controls
+what type of website should look in Kolkata, what type of website should look in Dharadun,
+what type of offer should run in everything is controlled by backend and and and are
+and and and are you know what the amazing thing is amazing thing is that everything is done
+driven by this config and that is why it is known as config-driven UI. If today you
+are an engineer working in a startup in a front-end company, you would you should know
+config-driven UI in your system design round of interviews. If you tell the interviewer that
+I am building this API, I am designing the data using a config-driven UI. This will be a huge
+plus point. This will be a huge plus point, right? Many people would always be using it.
+Now, a lot of people saying that, okay, my address is very well. It's okay.
+Well, let it be visible. You are always welcome at my home.
+Swiggy is taking my app data. Okay. Don't worry. Always welcome to my home.
+Okay. So don't worry. I am not concerned about seeing, you know, I don't, I am not a hacker,
+right? Which is hiding my identity. Always welcome at my home.
+Okay. So, so this is known as config-driven UI. Okay. Now I'll tell you one more thing,
+right? How, how do you design this config-driven UI? Suppose if this config is coming from our back
+end, right? If your config is coming from our back end. So it is mostly like suppose if I want to
+design my UI something like this, okay? I have my carousel, then I have my list of restaurant,
+then I want to have offers, right? So my data will come like this, okay? Something like this.
+So I have my whole big object or maybe an array and then first of all, it has a list of carousels.
+Okay. So it's like type carousel. I also want to give you best practices that you have to follow,
+right? This carousel can have, this carousel can have its own cards, right? Cards and each
+card is a list of some offers, right? Name of offer, right? This is an offer, offer name,
+offer name. Suppose if offer is 50% off or maybe some delivery, no delivery charges,
+there could be different offers, right? So I am just telling you this great thing, right?
+No delivery charge. Suppose this is running in
+Dharadun, delivery charge, right? No delivery charge and how do you control your UI with
+backend, right? This is what I am trying to show you around, right? So this is type carousel
+and then after my carousel, after my carousel, I can also have list of restaurants, right?
+I can have my type restaurants, right? I can have my restaurant. Now these are list of
+restaurants. Now this can have my Burger King, right? This can have my Burger King, right? Over
+here. This can have my Burger King. This can have my KFC. So in real world, the data is much more
+complex than it, than we have built it, right? Okay. So this is, this is the thing. Now suppose
+if in Dharadun, right? If I am in Dharadun, there I have these two offers. In Kolkata,
+suppose if I have other offers, so only the backend will change these offers and the website
+will render accordingly. It will show in different offers here. Did you understood? Does that make
+sense? Right? Understood. Right? Cool. If that makes sense, right? Cool. Yep. Right? And
+suppose, and suppose I don't want my carousel, suppose if in Bangalore there are no offers running,
+so that backend won't send us this, backend won't send us this object or maybe it won't just,
+it will just send us empty list of cards. This is the contract which backend and frontend
+decides among themselves. No or no offers. So what we will do? We won't show this.
+Okay. So this piece of thing is known as what? This piece of coding, this piece of architecture,
+this is a very big design architecture, right? In your system design round,
+you have to tell this thing to your interviewer. Okay. Awesome. I have explained it twice.
+If you have not understood it, go back. You can watch the recording once again later on
+after this thing. But I want to go ahead and build this type of UI now. Okay. Let us build
+this type of dynamic UI. Now we also saw that, okay, there are cards and there are objects for
+cards, right? So let us just try to use the same RESTRO list and we will build a config-driven
+UI, right? So we have this Burger King. Let us go and get some more data, right? Let's take
+data from here only maybe. Let us just try to take some data from here. Okay.
+And let us use the live data. Why not, right? We can use the live data, isn't it?
+Cards. Here is the card, right? We have this card. Where is the data? Okay. Just give me a
+moment, right? I am trying to figure out because these, these data looks a little huge,
+right? Let us just use Swiggy's data here, right? For now. And again, this whole everything
+is not sponsored by Swiggy. Okay. I am just using this for example. So don't,
+so don't think that Swiggy is paying me to show their website to you. Oh my God. This is, I don't
+even know where, where does it end? Okay. Here, right? Just tell me if I'm doing right.
+Okay. Just tell me, let me know if I'm doing something right. Oops, oops, oops, oops, oops.
+Let me just, just give me a moment, yeah. Like, I mean, I just want to
+see one card is so big. Oh my God. Oh my God. This card is huge. Where is one card ending?
+Where is one card ending here? Oh my God. This card is huge. This card is huge, right?
+Let us just directly use that, right? Let's, okay. Let me just use this here, I guess.
+Type card, command F type is equals to card. Yep. You are not, you are not able to see it,
+right? So basically one card is equivalent to 100 lines. See 514 to 602. No, 602 to 684.
+So there are 70 lines in this subject. Okay. So basically it is this huge, right?
+Let us take this, right? Let me just use this, right? So basically 602, right?
+Let me just take this data. 514 to, let me just count the line numbers, okay?
+Let's just take 514 to 684, okay? 514 to 684. 684, okay. Where is my 684? 684.
+Yes, I will teach you everything. How to call an API. Don't worry.
+It is not copying with a minimizing. Just give me a moment. I know this is
+waste of time. Just a minute, right? I just want to show you with real data.
+Otherwise, otherwise, you know, I can just teach you with mock data. I don't want to teach you with
+mock data. Let's use real data, right? Swiggy is using that. Don't we have to build an app like
+Swiggy, right? We have to build an app like Swiggy, right? 513 to, this is huge, right?
+Cards. One card is 6, 514 to 684. Okay. Let us just go ahead and copy this, right?
+684. Where is my 684? 684, 684 here, right? So here, copy, right? So let us just copy this
+data and use it here. Just give me a moment. Just give me a moment. This is just, yep. So we
+have our data with us, right? We have our restaurant data with us, right? So now,
+right? We have this restaurant data with us, which is card type, carousel, open carousel.
+Oh, I, I, oh my God. I just opened the carousel thing. I just copied wrong data. I wanted
+to copy this data. Okay. Sorry, my bad. It starts from here, right? Type restaurant.
+Just go down. Just a minute. Sorry. Just a minute. Just a minute.
+So this data, I copied carousel data. I don't want carousel data. I want restaurant data.
+Okay. So here is my restaurant data. Here is my restaurant data. Okay. So, yep.
+So let me go back to my card and let me just remove this. Okay. So I have my
+restaurant data with me. Okay. So now how will I pass this restaurant data? Earlier,
+I was doing something like this, right? Earlier, I was doing something like
+Burger King, right? So let me just minimize this data for better visibility, right?
+For better visibility, let me just minimize this data. I'm struggling with this data
+because something new, but I really want to use this, right? Because this will give
+us more things. Right? So I will now I want to use my restaurant list
+dot data over here, right? Restaurant list. What will I write now? What will I write over here
+if I want the image over here? What will I write if I want the name over here?
+What will I write restaurant list of zero? Suppose if I want to take zero, the first
+item, right? I want to use the first item, restaurant list of zero dot data dot, where is the name?
+Where is the name dot name, right? Dot name, this Uncle G restaurant, right? So let us write
+dot restaurant list dot data dot name. Does that make sense? Does that make sense?
+Uncle G restaurant. Okay. And now I want to show you one more best practice.
+Suppose if the name does not exist, so you have to use something known as this,
+what do you call this? Do you know this? This is known as optional chaining. If you don't know,
+this is homework for you. Read about this. This is JavaScripting. This is not,
+this is not a react thing. This is JavaScripting optional chaining homework, right? No,
+note this, right? Optional chaining. Cool. So basically this is how you have restaurant
+list dot data. Now, let us also have our restaurant list dot cuisines, right?
+restaurant list dot data dot cuisines is the cuisines is the name correct cuisine.
+Let us just check it once data has cuisines. Where is my cuisines?
+Where is my cuisine? Yep, cuisines. It is correct, right cuisines. And then where is
+the star rating? Is there some star rating here? Let us also use that
+see when you are dealing with your production, then you always have your
+see total average rating. Average rating is high fun, right? There is no average rating for this restaurant.
+Let's use this, right? Last mile travel string. Okay. Instead of rating,
+let's use last mile travel string, right? Let's remove the rating. Let's give it minutes,
+right? How many minutes it will take to reach, right? ETA or something like that, right?
+Because this restaurant does not have a rating, I guess. So I don't want to show high fun,
+high fun, right? So restaurant list dot data dot last mile travel. Cool. So will this work?
+Will this work? Cuisine spelling is wrong. C-U-I-E-S-I-N-E. Okay. Sorry. My bad.
+Thank you for reminding. Will this work? Yes or no? No. Let us just see if this works.
+Okay. Burger King is not defined. Oh my God. Source image. Yes,
+yeah. Image. If we let us just see where is the image, right? The image is,
+yeah, this is cloudinary image ID. So basically I will have to use this ID, right? Somehow.
+So not sure if this will work or not. My background image will be just a minute.
+Let me make the image work. Okay. Open link. Open image in new tab.
+So see this is my restaurant cloudinary ID, I guess, right?
+Yeah. This came in, right? Karahi came in. So basically I, this is a common URL.
+This is a, this is a URL. What is this res dot cloudinary?
+You would already know what is this res dot cloudinary CDN. Yes. Exactly.
+So I want my cloudinary ID, right? Along with over here, right?
+So I have this source, right? Some people are calling me hacker.
+No, this is not hacker. You know who are hackers?
+Who are hackers? Hackers are just smart developers.
+You are hackers are just smart developers. That's all.
+Right. So basically this is the cloudinary ID, right?
+Let us just use cloudinary ID and let me give you a disclaimer once again.
+What is the disclaimer?
+Swiggy is not sponsoring this and neither uncle G kitchen. Okay.
+So what is the name of that cloudinary entry?
+Will this work? Tell me. Will this work? Will this work?
+Yes or no? Yes or no? Yep. So let us go back.
+Oops. It did not. Or it did. Okay. There is some issue here. What is this issue?
+Invalid property class. Oh, did I use class anywhere?
+Okay. My bad. CLSS class. Okay. This should be class name, right?
+This should be class name. Yep.
+Cloudinary image ID. This is KFC. Okay.
+If I change my restaurant list to one, it should change my photo. Yep.
+Cool. This works here. Right? It works.
+Peace. I just need 10 more minutes, right? I need 10 more minutes.
+I will do amazing things now. Okay. Are we ready?
+I don't know somehow our logo broke for some reason. Our logo broke.
+Okay. Don't worry about it. Maybe we will just change the logo in summer. Okay.
+Okay. Cool. So let us just try to use, right? Now, are all the cards are same right now.
+But I want different data in my cards, right? I want different data in my cards.
+It shows 6.1, 6.1 kilometer minutes, right? So I somehow need to,
+I somehow need to pass in dynamic data. This card should be KFC.
+This card should be my Burger King.
+This card should be my Pizza Hut. How will I make it? How will I make it?
+Yep. Everybody is saying loop it, right? We will go to loop.
+But let us go slowly, slowly, because when I will go slowly, slowly,
+everybody will understand, right? I am a teacher. I cannot just code quickly.
+If I have to make this right, I can just do this in 10 minutes, right?
+But I want to go slowly, slowly. Okay. So first of all, I want to tell that, okay.
+Now we are coding this. We are having this data hard coded right now.
+We are just saying that, okay, restaurant list of zero.
+This restaurant card is restaurant list of zero. I want this card to be dynamic, right?
+So what I will do is I want to make my first restaurant card to be
+the restaurant card list of zero, right? The first card should come from first object.
+The first second card should come from second object.
+The third card should come from third object. The fourth card should come from fourth object.
+So what I want is my, in the first card, my restaurant should be, my restaurant should be
+restaurant list of one. Does this thing make sense? Just tell me, my friends,
+does this thing make sense? My restaurant list should be zero.
+In the second card, my restaurant list should be one.
+In the third card, my restaurant list should be two.
+In my fourth card, my restaurant list should be three, right?
+We will do something like this, right? One, two, how many restaurants do we have?
+One, two, three, four, five, six, okay? So we have six restaurants.
+So we want them to render like this, right?
+They should have dynamic data, right? Three, four, five, and then six. Will this six work?
+My dear friends, will this six work? No, because array indices start from zero, right?
+So every card should have different data. Now you will say, Akshay, how will my data modify?
+Right? How will my data modify? Right? I have passed in this data.
+Will my restaurant card change automatically? No. Now here is when I want to bring
+one more important concept which is there in React, which is known as props.
+So whatever you pass in over here, whatever you pass in over here as an attribute
+is known as props inside React. Suppose I am passing React restaurant, right?
+So this is a prop, right? This is known as props. And this props is a shorthand for properties.
+This is a shortcut, right? Always wherever you study React, everywhere people have a habit to
+say pass props. When I will say pass props, that means I am passing some data or some properties
+into my functional component, into my component, whether it is functional or class.
+Repeating once again because a lot of people are asking me to repeat.
+What is props? Props is first of all the properties. Whenever I say I am passing some
+props into my component, that means I am passing some data into my component like this.
+Repeating it once again. Remember it once again. If I say that I am passing some props,
+this is a prop. This restaurant is a prop, right? So if I am passing some data inside my,
+see, this is a way of passing data inside your component.
+This is your, see, body, okay, tell me if my restaurant card is a child component.
+Can I say body is my parent component? Body is what? Parent component, right?
+Does that make sense? So when my parent, if I have to pass data from my parent component
+to my child component, so in my child component, I will pass in data like this.
+And this is known as props. Props means properties, right? This data will go inside my restaurant.
+Now, how will my data go inside this restaurant? How will my data go inside this component?
+Okay, tell me what is a functional component at the end of the day? At the end of the day,
+what is my functional component? What is my functional component?
+A function, right? Normal JavaScript function, that's all it, that's all my functional
+component is. I don't know why people make it functional component, class component,
+this, that, so many things. No, it is a normal function. And how do you pass and data inside
+function? How do you pass and data inside function? How do you pass and data inside function?
+Yup, arguments and parameters. Now, you won't know the difference between arguments and
+parameters. If you don't know the difference between arguments and parameters, go ahead and
+watch Namaste JavaScript. Watch Namaste JavaScript. I have covered that over there. Okay, I have
+covered down what is arguments, what is functions, parameters over there. Okay, so,
+okay, so I don't want to miss it for people. Okay, let me just quickly tell you,
+suppose if I have a function fn, so this is parameters, right? This is params.
+This is params, param one, param two. This is parameters. And this is argument when you call
+a function, whatever I pass, suppose I pass x, y, z, this is my argument, right? This is my argument.
+This is argument. This is parameter. Okay, if I have a function, if I'm calling a function,
+this is argument. This is parameters. I receive my data into my parameters. This is how we
+call, you know, learn to speak. This is important in your interview. That is why you fail because you
+say arguments, you pass in arguments, you receive parameters. You pass in arguments, you receive
+parameters. I just need 10 more minutes. Okay, quickly, please. Okay, so this is what it is
+because I have to explain you basics also. A lot of people don't know about it. So, assume
+that this is an argument. How will I get my data inside my function? It's very simple. Forget about
+props. Props is just a normal closure in react. At the end of the day, assume that this is just
+a normal function parameter, right? So, here you get in a parameter. Now, what is difference?
+What is the difference? Right? A difference is that react wraps up, react wraps up all these
+properties into a variable which is known as props here. You can get in some everything here in
+props. This is props. Can you rename it? Do I also always have to name it props? No.
+No. You can call anything. You can call it properties. You can call it parameters, anything.
+But I am using the word props because, you know, not me, but anywhere you go in your company,
+in your other, if you talk to other developers, if you talk to in the community, react community,
+always the people use the word props. So, I am also using it, but it is not mandatory.
+I want to give you knowledge as a teacher by not becoming a react teacher. I am just telling
+you what is there, right? So, okay, so you get props. So, now whatever you pass in here comes
+over here as props. Can I see it? Let just see it. Let me do a console log, right? And let us see
+what I get in my props. Okay. And for now, I am just commenting this out, but otherwise,
+because it will give us error or it won't give us error. Let it be. It won't give us error.
+So, let us go and see what, see, we got so many props. See what I got in props.
+I got this data. Amazing, right? At the end of the day, it is just my function call, right?
+This is basically my function call. You know, if you know the basics, you would not wonder
+that what black magic did react do. It is basically like calling a restaurant data like
+this, right? Restro card is a functional component, right? It is just like passing in your restaurant
+data over here, right? It is passing in something like this, isn't it? Cool. Cool. Does that make
+sense? If you know the basics, you will never be defeated. You will never be defeated. If you
+know the basics, you will never be defeated. Listen to me. Does it make sense? You will never be
+defeated if you, if you, if you, you know, your interview will go smooth. If you know the basics,
+that is why I'm focusing so much upon the basics, right? So now let us just collect.
+Now I got my props. Now can I use my props here? Props is what? Props is an object.
+Object of all these things. Now a lot of people are asking, can I pass in multiple props?
+Can I pass in multiple props? Let us try to pass any prop, right? Let us give it hello is equals to
+world. Will this come? Is this also a prop? Is this also a prop? Is this also a prop? If I pass
+this, is this also a prop? Yes, it is also a prop. See, I got this. I got my hello world
+also over here. Amazing, right? React is amazing, isn't it? No break now. I have very less time.
+I want to make this all dynamic, right? Let us render all these restaurant quickly. Okay,
+let us just do that. So it is, you know, props is basically nothing but normal
+parameters, arguments, object, JavaScript. That is why everybody says that React is
+JavaScript, right? If you understand properly JavaScript, you will understand properly React.
+You should know the basics, basics clear, fundamentals clear. That is why I'm going slow.
+Understand everything. Not everybody. Many people in many boot camp, many tutorials,
+these things won't be taught because I have myself experimented and seen all these things, right?
+So that's why. Come on. Let us just try to make our call. And now if you see it clearly see,
+every time I am passing different data into my function. So if I see now you understood,
+right? It is, it is looking, it is looking very easy to sound, right? I am passing different
+data into my each function call. What is this? At the end of the day, this is like a functional call.
+What is this? This is a functional component. This is a function call.
+And I'm placing some new data in every time to my function. Easy. It is easy. Very easy, right?
+So never have to like don't be uncomfortable when you see something like this because it's,
+it's at the end of the day, you know the basics, right? Cool. Let's just quickly do that.
+Right? So I have passed in my props. Now I have got my props and I have got my restaurant here.
+So can I write my rest props dot restaurant dot data, right? Can I write like this?
+Props dot restaurant dot data, right? Now I will write my props dot restaurant dot data,
+right? Prop dot restaurant dot data. This props dot restaurant. Will this work?
+Quickly tell me if this will work or not. Quickly tell me.
+Quickly tell me if this will work or not work. Quickly tell me if this will work or not work.
+Everybody is saying yes. Yep. Amazing, right? Amazing. Cool, right? Cool. This is such a badass.
+This is such a badass thing, right? We have KFC, Dominic Pisa, Food Planet Restaurant, Burger King,
+Annapurna, Andhra Mayas, Uncle G restaurant, right? Let me just repeat it quickly once again.
+It is like a function call. This is like an argument passed in, but we call this as props.
+Whenever you pass in some props to a functional component, listen to me very carefully, right?
+When you pass in any props to the functional component, it is received as a parameter over
+here, which is props. And now you can use this props just like any other variable,
+just like any other variable. Now I'll tell you one more important thing. Some cool developers,
+right? Some cool developers. Now when I say cool developers, right? So some cool developers
+also do a badass thing, right? Badass thing. I'll tell you what is badass thing.
+They want to, now you know that, okay, what is props? Props is an object which is,
+which is like a restaurant, right? Which has a restaurant. So they do object destructuring
+on the fly. They know that restaurant is anyways going to come up. So what they do is they do
+destructuring on the fly. What they do is instead of props, they write something like this.
+Listen to me very carefully. They write something like this. They write something
+like this. So this is basically like destructuring the object. If you are not understanding this,
+this is like destructuring the object, okay? Some cool developers do this, okay? So if you,
+if you ever find people not using the word props here, right? They are, they use something like
+this, right? They use something like this. It means the same. Now I don't need my props.
+I can just use my restaurant. I can just use my restaurant like this, right? I can just use my
+restaurant like this. Does that make sense? Yes or no? Does that make sense? Yes or no? Yep.
+Thumbs up. So many thumbs up. Cool. Yep. So now this works the same way. Okay. My bad.
+Okay. I forgot to remove this called props, right? Let me remove this console log now.
+Okay. Let me remove this console log. Let me get rid of this console log, okay?
+So now I have my dynamic data. This works fine. One more thing, right? This is also looking ugly,
+right? Restaurant.data.name, restaurant.data.cuisines, restaurant.data.lastmiletravelstring.
+We can destructure restaurant also. We can destructure. How do I destructure? I can
+write something like this, right? Destructure my restaurant. I am showing you how do I
+write. See destructure my restaurant. What will I get from this restaurant object? I will get my
+name. I will get my cuisines. And I will get my what? Cloudinary image ID, right? Cloudinary
+image ID. And what else will I get? I will get my last mile distance, last mile travel string,
+not distance, sorry. Last mile travel string, right? From my restaurant. And now I can get rid
+of this thing, right? Now I can, now the look, does the code looks clean better than before?
+Does the code looks better than before? Yes or no? Does the code look better than before?
+Right? Will this work? Work or break? Right? Work or break? Work or break? Work or break?
+Work or break? Yep. It break. Why? Cannot read properties of undefined reading join.
+Okay. I messed something up. Did I misspelled it?
+Did I misspelled it? C-U-I-S-I-N-E-S? Okay. So not all. Maybe there are some
+restaurants which does not have this, right? Let me just comment this down first.
+Let us see if this works or not. Okay. Okay. What did I mess up? What did I mess up?
+What did I mess up here? Okay. Am I bad? My bad. My bad. My bad. My bad. This is
+restaurant.data, right? So you have to destructure from .data. So it was restaurant.data, right?
+So you have to do something like restaurant.data. Okay. Because the restaurant has data
+and then inside it it is, right? You are right. Now it works. Cool. So you can
+destructure your object like this. Now I am going to tell you something really very
+amazing that will blow your mind. Are you ready for it? Are you ready to blow your mind excited?
+Can I have a lot of thumbs up? Can I have a lot of thumbs up? Give me a lot of thumbs up.
+I want to do amazing stuff. We will make our code cleaner. Okay. I will make. You are ready.
+So if suppose I don't want to destructure, right? I don't want to destructure.
+I want to destructure everything on the fly. Okay. Suppose if I have to destructure everything on the
+fly, right? Over here, something like this. Because I don't want to destructure over here.
+I want to write like this. How will I do? What should I pass in from here?
+Quickly, right? I am taking some time. If suppose I want to, oh my God, this,
+this got destructured. If I'm saving, right? This goes to next line. So don't worry, right?
+It's one and the same thing, right? So if now I want to destructure like this, right?
+What should I pass in from here? Write it down in the chat.
+Restore list dot, dot data. Does that make sense? If I pass in my restore list dot data here,
+right? If I pass in my restore list dot data, will this work? Will this work?
+Everybody is saying, yes, it will work. I'll tell you why it won't. Let me tell you, okay?
+So this, let me comment these down, right? Let me comment these down.
+Okay. I have commented this down. Will this work? Yes or no?
+It won't work. What is this restore list dot data here? What is this?
+What is this? Object, right? So if I have to do something like this, right? So I need to pass
+in my individual props, isn't it? Does this make sense? If I have, if I do it something like this,
+dot name, right? Does this make sense? Does this make sense? Does this make sense?
+Will this work? No or yes? Yes or no? Let's go back and see. Cannot read property. Okay.
+I, I, I don't have a lot of things, right? I just have my name. So let me just
+comment down other things, right? Let me just comment down all the image and everything, right?
+If I see my name, it did not take it name, right? Will this work? Why?
+Just a minute, right? I, I, it's my bad. Wait, wait a minute, wait a minute.
+I have commented down everything. Will this work? See, I got my names in here, right?
+Got my names in here. You will understand people. You have, if you're not understanding,
+you will understand just a minute, right? So you understand this, right?
+You understand this? Yes or no? I am covering everything again.
+You are understanding. Your mind will blow up, right? You are understanding this?
+Suppose if I have to pass in more data, suppose if I have to pass in my
+cuisines also, right? Or maybe cuisines and last middle travel, right? So let me pass my
+cuisines also like this. Cuisines, right? Is equals to cuisine. Will this work?
+Will this work? Yes or no? Quickly. Will this work? Sorry if my bad.
+Will this work? Will this work? And if I am just opening this cuisines, right? I am
+uncommenting this, right? I am just taking this out. Yep, this worked as well, right?
+And why it is working? It is working. See, these things will work, right?
+Because I am passing here any confusion till now. Tell me any confusion till now.
+No confusion, right? No if you have no confusions.
+No confusion, right? Okay, so basically I can pass in like this, right? I can pass in any
+number of props like this and I can destructure on the fly. But I can do one more cool thing.
+I know that my restaurant list or data has all the props, name, cuisine,
+cloudinary, image ID, right? And I want to pass in all these as props. All of them as props.
+So what I can do is instead of writing each prop individually, you know, instead of writing
+each prop individually, I can do something like this. Take some moment to digest.
+Take some moment to digest. I can write something like this.
+Okay, I can write something like this. Restaurant one. What is this dot dot dot?
+That's why I said that, okay? Learn ES6 if you don't know. I can pass something like this.
+This will blow your mind when it works. Will this work? Yes or no? What do you think?
+Can we uncomment all of this? Let's uncomment all of this. Let's uncomment all of this.
+Will this work? So I can write like this and see it works. Cool thing, right? I don't have
+to do that ugly. Name is equals to restaurant zero dot data dot name. Cloudinary image ID
+is equals to restaurant zero dot data dot. Cloudinary zero ID. Was this cool or not? Cool or not?
+This is spread operator. And why I'm telling you all that because remember the basics in JSX.
+What you can do? You can write these curly parentheses. What can you do inside these
+curly parentheses? You can write any JS. Any JS. You can write in your spread operator.
+You can write in your everything. Right? And you know some people just see this code on the
+internet and then they say, oh my God, this is React doing something. This is not React. Not React.
+This is JavaScript. JavaScript open in the chat. This is not React. Right? So this is the
+information that you should know, right? This is why I want you to know that
+there are so many things. I am telling you, you know, some people write like this. Some people
+write differently and when you will go to industry, suppose if you are going into your job and you
+find something written like this, I know you will, you will, you will say that, oh my God, what is
+this? This is something which I don't know. But it is very easy. But when you will understand
+that anything, any piece of JavaScript you can write inside this that you will understand.
+Okay, this is just spread operator. It is just spreading my objects, right?
+It is just a spread operator. You won't worry. You won't worry. Right? So
+okay, so this is how you will do, right? It's easy. Amazing things. Cool. So this is here,
+right? I will just take two more minutes. Now I know that I have to do this 0, 1, 2, 3, 4.
+Right? I am writing my code again and again. Is this a good way?
+What if there are 50 restaurants? Will I do this? No, right? I will run a for loop for this.
+Does that make sense? For loop for this? But in functional programming, in the industry,
+we don't use for loop. We use dot map. Map is the best way to do functional programming.
+Okay, map is the best way to do functional programming.
+Map is the best way to do functional programming. Now you understood why I am not using for loop.
+Can I use a for loop? Can I use a for loop here, right? I want to just do something again
+and again. All of you are computer science engineer, not all many of you, right? See,
+I can write any piece of JavaScript inside this inside this, right? I can write any
+piece of JavaScript inside this, right? Can I write a for loop here? Can I write a for loop here?
+Right? Many people don't know. Many people would say, no, you can't write Akshay.
+But let me tell you, you can write a for loop here. What's wrong in it? You can do console
+log of i, right? You can do anything over here, right? You can run any part of JavaScript
+over here, right? Yep, I need to make it correct, a little correct, but you can run any piece of
+JavaScript code. That is what I want to say, right? But we want to use map, map, map function.
+If you don't know what is map, right? If you don't know what is map, go to my YouTube channel.
+I am doing a cheap promotion. Not a cheap. It's my bootcamp. I want to tell you, right?
+Map in JavaScript, right? Map in JavaScript, right? Where is my video? Oh my God. My video
+is not coming on the top. You people are not watching my video. See, it's not even coming on
+top, right? Map filter reduce. You people have to make this on top. Here is my video, right?
+Go watch this video, right? Watch this video of mine, right? It explains in detail about
+map filter reduce, right? Most of the times, you know what my video is 37 minutes long.
+YouTube, you know, today people prefer to watch 10 minute videos, 12 minute videos. That is why
+these videos rank, but otherwise the content is amazing in this video. Okay. The content
+is amazing in this video. That is why YouTube is not ranking this up because I have made a
+lengthy video. People don't watch it. Cool. No issues. Anyways, go and watch that video,
+right? So what I can do is I can use a map inside it, right? I can, you can use a for each as well.
+You can use a for each as well. Map also, but in general practice, map is a good way to use,
+right? Don't ask me why. Otherwise I will take 15 more minutes to explain that. Let's just quickly
+build it up. I'll tell you how to use map, right? Find out that why is, what is the
+difference between map and for each note down that as a homework? Okay. So what I'll do,
+I'll now map it, right? I can map restaurant list dot map. Can I do this? Can I do this?
+Right? And what I'll do is I can people who know restaurant people who know would know that
+okay, this will give us the first object, right? This will give us the first object,
+second object, third object, fourth object. And for each object, I want my card
+for each object. I want my function to return my card. Does that make sense? Quickly, quickly tell me
+yes or no. I can explain you once again. Please explain again. Okay. I'll tell you once again.
+Okay. Let me just call me based this. So for what is my restaurant list? What is my restaurant list?
+This is my array of objects, right? Array of objects, array of objects, right? So array with any array,
+right? With any array, you can write something like this restaurant list. Now listen to me very
+carefully. Restaurant list dot map, this will map, right? This will map my array and I will pass a
+function. This is known as a callback function. If you don't understand the syntax of map,
+go watch my video. You will understand it for life, for life. And this is like our bread
+and butter when we write react. I will be doing a lot of map in the whole cities. Okay. Go back.
+You know, while I was building the message, our script, I was also preparing you for
+react also, right? So I knew that this will come up. Then I will give my video as a reference.
+Okay. Restaurant list. I can give a callback function. This callback function takes each
+object. Now, whatever I write is one object here, right? This one object, right? For each
+object, right? For each object, let's call that object as restaurant. Okay. For each object,
+I want my function to return some piece of JSX. What is that JSX? My restaurant card.
+Now, what I can spread over here now? What I will spread over here now quickly? I will spread my
+restaurant object. I will spread my restaurant object. If I write this piece of code, will
+this work, my dear friends? Will this work? It is not working somehow. Why? Because cuisine is broken.
+Why? Why? Because I want to restaurant dot data, right? Again, my restaurant dot data.
+Will this work? Yep. This works. Amazing stuff, isn't it?
+Amazing stuff. Cool. Awesome. Awesome. Now, this is how you do, this is how, now see
+everything that we are building is kind of like a config-driven UI. Everything that you are
+building is a config-driven UI, right? So, that is why we are using this, we have made our
+restaurant dynamic and see, we have made a lot of things. If we see today, right? We have made
+a lot of things here, right? We have made a lot of things. We have made our header today.
+We have made this on the right side. We have made this on the left side logo. We have a
+restaurant which are coming up dynamic from our Swiggy, right? Our app does not look so beautiful
+like Swiggy, but then it looks decent, right? It's good for one day, right? Yes? Amazing.
+So, okay. One more thing I want to tell you. Now, this complains that each list item should
+have a unique key property, right? Last thing, okay? I will just take 10 more minutes. I will
+explain you virtual dome. Can I take 10 minutes, please? Can I take? A lot of people said virtual dome.
+So many people were calling Akshay teacher's virtual dome. Why are you not teaching virtual
+dome, virtual dome, virtual dome, virtual dome? You ate my head last time. Let me tell you what is
+virtual dome, okay? Can I tell you what is virtual dome? Yes. Let me tell you, okay?
+Let us tell you, okay? I just, let me just tell you, okay? I will need my, where is my
+good notes? Here is my good notes, okay? Let me tell you what is virtual dome. Quickly,
+I will just take five minutes, okay? Five minutes, not even 10, okay?
+Oh, yeah, this is not happening. Okay. So, what is virtual dome? You know?
+Quickly, quickly. I will tell you quickly, okay? Just five minutes, okay?
+So, suppose if I have my head, right? This is my dome, okay? My head. Then suppose if I have my
+body, right? Body. Suppose this body have my restaurant, restaurant one, right? Restaurant two.
+Two. Is this visible? Restaurant three and I have my body, right? And then I have, suppose in my
+restaurant two, I have my image, right? Something like this, right? Right? And I have my footer,
+right? What will happen is, what will happen is, right? What will happen is
+any, you know, first of all, virtual dome, virtual dome is not a concept just of react, okay?
+Not a concept just of react. This virtual dome is a software engineering concept, right?
+It's not just in react. It's used in multiple places, but react also has something known as
+virtual dome. What does a virtual dome mean is, listen to me very carefully, right?
+My, listen to me very carefully. Understand that suppose it's a self-closing bracket. Don't
+correct every small thing. You understood, right? What am I saying? So, you know,
+virtual dome is a concept that, okay? We keep a representation of a dome.
+Suppose this is dome, right? We keep a representation of a dome with us, right?
+With us, which is known as virtual dome. It's a representation of our dome in our code, right?
+So, assume that in our code, we have something known as root, right? In the root,
+suppose I have my head div. So, this is div with class head or something like that, right?
+Suppose if I have my body here, suppose if I have my footer here,
+right? Footer, my body, my head, right? Now, my body has
+restaurant one, restaurant two, restaurant three, restaurant one, restaurant two, restaurant three.
+Now, all of this has image, right? Some data, some name. You understood, right?
+So, we keep a representation of a dome. We keep a representation of a dome
+with us. This is known as virtual dome, okay? Listen to me once again. I am repeating everything.
+A representation of a dome with us is known as a virtual dome. Now, why do we need this
+virtual dome in React? Why do we need this virtual dome? I'll tell you why, okay? This
+comes the question. Now, in the interviewer, interviewer will ask you why do we need virtual
+dome? Why do we need virtual dome, right? So, you need virtual dome for something known as
+reconciliation in React. Reconciliation, right? Now, I can't explain you the whole theory of
+reconciliation. Now, I don't want to explain you. There's a whole article on React.
+Read that out. I'll give you the summary of it, okay? Now, when the React does reconciliation,
+I'll tell you React, why React is fast? Why React is fast? So, first of all, okay,
+we'll go step by step. The first step is, did you understand that we have
+a representation of dome with us which is known as virtual dome? So, assume that our
+virtual dome something looks something like this, okay? Assume that this virtual dome looks
+something like this. Cool or not? Cool? Cool? Quickly tell me, cool or not? Does that make sense?
+Cool? Cool, okay. So, we have something, React does something known as reconciliation.
+React does something known as reconciliation. So, what is reconciliation? Reconciliation is an
+algorithm that React uses. Reconciliation is an algorithm that React uses
+to diff one tree from other. Listen to me very carefully. React uses an algorithm,
+reconciliation algorithm to diff one tree from other, diff algorithm, right? And it determines
+what needs to change in UI and what does not need to change in UI. Does that make sense?
+Calling it once again, calling it once again. So, reconciliation means that React uses an
+algorithm, diff algorithm to find out the difference between your trees, right? Trees.
+Trees means your actual dome and the virtual dome and then it finds out what needs to be
+updated. It finds out what needs to be updated. That diff algorithm finds out what needs to be
+updated and just update that small portion of it. It does not re-render whole app. It just renders
+that small. It just re-renders that small application. Now, what does that mean? Akshay,
+you have said a lot of theory. Suppose I'll give you one question, okay? I'll tell you an
+example. I'm giving you one example, okay? Suppose if there are different nodes, right?
+Suppose if there are different nodes, one, okay? There are two. Now you understood, right? What
+am I writing? One, two, three. Don't ask me what is one, two, three. I told you on the top, right?
+Suppose if I have five, I have six, I have seven, I have eight. So our actual dome will
+look very, very clumsy, right? Like this. Suppose in my seventh dome, I have a div,
+right? I have another div. Suppose if I have another div, right? It can have multiple child,
+right? Now, whenever something changes inside my, suppose if something changes inside my
+this component, right? Seventh component, right? Suppose if something changes in my seven,
+suppose if something changes in my seven, what should it re-render? It should not re-render everything.
+It should not re-render everything. It should just re-render my seven and the children.
+Does that make sense? Seven and the children. So this algorithm, this div algorithm is known as,
+right? This div algorithm react uses and this process is known as reconciliation,
+right? Now I'll tell you one more important thing. Now I'll tell you one more important
+thing. Listen to me very carefully. Suppose we have these three divs, right? Just listen
+to these three divs. Suppose we have these three divs. Let's call them as div one
+and there is div two and there is div three, right? Suppose if there is one more div which came in
+here, which is div four, right? Here we got one more div which is div four, okay? Let me just
+move it a little closer, okay? Here, okay? Suppose if I have got one more div which
+is div four here, right? So what will happen is react will get confused because at the end of the
+day all of them are divs, right? React will get confused that what will happen? What will happen
+if I get my four? What will happen? It will not know that which div is added. Which div is
+added? So we need to and what will react do? Suppose if I added one more div fourth div over
+here, react won't know that in what order they are there, in what order they are there, right?
+So whenever you have multiple children with the same attribute, right? Suppose if the two
+children's were div, one was div and the other one was IMG, right? Then react knows, then react
+knows that, okay? There is one div, one IMG. If they replace their position also, if they
+replace their position also, then also that is fine, right? Understood? There is a catch,
+there is a catch. React is very smart. React is very smart than you think, okay? Let me tell
+you once again, okay? People are getting confused, okay? I will tell you once again, okay? So
+suppose if there are, suppose if there are child, all of them are div, right? All of them are div,
+div one, div two, div three and div four, okay? Our div and our div algorithm found out
+that there has been one more element introduced but this time that element got introduced on
+the first position, okay? First position, one, two, three, four, right? All of them are div.
+Suppose it got introduced, this is a new item, this is a new item which got introduced in first
+position, right? So what will happen is, react will re-render everything,
+react will re-render everything, right? Because all of them are div, so react will
+not know that which div came in, right? React will only know that there are five divs now,
+there are five divs now, right? So it will get confused, it will say that, okay, we have five
+divs, so it will re-render everything, it will re-render everything. The div algorithm will
+say that, okay, all these child have changed. I don't know which child has changed but,
+but my friends, if I use something known as key, if I use something known as key,
+which is unique, suppose if I give my key over here, right? Suppose if I give my key as id
+one, id two, id three, or anything, x, y, z, now how will they render over here? Now my react will
+get to know that my id one, id two, id three were already present, I am aware about it.
+And this five, this new id, suppose the id of this is abc, right? This is a new one,
+so react will only re-render what it does not know. Does this make sense? Right? Cool if it
+makes sense, right? Cool if it makes sense, cool, not cool, cool, not cool, cool plus plus,
+nice, very cool, cool with a K, amazing, you people are so creative, so cool, not cool,
+okay, I have got one, not cool, okay. Quickly I'll wrap it up, this is the last thing which I want to
+tell you. And I also tell you what is, what is virtual DOM? You got to know, right? What is virtual
+DOM? This is your homework, you have to read about this, right? Where will you read it from?
+You will read it from the official website, official react documentation. So, now listen
+to me very carefully, how will you explain it to the interviewer, why react is fast?
+Why react is fast? Just listen to me, this is very important thing, stop commenting,
+just listen to me, okay. React uses something known as virtual DOM. Virtual DOM is a representation
+of DOM, it is not actual DOM, it is a representation of your actual DOM, right? And react uses
+something known as reconciliation. Reconciliation is the process where we have, just give me
+a moment, where we have, where we have a diff algorithm, okay, where we have a diff algorithm,
+this got frozen, okay, this is frozen somehow, okay, now it's working. So, reconciliation
+is the, reconciliation has a diff algorithm, right? Diff algorithm which finds out the
+difference between the trees, which find out the difference between one tree and the other tree.
+Now, when we have found out the difference, it will re-render only the portion which is required.
+It is like a gift, exactly Abhishek, kudos to Abhishek. It is kind of like a gift,
+it exactly knows what needs to re-render. Suppose if there are thousands of thousands of
+components in our app, a big application has thousands of components, right?
+Ankit is saying hot module reload or hot module reconciliation, that is different. That is file
+watching algorithm, don't get confused. Hot module reconciliation is file, if something changed
+in file, that is parcel doing, that's different. This is happening on the browser when you have
+the application in our browser running. This thing is happening by react over here.
+Suppose I will tell you how, right? But first let me finish, okay? And now if suppose the, okay,
+suppose if the interviewer ask you that why do you use a key? Will you be able to break it?
+Will you be able to crack the interviewer? Will you crack the interviewer? Right, I can
+crack the interviewer if, right crack, right crack if you can crack the interview now.
+If the interviewer ask you what is reconciliation? What is virtual DOM? Why we use key? Will you
+be able to crack the interview? I never want anybody present in this class to fail this
+question in the interview. I don't want that. I am repeating it once again very quickly,
+right? Virtual DOM is what? Virtual DOM is not a DOM. Virtual DOM is a representation of a DOM.
+First thing, second thing is reconciliation and react uses this, a DIFF algorithm. That DIFF
+algorithm finds out the difference between, find out the difference between three, right? Three,
+three is now whenever you have different and only re-renders, you have to tell it
+like this to the interviewer. That is why I'm speaking in English. In English, you have to tell
+like this. It will only re-render the specific portions of your app which is found by DIFF
+algorithm. Understood? Why do we use keys? Why do we use keys is another question.
+Suppose if you have four DIFFs, right? All of these DIFFs are four. So react
+knows that okay there are four DIFF items. I have to render them.
+Suppose in the DIFF algorithm founds out that there are five DIFF algorithms now.
+There was one more DIFF introduced. Now if we don't have IDs, so four DIFFs for react
+is equivalent to four, like if there are five DIFFs and if there are four DIFFs before,
+now there are five DIFFs. If there were four DIFFs before, if there are five DIFFs,
+right? So react will get confused that it will not know what order those DIFFs are.
+So it will re-render everything. So do we want to re-render everything? No.
+React is smart. We want to make React smart by giving it a key. If I give them a key,
+then it will exactly remember what exactly remember what needs to be updated.
+Some people are saying what is trees? What is trees? So tree is basically a virtual
+representation of a dome. At the end of the day, your HTML is kind of like a tree, right?
+See I wrote, right? So head can be one node. Body can have three children. So these are three
+children. Then this restaurant too can have different multiple children. So something like this.
+Okay. Now people are asking how can I read more about DIFF algorithm? Amazing question.
+Go ahead, write it down. You have to use Google search.
+You have to use Google search. There is everything. React is open source. It talks about its
+reconciliation algorithm in detail. Everything is available on the internet and everything
+was always available on the internet. Write it down. Okay. Let me give you a sneak peek also.
+There is something known as react fiber. This is a, right? Read about this. You will
+be amazed. I am just, you know, you don't need to know about like every small thing,
+but I am very curious. How do I learn all these things? Because I am curious. I am very curious.
+So I like to read it in react 16, right? In react 16, the DIFF algorithm changed a little,
+right? And react introduced something known as react fiber. I am just giving you extra
+piece of information which you might not need, but I am just giving you because I know,
+I want to tell you everything which comes to my head, right? So there is known as react fiber.
+React fiber is a new reconciliation engine. It's a reconciliation engine.
+So I am giving you the keywords. Find out yourself. See, I can take a whole,
+like I can take a whole session over all these things. I don't want to go into
+all level details, right? I don't want to go into all level details, but I am telling you,
+this is a new reconciliation engine. And this react fiber, right? Is a new reconciliation
+engine in react 16. It came in react 16. Okay. And this new reconciliation engine is responsible
+for DIFF. Note down all these keywords for DIFF. So learn all that. I have given you all the keywords,
+right? I have given you all the keywords. Now it's your hunger, your curiosity to go find out
+on the internet. Some people are saying, Akshay, please help me. Please, right? I can't just
+spoon feed you everything. If I, if I go, then it will be namaste reconciliation engine.
+This was namaste. This was supposed to be namaste react. Okay. I'll tell you. Okay. So read about
+react fiber. Note down react fiber. Where is it? Yep. Go to this GitHub repository. This is the
+main official represent. Read about this architecture, react fiber architecture. I
+will list down this. I will give you in the homework, right? In the homework section,
+I will provide you this link, right? In the homework section, I will provide you this link.
+Will you read it? Give me a, give me a thumbs up over here. Let's break this
+thumbs up. If this was cool, was this cool, was virtual dom cool, right? So give a thumbs up
+over here. Let's break this thumbs up. Okay. So you have to read about this,
+read about everything. Read about, see there is a reconciliation, right?
+Read about this reconciliation algorithm. Okay. See react fiber is ongoing
+re-implementation of react school algorithm. So this is a new, this is a new algorithm core
+algorithm. See many people don't know a lot of people don't know and react team does research
+when we say, right? React is improving. That is why react is fast. See angular has its own
+optimization technique. React has its own diff algorithms and optimization techniques,
+right? So what happens is every framework comes up with their own ways to make it fast,
+right? React, I can, I am, this is namaste react. I just want to tell you about react,
+right? Some people are asking me what is incremental re-rendering. Then I, if I, if I go
+in dive deep into it, there is so many things which I can tell you in this also, but go read it
+yourself. React OP, right? React OP in the chat. Let us just wind this up. We are almost at
+three hours. See I want to finish everything in two hours, but like I'm just telling you all
+this, right? So reconciliation, see read about reconciliation is the algorithm react uses
+to diff one tree with another to determine which parts needs to be changed.
+Remember this line. You have to tell this line in your interviews. You will have to tell this
+line in your interviews. Interviewer's mind should be blown that he knows everything
+internals about react. He knows what is virtual DOM. He knows what is reconciliation.
+He knows what is diff algorithm. He knows why we use key. This is a very important question,
+right? You should know that. Okay. You can read about react design principles. So many
+things. There's so many things to read. Read about react fiber, right? So I, I want to go
+deep, but I want to go deep one level. I don't want to go deep 10 levels, right? So
+cool. Some people are saying Paisa Vasu Aleem. Thank you so much. I have given you a start.
+Let's just go back. Now, you know why I am teaching you all this because now when you will,
+you will never forget. Now you will never forget to write key. Now you will never forget to
+write key in your, when you are using map. Now you will never forget to write key.
+Okay, because you have to give it a key because see why are we giving it key?
+Now you will understand. Okay, right? Understood, right? If you understood, right? So because we
+will have a lot of this restaurant card, right? Suppose if we have a lot of these
+restaurant card here, right? Now react will not know if you don't give it key react will
+re-render everything. react will re-render everything. I want to only change what changed.
+I only want to change what changed. So if I give my key, how do I give my key? So you can give
+key to each one of them like this, right? So I will give my key in my map, right?
+Right? I will give my key in my map. So key is equals to my give a unique key. So in my data,
+I will have a unique key, right? Here there will be some ID restaurant ID or something else.
+Let's give it restaurant dot data dot ID, right? This is restaurant ID. Let's give this a key,
+right? This is unique. Suppose if I not give unique key, let us just give a normal key
+XYZ. I have given a hard coded key to all my restaurant cards. See, react is smart enough to
+complain. React is very smart. See, it will tell you encountered two children with the same key.
+Isn't it react smart? React is amazing. React is amazing, right? So it will say that
+you have a duplicate key. Please don't use a duplicate key. So never use a duplicate key.
+Try to write it. Give it a unique key for right now. We have a restaurant dot data dot ID.
+If I give this, now react should stop complaining. See, now it is not complaining.
+Amazing, right? So this is what we studied in today's session. Yes, there, right? There is
+there is one more homework for you. Write it down. There is one more homework for you.
+Why don't we use index as the key? There is something known as index over here, right?
+There is something known as index, right? Map. So this index is basically 0, 1, 2, 3, 4, right?
+So can we use this index as key because index is also changed every time?
+Yes or no? Can we use index as the key? Is index a valid key?
+If I save it, it does not complain. It's a valid key. But we don't want to use index. Why?
+I'll give you a suggestion. We don't have to use index ever in the key.
+We don't have to use index. Note it down. Never use index as your key. Why?
+There is a great article. Read it up. It will take me 15 minutes to explain.
+React. Why not to use a key? Why not to use index as a key?
+So there is a developer who gave a good block, right? Just a minute here.
+Go to React's official documentation. In-depth explanation of negative impact of using index
+as the key. A lot of people don't read the documentation. React's official documentation
+says that we don't recommend using indexes for keys. React does not recommend us to use indexes
+for keys. Make sense? You will never use React keys. But what if I don't have anything unique?
+Then you can use index keys, right? So basically I'll tell you in today's world, right?
+So basically, you will understand why no key is less than index key.
+Index key is less than unique key. Did you understand this statement?
+Right? So unique key is greater than index key and no key is greater than index key.
+Did you understand that? Now you understand that. So it is always best. This is the best practice.
+This is the best practice. This is better than having no key. If you have no key,
+then you should always have index key. This is not a good way, but okay way. So don't use it.
+Right? Okay. So this index key is a last resort. Use only if you don't have anything.
+But always try to use this unique key. This is the best way. I'm telling you in
+memes style, right? No key is not acceptable. This is a not acceptable thing. So index key, right?
+So index key. Read this article. I will link it down, right? This one, right? This is a very
+great article I read and it's a long article. If I start explaining, it's it will take a lot
+of time. So you read it out yourself. This is feed your curiosity, right? Feed your curiosity,
+please. Right? I'm not taking a break. Now I'm winding up the session. It's already two o'clock,
+right? Let me quickly revise in two minutes. Okay, let us quickly revise in two minutes and
+then we will end the session. Okay, let's just quickly revise. We learned a lot of things today.
+Lot of things, my dear friends. We went to Swiggy's website. We took their APIs to get the data
+and we use the, I want to, you know, I can create a, you know, I can create a Firebase API,
+which can have a mock data. It won't be fun, isn't it? Tell me I can do the like that also.
+But I just wanted to use the actual data which Swiggy has. This is the actual data.
+This is how the live data comes in. This is how our live data is, right? So
+that's how I did. Now some people are saying that why did we use spread operator? Is it a good way?
+I just wanted to show you that I want to show you all the ways to do that. You can use the
+props way also. That is also completely fine. That's a good way to write props dot something.
+It's completely fine. Okay, let me just quickly, quickly revise what we did.
+Let's go to my Git diff, right? We wrote some CSS. I am not explaining you the CSS. Okay,
+go read the CSS yourself. Okay, I will push the code. Let's go back and see. First of all,
+we got this data. I'll change the code changes. So first of all, I built my app layout. We saw
+that we have to do planning, right? We have to do planning before writing any code. We saw
+react dot fragments. Remember react dot fragments? What is behind these? What is behind these empty
+parenthesis? Remember that awesome stuff? React dot fragments, you can write it like this.
+You can only have one child in your JSX, one root element, one parent element. Keep giving
+me a thumbs up as in when I am covering all this, right? Then you can also have these
+components, functional components like that. Then you can then we started building our card,
+right? Then we started building our card here, right? Then we built this UI over here. Then we
+made it using a hard coded data. I was writing Burger King. I had my URL like that, right?
+Then we started giving it data for one object just for Burger King. We made our card dynamic,
+right? Once we made our card dynamic, now we wanted multiple cards to be dynamic,
+multiple cards to be dynamic, right? So we wanted to use the straw card as big data. Then we went
+to Swiggy's API because I want to deal with real life data. This is real life data. Then we
+also talked about an amazing concept. What was that concept? What is this known as carousel thing?
+If you want to hide this carousel, if you want to show this carousel, if you want to show this
+carousel differently in different cities, what is that type of UI known as? Yes, my dear friends,
+you are all right. I just love you guys. I just love you guys. Such an amazing energy.
+You remember every small damn thing which I tell, every small damn thing. This is what I want.
+Love you to Shashank. I love you to Shashank. Thank you so much. Thank you so much. Okay, so
+basically then we saw that, okay, all right, then we saw this is known as config driven UI
+and you have to explain your interviewer that I am building config driven UI. You give me a
+config, my UI will render automatically. We will all, whatever we will be building in this whole
+project, we will be building using a config driven UI. Right? Okay, then we will do,
+then we started doing passing props, right? We learned something which is known as props.
+At the end of the day, what is a functional component quickly? What is functional component
+at the end of the day function? Now, what is props at the end of the day? What is props at the end of
+the day? It's like passing in arguments, right? It's parameters, it's arguments, right? It's just
+passing normal variables to our function. That's all it is. Some people are saying,
+I don't want to stop this session. I want to, I'm speaking this three hours. My throat,
+you know, after each session, my throat, I have to drink, you know, warm, warm water to fix my throat
+after each session. Okay, some people are saying order food from our app. Yes, let us build our
+app to that level that we are ordering food from our app. Keep on waiting. We will slowly,
+slowly build everything. And thank you for the cool name. Right? I remember Ashish gave this
+name. Ashish gave a cool name of Foodvilla. Thank you Ashish. Ashish OP in the chat. Ashish gave this
+cool name of Foodvilla. Okay, so we have our, then we studied about map function that we can see,
+we can write any piece of JavaScript inside this. So I can write my map function also.
+This is not react. This is not react. This is not react. This is our, this is our
+JS. Yep. JS OP, right? And this is our ES6 JavaScript again. So we can pass in data like
+this also, right? We studied this. I also then explained to you what is the concept of virtual
+dome. Okay, let me just quickly show it to you once again. Let me just wrap it up now.
+Virtual dome. So you should understand, see, there should be four questions you should be
+able to answer. What is virtual dome? I'll tell quickly. It is not actual dome. It is a representation
+of our dome, right? It is a representation of our actual dome, right? Now what is reconciliation?
+Reconciliation uses a diff algorithm, right? There is a reconciliation engine. So I told
+you about react fiber. React fiber came in as a new reconciliation engine. It has a new way
+of finding out diff, right? What happens in the reconciliation process? It founds out the diff
+between the trees, right? And then it re-renders only specific portions of our app. Suppose if
+there is a change in seven, right? So only this portion of the tree will re-render. It won't
+affect other parts of the tree, right? And to have the best optimization possible,
+we just want to optimize. We just want to render only specific things. Now suppose, okay,
+suppose if one child is div, right? If suppose my one child is div and one child is image,
+then there is no problem, right? If the children are different tags, right? If I have a component,
+right? If I have a component, one child is image, one child is div, one child is
+ulli, right? Or something ul, one child is random body component. So do I have to put in keys here?
+No, I don't need keys over here because it uniquely identifies by its tags.
+If the tags are same, then it uniquely identifies. But only, but only when I have multiple same tags,
+like suppose if I have multiple divs, or multiple images, or multiple anything, it will have to
+it will have to re-render everything. So to avoid that, to avoid that, we give it key and
+key and each key should be unique. Can I have index as the key? Can I have index as the key?
+This is also an important question. Can I have? Yes, I can have, but it's not a good practice.
+You should know that yes, we can have, but it's not a good practice. Only use it only if there
+is nothing else. It's not a good practice. But at the end, if you are not getting anything,
+at least use keys, at least use index as the keys. Okay, why shouldn't, why it is not a good
+practice? Read this blog, right? I will list down in your homework, in your assignment,
+I will list down a link. Go read out that link. I will also list down the links for
+reconciliation. I will, yes, Mahale Kalpesh, a big hand to Mahale Kalpesh, he has written the same
+thing, right? Yup. So using the unique key is the best practice. Using the unique key is the
+best practice. Using the index key is the last option. If you don't have anything, last option,
+okay? Use this as a last option. Last option. Okay. And no key is not acceptable. Got it? Understood?
+Cool. Thank you so much for it. Meenakshi says that I have given the name. Okay. Meenakshi
+gave the name. Okay. Okay. It was not Ashish. I remember. I remember. Oh, shit.
+Who do you have? Meenakshi gave the name. Okay. Okay. Then Meenakshi Hopi.
+Okay. Maybe Ashish and Meenakshi both have given. Let's have Meenakshi Hopi in the chat.
+Everybody Hopi in the chat. Come on. Okay. Cool. So anyways, right? The app name is
+whatever you wish to keep. You can keep it. Now your homework is to do whatever I did.
+Amazing stuff. Okay. Right. And let us wind today's session with this. Okay. Let us wind
+today's session with this. Hope you would have enjoyed the session. Right. Hope you would
+have enjoyed the session. Did you enjoy it? Did you enjoy it? Yes or no. I don't have music right
+now. Please. Did you enjoy the session? Let me know. Yes. No. Yes. Energy. Can I have a
+thumbs up? Let's break that thumbs up. Keep on pressing it. Keep on pressing it. I want
+the energy to be here. Tomorrow we will be building our Food Villa app. All thanks to
+Meenakshi for that cool name. Right. And let us just start. Right. We will be building a lot
+more cool features into it. In the next session. In the next session, we will go ahead and build
+a lot of important react things. Right. So let's give it a thumbs up. I want to see
+all your energy before we end this session. Right. And then you also have to complete
+your assignments. And please give me some time to upload the videos. If you haven't still joined
+our Discord community, join our Discord official community with the link on the chat. The pinned
+comment in the chat. Join the Discord community right now. This link will expire in a while.
+Please join it right now. The Discord community. You have to do all your assignments.
+You have to do all your assignments. Okay. Thank you so much Rohit for all your love.
+I mean amazing. Thank you so much. Right. Big drum rolls. We will do a lot more cool things
+tomorrow at 11 am. I'll be here. Come before time. Come five minutes. Join five minutes early.
+Right. Please join five minutes early. Okay. So this was it for today's session.
+Let's give this thumbs up. Let's take it to 10,000. Can we go to 10,000 quickly?
+Can we 8.3, 8.4, 8.5, 7, 9? Oh my God. This speed. Can we go to 10,000? And we will end
+this session. Okay. Please. And you know, I will be a little active. Okay. On the chat again,
+in the group, be help each other in the Discord community. This is what I wanted to
+say. Post your assignments there and go and read other people's assignment. Read other people's
+code because every person, every developer, right? Codes in their way. I want you to understand
+everybody's code when you will go to your company to work, right? You will have to see other
+people's code. You will have to understand that, right? So, right? So you have to understand
+what they are writing. So read other people's assignment, post your assignment so that
+other people can read your assignment. Post it. I want all the assignments. Finish. If you haven't
+done your assignments till now, go do your assignment for previous week till now, right?
+And ask your doubt there. Help other people. Let's build a great community over Discord.
+Okay. The link is in the pinned comment. And thank you so much. Bye-bye. We have
+11.7k thumbs up. Let's make it 12k and we will end this. Bye-bye. Bye. Good night. Eat your lunch.
+Bye-bye. So happy. No ending song today. Bye-bye. See you.
