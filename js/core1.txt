@@ -1,0 +1,4130 @@
+1.How JavaScript Works 🔥& Execution Context(Introduction to how JS works behind the scenes
+0:00
+Do you know how JavaScript works and how the code is executed?
+0:03
+Is JavaScript synchronous or asynchronous?
+0:06
+Is JavaScript single threaded or is it multi threaded?
+0:10
+Don't worry we'll cover everything, just keep watching Namaste JavaScript.
+Execution Context in JS
+0:15
+Before I start explaining, listen to this first core fundamental.
+0:20
+It is: "Everything in JavaScript happens inside the Execution Context"
+0:25
+I repeat, Everything in JavaScript happens inside the Execution Context
+0:30
+You can assume this execution context to be a big box or a container
+0:35
+in which whole JavaScript code is executed.
+0:37
+So let us now see how this execution context actually looks like.
+0:41
+So follow along with me
+Variable Environment of Execution Context
+0:42
+So now watch this carefully
+0:44
+So execution context is like a big box
+0:50
+and it has two components in it.
+0:53
+The first component is also known as the memory component
+0:57
+So this is the place where all the variables and functions are stored as key-value pairs
+1:02
+Something like this.
+1:04
+Key value, if suppose we have a variable 'a' which is equivalent to 10, it will be stored over here
+1:09
+and similarly functions are stored over here in this memory component
+1:13
+there is also a heavy word for this memory component
+1:16
+and this memory component is also known as Variable environment
+1:21
+Okay? so listen to this carefully. Variable environment.
+1:29
+So this is the sort of an environment in which all these variables and functions are stored as key-value pairs.
+Thread of Execution in JavaScript
+1:35
+Something like that.
+1:36
+The second component of this execution context is the code component. Here it is.
+1:42
+This is the place where code is executed one line at a time.
+1:47
+So this is the place
+1:48
+So just like this memory component is also known as the variable environment,
+1:51
+there is also a heavy word for this code component
+1:55
+it is also known as Thread of execution, I repeat, Thread of execution.
+2:00
+So this is also known as the Thread of Execution.
+2:04
+So this Thread of execution is like a thread in which
+2:07
+the whole code is executed one line at a time
+2:10
+so here's the time for another core fundamental. Listen to this really very carefully.
+Is JavaScript synchronous or asynchronous?
+2:15
+So JavaScript is a synchronous single-threaded language.
+2:18
+So this is really very important,
+2:20
+So JavaScript is a synchronous single-threaded language.
+2:24
+So let us see what this means.
+2:26
+So when I say single threaded,
+2:28
+that means JavaScript can only execute one command at a time
+Is JavaScript a single-threaded language or multi-threaded?
+2:32
+and when I say synchronous single threaded,
+2:35
+that means that JavaScript can only execute one command at a time,
+2:40
+and in a specific order. Okay?
+2:42
+So that means that it can only go to the next line once the current line has been finished executing
+2:48
+So that means, synchronous single threaded language.
+2:51
+So let's revise once again.
+2:53
+So JavaScript is a synchronous single-threaded language.
+2:58
+I know that you must be thinking then, we have heard of something known as AJAX, right?
+3:03
+A stand for Asynchronous, so what does that mean?
+3:06
+Don't worry we'll cover everything
+3:08
+We'll be going slowly and we'll be understanding each of these concepts properly
+3:12
+as we go ahead.
+3:13
+So for now, just remember that
+3:15
+JavaScript is not possible without this beautiful execution context.
+Recap of Execution Context Components
+3:20
+Let's just quickly recap what we studied.
+3:22
+This whole thing which you can see is the execution context.
+3:25
+The first component is known as the memory component
+3:27
+The second component is known as the code component
+3:30
+Memory component contains variables and functions as the key-value pairs.
+3:34
+and code component is the place where the whole JS code is executed.
+3:39
+Memory component is also known as the variable environment
+3:41
+Code component is also known as the thread of execution.
+3:45
+I know these are a lot of jargons
+3:49
+and trust me these things are really very important and nobody teaches them.
+3:53
+But, I am here on a mission
+3:54
+to make you fall in love with JavaScript
+3:56
+and don't worry continue along with me
+3:58
+and we'll be covering everything in detail.
+Teaser of the next video - How code is executed in JS?
+4:01
+So in the next video I'll walk you through a real JS program
+4:04
+We will see how this whole beautiful execution context is created,
+4:08
+how this memory section is created
+4:10
+how this code is executed inside this code component
+4:13
+everything we'll cover in the next video.
+Thank you for watching Namaste JavaScript)
+
+2. How JavaScript Code is executed? ❤️& Call Stack(
+
+    What happens when you run JavaScript Code?
+0:00
+Do you know? When your run a JavaScript program
+0:02
+there are a lot of things happening behind the scenes inside the JavaScript engine
+0:06
+we'll be covering everything right now just keep watching Namaste🙏 JavaScript
+0:10
+Remember in the last video we discussed that
+0:12
+everything in JavaScript happens inside an Execution Context
+0:17
+Remember?
+0:18
+and JavaScript isn't possible without this beautiful Execution Context.
+0:22
+So here's one question for you.
+0:24
+So what happens when you run a JavaScript program?
+0:27
+Yes, you are right
+0:29
+An execution context is created.
+0:31
+So let us now see how this beautiful execution context is created with the help of a JavaScript program.
+Code Example for Execution Context Creation
+0:36
+So we have this variable 'n' which is 2
+0:40
+and there is a function square which returns the square of a number
+0:44
+which is being passed inside this function
+0:46
+and there are two other variables, square2 & square4
+0:51
+which are just invoking this already created function.
+0:54
+Okay?
+0:56
+So now let us see how this whole JavaScript code is run behind the scenes.
+1:01
+So when you run this whole code,
+Global Execution Context Creation
+1:03
+A global execution context is created.
+1:06
+Let us create this execution context
+1:08
+So remember we told that it's like a big box and it has two components.
+1:13
+These two components are the Memory Component & the Code component
+Memory Allocation Phase & Code Execution Phase
+1:20
+Now listen to this very carefully.
+1:22
+This execution context is created in two phases.
+1:25
+The first phase is also known as the creation phase.
+1:30
+Remember this.
+1:31
+This is also known as the memory creation phase. Okay?
+1:34
+This is a very critical phase
+1:37
+So, memory creation phase.
+1:39
+Let us see how this phase is done
+1:41
+and afterwards, the second phase, that is the code execution phase. Okay?
+1:46
+So let us first see the first phase.
+1:48
+So if you have this code, in first phase of memory creation
+1:52
+JavaScript will allocate memory to all the variables and functions.
+1:56
+So as soon as JS encounters this line 1,
+2:01
+It allocates memory to n
+2:03
+So let us now allocate memory to n. How will it allocate?
+2:08
+It will reserve a memory space here for n
+2:11
+Similarly, now JavaScript goes to line 2
+2:15
+It sees that there is a function, which is names square
+2:19
+So it will allocate memory to square.
+2:22
+So now it allocates some memory to square.
+2:28
+So now, let me tell you what does it store.
+2:32
+When it allocates memory to n,
+2:35
+it stores a special value
+2:38
+which is known as undefined.
+2:41
+So in this, it stores a special value
+2:45
+which is known as undefined.
+2:48
+In the first phase and in case of functions,
+2:52
+it literally stores the whole code
+2:55
+of the function inside this memory space
+2:57
+so let me just show you
+2:59
+I know it's a little tricky, but
+3:01
+it stores the whole code
+3:03
+literally, when I say it stores the whole code,
+3:06
+that means that this whole code of this function
+3:09
+is stored over here
+3:11
+in this memory space of square
+3:13
+and now it will also allocate memory
+3:16
+to square2 and square4
+3:21
+and as there are another variables,
+3:23
+it will again store undefined for them
+3:29
+(reiterates) undefined
+3:32
+it's a bit tricky let me give you a quick recap
+3:34
+so in the first phase, JS skims through the whole program
+3:37
+line by line
+3:38
+and it allocates memory to all the variables and functions
+3:41
+as soon as it encounters 'n', it reserves memory for it
+3:45
+and allocates a special value, undefined, to it
+3:48
+Remember this value undefined,
+3:50
+we'll be talking a lot about this
+3:52
+I'll make a seperate video altogether for undefined
+3:55
+but for now, just understand
+3:57
+undefined is placed over here. Okay?
+3:59
+It's like a placeholder, a special keyword in JS
+4:03
+and, in case of functions, (functions are very beautiful)
+4:06
+in case of functions,
+4:09
+this function square
+4:10
+this whole function code is literally
+4:13
+(you can assume it to be) copied over here in the memory space
+4:17
+Okay? So that's how it is
+4:20
+and for the remaining two variables
+4:23
+again allocates memory and stores this special keyword
+4:26
+undefined, to them, in the first phase.
+4:29
+Let us see what happens in the phase two
+4:32
+The second phase is the code execution phase
+4:34
+(reiterates) It is the code execution phase
+4:38
+So let's see how this code is executed
+4:42
+after the memory allocation.
+4:43
+So JavaScript, once again runs through
+4:46
+this whole JS program line by line
+4:49
+and it executes the code now.
+4:51
+So this is the point when all these
+4:55
+functions and every calculation in the program is done. Okay?
+4:58
+So as soon as it encounters this first line, n=2,
+5:03
+it actually places the '2' inside the 'n'
+5:06
+So till now, the value of n was undefined
+5:10
+Now in the second phase of creation of Execution Context,
+5:14
+i.e. the Code execution phase,
+5:16
+in this phase, this 2 value over here of n,
+5:19
+is now being placed actually in this placeholder
+5:24
+or the identifier, which is 'n'. Okay?
+5:27
+So now this 2, in this second phase,
+5:30
+is now allocated here.
+5:32
+So let me just remove this undefined for a while,
+5:35
+Okay?
+5:37
+and now replace this with
+5:38
+the special value which we got, 2.
+5:41
+And, this is in the phase two. Remember this carefully.
+5:45
+After finishing line one, it goes to line two and sees that
+5:48
+We have nothing to do here. Right?
+5:51
+So line number two to five,
+5:52
+there is nothing to execute literally.
+5:54
+So it moves to line number 6
+Function Invocation and Execution Context Creation
+5:57
+Line number 6 is the most amazing part.
+5:59
+Here, we invoke a function
+6:02
+Here's a function invocation
+6:04
+What do you mean by a function invocation?
+6:06
+Whenever you see a function name, with these parantheses,
+6:10
+with these round brackets,
+6:12
+it means that the function is now being executed.
+6:14
+functions are the heart of JavaScript
+6:17
+and, you know, they behave very differently
+6:19
+in JavaScript than any other language. Okay?
+6:22
+So functions over here are like a mini program,
+6:25
+and whenever a new function is invoked,
+6:27
+you know, a mini program is invoked,
+6:30
+an altogether new execution context is created.
+6:34
+Remember? That whole thing that we were running,
+6:36
+this whole program
+6:38
+was inside the global execution context,
+6:40
+now, when you run a function,
+6:42
+or when you invoke a function,
+6:44
+this function, a brand new execution context is created.
+6:47
+Okay? So let us see
+6:49
+This is gonna be interesting. Just keep following.
+6:53
+So here, a brand new execution context
+6:57
+inside this is created. Okay?
+6:59
+Now let us see
+7:01
+and this execution context again,
+7:04
+has these two components, which is the
+7:06
+memory component and a code component. Got it?
+7:12
+So now, we will again go through
+7:15
+the creation of this execution context
+7:17
+and there will again be two phases involved.
+7:19
+Remember? What were these two phases?
+7:21
+So let us see it. It will be interesting
+7:23
+So, the first phase is the memory creation phase
+7:28
+Remember? Memory creation phase.
+7:33
+In the memory creation phase,
+7:35
+Now we will be talking about this function invocation. Okay?
+7:37
+So we will be concerned about this piece of code only.
+7:40
+When we are executing this square(n),
+7:44
+we are only concerned about this piece of code. Remember?
+7:47
+So now, let us see how the memory is allocated here in the first phase
+7:51
+The phase one. Okay?
+7:53
+In the phase one, first of all,
+7:58
+don't forget that the memory is allocated to
+8:01
+variables and functions inside this function.
+8:03
+And when I say variables and functions,
+8:07
+it involves the parameters, like the 'num',
+8:10
+and the other variables
+8:11
+and we don't have a function so no need.
+8:13
+so we will be allocating memory to num
+8:15
+and ans over here, in this case.
+8:18
+So let us do that.
+8:20
+So we will be allocating memory to num, okay?
+8:23
+So here is num,
+8:25
+and, we will also allocate memory to ans, okay?
+8:28
+ans. Okay?
+8:30
+So now, what will happen is,
+8:33
+Remember? What will be stored in this?
+8:35
+The special placeholder which we had?
+8:38
+Yes. You are right.
+8:39
+We will be storing undefined in the phase one.
+8:43
+You know?
+8:44
+You will understand this concept of undefined
+8:45
+very better, just following along in these upcoming videos, okay?
+8:50
+For now, just keep in mind that this undefined is a very special keyword
+8:54
+We will be covering this in detail later on in the videos. Okay?
+8:58
+So we will be putting undefined over here.
+9:02
+and undefined is being allocated in phase one.
+9:05
+Now comes the part of phase two. Okay?
+9:08
+So, the phase two is the code execution phase.
+9:12
+Remember? Code execution
+9:14
+In this, we will be executing each line. Okay?
+9:19
+We'll be executing each line here. Okay?
+9:22
+So what happens when you execute the code? Okay?
+9:26
+So when this function is invoked,
+9:28
+first of all, this value of n, over here,
+9:31
+which is 2, is passed to num. Okay?
+9:35
+so this n is passed to num.
+9:38
+So that means, this value 2,is passed to num.
+9:43
+Got it?
+9:44
+So let me tell you one more concept.
+9:46
+Num over here is known as parameter of the function,
+9:50
+and, n over here is the argument. Okay?
+9:53
+So this is the argument, and,
+9:56
+the value of n is 2 right now.
+9:59
+So, remember, over here the value of n is 2
+10:03
+which will come over here in place of undefined.
+10:05
+So let us put the value 2 in num,
+10:12
+and the code will then move to the next line. Okay?
+10:16
+So now, we have moved to this line, line number 3.
+10:19
+In line 3, it will do the calculation,
+10:22
+and put the value of num*num inside ans.
+10:26
+It's like executing the code inside this code block, okay?
+10:32
+num into (multiplied by) num
+10:36
+and whatever the value will be there, will now go to this,
+10:41
+and undefined will be replaced by num*num, and the value.
+10:45
+So num*num, which is 4,like 2*2, which is 4
+10:50
+will now replace this undefined. Okay?
+10:52
+And will take a place in this memory space. Okay?
+10:56
+So the ans will now become 4.
+11:03
+Got it?
+11:04
+So that is how the code will be executed.
+11:05
+And now let me just remove it
+11:12
+So now, after finishing line number 3,
+What happens while executing return statement
+11:15
+the control goes to line number 4.
+11:17
+Here, we encounter the special keyword return, and ans.
+11:21
+So, whenever you see a return and ans,
+11:24
+This return keyword tells this function,
+11:27
+that you are done with your work now,
+11:29
+just return the control back to the execution context,
+11:34
+where the function was invoked.
+11:35
+So remember, this is very important. Okay?
+11:38
+This return keyword states that,
+11:41
+now return the control of the program, to the place where this function was invoked.
+11:46
+So where the function was invoked?
+11:48
+Function was invoked here,
+11:49
+So return the value of ans, to the place where it was
+11:55
+the control, now the control goes here, to line 6 again.
+11:59
+How does that happen? Let me tell you.
+12:03
+As soon as we encounter this return statement,
+12:05
+we have this return of ans,
+12:08
+so it finds the value of ans inside this local memory.
+12:12
+This is known as the local memory, so local memory has 4,
+12:16
+So this return ans now returns the control back over here
+12:20
+and, okay in the line number 6,
+12:23
+and this value of ans, which was here 4, will now replace undefined of square2.
+12:31
+Got it?
+12:33
+This is how we are slowly executing the code.
+12:38
+The value will become 4 now. Okay?
+12:41
+So 4 will be stored over here. Got it?
+12:44
+One more thing that happens when the whole function is executed,
+12:48
+is that, this whole execution context, for that instance of that function, will be deleted.
+12:55
+That means that this whole execution context will now be completely deleted.
+13:01
+So now there won't be the execution context as soon as we return the value
+13:05
+So this whole thing wll be deleted. Okay?
+13:07
+And the control moves to line number 6.
+13:09
+After this replacement, we will go to line number 7
+13:13
+So in line number 7 we are again invoking a function, right,
+13:17
+and just the difference is, we are now passing in 4 over here as an argument directly. That's it.
+13:23
+Nothing will change.
+13:25
+Similarly, what will happen now?
+13:27
+As soon as this function invocation happens,
+13:31
+Again, a brand new execution context will be created, so let us create one, quickly and see how things are working.
+13:39
+So the brand new execution context is created.
+13:45
+Apologies for this drawing, I'm not very good at drawing (standard teacher dialogue lol)
+13:48
+This execution context is created,
+13:52
+Again it will have this memory
+13:54
+Again it will have a code component, remember?
+13:58
+And now, it will again go through those two phases.
+14:01
+Let's quickly do that, it will be fun.
+14:03
+So now it again goes back to this function here, right?
+14:07
+So this function. Now remember what happens?
+14:10
+Firstly memory is allocated to num, okay?
+14:14
+num will store the value undefined. Remember?
+14:17
+So let me zoom in.
+14:19
+Undefined
+14:21
+And, one more thing happens is, we allocate memory to ans, which is again, undefined.
+14:31
+Right?
+14:34
+Our first phase is done.
+14:37
+Now in the second phase,
+14:40
+In the code execution phase,
+14:42
+What will happen is, num will get this argument, from the invocation in line number 7,
+14:49
+num will get this value 4.
+14:52
+So num parameter will get the argument 4.
+14:55
+So here the argument is 4.
+14:56
+Okay?
+14:58
+In the code execution,this undefined will be replaced by (in the code execution phase) 4.
+15:07
+Right?
+15:10
+So it will be 4. Right?
+15:12
+And, what will happen after that, it will go to line number 3. Right?
+15:18
+So while invocation it will go to line number 3.
+15:21
+It will execute num*num, which is 4*4, 16
+15:25
+and this 16 will now replace this undefined value inside the ans. Right?
+15:31
+So we'll now replace this with 16. Got it?
+15:36
+So now it'll store 16.
+15:39
+The control moves to line number 4. After 3 is done.
+15:44
+So now, this return statement takes back the control to line number 7, where, the function was actually invoked.
+15:51
+Now the value 16 will replace undefined in the square4 variable. Okay?
+15:57
+So let us do that
+16:00
+Let us quickly do that. It will now get value 16 over here. Okay?
+16:09
+As soon as we are done with the function execution, this whole execution context is now deleted.
+16:14
+So this will be deleted.
+16:16
+So now line 7 is also executed, now there is nothing more.
+16:19
+So JS is done with all it's work.
+16:21
+So once JS is done with all it's work, now the program is finished,
+16:26
+The whole global execution context also deletes; goes off. Okay?
+16:32
+So that is how the whole code is executed.
+Recap of Code Execution synchronously
+16:35
+I know this was all a lot, and it will take some time to digest, but quickly revise everything once again
+16:42
+it will be super fun. Okay?
+16:44
+As soon as the whole JavaScript program is run,
+16:49
+the execution context is created.
+16:52
+The global execution context is created.
+16:54
+It has two components, memory & code, as you know
+16:58
+and it is created in two phases.
+17:00
+Phase 1, was the memory creation phase.
+17:05
+In the memory creation phase, we were allocating memory to all the variables and functions inside the global space.
+17:14
+So, inside this whole program.
+17:17
+We are allocating this memory.
+17:19
+And what we allocated these variables with?
+17:21
+We allocated them with undefined,right?
+17:25
+In case of functions, we just copied
+17:28
+literally it just stores the whole function. Okay?
+17:32
+The code of whole function inside the memory space.
+17:35
+So that is the first phase
+17:37
+In the second phase,
+17:41
+the code execution phase, now the JS program is executed line by line,
+17:45
+it goes over here, it sees that 2 is here, so it replaces undefined with 2.
+17:50
+And it will now invoke the function, as control goes to line number 6, it'll invoke the function
+17:56
+and it'll invoke the another function.
+18:00
+When you invoke this function,execution context is created,
+18:04
+again there are two phases, the memory allocation phase, num and ans are allocated memory,
+18:11
+and in the code execution phase, again this whole thing is run,
+18:15
+the ans, num*num is executed, and num*num is now stored in ans.
+18:20
+and return statement is executed.
+18:22
+In the return statement, we take back the control over here,
+18:25
+to square2, and now square2 is populated with a new value which is coming from this function invocation, which was the ans.
+18:32
+ans was 4, so square2 was 4.
+18:35
+*sighs*
+18:36
+So it will happen again over here in this function execution,
+18:42
+So a new execution context is created,
+18:46
+and again the same cycle repeates, and that's how this function repeates 16 over here, and square4 is 16.
+18:54
+So that is how the whole thing works.
+18:56
+But don't you think that all this is too much to manage for the JS engine?
+19:00
+Execution context is created one by one, inside one, and all these things are very tough to manage, right?
+19:06
+And suppose if there was a function invocation inside the function, so what would have happened is
+19:14
+you would have created an execution context INSIDE an execution context over here,
+19:19
+and maybe again an invocation so it can go to any deep level right?
+19:22
+function invocation inside that again function invocation, and all these things.
+Call Stack in JavaScript
+19:26
+So it is very difficult for JS engine to manage, and it does it very beautifully.
+19:31
+So let me tell you how it does it.
+19:33
+This is the last part of this video,
+19:35
+It handles everything to manage this execution context creation, deletion, and the control
+19:43
+It manages a stack.
+19:45
+This is known as the call stack.
+19:48
+This is the beautiful thing in JavaScript.
+19:51
+It has it's own call stack.
+19:53
+Let me show you call stack.
+19:56
+What is a call stack?
+19:58
+Let me show you
+19:59
+The call stack is like a stack, okay?
+20:01
+It is a stack
+20:04
+Every time
+20:04
+in the bottom of the stack we have our global execution context.
+20:09
+That means, whenever any JS program is run, this call stack is populated with this Global execution context.
+20:17
+This whole execution context is pushed inside this stack. Okay?
+20:23
+Remember this. Whenever a function is invoked, or a new execution context is created,
+20:32
+as in case here,
+20:33
+in line number 6,
+20:35
+we created this execution context,
+20:37
+So this execution context is put inside the stack.
+20:40
+So let me just denote it by E1, which is the execution context 1.
+20:44
+This is how it happens.
+20:48
+Once we are done with executing this function, we return the ans,
+20:52
+So what happened, now this E1 is moved out.
+20:55
+E1 is popped out of the stack, and the control goes back to the global execution context, where it left.
+21:02
+So the control goes back to line number 6. Okay? Got it?
+21:06
+This is how it works.
+21:07
+This will again literally pop out of the stack
+21:12
+Now E1 will be popped off the stack,
+21:14
+and then we move on to line number 7, where the new function was invoked,
+21:20
+and a new Execution context was created,
+21:24
+and similarly this E2, will move up to the stack. Okay?
+21:27
+This E2 was popped inside the stack.
+21:31
+Once the whole function was executed, then E2 will also move out of stack,
+21:36
+and the control goes back to Global Execution Context (GEC).
+21:41
+So this call stack is only for managing these Execution contexts.
+21:47
+Whenever an Execution context is created,
+21:49
+it is pushed into the stack
+21:52
+and whenever an Execution context is deleted, it will move out of the stack.
+21:56
+So that is how the whole control is being managed
+21:58
+This whole Execution context creation deletion everything is managed by JavaScript
+22:02
+After this whole thing is executed, the call stack gets empty.
+22:08
+The GEC is also gone from this call stack
+22:13
+And we are done with our JavaScript program :)
+22:15
+So that is how the whole code inside the JS Engine is executed.
+Other names of the Call Stack in JS
+22:21
+With this let me take you to another core concept,
+22:25
+which is, Call stack maintains the order of execution of Execution contexts.
+22:29
+Now I'll tell you one more interesting thing.
+22:32
+That call stack is also known by very fancy names. There are lot of fancy names which you will see on web
+22:39
+That is why JS is the most confusing language.
+22:43
+It is most misunderstood language.
+22:46
+Call stack is also known as, Execution context stack, Program stack, Control stack, Runtime stack, Machine stack
+22:54
+All various names are used for this call stack.
+22:57
+But it is all the same thing
+22:59
+This beautiful call stack which will just maintain the order of execution of the Execution context.
+23:06
+I know this is too much to digest in a single video,
+23:09
+but thank you for all your paitence.
+)
+
+3. Hoisting in JavaScript(
+    Introduction to Hoisting in JavaScript (with examples)
+0:00
+Let me show you some magic. Okay. So, we
+0:03
+have a variable x which is equal to 7.
+0:06
+Okay. And we also have a function which
+0:10
+is get name.
+0:12
+Got it? So, this get name does nothing
+0:14
+but just console logs the name of the
+0:18
+course. Namaste
+0:21
+JavaScript.
+0:22
+Got it? So, this is it. Now what we'll
+0:26
+do is we'll just try to invoke this
+0:28
+function. We invoke this function and we
+0:32
+did a console log of x. What do you
+0:35
+expect to see here? Now quickly tell me.
+0:37
+So you would definitely expect to see
+0:39
+that okay get name will call this method
+0:41
+and we'll print this on console and this
+0:44
+will print seven. Okay console log will
+0:46
+print seven on the console, right? So
+0:48
+let us run this code. Yep. So as
+0:52
+expected. So it was namaste JavaScript
+Variable and Function Hoisting in JS
+0:54
+N7. But now I'll show you something
+0:56
+interesting and it's a magic in
+0:58
+JavaScript. Okay. So for that let us
+1:01
+just copy these two like the function
+1:03
+invocation. Let's just cut and paste
+1:06
+those two lines really on the top of our
+1:09
+program. Okay. So we have pasted these
+1:12
+two on the top of the program. Now
+1:14
+before I run this code, let let me ask
+1:17
+you something. What do you expect to see
+1:19
+here? Okay. What will be the output
+1:21
+here? So
+1:24
+right now what what what changed is we
+1:27
+are trying to access get name even
+1:29
+before we have initialized it. We are
+1:31
+trying to access X even before we have
+1:34
+put some value in it. Right? So what do
+1:37
+you expect to see here in most of the
+1:39
+programming languages? Okay, this will
+1:42
+result out to be error. Okay, this will
+1:44
+be a complete error and you cannot
+1:46
+access variables even uh like before you
+1:49
+have initialized it. Right? But
+1:51
+JavaScript is very different in this
+1:53
+case. And here I I'll show you some
+1:55
+magic. Okay. So if I try to run this
+1:58
+code now, you see something interesting,
+2:00
+isn't it? So you see namaste JavaScript
+2:03
+is printed. Okay. That means get name
+2:06
+was somehow able to access this get name
+2:09
+and invoke the function directly. Right?
+2:12
+And in case of console log X, we got
+2:15
+some special value undefined. What is
+2:18
+this undefined? It's weird, right? Let
+2:21
+us try to play with it more. Uh suppose
+2:24
+I remove this line completely. Okay,
+2:25
+suppose I remove this where x is equals
+2:28
+to 7. Right? Now, what do you expect to
+2:30
+see? So, let us just run the code. Now,
+2:34
+we see an error. It says x is not
+2:37
+defined. Before it was undefined. Now,
+2:41
+it says not defined. What the heck is
+2:44
+going on? Isn't undefined and not
+2:46
+defined same thing? No, it's not. Let's
+2:49
+cover everything. But let me just get
+2:52
+back that statement again. Okay. So,
+2:55
+this whole magic and this whole
+2:57
+interesting thing is known as hosting in
+3:00
+JavaScript. Okay. So, hosting is a
+Definition of Hoisting
+3:03
+phenomena in JavaScript by which you can
+3:06
+access these variables and functions
+3:08
+even before you have initialized it or
+3:11
+you have put some value in it. You can
+3:13
+access it without any error. Okay. So
+3:17
+wherever this where x is there in the
+3:20
+program it does not matter and you can
+3:23
+just access it anywhere in the program.
+3:25
+So let me show you one more interesting
+3:27
+thing. Okay. So for that let us just
+3:29
+comment these out and let us try to
+3:32
+console log our get name function. What
+3:36
+happens if I just I remember see we are
+3:39
+not invoking this function. We are just
+3:40
+trying to log this get name method. So
+3:42
+what do we expect to see in console? So
+3:45
+it actually prints the function itself,
+3:47
+isn't it? So it prints the function
+3:51
+itself. But what if we try to access
+Functions Hoisting Behind the Scenes
+3:54
+this even before initializing this
+3:57
+function just like we did for X.
+3:59
+Remember for X we got undefined. What
+4:02
+will we get for get name? What should we
+4:05
+get? Undefined. Let us run and see. So
+4:08
+see if I run it once again, it again
+4:11
+gives us the function. So in case of X
+4:14
+it was giving us undefined but in case
+4:17
+of let us just run this. In case of X it
+4:21
+is giving us undefined when we didn't
+4:24
+initialize but in case of get name it is
+4:26
+printing that function. This is very
+4:29
+weird thing in JavaScript and it is only
+4:31
+weird because we don't know how things
+4:33
+work behind the scenes. Let us go deep
+4:36
+and see how everything happened and why
+Diving Deep under the hood of the JavaScript code
+4:39
+the program is behaving the way it is
+4:41
+behaving. Okay, remember in the last
+4:44
+video we studied that whenever we run a
+4:46
+JavaScript program an execution context
+4:48
+is created and it is created in two
+4:50
+phases. The first phase is the memory
+4:53
+creation phase. So yes, so the answer
+4:56
+lies there only. This whole concept lies
+4:58
+there only. Okay, if you have seen my
+5:00
+previous video, you might have got an
+5:02
+idea also that why these things are
+5:03
+happening. But let me tell you again by
+5:06
+running each and every line of this code
+5:08
+now. Okay, for that let us just quickly
+5:11
+go back to the previous state of the
+5:13
+code like how it was and then I'll show
+5:15
+you something really very interesting.
+5:18
+Okay, so remember I told you that even
+5:21
+when this code this whole code in
+5:23
+JavaScript starts executing the memory
+5:27
+is allocated to each and every variable
+5:29
+and function. I repeat once again even
+5:33
+before the code starts executing memory
+5:36
+is allocated to this all variables and
+5:39
+functions. Remember in the last video I
+5:41
+told you see if you have not seen that
+5:43
+video. I would recommend highly
+5:45
+recommend see that video that is really
+5:47
+very important video. You know it is in
+5:49
+fact the most important video in this
+5:51
+whole series. But for now let us see
+5:53
+that how this memory is allocated. So
+5:56
+for that let us go deep inside the
+5:58
+browser. Okay. So when we go to this
+6:01
+source okay we can see this whole
+6:04
+program right so even before I I am
+6:07
+putting a debugger okay even before
+6:10
+first line is executed okay I am putting
+6:13
+a debugger right here right here okay
+6:16
+let us see how this whole program
+6:18
+behaves so now see it got stopped in
+6:23
+this line itself so now no code has been
+6:26
+executed till now we are just at the
+6:28
+starting point of the first line. Okay,
+6:31
+starting point of the first line of our
+6:33
+code. And now let's see something really
+6:36
+very interesting. This is our memory.
+6:38
+Okay, this is the global scope and here
+6:41
+is the memory. We will see something
+6:43
+really very interesting if we dig down
+6:45
+deep. Okay, if we go over here and try
+6:48
+to find X, we will find that X has
+6:52
+already been allocated memory space even
+6:55
+before we have started executing. Okay.
+6:58
+So if in the last video I told that in
+7:00
+the phase one of the memory creation
+7:03
+JavaScript just comes through the
+7:05
+program and it will allocate memory to
+7:07
+each and every variable and function.
+7:10
+Isn't it? And it stores a special
+7:12
+keyword undefined for these variables.
+7:15
+Okay. So even before this code has
+7:17
+executed, JavaScript has reserved this
+7:20
+memory for X and placed a special
+7:23
+placeholder undefined to it. Right? We
+7:25
+can see that undefined is present over
+7:27
+here. Right? And similarly, what happens
+7:30
+in case of functions, right? You are
+7:32
+right. That whole code is put in. So,
+7:34
+let us also see whether the code is put
+7:36
+in or not. So, if we try to find out get
+7:39
+name over here.
+7:42
+Um, yes. So, see in get name we did not
+7:46
+get undefined but we get a actual copy
+7:48
+of a function here. Okay. actual copy of
+7:51
+a function even before we are trying to
+7:54
+run this code. So now what happens if we
+7:57
+just run this program then all these
+7:59
+things are printed on the console. But
+8:01
+let us see that phenomena if we put on
+8:03
+the top right. So let us just put these
+8:06
+three things on the top and I'll show
+8:08
+you how this works. Right? So
+8:12
+again let us put a debugger on the first
+8:14
+line itself. And remember even before
+8:17
+this first line that is the invocation
+8:19
+of get name is executed we will already
+8:22
+have okay let me run it again we will
+8:25
+already have these variables and
+8:26
+functions in the memory space right this
+8:30
+x what will the value of x be this x
+8:33
+will be undefined and this get name will
+8:36
+be the function see so you see that that
+8:40
+is why that is the main reason when you
+8:43
+try to execute it line by line see if If
+8:45
+I go to the next line, if I move to the
+8:48
+next line now, if you see the console,
+8:50
+you already have these things printed.
+8:52
+So over here in the first line, it
+8:56
+printed
+8:58
+namaste JavaScript and in the
+9:01
+second line over here console log x it
+9:04
+printed undefined and in the third line
+9:07
+it printed the whole function code
+9:09
+itself. Right? So now just let me tell
+9:12
+you difference between not defined and
+9:14
+undefined. Okay. So if I remove this
+9:16
+whole line. Okay. So now what will
+9:18
+happen? Try to see how JavaScript works.
+9:22
+So as soon as it goes to the first line.
+9:25
+Okay. So let me put put a debugger
+9:27
+again. Okay. So as soon as it goes to
+9:31
+the first line now we have not reserved
+9:34
+the memory for X. We just have reserved
+9:37
+memory for get name. Right? So in this
+9:40
+case when the code goes over here so it
+9:44
+tries to access X and it's this X is not
+9:47
+present because we have removed that
+9:49
+right so now X is not present and there
+9:52
+is no value for X so that means now
+9:55
+JavaScript will throw an error and it
+9:58
+will say that reference X is not defined
+10:02
+that means X was not present in the
+10:04
+memory so that means X is nowhere
+10:06
+initialized in the program and you are
+10:08
+trying to access the value of x. Okay.
+10:10
+So that is how JavaScript works and that
+10:13
+is why it behaves the way it behaves. It
+10:16
+was interesting, isn't it? So let us
+10:18
+just see one more important thing. Okay.
+10:20
+Let us see one more interesting thing.
+10:22
+Suppose instead of this we have get name
+10:27
+as the
+10:29
+arrow function. Okay. Suppose we had get
+10:32
+name as the arrow function.
+10:36
+Okay. So this is how we write the arrow
+10:39
+function,
+10:41
+right?
+10:43
+So now what do you expect to see in the
+10:45
+browser console? Give a guess. Let me
+10:48
+just run it and show it to you.
+10:51
+It says that get name is not a function.
+10:53
+Right? So let us try to see why it says
+10:56
+that. So when you are executing this
+10:59
+piece of code when the get name is an
+11:02
+arrow function, so it behaves just like
+11:05
+another variable. Okay. Now this get
+11:08
+name does not behave like a function but
+11:10
+it behaves like a variable. So what it
+11:13
+will do is even before we execute this
+11:15
+whole code. So now when in the memory
+11:19
+allocation phase of the execution
+11:21
+context it will alloc just like it
+11:24
+allocates undefined to x it also
+11:27
+allocates undefined to the get name.
+11:29
+Okay. So let us see in the global uh
+11:32
+space now global memory space here if we
+11:36
+see and try to find out get name see we
+11:40
+got undefined. So before if when we
+11:42
+wrote over here function like this like
+11:46
+function get name let me show you here
+11:48
+once uh function get name two okay so if
+11:54
+we use something like this okay so it
+11:57
+reserves let me save and run for you so
+12:01
+it will put get name to see the get name
+12:06
+to will be the function itself if you
+12:09
+write it in this syntax
+12:11
+And if you write it as an arrow
+12:13
+function, it will be undefined.
+12:16
+Make sense? Now this time get name
+12:19
+behaves just like another variable.
+12:22
+Okay. And there is one more interesting
+12:24
+part. So there is one more way to
+12:25
+declare a function. Wait, I'll show you.
+12:29
+So you can also
+12:31
+create a function like this where get
+12:34
+name is equals to using this syntax.
+12:37
+Okay. So what happens in this case? So
+12:40
+in this case also if you save and run
+12:42
+and see it behaves just like a variable.
+12:46
+Okay. So it behaves just like a
+12:48
+variable. So if you see the space now
+12:53
+so see get name 2 is undefined again and
+12:57
+get name is also undefined. So in this
+13:00
+case and in this case it just behaves
+13:03
+like another variable and it will
+13:06
+allocate the memory with a placeholder
+13:08
+undefined. Okay. And only in case of
+13:12
+proper function declarations like this
+13:17
+get name
+13:20
+it will copy the whole code. Okay. So in
+13:23
+this case if you run again and see if
+13:25
+you run again and just refresh the page
+13:28
+and try to see. So while reserving the
+13:32
+memory for get name see it gets you the
+13:35
+whole function. So this is how it works
+Summary and Interview tip
+13:38
+and you can even access these variables
+13:41
+and method even before it is actually
+13:44
+initialized in your code. So that is all
+13:46
+about hosting. Okay. So next time in the
+13:49
+interview if somebody the interviewer
+13:51
+asks you that what is hosting? So don't
+13:53
+just say that JavaScript kind of moves
+13:56
+that code to the top of the file and
+13:58
+whatnot. So that is not the case. The
+14:00
+proper answer lies here. Okay. You have
+14:02
+to explain this thing. This shows that
+14:04
+you are a you know JavaScript in depth.
+14:07
+Okay, the execution context creation
+14:09
+phase properly that there lies the
+14:11
+answer. Okay, but now when we are
+Demo of Call Stack in the Browser
+14:14
+already there in code, let me show you
+14:16
+something really very important. Just
+14:17
+give me two more minutes. Okay, I'll
+14:19
+just finish it very quickly. It is very
+14:21
+nice concept. So remember I covered the
+14:23
+theory of call stack in the last video.
+14:25
+Now I'll show you the demo. We actually
+14:27
+are in code so it will be easy for me.
+14:29
+Okay, just wait for 2 minutes. Okay. So,
+14:33
+um let me just tweak the code a little.
+14:35
+Let just get back to where we were.
+14:38
+Okay. So, over here. So, let me show you
+14:41
+that how that execution context and call
+14:43
+stack works. Right? I'll show you the
+14:45
+demo before. In the next previous video,
+14:47
+I showed you the theory portion. Right?
+14:49
+This is interesting part. So, let me
+14:51
+just do it quickly.
+14:54
+Oh my god.
+14:56
+Namaste
+14:58
+JavaScript. So I'll properly show you
+15:00
+that how code is executing. Okay. So let
+15:03
+me just put a debugger on the first line
+15:05
+again. So remember in the last video I
+15:08
+told you that whenever JavaScript code
+15:10
+is run, what happens? A global execution
+15:13
+context is created, right? So let us see
+15:15
+where how does that global execution
+15:17
+context look like? So let us run the
+15:20
+code. So I have put a debugger over
+15:21
+here. So the global execution context
+15:23
+must have created somewhere, right? So
+15:25
+yes the global execution context was
+15:27
+created and it has put in this call
+15:30
+stack. So see this see this anonymous
+15:32
+written right this is the global
+15:34
+execution context and the control is on
+15:38
+the line number three of index.js JS
+15:41
+right now here there it is now I'll tell
+15:45
+you something more important remember as
+15:47
+we move ahead in the code I have put a
+15:49
+debugger over here so as soon as we run
+15:51
+this function as soon as we invoke this
+15:53
+get name function what happens remember
+15:55
+from the last video a brand new
+15:57
+execution context is created and what
+15:59
+happens that execution context is pushed
+16:02
+inside the call stack remember I told
+16:04
+you so let us put a debugger and check
+16:07
+that also now it will go to this
+16:10
+function and go inside the function
+16:12
+right I have put a debugger over here so
+16:14
+let's just run it so see now the exe the
+16:18
+control went to line number five okay so
+16:22
+now get see something really very
+16:25
+interesting happened right so execution
+16:28
+context of get name was created and it
+16:31
+was pushed onto the call stack so this
+16:32
+is the call stack remember this is the
+16:35
+global execution context which is lying
+16:38
+in the bottom of the call stack
+16:40
+Okay. And on top of it, right now we are
+16:43
+at line number five. I have put a
+16:44
+debugger over here. So here lies the
+16:47
+control of the program in the get name
+16:50
+in line number five. Okay, this is the
+16:53
+interesting part. So now what happens
+16:56
+once you finish executing this function?
+16:58
+Remember what I told you now that
+17:00
+execution context will be deleted and it
+17:02
+will be popped off the stack. Right? So
+17:07
+if I put a debugger over here and the
+17:09
+control will move to line number nine.
+17:11
+So now if I'll run so what will happen
+17:13
+is whoosh the execution context will be
+17:17
+deleted and it will be removed from the
+17:20
+call stack. So let us run and see see
+17:23
+now it vanished right. So now the
+17:25
+control again went on to line number
+17:28
+nine okay of this anonymous which is the
+17:31
+global execution context. So that is how
+17:34
+the whole small small this call stack
+17:36
+works. I wanted to show you the demo
+17:38
+because I covered the theory in the last
+17:40
+video but I like demo was not covered
+17:42
+right. So uh and once we finish
+17:45
+executing everything in the program see
+17:47
+the call stack is empty now. So this is
+17:51
+what I was trying to explain a lot in
+17:53
+the theory in the last video that was
+17:55
+really very important video. If you have
+17:56
+not seen that definitely I would suggest
+17:58
+you to see that and this was the demo of
+18:02
+that whole thing. So this is how
+18:03
+everything is working behind the scenes
+18:05
+inside the JavaScript engine and
+18:07
+JavaScript manages all that using the
+18:09
+call stack execution context and all
+18:11
+this fun stuff and it is created in
+18:14
+creation phase and then the code
+18:15
+execution phase thread of execution all
+18:17
+these fancy things are happening inside
+18:20
+this browser itself. Interesting isn't
+18:22
+it? So that's all in this video. So in
+Teaser of the next video - How functions work in JavaScript?
+18:24
+the next video we'll be covering the
+18:26
+heart of JavaScript which is the
+18:28
+functions. I'll be talking a lot more
+18:30
+about the functions because functions
+18:33
+are very important piece in JavaScript
+18:35
+itself. They are very different than
+18:36
+other programming languages. But before
+Thank you for watching Namaste JavaScript
+18:38
+moving on to that video, you have to do
+18:40
+two things. First is to like this video.
+18:42
+It gives me a huge motivation. And
+18:44
+second is to comment down whether you
+18:46
+are feeling excited or not. How was the
+18:48
+video? Comment it down. I would love to
+18:50
+read your answers. See you in the next
+18:52
+video. And thank you for watching
+18:53
+Namaste JavaScript.
+18:58
+[Music]
+)
+
+4.The Scope Chain, 🔥Scope & Lexical Environment(
+
+    Introduction - Scope and the Lexical Environment
+0:00
+Scope in JavaScript is directly related
+0:02
+to lexical environment. Okay, lexical
+0:05
+environment. I know it sounds a little
+0:08
+complicated but it's a very classic
+0:10
+concept in JavaScript. Okay, if you
+0:13
+understand lexical environment, it will
+0:15
+be very easy for you to understand scope
+0:17
+the scope chain and it will also help us
+0:20
+understand closures also. Okay, so just
+0:23
+pay attention carefully and we'll be
+0:25
+seeing a lot of examples today. So let's
+Code Example for understanding Scope
+0:27
+take a function and let's call this
+0:29
+function a okay and along with this
+0:33
+function let us also take a v b okay let
+0:37
+us assign it 10 and what should we do is
+0:39
+let us just invoke this function so what
+0:42
+I'm trying to tell is that can we access
+0:46
+this b inside a let us try to check so
+0:50
+what do you think this will output okay
+0:53
+if I do a console log inside a what do
+0:56
+you think will be the output.
+0:59
+See when JavaScript engine reach this
+1:02
+line and it tries to execute console log
+1:05
+B, what will JavaScript do? JavaScript
+1:08
+will try to find out whether B exists in
+1:11
+the local memory space or not. Okay,
+1:13
+when I say local memory space,
+1:15
+JavaScript engine will try to find this
+1:17
+B inside the local memory of this A's
+1:20
+execution context. Okay, this function A
+1:23
+is local memory. It will try to find out
+1:26
+B and it won't be there, right? Because
+1:28
+we never created B inside that function,
+1:31
+isn't it? So now what will happen? Will
+1:34
+it print undefined? Remember that
+1:36
+special placeholder in case of host will
+1:39
+it print undefined or will it print not
+1:41
+defined like the B never existed or will
+1:45
+it directly print the value 10? What
+1:48
+will happen? Interesting, right? So if
+1:50
+we run this code let us see it prints up
+1:53
+10 right. So it prints up 10 that means
+1:57
+somehow inside this function right this
+2:00
+B can access the B which was outside
+2:04
+this function. Okay so this was easy but
+2:08
+let's make things a little more complex.
+2:10
+So if I put in another function inside
+2:13
+this right inside this A and if I try to
+2:17
+access B inside this function. Okay. If
+2:21
+I try to access B inside this function
+2:23
+what will happen now? What will it
+2:25
+print? Think of it. Will I still get
+2:28
+access to B or will it be undefined or
+2:30
+not defined or anything else or null or
+2:33
+something empty? What it will be? So can
+2:35
+I access B? Let us just run and see. So
+2:38
+let us invoke this function also. Okay.
+2:40
+So if we invoke this function now if I
+2:42
+run my program. So here it is. So it can
+2:46
+again access 10. So that means even
+2:49
+inside the function which is inside
+2:52
+another function which is inside the
+2:54
+global scope I can access B. Right? And
+2:57
+what if vice versa? Suppose if I had
+2:59
+this B suppose if I take this B and if I
+3:02
+put this B inside here right? If I put
+3:05
+this B inside here, can I still access
+3:08
+it inside C? Let us see. Yes, I can
+3:10
+still access. But but but can I access
+3:14
+this B outside this function? What do
+3:19
+you think the output will be? What will
+3:21
+happen if I run this? It says B is not
+3:24
+defined. Interesting, isn't it? It says
+3:27
+B is not defined. So here comes scope
+3:30
+into picture. Now I'll tell you the
+Understanding the meaning of Scope
+3:32
+easiest definition of scope. Okay, so
+3:35
+scope means where you can access a
+3:37
+specific variable or a function in our
+3:40
+code. Okay, that is scope. See, there
+3:42
+are two aspects to it. I'll tell you
+3:44
+both. So, first is what is the scope of
+3:48
+this variable? Okay, so what is the
+3:50
+scope of this variable B? That means
+3:52
+where can I access this variable B?
+3:55
+Okay, that is scope. And the other way
+3:57
+of seeing it is is B inside the scope.
+4:01
+Okay. So when I say is B inside the
+4:04
+scope of function C. So that means can I
+4:07
+access this B inside C? So there are two
+4:10
+ways to look at it. First is what is the
+4:12
+scope of a variable B and one is is B
+4:16
+inside a scope of a function. So so so
+4:18
+people use it in different ways but it's
+4:20
+like almost the same thing. And as I
+Diving deep into code & behind the scenes
+4:23
+told you in the beginning of the video
+4:24
+scope is directly dependent on the
+4:27
+lexical environment. Okay. Now let us
+4:30
+see what is lexical environment with a
+4:33
+visual representation. Visual will be
+4:35
+the best way to fit inside our head that
+4:37
+lexical environment. Let us see it. Now
+4:39
+when we run this program a global
+4:42
+execution context is created and it is
+4:44
+put onto the call stack. Remember right
+4:48
+and let us make this call stack. So here
+4:51
+is our call stack. Okay. And what
+4:54
+happens is a global execution context is
+4:57
+created and it is pushed inside it. So
+4:59
+let us make this global execution
+5:01
+context. Okay, it is pushed onto the
+5:04
+call stack. So this global execution
+5:06
+context as you already know it is the
+5:09
+global execution context. Okay, so this
+5:13
+global execution context as you already
+5:15
+know has memory and code section in it.
+5:18
+Right? So what will happen when you run
+5:21
+this program? It will try to assign
+5:24
+values to the global variables and
+5:28
+functions. Right? So it will try to
+5:30
+assign value to a here. Right? A is in
+5:32
+the global space. So let us try to
+5:34
+assign that value. Okay? It will assign
+5:37
+value to a here. It will point it to the
+5:40
+function reference. Then what will
+5:42
+happen? It will invoke this function.
+5:44
+What will happen? When you invoke a
+5:46
+function, an execution context is
+5:48
+created. Right? So let us create the
+5:50
+execution context for A also now. So
+5:53
+here we created an execution context for
+5:56
+A also. It again has two parts the
+5:59
+memory and the code. Right? And now this
+6:04
+function A will reserve memory for this
+6:06
+variable B. Isn't it? So B and this
+6:10
+function C. Right? So B and C will be
+6:13
+reserved this memory here. So what will
+6:15
+happen? So initially B will be set to
+6:18
+undefined and C will be set to the
+6:21
+function reference right and once it
+6:24
+starts executing the code now B will
+6:27
+become 10 right this is how the code is
+6:29
+executed remember from the previous
+6:31
+videos. So what will happen now it will
+6:33
+go to the next line. Okay it will put in
+6:35
+10 over here and it will go to the next
+6:37
+line. This is again a function
+6:39
+invocation. What happens in a function
+6:41
+invocation? Again an execution context
+6:43
+is created. Let us quickly create one.
+6:45
+Okay. Uh and it is again pushed onto the
+6:49
+call stack. Now this is the this is the
+6:52
+execution context of C. Okay. This is
+6:55
+the C and this is a function A
+6:57
+invocation. Okay. So and again a memory
+7:00
+is set up. Right? Again memory and code
+7:04
+is here. Right? So there is nothing to
+7:06
+set up in C. So let us keep it right
+7:08
+here. So now I will tell you what is
+Introduction to Lexical Environment
+7:10
+lexical environment. Just pay attention
+7:12
+very carefully and listen to me. Okay?
+7:14
+So whenever an execution context is
+7:18
+created, a lexical environment is also
+7:21
+created. Okay. So lexical environment is
+7:24
+the local memory along with the lexical
+7:27
+environment of its parent. Okay. So let
+7:30
+me repeat it once again. It's a very
+7:32
+core concept. Remember this. Lexical
+7:34
+environment is the local memory along
+7:38
+with the lexical environment of its
+7:40
+parent. Okay. What is parent? First of
+What is the meaning of `Lexical`?
+7:43
+all, let me tell you what is lexical.
+7:45
+Okay. So, lexical as a term means in
+7:49
+hierarchy or in a sequence or in in this
+7:53
+code terms. I'll tell you what lexical
+7:56
+is. So, you can say that C function is
+8:00
+lexically sitting inside a function.
+8:03
+Okay, this C function is lexically
+8:05
+inside a function. Okay, that means
+8:08
+lexical in order or in hierarchy. Okay,
+8:11
+which is and in code terms you can
+8:14
+assume it to be where that specific code
+8:16
+is present physically inside the code,
+8:19
+right? So this function C is present
+8:22
+physically inside A, right? So that
+8:24
+means C is lexically inside A and A is
+8:28
+lexically inside the global scope.
+8:31
+Right? So this is known as lexical. So
+8:34
+when I say lexical environment that
+Lexical Environment definition
+8:37
+means the local memory along with
+8:40
+lexical environment of the parent. Let
+Understanding Lexical Environment visually
+8:43
+me show you visually. So whenever this
+8:45
+execution context is created you also
+8:47
+get reference to the lexical environment
+8:51
+of its parent. Okay. So along with the
+8:54
+memory space along with the variables
+8:56
+and functions in this memory space you
+8:58
+also get this orange thing. Okay. this
+9:01
+orange thing you can assume it to be a
+9:03
+reference to the lexical environment of
+9:06
+its parent. Okay. So in this case this
+9:09
+orange thing is pointing to the lexical
+9:11
+environment of its parent. What is it?
+9:14
+So lexical parent of c is a right in the
+9:17
+code. So lexical lex it is because c is
+9:20
+lexically inside a right. So that means
+9:25
+it will get access to lexical
+9:27
+environment of a also you know
+9:29
+understand please understand this very
+9:31
+carefully it will help us in longer run
+9:33
+this is very important okay so this
+9:35
+orange is the reference to the lexical
+9:38
+environment of a and what is the lexical
+9:41
+environment of a lexical environment of
+9:43
+a is its memory space plus plus the
+9:47
+lexical environment of a's parent okay
+9:50
+so a also has this orange thing which is
+9:53
+pointing to the lexical environment of
+9:57
+the its parent. Okay. It is the lexical
+10:00
+environment of global. Okay. And global
+10:03
+also has this orange thing which is
+10:05
+reference to its lexical parent. Right?
+10:08
+Lexical environment of its parent. At
+10:10
+global level this reference to the outer
+10:13
+environment points to null, right?
+10:15
+Because it has no parent. In case of a,
+10:18
+it points to global, right? So that
+10:21
+points to this thing. Okay, this thing
+10:24
+lexical environment points to this thing
+10:26
+and in case of C, it points to lexical
+10:31
+environment of A. Right? So this is how
+10:36
+lexical environment looks like in the
+10:39
+memory. Okay? Now this is the lexical
+How Scope and Lexical Environment works in JavaScript
+10:42
+environment. But let us now see how this
+10:44
+is used. Okay. So suppose if you try to
+10:47
+do a console log of okay console log of
+10:50
+B inside this function C. So I'll tell
+10:53
+you what happens. Okay. When JavaScript
+10:55
+engine encounters this line, right? So
+10:58
+it tries to find out B inside the local
+11:01
+memory of C. Okay. First of all, it will
+11:04
+try to find out if there B exist in the
+11:07
+local memory or not. Okay, it won't find
+11:09
+because there is no B inside this local
+11:12
+memory. Okay. So now what happened?
+11:14
+JavaScript engine goes to this reference
+11:18
+and goes to the lexical environment of
+11:20
+its parent. Okay. So lexical means where
+11:24
+it is lexically or physically present in
+11:26
+the code. So C is physically present
+11:29
+inside A. Right? So C is lexical parent
+11:32
+is A. So it will go to the lexical
+11:34
+environment of A. Okay. So now it will
+11:37
+try to search for B inside the lexical
+11:39
+environment of A. It finds out B over
+11:42
+here. Okay. it finds out B over here. So
+11:45
+it just goes back and it prints up B
+11:48
+inside the console. That is why you see
+11:51
+the value 10 printed on the console.
+11:54
+Okay, this is how it works. So suppose
+11:56
+if B was not there inside A also suppose
+11:59
+if we don't if we didn't had this line.
+12:01
+Okay, if we didn't had this line, so
+12:03
+what would have happened after searching
+12:05
+over here? It would have again gone to
+12:08
+the lexical environment of A's parent.
+12:11
+Okay. So now it will have it would have
+12:15
+tried to find out B inside this global
+12:18
+execution context lexical environment.
+12:20
+Okay. That global lexical environment.
+12:22
+Okay. And there was no B over here also.
+12:24
+Suppose we never declared B anywhere in
+12:26
+our code. Right? So what happens now? It
+12:30
+goes to the lexical environment of
+12:32
+global parent also because it was not
+12:34
+there in global memory of global. Right?
+12:36
+So it goes and searches for the uh
+12:38
+lexical environment of global's parent.
+12:41
+Okay. And it finds null. So that means
+12:44
+it ended. Right? Now there is no more
+12:45
+lexical environments to search for.
+12:47
+Right? Physically we have moved to the
+12:50
+outer environment. We have moved to
+12:52
+another outer environment and we have
+12:53
+exhausted. Right? Now we have reached
+12:56
+null. Right? So what will happen now?
+12:59
+The program stops and JS engine says
+13:02
+that B is not defined. So you get that
+13:04
+error. B is not defined. Then you will
+13:07
+say that B is not in the scope. Right?
+The Scope Chain in JavaScript
+13:10
+Now let me tell you a beautiful thing.
+13:12
+Okay. So this way and this mechanism of
+13:15
+finding the variables right like suppose
+13:18
+B was first searched in the local
+13:20
+memory. It was not there inside then it
+13:22
+went to the reference of the outer
+13:25
+parent right parent lexical environment.
+13:27
+It was not over here. Suppose this was
+13:29
+not here. Okay. If it was not here then
+13:32
+it moves to the parent of that lexical
+13:35
+environment. Okay. It goes to the parent
+13:37
+is goes to a parent. Okay. So this way
+13:40
+of finding is known as scope chain. So a
+13:44
+scope chain is nothing but this chain of
+13:47
+all these lexical environment and the
+13:50
+parent references. This is what is scope
+13:52
+chain. Nothing else. Okay. So if
+13:54
+JavaScript engine does not find anything
+13:56
+in the local memory, it goes one next
+13:59
+level of the scope chain. Okay. If it
+14:01
+does not find in the local memory, it
+14:02
+goes next level of the scope chain. And
+14:04
+if it does not find, goes to the next
+14:06
+level of the scope chain. Okay. So this
+14:08
+whole chain of lexical environment is
+14:11
+known as the scope chain. Okay, nothing
+14:14
+else. So what did we whole studied
+Quick Revision of Scope, Lexical Environment and the Scope Chain
+14:16
+right? We studied what is the scope,
+14:19
+what is lexical environment and what is
+14:21
+scope chain. So let's just quickly
+14:22
+revise. Okay, it will fit inside our
+14:24
+head. Please quickly revise. Okay, so
+14:26
+what is lexical environment? Lexical
+14:28
+environment is created whenever an
+14:31
+execution context is created. Okay. And
+14:33
+lexical environment is the local memory
+14:35
+plus reference to the lexical
+14:39
+environment. Okay. Lexical environment
+14:42
+of parent. Okay. And when I say parent,
+14:44
+it is the lexical parent. Lexical parent
+14:47
+means where actually that function sits
+14:50
+inside the code. So C is lexically
+14:53
+inside A. That means C's lexical parent
+14:55
+is A. A's lexical parent is global.
+14:57
+Okay. So lexical environment is what?
+14:59
+local memory plus lexical environment of
+15:01
+parent. So what is lexical environment
+15:04
+here? Local memory and lexical
+15:06
+environment of parent. So this is what
+15:09
+is lexical environment and this whole
+15:11
+chain of lexical environments is known
+15:14
+as the scope chain and it defines
+15:17
+whether a variable or function is
+15:19
+present inside the scope or not. If the
+15:21
+scope chain is exhausted and variable is
+15:23
+not found that means it is not inside
+15:25
+the scope chain. So now let us just see
+Browser Demo of Lexical Environment & The Scope Chain
+15:28
+all these visual representations inside
+15:30
+the browser and you will be amazed to
+15:33
+see how beautifully it works inside the
+15:35
+browser. Okay, let's just see. Okay, so
+15:38
+let me just put a debugger over here in
+15:40
+the source in our program. If I put a
+15:42
+debugger inside this console log
+15:43
+statement, right, so now let us just run
+15:45
+this code and we'll see see this call
+15:48
+stack. This call stack is beautiful,
+15:51
+right? Just like I showed you in the
+15:53
+visual representation. This call stack
+15:55
+has all these three execution context.
+15:58
+This is the anonymous is the global
+16:00
+execution context. Right? And on top of
+16:02
+it, it has the A's execution context and
+16:05
+on top of it we have C's execution
+16:07
+context. Right? So let us go to the
+16:09
+global execution context. Here you see
+16:12
+the lexical environment. Here you see
+16:15
+the scope. What you can access inside
+16:17
+this global execution context. Okay.
+16:19
+This is the local memory of global
+16:22
+execution context. Okay. So here you
+16:24
+will find A also. Okay. So this is it.
+16:27
+Right. Now we'll see an interesting
+16:29
+thing. What is the lexical environment
+16:32
+of A. So what was the lexical
+16:34
+environment of A? So lexical environment
+16:36
+of A is local memory of A along with the
+16:41
+lexical environment of its parent.
+16:43
+Parent was global. So local memory plus
+16:47
+lexical environment of parent. C it is
+16:49
+same right so let's now see C's lexical
+16:53
+environment okay lexical environment of
+16:55
+C is the local memory of C along with
+16:59
+that its parents lexical environment
+17:02
+what is the lexical environment of A and
+17:06
+lexical environment of its parent right
+17:09
+so here it is C so C has access to all
+17:15
+these variables and functions you know
+17:17
+you might find that okay Here we have
+17:19
+here something is written as closure
+17:21
+right. So we will study in deep inside
+17:23
+the closure video but you can see that
+17:26
+this is a little closure. Okay this is a
+17:29
+closure. This is already a closure if I
+17:31
+tell you right now. So C has already
+17:36
+enclosed inside A right enclosed inside
+17:39
+A. And this is what closure is but we
+17:42
+will talk a little more deep inside the
+17:44
+closure video al together. But for now
+17:46
+you can assume that this is the lexical
+17:48
+environment of A which C can access to.
+17:53
+Okay. C has access to the lexical
+17:55
+environment of its parent. And this is
+17:58
+only is known as closure to be uh seen
+18:00
+in the coming videos. But for now just
+18:03
+understand that C has access to the
+18:06
+scope of A also. Okay. And this whole
+18:09
+chain right this whole chain this is the
+18:12
+local and the lexical environment of its
+18:15
+parent and its parent. This whole chain
+18:18
+is known as the scope chain. This is
+18:20
+what it is. This is how it looks like in
+18:22
+the browser. This was all the basics of
+Teaser - Deep dive into let & const and their Scope & Hoisting in JS
+18:24
+JavaScript. In the next video we will
+18:26
+see how let and const behave differently
+18:29
+in hosting as well as in scope. Right?
+18:33
+So let in const which was introduced in
+18:36
+ES6 behaves very differently in terms of
+18:39
+scope as well as hosting. Okay, in the
+18:41
+next videos I will be covering more
+18:43
+about let and const. Okay, everybody was
+18:46
+telling in the comments that where is
+18:47
+let and const. See these are the basics
+18:50
+of JavaScript when JavaScript was built.
+18:52
+These were the core fundamentals. Let
+18:54
+and const have come up recently, right?
+18:56
+So let us cover that also in depth. I
+18:59
+will be talking about what happens in
+19:01
+case of let. What happens in case of
+19:03
+const and how these behave differently
+19:06
+than where and how hosting works for
+19:08
+them, how scope works for them, what is
+19:11
+a block scope. Everything will be
+19:13
+covered in the next video. Before moving
+Thank you for watching Namaste JavaScript
+19:15
+on to that video, like this video, it
+19:17
+gives me a huge motivation. Tell me
+19:18
+whether you understood scope or not and
+19:20
+are you feeling excited or not. Till
+19:22
+then, thank you for watching Namaste
+19:24
+JavaScript.
+19:30
+[Music]
+
+
+)
+
+5. closures(
+
+    Here is the English transcript of the video:
+
+0:00 a pleasure which is super excited
+0:02 about this topic and order this video
+0:05 you will understand everything about where
+0:07 you will have a good knowledge and you won't go
+0:10 to any other video so let's start
+0:13 Let's start with the most basic
+0:14 example of followers for the blackness
+0:17 create a function limited crisis let's have a
+0:22 open inside function let call 100
+0:30 function
+0:33 more
+0:35 subscribe if
+0:40 log inside
+0:45 the sofa and what to do let's call this
+0:49 function bye bye call x all song
+0:53 So now my dear friend
+0:57 go previous video right for you already know
+1:02 what will be the
+1:05 subscribe
+1:10 to
+1:18 subscribe video
+1:21 like
+1:22 Share and
+1:28 subscribe the
+1:32 Channel
+1:34 Please
+1:37 subscribe and subscribe
+1:45 quite simple okay option midnight so much
+1:48 completed but let me show you
+1:51 liquid browser in Indian school
+1:55 in this
+1:59 difficult to control
+2:01 and just hold program in c you find
+2:06 it
+2:07 users to her life what is the mean of
+2:13 interest in the
+2:15 middle of a simple but what is the meaning of
+2:21 basically means the function of the
+2:27 environment
+2:34 investment channel subscribe
+2:45 you electrics also goes from everyone there
+2:48 destination closure okay so latest me
+2:50 also c white log something light score its
+2:53 that
+2:54 was a bright b hum holder program want
+2:58 to write so inside whether a phone is now
+3:01 closer to the variable which were part of
+3:04 x electrics go right the function bye
+3:08 Those mind to the value of x
+3:12 then phone sub closer and 28682 experience
+3:17 Lexical scope okay so dashore its
+3:20 rightful owners let's go to the end of sand
+3:23 check what is pollution right what is right
+3:26 to say about future update closer it says
+3:29 text function bundle together to ik sharabi
+3:32 state or electric element function along
+3:35 with its lexical environment life
+3:37 insurance closer look at som of friends
+3:40 in simple terms of its what does ok but now
+3:44 let's move to court or cricket examples
+3:46 and you will love this code so but old
+3:51 videos functions are
+3:54 subscribe very beautiful and what you
+3:58 can do
+4:03 subscribe functions to
+4:06 front
+4:08 functions
+4:11 subscribe
+4:15 pass into
+4:19 you can literally pass
+4:22 subscribe parameter to stop program
+4:25 in c programming languages
+4:28 but
+4:33 subscribe then along with
+4:37 returned this function from
+4:41 the
+4:42 return of the day question also how you who
+4:46 instead of this college gate you have just
+4:49 return
+4:51 return actually
+4:54 video people from other languages like
+4:58 K but simply
+5:05 करके
+5:09 subscribe
+5:20 my channel
+5:22 to
+5:26 subscribe school function to subscribe
+5:38 video
+5:42 subscribe button own executive 10
+5:46 viral be returned hua hai lipsing 10 into
+5:49 variable and c what is so
+5:53 let's all add to
+5:56 c what is the function of b
+6:03 subscribe
+6:08 kar le
+6:12 Yes you are right
+6:14 the function
+6:20 function remember what happens when function
+6:25 function from videos and
+6:28 execution context
+6:37 subscribe
+6:38 video subscribe
+6:45 good side to after landslide quiz
+6:48 contest
+6:49 was his return right preserved for long
+6:55 long
+6:57 gone
+6:59 gone
+7:01 but what will happen today while there's in the
+7:06 country but
+7:09 things from the
+7:12 is function
+7:14 Now you already know what happens when
+7:18 inside of you all
+7:24 subscribe button
+7:28 subscribe now to see new updates
+7:33 inside subscribe
+7:45 side effects of bhagirath side this scope
+7:48 surprise gift was inside website now we
+7:51 can like literally used rights and outside
+7:55 inside outside this scope outside of x hot
+7:59 and more interesting part his wife was
+8:03 supposed to have returned for the flying over his
+8:06 supporters posed direct questions to
+8:08 work in the final program which aims for
+8:12 to call function
+8:14 function
+8:16 of what is this what is this what is
+8:20 this what
+8:22 will happen to give back 10 tried to find
+8:27 out what we're at right time to add that
+8:31 side so a dot ignore
+8:36 subscribe
+8:38 school number 86 what will happen to be valid
+8:43 What will happen will public print value
+8:46 in one print print print print
+8:49 print or electronic or print some
+8:52 value print print print
+8:57 subscribe
+8:59 interesting right here comes closer into
+9:02 picture okay so functions assets are so
+9:07 beautiful that will return
+9:09 returned from another
+9:16 subscribe
+9:21 to is not exist
+9:32 subscribe
+9:35 school
+9:39 from
+9:41 obscenity simple way returned a right
+9:45 to know what is the function code what returned
+9:47 but the closed golden
+9:50 closer and closer
+9:52 function along with the return
+9:57 of the function at golf closer function
+10:01 along to that was returned and
+10:04 avoided avoided
+10:09 subscribe
+10:15 and
+10:18 subscribe
+10:25 this video
+10:28 developers don't understand
+10:31 people
+10:33 don't understand this small thing
+10:38 subscribe
+10:41 don't like function return form in
+10:45 thought only say all the best status say
+10:49 function along with its electrics go
+10:53 bundle together forms a closure that is
+10:55 Motors okay and you can give the example you
+10:59 you can better exploring the example of
+11:01 all rights so do you want you have to tell in
+11:04 the interview deciding most common and
+11:07 most interview question right of this is
+11:10 what is how have to answer this question no
+11:13 issue feeling confident that you will be
+11:15 able to answer this question is the interview
+11:18 return gift video like button right now okay
+11:20 before he wants to be completed and every
+11:23 time you hit the like button but i am sure that
+11:26 printing magazine behind green tea okay
+11:32 हुआ है
+11:36 am
+11:38 food drink tea
+11:40 now win back okay so some cool developers
+11:44 tried develop developers instead of writing
+11:47 letters written bye okay what do it is be
+11:49 just right return okay and its return
+11:54 outside over share in front of the function
+11:56 of mid simply say because like
+12:01 defining function written bye just tried to
+12:07 develop
+12:17 subscribe button subscribe
+12:36 sacrifice the return of a function its place
+12:39 returning a
+12:41 nazar
+12:47 nazar
+12:48 also
+12:52 comes with a lot for her sisters mother
+12:55 daughters
+12:58 subscribe question interview me
+13:04 subscribe my channel to
+13:13 subscribe
+13:29 subscribe air
+13:31 subscribe 0
+13:36 me
+13:38 0.5 we expect name of software and
+13:42 returns okay wait returns the amazing
+13:46 solve will now this exhibition on wed 07
+13:55 2008
+13:58 front senior
+14:01 senior
+14:13 subscribe cover
+14:16 no effort to develop
+14:23 subscribe
+14:26 6
+14:27 2009
+14:30 this reference
+14:34 the function with the reference to variables
+14:38 not just the value right the value
+14:49 subscribe kar le
+14:54 little but its
+14:56 okay
+14:59 video
+15:02 subscribe now
+15:05 it would reference point to
+15:08 that is the spelling of
+15:12 because closure and
+15:30 subscribe button
+15:36 question interesting facts suppose up
+15:40 difficult thing right difficult thing was
+15:43 inside function for lipstic one
+15:47 morning one side
+15:54 subscribe button
+15:58 more
+16:02 only
+16:05 [Music]
+16:08 subscribe
+16:11 school
+16:16 from
+16:23 subscribe
+16:27 and
+16:33 subscribe this video which is parents call
+16:37 people who so no valid notes will be
+16:41 pleasure
+16:42 me let people going deeper inside a browser
+16:45 okay let me the say wait and let me just go
+16:49 to sources of water inside the most
+16:52 function in the index let me put difficult to
+16:55 have been called okay okay sorry for its just
+16:58 called the
+17:05 sunday x right after declaration of
+17:10 your
+17:19 setting
+17:21 close over
+17:26 comes up
+17:29 along with big b to
+17:35 subscribe now to
+17:38 closer function
+17:42 me
+17:46 scope okay that's what pollution
+17:47 Over here
+17:47 papers for closer along with
+17:52 subscribe
+17:55 language video
+18:07 subscribe
+18:19 skin
+18:21 to
+18:23 subscribe
+18:26 should
+18:31 subscribe button
+18:34 to
+18:36 powerful language
+18:38 channel
+18:40 subscribe you can use of closure to cut
+18:44 to in the translators keep all things four
+18:47 remember ssc vs janmodul
+18:51 design pattern okay their design pattern will
+18:53 be our executive and discovered this page you
+18:56 will see closures closely inside this mini
+18:58 model design print why it's not possible
+19:01 without screen in javascript is made
+19:04 of video on career guide you can go
+19:06 institute career in javascript is
+19:08 possible just because of close yes okay and
+19:11 then our functions like once there is a function
+19:15 audience on this function which will give function
+19:21 which can only one
+19:24 function only if you like the video then
+19:32 subscribe to the page if you know what is
+19:37 the function in javascript function in the
+19:39 number of times it
+19:42 further meant for but your this this is possible
+19:47 because of rose the function remembers right
+19:50 remembers something like so you can
+19:53 like and store your data is the function
+19:55 has been left front inside platform for
+19:59 beginners and david
+20:06 subscribe to
+20:12 the page if you liked the video then
+20:29 subscribe to
+20:34 subscribe video
+20:40 subscribe to
+20:42 so much you is it comes naturally
+20:46 ignore just because you can see
+20:51 almost
+20:53 subscribe
+20:55 you may not know what to do
+20:59 subscribe
+21:04 topic for interview will be releasing
+21:07 exclusive videos or
+21:09 along with examples of very famous
+21:13 question
+21:14 loop
+21:18 of
+21:24 example channel to
+21:31 subscribe make mistakes in the interview
+21:35 click to watch video
+21:40 video video
+21:42 this what all of you explain
+21:44 process in temples and it will cover
+21:46 example for example of yourself thank
+21:49 you will definitely love update time note
+21:51 example in the next video bf movie
+21:53 123 123 things okay three things first to
+21:57 like this video right now taking this
+22:00 television network sharing on social media
+22:02 man this thing is a big salute to
+22:06 developers and thirst telling them into
+22:10 help feeling excited are you enjoying the course
+22:12 for not what is topic to back cover tell me
+22:15 right here under lock and left side thank you
+22:18 for watching Namaste Javascript
+22:21 [Music]
+)
+
+6. this keyword(Introduction
+0:00
+one of the most confusing topic inside JavaScript is this keyword many people when they try to
+0:06
+learn this keyword they pull their hairs it is so confusing and you know what if
+0:12
+you will go and try to study it from the mdn documentation here is this Oman documentation if you will try to study
+0:18
+try to read this paragraph right pause the video and try to read this you will pull your hairs it is very confusing so
+0:25
+many jargons so many keywords right so when you have toy try to learn this you
+0:31
+will have to know how actually this works in different scenarios the problem with this keyword
+0:38
+is that it behaves very differently when it is in different
+0:44
+circumstances suppose if you write this keyword inside a function it will behave differently if it is inside a global
+0:51
+space it will work differently if it is inside an arrow function it will work differently if it is inside a nested
+0:58
+function it will work differently so so there are so many cases that every
+1:03
+developer is confused whenever they are trying to use this keyword in their
+1:09
+projects or even in interviews a lot of interviewers ask you these confusing
+1:14
+questions and will right uh and then you will be confused how to answer them but
+1:19
+in this video I will build you build your basic foundations right of the this
+1:25
+keyword I will explain everything that you should know before you go to an interview and it will also help you in your
+1:31
+day-to-day coding okay so let us just start and you know by the end of this video you will also understand what is
+1:38
+written over here right now trust me you will not understand everything what is written over here but by the end of the
+1:44
+video you will understand each and every line of this two paragraphs which explains this over here okay so now let
+What I will cover
+1:52
+us just start so first of all Let Me Explain you what all things I will cover in this video in this video I will cover
+1:59
+all these Concepts basically how this behaves differently in different
+2:04
+circumstances so these are different circumstances and I will cover each of them one by one I will take a lot of
+2:12
+coding examples but I request you that please don't take this video lightly it
+2:18
+is a very important video If you will watch this video you will not have to go to any other video to learn about this
+2:25
+everything I will cover in this video and this video will can be a very
+2:31
+crucial um video for your understanding of JavaScript so please stay with me and
+2:38
+check out all the code examples I would request you to maybe get a notebook and a pen with you take down notes along
+2:44
+with me because this is very very very important let us start with the first thing we will see how this keyword now
+Global Space
+2:51
+behaves in a global space a lot of you might not know what is a global space so
+2:56
+let me tell you if you will write something over here generally right if you'll write this this is the global
+3:02
+space whatever you write over here suppose suppose if I write where a so
+3:08
+this a is inside a global space uh and suppose if you write something inside a
+3:14
+function okay so suppose if I write something inside a function let me call this as X okay whatever I will write
+3:22
+over here this is inside a functional scope right functional space function
+3:28
+space and whatever is there outside on the top level that is a global space so
+3:34
+let us just see first of all how this behaves inside Global space then we will see how this behave inside this function
+3:41
+cool so now if you talk about global space What is the value of this at this
+3:47
+point of time let me just log and show it to you okay if I do a console log
+3:52
+this what do you think will be printed I don't know if you know or not but let me just save and refresh this page so this
+4:00
+be this is window object now what is this window object this window object
+Global Object
+4:06
+and why the value of this is window object let me tell you that this keyword
+4:13
+in global space will always have the value of global
+4:19
+object understand listen to me very carefully right global object so this
+4:25
+this keyword in global space represent the global object now what is this
+4:30
+global object so see JavaScript not just runs on the browser JavaScript can run
+4:37
+on your Smartwatch JavaScript can run inside a uh wherever JavaScript can run
+4:42
+right JavaScript can run inside your mobile phone JavaScript can run inside your browser JavaScript runs inside nodejs JavaScript run inside smart bulbs
+4:51
+so many places and everywhere wherever JavaScript runs there is a JavaScript
+4:56
+runtime environment okay that that can be different inside inside this browser
+5:04
+inside this browser this global object is different inside nodejs global object is different
+5:12
+inside some other place wherever JavaScript is running global object can be different got it first of all you should
+5:19
+understand this and whatever that global object is this will represent that the
+5:24
+value of this keyword will be global object now in case of browsers you know
+5:32
+a lot of students lot of developers don't understand this but let me tell you in case of browsers this global
+5:39
+object is window that is why you see window written over here this window
+5:45
+object okay this is inside browser but if you will go inside nodejs so the
+5:51
+value of this global object will be Global okay the value will be Global so
+5:59
+so and wherever see every JavaScript runtime can have different value of this
+6:06
+so similarly uh the global space right when I say Global space if you will
+6:11
+write something like this console. Lo this it will return you window or
+6:16
+whatever the global object is so if your interviewer ask you what is the value of this inside Global space so you should
+6:23
+answer it is global object that can be different it can be window it can be Global it can be something else depends
+6:29
+upon where you are running that piece of code where you are running this JavaScript got it so uh this is how it
+Function
+6:37
+is now let us just see what happens if you write this this keyword inside a function okay so if we have a console
+6:45
+log of this inside this function what will be the value of this let me save it
+6:51
+and let me call this function also okay unless we call this function how will we get to know if I save this see this
+6:58
+another window window so again the value of this over here is also window is it
+7:05
+correct what is the difference is it same outside Global space it was window
+7:12
+inside a function it is again window is it same no my dear friends it is not
+7:19
+same it is different so inside a function you know now one more tricky
+7:25
+part is take down as a note in your notebook that this keyword Works be
+7:30
+differently in strict mode and non-strict mode whenever you will run
+7:36
+JavaScript like this this is a non-strict mode so let us try to run
+7:42
+inside a strict mode okay so how do you convert it into a strict mode see if you
+7:49
+will try to know what is now you might be having doubts like what is strict mode and what is nonstrict mode in
+7:56
+JavaScript it deserves a different or all together a different separate video
+8:01
+because that's a big Concept in itself but understand that strict mode has some
+8:07
+stricter rules for JavaScript okay so by using something like this use strict on
+Strict Mode
+8:14
+the top of your file you can go inside a strict mode now if you will use the
+8:20
+strict mode and let me save it so you will see that this keyword behaves
+8:25
+differently see the value of this is undefined now and if it is not a strict
+8:30
+mode if it is not a strict mode then the value of this is window do you see the difference
+8:38
+so take down as a note if you are inside a function right this keyword inside a
+8:46
+function it depends on the value right what is this this keyword the value
+8:53
+depends on strict non-strict mode okay the value depends on strict
+9:01
+and non-strict mode so the value will be window the value will be window if it is
+9:09
+non-strict mode if it is strict mode then the value will be undefined now why does this happen now
+9:16
+you must be thinking a what is this what what random thing is this right JavaScript you know this is the this is
+9:23
+the um you know this is the reason why most of the developers hate JavaScript
+9:29
+because it behaves very differently very differently but let me tell you my dear friends before you hear that just trying
+9:35
+to understand what what is happening why it is happening and all those stuff right so why this behaves differently in
+9:44
+this case is something known as this substitution there is a phenomena note
+9:51
+it down in your notebook again there is something known as this substitution okay this this substitution note this
+9:58
+down this sub substitution so suppose according to this substitution if the
+10:06
+value of this is undefined or null okay so suppose the
+10:15
+value of this anytime is undefined or null so what will happen right if the
+10:22
+value of this keyword let me write down keyword also if the value of this this keyword is undefined or null so what
+10:29
+will happen this will
+10:35
+be replaced with global object got it so if the
+10:45
+value anytime anytime right in wherever the code you are writing anytime the value
+10:52
+of this keyword is undefined or null then what what it will do is Javascript
+10:59
+will JavaScript will replace this this keyword JavaScript
+11:05
+will replace this this keyword will be replaced with global
+11:10
+object now only in nonstrict mode okay
+11:15
+only in non-strict mode so keep it make it as a note right write this down in
+11:20
+your notebook so let me repeat everything once again because this is confusing so you understood that inside
+11:27
+a function the value depends on strict or non-strict mode but inside the
+11:34
+nonstrict mode right if you will have this see um now uh you know I I know
+11:41
+this can be confusing let me repeat it once again if the interviewer asks you what
+Value of substitution
+11:47
+is the value of this keyword inside a function what you will say you should say that the value of this keyword
+11:54
+inside a function is undefined undefined but because
+12:01
+JavaScript has something known as this substitution right this substitution so
+12:07
+the value becomes equal to global object if you will not use strict mode right if
+12:13
+I will not use strict mode the value becomes window object I know this will be confusing but take it down as a note
+12:20
+this is small Nuance H but you should understand what is happening okay uh
+12:27
+this inside non-st mode nonstrict mode got it so inside non-strict mode if you
+12:34
+are inside non-strict mode then what happens is this
+12:39
+substitution hope you hope you would have uh understood this portion right if
+Value of this keyword
+12:44
+you did not please watch the video once again I have explained it properly uh okay now again right so this
+12:55
+the value of this keyword right the value of this key keyword depends on how it is called how
+13:03
+the function is called got it now the value of this this keyword also depends
+13:10
+on how this function is called okay suppose right I am calling the function
+13:16
+as X right I am calling it like this isn't it I am calling this function as
+13:23
+normal right X and this parenthesis the value is the value is window object in
+13:29
+case of uh in case of non-strict mode let us go to strict mode okay let us now
+13:36
+now all the examples that what whatever we will see we will see everything inside strict mode got it so if you will
+13:44
+see X like this if you will execute this x x function like this so the value is
+13:50
+undefined but what if I execute is something like this window
+13:57
+dox window window dox so if we will execute it like this then the value
+14:02
+becomes window right so now I I know this is
+14:07
+very confusing but keep taking down notes now you know things will become
+14:13
+easy I will tell you why this is working the way it is working lot of see remember this point
+How the function is called
+14:20
+this keyword value depends on how this is called how the function is called how
+14:26
+the function is called how the function is called if the function is called without any
+14:33
+reference then the value is undefined got
+14:38
+it when you call it without any reference of an object then it becomes
+14:45
+undefined but if you will call it like this window dox then it is the calling
+14:51
+object this window object it is the same window object hope you understood this
+14:57
+okay so I have explained you four points right now let me repeat everything all
+15:04
+these four points first of all in global space global object the value is global
+15:11
+object it can be different in browsers it can be different in nodejs second point if you are writing
+15:18
+it inside a function it will behave differently in strict and non-strict mode okay now what will
+15:25
+happen in inside the function the value of this keyword is undefined the
+15:31
+original value is undefined but if you will use it without a non-strict mode
+15:36
+then the value will become window or the global object so this is a very important point you know a lot of times
+15:43
+interviews will confuse you by asking such questions that is why I'm telling you all this remember this okay strict
+15:50
+and non-strict mode are different in JavaScript let's move to the strict mode now if you are in strict mode then the
+15:57
+value of this inside this function is undefined okay now the value of this
+Value of keyword
+16:03
+keyword also depends on how the function is called right so if you will read from
+16:08
+the mdn documentation also let me bring this up right so in most of the cases
+16:14
+the value of this is determined by how the function is called during runtime
+16:19
+right runtime binding okay how this function is called so if you will call the function like
+16:26
+this then the value will be be undefined okay but if we'll call like
+16:33
+this it will be window right and I'm talking about strict mode now in non-strict mode this substitution will
+16:41
+happen got it so this was the revision of four points now let us move on to the next point now you know this was the
+16:49
+tricky part now comes the a little more easier part okay easier part calm down
+16:56
+right if you understood this much then then you have covered 50% of the video trust me right so now let us move to
+17:03
+other part now this keyword can be called inside objects method now it will
+17:10
+behave a little differently if suppose we have an object let's call it as obj suppose it has some properties let me
+17:16
+call that as a is equal to 10 or something I'm just writing random values over here and suppose if there is a
+17:23
+method now what is the difference between a function and a method see if you will make a function as a part of an
+17:30
+object then it is known as method lot of JavaScript developers don't know do you know it or not write down in comments
+Difference between function and method
+17:36
+what is the difference between a function and a method when you will write a function over here right let me if suppose I
+17:43
+write X over here and if this is a function right if this x is a function
+17:50
+over here right so this function X is known as method now right this is a
+17:55
+method this is a x is a now in the lingo right why I'm telling you all this
+18:00
+because you know sometimes it does not matter whether you call it as function or method it is a function at the end of
+18:08
+the day but you know sometimes you will get confused when you hear the word method so this is what I'm trying to
+18:14
+tell you when you are inside an object if you create a function inside an object this function X is known as
+18:20
+method now so X is the method of an object obj got it X is the method of an
+18:27
+object obj now what happens inside this x function suppose if I try to do a console log of
+18:33
+this what will be the value of this inside this x method what will be the
+18:39
+value of this now again as I said the value of this also depends on how this
+18:46
+function is called always remember this is a very important statement how this
+18:52
+function is called okay now if I call this function like this obj dox
+18:59
+okay if I call this function as obj dox let me just run it see this the value
+19:06
+becomes this object so whenever you are inside the method the value of this this
+19:13
+keyword is the object where this method is present
+19:19
+understood the value let me repeat it once again if this is an object what is
+19:25
+the value of this keyword inside this method it is this object okay o obj dox is this
+19:34
+object and inside the method right inside this method X suppose if I do
+19:39
+this do a right this do a so this will reference to object and this do a will
+19:47
+reference to this property a okay so if I will do this. a log if I save this so
+19:55
+it will print 10 why did it print 10 because this do a this this over here is
+20:00
+this object so this. a means object.
+20:05
+a got it so this is how the value over here is present got it so the value of
+20:14
+this is this object this
+20:19
+obj hope you would have understood this now let's move on to another topic
+Three important functions
+20:25
+whenever you talk about this keyword there are three important uh topics which you should
+20:31
+know three important functions that you should know one is call one is apply one
+20:37
+is bind one is call one is apply one is bind very important
+20:43
+topics very famous interview questions also uh interview questions interviewer
+20:49
+can ask you what is the difference between call apply and bind I have made a separate video of call apply and B on
+20:56
+my channel you can watch that for a deeper dive in for now I will explain a
+21:01
+little bit of call apply bind in this video okay now this call apply and
+21:07
+bind is used when you have to share methods right uh when I'll tell you what
+21:14
+is the meaning of sharing method suppose if this object has this method X suppose
+21:20
+if there is one more object let me call that as obj2 now if you want to share if
+21:27
+you want to share this method right and let me call this as a is equals to it also has a property a and let me call
+21:33
+this as 20 okay now if you want to share this function
+21:39
+x with this object then there's a way you can do it you can do it using call
+21:46
+apply and bind right see this this function does not have this me so okay I
+21:52
+will take a better example so that you understand it okay suppose this object is a student student object and the
+21:59
+student has a name okay let me call this name as ache okay this name of the
+22:07
+object is ache now if you will call object do x uh and let me call this
+Real life example
+22:13
+function as print name I will give you real life example live over here if you
+22:19
+have this function print name and you do student. print name okay student
+22:24
+do print print name what will be printed
+22:30
+what will be printed over here student. print name what will be
+22:35
+printed this object right this keyword is student and name over here right so
+22:43
+this object got printed and if I try to print this dot name what will be printed
+22:48
+AE will be printed got it but suppose if there is one more student let's call
+22:54
+that as student two right and the student two has has name of the student
+23:00
+two has name of Deepika okay suppose if the name of this student 2 is Deepika
+23:06
+now what will happen is and suppose I want to print I want to share this method print name with this right I want
+23:15
+to share this method print name with this object now how can I do this can I
+23:20
+do student can I do student dot uh sorry
+23:26
+student 2. printing can I do this can I reference student 2.
+23:32
+print name no I cannot it will throw an error because this print name is not here right St print name is not a part
+23:39
+of student 2 how can I share that same method how can I reuse this method so
+23:45
+there is one way I can do that that is that is by sharing by by overriding the
+23:55
+value of this keyword okay I know this can be little confusing
+24:00
+listen to me very carefully let me repeat it once again I have this object student I have another object student to
+24:08
+student has a function a method right and I want to reuse this method for the
+24:15
+student to how will I do that let me tell you what I will do now is I will
+24:21
+call student. Print name because that method exist right this method third
+24:28
+print name is on student right and now what I will do is I will try to not call
+24:35
+it like this but what I will do I will do a DOT call okay I will do a DOT call so
+24:42
+basically dot call and now this dot call will take the value of this keyword
+24:51
+inside it right what should be this point two so suppose if I if I send
+24:59
+student two over here suppose if I write student two over here what will happen
+25:06
+inside this print name method the value of this will become this whatever you
+25:11
+pass in here so basically inside this function I'm trying to override the value of this
+Override value
+25:20
+right over here the value of this was this student object right this do name
+25:26
+was printed over here AE was printed but suppose if I want to reuse this method
+25:31
+for student 2 so I can just call the same method but with a different the value of this
+25:38
+now value of this is student two okay
+25:44
+the value of this becomes student two like this and if you will save it see Deepika got printed ake was printed here
+25:52
+DEA got printed here right so the value of this can be modified using call apply
+26:01
+and bind method all these three methods are used to
+26:07
+uh set the value of this inside it right this was a small
+26:12
+example please I will mention inside description the link of video of call
+26:17
+apply and bind find out the difference between all of all three of them right
+26:23
+it is very very important for your interviews learn about call apply bind and how you can overwrite the value of
+26:30
+this okay so I'm just covering call inside this call method inside this video but please watch that because
+26:39
+understanding of this is not complete if you don't understand call apply and bind method okay I am just I am just telling
+26:47
+you call learn apply and bind is your homework okay now go to the video up
+26:57
+learn about call apply and bind and go in the comment and tell me AE I went to your video call apply and bind and I
+27:04
+have understood please comment down you know I know that whenever I say in the video go watch that video you will not
+27:10
+do it but I am requesting you I folding my hands I'm joining my hands and requesting you please please please dear
+27:17
+friends go watch that video it is very very important for your understanding and after you watch that video come over
+27:23
+here and also tell me in the comments a I have watched that video I will give give you a like right if if I have read
+27:30
+that comment I read the comments right please please go and watch that video please right because that is when you
+27:36
+will understand the this keyword properly and how call apply method bind method works very important topics okay
+27:44
+so this is what a short uh this is what is a short explanation of this keyword
+27:49
+over here now let us move to another case how does this keyword behaves
+27:55
+inside Arrow functions right so we have Arrow functions how does this keyword
+28:00
+behaves inside Arrow functions so you know what Arrow function does not have
+enclosing lexical context
+28:06
+their own this right arrow functions do not have their own this they take the
+28:13
+they take the value of their lexical right lexical environment where they are
+28:19
+enclosed okay let me repeat it once again it can be confusing you know why I am telling you all these confusing
+28:26
+documentation because this is is what you will find in your uh documentation okay see uh Arrow function don't provide
+28:33
+their own this binding AR functions don't have a concept of this basically right uh it's like they don't have a
+28:41
+this binding Associated to it but the value of this keyword is the value of
+28:48
+enclosing lexical content what does this mean right the value of enclosing
+28:54
+lexical content context right this is a very trickle trick uh tricky three words
+29:01
+right enclosing lexical content right so I will tell you what it is suppose okay
+29:08
+let's let's take another example let's Suppose there is an object okay I will
+29:13
+try to give you basic example so that you understand it properly and you can explain the same way to your interviewer
+29:19
+also perfectly fine okay suppose if there is a method now this method is you
+29:25
+know this method is uh when it was a function right it was a function you
+29:30
+know what the value of this will be right now you already know right if I will do this over here what will happen
+29:37
+right if I do obj dox you already know what the output will be okay so you know that the output
+29:44
+would be obj object right uh a A1 and X is function so basically this objects
+29:49
+get printed right the value of this is obj right the value of this is obj but
+29:55
+if instead of a function suppose instead of a function suppose this was an arrow
+30:01
+function right this is a arrow function right suppose if this is an arrow function what will be the value of this
+30:08
+now the value of this over here will not be this
+30:13
+object but it will be it will be its enclosing lexical context right let me
+30:21
+just let me just bring my mdn once again it will be enclosing lexical context
+30:27
+what do you mean by lexical context lexical context means uh you know what is lexical
+30:34
+lexical means how it is written in the code right what is where this object is
+30:40
+lexically present inside your code lexically present means how it is written inside the code so where it is
+30:47
+present it is present in global space isn't it is is it present in global
+30:52
+space or not yes so this this keyword will not behave like it is inside a
+30:57
+function but it will behave like this is present in the global space got it so if
+31:04
+you will save this and refresh the value will be window object once again right
+31:09
+the value will be window object once again got it it will take the value
+31:17
+of global object because this is now inside a global space got it uh so uh B
+31:25
+not inside a global space it is not inside a global space but it is enclosed
+31:31
+in that lexical context the lexical context is that Global so that is why the value of this becomes window object
+31:39
+right uh it is exactly like it will behave see it will behave if you would
+31:45
+have written console log without this object right not inside a method outside right it behaves like this it does not
+31:52
+happen it just behaves like this okay so if I have to recap it inside Arrow
+recap
+32:00
+functions right note down these keywords right you should understand this keyword it behaves like enclosing lexical
+32:08
+context understand these three keywords right very very important it nobody will
+32:13
+you know a lot of teachers don't teach you all this because it is very
+32:18
+confusing to teach right and most of the teachers don't know themselves right they just tell you the basic examples of
+32:26
+this keyword right how it you know nobody will go into this uh detail to
+32:32
+tell you what is lexical context and all that is why my videos get a little longer I don't know you like it or not
+32:38
+um I will see the analytics of this video whether you are watching till the end or not right because you know
+32:45
+whenever I try to explain tough topics people tend to leave the videos that
+32:50
+video does not get views that video does not get likes I don't know sometimes I feel I should also teach in a very small
+32:57
+small 5 Minutes video of this keyword explaining the basics but then I feel
+33:02
+that okay I should dive deep and teach you right and and explain you each and every complex word
+33:09
+also but I I don't know just comment down and also tell me whether you like such videos or should I cover it in
+33:15
+small brief or should I dive deep also tell me in comments please right it will
+33:20
+help me in making future videos so this is the input I need from you okay so
+33:27
+this is what it is now I just wanted to tell you what is lexical context that is why I told you that it depends on where
+33:33
+it is now let me give you a tricky example okay and then I will ask you the same question suppose right suppose let
+33:42
+me this is one example now let me just copy this object and let me use right
+33:48
+let me make another example so suppose this is obj2 and now suppose this Arrow
+33:54
+function is not here but suppose if this is a function right if you will
+34:00
+understand this right then you will understand everything okay so uh if
+34:06
+there is an arrow function over here let's call this function as FN okay or
+34:11
+maybe y let's call this as y because this is X so let us call this as y so
+34:17
+now and let me call this function over here y so now what I have done is now this
+34:25
+Arrow function is not a method of this object right this Arrow function is not a method of this object but this Arrow
+34:32
+function is enclosed is inside another function which is a method of this
+34:39
+object okay now this Arrow function is this right and now I will do obj
+34:47
+2.x what will be printed tell me what will be the value of this this what will
+34:53
+be the value of this if I save it this the value will be this object this obj2
+35:00
+right if you will see a is equals to 20 so it will print this object see this
+35:06
+this object what is this object this object is obj2 how why the value is this
+35:12
+pause the video over here and try to think what we have done over here right
+35:17
+and then try to read this definition also right what is the lexical context
+35:23
+see whenever you see an arrow function whenever you see an AR Arrow function the value of this this keyword will
+35:31
+be where this Arrow function is lexically enclosed remember this keyword
+35:37
+enclosed right what is the enclosing lexical context what is the enclosing
+35:45
+lexical context over here the enclosing lexical context is this
+35:50
+function right the enclosing lexical context is then this function so how
+35:56
+will just think like this right suppose you know I have seen a lot of interviewers ask you output questions right output
+36:03
+questions you would have seen right this can be one output question and you will pull your hairs because you won't
+36:08
+understand right so how will the this keyword behave this this keyword will
+36:13
+exactly behave as if they were ins inside the enclosed lexical context something like
+36:21
+this right this Arrow function will behave as if the arrow function was not there
+36:27
+right suppose if this Arrow function was not there and the console log will was
+36:32
+here it will behave like this okay so this this keyword will behave exactly
+36:39
+like how it it would behave inside the enclosing lexical context you know my
+36:45
+throat is aching uh and uh you know it is tough for me also to explain all this
+36:50
+but you know once you will understand this you will not forget it and it will
+36:56
+be veryy easy for you all your output questions comes from here and then
+37:01
+people say JavaScript is they hate JavaScript because it's very complex yes I know that this keyword is a little
+37:07
+tricky but then if you understand it properly you will never fail in output questions right uh so this console.log will work
+37:17
+behav as if the function Arrow function was not here right so it will work Beav so over here the value of this will not
+37:24
+be anything it will be this obj2 okay because there is no this
+37:32
+keyword for this Arrow function right arrow function does not have their this
+37:37
+binding got it so you will have to remember this statement right arrow
+conclusion
+37:43
+functions don't provide their own this binding right arrow functions don't
+37:49
+provide their own this binding it retains the value of this right it
+37:54
+retains the this value of n en closing lexical context right and you know a
+38:00
+tricky concept and the mdn document just write one line and done right one line
+38:06
+explains this whole tricky concept right so I love mdn documentation though I
+38:12
+love to read everything and try to dive deep into JavaScript you know when you will read each of it and try to find out
+38:19
+meaning of each word over here you will learn a lot so deep knowledge JavaScript
+38:26
+is amazing I just love JavaScript right it has so many things you just have to
+38:31
+understand how it is working behind the scenes and you will never mess up with JavaScript JavaScript is the most
+38:36
+beautiful language you will fall in love with JavaScript right this is how beautiful language it is I have to be
+38:44
+very honest friends I have explored so many languages I know Ruby on Rails I
+38:51
+know Pearl I have worked on so many Java I have worked on
+38:57
+um what python I have worked on cc++ we did in college I have worked on so many
+39:03
+goang right I have worked on goang so many languages and then today if you ask me I the most language the best language
+39:11
+I would say is Javascript I just love it right it's very beautiful uh JavaScript runs in so many
+39:19
+places because it's such a beautiful language I I can't even explain right it's so beautiful that is why I bought
+39:26
+Namaste JavaScript and I wanted to spread all this deep knowledge with you all right if you're liking my videos in
+39:34
+Namaste JavaScript series then please keep liking the videos please comment
+39:40
+down how you are liking it you know when you give me feedback this is the way you give feedback right if you give me a
+39:46
+like if you give me comments then I understand that okay you are liking those videos if I get less likes then I
+39:52
+feel that that video is not good right please please please if you like like this in-depth concept please please give
+39:58
+me a like just a request for you please share it right I see a lot of people nobody shares my video right please
+40:06
+share it on social media you know I can it takes a lot of time to make all these
+40:11
+videos right you know I understand how this works but if you if I have to explain you how this works it it is a
+40:19
+tough job as a teacher to explain these tricky Concepts so for my efforts please
+40:24
+like this video please share it with you your friends on social media you can share it it just gives me a little
+40:30
+happiness that okay I'm making something it is spreading in the world and then
+40:35
+some people are liking it right that is all I need please right uh this is what is a request from my side okay let's
+40:42
+let's not let me not uh uh push you more but let's move on to another concept
+40:47
+right so understand this if I have to recap Once Again Arrow
+40:53
+function you will have to understand two words enclosing
+40:59
+lexical context you will have to find out what is the enclosing lexical context here what is the enclosing
+41:06
+lexical context of this Arrow function it is this function so find out how this
+41:13
+keyword will behave inside this enclosing lexical context how this keyword will behave inside this function
+41:20
+it will the this keyword will represent to this object very easy isn't it so
+41:26
+this is how you will have to uh understand right enclosing lexical context and trust me you know if you if
+41:33
+the interviewer ask you about this keyword and you put all these keywords in front of the interviewer I dare that
+41:40
+the interviewer will not be able to reject you dude right uh I have seen so
+41:45
+many JavaScript developers they don't understand this right ever I have asked this this keyword question to anyone
+41:51
+nobody was able to answer I have not seen any developer being able to answer in depth they just have superficial
+41:57
+knowledge about this keyword but this is the this is the in-depth knowledge you should
+this keyword in DOM
+42:03
+have okay so now let us just see how this keyword behaves inside Dom right this keyword you cannot just write this
+42:10
+keyword over here you can write this keyword in your Dom also right in your HTML right can we write it let us just
+42:16
+go and write try to write it suppose if this is Namaste JavaScript written over here H1 tag can I write it yes let me
+42:22
+write it on a button click isn't it let us try to write it on a button click how do you put a click Handler inside a
+42:29
+button first of all let me a make it a button click me okay let's call this as click me now over here in this button
+42:36
+let me write a on click Handler this is how you give it now what do you do if if if you if on click what do I do right
+42:43
+just do a alert okay let's do a alert and in this alert uh let us just print
+42:49
+the value of this got it let us just print the value of this what do you
+42:56
+think will be the value of this over here right if I save the if I save this so I have got my button what happens if
+43:03
+I will click on this button what will happen if I click on this button it will give me a alert and it will print the
+43:09
+value of this what will the value of this right so let me just check if I
+43:14
+click on this it says object HTML button element so basically this button element
+43:24
+itself right the this button element right in itself is the value of that
+43:30
+this right so what I'm trying to say if you try to find out what is this the
+43:36
+value of this keyword when you write like this it will be this HTML button
+43:41
+element got it HTML button elephant you can reference that this will be the
+43:46
+reference to this HTML button element so if the interviewer might ask you what is
+43:51
+this inside Dom elements right Dom elements you can say the value is
+43:59
+reference reference to HTML element
+44:05
+okay reference to the HTML element now you can you know this is this is very
+44:12
+important a lot of times we do this and you can also see I I'll tell you right
+44:18
+you can you can also uh you can also do something like tag name right you can you can have more
+44:26
+functions onto this right I think this should work I don't know if this works or not but let me check if I do a this.
+44:33
+tag name and save it let me just refresh my page and click again see this it gave you button right so you can you can do a
+44:41
+lot of things with the this keyword because the this over here represent to this button you can do a lot of crazy
+44:48
+things lot of crazy things by using this keyword it gives you the reference to
+44:55
+this button got it so so many tricky cases about how this keyword Works uh
+45:03
+and you have to understand all of this hope you are taking notes now you know
+45:09
+this keyword behaves differently inside class also right inside JavaScript
+45:15
+classes Constructors but but but my dear friends
+45:21
+in Namaste JavaScript I have not covered objector oriented programming I have not covered classes I have not covered
+45:27
+Constructors so you know I don't want to cover that in this video right uh I have
+45:34
+right now only covered functional programming how functions work and everything about functions so you will
+45:40
+it will be tough for me to explain you right without teaching you class and Constructor and how they behave and all
+45:46
+that stuff so I'm skipping this right I am not covering this right now but if
+45:51
+you will ask me whatever I have taught you in this video is more than enough
+45:59
+you know even if you remember 50% of this even 40% of this you will be able
+46:04
+to clear your interviews you will be very good at it but try to cover 100% of
+46:09
+this video and this is enough for your interviews right if you are going for interviews if you are doing your daily
+46:15
+coding it is enough if you are doing because generally we don't write classes in JavaScript so you can skip that
+46:21
+portion right how this behaves inside classes in Constructor but I want to tell you explicitly that this keyword
+46:28
+has a different meaning inside classes and Constructors also right see I am a
+46:33
+teacher I want to give you everything I know this is what I knew right uh and
+46:39
+I'm telling you all this I have also told you a lot more things in depth hope you would have liked it let me just
+46:46
+quickly recap the video recap everything what we learned in this video once again very
+46:52
+quickly are you with me and then we will end the video because I I think this has been a knowledge heavy session okay let
+this keyword recap
+46:58
+us just quickly recap everything first thing is how this behaves in global space okay keep
+47:07
+answering let me repeat it once again listen to me very carefully with 100% attention because I will go very fast
+47:13
+how this behaves in global space that this keyword uh that this keyword in global space reference referred to
+47:21
+global object that global object in browser is Windows and in the global object in nodejs can be different and it
+47:28
+can be different in different the JavaScript runtime got it now how this behaves inside a function the value of
+47:35
+the this inside a function depends on strict and non-strict mode inside a
+47:40
+strict mode the value of this is undefined got it the value of this is undefined so over here the value of this
+47:48
+is undefined but what if you have a non-strict mode if you go into a non-strict mode then the value of this
+47:55
+is window right so why this happened why why the value became window because of
+48:01
+this substitution because of this substitution what is this substitution when it happens this substitution
+48:07
+happens in non-strict mode what is this substitution this substitution means
+48:13
+that whenever the value of this keyword is undefined or null then it becomes the
+48:19
+global object the global object here was window so it became window in nodejs or
+48:24
+any other runtime it can be different now you have to understand one more
+48:29
+important thing this keyword value depends on how the function is called right very important how the function is
+48:36
+called if you will call the function like this then it will return undefined if you will call it using this object
+48:42
+window dox then it will be window right then it will be window okay so this is
+48:49
+what it is now what you can do how this behave inside objects method so suppose
+48:54
+if we have a object student and we have a method print name so the value of this keyword will be this object the value of
+49:01
+this keyword over here is value of this keyword is OB object right object this
+49:09
+keyword over here represents the object if you do a student. print name it will print you a got it because this do name
+49:16
+is ache now suppose now comes another thing there are three methods call apply
+49:22
+bind you have to go watch the video and also comment down below right uh uh whether you like it or not whether you
+49:29
+have watched the video or not I will check everyone please I will check how many comments I get uh people who have
+49:36
+watched that call apply by video okay go watch that but if you want to share this functions you can share it using student
+49:44
+print name call and over here you will pass the value what the this should be
+49:51
+if you will write stud see first of all why did I write student. print name because this print name method was on
+49:58
+student object so I will always write student. print name right student. print
+50:04
+name student so this basically you know what this line means student. print name
+50:10
+means I'm referring to student do print name this function and I'm calling this
+50:16
+function with whatever you will pass over here will become the value of this keyword got it the whatever you will
+50:23
+pass over here will become the value of this this keyword okay so call it like this now
+50:30
+you will also have to study what is apply and bind and what is the difference between them very important
+50:35
+interview questions now when this is covered last thing is inside Arrow functions inside Arrow function you have
+50:42
+to remember this thing enclosing lexical context whenever you see an arrow
+50:47
+function you have to find what is the enclosing lexical context so if you will see the the enclosing lexical context is
+50:54
+the global space over here so the value of this will be global object whatever the global object is in browser in case
+51:01
+of browser we have window the value will be window over here now suppose this was a tricky
+51:08
+example lot of output questions come like this okay lot of output questions
+51:14
+so uh over here I have made a nested method right it is nested so basically
+51:20
+it is an arrow function inside another function so the value of this keyword inside the this Arrow function will be
+51:27
+depend on enclosing lexical context enclosing lexical context is this function so the value of this keyword
+51:34
+will be obj2 so this was it then the last thing that we studied was how they
+51:39
+behave in Dom elements so in Dom elements it will refer to that particular HTML Dom element that this
+51:46
+keyword will refer to this particular Dom element and if you will do a alert we have seen that it becomes this button
+51:54
+cool so this this was it my dear friends in this keyword so now please watch this video once again if you did not
+52:01
+understand it learn it because it is very tricky very important and this is good enough for preparing for interviews
+52:07
+please please please like this video right now please like this video if you have really liked the concept whatever I
+52:13
+have taught if you would have enjoyed the video please share it please please please share it on social media on
+52:20
+LinkedIn on Twitter or Instagram stories on wherever you wish to please share this video it will help me motivate to
+52:27
+make more video it motivates me a lot it encourages me a lot to make these videos and thank you so much for watching I
+52:34
+would be looking at to your comments please comment down if you would have understood it properly try to write in
+52:40
+your own words the definition of this and how would you explain you to the interviewer right now in the comments
+52:47
+please please do that this exercise is very important you have to write down in the comments how will you explain what
+52:53
+is the value of this please take down notes in the comments and please do it
+52:58
+for yourself and I will like the best comments I will give it a small heart and that's all for this video see you in
+53:05
+the next one thanks for [Music]
+53:24
+watching [Music])
+
+7.call, apply and bind method(The video "call, apply and bind method in JavaScript" by Akshay Saini explains how these three methods are used to manipulate the `this` context in JavaScript functions. Below is a summary of the key concepts discussed in the video based on the provided metadata and external technical references.
+
+### **1. The `call()` Method**
+
+* **Purpose:** It allows you to invoke a function while explicitly specifying the value of `this` for that function call.
+* **Usage:** You pass the object you want `this` to point to as the first argument. Any subsequent arguments are passed to the function normally.
+* **Example Scenario:** If you have a method inside one object and you want to use it for another object without re-defining it, you can "borrow" the method using `call()`.
+
+### **2. The `apply()` Method**
+
+* **Purpose:** This method is very similar to `call()`, but it differs in how it handles additional arguments.
+* **Usage:** Instead of passing arguments individually, you pass them as a single **array**.
+* **Key Difference:** `fun.call(obj, arg1, arg2)` vs. `fun.apply(obj, [arg1, arg2])`.
+
+### **3. The `bind()` Method**
+
+* **Purpose:** Unlike `call` and `apply`, which execute the function immediately, `bind()` creates a **new copy** of the function.
+* **Usage:** It "binds" the original function to a specific object and returns it, allowing you to call this new function later in your code.
+* **Interview Tip:** This is frequently used when you want to ensure a function retains a specific context regardless of where it is eventually called (e.g., inside an event listener).
+
+### **Key Takeaways for Interviews**
+
+* **Function Borrowing:** Both `call` and `apply` are used for function borrowing.
+* **Immediate vs. Delayed Execution:** `call` and `apply` execute the function immediately; `bind` returns a bound function for later use.
+* **Arguments Passing:** `call` takes a list of arguments, while `apply` takes an array of arguments.
+
+**Video Link:** [call, apply and bind method in JavaScript](http://www.youtube.com/watch?v=75W8UPQ5l7k))
+

@@ -1,0 +1,2822 @@
+1.Exception Handling - Javascript In Depth(0:00
+hey everyone welcome to the channel my name is natter in this video we're going to go over exception handling
+0:06
+specifically the throw keyword in JavaScript as well as try and catch
+0:11
+blocks and how they kind of relate to error handling in JavaScript this is going to be an important topic going
+0:16
+forward pretty much for everything because errors are going to pop up all over our code as we build different
+0:21
+types of applications but it's going to be especially useful when we look at async await next which is a newer syntax
+0:27
+on top of promises which you just looked at earlier because those that syntax
+0:32
+specifically doesn't actually have a way to handle errors beyond the try catch
+0:37
+block that we're going to learn here in this video so not only is this useful for that but it's going to be kind of coming up all over the place as we look
+0:44
+at JavaScript together so let's kind of get a handle on it and see how it works together let's take a look
+What is Exception Handling?
+0:50
+okay so uh let's just start with kind of the concepts and rationale behind what
+0:55
+exception handling even is and what these fancy words are and kind of what happens with errors in our code in
+1:01
+general so in this concept of exception handling um the the word exception kind of you
+1:06
+can replace it maybe with like error handling right so an exception is basically an error something that is
+1:12
+exceptional that happens in our program that we don't really expect okay and um
+1:17
+this is it might seem like it might not happen because coding so far as we've seen seems pretty kind of deterministic
+1:23
+however as we'll see there's going to be many times where we're actually not going to
+1:28
+be sure what might happen in our program and we need to be able to kind of uh figure out what to do in those cases so
+1:35
+that our program doesn't basically crash okay and a handling kind of is that word which is like how do we handle these
+1:40
+cases like what do we tell the computer or JavaScript to do in the cases where we do have these exceptions or do have
+1:46
+these errors okay so let's think about it right now up until now what actually happens when
+1:52
+there's an error in our code well we've seen it a few times right basically what happens is our program just crashes
+1:58
+right like node.js kind of crashes we get this really scary looking message and it kind of says like some kind of error over here error over there it
+2:04
+sometimes is helpful and gives us like a line number um or like a snippet of code where that might actually be happening kind of like
+2:11
+in an excerpt of where that's happening in the code um but if you really think about it
+2:17
+um that is not really ideal right I want to kind of uh post like a scenario to
+2:22
+you right like let's imagine that you're writing a JavaScript program for like say let's let's say we're going to go to
+2:29
+space okay and your JavaScript program is meant to keep like let's say the life
+2:34
+support system for the spacecraft functioning okay um so
+2:40
+imagine that pretty much 99.9 of the time maybe everything is running smoothly okay and and their code kind of
+2:47
+works as expected uh but there's like a point one percent chance or even lower chance that there might be something
+2:52
+funky happening right maybe the math works out in a certain weird way or maybe something might be missing or
+2:58
+maybe some of the values aren't where really what we expected um and then that might cause a uh
+3:04
+problem in our program like maybe we miscalculate something or we end up with undefined for something and then if we
+3:10
+try to do some calculations with that or try to do some code using it there's a chance that it'll actually crash our
+3:15
+program right or maybe it'll just propagate that error further into our program and it will cause uh kind of
+3:21
+bugs and issues that happen for the wrong so um that would be very bad right in the
+3:26
+case of say a life support system if if our program just crashed as a result of
+3:31
+uh kind of these errors um that would be terrible right because then how do you restart it how do you be
+3:38
+sure that in the future when that bug happens again that it won't just crash again right after you restart it up
+3:43
+again right like that those are all very very scary scenarios and we really um wouldn't want those to happen right
+3:50
+so this kind of example might seem kind of like intense right uh but there
+3:55
+have been many disasters that have happened as a result of small programming mistakes there was in fact a
+4:01
+spacecraft uh that kind of uh had some programming mistakes in it as well as
+4:06
+some engineering mistakes as well and kind of a combination all these things cause it to actually unfortunately explode
+4:12
+um after it was launched okay so these are things that happen in real life and we need to figure out how to actually
+4:17
+deal with errors in our code a bit more gracefully so when you think of errors in the
+4:23
+context of like maybe we try to do something with something that's undefined right if we take undefined and
+4:29
+we try to like say the uppercase it or we try to you know do some math with it or something we might end up with an
+4:35
+error right our program might crash um if we try to say open a file that might already be in use right and we
+4:41
+haven't seen this yet but that might also cause some kind of error message okay maybe we try to talk to a database
+4:48
+we haven't seen databases yet but imagine that we need to talk to some computer somewhere on the internet
+4:53
+um and maybe it crashed maybe it's down or maybe it's not connected to the internet for some reason maybe the
+4:58
+internet just went down right there's all these different things that are going to start happening and it's as we start working on more complicated apps
+5:05
+that start doing these things like talking to other computers and but we can increase the surface area of areas
+5:11
+that can happen on our program this topic becomes incredibly crucial so that
+5:16
+our programs don't just collapse and crash every time some small error happens so the kind of key Point here is our
+5:25
+program can crash if we don't have error handling or we can try to figure out kind of what to do with the error if we
+5:30
+can actually account for it and maybe we can recover gracefully right maybe we can kind of error correct and do
+5:37
+something in the case of the error when we know what it is and then just kind of keep going with our program instead of
+5:43
+just crashing blindly and having the rest of the code just no longer execute anymore as a result okay
+5:50
+and we also want a way to kind of Monitor and maybe log these errors in our program as well in the future this
+5:56
+is a huge topic and it'll come up as we start building things like servers and databases and things like that together
+6:02
+okay so hopefully that helps a little bit with the concepts as to why we need exception handling so that said I just
+6:08
+want to show you a couple more drawings uh as uh like kind of the
+6:13
+concepts of an error and how we're going to start introducing them together in this video so
+"Throw" Concept
+6:19
+the first one I have is this one right here so I want to imagine you're this person okay yeah you're this person
+6:24
+right here and um what you're going to do is if there's some kind of error
+6:30
+that's happening or something that angers you or irritates you or frustrates you you're gonna basically throw a tantrum okay you're going to
+6:37
+pick up the nearest object and you're just going to throw it across the room all right now hopefully you don't have
+6:43
+to do that in uh in real life but let's just say in this fictional scenario that's what happens okay
+6:49
+so I want you to picture this concept when I'm talking about uh throwing something okay
+6:55
+um this is exactly the keyword that's actually used in not only JavaScript but
+7:00
+actually many other languages in order to kind of create an error okay and this
+7:06
+might sound kind of weird it's like why would we want to create an error aren't we going to try to kind of stop errors from happening that are somewhere else
+7:11
+in our code well we're gonna actually see this come up quite a lot and there's many cases where we actually would want
+7:17
+to throw this kind of error and I'll show you why in this video later and in the exercise videos after this so
+7:24
+just picture the scenario of you know something happens that's bad and you kind of have a little tantrum and you're
+7:30
+throwing uh this thing across the room okay so there's basically one thing that can
+7:37
+happen in this case was a few things but the the most important thing that'll probably happen if you're kind of in the room by yourself is it'll probably hit
+7:45
+the ground right this object will hit the ground and it'll kind of break or collapse if it's something breakable um
+7:50
+and in this case the analogy is that our program is going to crash right so this is what our programs are doing
+7:56
+right now um we're not really throwing an error ourselves some error might have happened in our program before but if if we just
+8:03
+kind of ignore it right and nobody's there to kind of listen to this error happening or help us out in any way then
+8:10
+it's going to hit the ground um and it's just gonna crash right our program's just gonna stop running and
+8:16
+that's going to cause all the other code that we could have run in that program after that to not have run right so we
+8:23
+have no chance of running any more code in our program because the program just basically stops right
+8:29
+so that um is not usually really great right most of the time we don't want this to happen we want a way to kind of
+8:35
+realize that an error happened and then maybe have a chance that you deal with it and then we can decide whether the
+8:41
+program needs to kind of stop um we need some human intervention or something or fix some other bugs in our
+8:47
+code or whether we can kind of gracefully recover from this scenario okay so this case is this one right here
+"Catch" Concept
+8:55
+imagine we throw this object across the room but there's a helpful hand on the
+9:00
+other side of the room and they are able to catch this object for us okay so
+9:07
+funnily enough we're actually going to see this terminology almost exactly puff up just like this as we code in
+9:13
+JavaScript together in this case um we are not going to crash this program
+9:19
+okay because we have someone who's helping us out who's ready to kind of catch that error for us
+9:26
+um after it's been thrown so that it doesn't actually just hit the ground and collapse and break and stop our program
+9:31
+from running okay so we we can set these people up to help us throughout kind of our code and
+9:38
+they can be there to help catch these errors that pop up so that we don't actually hit the ground and break and
+9:45
+crash our program okay so that said let's kind of get into the code and see
+9:50
+how this might work with throwing first and then we'll look at this kind of cash concept right after so I'm going to pull
+Throw Code Example
+9:56
+up visual studio code I'm just going to create a new file I'll call this throw.js
+10:02
+now in here maybe I'll just zoom in a tiny bit more since I don't need too much space um in here I'm just going to Simply
+10:08
+write throw and I'm going to kind of just give it a message here like for example uh there was a bad thing that
+10:18
+happened okay um and that's kind of my little error message okay so notice that this new
+10:24
+keyword right that's the one that I mentioned kind of in that analogy this is an actual keyword in JavaScript
+10:30
+as well as many other languages all right so I'm just going to pull up my terminal here I'm going to make sure
+10:36
+I'm the correct folder and I'm going to run node and then throw that Js and what you'll see is kind of something
+10:43
+that we've kind of seen before which is like the file that something bad is happening in the message is not as crazy
+10:48
+as some of the other messages that we've seen with node that we've run things or we have like a syntax error or a type
+10:54
+error or something like that but we can kind of see that okay there's an error right here where this is where kind of
+11:00
+it's happening in our code and this is the error that happened okay so I'll just show you something if
+11:06
+I have a console.log after this and I say like hello right and I rerun this
+11:11
+code we are not going to see Hello printed out okay because as soon as this error happens there was kind of no one
+11:18
+to help us catch this error and this hello never gets a chance to run because
+11:23
+our program just shuts down and crashes okay so any code that we had down here
+11:29
+after this error is basically unreachable code it would it would never run because this error is going to
+11:36
+prevent us from reaching that code down there Okay so
+11:42
+how can we kind of get around this right so that was that was kind of this idea how can we kind of make this happen
+11:49
+right where we're throwing something but then we have someone set up to catch it so that's where we kind of get into this
+Exception Handling Flow
+11:55
+concept that's where the exception handling kind of control flow comes in we can use these keywords right here I'm
+12:03
+gonna ignore this finally keyword for now I just want to kind of keep it in here for a sake of completion very similar to the promises video but uh
+12:10
+we'll get to that kind of in future videos as we actually need it just so we don't get confused so to start
+12:16
+these are the two that we really really need to know try and catch
+12:21
+okay so if we have a try and catch then we have a chance to kind of do this
+12:27
+which is catch something that is thrown okay so the way that this works in
+12:35
+JavaScript and in many languages is we kind of have to tell JavaScript
+12:41
+code that is kind of risky right the code that we think might throw an error
+12:47
+so that JavaScript can be ready to catch it from that specific section in the
+12:52
+code okay so what does this look like it looks kind of like this okay so right
+Try Catch Statement
+12:59
+now we kind of have something like this in our code right we have throw and then a message right so if we surround that with this
+13:07
+new syntax a try block right so try and then curly brackets and then the code
+13:12
+that we think is error prone for example or might have an error or has a potential for an error
+13:19
+and then we followed that up with a catch block which is the catch keyword with the curly brackets as well then we
+13:25
+have a chance to catch any code that or any error story that gets thrown by the code inside of this try block
+13:33
+so let's take a look so if I come back here and I create a new file I'll call this try
+Try Catch Code Examples
+13:38
+catch.js I'll just zoom out a little bit just so I have a bit more space and I'll do try here
+13:45
+and I'll say Throw uh boom just like that and I'll say catch
+13:50
+and I'll say console.log cut right just like that
+13:56
+now down here I want to just see if I can do a console log okay so previously we
+14:03
+saw that over here right if we just throw the error message which is a string in this case
+14:09
+and we'll see how we can throw other types of objects later but if we throw this error right now and we try to
+14:15
+console log we saw that we never get down here we never get to any of this code after the throw right so let's see
+14:21
+what happens here right so we're we're telling JavaScript to try this code
+14:26
+right and in the event that something bad happens in this case an error gets
+14:33
+thrown then kind of catch it right set someone up to catch it and then do this
+14:38
+code over here so let's see what happens so I'm going to run node I'm going to do try catch.js
+14:44
+and look at that right we get our catch message which is cut right here printed
+14:50
+out but then we also get a chance to come here down to kind of line seven in my case and actually print out the high
+14:56
+message okay so this is fundamentally different from over here because we never got a
+15:01
+chance to come down here so what I want to show you next is kind
+15:09
+of an extension of this idea how do we actually get access to that
+15:16
+error message right so like let's say that we throw that error message but then in the catch we want to be able to
+15:22
+kind of know what went wrong with that error message so we kind of need access to stuff up in
+15:30
+the try block so that we can kind of get a pass to us so that we can actually use
+15:35
+it that's what I'm trying to illustrate right here the catch block actually kind of works almost like a
+15:42
+function you can think of it like a function right if we provide it with these brackets right after the catch and
+15:48
+we give it a name for that parameter and we can name this whatever we want right
+15:54
+some people use just e some people use err I'm just going to spell out the whole error just so it's super clear
+16:00
+right but we actually get that message that is thrown or the error that happens
+16:06
+inside of that variable as an argument if there is an error in the try block
+16:13
+okay I'm actually uh I actually forgot to really I mention that I'm actually switching to console error here instead
+16:19
+of console log um and that's because uh generally speaking if you have an error message you kind of want to log it out
+16:25
+differently than you would something that's not an error message um we'll see this a lot more when we start working with like web development
+16:31
+for example but I just want to get in the habit of that if it's an error to kind of show you that that's another
+16:36
+function of the console API that we can actually use this error portion to actually log out errors
+16:43
+okay this just displays them differently and is treated slightly differently depending on the environment that you're running JavaScript in
+16:49
+okay so let's try this out um let's kind of go back to our code and let's say I want to kind of get access
+16:56
+to this message which is the error message in this case that's being thrown all right what we can do is I can put
+17:03
+brackets here after the catch and I can call this error or error or whatever I
+17:09
+want right so this just like any function can have any placeholder name and now I can
+17:15
+use that placeholder name down here and I have access to whatever error ended up
+17:21
+being thrown so now if I rerun this what you'll see is I actually get access to that boom message which is what was
+17:28
+thrown here in the try block okay
+17:33
+awesome so um hope that's clear and I'll just really emphasize this that this is just anything that we want right so if I
+17:39
+name this e for example you can see that that works the exact same way this is just a parameter
+17:45
+all right cool um and I should probably switch this to
+17:51
+console error here and just show you that that works the same way it's just more semantically
+17:57
+correct I'll leave this one as a console logged because technically this is just a regular log and these are errors
+18:02
+because they're happening inside the catch block okay inside the browser these would
+18:07
+appear slightly differently cool
+18:13
+now next I want to show you um kind of what happens once we start
+18:18
+adding more Concepts inside of this try block so over here I have kind of a
+18:24
+demonstration of us actually doing stuff inside of the try block so that's kind of the purpose of these try blocks
+18:30
+usually you would not throw an error just for fun inside of there you'd want to kind of try to actually do something
+18:36
+okay so in this case I'm going to try to create a variable and I'm going to try
+18:42
+to console uh log out that variable and then I'm going to throw an error
+18:47
+okay so let's come over here and I'm going to say um const message equals hello there
+18:55
+and then I'm going to console.logout my message and once that's done I can then throw
+19:03
+the error and then catch the error and log out the error itself as well as my custom message right here and then at
+19:10
+the very end of my program I can log out hi I want you to think of what's going to get logged out here before I run this
+19:15
+just to see if you can kind of um maybe uh guess what might actually happen
+19:21
+okay so if I try this you'll see that we get hello there which is our message right which is coming from these lines
+19:27
+right here then we throw the error and then the catch kind of kicks in right we
+19:33
+catch that error and we store inside the error variable we log out error which is boom We log out caught which is right
+19:39
+here and then finally after this try catch block we log out the high great
+19:45
+so hopefully that kind of makes sense um we'll see you soon in just a couple
+19:50
+slides how we can kind of modify this and add some tricks to it and how this might actually be an issue soon but
+19:55
+hopefully that actually makes sense right the purpose of the try block is to try running some code that might
+20:03
+cause an issue the purpose of the catch block is to catch the error that might happen as a result of issues happening
+20:10
+in the try block now what I want to do is I want to replace this with a actual error that we
+Error Object
+20:17
+would want to use kind of in most of our programs so I just want to kind of bring this up
+20:23
+inside of the browser real quick just so we can take a look together so if you pull up Google I would like you to uh
+20:28
+look up for error JavaScript and we want to look at the error object
+20:37
+um on something like mdn okay so I'm just going to click on this one and you can see that error objects if I
+20:44
+zoom in a little bit more are thrown when runtime error occurs the error object can also be used as a base object
+20:50
+for user-defined exceptions see below for the standard built-in error types okay so it looks like there's all these
+20:57
+different kinds of errors and we can have like a Val errors range
+21:02
+errors as you've seen we've seen the syntax error before we've seen a type error before right there's there's been
+21:08
+a few of these errors I'm actually going to scroll down here to the Constructor and I'm going to see that there's this
+21:15
+kind of creating a new error object section right here okay so I'm going to
+21:20
+click on that and it's going to take me to this page and it's seeing that we can kind of construct an error object using
+21:26
+a new error and we can give it a message and give it many other different things okay so I would uh say that let's go
+21:34
+ahead and use this for our errors going forward because this is a common thing that's used in most programs especially
+21:40
+as we start kind of getting into web development all right so instead of just throwing a string
+21:46
+which is what we're doing right here I'm going to throw a new error object and
+21:52
+I'm going to pass it my error message just like okay this is actually going to create an
+21:59
+object for us and it's going to give it a message property of Boom so if I rerun
+22:05
+this code now you can see that this kind of works a little bit more as expected
+22:11
+with the way that we're using console error and console error is kind of formatting
+22:16
+this in this particular way for us right so we can we can see that right here is
+22:22
+actually line six which is picking up that error um and we can actually see that this is
+22:28
+the name of the error so this could be a syntax error or a type error in this case it's just called error and here is
+22:34
+the error message okay so just to show you kind of how that would work with a type error for
+22:40
+example if I re-ran this because this is another type of error that we can use you can see that we get a type error
+22:46
+here okay we don't have a type here in this case I'm just going to stick it with a generic error message I just want to show you that kind of the different
+22:52
+types of errors that can be thrown and this is kind of how they're generated internally inside the language as well
+22:58
+okay so whenever we have code that might have an issue um an error is going to be thrown either
+23:04
+by us if we know that there's kind of an issue that happens and this is a common thing that happens as well or maybe we
+23:11
+just don't realize that an error can happen and then the code that we're using if it's someone else's code or
+23:17
+even our own code will have some kind of JavaScript error and that will be thrown and will need somewhere to catch it
+23:24
+which is what our catch block does okay so just to kind of create another
+23:29
+example of this I'm going to call it call this try catchcustom.js
+23:40
+um I'll show you not custom I meant object not JS I wanted to create a custom uh code for this
+Practical Example
+23:47
+um so what we're going to try to do here is work with an object in a way that we
+23:53
+might try to work with if we're sitting working with a server or a database in the future as we get to those videos and
+24:00
+maybe do something that we think is there but is not really there okay so
+24:05
+over here I'm going to create a try catch block just kind of like this and I'm just going to give this a name of
+24:11
+error just because I already know that the code in here might cause an error so I'm going to say I'm going to create a
+24:17
+user object and this user object is going to have a name of let's just say Alex right and Alex
+24:26
+will have an age of let's just say like 21. okay
+24:33
+so now let's just say that this is something that came back from some
+24:38
+server somewhere okay so maybe we didn't actually create this object so I'm just simulating that maybe we asked somewhere
+24:44
+like Google um you know or Facebook or something for this object and it gave it back to us
+24:51
+okay so let's just say I want to log out
+24:56
+something in this object so let's say I am assuming that inside of a user I know
+25:03
+that there is a profile and the inside of profile that there is a color
+25:08
+okay so I want to get to user to profile to color okay and if this looks a bit weird for
+25:16
+you you can take a look at the objects video where we kind of go through how this works where we're accessing different properties off of an object in
+25:23
+this case we only have name and age for user but let's assume that we thought
+25:28
+that there was a profile an inside profile there was a color all right
+25:33
+so I want you to think is this going to cause an error right
+25:40
+um so if it does let's see what happens so I'm going to do a console.error in here and I'm going to log out the error
+25:46
+that happens so I'm going to run node I'm going to try catch object.js
+25:53
+and if you see that we actually get a type error right so that's what I kind of simulated
+25:59
+earlier so JavaScript though is giving us this error now and the error message
+26:04
+is giving us is cannot read property color of undefined
+26:10
+so what it's basically saying is that we're trying to do like a user dot
+26:16
+undefined dot color which uh which doesn't make sense right we can see that user only has name and
+26:23
+age right so in order for this to work we would
+26:29
+have to have something like profile then we'd have to have something like color and then color could be like blue
+26:36
+and now if I run this code what we'll see is that we just get that color
+26:41
+printed out right but for example if I try to con or if I comment out this stuff here and
+26:48
+then we go back to not having that at all uh we cannot get something um that doesn't exist at all
+26:54
+okay if I just tried to get profile that would be okay because um that would just give us undefined but I'm trying to
+27:01
+further split undefined the color property which doesn't exist
+27:06
+okay awesome I hope that helps a little bit and the key here is you can see that
+27:12
+we're not actually throwing the error ourselves right this is a result of JavaScript kind of failing at runtime
+27:18
+and then trying to search somewhere Scramble for somewhere to catch that error to figure out what to do going
+27:24
+forward if we didn't have this catch block our program would totally crash at this
+27:30
+point and any code down here would not run
+27:36
+so I just want to show one more thing here before we go to scope which is the
+27:43
+last concept I want to cover in this video anything that we have after something
+27:48
+that causes an error inside of a try block is not going to run if an error is
+27:55
+thrown before it okay so in this case you can see that we have some kind of a
+28:01
+code here up here that's going to run correctly because this is valid code I'm
+28:06
+just making a message that point into high console logging a message there's nothing that would cause an error here
+28:12
+however down here I'm throwing boom right or say throwing a new error with
+28:17
+boom right um what that's going to cause JavaScript to do is jump to the nearest catch block
+28:23
+okay it's going to completely ignore any code below this error location
+28:30
+all right so just to show you that what I want to do is I want to try to
+28:36
+um oops I want to console log right after here um
+28:41
+do I get here question mark okay so we have our user object we're
+28:48
+trying to grab profile.color which doesn't exist this is going to cause an error
+28:54
+okay we're not throwing it like in the example I just showed but JavaScript is going to throw it for us but that's
+29:00
+going to cause JavaScript to do is look for the catch block immediately very similar to a break statement in Loops
+29:06
+we're not ever going to reach any code down here like lines 10 and 11 inside of
+29:12
+this try block all right so just to demonstrate that to you um if we look at this we can see that we
+29:20
+just get that error printed out which is a type error cannot read property color of undefined okay and if I just do
+29:28
+another console let's just say dot error here and I'll say something bad happened
+29:34
+you can see that this does get run because it's inside the catch block
+29:40
+right so this the stuff inside the cache block will get run unless to stop in the catch block also has an error so I don't
+29:47
+want to get into a kind of air reception here but we'll just stick with the basic cases for now
+29:54
+all right so hopefully that makes sense I want to kind of go into the last topic
+Try Catch Scoping
+30:01
+of this video which is a a bit tricky um when when you first use try and catch
+30:06
+and as we start using them with things like async and weight for example um what's gonna kind of become a thorn
+30:13
+in our side a lot of time is going to be a issue with what's called scope we're gonna kind of see a bit more complex
+30:20
+examples of Scope when we get to topics that are super interesting like closure however
+30:26
+um for now I just kind of want to give a basic example of how scope works just so that we have it at the back of our mind
+30:31
+so you can be aware of it when you're using try and catch just so that you don't run into these issues and can
+30:36
+actually resolve them okay so what do I mean by this so let's take a look at this code right here
+30:43
+let's say that we have this try catch block I'm creating a message uh hi
+30:48
+logging out the message and then throwing an error this is all totally fine so far we've seen this so far
+30:54
+together in this video that's going to cause this error to be thrown it's going to look for the catch block which is
+30:59
+right here which we do have so our code is not going to crash and we're going to come down here we're going to log out the error which
+31:06
+is Boom so that's fantastic no issues there but then we're going to try to console error the actual message right
+31:13
+this message which is the variable message is up here in the try block
+31:19
+okay so I want to show you what happens let me go back to vs code I'm going to create a new file I'm going to call try
+31:25
+scope.js okay and you create a try block and then
+Try Catch Scoping Examples
+31:31
+simulate that and there's a const message equals hello
+31:36
+in a console like the message up here so that's fine right no issues there then I'm going to throw a new error
+31:46
+and they say oh no okay I'm gonna catch that error I'll just go a slightly different syntax
+31:51
+because you'll see this once in a while as well some people just like to call it R because they want to save those keystrokes and our console.error out the
+31:58
+error and then I'll also console.log out for now uh the message
+32:07
+just so we can see um the difference I should probably actually error this uh just because it's in the cache box so I
+32:13
+actually switched that um and I'm going to run this and let's see what happens so if I run node and do triscope.js
+32:20
+let's just kind of go over this right message is here hello we're gonna see hello we're going to throw a new error saying
+32:27
+oh no is a message this oh no it and the error itself is going to come down here into catch we're going to also error
+32:34
+that error object with the oh no message inside it that's fine then we're going to look for the message variable
+32:41
+okay we know because we can see that message exists right here right but
+32:46
+let's see if this actually works in the context of try capture JavaScript so a lot of crazy stuff is happening here I'm
+32:53
+going to try to scroll through because I know my face is in the way as usual um so we see a hello to start right so
+33:00
+that's fine that's coming from right here then we get the error oh no right so that's fantastic because that's what
+33:05
+we expected that's coming from line six right here just scroll down a little bit now you don't need to see the rest of
+33:10
+this the important part is right here right we're actually getting another error but this error is causing our
+33:18
+program to crash okay so just to really emphasize this I'm going to do a console
+33:24
+log down here I'm going to say program complete
+33:30
+okay I'm gonna clear this and rerun this one more time and I know my face is covering this right but we see hello and
+33:36
+oh no here we see messages not defined but just down here I hope you see that there's no program complete message
+33:44
+okay and I assure you that it's not here right there's no program complete
+33:49
+message and that's because this code right here line seven it is going to be looking for the
+33:55
+message variable and it's not going to find it and that seems kind of bizarre right
+34:01
+because obviously messages right here so what's going on right so really quick
+34:06
+before I go into that the reason why we never get down here is because we're actually getting an error here so unless
+34:13
+we had another try catch block inside of our catch block which is what I was talking about earlier with the kind of
+34:18
+air reception this is actually causing our program to crack to crash to catch
+34:24
+um because we don't have a catch inside of our catch right a catch only exists
+34:30
+for the try above it it doesn't actually deal with errors inside of itself okay so that's where we're getting this
+34:37
+message which is a different type of error it's a reference error and the reference error is trying to look for a variable called message which it doesn't
+34:43
+exist so why is this happening right this is happening because it's something called scope
+34:49
+so a scope is the area in the code where a variable basically exists or is
+34:57
+visible okay so if you think of it as two Scopes right here everything in between these
+35:05
+curly brackets in fact everything in between any set of curly brackets in JavaScript is its own scope any
+35:13
+variables inside of there can't be accessed outside of it okay which we'll see more in future videos as well but if
+35:20
+that's the case inside of these curly brackets we have kant's message which is going to
+35:27
+be high we have access to message right here which is why we can log it out because we're in the same scope where we
+35:33
+declared a message right wherein this orange scope still for the try block however down here
+35:41
+once we get to catch there's another set of curly brackets this is a different set of curly brackets okay and inside
+35:49
+those color brackets we don't have access to the variable that was declared up here in this set of curly brackets
+35:56
+all right so if we try to access message it's not defined it doesn't exist that
+36:01
+would be the same as just trying to log out messages as the first line of our code in a program if you think about it
+36:07
+like for example if I just got rid of all this code and the first thing I wrote in my program was console logout
+36:13
+message right if you think about it this doesn't make any sense right because the question you should
+36:19
+ask is well where is message message doesn't exist right and this is exactly what's happening right here on line
+36:26
+seven right this exact thing it doesn't see up into this scope
+36:33
+now scoping is a bit complex and there's a lot of things that can go on so exactly between curly brackets is not
+36:40
+always true but a lot of the times it is true especially with constant let and we
+36:46
+can take advantage of this and this is a very useful feature but just be aware of it specifically in the context of try
+36:52
+and catch until we look at it in other contexts later okay so we don't have access to message because it was
+37:00
+declared up here if I created another message here let's just say kant's message equals meow
+37:07
+right and I try to run this code let me get rid of this here because message doesn't exist down here and I try to
+37:13
+rerun this you'll see that I actually do get me out and then program complete right because I am creating message here
+37:19
+before it gets printed out inside of this scope right here for the catch
+37:25
+now normally you can't create a variable twice with the same name right but in a
+37:31
+different scope you can because they don't clash with each other now this is ultra confusing so I'm actually going to
+37:37
+get rid of that and we're going to look into this in more detail later on I just wanted to show you that kind of forsake
+37:42
+of example all right so how can we kind of fix this
+37:47
+so that's kind of this last part of the video to wrap this up okay this is probably one of the more important parts
+37:54
+especially as we start looking with promises in async awaits and many other topics as well that use try catch a lot
+38:01
+we can take advantage of the fact that there's what's called an outer scope or Global scope or even I would probably
+38:07
+say outer scope in this case because technically Global scope means something slightly different so if we actually created message
+38:13
+outside of this try catch block right up here
+38:19
+and then we try to use it instead of try and catch then it is available to kind of those Scopes because it's going to
+38:26
+look for a message and if it doesn't find it in the curly brackets immediately surrounding it it's
+38:32
+going to kind of look up it's going to like look upwards to see if it can find it
+38:38
+that's kind of the way to think about it okay it's going to look in the scope surrounding it
+38:43
+okay so these Scopes work from outside in and inside scope can't access
+38:50
+um or sorry can access the outer Scopes but out here we cannot access things
+38:56
+inside of these color brackets so we'll look into that in more details as we look at topics like closures but this is
+39:02
+an ultra confusing topic I really really understand that um it's gonna like probably break your brain a little bit
+39:09
+in fact I always still mix this up sometimes um as I work through the code but it
+39:15
+definitely gets easier as you go through it and especially as you start to understand Concepts like closure so for now
+39:21
+what we need to know is that here we can have a scope that is available in both
+39:27
+the try and the catch blocks okay so let's see how that we can fix
+39:34
+our code in this case if I said const message equals meow up here for
+39:40
+example and I got rid of message here and I tried to rerun this code
+39:46
+okay what we would see is that now it would work it would not crash okay we
+39:51
+would see meow being printed out which is on line five we would see um oh no the error message right here I
+39:58
+think change it actually probably said hello instead of got too carried away but then we see on line eight and nine
+40:05
+we see uh we see our error printed out and then we see meow printed out and finally our program does complete
+40:10
+successfully right in fact now I can even console log in this message right
+40:16
+here and we'll see that we also get that working as well because this meow is in
+40:21
+the same scope as this console log over here right it's in the outer scope in
+40:26
+this case in the global scope of this code okay so this scoping thing again I
+Next Steps
+40:33
+really appreciate that it's very very confusing right I wouldn't expect you to get this right away this is just
+40:39
+something you keep at the back of your mind as we're going to more um kind of topics like async await as we
+40:45
+get to topics like closure as I mentioned a couple times this will make a lot more sense and we'll kind of see why this is actually a feature instead
+40:52
+of something that's just of annoyance so that said what we're going to do to really get a handle on try uh catch and
+40:59
+exception handling and throwing and catching as we're going to go through a bunch of exercises for try catch and JavaScript next that's going to set us
+41:05
+up really nicely to go through async await syntax which is what I've been kind of anxiously waiting to get to
+41:11
+which is kind of a modern way to actually work with promises a little bit easier than what we saw in the previous
+41:17
+videos so I can't wait to get to those exercises for practice together I'll see you there
+41:25
+good foreign
+41:31
+[Music])
+
+2.JS eval(0:00
+in this video I'm going to demonstrate
+0:02
+how to use the eval function so here
+0:07
+I've got a program that will convert
+0:10
+ounces to pounds so they have to do is
+0:13
+just enter ounces I've got a Clear
+0:16
+button that clears it clears both the
+0:18
+message and what's in the text box so
+0:23
+that we can do it again what we want to
+0:26
+do is expand this so that somebody could
+0:29
+add some several ounces together and
+0:32
+then and then convert the sum of them so
+0:36
+notice that when I do that it just uses
+0:40
+whatever's there it's not able to do the
+0:42
+math and reports not a number as the
+0:44
+pounds so one way that I can fix this is
+0:47
+to use the eval function and the
+0:50
+JavaScript eval function takes a string
+0:54
+which we always get a string from the
+0:56
+textbox write whatever the input
+0:58
+whatever is input in the textbox is a
+1:00
+string and that's what we're doing we're
+1:02
+getting that value in that text box so
+1:04
+the file function takes a string and
+1:07
+tries to convert it to math or try to do
+1:10
+the math convert it to a mathematical
+1:12
+expression and then it give produces the
+1:15
+results of that mathematical expression
+1:18
+so if I go ahead and get that value from
+1:22
+that textbox and then I do the eval
+1:24
+function on it what is going to do is
+1:27
+try to evaluate it mathematically and
+1:29
+produce a result so let's see how that
+1:32
+works so now we do 23 plus 54 plus 16
+1:40
+and convert and it added that all up to
+1:45
+93 and and then it did the conversion so
+1:48
+it worked out great for us now there's a
+1:51
+couple of things to worry about when you
+1:53
+do the eval function so one of the the
+1:56
+eval function does one of two things it
+1:59
+either takes a string and tries to
+2:02
+convert it to mathematical expression or
+2:04
+it tries to execute it
+2:09
+so if I enter a command a JavaScript
+2:13
+command it actually will execute it so
+2:16
+consider if I enter this statement right
+2:19
+notice it'll just be read it as a string
+2:22
+but notice that this is a JavaScript
+2:23
+command now when they push convert the
+2:27
+Val function actually executed and my
+2:29
+web page is gone now this is pretty
+2:31
+benign all it is is document dot write
+2:34
+which just replaces whatever you have on
+2:36
+your page with whatever the write told
+2:39
+it to do so we won't do much damage but
+2:42
+you can imagine there are Java scripts
+2:44
+commands that could be executed and
+2:46
+cause a lot of problems so when you use
+2:48
+the eval function it's really important
+2:51
+that you don't allow any input from a
+2:53
+user to get fed to the eval function and
+2:55
+one way to stop that is actually in this
+2:58
+textbox I'm going to set it to read-only
+3:01
+so here I'm setting a parameter the
+3:04
+attribute read-only and you don't have a
+3:05
+get rid of value you can say read-only
+3:07
+equals read only but html5 no longer
+3:10
+requires it so the style the preferred
+3:14
+way to do it is to just put the
+3:15
+attribute itself and this will make it
+3:18
+read-only now if I try to put something
+3:20
+in this textbox so I try to copy paste
+3:23
+in it it won't work if I try to type in
+3:25
+it so I'm clicking on it but it's not
+3:27
+even showing up active so now the only
+3:30
+way that users can enter it is through
+3:32
+these keys that I've programmed in to do
+3:35
+certain things so they can't make up
+3:37
+things to put in there it just has to
+3:40
+respond to these keys that are in there
+3:42
+so now it can do those conversions so
+3:46
+that's how you can use the eval function
+3:48
+notice it can do multiplication as well
+3:52
+to evaluate something that is that a
+3:56
+string that is sent to it that is more
+3:58
+complex than just entering it)
+
+3.Why is eval() evil(Intro
+0:00
+allow is a javascript function that
+0:02
+learns or evaluates as playing of code
+0:05
+it must seem pretty useful at first but
+0:07
+many developers consider it to be evil
+0:10
+but why as we all know everything good
+Cost
+0:13
+comes with the cost well accept
+0:15
+subscribing which is completely free and
+0:18
+helps the channel out in about case the
+0:20
+costs are performance security and
+0:23
+debugging first let's look at
+Performance
+0:25
+performance you see javascript engines
+0:28
+such as v8 like to use a just-in-time
+0:31
+compiler which compiles your code before
+0:34
+running it to improve speed the problem
+0:37
+with the vowel is that the compiler
+0:39
+doesn't know the value of the string
+0:41
+until the code is run so javascript has
+0:44
+to include that string at runtime this
+0:46
+tends to be really expensive in
+0:48
+performance especially if this point is
+0:50
+complex
+Vulnerability
+0:51
+there are also many vulnerabilities when
+0:54
+using a vowel especially if the code is
+0:56
+given by the end user they can quite
+0:59
+literally crash the program and even for
+1:01
+a steel or destroy your data
+1:04
+there are packages like safe avail which
+1:07
+is better than a vowel but it's still
+1:09
+not recommended in production and
+Debugging
+1:12
+finally evolve code is hard to debug we
+1:15
+all spent hours debugging the simplest
+1:18
+of bugs
+1:19
+imagine having to debug code that's
+1:21
+dynamically generated with the well this
+1:24
+can be a pain especially when having to
+1:26
+debug complex code that changes based on
+1:29
+many factors so i'm not saying allow is
+Conclusion
+1:32
+bad and you should never use it and it's
+1:35
+just that a while does more harm than
+1:37
+good if not used correctly there are
+1:40
+legitimate use cases for a while mostly
+1:43
+in low-level interpretables and command
+1:45
+lines
+1:46
+just be extra careful when using it and
+1:49
+try to avoid it as much as possible
+1:51
+because you might look at it later on
+1:54
+thanks for watching and i'll see you in
+1:55
+the next one)
+
+4.Difference Between typeof and instanceof in JavaScript (0:00
+foreign
+0:02
+this video let's learn about the
+0:04
+JavaScript interview question that is
+0:06
+the difference between type of an
+0:08
+instance of in JavaScript so let's see
+Typeof
+0:10
+that so for example here you have
+0:12
+constant a and we have provided one
+0:14
+string value and constant B and we have
+0:17
+created a new object string like this so
+0:20
+both the type of an instance of these
+0:23
+two are used to check the type of a
+0:25
+value what is the type of a value that
+0:27
+is what these both operators are going
+0:30
+to do firstly let's see about the type
+0:32
+of yes type of a what it returns so type
+0:35
+of a it returns string so because this
+0:38
+is of type string this type of is an
+0:41
+unary operator it returns a string so
+0:46
+will be returning the value in string
+0:48
+and the value inside this can be
+0:50
+anything it can be a string number
+0:52
+Boolean anything it can be but it will
+0:54
+be returned in the form of each string
+0:56
+remember that and also it can return a
+0:58
+string number or a Boolean object so
+1:01
+these are the values for this type of
+1:03
+this is a unary operator it means only
+1:05
+one operand is enough to evaluate the
+1:08
+result so now let's check the type of B
+1:12
+so type of B now what it gives the type
+1:15
+of p is object now because this will not
+1:19
+give this will not written as a string
+1:21
+as you used new it means you're creating
+1:23
+a new object string object so that's the
+1:26
+reason the type of B becomes object here
+1:28
+so this is about type of so coming to
+Instanceof
+1:31
+the instance of so the same example
+1:33
+let's see for the instance of so let's
+1:35
+see the instance of
+1:37
+so when you you're using instance of
+1:40
+instance of is a binary operator it
+1:43
+means let's write the Syntax for the
+1:44
+instance of so it will be like object
+1:47
+instance of
+1:49
+Constructor
+1:51
+so this is the syntax of the instance of
+1:54
+this is how you need to give the
+1:55
+instance of so this returns true the
+1:58
+instance of what it does it will not
+2:00
+give what the type so it will just say
+2:02
+whether it is true or not so let us say
+2:04
+instance of a is string so in our case
+2:08
+is it true or false it will only return
+2:10
+whether it is true or it is false that's
+2:12
+it so now a instance of string so string
+2:16
+is a Constructor function here okay now
+2:18
+a is an object and a object is instance
+2:21
+of the Constructor function now right
+2:23
+this is a normal string so that's the
+2:25
+reason it returns false so when you are
+2:27
+using instance of this is a binary
+2:29
+operator it means it needs two things to
+2:33
+evaluate to a value it needs two things
+2:35
+whereas type of is an unary operator it
+2:38
+returns any of the values within this
+2:40
+double quotes string as a string but
+2:43
+type instance of will return true or
+2:45
+false now if you take this same example
+2:47
+with B instance of string
+2:49
+yes it returns true the reason behind
+2:52
+this is yes B is created with this
+2:55
+string Constructor function so that's
+2:58
+the reason it returns true so the same
+Primitive Types
+3:00
+things the values were different here so
+3:03
+this these are the this is a primary
+3:04
+difference between the type of an
+3:06
+instance of so mostly the instance of
+3:09
+will not be work so let me write this
+3:11
+point instance of
+3:13
+does not work for the
+3:17
+it will not work for the Primitive types
+3:19
+so primitive types means so number
+3:21
+Boolean and uh string so these are the
+3:24
+Primitive types most of the cases don't
+3:25
+use instance of for the Primitive types
+3:28
+so what if if you want to check whether
+3:30
+a given value is a string a plane string
+3:33
+primitive or existing object so for that
+3:36
+you can write your own function and you
+3:38
+need to check the both the things so let
+3:40
+me show you that constant E string so
+3:43
+I'm writing a function
+3:44
+so where I want to check whether the
+3:48
+given string is a primitive or an object
+3:51
+so for that what I am doing I am
+3:52
+returning the type of
+3:54
+string the type of string if it is equal
+3:57
+to string
+4:00
+so then that is a primitive string if
+4:03
+not or I am saying this and I am telling
+4:06
+this string instance of
+4:10
+instance of string Constructor function
+4:12
+so this is how you can declare so now
+4:15
+what we are doing we are checking
+4:17
+whether the given string is primitive
+4:19
+type or it is a object type so both you
+4:23
+are checking in a single function so you
+4:25
+can use this each string and you can
+4:27
+verify both whether it is a primitive
+4:29
+string or it is a string created with
+4:31
+the string object so let how to check
+4:34
+this so let me write this is string
+4:36
+so now if I write hello world here so
+4:40
+this is a primitive string so just a
+4:42
+string so what it returns yes here also
+4:45
+it will return true because this is a
+4:47
+string it will go here and type of this
+4:49
+string is equal to string so that's the
+4:51
+reason it returns true so the same is
+4:54
+string so I can create a new object new
+4:58
+string Constructor object and here also
+5:00
+if I give hello world so now what it
+5:03
+happens so it will also return true so
+5:06
+this is what happening so you are using
+5:08
+a same function E string and you are
+5:11
+passing A Primitive type also you are
+5:12
+getting the answer and if you are
+5:14
+passing a Constructor function also you
+5:15
+are getting the answer so if you want to
+5:17
+check both the Primitive type and the
+5:19
+object Constructor function or not then
+5:22
+you can use something called like this
+5:23
+okay
+5:24
+and we can learn few more things with
+5:26
+the type of an instance of so for
+5:28
+example there is also one more interview
+5:30
+question like they will be giving like
+5:31
+type of type of 10 like this
+5:35
+so what is output here so first thing is
+5:37
+like whenever you get some questions
+5:39
+like this type of 10 what it returns it
+5:42
+returns
+5:43
+number but number within this string so
+5:47
+this is what it is evaluated the first
+5:49
+part this is will be evaluated into a
+5:51
+number but that will number will be in a
+5:54
+string so that's the reason again if the
+5:56
+type of number it means this is in
+5:58
+string now so what you will be getting
+6:00
+here you will be getting an object as a
+6:03
+result so for this the answer is object
+6:07
+so we need to understand that so this is
+6:09
+the one thing this is also an internally
+6:11
+if you know more about the type of so
+6:14
+what is type of returning you back it is
+6:16
+written a string and it is keeping the
+6:18
+type of the operand inside this string
+6:20
+that is what this type of operator is
+6:22
+doing fine so let's learn one more Point
+6:25
+here
+6:26
+let date equal to new date now let's see
+6:30
+one more Point related to the instance
+6:32
+of so if I say date instance of
+6:38
+if you say date instance of date okay
+6:40
+now is it true or false yes it is true
+6:43
+because date is an instance this is an
+6:45
+object and this is created with the help
+6:48
+of the date Constructor function so it
+6:50
+returns true fine so let me check the
+6:53
+same thing date instance of
+6:56
+objective
+6:57
+so here this one also Returns the true
+7:00
+what is this object so in JavaScript
+7:03
+whatever you have so that is all the
+7:06
+Primitive types so let me write a point
+7:08
+here so all
+7:10
+non-primitive
+7:13
+all non primitive objects
+7:17
+or instance of objects so in JavaScript
+7:21
+we will be having an object this is a
+7:23
+parent object all the other non
+7:25
+primitive objects so now I am also
+7:27
+mentioning this as a non-premity object
+7:28
+so this is non-primitive object this is
+7:31
+not primitive so that's the reason this
+7:33
+is an instance of the main object this
+7:36
+is a parent object for all the instances
+7:38
+so that's the reason here you are
+7:39
+getting as this as a true so that is the
+7:42
+reason not only this date whatever the
+7:44
+object you can also give the string also
+7:46
+here that will also return back true for
+7:48
+example if I say B instance of object
+7:51
+yes this one also returns true because B
+7:54
+is a non-permitive object and object is
+7:56
+a parent for all the other objects so
+7:58
+that's the reason here also you'll be
+7:59
+getting it as a true
+8:01
+so the main differences or this is a
+8:03
+unary operator this is a binary operator
+8:06
+and here you will be getting the output
+8:07
+in terms of string and you will be
+8:10
+getting any like string number uh
+8:12
+Boolean all the types you'll be getting
+8:13
+here but with the instance of it would
+8:15
+be written new false or true and now you
+8:18
+can check whether it is a primitive or
+8:20
+not primitive then you can go with this
+8:22
+okay and this is what we know and uh so
+8:26
+whenever you want to check A Primitive
+8:28
+types okay plain primitive types then go
+8:31
+with the type of so if you want to check
+8:33
+any of the instance objects related
+8:36
+things go with the instance of so this
+8:38
+is the differences between the type of
+8:40
+an instance of and when to use what and
+8:42
+majorly we use this type of an instance
+8:44
+of to check whether the value what is
+8:47
+the type of the value we have so hope
+8:49
+you understand the video thanks for
+8:51
+watching please subscribe for more
+8:52
+videos)
+
+5.Object.create - Object Creation in JavaScript(0:01 today we are exploring object.create
+0:04 what it is why it exists and how to use
+0:09 it if you are new to the channel
+0:13 welcome I am your host mpj and you are
+0:18 watching fun fun function first of all
+0:21 what is object.create object.create is a
+0:25 static method on the object prototype
+0:30 type
+0:31 that creates a new object with the
+0:35 Prototype set to assertion
+0:39 object but that that's a very long
+0:42 explanation and even though I wrote it
+0:44 and I read it I got bored halfway and so
+0:48 out let's instead have a look at what it
+0:51 does let's say that we are writing an
+0:53 Enterprise grade application and we have
+0:55 a normal object that exists in such
+0:57 applications such as a cat
+1:03 [Music]
+1:13 let's run that uh no I'm calling this
+1:18 file object create sample JS and it
+1:22 says that cat is sick that is fine but
+1:26 we want multiple uh types of cats in our
+1:29 application that sounds different so we
+1:31 um
+1:45 [Music]
+1:55 [Music]
+2:05 all right uh I'm going to run that no
+2:08 doob crate sample.
+2:11 JS I'm going to make one more cat
+2:18 [Music]
+2:34 let's run that no not object sample what
+2:40 oh yeah sorry I forgot the
+2:43 JS
+2:47 and cuts Cuts Cuts Cuts let's walk
+2:49 through this so we're creating h a
+2:52 simple object here this is nothing
+2:55 special or wonderful about this object
+2:57 it's just an object literal with a
+3:00 uh with a method or a property that we
+3:03 set to a function which is that's then
+3:08 we can call it a method and the
+3:10 console.log IT logs out the uh property
+3:14 sound on whatever this is down here we
+3:18 call make sound uh so that means it will
+3:22 go into this and it's going to uh uh
+3:25 come to this line here and it's going to
+3:27 pick out whatever sound is and we have
+3:30 set sound here on this line we set the
+3:34 sound of Mark to
+3:36 M and that is why it logs out sound if
+3:41 the concept of this uh confuses you uh
+3:44 you might want to check out the previous
+3:46 episodes in this uh series on object
+3:49 Creation in JavaScript you can find a
+3:52 playlist with all the episodes in uh in
+3:55 the description of this video so check
+3:57 that out if you watch the series you
+4:00 should be familiar with everything up to
+4:02 this point what you don't know is what
+4:07 this does what is this what is happening
+4:10 inside of object. create what kind of
+4:13 sorcery does this do object.create
+4:17 creates a new object with the Prototype
+4:21 set to a certain object so this
+4:24 object.create will create a completely
+4:27 new fresh object and and uh it will set
+4:32 the Prototype of that object to be
+4:35 Cat Let's verify that um I'm going to
+4:39 write
+4:42 console.log is Mark a
+4:47 cat and then I'm going to
+4:51 do this I'm going to call Mark dot is
+4:57 prototype of
+5:00 cat I'm going to run that node doob
+5:06 sample. JS Force oh I did not expect
+5:10 that oh okay it's because I'm I'm I'm
+5:13 I'm thinking in backwards land so this
+5:16 does not make sense uh I'm asking if
+5:19 Mark is a prototype of the cat which it
+5:23 Mark isn't it's the cat that is the
+5:27 Prototype of Mark Mark is being derived
+5:31 or copied or whatever you like to
+5:33 however you like to think uh from the
+5:36 cat so it should be cat is a
+5:40 prototype of of Mark is cat the
+5:44 Prototype of Mark and now I run that
+5:46 again and you see that is Mark a cat
+5:50 true I accidentally said there before
+5:53 that uh Mark and and Waffles are are
+5:55 copies of the cat which is not uh not
+5:59 true that's an incorrect way of thinking
+6:01 about it what waffles and Mark are is uh
+6:05 new objects that uh don't have the
+6:09 property make sound themselves but they
+6:12 have a reference to a prototype a cat
+6:15 and whenever we ask for something like
+6:18 make sound that does not exist on
+6:20 waffles and Mark themselves they uh
+6:24 delegate that call to their prototype
+6:26 and ask the Prototype if do you have the
+6:29 method uh make sound and so call that in
+6:32 a little bit we're going to look at how
+6:35 to use object.create but first I want to
+6:38 talk about why object.create exists in
+6:42 the first place what's the purpose of
+6:44 this thing well object. create is more
+6:49 natural to the Prototype model than the
+6:53 new keyword so in previous episode we
+6:56 looked at how to apply the new keyword
+7:00 to a function in order to simulate
+7:04 something that looked sort of like
+7:06 classes and that way was for a long time
+7:09 the the the facto or the the standard
+7:12 way of of creating objects in JavaScript
+7:15 it was a kind of sort of class the
+7:17 problem was that it it it kind of looked
+7:22 like a class but it looked really weird
+7:27 and it had a bunch of quirks that yes
+7:30 didn't really make sense uh from the
+7:34 standpoint of what you expected of a
+7:36 class so Douglas crockford uh which you
+7:40 might know for being the author of
+7:43 JavaScript the good parts uh he also did
+7:47 JS slint you can think of Douglas
+7:49 crockford as the grumpy grandfather of
+7:52 JavaScript and he was annoyed with the
+7:55 uh state of object Creation in
+7:57 JavaScript so he wrote object do creates
+8:00 as an attempt to make something that uh
+8:04 was more in line with how the Prototype
+8:07 worked like something that made a little
+8:10 more sense and didn't try to pretend
+8:16 being something that it's not you know a
+8:19 class and Douglas crockford uh being a
+8:21 person that has a significant uh
+8:23 influence on the JavaScript Community uh
+8:26 managed to get uh object. create into
+8:30 the language itself so object.create is
+8:33 built into JavaScript even though it
+8:35 wasn't at first the more inquisitive
+8:37 student might notice that we have been
+8:41 setting the Prototype directly in
+8:43 earlier episodes we have just created
+8:45 objects and then do just setting the
+8:48 Prototype why uh why introduce object.
+8:52 create why doesn't that just make things
+8:55 more complicated and yes it does uh
+8:57 object. create uh jumbles together the
+9:01 creation and the of the object and
+9:03 setting of the Prototype but uh set
+9:07 prototype of and messing with the
+9:10 Prototype directly on existing objects
+9:12 is a very bad idea from a performance
+9:15 standpoint it makes it very hard for the
+9:18 JavaScript engine to uh optimize the
+9:21 speed of your application which defeats
+9:24 the purpose of using the prototype in
+9:26 the first place so in real life we never
+9:28 use set prototype of when we never
+9:31 assign new prototypes to object like we
+9:34 did in previous episodes set prototype
+9:37 of is very nice when explaining the
+9:40 concept of a prototype but in a real
+9:42 life application you should not be using
+9:45 it you should be using object.create
+9:46 which brings us to how to use
+9:49 object.create but before we do I'm going
+9:52 to take a walk and a lunch break yeah
+9:55 all
+9:57 right in the last last week I've gotten
+10:00 a bit addicted to the uh video Q&A app
+10:04 whale I've been answering a lot of
+10:06 questions on whale this morning I
+10:07 answered this one by Toni how do you
+10:10 handle ideas about the things that you
+10:12 can solve with your programming skills
+10:15 and what stops you from turning sad
+10:18 solution into a business man this
+10:21 question hits close to home for me this
+10:23 is a huge problem for me uh I have like
+10:26 a million ideas all the time and uh
+10:29 being a programmer you see that oh I
+10:31 could solve this problem with software
+10:33 so easily and it will benefit so many
+10:36 people if if there just was a piece of
+10:38 software that solve this and this line
+10:40 of thinking has caused me to start
+10:44 easily 30 projects but I sto myself from
+10:47 uh doing that nowadays uh because those
+10:51 projects never amount to anything the
+10:53 reason these projects uh almost never
+10:55 amount to anything is that launching a
+10:59 software product is not just coding it
+11:02 it is uh building a business around it
+11:04 creating a business model uh investing
+11:07 in that business uh launching that
+11:10 product marketing that product and then
+11:12 over time maintaining and uh and running
+11:15 that business building the software is a
+11:17 tiny tiny bit of all that work so now
+11:21 whenever I think of this awesome
+11:25 software idea that would change the life
+11:29 of a couple of people and it would be
+11:31 really great I ask myself hm am I really
+11:36 willing to spend the next uh one or two
+11:40 years of my life focusing on focusing on
+11:43 this thing because that is honestly what
+11:45 it would take to to make it happen and
+11:50 usually that is not the case it's the
+11:53 ideas are often not that great I really
+11:55 don't like when people say that oh I
+11:57 have so little time time is the only
+12:00 thing that we have in abundance like
+12:03 it's this huge resource of of of ours
+12:07 that gets replenished every single day
+12:10 so if you have that feeling that oh
+12:12 there's so little time I'm so busy then
+12:15 the problem is not really the amount of
+12:17 time that you have you have vast amounts
+12:19 of it the problem is how you spend that
+12:22 time in case you're new to this channel
+12:24 I live in Sweden and I'm also
+12:27 stereotypically close to a Ika or Ika as
+12:31 it would be said in Swedish and this is
+12:34 where I'm going to eat lunch because
+12:36 lunch is a dirt cheap
+12:45 here all right we're back how to use
+12:49 object. create we're back to the example
+12:51 that we had before uh I'm going to clear
+12:54 the console a great way to understand
+12:57 tools you know libraries uh or or
+13:00 builtin functions is to just try to
+13:03 reimplement them so that is what we're
+13:05 going to do first we're going to create
+13:07 object.create and we're going to call it
+13:10 object create let's do it
+13:17 [Music]
+13:36 okay so what arguments does our object
+13:39 create function take well it takes a
+13:42 prototype let's just call that Proto uh
+13:45 because I think that uh prototype is
+13:47 probably a reserve keyword I don't know
+13:50 but I'm guessing object.create actually
+13:52 takes a second uh object second argument
+13:56 uh that is uh a proper is object um we
+14:01 are not going to deal with that today
+14:03 it's not really related to how object
+14:06 creat works and you don't need it to
+14:09 understand this and I honestly don't
+14:11 think you need it period the first thing
+14:14 that object. create does internally is
+14:17 to create uh an object just a simple
+14:21 object and then it's going to set the
+14:25 Prototype of that
+14:26 object we use the set prototype of uh
+14:32 and we're going to set the Prototype of
+14:34 the object to our Proto and then we're
+14:39 going to return the object let us run
+14:43 that node object create sample. oh I
+14:45 keep forgetting the Jaz oh yes and it
+14:49 still gives the same output as before so
+14:52 if we take a look here at object create
+14:54 like what this does so check this out
+14:58 create creates a new object here creates
+15:01 a new object and it then sets the
+15:04 Prototype of that object to a certain
+15:08 object which in this case is is is Proto
+15:13 that's it that's the gists of what
+15:16 object create does but we're not going
+15:19 to use the set prototype of because that
+15:21 is horrible from a performance
+15:24 standpoint and performance is again why
+15:26 we're using the prototype in the first
+15:28 place uh so we're going to do
+15:30 object.create
+15:31 here yes when using object.create in in
+15:35 real life you um like this
+15:38 seems this this implementation might
+15:41 seem raw to a lot of people and that is
+15:43 because it it is if this was a class
+15:47 this in initialization here this would
+15:49 probably be part of some Constructor if
+15:52 this was a real object there would
+15:54 probably be a lot more uh functionality
+15:57 and setup that goes on here probably
+15:59 some conditionals and some checks for uh
+16:02 that you've set all the
+16:06 cat anatomy so where do you put
+16:10 Constructor logic because object that
+16:12 object. create there is no space for a
+16:15 Constructor and the most common pattern
+16:18 is to simply just use an init function
+16:21 like
+16:22 init function and just like a
+16:25 Constructor you would here provide the
+16:28 data that is needed to construct the cat
+16:30 for instance sound and then you'd go set
+16:35 this do sound equals sound I know this
+16:39 is a contrived example you just have to
+16:42 imagine that the init function actually
+16:44 contains more logic I forgot a comma
+16:48 there and now we'll replace this sound
+16:53 uh assignment here with init
+16:59 there and the same thing down here
+17:05 init we run that again to make sure that
+17:08 it works as before yes we get the same
+17:11 output a handy pattern here is to just
+17:14 return this uh because then you can
+17:17 chain these calls and do object create.
+17:20 cat now just delete
+17:23 here do the same thing here I'll just
+17:29 b b b a new line and I run that again
+17:34 same output and that is it object.create
+17:37 is a uh very simple straightforward way
+17:42 uh to create objects that uh use
+17:46 prototypes object. create it's nice it
+17:49 has great CPU and memory characteristics
+17:52 uh and as long as you understand how the
+17:55 what the Prototype is this is a very
+17:58 straightforward and nice pattern if
+18:01 anything was confusing please post a
+18:04 question down in the comments if it
+18:06 wasn't confusing please help out the
+18:09 person that just posted that question in
+18:10 the comments you have just watched an
+18:13 episode of fun fun function if you're
+18:15 new welcome this is a programming show
+18:18 and I post new episodes every Monday
+18:20 morning 0800 GMT you have just watch an
+18:23 episode that was a bit tutorial like but
+18:26 I also do these other musing episodes
+18:29 where uh I'm that are more thought
+18:32 pieces where I uh talk about
+18:34 architecture working in a team
+18:36 productivity and stuff like that you can
+18:38 check that out in this playlist I am mpj
+18:42 until next Monday morning stay curious)
+
+6.The Object.assign() Method in JavaScript (
+
+    0:00
+hey guys hey go my name is DOM and today
+0:03
+I want to talk about the object dot
+0:05
+assign method in JavaScript so
+0:08
+essentially this method will allow you
+0:10
+to combine or merge two JavaScript
+0:13
+objects together okay so it's actually
+0:16
+quite useful so to demonstrate this I'm
+0:20
+going to create two extended JavaScript
+0:22
+objects so let's define a two constants
+0:26
+here so we'll call that first constant
+0:28
+or call this one course which is equal
+0:31
+to and objects okay
+0:33
+this object will have a single property
+0:37
+that being named okay so we have a
+0:41
+course and then the name of that course
+0:44
+the value for name can be something like
+0:47
+web program okay so you know a student
+0:54
+has gone to uni and he's studying the
+0:56
+course of web programming okay now this
+1:00
+student got a score of 92 in web
+1:03
+programming so let's make a new constant
+1:07
+and call this one a grades which is
+1:10
+equal to once again a new object this
+1:13
+object will contain once again a single
+1:16
+property that being a school okay the
+1:20
+score will be 92 so here we have two
+1:24
+separate objects
+1:26
+you know signifying a university course
+1:30
+of web programming with a score or grade
+1:33
+of 92% okay so we're gonna use the the
+1:38
+assign method to actually combine these
+1:41
+two objects alright so down here let's
+1:46
+make a new constant let's call this one
+1:50
+final results okay which will actually
+1:54
+be equal to object assign so we'll say
+1:58
+object dot assign okay so it's equal to
+2:03
+the return value of this assign method
+2:05
+now this one will take in two arguments
+2:08
+it's gonna be course and great
+2:13
+let's parse in course right here and
+2:16
+then grade as the second argument okay
+2:18
+let's now console.log the final results
+2:24
+but so now final result who have it'll
+2:29
+be a new object a brand new object with
+2:32
+the name and score properties and in the
+2:35
+respective values okay so let's now run
+2:38
+this Vista scripts press enter here and
+2:43
+we get an object named web programming
+2:46
+and a score of 92 so we can see how that
+2:49
+method there has actually combined or
+2:51
+merged these two courses sorry these two
+2:55
+objects together oh you can actually
+2:58
+pass in multiple objects or more than
+3:03
+two objects to the assign method so I
+3:06
+can put a comma right here and pass in a
+3:09
+third argument let's put a new object
+3:12
+inside here and say that the teacher of
+3:15
+this course the name was something like
+3:18
+I don't know missus missus water okay
+3:23
+and save this and run this script once
+3:26
+again press enter and we get teacher is
+3:30
+added to the final result object okay so
+3:33
+a sign is used to combine or merge
+3:37
+objects together alright so what happens
+3:43
+if you have a property in one object and
+3:49
+then the same property in a different
+3:53
+object so for example what if I have
+3:55
+score as a property of course and also
+3:59
+great an object can't have two
+4:03
+properties so the final result is gonna
+4:06
+actually pick one of these scores to be
+4:09
+the final score I'll put this school
+4:12
+here to be something like 75 and then
+4:16
+save this and run this script once again
+4:18
+we get 92 in the console okay so the way
+4:22
+it works is that
+4:24
+the the argument that was passed in the
+4:29
+last time so the second argument it's
+4:32
+gonna take control over the first
+4:34
+argument so whatever is passed in last
+4:39
+that'll be the actual value so if I make
+4:42
+this one twelve okay and run this script
+4:45
+once again we get twelve so the last
+4:48
+object will be the actual score score
+4:55
+value if there happens to be multiple
+4:58
+properties so multiple objects with the
+5:00
+same property name all right so that's
+5:03
+that now what this means is that you can
+5:06
+actually create a duplicate or a clone
+5:10
+of an object using this assign method so
+5:14
+let's make a new constant down here and
+5:17
+call this one
+5:18
+copy which is equal to object dot assign
+5:23
+we're gonna pass in an empty object
+5:24
+inside here okay and then pass in final
+5:30
+result as the second argument as I've
+5:33
+asked to say to this actually let's put
+5:35
+a copy inside the console dot log okay
+5:38
+if I was to save this and now run this
+5:42
+script we get a clone of the final
+5:47
+result object so this is a proper clone
+5:51
+of the object all right so this assign
+5:58
+method comes in handy especially you
+6:02
+know with regards to how it actually
+6:04
+will override a property name so we're
+6:09
+gonna see how you can actually use this
+6:11
+method inside your applications so let's
+6:15
+just get rid of all this stuff right
+6:17
+here and define a new function okay this
+6:22
+function is going to be call with
+6:24
+something like print print name okay
+6:27
+guess we'll take in an object being
+6:31
+options so to take in an options object
+6:34
+all right
+6:36
+this function is simply going to console
+6:40
+dot log and we just say put a slug at
+6:46
+the first name so say options dot first
+6:50
+name and then we can say options dot
+6:54
+last name so we expect that this this
+6:59
+options objects who have a first name
+7:04
+and last name property we're going to
+7:06
+just log it out okay so if also just say
+7:10
+prints name here and passing objects can
+7:14
+pass in a on at first name will say dumb
+7:18
+and last name can be decode no I can
+7:24
+save this and run this script and we get
+7:28
+Dom decode okay so this right here is an
+7:33
+object being passed into this function
+7:36
+so what if we only give the first name
+7:41
+let's save and run this script we get
+7:44
+done undefined so in this case here we
+7:48
+actually want defaults for this function
+7:52
+so what I have these properties always
+7:56
+you know always there for us by having a
+8:00
+default property if it's not passed into
+8:03
+the function okay so inside this
+8:06
+function let's make a new constant and
+8:09
+call this one default this will be equal
+8:13
+to an object and the default name so
+8:18
+we'll say first name is equal to
+8:22
+something like let's just say Steve and
+8:25
+the last name can be bottom so those are
+8:31
+the default values for this function so
+8:35
+now we can just say options equals and
+8:40
+then defaults so now we're gonna get the
+8:45
+defaults there but in this case here
+8:48
+we're gonna get Steven
+8:49
+bottle so how do I actually get this
+8:51
+first name to be you know passed into
+8:54
+this default object or to this options
+8:57
+property so that we can actually
+8:59
+obviously you know print it out so we
+9:02
+can do this using objects dot assign
+9:04
+okay insert a default Co we're gonna
+9:09
+have this we're gonna say object dot
+9:13
+assign and then pass defaults as the
+9:16
+first argument and then they're gonna
+9:19
+put options inside here so now so now if
+9:25
+there's a value or property inside
+9:27
+options it's going to override the same
+9:30
+value inside the same property inside
+9:34
+the defaults object all right so if we
+9:39
+just run this script one last time we
+9:42
+get Dom bottle so that right there is a
+9:45
+way you can use object or assign to
+9:48
+setup defaults inside your functions or
+9:51
+even your own class constructors alright
+9:54
+and that is how you can use the object
+9:58
+assign method in JavaScript thank you
+10:01
+for watching and I'll see
+)
+
+7.map, filter & reduce(0:00 map filter and reduce are higher order
+0:02 functions in JavaScript do know what
+0:04 higher order functions are shame on you
+0:07 go ahead check my previous video in this
+0:08 series you will get to know what higher
+0:10 order functions
+0:14 are most of the people understand what
+0:16 map filter and reduce are but don't know
+0:19 where to use
+0:20 it in this video we will be covering
+0:23 what is map filter and reduce and we
+0:24 will take a lot of examples to see where
+0:27 you can use these functions so let's
+0:29 just begin let's roll the
+0:31 [Music]
+0:37 intro
+0:39 hey first of all let's just start with
+0:41 our map function so map function is
+0:43 basically used to transform an array
+0:45 suppose we have this array 51 326 are
+0:48 the values in it and suppose if we want
+0:50 to transform it what do I mean by
+0:52 transformation so transformation means
+0:55 suppose if you want to transform each
+0:57 and every value of this array and get a
+0:59 new array out of it so this is one of
+1:02 the transformation of this array which
+1:04 is which is double of this array okay
+1:06 when I say double it means each and
+1:08 every value in this transformed array is
+1:10 double the original value or this is one
+1:13 of the transformation which means that
+1:15 each and every value is triple the
+1:17 original value and one of the
+1:20 transformation could be finding out
+1:22 binary of each of these individual
+1:24 elements in that original array so these
+1:27 three are the transformation and there
+12:29 can be a lot okay so I'm just giving you
+1:31 an example that if you want to transform
+1:34 this whole array you can do it with map
+1:36 function and here is when maap function
+1:38 is used so let's now see how we can
+1:41 write that code so to find out the
+1:43 output let's just initialize a variable
+1:45 const output okay and how we will call a
+1:48 map function on an array let's now see
+1:51 that so first of all we need to write
+1:53 the array which is ARR in this case and
+1:55 we used to have a DOT operator and after
+1:58 that we write map okay
+2:00 and then basically you have to pass in a
+2:02 function inside this a function which
+2:05 basically tells you that what
+2:07 transformation do we need do we want to
+2:09 double do we want to Triple or do we
+2:11 want to find binary or what do we need
+2:13 to do what is the transformation logic
+2:16 what we need to apply to each and every
+2:17 value of this array that is what we need
+2:20 to pass inside this map for over here
+2:23 suppose let's take an example to double
+2:25 these values so let's just pass double
+2:28 inside it so this double should be a
+2:30 function isn't it so let's create a
+2:32 function double okay let's call it
+2:35 function double so what it will do is
+2:37 basically it will double the values how
+2:40 do you write a function to double these
+2:41 values just do a x into 2 great so this
+2:47 doubles the value of x it returns X into
+2:50 2 and we passed this transformation
+2:53 function okay in this array do map what
+2:56 does it internally do is it will run
+2:58 this function over for each and every
+3:00 value of this array and create a new
+3:03 array out of it and that new new array
+3:05 will be inside output so let's just do a
+3:07 console log and see what we get inside
+3:09 our output right so if we do a console
+3:12 log of output and save the file here we
+3:16 see something let me just show you see
+3:19 the output is 10 2 4 6 12 so suppose if
+3:22 you wanted to Triple these values so how
+3:25 would you do that you can just instead
+3:28 of passing double over here we we can
+3:30 use a function triple how do you write a
+3:32 function
+3:33 triple this basically is a
+3:35 transformation logic you can call it as
+3:37 a transformation logic okay so if we had
+3:40 to triple we just need to return what
+3:43 yes you guessed it absolutely right so
+3:45 we just want to do a x into 3 uh why
+3:48 okay okay we need to pass in triple over
+3:51 here right so if we refresh the page see
+3:54 we get this output 5 3 9 68 so that's
+3:58 what we wanted right the triple of these
+4:00 arrays now let us see how we can
+4:02 transform binary can anyone of you guess
+4:05 that let's just see so we just have to
+4:07 pass in binary over here right so what
+4:10 is the logic for writing binary let's
+4:12 just create a new
+4:14 function uh binary okay and how do you
+4:17 convert a number to a binary so you just
+4:21 need to return X do2 string of two isn't
+4:27 it and just pass in binary over here
+4:29 here so if we write this see what we got
+4:33 so we got this binary of each of these
+4:35 numbers so 5 is 1 1 and similarly so
+4:39 that's how we write map function now let
+4:42 me tell you one more thing in a lot of
+4:44 places you will find something like this
+4:46 that instead of writing the code like
+4:48 this some people also prefer to just put
+4:51 a function inside it and calm down my
+4:53 friends this is totally valid syntax in
+4:56 JavaScript people who are coming from
+4:58 different languages pull their ears when
+5:00 they see such syntax but this is a
+5:02 perfectly valid JavaScript code you can
+5:04 pass in functions like this okay that is
+5:06 what is known as high order functions
+5:08 remember okay so you can also write this
+5:12 and this will behave the same way see
+5:13 that you get the same output so this is
+5:15 one way of writing it and a lot of
+5:17 places you will also find that some
+5:19 people write Arrow functions inside it
+5:22 you just have this syntax okay so I'm
+5:25 just showing you in case you encounter
+5:28 this and you just don't know what is
+5:29 happening so this is the same thing okay
+5:32 this is basically an anonymous function
+5:33 over here which we pass in and in fact
+5:36 we can even remove this return statement
+5:38 so when there is only one line inside
+5:40 this function which is returning
+5:41 something so we can just directly like
+5:44 remove this and we can remove these
+5:46 curly braces as well so this is also the
+5:51 same thing what the function does so
+5:53 basically if you want to transform a
+5:55 number array to a binary array of those
+5:57 values you can do it like this okay this
+6:00 is a perfectly valid syntax and if You
+6:02 observe clearly my friends this actually
+6:05 makes a lot of sense see you write array
+6:08 do map so it is basically mapping each
+6:11 of these values and what is the mapping
+6:13 logic okay what is the mapping logic it
+6:16 is that X or each and every value is
+6:19 transformed to its binary okay so it is
+6:22 like mapping each and every value to
+6:24 another value and creating a array and
+6:26 returning it into output okay so that is
+6:29 what map function does and that's all it
+6:31 is so this was a very basic example we
+6:34 will cover a little more advanced
+6:36 example later on in this video but let
+6:38 us first see what filter and reduce does
+6:40 so first of all let us just get rid of
+6:42 all this code so let's now talk about
+6:44 filter function so filter function is
+6:46 basically used to filter what so filter
+6:49 function is basically used to
+6:54 [Applause]
+6:55 filter no no I'm not kidding but yes
+6:58 filter function is actually used to
+7:00 filter the values inside an array okay
+7:03 so if we are given this array right 51
+7:05 326 suppose we want to filter out all
+7:08 the values which are odd inside it
+7:10 suppose if we want to filter out each
+7:12 and every value which is greater than
+7:14 four inside this particular array so it
+7:16 will result out to 6 and five or maybe
+7:19 we just want to filter out all the even
+7:21 numbers inside array or maybe we want to
+7:23 uh filter out all the numbers which are
+7:26 divisible by three inside this
+7:28 particular array so you are kind of like
+7:31 taking this array as an input and
+7:33 finding out a array which has only the
+7:36 values which are filtered based on some
+7:39 logic okay so let's just see how we can
+7:42 write that so let's now take a very
+7:43 basic example and let's now try to
+7:46 filter out all the odd values inside
+7:49 this array okay so how we can do that so
+7:52 to find the output let us again create a
+7:54 const output okay and what we will do is
+7:58 now we will call a filter method over
+8:00 array so we will do array. filter and we
+8:03 will write the filter logic inside this
+8:05 so now the filter logic would be to find
+8:08 out odd values inside this array right
+8:11 so maybe we need to write a function
+8:14 over here which is basically which
+8:16 checks whether an value is odd or not so
+8:19 maybe let's write a logic is odd okay
+8:22 and this is basically again a function
+8:25 oh [ __ ] I misspelled it function is odd
+8:28 okay and is odd basically takes an value
+8:33 and checks whether this value X is odd
+8:36 or not how do you write that logic you
+8:39 just do a X Mod by two and it basically
+8:42 checks whether a value is odd or not so
+8:44 that is how it filters let's now see our
+8:47 output over here and if we print it see
+8:51 we get 513 and why there is no 2 and six
+8:54 because when this function was checked
+8:56 against 2 and six so basically it
+8:58 returned false false isn't it so
+9:00 similarly if we just had to filter out
+9:02 all the even values so how we could have
+9:05 done is maybe we just pass in a function
+9:08 filter even and how do you find even
+9:10 values so even values are the ones where
+9:12 X Mod by 2 is equal equal to0 isn't it
+9:17 right we can do a even right filter is
+9:22 even so if we see only two and six are
+9:25 filtered out now suppose if we want to
+9:27 find out all the values which are
+9:30 greater than 4 okay so what we should do
+9:33 over here again return X is greater than
+9:36 4 right so so it just gives you five and
+9:40 six right so that's how we can do or
+9:43 maybe just okay so we had a bad name
+9:45 greater than four okay greater than four
+99:49 and let's have a greater than four here
+9:52 so so this gives you again greater than
+9:54 four values right so that's how the
+9:57 filter function works and again over
+9:59 here in this filter function instead of
+10:01 just passing this greater than four like
+10:02 this maybe you can just copy this
+10:05 function and pass in directly over here
+10:08 like this okay it works perfectly fine
+10:10 again it gives the same result or maybe
+10:12 just use a arrow function so I'm just
+10:15 showing you all this so that you are
+10:17 habitual of uh seeing this type of code
+10:21 okay and you don't get frustrated when
+10:23 you see such code written okay and it
+10:25 makes sense to you so and maybe some
+10:28 people write like this as well so this
+10:30 is a perfectly valid code so this video
+10:33 is not just about explaining what the
+10:35 filter function is doing but also when
+10:37 you read the code you should be able to
+10:39 understand and build the mental model of
+10:41 what is happening in the code right so
+10:43 if you read this code you should be
+10:45 aware of that okay ARR do filter what is
+10:48 ARR ARR is this array right this array.
+10:51 filter and what is the filter logic you
+10:54 only filter if x is greater than 4 okay
+10:58 that means all the values which are
+11:00 greater than four will be filtered out
+11:02 right suppose if I do all the values
+11:05 less than three would be filtered out so
+11:08 sorry three would be filtered out see
+11:10 you will get one and two right so so
+11:13 that's how you should be reading this
+11:15 code and understanding and writing this
+11:18 code okay so this was a very easy
+11:20 example but we will take a little more
+11:22 advanced example but first let us cover
+11:24 reduce a lot of people have texted me
+11:26 that please make reduce video please
+11:28 make red red video so here we are we
+11:30 will learn what is reduced now so first
+11:33 of all let us just get rid of this code
+11:36 okay so now let us see what is reduce so
+11:38 just like the name suggests reduce it
+11:41 actually does not reduce
+11:43 anything you know if I was given an
+11:45 option I would never name this function
+11:48 reduce okay because it is so confusing
+11:51 when it says reduce we don't know what
+11:53 it is reducing what does that reduce
+11:55 means okay filter makes sense map makes
+11:58 sense you are map in one to one value
+12:00 but says
+12:01 reduce so now let us just talk about the
+12:04 reduce function so reduce function is
+12:06 basically used at a place where you have
+12:08 to take all the elements of an array and
+12:11 come up with a single value out of them
+12:13 okay so um it sounds confusing but let
+12:16 me give you an example to give you an
+12:18 example maybe suppose if you have to
+12:20 take this array and you have to iterate
+12:22 over each and every element and find out
+12:24 sum of all these elements in this array
+12:27 right or maybe just try to iterate all
+12:30 these array and find out the largest or
+12:33 the maximum number inside this array so
+12:35 how would you do that here you can use
+12:37 reduce okay maybe to find sum or maybe
+12:40 to find maximum number inside this array
+12:43 okay so let's just take an example to
+12:46 see how we can write this reduce
+12:47 function but before moving on to that
+12:49 okay before moving on to that if I'll
+12:51 directly just jump on to writing the
+12:53 reduce function it will not make any
+12:54 sense to you first of all what we will
+12:57 do we will just write down a code how we
+12:59 used to write in a nonfunctional way
+13:02 okay non-functional programming way then
+13:04 we will move on to writing the reduced
+13:06 function okay that way you will be
+13:08 better able to understand the reduceed
+13:10 function so just bear with me for 2
+13:12 minutes okay so let us just first try to
+13:14 write a normal function okay let's call
+13:16 it find sum okay which finds the sum of
+13:20 these array right a r r if we pass on a
+13:22 RR inside it so to find sum of all these
+13:25 values of ARR what we will do we will
+13:28 basically have a variable which is sum
+13:31 and we will just assign it with zero
+13:33 right this will be a place where we will
+13:35 be calculating our sum and then what
+13:37 we'll do we'll just generally write a
+13:39 for Loop okay and then what we will do
+13:42 we will just iterate over each and every
+13:45 element right and what we will do we
+13:47 will just keep on appending that inside
+13:49 our sum variable sum is equals to sum
+13:51 plus a r r of I right and what we will
+13:55 do we will just do that again and again
+13:57 for each and every value of ARR of I and
+14:01 what we'll do we will just return the
+14:03 sum That's How we'll do right this is
+14:06 what the code will be let's just check
+14:08 it if we check the result how we what we
+14:12 can do some find some and and we call it
+14:16 with ARR and what's the result so we get
+14:19 17 over here so now if we had to do the
+14:22 same thing using reduce okay so reduce
+14:25 is used in this place where you need to
+14:28 iterate over all the elements and find
+14:30 out a particular value okay so in this
+14:32 case it was Sum right so how we can
+14:35 transform this logic and write a reduce
+14:38 function instead so now I'll show you
+14:40 that for that let's take a const let's
+14:43 call it output okay and over here we
+14:46 will write ar. reduce just like map and
+14:48 filter we use ar. reduce now this reduce
+14:52 takes a function inside it now this
+14:55 function has two parameters now listen
+14:58 to me very carefully this is the most
+15:00 confusing part for a lot of developers
+15:03 this function takes two parameters
+15:06 listen to me very carefully first is the
+15:08 ACC that's a accumulator and the second
+15:11 one is current okay I remember like this
+15:15 okay accumulator and current so now what
+15:18 are these accumulator and current let's
+15:20 just see in a moment so when you write
+15:24 like this right ar. reduce basically
+15:27 this function is iterated over each and
+15:30 every element of this array okay so this
+15:33 reduce basically iterates this function
+15:35 over each and every elements of this
+15:38 array and what it will do is this
+15:41 current or the second parameter
+15:44 represents the value of when when we are
+15:47 iterating right when we are iterating
+15:49 this function or we are running this
+15:50 function against each and every value
+15:53 this current represents the value like
+15:56 these values inside this reduce function
+15:59 okay so this function over here current
+16:02 will be these values and this
+16:04 accumulator right the first parameter
+16:07 basically is used to accumulate the
+16:09 values okay or accumulate the result
+16:12 what we have to get out of those values
+16:15 which are present in the arrays so in
+16:18 this example we needed to find the sum
+16:21 right so how did we do in a traditional
+16:23 way we initialize this sum and we were
+16:26 accumulating our sum inside this sum
+16:28 variable aable right so similarly we
+16:30 will use an accumulator to accumulate
+16:33 these values so what we will do and this
+16:36 current is basically the current values
+16:39 which are represented in this particular
+16:41 array so so if we have to compare this
+16:44 example and with this function this
+16:47 function find some with this function so
+16:49 the current is basically this ARR of I
+16:53 okay over here and the accumulator in
+16:56 this case is the sum so how would we
+16:58 write over here is so accumulator is
+17:01 equals to what we need to accumulate in
+17:03 it sum right so how do we calculate sum
+17:06 we would do a accumulator Plus+ now what
+17:10 a r r of i instead of a r r of I we
+17:13 basically write curve which is our
+17:15 current value right and what we will do
+17:18 we will just return this
+17:21 accumulator return this
+17:24 accumulator and one more thing to notice
+17:27 over here is so in this function
+17:29 basically this accumulator is acting
+17:31 like this sum variable right and it is
+17:34 just accumulating all these values it is
+17:36 just iterating this function is being
+17:39 run against each of these values inside
+17:42 this array and basically accumulator is
+17:44 just appending a sum of the current
+17:47 value to itself right so accumulator
+17:51 should be initialized with an initial
+17:52 value for the first go right so the
+17:55 initial value how do we pass an initial
+17:57 value to an accumulator
+17:59 so that is basically the second argument
+18:02 to this reduced function so this reduce
+18:05 function basically takes second argument
+18:08 so the first argument is a function and
+18:10 the second argument is any initial value
+18:13 which you need to pass inside this
+18:16 accumulator okay so the initial value
+18:18 over here would be zero for some isn't
+18:21 it this is how we will write this whole
+18:24 logic inside our reduce function and if
+18:27 we do a console log of output now let's
+18:30 do a console log of output and if we
+18:32 save it see we got 17 once again so
+18:35 basically this whole logic is exactly
+18:38 similar to this find Su
+18:40 logic so now let's come to a tricky
+18:42 example where you need to find out the
+18:44 maximum value inside this array so how
+18:47 let us first write down that logic over
+18:49 here let's just modify this find Su and
+18:51 try to find out find Max inside this
+18:54 array how do we find out the maximum
+18:56 inside that array let us suppose for now
+18:59 this sum is Max okay so we need to find
+19:02 out maximum value inside this value what
+19:04 we will do we will just iterate over
+19:06 each value and we will see if our
+19:10 current value is greater than maximum so
+19:12 maximum would be that current value
+19:15 right how will we write if our current
+19:18 value current value is AR RR of I is
+19:21 greater than maximum what we will do we
+19:24 will
+19:25 just override our maximum with the
+19:29 a RR of I else we don't do anything so
+19:33 we will just iterate and if our ARR or
+19:37 ARR of I or any of these values becomes
+19:40 greater than the maximum value then what
+19:43 happens maximum becomes this ARR of I
+19:46 and then we just return maximum right
+19:48 that's how it works isn't it so if I
+19:51 just comment down and just save it so if
+19:53 you find out some okay not find some
+19:56 find Max um let's run it and see if it
+19:59 works yes so we got the six right the
+20:02 six is the maximum value so now we have
+20:05 written our find Max function now we
+20:07 will write the same logic using reduce
+20:10 but this time we won't be doing any
+20:12 cheating okay we won't be doing using or
+20:15 we won't be using this as a reference
+20:17 and we would try to write down Reduce by
+20:20 ourselves okay how let's try to write it
+20:22 okay so if we do a const
+20:24 output okay can you just guess what we
+20:27 will do now yes you are absolutely right
+20:29 we will do a array. reduce right array
+20:34 do reduce and we will write a function
+20:38 over here right and this function takes
+20:40 two parameter what were those yes the
+20:42 accumulator and the current over here
+20:46 now what we will do first of all we have
+20:48 to think that the second argument to
+20:51 this reduced function would be the
+20:53 initial value of accumulator so the
+20:56 initial value to find out the maximum
+20:59 let us give it zero so why zero because
+21:01 we are just assuming that the array
+21:03 would be non-empty and it always have
+21:06 positive numbers so the least possible
+21:08 value the maximum could have would be
+21:10 zero right so that's why the initial
+21:13 value is zero now we'll try to write the
+21:15 main logic now remember what I told you
+21:17 this function will be called against
+21:19 each and every value of this array so
+21:22 what happens is now we want to and this
+21:25 accumulator is basically acting as the
+21:28 max now right so what we will do we will
+21:30 at each point of time for each and every
+21:33 current value we will check if our
+21:37 current value is greater than our
+21:39 maximum till Point okay maximum till
+21:42 point is our accumulator over here if it
+21:45 is then what we will do we will just
+21:47 assign the maximum value to that
+21:50 accumulator isn't it so now our maximum
+21:54 value or the accumulator becomes the
+21:56 current value okay so instead of of
+21:58 calling this accumulator let's call it
+22:00 Max that will make more sense so it's
+22:02 just a label right we use accumulator as
+22:05 a generic term but ideally let's call it
+22:08 Max so now assume so the initial value
+22:10 of Max was zero and we will check at
+22:14 each current value or each point that if
+22:17 the current is greater than our Max then
+22:20 what we will do our Max becomes current
+22:22 and we just return our Max great so
+22:26 that's how we should write it so let's
+22:28 just save this and try to do a console
+22:31 log of our
+22:33 output if we do it see we got six so
+22:36 that's how we write this logic I know
+22:38 there can still be some confusions with
+22:40 map filter and reduce that is why I have
+22:43 few more a little more real world
+22:46 examples for you for map filter and
+22:48 reduce just give me five more minutes we
+22:50 will run down through these examples and
+22:53 your knowledge of map filter and reduce
+22:55 will be more strengthened and trust me
+22:57 you won't forget this lifetime let's
+23:00 take few more examples you will love it
+23:02 seriously just hold
+23:04 on so first of all let's just get rid of
+23:07 this code and for the next example let
+23:09 us take a different a little more
+23:11 complicated version of this array okay
+23:14 so suppose we have this array of objects
+23:17 and each and every object over here has
+23:20 three properties which
+23:22 are first name last name and the age
+23:26 okay so this is basically like the data
+23:29 what we get from API assume that this is
+23:31 coming from some API okay this is the
+23:34 list of users right this is a more real
+23:37 world example so now suppose we are
+23:39 given a task to find out the list of
+23:42 full name of all these users okay list
+23:45 of full names so it will look something
+23:48 like this okay so the full name of the
+23:50 first user is AI and similarly we have
+23:54 the second item in the list should be
+23:56 Donald Trump so suppose if we have to
+23:59 find a list like that and we have and so
+24:03 on okay so we want to find a list with
+24:05 the full name okay so now can you guess
+24:09 what function would be used over
+24:11 here what function would be used over
+24:14 here so it is exactly you are absolutely
+24:18 right we would be using map over here
+24:20 let us just quickly write it so first of
+24:22 all as usual let's take our constant
+24:25 output and then what we do we will write
+24:27 user do map and what will we pass inside
+24:31 is now just just see carefully I am
+24:33 writing a arrow function directly we had
+24:37 X and what do we need to map it to so
+24:40 the x is basically this object right as
+24:43 I told you that this function which you
+24:46 pass inside map will run against each of
+24:48 these objects right each of these values
+24:51 inside this array so over here this x
+24:54 basically represent the first item of
+24:57 this users so basically this object so
+24:59 what this x should map to X and then
+25:02 what does this function return X do
+25:05 first
+25:06 name plus X do last name right so if we
+25:12 save it and that's all it is seriously
+25:15 that that's all you need to do if we
+25:18 just run this now see we got AI okay so
+25:22 we did not get the space as intented so
+25:25 let us just put a space also so we can
+25:28 do like this so so that's how it is
+25:30 right we got our current output this is
+25:32 what we wanted right now we got a list
+25:34 where we have full name of each of these
+25:37 objects so here is when we can use map
+25:40 so let's just take one more tricky
+25:41 example it would be really awesome okay
+25:44 so let's just see this this is tricky
+25:46 okay it is a)
+

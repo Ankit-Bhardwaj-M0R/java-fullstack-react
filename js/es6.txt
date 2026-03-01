@@ -1,0 +1,2302 @@
+1.'let', 'const', and Temporal Dead Zone (TDZ) (0:00 Do you know what the Temporal Dead Zone is?
+0:03 Are 'let' and 'const' declarations hoisted in
+0:05 JavaScript? What is the difference between
+0:08 SyntaxError, ReferenceError, and TypeError? Don't worry, I
+0:12 will explain everything. Just keep watching Namaste
+0:15 JavaScript with let statement, you will get the
+0:17 first fundamental here. In this video,
+0:20 yes, 'let' and 'const' declarations are hoisted,
+0:25 but they behave very differently from
+0:28 var declarations. In an interview, if someone says
+0:33 'let' and 'const' declarations are not hoisted, that will be
+0:36 incorrect. In fact, you can say they are in the
+00:40 Temporal Dead Zone for the time
+0:44 being. We will understand Temporal Dead Zone completely. Don't worry,
+0:48 we will see what it is in detail. Let's go for
+0:51 a quick example.
+0:53 Let's not take a variable let a =
+0:56 10. Okay. Let's also take var
+1:00 b = 10, just for reference, okay? Just
+1:03 for reference and comparison of let and var in
+1:06 JavaScript. Okay, so as we studied in the previous
+1:11 videos, right? In the previous hoisting
+1:13 video, we can access b before we
+1:17 initialize it, okay? So, in another language, you
+1:21 know, you wouldn't be able to do this, right? You wouldn't
+1:24 be able to access b without declaring
+1:27 and assigning it, okay? That happens, but in JavaScript,
+1:31 it's very different. Even before var
+1:35 memory is allocated to this, very different
+1:37 functions, even before a single line of code is executed,
+1:41 okay? And that's why even before setting
+1:43 value 100 into b or even
+1:46 declaring variable b, we can access
+1:49 it like this and don't get an error. In fact, you
+1:52 will get a special placeholder undefined.
+1:55 Is it okay? Let's run it in the number. Let's run the code and see.
+1:58 The point is allowed here. It's going to be very difficult for
+2:03 some people to accept this. So, if people are saying that this is
+2:07 also hoisted, 'let' is also hoisted and
+2:10 you should also be able to access it like
+2:13 this, right? You should be able to access it as undefined. But
+2:16 this code gives an error, and
+2:21 it says that 'let' cannot be accessed before initialization.
+2:25 So, you can only access this a after
+2:31 you have assigned or initialized some value
+2:33 to this variable a, right? So,
+2:36 if we do console.log after we initialize
+2:40 or put some value in a, then
+2:42 we are able to access it. But how do we know whether this
+2:46 variable is hoisted or not? Okay, it's in
+2:49 a confused state, right? Let's see inside the browser
+2:52 and see in detail what happens behind. Is
+2:55 this variable allocated memory or not? It's quite
+2:59 clear like this. No, let's see.
+3:02 So, if I debug, right? If I debug this,
+3:06 if I run this line, if I execute a single code,
+3:11 let's see what happens. There's something
+3:14 interesting. For
+3:16 a single line of
+3:18 code, it does execute, and it allocates memory
+3:22 to a. We have a as well,
+3:26 and we also have b here,
+3:30 and the value for these are
+3:36 ...
+3:44 ...
+3:45 Now, to var
+3:50 b declaration and var is attached to the global
+3:57 global object. But let and
+4:01 const are allocated memory. They are also allocated
+4:04 memory, and what is called hoisting? We can
+4:07 clearly see they are allocated memory,
+4:11 but they are stored in a different memory space than the global object.
+4:15 They are not on the global object. They are stored in a
+4:17 sacred memory space, and you cannot access this memory space.
+4:20 You cannot access these 'let' and 'const'
+4:23 declarations before you have put in some value
+4:26 in them, okay? So, that is what is hoisted
+4:29 in 'let', right? So now, let's
+4:32 just try to execute the code line
+4:34 by line and see what happens behind
+4:36 it, right? So, if I go to the next line, now this
+4:40 line two, where a is
+4:42 equal to 10, was executed, and you have
+4:45 got 10 inside a. Okay, identifier a is
+4:50 going to get a new 10, okay? It's
+4:53 a value now, okay? And it's stored in a
+4:56 sacred memory space, okay? And now it's
+4:59 available for access, right? Now, if I go
+5:03 back again to the next line, I try to execute line number
+5:05 three, console.log(a). So now the
+5:08 JavaScript engine gets
+5:10 the value and prints the log in the console.
+5:12 If I go to the console, we can see that
+5:15 10 was printed, okay? And now if I go
+5:19 back again to the breakpoint, can it print
+5:22 this code here if I run this whole thing? So now see,
+5:27 the Temporal Dead Zone.
+5:30 What is the Temporal Dead Zone?
+5:32 Temporal Dead Zone is the time between
+5:40 the variable declaration and
+5:44 its initialization. For example, if I do console.log
+5:50 of a even before it's initialized,
+5:53 if I do console.log here, that means
+5:58 ...
+5:59 ...
+6:00 and put a debugger here. Okay, let's put a debugger. Now this
+6:03 line has been executed, but it was very much hoisted,
+6:06 right? So a was hoisted. It was assigned memory
+6:09 space. It was assigned a separate space,
+6:12 and it was also assigned undefined. Okay? Yes, but
+6:16 it's not been initialized. So, this is the phase
+6:19 in which it's in the Temporal Dead Zone until it goes through
+6:23 the code in line number three, okay? In line
+6:27 number three, where we initialize a to 10,
+6:31 it exits the Temporal Dead Zone, and the value of 10
+6:35 is put inside a. In the Temporal Dead Zone, it's the phase from hoisting
+6:40 okay, until it assigns or gets some value.
+6:45 If it gets a value, then
+6:48 a exists from the Temporal Dead Zone, okay? So if I
+6:52 try to access a
+6:54 in this array, okay? See, it gives a ReferenceError,
+6:59 right? So, whenever you try to access
+7:03 a variable inside the Temporal Dead Zone, it gives you
+7:07 a ReferenceError, okay? And it says something like
+7:10 a is not initialized. While it's in the
+7:15 Temporal Dead Zone, you cannot access it, okay? And
+7:19 you can only access it once some value
+7:22 is assigned to it, okay? So, if I try to
+7:25 initialize it, right? If I do initialization
+7:28 after line number three, then
+7:31 before anything, before line number three, okay?
+7:34 What is the Temporal Dead Zone for a?
+7:38 a is what is known as the
+7:41 Temporal Dead Zone that we were looking at, right?
+7:44 Now, let me show you another interesting thing, okay?
+7:47 So, you have seen this ReferenceError before, right? So,
+7:50 if you have not, okay? So, if I try to
+7:54 access any random variable, okay, which is not in my
+7:57 program, let's try to log
+7:59 x, okay? x is not in my program, right?
+8:02 Let's try to log x. See what, what we will
+8:05 get. This
+8:10 ...
+8:12 is not defined.
+8:14 So, JavaScript engine is trying to find the value of x
+8:18 in the current scope. It's not able to find what
+8:22 it is. So, this is a
+8:25 ...
+8:28 ...
+8:31 If you try to access b before var
+8:35 is used, it used to give undefined,
+8:38 because memory was allocated to b. It was allocated to b, but it was
+8:43 not assigned value. It was not been
+8:49 ...as we have seen in previous videos.
+8:52 It's a ReferenceError.
+8:56 ... This time it's a different
+9:00 message, right? So, it clearly states that
+9:02 you cannot access before initialization, and a is
+9:06 in the Temporal Dead Zone for the time being, and you can access
+9:11 a anywhere after its initialization,
+9:12 okay? So, if it's executed here and if it's executed
+9:16 here, you can access it, right? So, that is one more
+9:20 interesting thing. We should go to the
+9:22 console and try to see the window object.
+9:25 Remember what is the window object? window is
+9:27 that same global object which you have, right?
+9:30 We studied in the previous videos, okay? So,
+9:33 in the window object,
+9:35 we used to have var declarations, var b is there,
+9:39 right? So, b is initialized,
+9:42 but due to that, it's stored in the window object, right? So,
+9:47 if I try to access window.b, what do I get?
+9:52 I get 10, okay? So, b is attached
+9:56 on to the window object, okay? But a, if we initialize
+9:58 it, a will be attached to the window object? No, it will
+10:02 not be attached to the window object. It's in a separate
+10:06 storage, okay? A separate space, okay? That is
+10:13 'let' and 'const', okay? That's why we are not being
+10:16 able to access window.a. We are unable to access
+10:22 it, and it's like any other variable which was not
+10:27 present. We get an
+10:30 undefined like this, and
+10:33 global This is equal to window.
+10:37 Now,
+10:38 [Music]
+10:46 ...
+10:48 so do you
+10:52 ...
+10:54 not edit it. It's a little more strict, right? And
+10:59 there is one more level of strictness where we can
+11:04 do something like redeclaration. What if we
+11:08 try to make a duplicate of it, right? Let's
+11:11 try to initialize it again, okay? After it's
+11:15 initialization.
+11:16 So,
+11:21 ReferenceError. So, this SyntaxError
+11:25 code will run, okay? console.log
+11:30 a was initialized, and it was
+11:33 executed, okay? So, if we see
+11:40 the duplicate declaration in line code,
+11:46 ...
+11:58 is an error. So, in 'let', you cannot use the same
+12:03 name to declare variables, okay? So, if I try
+12:06 to declare a here, okay, it means a is
+12:10 already declared. You cannot give
+12:12 the same name in the same scope again, okay? In the
+12:16 same scope. Okay? But remember, we were able to do
+12:20 the same thing in 'var', right? So, if I do var b =
+12:24 100, 'var' is very lenient, right? So, we
+12:27 can just do var. Even if it's
+12:34 ...
+12:36 possible, but it's not possible in
+12:44 'let'. Okay? So, in 'let', all the
+12:48 declarations behave very much similar to const.
+12:51 But there is a difference.
+12:55 ... There is a difference. 'const' is even more strict, okay?
+12:58 So, when I say it's more strict, it's the way in
+13:02 which it's hoisted, okay? So, if I go and
+13:05 see it, it's again given an error. It's been stored in a
+13:10 separate memory space, and you cannot access it. It has to
+13:12 go through the Temporal Dead Zone. But it's more
+13:16 likely to have something interesting for you.
+13:19 You can do something like this. You can just
+13:24 let a =
+13:27 You can just declare a here. You can
+13:32 ... be greater than a extension
+13:37 program. Okay, okay.
+13:40 console.log(a).
+13:44 This is completely
+13:47 free to
+13:50 play. But
+13:52 you cannot do this thing in
+13:56 'const'.
+13:58 Right? So, you can do something like this in case
+14:01 of 'let', okay? So, if I try to assign
+14:04 some value later on to b,
+14:05 right? Later on to a const variable, for this
+14:08 time it's giving a TypeError. Not a SyntaxError.
+14:11 It's giving a TypeError.
+14:11 Now let's come to the difference between SyntaxError,
+14:14 TypeError, and ReferenceError.
+14:17 Types of errors.
+14:23 ...
+14:26 Now to a variable, okay? So, you are
+14:27 trying to assign value
+14:30 to a const variable, which is a TypeError.
+14:35 ...
+14:49 ...
+14:55 So, in SyntaxError, suppose if I had done a var
+15:03 a just, okay? And I don't initialize
+15:06 it, but it gives a SyntaxError because here we have a
+15:11 missing syntax, okay? The syntax
+15:14 expects
+15:16 that if it's a 'const' keyword, it expects that something
+15:20 is equal to and important. Some value here,
+15:23 okay? That is a SyntaxError. And
+15:26 remember, SyntaxError is always
+15:28 ... to be read later. This is equal to
+15:32 10. Give an
+15:35 ...
+15:38 Identifier 'a' has already been declared.
+15:40 That's a SyntaxError.
+15:46 So,
+15:48 it's a duplicate declaration.
+15:55 ...
+16:58 variable inside your memory space, and you cannot access it,
+17:00 okay? You can't access it, so it gives a ReferenceError.
+17:03 So, what is the cause of that? So, if I
+17:06 try to access a before
+17:10 initialization, right? So, it gives a
+17:13 ReferenceError because at this point of
+17:15 time, a is in the Temporal Dead Zone, and
+17:19 it's not initialized. What is ReferenceError?
+17:26 ReferenceError when
+17:31 you access a
+17:32 random variable or y
+17:37 is not defined.
+17:39 So, JavaScript tries to find it in
+17:44 the
+17:46 ...
+17:49 ...
+17:53 Now, to read this,
+17:58 what should we use? Let me tell you what should we use. I will always suggest you
+18:02 to use const first, okay? Whenever you can
+18:06 use const, you should use it. Whenever you
+18:08 want to put in some value which is not
+18:10 changing later, okay? When you want to assign
+18:13 anything else for the same material, use
+18:16 const whenever possible. That is the best.
+18:18 That is most strict, okay? So, you won't run into
+18:21 any unexpected errors, right? So, use const,
+18:24 and if not const, use let whenever
+18:28 possible, okay? Just because let has a Temporal
+18:30 Dead Zone, and you will not run into
+18:33 unexpected errors of undefined and
+18:35 those things, okay? And if people assign
+18:38 like normal decoding, they assign, don't use
+18:41 'var', okay? And there are places where you might
+18:45 want to use 'var', but you should always be
+18:49 careful. We will see some cases where we might have used
+18:53 'var' unhappily, and there are many people who use var
+18:58 frequently in their day-to-day coding, okay? So, the
+19:01 Temporal Dead Zone concept can save a lot of
+19:04 time for a developer. It saves you from a lot of
+19:06 unexpected errors, right? So, the best way to
+19:10 avoid the Temporal Dead Zone is to always put your
+19:15 declaration and initialization on top of the
+19:19 code, from the top. From the
+19:24 middle part,
+19:27 if it's
+19:29 present in the code, then you won't run
+19:33 into
+19:35 ...
+19:41 ...
+19:46 ... all the
+19:51 Temporal Dead Zone, window.b
+19:58 The solution is to move the initialization to the top,
+20:01 okay? So that nothing happens because of this
+20:03 initialization and this is not a major error.
+20:07 But next time an interviewer
+20:10 asks you whether let and const are hoisted
+20:11 or not, what do you do? Something like that, you can explain the
+20:18 best answer you can give. We have just covered
+20:24 the next video, Block Scope, okay? let and const is very
+20:30 important, okay? That's why related
+20:32 videos are just for you. In the next video,
+20:35 it will be just for 'const'.
+20:38 ...
+20:42 ... this video and see what happens
+20:47 in console.log. Very different. a is
+20:51 not a video, but it's a good example.
+20:58 There's a lot more with const and let, and
+21:01 also scope, function scope, and all these scope concepts.
+21:04 In the next video, I will clear everything
+21:07 in your head. But don't forget to like
+21:09 this video, thumbs up, and comment whether you
+21:12 understand or not. Don't forget to ask. Thanks for
+21:16 watching Namaste JavaScript. Thank you.
+21:26 ...
+21:29 ...
+21:35 ...)
+
+
+2. Block Scope & Shadowing(Here is the English transcript of the video:
+
+0:00 Now so far, if an interviewer asks a candidate,
+0:03 "What is a block in JavaScript?" You know what you can reply.
+0:07 "Let and const are block-scoped," is what you can reply.
+0:11 "Let and const are block-scoped." But what is a block in JavaScript?
+0:18 Whatever the candidate replied, the candidate should ignore this place where let and const variables exist. And what is that?
+0:28 The candidate can now develop about what a block is.
+0:35 Subscribe.
+0:39 And I'll tell you in this video.
+0:42 Description: First, let's dive into a block.
+0:45 A block is defined by these curly braces.
+0:50 A perfectly valid JavaScript code is a block.
+0:56 The middle of this program is nothing.
+1:00 But what do you use? What is the use of the block?
+1:02 First of all, let me tell you, a block is also known as a compound statement.
+1:09 Okay.
+1:11 Now, a block is used to combine multiple JavaScript statements into one group.
+1:16 Okay, it's just like this. Okay. So, what is it doing?
+1:20 It's combining multiple JavaScript statements into a group.
+1:27 Do you mean? I mean, why do we need to group all these statements together?
+1:29 We need to group these statements together so that we can use multiple statements in a place where JavaScript expects only one statement.
+1:40 Let me repeat. Listen to this very carefully.
+1:44 We group multiple statements together in a block so that we can use it where JavaScript expects one statement.
+1:52 JavaScript is confused in an example. Okay, so suppose you have a normal if statement.
+1:59 Okay.
+2:00 Like, you can use if over here. So, if I run this code,
+2:03 if I use this, it says, "Syntax error. Syntax error."
+2:13 if expects one statement over here,
+2:17 one statement. One statement.
+2:25 Perfectly a statement. But if you want to write multiple statements,
+2:29 you can only do that together.
+2:36 So, you can use this block and group these statements,
+2:40 and you can use it together inside over here.
+2:43 That's the use of
+2:49 this group of multiple statements. It can be used in a place where
+2:54 JavaScript expects only one statement.
+2:57 So, in an if condition, it expects a single statement here. Okay, it's something else.
+3:04 Statement here. Okay, this is the correct syntax of if.
+3:10 If you want to use multiple statements, you use something like this.
+3:14 This is a block. This is a multiple statement, a compound statement.
+3:24 So, this is very important.
+3:29 if uses this.
+3:33 Similarly, for loop, while loop, they also use this.
+3:37 So, for loop also, you cannot directly say something like this.
+3:42 If you want to write a single line code, this is fine.
+3:45 But if you want to write multiple lines, you stake.
+3:50 You use a block.
+3:53 A block.
+3:58 Panel statement. So, a block can be used with for loops, while loops, and all other places.
+4:06 This is a block. And this is used to, you know,
+4:10 what is a block? Now let's see what is a block scope.
+4:12 So, a block in JavaScript, variables
+4:17 and functions which we can access inside this block.
+4:20 That is the block scope. What is the block scope?
+4:25 We
+4:26 can access inside this block.
+4:30 To understand that, let's declare types of variables here and
+4:36 understand how things work behind the scenes.
+4:40 For that, let's take var, let, and const all the
+4:49 amazing.
+4:51 Let b is equal to 20.
+4:54 Const c is equal to 30.
+4:57 Let's
+4:58 the browser, and a print this post.
+5:01 Line Excel. Okay, down. Let's start.
+5:05 Behavior behind the scenes. Okay, so important
+5:09 debugger. Let's see what happens. In fact,
+5:12 I'm just [ __ ] this code. And very carefully
+5:18 watch this. Okay. I'm running this code.
+5:22 You do something interesting right? See this?
+5:26 So, for this is the block scope. And we got b and c
+5:30 inside the scope. Okay. These let and const which
+5:35 things, which two variables are inside this
+5:38 block scope. Okay. Different species where these
+5:41 b and c are hoisted. They are hoisted
+5:45 and un-undefined. Remember for
+5:48 the hoisting video, these are hoisted in a
+5:50 separate memory space that's reserved for
+5:53 this block. Okay. And var of the amazing
+5:57 and hoisted inside the global scope. See.
+6:02 So, a is undefined. It's inside the global
+6:04 scope. And let and const are in the
+6:07 block scope. That is why the statement comes
+6:11 into picture. let and const are block-scoped. That
+6:14 means they're stored in a separate memory
+6:17 space which is reserved for this block.
+6:19 Okay.
+6:21 And no one else. But this is still executing
+6:24 this block, right? When we go to line number
+6:27 five, you know that let and const are no longer
+6:31 accessible. Okay. You can't access these let and const
+6:36 outside this block. This is known as let and const
+6:39 block scope.
+6:41 You can access var because it's outside.
+6:44 Because it's in the global scope. So, let's see
+6:47 in let and action. Okay, so if I do console.log
+6:50 over here and then do and do console.log of all the
+6:58 things. Okay.
+7:02 So now, let me just remove this debugger and see
+7:04 what a brings in the console. Okay. Let me just run
+7:07 again. See, now friends, the value of a, b, c
+7:13 from this line number five, six, seven. Okay.
+7:18 a is also printed from this line number
+7:22 9, 8, 9. Okay. So, b and c stop the program
+7:26 and throw a reference error. They are
+7:28 not defined.
+7:30 But a is in the global scope.
+7:36 So, that's why a is accessible from outside.
+7:41 And b and c are not accessible from this scope.
+7:49 And are only these.
+7:54 Yes, okay.
+7:58 Now, look.
+8:02 So, first things first. Let me just remove this and
+8:05 I'll show you what shadowing is.
+8:09 So, if you have var variable outside this block, okay?
+8:14 If some variable shadows that variable,
+8:16 if it has the same variable outside this block, okay?
+8:23 This variable shadows this variable. Okay. So, what
+8:28 am I talking about? If I try to access a
+8:30 inside this block, a variable
+8:34 prints this variable. Okay. The value
+8:38 printed in
+8:41 this program will be
+8:46 100.
+8:49 Okay. So, this line number three and line number one,
+8:53 this is what shadowing is doing. So,
+8:57 listen, what happened? If I outside this block
+9:01 and printed a once again, let's see what
+9:04 we get. What do you think you will get? Okay, so
+9:09 let's inspect and see the a
+9:12 again. Okay. So, that means var
+9:16 also modified the value of a over here. Okay.
+9:21 Why? Because var points to the same memory
+9:26 location. So, let me show you. See,
+9:29 remember, a was in the global scope.
+9:33 And a was not in the block scope. And this a
+9:36 was also in this
+9:40 global scope. Okay. So, if I run this program, when the line
+9:43 hits this code, it says, a is 10. And I've debugged it
+9:48 right. So, if I try to execute this line number three
+9:51 also, now the a has changed to 10. Now, carefully watch
+9:55 what I did. I executed this code. Carefully watch over
+9:59 here, it has transformed to 10 in the global memory.
+10:02 See.
+10:05 See, now a is 10. Okay. And both
+10:10 places line number
+10:12 six and seven, both are referring to the same memory space.
+10:16 That is the global space. Okay. That's why [ __ ]
+10:20 code, it says, it shows 10 over here.
+10:26 It actually modified a again. But that's not
+10:30 the case in let. Okay. Let's see why and how.
+10:34 So, suppose for a, if a variable, it is
+10:37 equal to 100. Okay. And another block over
+10:41 here. Like, I'll b in the block scope. If I run this and remove the
+10:46 debugger. Let me just show you.
+10:49 If I run,
+10:53 b is 20. And absolutely,
+10:59 a is b over here.
+11:02 b is a okay, it is a
+11:05 variable. Okay. It's not shadowing. Okay. It's
+11:08 not changing
+11:10 the effect of b outside. Now, I don't know, if I
+11:14 see something interesting right? Now, this b is
+11:18 different to b. This b is in the block scope. And this a
+11:24 is in another scope. Okay. So, if I go deep and
+11:29 apply the debugger, let's see how this looks like.
+11:32 So, if I run the code, okay. See, you do something more
+11:36 interesting right? Now, carefully observe this.
+11:39 The scope, right? So, we have b in two places. Okay.
+11:43 So, one b is this b which is outside in
+11:46 line number one. This b is script. Okay. It's
+11:51 not even in the global. Okay. It's in the script.
+11:55 Will b inside the block. Okay. And one b is
+11:59 in the block scope. Okay. So now, over here, we have
+12:04 three types of scope.
+12:07 First, the global scope where we have a attached, right?
+12:10 This global object where a is attached. This a
+12:15 is in another memory space. Remember, var
+12:19 also hoisted and another
+12:22 script scope.
+12:25 So, here, script scope. Or
+12:30 memory for this.
+12:34 a is placed over here. So now, if I try to b inside this
+12:41 block, I'll b
+12:44 over here.
+12:46 And if I print it outside, this is
+12:50 description.
+12:52 This is a scope. a is zero. That's why it
+12:56 prints a is
+12:58 zero. Okay. And that's what shadowing is not doing.
+13:02 So, this is why, over here, a and b
+13:08 const is also interesting thing.
+13:12 Happens with
+13:14 if you have const.
+13:17 See, c is 10 over here. c is 20.
+13:22 c is 30.
+13:24 And c is 10 over here.
+13:27 If I run this program,
+13:30 again, this c is printed outside c is 10. c is 20 inside.
+13:37 c is 30 in this line. And outside, c is printed again, coming from different variables.
+13:40 So, now
+13:46 a and b are talking about shadowing. Let me show you
+13:48 another important thing that shadowing is not only a
+13:51 concept of block. Okay. It is the same way
+13:55 when any function also. Okay. So, if we have a
+13:59 function scope over here, it shadows in a similar
+14:02 way. It can shadow. Okay. So, let me give a to b and
+14:05 c. And if c again shadows a. So,
+14:10 this is coming from this c.
+14:14 So, in this function also, let's see what is
+14:20 illegal shadowing.
+14:21 Let's discuss about illegal shadowing.
+14:28 If I try to shadow a using var, and a is
+14:32 10. Okay.
+14:34 Inside a block. And if I declare
+14:39 two variables in var inside a block. Can we
+14:46 do it? No, we cannot do this. Okay. It says, a variable
+14:52 already been declared. Okay. So, it is
+14:56 like illegal shadowing. You cannot
+14:59 do it. So, if you, or if you want to shadow let
+15:03 variable inside the block scope, you have to use let.
+15:08 You cannot do it. But what if you want to
+15:11 use var? No, this is perfectly valid.
+15:14 And you can shadow let using let. Okay. But
+15:19 you cannot shadow let using var. This is
+15:22 illegal shadowing. Okay. And vice versa.
+15:26 What is the thing should happen? Okay.
+15:28 If we shadow var like this, yes, we can
+15:32 perfectly write it inside. This is still not
+15:35 a valid
+15:38 doing. It's good to see more.
+15:41 When you let var is declared, var a.
+15:46 var is only doing something right? This
+15:49 shadowing something that should not
+15:51 cross the boundary of the scope. Okay. In a
+15:54 particular scope, let cannot be declared
+15:57 again. Right? So, var should not cross these
+16:01 limit or the boundary over here. Okay. And
+16:04 var is not crossing boundaries. What are the
+16:06 boundaries of var? Remember where var is the
+16:10 function scope. Okay. So, if I use a function
+16:13 over here,
+16:14 function x and function y like this.
+16:19 Right now, var won't error. Because var
+16:24 is inside its boundaries. Okay. It is not
+16:27 interfering with a.
+16:31 Okay.
+16:36 Okay, var.
+16:39 var over here.
+16:44 And it's totally fine. If you have seen the
+16:47 previous scope video, I've told something known as
+16:50 lexical scope. So, yes, block scope also
+16:53 has lexical scope. Okay. So, these scopes
+16:58 are lexically present. Okay. So, when we say
+17:01 lexical, that means one inside another.
+17:04 Remember from the previous video. If I have
+17:07 const a then inside that. So, they are
+17:12 a scope. So, when we say lexical scope, that means
+17:17 if you try to access a inside this
+17:20 function, right? So now, this a will get accessed
+17:23 from this
+17:24 nearest a. Okay. So, it will print a. Okay.
+17:29 And if I try to print this a
+17:31 outside this scope. Okay. Now, what do you think will
+17:35 print? a is 10. Let's run this code and see another
+17:40 interesting thing. Okay. If a is here and if I see
+17:44 the debugger inside your browser,
+17:47 if I debug over here, let's
+17:51 update this and see. Now, see, interesting thing
+17:56 right? See, each and every block has its own
+17:59 lexical scope. Okay. This block is
+18:02 inside one, inside, and this builds something
+18:05 like this. And again, for that's chain pattern,
+18:08 lexical scope chain pattern. Okay. So, if a is
+18:12 not here, if a is not here,
+18:15 what will happen?
+18:17 If you run this code, you will get a is 10. Okay.
+18:23 Okay.
+18:26 Remove.
+18:32 This is a is 10.
+18:36 So, this lexical scope works in inside
+18:39 the block also. Let me also talk about arrow
+18:42 functions. So, let me tell you that a best way
+18:45 to declare a function with function keyword
+18:48 or an arrow function. Many people think those might
+18:51 have different scopes, but they're exactly same.
+18:54 All the scope rules which work on functions
+18:57 are exactly same in the arrow function
+18:59 also. No need to worry about learning
+19:03 different scope for arrow functions and anonymous
+19:06 function. Whereas, in this video, the next video will be a
+19:09 surprise. Okay. I won't tell you what it is. But
+19:14 if you want to watch the surprise video, give this video a like and then
+19:17 comment in the comment section whether you understood the
+19:20 block scope, block scope, and shadowing or not.
+19:26 If you find this video helpful, then comment. I need
+19:30 motivation. Until then, thank you for watching Namaste JavaScript.
+19:33 Bye.
+19:35 [Music])
+
+
+3.Destructuring Assignment(Array/Object)(Welcome back to Web Dev Simplified. My name is Kyle, and in today's video, we're going to take a look at one of the best features of ES6, which is object destructuring and array destructuring, as well as the spread operator. These features are absolutely crucial if you want to develop using a front-end framework such as React, and even if you don't want to use it, they're incredibly useful for making your code so much cleaner and easier to work with. So, without further ado, let's get started. (0:00-0:23)
+
+To get started, I just have Visual Studio Code open, as well as the console output for all of the code that we're going to be writing. To begin, I want to explain what destructuring is. The idea of destructuring is to take an object or an array and convert it into smaller objects, smaller elements, or smaller variables. (0:28-0:44)
+
+Let's look at a simple example. We're going to take our alphabet array, and we want to get the first two elements. Normally, you would do alphabet[0] for the first element and alphabet[1] for the second. This is clunky, and there's an easier way using destructuring. (0:44-1:17)
+
+With destructuring, you can write const [a, b] = alphabet; This takes the first element and assigns it to a, and the second to b. The position in the array determines which element is assigned. You can also skip elements by leaving a comma, like const [a, , c] = alphabet; to get a and c, skipping the second element. (1:17-2:33)
+
+The spread operator (...) allows you to get the rest of the elements in an array. For example, const [a, , c, ...rest] = alphabet; will assign the first element to a, skip the second, assign the third to c, and then put all remaining elements into the rest array. (2:34-3:05)
+
+You can also use the spread operator to combine two arrays: const newArray = [...alphabet, ...numbers]; This is similar to concat() for arrays, but it becomes very useful for objects. (3:08-4:04)
+
+Array destructuring is very useful when functions return multiple parameters as an array. For instance, a sumAndMultiply function that returns [a + b, a * b] can be destructured as const [sum, multiply] = sumAndMultiply(2, 3); This makes accessing the returned values much cleaner. (4:06-5:18)
+
+You can set default values in array destructuring. If a function doesn't return a value for a destructured variable, the default will be used. For example, const [sum, multiply, division = 'no division'] = sumAndMultiply(a, b); (5:18-6:00)
+
+The true power of destructuring is most apparent with objects. Object destructuring works similarly to array destructuring, but it's based on the key name, not position. (6:01-7:03)
+
+To destructure an object, you use curly braces. For example, const { name, age } = person2; will extract the name and age properties. If you want to use a different variable name, you can do const { name: firstName } = person2;. (6:35-7:36)
+
+Default values also work with object destructuring. const { favoriteFood = 'rice' } = person2; will set favoriteFood to 'rice' if the object doesn't have that property. (7:37-8:18)
+
+The spread operator can also be used with objects: const { name, ...rest } = person2; This will create a rest object containing all properties except name. (8:19-8:46)
+
+Nested objects can also be destructured. For example, to get the city from an address object inside a person object: const { address: { city } } = person; (8:47-9:35)
+
+Combining two objects with the spread operator allows you to merge their properties, with properties from the second object overriding those from the first. const person3 = { ...person1, ...person2 }; (9:36-10:38)
+
+The most important and useful part of object destructuring is its use in function arguments. Instead of passing an entire object and then accessing its properties, you can destructure the arguments directly: function printUser({ name, age }) { console.log(name, age); }. This makes functions much cleaner, especially in frameworks like React. (10:39-12:38)
+
+The video concludes by mentioning an upcoming React course and encouraging viewers to sign up for email notifications. (12:47-13:02))
+
+
+4.CommonJS modules('require/export'), ES6 Modules ('import/export') (0:00 hello and welcome back to the channel
+0:03 did you see a lot of code where you have
+0:05 for example imports
+0:07 experts or require or maybe module
+0:09 experts
+0:10 and you don't know the difference
+0:12 between them
+0:13 in this video you will learn all
+0:15 possible ways to create modules in
+0:17 javascript
+0:18 and what is the difference between them
+0:21 so let's jump right into it
+0:23 [Music]
+0:26 the first question is do we have a
+0:28 problem at all and what we are trying to
+0:30 solve
+0:31 so as you can see here i have an
+0:33 index.html
+0:34 with just main.js file so now if i
+0:37 create some variable here like variable
+0:40 a
+0:40 equals a in this case this variable will
+0:43 be created
+0:44 in global namespace because this is how
+0:47 javascript is working by default
+0:49 so if we will write in browser a as you
+0:52 can see this variable is there
+0:55 or if we will write window.a as you can
+0:58 see
+0:58 variable a is inside the window in
+1:01 global namespace
+1:02 so this is the problem because normally
+1:04 in our application
+1:06 we are creating like hundreds of
+1:08 thousands of different variables
+1:10 for different purposes and we can't just
+1:12 throw them inside
+1:14 global context and think that everything
+1:16 will work
+1:17 because we can easily override them at
+1:19 some point
+1:21 and you might say okay but this is our
+1:23 program we know what we are doing
+1:25 yes but if your program is really big
+1:28 then you can accidentally override
+1:30 something also just imagine working with
+1:33 other people
+1:33 if you don't isolate your code then it's
+1:36 almost
+1:37 impossible to support it this is why all
+1:39 modern applications
+1:41 are done only with using of modules
+1:44 so how we can solve these problems
+1:47 actually we don't have these problems
+1:49 inside function
+1:50 so if here i will create some function
+1:53 and this is just an error function i
+1:55 don't write anything here
+1:57 but when we're writing here inside var a
+2:00 then this var a is not in global context
+2:04 because it is inside a function which
+2:07 means
+2:07 actually we don't have any problems with
+2:10 variables
+2:10 inside functions and this is actually
+2:13 the first solution that people
+2:15 used inside javascript the idea is that
+2:18 we're
+2:18 wrapping the whole code that we have
+2:21 inside
+2:21 a function which will be self-executed
+2:24 so i can just remove everything and
+2:27 write here just an arrow function
+2:29 and inside we have for example console
+2:31 log a
+2:33 and here is a and we can create here our
+2:36 where a which will be a so actually this
+2:39 is just a variable and the console log
+2:41 it here
+2:42 actually this is just the anonymous
+2:44 function without the name
+2:46 and we can call it but for this we need
+2:48 to write
+2:49 round brackets around in other case we
+2:52 can't call it directly
+2:53 so actually here i have round brackets
+2:56 to call
+2:56 this anonymous function so this
+2:58 anonymous function
+3:00 is being called immediately invoked
+3:02 function expression because we are
+3:04 invoking
+3:05 it immediately after starting of our
+3:08 program
+3:08 and the only point why we are writing
+3:10 this here because we want to write
+3:13 all our code inside this function so
+3:16 when i reload the page again as you can
+3:18 see
+3:18 here is our console log a but when i'm
+3:21 writing window a
+3:22 as you can see it is undefined because
+3:24 it's not in global context anymore
+3:27 we've wrapped it inside function and
+3:30 this is all
+3:30 fine and we can write code like this but
+3:33 just imagine if we have 10 or 50 files
+3:36 and we somehow want to manage different
+3:39 variables
+3:40 between different files and this is
+3:42 really not possible and not flexible
+3:45 this is why at some point in history of
+3:47 javascript
+3:48 people created common js modules and
+3:51 actually it doesn't matter about what
+3:53 module system we are talking
+3:55 it is always the same so the main idea
+3:58 is that every file that we are writing
+4:01 is a module
+4:02 which means by default it is completely
+4:04 isolated thing
+4:06 then inside this file we can define what
+4:08 things
+4:09 are allowed to be exported for outside
+4:12 let's check this on the example so here
+4:15 we have just index.html and main.js
+4:18 i will create here file for js and
+4:21 also one more file bar js so inside full
+4:25 i want to create a function
+4:27 get full name so here as the parameters
+4:30 we are getting name
+4:31 and surname and we will just concatenate
+4:34 them
+4:34 so here i am returning our name plus
+4:38 space
+4:38 and plus surname so here is our food.js
+4:42 and this is actually our module which is
+4:44 completely isolated
+4:46 because we didn't export anything from
+4:48 here if we are writing common gs modules
+4:51 we
+4:51 must export everything with
+4:54 module.experts
+4:55 and here we can assign our function for
+4:58 example get full name
+5:00 with this code we are exporting our
+5:02 function for
+5:03 outside usage which means here we're
+5:06 having
+5:06 new module bar js and here we can
+5:10 import our foobar module because we need
+5:14 this function
+5:14 so here i can write that here is const
+5:17 getfullname
+5:19 and here i'm requiring and require is
+5:22 the special keyword
+5:24 from common js modules to require other
+5:27 modules
+5:28 so here i am requiring module 4. as you
+5:31 can see i have here a relative path
+5:34 for full file so i can open it here on
+5:37 the right this is our foo
+5:38 here we have our function and here is
+5:41 module experts
+5:42 and to require something we are writing
+5:45 require and the name of the file
+5:47 and here on the left we are assigning
+5:49 the result of the require inside this
+5:51 variable
+5:52 so now here we can just write
+5:54 console.log
+5:56 for example here we have getfullname and
+5:58 we are calling it
+6:00 with monster and here will be lessons
+6:05 let's close here the right part and this
+6:07 is how we're using this function this is
+6:10 just
+6:10 local function now the question is how
+6:13 we can call
+6:14 and run common js modules and actually
+6:17 this is typical for node.js applications
+6:19 because the whole
+6:21 node is written with usage of common js
+6:23 modules
+6:24 this is why they are so popular and
+6:26 actually common js modules
+6:28 don't exist in browser if you see
+6:31 require in browser
+6:32 this means that normally you are using
+6:34 some library which emulates
+6:36 usage of common js modules so i will
+6:39 jump to the console here
+6:41 and just write node so you must have
+6:43 node on your machine
+6:45 and here the name of the file in our
+6:47 case
+6:48 it was bar jazz so be careful here
+6:51 bar.js
+6:52 is the file where we are requiring for
+6:55 and where we have console logged so here
+6:58 we can see our console.log getfullname
+7:00 and here is monster lessons so our
+7:03 function is working correctly
+7:05 so once again what are modules and how
+7:08 they are working
+7:09 in this case bar and foo are two
+7:11 completely isolated modules
+7:13 if we want to export something we are
+7:15 using module exports
+7:17 if we don't write module exports then
+7:20 module is completely isolated
+7:22 so here is bar and we are using here
+7:24 require
+7:25 if we want to import something and
+7:27 normally your next question will be what
+7:30 can we do
+7:30 if we need to export several things and
+7:33 this is of course possible
+7:35 so for example here we are inside
+7:37 food.js
+7:38 and we want to create a new function get
+7:40 surname
+7:41 and here we have name answer name and
+7:45 here we just want to return our surname
+7:48 so we have one more function and if we
+7:50 want to
+7:51 export two functions here we can just
+7:54 export an object
+7:55 and then as a keys we can say whatever
+7:58 we want to export
+7:59 so here we have get surname and get full
+8:02 name
+8:03 so we're just exporting here an object
+8:06 but this means that inside bar where
+8:09 we're requiring this
+8:10 this will be actually a full module
+8:12 because it won't be a function anymore
+8:15 and if we want to call a function we
+8:17 need to write here
+8:18 foo dot get for name because inside full
+8:22 we have
+8:22 both functions now let's try if it's
+8:25 working so
+8:26 inside console i am calling nodebar.js
+8:29 and as you can see it is working in
+8:31 exactly the same way
+8:33 i can even try and call here foo and
+8:35 here we have getsurname
+8:37 and we are passing here monster and
+8:40 actually let's name it differently
+8:42 so here for example foo and bar so let's
+8:44 call this in console
+8:46 as you can see here we have only console
+8:49 log bar
+8:50 because this was function get surname
+8:53 also it is possible to write our module
+8:56 expert differently
+8:57 so here we wrote module exports and an
+9:00 object
+9:01 but we can make it in another way
+9:03 instead of this we can write here
+9:06 experts dot and here we don't need const
+9:09 anymore
+9:10 and it will just be exported here
+9:13 in the same way here we're writing
+9:15 experts dot
+9:17 and here is get surname in this case
+9:20 actually inside this expert and experts
+9:22 is like an object
+9:24 where saving get surname and get full
+9:26 name and actually it doesn't matter if
+9:28 you are using module experts
+9:30 or directly experts approach let's check
+9:33 if it's working
+9:34 so i'm jumping in console and known by
+9:37 js
+9:38 as you can see we are getting exactly
+9:39 the same result
+9:41 here is one super important point that
+9:43 you really need to remember
+9:45 regarding common js modules we can
+9:48 call require inside conditions or inside
+9:51 functions
+9:52 and this is the main difference between
+9:55 other modules
+9:56 so actually here inside our gs we can
+9:59 call this require inside if for example
+10:02 we're writing here if one
+10:04 equals one obviously this is true here
+10:07 we
+10:07 want to require this file and after this
+10:10 require
+10:11 we can use console.log here which
+10:14 actually means that we are making this
+10:16 require
+10:17 only when we are inside if and this is
+10:20 all
+10:20 working only because require is just a
+10:23 function
+10:24 which means it is playing javascript so
+10:26 we have a function called inside and if
+10:28 and it just works so let's check this
+10:31 out in the
+10:32 console nothing was changed one more
+10:34 important point
+10:35 is that we can use the structuring
+10:38 directly when we're requiring something
+10:40 so i will remove if condition because we
+10:42 don't need it here
+10:44 but actually requiring the whole module
+10:46 and writing it inside const
+10:48 is not the best approach because then
+10:51 here we really need to write each
+10:53 function
+10:54 with full dot something and actually
+10:56 here we can directly use the structuring
+10:59 from es6
+11:00 and here we can get directly get full
+11:02 name
+11:03 and get surname just by creating two
+11:06 local properties
+11:07 in this case we can write here just
+11:09 directly to local functions
+11:12 getfullname and guess her name and it
+11:14 will work
+11:15 exactly like previously so this is
+11:18 really nice because first of all on the
+11:20 first glance you are seeing
+11:21 what things you are requiring so you are
+11:24 not getting the whole module but just
+11:26 functions that you need and secondly you
+11:28 are getting them as local functions so
+11:30 they are not
+11:31 wrapped inside some module so as i
+11:34 already said
+11:34 you can find common gs normally only
+11:37 inside
+11:38 node because it was step 2 in the
+11:40 evolution of modules inside javascript
+11:43 but we have a step 3 and this is
+11:45 ecmascript 6
+11:47 modules and we can normally use them in
+11:50 browser
+11:51 and we're not using them that often
+11:53 inside node
+11:54 so first of all let's look on can i use
+11:56 website
+11:57 here i'm writing es6 modules and as you
+12:00 can see
+12:01 they are supported in all major browsers
+12:04 of course in all the year it's not
+12:06 supported
+12:06 but if you are not supporting it then
+12:08 you're good to go
+12:10 so what i want to do now is just change
+12:12 these two files
+12:14 to es6 completely so i will copy fuji's
+12:17 file
+12:18 and paste it here and rename to for
+12:21 example
+12:21 yes 6 4 js and here i want to copy bar
+12:26 file
+12:27 and paste it here and name year 6 bar js
+12:31 so we have exactly the same files and
+12:33 now we just
+12:34 need to change their content so first of
+12:36 all am jumping inside
+12:38 es6 4js and we need somehow to change
+12:42 common gs modules
+12:43 to es6 modules and as i already said
+12:47 each modular system is working exactly
+12:49 the same
+12:50 which means here in year 6 modules we
+12:53 also can
+12:54 export one thing or several things and
+12:57 we can also
+12:58 somehow require them in this case
+13:00 instead of module exports
+13:02 we can write here export default and
+13:05 here
+13:06 will be the name for example get full
+13:08 name
+13:09 and here we don't actually have here
+13:12 exports
+13:12 anymore but we have just const because
+13:16 we have here plane
+13:17 es6 and here i will also write
+13:20 just a const so here are two functions
+13:23 and to
+13:23 export something we are using expert
+13:25 default
+13:26 and the name of the theme that we want
+13:28 to export
+13:29 and of course our module is fully
+13:32 isolated
+13:33 now the question is how we can use this
+13:35 inside
+13:36 es6 bar so instead of this require we're
+13:40 writing here
+13:41 invert and here will be the name what we
+13:44 want to import
+13:46 in our case we exported get full name so
+13:48 we can write
+13:49 import get full name from and here
+13:52 will be full file so i will remove here
+13:55 gets her name because we didn't import
+13:57 it yet
+13:58 and just leave it as it is so as you can
+14:01 see the main difference is that here we
+14:03 had require word
+14:05 and here now we have import something
+14:07 from
+14:08 and the path so this something is just a
+14:11 local variable
+14:12 so we can use it directly and with from
+14:15 we are saying from where
+14:17 we want to import it and actually we are
+14:19 using es6 modules mostly in browser
+14:22 and for usage we can import them
+14:25 directly in
+14:26 index.html without any processors like
+14:29 web
+14:30 pack or rollup or whatever you are using
+14:32 so for this here
+14:33 inside script source we are saying that
+14:36 our file
+14:37 is es6 bar because this is the file
+14:41 where we are requiring everything but we
+14:43 also need here to add additional
+14:46 attribute type
+14:47 and here will be module in this case our
+14:50 code and html knows
+14:52 that we want to load our script as a
+14:55 module
+14:56 now let's look in browser so when i
+14:58 reload the page
+14:59 as you can see everything is red and we
+15:02 are getting here an error
+15:04 so as you can see the path is correct
+15:06 here6bar.js
+15:08 but the problem is that we have cores so
+15:11 cross
+15:11 origin request and here is the most
+15:14 important path
+15:15 so we have course and it is only
+15:17 supported
+15:19 by protocols like http chrome extensions
+15:22 and so on
+15:23 so our problem is as you can see here on
+15:25 the top
+15:26 i just have a file opened here it's not
+15:29 some web server not
+15:31 something that is http and this means
+15:34 that we can't really load our modules
+15:37 on files we can load them only when we
+15:39 are using http
+15:41 so if you are using some web server or
+15:43 some framework
+15:44 you are good to go in my case i need to
+15:47 serve my index.html and the easiest way
+15:50 for this
+15:51 is to jump to the console and install
+15:54 globally the package
+15:55 npm install globally serve and this
+15:58 serve package is already installed on my
+16:00 machine
+16:01 and we can run a web server with our
+16:04 plain index.html by using serv
+16:07 so if here i will just write serve and
+16:10 this is this installed package
+16:11 as you can see here we got a message
+16:14 serving and
+16:15 here is the port where this will be
+16:17 served
+16:18 so let's have a look so i'm jumping in
+16:20 browser in local host
+16:22 5000 and localhost means that this is
+16:25 http
+16:26 now i am open the console and reload the
+16:29 page
+16:30 and as you can see here we are not
+16:32 having course
+16:33 error so something is actually working
+16:35 so let's have a look
+16:36 what is not correct so i want to jump in
+16:39 the s6 bar
+16:41 and actually the problem is that here i
+16:43 wrote full
+16:44 file and not yes 6 full
+16:47 and in this case of course our es6
+16:49 modules
+16:50 doesn't know what to do with common js
+16:53 modules
+16:53 so this is important all your files
+16:56 needs to be in single module structure
+16:58 let's check so here we're reloading
+17:01 again and we have
+17:02 404 so as you can see here our get is
+17:06 not correct
+17:07 because we don't see an extension here
+17:10 which actually means that
+17:11 in here six modules we must write here
+17:14 at the end
+17:15 dot js in other case our browser doesn't
+17:18 know what
+17:18 file it needs to load so let's reload
+17:21 the page and as you can see now we don't
+17:23 have any errors
+17:24 and here we are getting our console log
+17:27 so here is getfullname
+17:29 monster lessons this means that this
+17:32 import is working
+17:33 because our getfullname function is
+17:35 coming from
+17:36 another module and we're using it here
+17:39 inside browser
+17:41 the next question is of course how we
+17:43 can export several things
+17:44 from our module so for this we can jump
+17:47 back in our es6
+17:49 full and here we have two functions so
+17:52 instead of writing export default
+17:54 getfullname
+17:55 we can write here export const
+17:58 getfullname
+17:59 and here will be expert const gets her
+18:02 name
+18:02 so the only difference is this word
+18:05 export
+18:06 and this is really convenient because we
+18:08 are just writing our const and some
+18:10 functions
+18:10 and then if we need to export it we
+18:13 simply add
+18:14 at the beginning export word in this
+18:16 case we are exporting two functions
+18:18 now to use them inside bar instead of
+18:21 import get full name
+18:23 we need here to use destructuring as we
+18:26 did previously
+18:27 so here is get full name and get surname
+18:30 and we already used here get full name
+18:32 so let's use get surname
+18:34 and here will be for example foo and bar
+18:38 and now when we reload the page as you
+18:40 can see we're getting bar
+18:42 because we imported two functions here
+18:44 and we used them
+18:45 inside our console log now when you know
+18:48 what are common gs modules and es6
+18:50 modules the question is why es6 modules
+18:53 are better
+18:54 and why they were invented at all so the
+18:58 main difference
+18:58 is that require is just a function this
+19:02 is why we can write require for example
+19:04 inside if conditions or functions
+19:06 with the case of import we can't really
+19:09 do that so if i will write here if one
+19:11 equals one and now inside i will write
+19:14 this
+19:15 input actually this code will break so i
+19:18 will reload the page as you can see
+19:20 unexpected token and it's not supported
+19:23 because actually our imports must live
+19:26 only inside root
+19:28 so we can't nest them we can't put them
+19:30 inside functions
+19:32 and this is really the main benefit
+19:34 because require is just a function
+19:36 which means it is being called in
+19:39 runtime
+19:39 which means we really don't know
+19:41 anything before
+19:43 imports on the other side are static
+19:45 which actually means that they are being
+19:47 checked by typescript
+19:48 in parse time not in runtime and this is
+19:51 extremely important because we are
+19:53 getting
+19:54 all errors before and not in run time
+19:56 also there are a lot of tools with
+19:58 static analyzing
+20:00 that we can use because of es6 modules
+20:03 and we can't really use them with common
+20:05 js modules
+20:06 just because require is run in runtime
+20:09 also it's important to understand that
+20:12 all our imports are being hoisted
+20:14 which means it doesn't matter where you
+20:16 will write import somewhere on the
+20:18 bottom
+20:19 when javascript parses them it will move
+20:22 all our imports on the top which
+20:24 actually means
+20:25 in comparison to require that it doesn't
+20:28 matter where you will put your
+20:29 import it will always be in the
+20:32 beginning
+20:32 require on the other side will be
+20:34 executed in that place
+20:36 where you wrote it not in the beginning
+20:39 also as i already said
+20:41 our imports are static which actually
+20:43 means here
+20:44 in from we can write only string
+20:48 literal which means a string as a path
+20:51 to our module in case with require we
+20:53 can call here a function or
+20:55 write some concatenation whatever we
+20:57 want it is
+20:59 all forbidden with inputs because we
+21:01 don't have runtime we are analyzing them
+21:04 before in parse time and the last
+21:06 question which is really popular is
+21:08 why we still have common js modules
+21:11 inside
+21:12 node if es6 modules are really better
+21:15 and the answer is really simple it is
+21:17 super difficult to get rid of common.js
+21:20 modules inside known chairs
+21:22 because inside we have a huge codebase
+21:25 which was supported
+21:26 long long years which means it is super
+21:29 difficult to start
+21:30 using es6 modules directly as a core
+21:33 modules of node but there are actually a
+21:36 lot of tools which allow us to write es6
+21:39 even inside node but of course these es6
+21:42 modules
+21:43 are being transpiled to command.js so in
+21:46 this video you learned what are common
+21:48 js modules
+21:49 and es6 modules and of course
+21:52 self-executed functions
+21:54 and of course the main difference is
+21:55 that imports
+21:57 and exports from es6 are static which
+22:00 means we really know what
+22:01 module we are requiring also if you want
+22:04 to learn more about
+22:05 programming i have a lot of advanced
+22:07 courses regarding different web
+22:09 technologies
+22:10 and if you are interested i will link
+22:12 them down in the description box below
+22:14 so don't forget to check them out and if
+22:17 you like this video and you want more
+22:19 content like this
+22:20 don't forget to put thumbs up to support
+22:22 me and subscribe to the channel
+22:24 and if you didn't like this video
+22:26 consider watching it once again on
+22:28 increased speed that may also help
+22:30 and i will see you in my next video)
+
+5. Import vs Require(0:00 the JavaScript Community is split into
+0:02 the JavaScript Community is always
+0:04 arguing about something or other but
+0:05 this argument has lasted four years and
+0:08 shows no sign of stopping it's about
+0:10 something that's pretty fundamental to
+0:12 the way that we write JavaScript apps
+0:13 which is how should we split up our code
+0:16 you might think especially if you've
+0:17 come from another language well that
+0:18 sounds pretty basic surely you would
+0:20 have figured it out by now and the
+0:21 answer to that is yes and no let's talk
+0:24 about common JS and Es modules
+0:28 the reason JavaScript was invented was
+0:30 as a scripting language for web browsers
+0:32 but when node.js came out people
+0:33 realized they could use it for servers
+0:35 and other applications too in the
+0:37 browser you didn't really have to think
+0:38 about modules everything was just in the
+0:39 global scope but if you were building a
+0:41 complex server you couldn't just have it
+0:42 all in one file so they invented a
+0:44 module system called common JS which
+0:46 uses a function called require to let
+0:48 you pull in JavaScript from other files
+0:50 and access functions that are exported
+0:52 from them eventually JavaScript itself
+0:54 thought this is a really good idea let's
+0:55 take these ideas and do it in a way
+0:57 where it's going to work on the web so
+0:59 for a now famous version of JavaScript
+1:01 called es6 they came up with imports and
+1:04 exports and if you're writing modern
+1:06 JavaScript today this is pretty much
+1:07 always what you're going0:00 to be using You
+1:09 might think why didn't JavaScript just
+1:10 use the require calls that were already
+1:12 there well require is synchronous this
+1:15 works great in an environment where you
+1:17 assume you know all the files are there
+1:18 but not in the browser where you might
+1:20 have to wait for external resources and
+1:22 so the split was born a lot of people
+1:24 moved to the new es modules because they
+1:26 were cool and really nice to use but a
+1:28 lot lot of people stayed on the common
+1:30 JS let's talk compatibility if you're
+1:32 using ES modules you're absolutely fine
+1:34 to import comma.js but if you're using
+1:36 common JS you can't import es modules
+1:39 except for if you do it using this kind
+1:41 of async function thing that mimics what
+1:43 an import does anyway this means that if
+1:44 you're publishing a package then you
+1:46 have to be really careful with what
+1:47 you're shipping if you only ship es
+1:49 modules then your common JS users are
+1:50 going to be really annoyed but your es
+1:52 modules users don't want to import
+1:53 common.js because that's going to break
+1:55 in the browser so it is a mess and
+1:58 Publishing a package becomes extremely
+2:00 hard because you need to cater to both
+2:02 of these situations and if a user does a
+2:04 require and an import on the same
+2:06 package they'll end up with two versions
+2:08 of that code running which can cause all
+2:10 sorts of issues that's called dual
+2:11 package Hazard by the way there's a
+2:13 wrinkle to explain here too which is the
+2:15 bundler's role in all this if you're
+2:16 using any kind of bundler or transpiler
+2:18 or compiler then you're probably writing
+2:20 imports and exports a compiler like
+2:22 Babel or typescript will take those
+2:24 imports and exports and they can either
+2:25 turn them into imports and exports or
+2:28 turn them into common JS and this is the
+2:30 really weird part of the debate it
+2:31 doesn't matter what you're actually
+2:32 writing it depends on what you're
+2:34 emitting and a lot of people fall into
+2:36 the category of using ES modules or
+2:38 thinking they do but actually emitting
+2:41 common.js if you're not sure what you're
+2:42 using go take a look at your built code
+2:44 if you see required calls then you are
+2:46 emitting common JS but if you see
+2:48 imports and exports then you're a part
+2:50 of the future we should talk about bun
+2:51 2. one of Bun's main selling points
+2:53 apart from performances that they've
+2:54 fixed the interoperability issues
+2:56 between common.js and esm so if you're
+2:58 using bun then you don't have to care
+3:00 about this divide they've done this in a
+3:01 way that is not actually spec compliant
+3:04 in other words they've patched together
+3:05 the issues between common JS and esm to
+3:07 make it work this is really exciting and
+3:09 I'm really Keen to see if it works and
+3:11 if it works really well maybe they can
+3:12 change the spec and boom problem solved
+3:14 but I have a little inkling of Doubt but
+3:17 who knows there are a bunch of 10xes
+3:19 maybe they've just got it mailed but if
+3:20 you're not using bun and hey even if you
+3:22 are using bun I still think you should
+3:24 care about esm JavaScript tool chains
+3:26 can be incredibly complex and one of the
+3:28 core reasons they are so complex is
+3:30 needing to support these two different
+3:32 module systems if you adopt es modules
+3:34 today you are helping make the web a
+3:36 less complex place to code in we have
+3:38 figured out the one module system that
+3:40 works everywhere all versions of node
+3:42 with long-term support are now using esm
+3:44 it's time for you to start using esm
+3:46 wherever you can and I'll link to a post
+3:48 below that explains how you can get
+3:49 started you should check out the other
+3:51 videos on this channel this is a Channel
+3:53 full of typescript craziness and
+3:54 JavaScript Madness and you should also
+3:57 check out my course which is at total
+3:58 timescript.com and otherwise I will see
+4:00 you very soon)
+
+
+
+6.Generators ('function*', 'yield')(0:00 generators in JavaScript are probably
+0:02 one of the most misunderstood Concepts
+0:04 because most people don't really see the
+0:05 use in them but they can actually be
+0:07 incredibly useful so in this video I'm
+0:09 going to explain to you what a generator
+0:10 is and show you why they can be
+0:12 incredibly
+0:16 useful welcome back to web dev
+0:18 simplified my name is Kyle and my job is
+0:20 to simplify the web for you so you can
+0:22 start building your dream project sooner
+0:24 so if that sounds interesting make sure
+0:25 you subscribe to the channel for more
+0:26 videos just like this and to get started
+0:29 I have a very simple generator function
+0:30 on my screen and you're probably already
+0:32 looking at the code a little bit
+0:33 confused because it's really weird
+0:35 compared to normal JavaScript first
+0:37 weird thing that you're going to notice
+0:38 is we have a star this asterisk symbol
+0:40 after the keyword function the only
+0:42 purpose of this is to tell JavaScript
+0:44 that this is a generator function we can
+0:46 call the function whatever we want but
+0:48 if we put that star after the function
+0:50 keyword this is what is denoting that
+0:52 this is actually a generator function
+0:54 and then inside the generator function
+0:55 we have three separate yield statements
+0:57 so we're yielding one then yielding two
+0:59 and then yielding three and yield is
+1:02 essentially like a special type of
+1:03 return keyword that is only useful
+1:05 inside of a generator and that is
+1:07 because the purpose of a generator is to
+1:09 essentially run some code and then
+1:10 return a value and then run some more
+1:12 code and return another value and then
+1:14 run some more code and return another
+1:16 value and so on until you get to the end
+1:17 of all of the code inside of the
+1:19 generator so in order to use a generator
+1:21 we need to run the generator function
+1:23 which is going to return to us a
+1:25 generator object that allows us to
+1:26 manipulate and use this generator let's
+1:29 just get a generator Ator object here
+1:31 and again like I said we just run the
+1:33 generator function and that returns to
+1:34 us a generator object and for now I'm
+1:37 just going to console log this generator
+1:38 object so we can see what this looks
+1:39 like as you can see inside of here it's
+1:41 a little bit complicated to see what's
+1:43 going on because we have a bunch of
+1:44 different information showing up inside
+1:45 of here and there's really nothing
+1:46 that's making sense but if we dive into
+1:48 the prototypes a little bit you'll see
+1:50 that we have three functions essentially
+1:51 a next function a return function and a
+1:53 row function and really the only
+1:55 function we care about is the next
+1:56 function and next essentially allows us
+1:58 to execute the code in inside of our
+2:00 generator so if we just say generator
+2:03 object. next and we just put this inside
+2:06 of an object so we'll just say value
+2:08 equals that or we'll say obge equals
+2:11 that and let's just
+2:13 console.log this
+2:15 obge now if we save this you'll notice
+2:17 we get an object being return that has a
+2:19 value of one and a done of false and
+2:21 this is really important anytime that
+2:23 you have a generator it's always going
+2:24 to have a value property and it's going
+2:26 to have a done property done property is
+2:27 either going to be true or false false
+2:29 meaning that there's still more code to
+2:31 run and true meaning that there's
+2:32 nothing and the value is going to be
+2:34 whatever is yielded so when we did
+2:36 generator. next what happens is it ran
+2:38 all the code inside of our generator up
+2:40 to our first yield in our case we just
+2:42 have yield so it's yielding one and then
+2:43 it stops right there if we were to run
+2:46 this next again so we's just modify this
+2:48 code a little bit we'll put the next
+2:50 inside the console log and we'll do that
+2:52 twice so we're going to run next twice
+2:54 you notice what happens is we now get
+2:55 two values we get value one and we get
+2:57 value two because it's going from the
+2:59 start of our function to yield one then
+3:01 it pauses until it gets to the next
+3:03 statement where we call next then it
+3:04 goes from where it ended to the next
+3:06 yield two and then if we do this another
+3:08 time you notice we get the value of
+3:09 three being printed out if we do it a
+3:11 fourth time you notice our value is
+3:12 undefined and our done is set to true
+3:14 because there's no more code to run so
+3:16 in order to see exactly what's going on
+3:18 I want to add some console logs in here
+3:20 I'm just going to say console log before
+3:22 one then we're going to have an after
+3:24 one and a before two we're going to have
+3:27 an after two and before three we're also
+3:32 going to have an after three that's
+3:34 going to be all the things that we're
+3:35 going to be logging and for now I just
+3:36 want to do no next at all so when I run
+3:39 my code all I've done is call the
+3:41 generator function and I get a generator
+3:43 object and you'll notice nothing
+3:44 actually gets printed out and it's
+3:46 because when you call a generator the
+3:47 very first time all it does is set up
+3:49 the generator object essentially it
+3:51 creates an object that has a next
+3:52 property and the next property allows
+3:53 you to singularly execute through all
+3:55 the code inside the generator so if we
+3:57 call next once you're going to notice it
+3:59 prints out before one and then we get
+4:00 the value one that's because it runs all
+4:02 the code from the very beginning all the
+4:04 way to the very first yield now if we
+4:06 run next a second time you'll notice
+4:08 it's printing out after one before two
+4:10 and our value two and that's because the
+4:12 second time we call next it starts right
+4:14 where we finished at that yield and goes
+4:16 all the way to the next Shield which
+4:17 allows us to print all of this if we run
+4:19 this again you'll notice we get after
+4:21 two and before three being printed and
+4:22 that's because we go from where we
+4:24 stopped all the way to the next yield
+4:26 and finally if we run this a fourth time
+4:27 you'll see that after three gets printed
+4:29 out this just is going from where we
+4:31 finished all the way down to the very
+4:32 end of our function now one final thing
+4:34 that's important to kind of note about
+4:35 generators is you can actually have
+4:36 multiple generators going at once so
+4:38 let's say I create a generator object
+4:40 and I create a generator object two both
+4:42 based on our simple generator and I
+4:44 execute our generator operator number
+4:46 one twice and then I come in here with
+4:48 our second one and I execute that twice
+4:50 and let's just get rid of all these
+4:51 console logs to make it a little bit
+4:53 simpler you'll notice what happens is it
+4:55 prints out value one and value two from
+4:57 our first generator object and then it
+4:59 starts back at Value one for our second
+5:00 generator object and that's because when
+5:02 you call the generator function to
+5:04 create a generator object you're
+5:05 essentially creating a brand new
+5:06 instance an entirely separate object
+5:08 that has its own version of this
+5:10 function that can iterate through things
+5:11 on its own so allows you to do the
+5:13 iterations on their own same thing if I
+5:15 move this down here and I create my
+5:17 generator object two here then I keep
+5:19 going through my first one it doesn't
+5:21 actually reset things because this again
+5:22 is a completely brand new instance so
+5:24 whenever you create a generator object
+5:26 it's separate from all the other
+5:27 generator objects that you create but
+5:29 important to understand now let's kind
+5:31 of talk about what are the use cases for
+5:33 this and one of the most common use
+5:35 cases is when you want to do an infinite
+5:37 Loop because in JavaScript obviously you
+5:38 can't do an infinite Loop because you'll
+5:40 just Loop forever and freeze up your
+5:41 program but with a generator you can
+5:43 create an infinite Loop that actually
+5:45 doesn't stop your computer and freeze
+5:47 your program because you're only
+5:48 executing it one step at a time and this
+5:50 is great if you need to for example
+5:52 generate IDs so let's just have a
+5:53 generate ID generator and this generator
+5:56 is going to have an ID which is going to
+5:57 be equal to one when we start we're
+5:59 going to create a while loop that is
+6:01 going to be infinite so we'll just say
+6:02 while true and then inside of here we're
+6:05 just going to yield out our ID and then
+6:07 we're going to add one to our ID so we
+6:09 have essentially a generator that's
+6:10 going to constantly give us a brand new
+6:12 ID every single time so let's just come
+6:14 in here we have our generator object and
+6:16 we're just going to call next on it a
+6:18 few times and you can see our value is 1
+6:20 2 3 4 and we can call next as many times
+6:22 we want and it's just going to keep
+6:23 giving us a new number every single time
+6:25 you know 3 4 5 6 7 8 9 and done is
+6:27 always going to be false that's because
+6:29 the way that this generator works is the
+6:31 first time we call it we're going to
+6:32 have our ID set to one we're going to
+6:33 enter the while loop and we're going to
+6:34 yield one then the next time we call it
+6:36 we're going to add one to our ID jump
+6:39 back to the start of our while loop and
+6:40 then yield out the new ID which is two
+6:42 and we just do that over and over and
+6:44 over and over again forever essentially
+6:45 as long as we want to create IDs and if
+6:47 we ever want to reset our IDs all we
+6:49 need to do is just create a brand new
+6:50 generator object down here and then when
+6:53 we call that brand new generator object
+6:55 you can see it's starting back over at
+6:56 the value of one so this is a great way
+6:58 to create unique ideas identifiers now
+7:00 the other instance where generators are
+7:02 really useful is a little bit more of an
+7:03 abstract instance and that's the idea of
+7:05 using it as an iterator an iterator is a
+7:08 really common programming Concept in a
+7:10 lot of other languages and an iterator
+7:12 is essentially a function or object such
+7:14 as our generator object that has a next
+7:16 property that we can call on it and the
+7:18 next property is going to give us a
+7:19 value and it's going to give us a done
+7:20 flag to let us know if we're done
+7:22 iterating or if we can continue to
+7:23 iterate so for example a very common
+7:26 thing that you might do is just say
+7:27 while object. next and we just imagine
+7:31 that this object here is some you know
+7:33 like generator object we've created
+7:34 while we have a next one that is not
+7:36 done then we want to do some code that's
+7:38 inside here so while
+7:40 next.one is not equal to false you know
+7:43 for example this then we do some code
+7:45 down here this is a really common use
+7:47 case for iterators and this is something
+7:48 that you'll see a lot inside of code
+7:50 especially when you're writing libraries
+7:52 iterators come in super handy and if
+7:54 you're coming from other programming
+7:56 languages like Java for example you'll
+7:57 be really familiar with iterators
+7:59 because they're a very common use case
+8:01 in those different languages so that's
+8:02 really the idea behind generators is
+8:04 they allow you to really easily create
+8:06 iterators without having to do all of
+8:08 the hard work behind the scenes for
+8:10 example you can actually create a
+8:11 generator for an array really easily for
+8:13 example we can just say generator here
+8:16 that takes in an array and all we want
+8:17 to do is just convert this to an
+8:19 iterator so we can just say let I equals
+8:22 z i is less than array. length i++ all
+8:28 you want to do is yield our array of
+8:31 index I that is us to create an
+8:33 integrator for our array super easy so
+8:35 now we can just say generator we pass an
+8:37 array of 1 3 and five and let's just
+8:40 come in here we'll just say generator
+8:41 object. nextt and you can see we get the
+8:43 value of one we get the value of three
+8:45 we get the value of five and one more
+8:46 time you can see we get the value of
+8:47 undefined and done as true so this is a
+8:50 really easy way to convert an array into
+8:52 an iterator style syntax if you want to
+8:54 use it because there's a lot of
+8:55 libraries in JavaScript which rely on
+8:57 using iterators instead of arrays or or
+8:59 they give you iterators instead of
+9:00 arrays understanding how iterators and
+9:02 arrays work along with generators is
+9:04 really important now if we just go back
+9:06 here a little ways to our wild Loop that
+9:08 we had before for generating unique IDs
+9:10 I'm going to explain a few unique things
+9:11 about generators that you should
+9:12 probably understand and those unique
+9:14 things are essentially going to be how
+9:16 we can handle next more uniquely and
+9:18 also additional things that we can do
+9:19 besides next so let's modify our code
+9:21 really slightly here so that we can
+9:22 actually take a value in from yield so I
+9:24 just want to say const increment is
+9:26 going to be equal to yielding of our ID
+9:29 and if increment is not equal to null so
+9:31 if we pass an increment value so if it's
+9:34 not equal to null then what I want to do
+9:37 inside of here is I just want to take
+9:38 our ID and I want to add our increment
+9:41 to it
+9:43 otherwise I just want to increment our
+9:45 ID by one by default so this essentially
+9:48 allows us to pass a value back through
+9:50 our yield to do the incrementing width
+9:53 so if we just kind of clean this up a
+9:54 little bit you notice here our value is
+9:56 1 2 you know 3 4 it's incrementing by 1
+9:59 but if we pass a value to next let's say
+10:01 we pass it four you're going to notice
+10:03 now our first value is one then our next
+10:04 value is five and it's adding by four
+10:07 that's because whatever you pass to next
+10:09 actually gets returned from yield and
+10:11 then it's going to be used for the next
+10:12 iteration so we return four from yield
+10:14 which is our increment then we're adding
+10:16 that four to our ID and then yielding
+10:18 that ID so that's what passing the value
+10:20 to next allows you to do this isn't
+10:22 something you're going to do all that
+10:23 often but it's pretty powerful because
+10:25 you can do a lot of cool things by
+10:26 passing the value into next for example
+10:28 we can pass in three here now we have 1
+10:30 we have five we have eight and then
+10:32 since we didn't pass anything to next
+10:33 here we're just getting nine the only
+10:35 important thing to note is that passing
+10:36 a value to next on the first iteration
+10:38 does absolutely nothing because there is
+10:40 no yield to return to we're actually
+10:42 just coming from our generate ID up here
+10:44 so if you're going to pass a value to
+10:45 next you can only do it on the second
+10:47 iteration of next and every single one
+10:49 after that now another important thing
+10:50 to know about the generator object is it
+10:52 has a function called return and return
+10:54 is really interesting because return
+10:55 allows you to essentially exit out of a
+10:57 generator no matter how much more you
+10:59 have to go and it will just return
+11:01 whatever value you pass it so let's just
+11:03 say we pass it the value of 10 we'll
+11:04 keep everything else the same now we
+11:06 save you can see it goes 1 2 10 and
+11:09 that's because we're passing 10 to
+11:10 return and now our done is set to true
+11:12 and undefined is being returned as our
+11:14 value and that's because when we call
+11:16 return it's exiting out of our generator
+11:18 function as if it finished and it's just
+11:19 going to return this value right here so
+11:21 it immediately exits our generator and
+11:23 does not allow us to have any more
+11:24 information in our generator at all this
+11:26 is really great if you need to exit out
+11:27 of the generator prematurely you can
+11:29 just use return and it's going to exit
+11:31 out immediately now the very last
+11:33 function to worry about is going to be
+11:34 the throw function and this is just
+11:35 going to allow you to throw an error if
+11:36 you have an error we can just say you
+11:37 know new error high now if we save you
+11:41 can see it's throwing that error high
+11:43 and it's throwing it for our generator
+11:45 this isn't really something super useful
+11:46 unless you're kind of like writing a
+11:47 library behind the scenes but it's
+11:48 important to know that it's there and
+11:50 that's everything there is to the
+11:51 generator function if you enjoyed this
+11:53 video I highly recommend you check out
+11:55 my full JavaScript simplified course
+11:57 which dives into topics such as this and
+11:58 other complex topics most people don't
+12:00 even know exist so you can really take
+12:02 your JavaScript skills to the next level
+12:04 so I highly recommend you check out this
+12:05 course link down in the description
+12:07 below with that said thank you very much
+12:09 for watching this video and have a good
+12:10 day)
+
+
+7.Symbol, Shared Symbols, Iterable Protocol, Iterator Protocol and Custom Iterables(0:00 hey everyone in this video we're gonna
+0:01 do some fun stuff well relatively fun it
+0:04 is JavaScript after all we're gonna play
+0:06 around and mess with some of the
+0:08 defaults iterables and javascript for
+0:10 example i've run some code already and
+0:12 now every time i make an array and i
+0:14 iterate over it like this with a for of
+0:17 loop console dot log each color we're
+0:20 going backwards green yellow orange red
+0:22 but the array is red orange yellow green
+0:24 or another example i've made it so that
+0:27 every time we try and iterate over a
+0:29 string like hello i'm going to spread it
+0:32 here we don't get the characters we get
+0:35 an open open open open
+0:36 nope one for each character so that's
+0:39 all kind of jokey but also educational I
+0:42 promise but we're also going to see how
+0:44 to define our own custom iterables and
+0:47 iterators the terminology is annoying in
+0:49 this video I'll have to warn you up
+0:51 front it's not my fault so for example
+0:53 I've created a range function which
+0:56 returns an iterator and that iterator
+0:58 generates numbers ranges of numbers so
+1:00 we provide a start like 15 to 50 that
+1:04 would be the end point and then a step
+1:06 will be 5 so we'll generate every 5th
+1:09 number between 15 and 50 and then we can
+1:11 spread that and get those numbers we
+1:14 could use a for of loop or we can even
+1:16 try it with different numbers let's go
+1:17 100 to 200 and get a massive array of
+1:20 numbers we created a custom iterator and
+1:22 we'll see how to do that by the end of
+1:24 the video but first we have to talk
+1:26 about terminology we have to talk about
+1:28 what it means for something to be
+1:29 iterable all right so I just undid those
+1:32 changes to array and string or back to
+1:34 regular JavaScript world where arrays
+1:36 and strings iterate how they should and
+1:38 if we take a look I'm gonna use the
+1:40 spread operator here to iterate if you
+1:43 don't know about spread last week I
+1:45 released a YouTube video on it so check
+1:46 that out spread is going to iterate over
+1:49 an iterable so like an array here's an
+1:51 array and spread each one out in this
+1:54 case into another array so we're copying
+1:57 the data over into this array so
+1:59 obviously arrays are iterable in
+2:01 javascript we can do that there's no
+2:04 problem but why can I not do this spread
+2:08 of 12 I get an error number 12 is not
+2:11 iterable so how does javascript know
+2:13 that something is iterable or not what
+2:15 makes something actually an iterable
+2:17 well there's something called the
+2:19 iterable protocol there's also the
+2:21 iterator protocol which we'll come back
+2:23 to also I should note if you are
+2:25 familiar with generators or you've heard
+2:27 the term it they do relate to this I'm
+2:29 not covering them in this video I'll
+2:31 probably do a separate video on them but
+2:33 they are and sometimes an easier way of
+2:35 getting some of the same functionality
+2:37 but you have to understand iterables and
+2:40 iterators or you should understand them
+2:42 before you move on to generators so I'm
+2:44 kind of showing you the official
+2:46 protocols and then generators often can
+2:48 be used to shorten some of this up and
+2:51 they do it behind the scenes but we're
+2:52 not covering that here we're talking
+2:54 about the very important basics for
+2:56 something to be considered iterable and
+2:57 JavaScript so that you can use a for
+2:59 loop with it or spread as two examples
+3:02 this is the set of rules you need to
+3:04 follow to make something iterable and
+3:06 really it comes down to this right here
+3:08 for an object to be iterable it must
+3:10 have a property with the key of symbol
+3:13 dot iterator so if you don't know what
+3:15 symbols are I also have a video on that
+3:17 from a couple months ago I definitely
+3:19 recommend checking that out it will help
+3:20 you understand why as simple it's useful
+3:22 here I don't really have time to go into
+3:24 it but essentially a symbol is a unique
+3:26 value javascript could have used a
+3:28 string so you had if you defined a
+3:30 method called iterate on every object
+3:33 you want it to be iterable that could
+3:34 work but it'd be very easy to overwrite
+3:36 that or accidentally conflict but symbol
+3:39 dot iterator is very very explicit it's
+3:42 it's something you do deliberately so
+3:44 you must have that key on an object to
+3:46 be iterable and then its corresponding
+3:48 value must be a function which returns
+3:50 an iterator now we haven't talked about
+3:52 what the rules are for something to be
+3:55 an iterator there's a whole other
+3:56 protocol lots of protocols but let's
+3:58 just start with this first one symbol
+4:00 iterator means that something is
+4:02 iterable so if we come back here as
+4:05 you've seen arrays are iterable so if I
+4:08 make an array variable I'll just call it
+4:09 a ARR equals one two three if we look at
+4:13 a ARR we go into the depths of the proto
+4:18 right here there's a property called
+4:21 simple iterator and it's corresponds to
+4:24 a function and that function returns an
+4:26 iterator
+4:27 we'll get to that so what happens is any
+4:30 time you try and iterate over an object
+4:32 first JavaScript is going to check is
+4:35 this thing an iterable so in the case of
+4:37 an array it is but in the case of a
+4:39 number it's not it does not have that
+4:41 property simple dot iterator but if it
+4:44 does have that property then what
+4:46 happens next well it executes that
+4:48 function so if we wanted to try and
+4:50 execute it ourselves to step through the
+4:52 process of this array 1 2 3 I can access
+4:57 symbol dot iterator but I do have to use
+4:59 square brackets symbols are think of it
+5:02 as like a variable this is not the value
+5:04 itself it corresponds to a unique value
+5:06 behind the scenes so you can't use the
+5:08 dot notation you have to use square
+5:10 brackets and that gives us a function so
+5:13 when we spread four five six seven or
+5:16 one two three as an array the first
+5:18 thing JavaScript does is it runs this
+5:20 function symbol dot iterator whatever
+5:23 the corresponding value is it executes
+5:25 it and that returns an iterator so
+5:28 that's the other part of the iterable
+5:30 protocol so if we save this to a
+5:32 variable I'll just call this Const it
+5:35 err
+5:36 we now have an iterator if I can spell
+5:39 correctly right there so we spent all
+5:41 this time so far just talking about the
+5:43 iterable protocol and the whole point of
+5:45 that is basically to let JavaScript know
+5:48 this thing can be iterated over this
+5:50 object supports iteration but it doesn't
+5:53 define the functionality it only returns
+5:56 the iterator the iterator is an object
+5:59 that actually defines how something is
+6:01 iterated over it's really annoying to
+6:04 say iterate iterator iterable over and
+6:06 over so I did type it out I'm hoping
+6:09 that this makes it a little bit clearer
+6:10 but just know that this is not something
+6:13 that is second nature to most developers
+6:15 it's not very straightforward especially
+6:18 compared to other languages like Python
+6:20 this is kind of a clunky approach in my
+6:22 opinion but it works so that function
+6:25 needs to return an iterator we have an
+6:28 iterator stored in a variable now what
+6:30 is an iterator it's an object and
+6:32 there's a protocol for it it must follow
+6:35 these rules it must implement a next
+6:38 method and if we look at it
+6:40 which we stored it's an iterator you can
+6:44 see it has a next method right there and
+6:46 that next method has some special rules
+6:48 every time it's called it must return an
+6:50 object with these two properties done
+6:53 which is a boolean true or false and
+6:55 value which is the individual value that
+6:57 we are returning so for example if we're
+7:00 pretending that we are JavaScript and
+7:02 we're iterating over this array we're
+7:04 going to execute the symbol dot iterator
+7:06 function and then we take the return
+7:08 value which is an iterator itself and we
+7:11 call dot next dot next returns to us an
+7:15 object that contains one as the first
+7:18 value and it says done is false we're
+7:20 not done yet there's more so then next
+7:22 time next is called we get two and done
+7:26 is false and so on and I can actually
+7:28 show this to you I have it err if I call
+7:31 next the first value I get back is an
+7:34 object it says done is false we're not
+7:36 done iterating and value is one the next
+7:39 time it's called we get two and then
+7:42 again we get three and then finally we
+7:45 hit the end done is true and value is
+7:48 undefined so this is the standard
+7:51 protocol for every iterator in
+7:53 JavaScript whether it's a string I could
+7:56 do the exact same thing I just did here
+7:58 for a string so really quickly if I did
+8:00 hello symbol iterator dot next I'm just
+8:05 gonna call it once you see that the
+8:08 first thing we get is value H done false
+8:10 it's an object returned from next so
+8:14 when we loop with a for of when we use
+8:16 spread javascript is going to call the
+8:18 next function or the next method on that
+8:21 iterator over and over and over until it
+8:24 gets done true so that is the protocol
+8:27 it's weird I know but now that we've
+8:30 laid out the rules of how it works we
+8:32 can go ahead and write our own iterators
+8:34 or to start let's make all strings
+8:36 iterate and return a value of nope or
+8:40 lol or a smiley face instead of the
+8:42 individual string character so to do
+8:44 that we're going to go into string dot
+8:47 prototype by the way this is something
+8:49 you probably never will need to do I
+8:51 don't recommend doing it it's just kind
+8:53 of fun as an
+8:54 ample to show you that the protocol is
+8:56 the same whether it's on your own custom
+8:58 iterator or we're working with something
+9:00 like a string or on the Ray so string
+9:02 dot prototype and then square brackets
+9:05 symbol dot iterator this is already a
+9:07 function it exists I actually just
+9:10 showed that to you but I'm going to
+9:11 override it and make it my function now
+9:15 if we follow this protocol here it says
+9:17 the function needs to return an iterator
+9:19 an iterator is an object so we're going
+9:22 to return an object and what's the next
+9:25 step it must contain a next method so
+9:28 we're going to add next and then next
+9:32 needs to return an object with done and
+9:34 value now this is the slightly tricky
+9:38 part what we want to do is let's say our
+9:41 string is dog next is going to be called
+9:44 one time and we want to return in our
+9:46 case let's go with nope so value will be
+9:49 nope the first time and then the second
+9:51 time value will be nope the third time
+9:54 nope and then if it's called again we
+9:57 want done to be true so we need to keep
+10:00 track of how many times next has been
+10:02 called so we don't write a loop but
+10:05 we're kind of writing this to behave as
+10:07 a loop broken up frame by frame
+10:09 imagine this is a movie and we're
+10:11 splitting it up piece by piece each
+10:12 frame kind of the same idea one
+10:15 iteration of a loop at a time but we're
+10:17 not actually writing the loop in here so
+10:19 I'm going to define a variable called
+10:20 count and let's have it start at string
+10:23 dot length so this dot length that's
+10:26 going to be whatever string this is
+10:28 being called with so now length is five
+10:31 like this three on this and we're going
+10:34 to start with three in our case and then
+10:37 each time through we're going to
+10:38 subtract one so somewhere in here we
+10:40 need to do count minus minus and then
+10:43 we'll check if count is greater than
+10:44 zero because we're starting with three
+10:47 and then subtracting to two to one and
+10:49 then if it's equal to zero we're done so
+10:53 if count is greater than zero we can
+10:55 subtract one from it and we will return
+10:58 our object that fits the protocol done
+11:01 and value so done will be false and
+11:05 value it's just always going to be
+11:08 nope just like that so then if we're
+11:12 outside of this if this is false that
+11:14 means we are done so we can return done
+11:17 true just like that and that should do
+11:21 it for us just a quick note of caution
+11:23 or warning here make sure that you're
+11:25 very careful about when you return done
+11:28 true make sure you do it if you don't
+11:30 you will iterate forever or JavaScript
+11:33 will continue to call next over and over
+11:35 and over expecting to get done true at
+11:38 some point and it will freeze your
+11:40 browser window and make your computer
+11:41 fan turn on and possibly ruin your life
+11:44 it just happened to me many times so
+11:47 let's see what happens when we run this
+11:48 we start with count as 3 or some number
+11:51 we subtract 1 each time while count is
+11:54 greater than 0 we return nope and then
+11:57 as soon as we are equal to 0 meaning
+12:01 once per every character we return done
+12:03 true so I'm gonna run this clear my
+12:06 console and let's try spreading let's go
+12:10 with hello there we go 5 notes 1 2 3 4 5
+12:14 or let's do a constant log with a 4 of 4
+12:18 let X of doggy console dot log X and we
+12:21 get 5 knope's not as dramatic because we
+12:23 can't see them all but there's 5 of them
+12:25 so that's kind of a fun example of how
+12:27 you can overwrite an existing or a
+12:29 default iterator but next I'm going to
+12:32 show you how you can construct your own
+12:33 from scratch which is something you
+12:35 might do more alright so we're going to
+12:37 define our own iterable object called
+12:40 wealth range is a function that returns
+12:42 an object and range will take a starting
+12:45 point and an ending point in a step so I
+12:48 showed this earlier on but this should
+12:50 generate a range of numbers from 10 to
+12:52 20 going by 2 so 10 12 14 16 and so on
+12:56 and we're going to start by defining a
+12:59 function called range it takes 3 values
+13:02 so we'll go with a start
+13:03 stop and now let's go with a end and
+13:06 step and I'm gonna give them all default
+13:09 values so if we don't pass them in we'll
+13:12 go from 1 to 10 with a step of 1 and we
+13:16 are implementing the iterable protocol
+13:18 which means we have to have a symbol
+13:20 iterator
+13:21 pretty defined but I'm going to return
+13:23 an object from this function which is an
+13:26 iterable because it's going to have a
+13:28 symbol iterator property and that's
+13:32 going to correspond to a function and
+13:34 this function needs to return an
+13:37 iterator so that's an object next step
+13:42 an object that implements a next method
+13:45 next and our next method needs to return
+13:49 some objects that contains done and
+13:51 value all right
+13:53 so how are we going to make this work
+13:55 well you can think of it again as a loop
+13:57 that we break down into one frame at a
+14:00 time
+14:00 so our loop would have some variable
+14:02 that begins with this value whatever
+14:05 start is passed in let's go with one and
+14:07 then we continue to add step to that
+14:11 value until we hit the end so we're
+14:14 going to have some condition in here
+14:16 that says if we've hit the end then
+14:18 we're done if we haven't at the end then
+14:21 add step to our variable so I'm going to
+14:24 make a variable up here I'll go with let
+14:27 current equals start and then instead of
+14:31 next we can add an if and we'll say if
+14:33 current is less than or equal to end if
+14:38 that's the case we're going to return an
+14:42 object where we have done set to false
+14:45 and value set to current so current will
+14:49 start as whatever the initial value is
+14:51 in our case 1 and the very first time
+14:53 through we've returned value of 1 but
+14:57 then we need to make sure that add
+14:58 current or add to current so we're going
+15:01 to do current plus equals step it's not
+15:04 always 1 so we can't do plus plus we
+15:06 could be doing step of 5 so we're going
+15:08 to plus equal step but there's a problem
+15:10 with this code well there's a couple but
+15:13 if we return first this is never going
+15:15 to happen we just return and the
+15:18 function stops so we need a intermediate
+15:20 variable or that's one approach at least
+15:23 so I'm going to make a variable I'll
+15:25 call this let result and I'm going to
+15:28 set result equal to that and then at the
+15:33 end I'm going to return because
+15:35 dolt so this is just an intermediate
+15:37 step so I can have the old value of
+15:39 current so the first time through the
+15:41 loop current starts at 1 and we store
+15:43 that here and then we update current so
+15:45 it's now 2 and then we return the
+15:48 original value in result so I'm missing
+15:52 a very important piece which is I need
+15:54 to make sure at some point done is false
+15:56 or done is true excuse me which is here
+16:01 because if current is now greater than
+16:04 end that means we've hit the end and
+16:06 we're done
+16:07 so we need to return done ok so let's
+16:10 see if this works let's spread the
+16:13 default range where we don't pass any
+16:15 values in 1 to 10 step of 1 now let's go
+16:18 from 1 to 20 and a step of 5 1 6 11 16
+16:23 perfect let's go from 10 to 200 and
+16:28 multiples of 20 actually let's go from
+16:30 20 to 200 perfect 20 40 60 80 and we've
+16:35 created an iterable this right here
+16:37 returns an iterable which under the
+16:40 symbol iterator has a function that
+16:43 returns an iterator this is the iterator
+16:45 here and we call that or our code is
+16:48 calling it behind the scenes it's
+16:50 calling next over and over and over
+16:51 until it gets done true at which point
+16:54 it gives up it's done so this is not
+16:57 everything there is to know about
+16:58 iterators for example there are some
+17:00 other things you can define besides next
+17:03 which I'm not going to go into now
+17:05 because quite frankly this is not that
+17:07 this is not something you do all that
+17:09 often but I think it's kind of a fun
+17:11 peek into some of the internals of
+17:13 JavaScript it's a nice little window
+17:15 that allows you to change functionality
+17:17 and connect to some of these behind the
+17:20 scenes stuff I don't know it's not
+17:22 making sense
+17:22 all right so we made it to the end
+17:24 surprisingly it's kind of a tough one if
+17:27 you enjoyed the video please consider
+17:29 liking it and subscribing trying to post
+17:32 consistently once or twice a week for
+17:34 the next couple months also leave a
+17:36 comment if you have suggestions for
+17:38 future videos I've been drawing upon
+17:40 those for each of the last five or six
+17:42 videos and I think that's it thank you
+17:45 goodbye
+17:45 bye)

@@ -1,0 +1,5755 @@
+1.Prototype and Prototypal Inheritance in Javascript(This video by Akshay Saini provides an in-depth explanation of Prototypes and Prototypal Inheritance, which are fundamental concepts for understanding how JavaScript works under the hood.
+
+### **Core Concepts**
+
+* **What is a Prototype?**
+* In JavaScript, every object, function, and array is automatically attached to a hidden object known as a prototype.
+* This prototype object contains various built-in properties and methods that the original object can access.
+* For example, when you create an object `let arr = []`, it automatically gets access to methods like `.length`, `.push()`, and `.pop()` because they exist on its prototype.
+
+
+* **The Prototype Chain**
+* When you try to access a property or method on an object, JavaScript first looks at the object itself.
+* If it's not found, it looks at the object's prototype (`__proto__`).
+* This process continues up a "chain" of prototypes until the property is found or the chain ends at `null`.
+* **The Chain Hierarchy:**
+1. **Object instance** (e.g., `myObj`).
+2. **`Object.prototype`** (where most standard methods like `.toString()` live).
+3. **`null`** (the absolute end of the chain).
+
+
+
+
+* **Prototypal Inheritance**
+* Inheritance in JavaScript is the mechanism by which one object can access the variables and methods of another object.
+* Unlike classical inheritance (found in languages like Java), JavaScript uses the prototype chain to achieve this.
+* You can manually set an object's prototype using `__proto__` (older way) or `Object.setPrototypeOf()`.
+
+
+
+### **Practical Examples from the Video**
+
+* **Sharing Methods:** If you have multiple objects that need the same function, instead of defining it in every object (which wastes memory), you can define it once on a prototype that all those objects share.
+* **Method Borrowing:** By setting `objectA.__proto__ = objectB`, `objectA` can now "borrow" and use any methods or properties defined in `objectB` as if they were its own.
+
+### **Key Interview Questions Answered**
+
+* **What is `__proto__`?** It is a reference to the prototype of the object.
+* **What is the difference between `prototype` and `__proto__`?** `prototype` is a property of a constructor function, while `__proto__` is a property of an object instance that points to its prototype.
+* **Why is it called "Prototypal Inheritance"?** Because the inheritance happens through the prototype objects rather than class blueprints.
+
+**Video Link:** [Prototype and Prototypal Inheritance in Javascript](https://www.youtube.com/watch?v=wstwjQ1yqWQ))
+
+2.Factory Functions(Introduction
+0:03
+in the last lecture you learn how to use
+0:05
+the object literal syntax to create an
+0:07
+object but there is a tiny problem here
+0:10
+imagine you want to create two circle
+0:13
+objects so I'm gonna copy this code here
+0:17
+and call this second circle object
+0:20
+circle - now the problem we have here is
+0:23
+that we have duplicated the
+0:26
+implementation of the draw method so
+0:30
+right now it's a simple method it has
+0:31
+only a single line of code but what if
+0:34
+we had ten lines of code here we
+0:36
+wouldn't want to repeat all these lines
+0:38
+here because if you have a bug in this
+0:40
+method then we'll have to fix it in
+0:43
+multiple places and also take into
+0:45
+account that our circle object currently
+0:47
+has only a single method what if we had
+0:50
+ten other methods here we don't want to
+0:52
+duplicate or repeat all that logic right
+0:55
+so if our objects have logic we need a
+0:58
+different way to create objects that's
+1:01
+when we use factoring or constructor
+1:03
+functions in this lecture you're going
+1:05
+to learn about Factory functions and
+1:07
+we'll look at constructor functions next
+1:10
+so I'm gonna delete this second circle
+Factory Functions
+1:13
+and show you how to create a factory
+1:16
+function so factory function just like a
+1:20
+factory producing products these factory
+1:23
+functions produce objects so we define a
+1:27
+function and call it create circle now
+1:34
+we're going to move this definition of
+1:37
+the circle object inside of our factory
+1:40
+function so we have a circle object here
+1:43
+finally we need to return this now one
+1:46
+way is to return it like this but we
+1:49
+don't really need this circle constant
+1:51
+defined because we are not going to
+1:53
+reference it anywhere we only want to
+1:55
+return it so we can make this code
+1:57
+shorter by removing the circle constant
+2:02
+and simply returning this object so
+2:05
+whenever we call the create circle
+2:07
+function we'll get a circle object
+2:09
+however we have hard-coded these values
+2:13
+here so every circle that is created by
+2:15
+this function it's
+2:17
+radius will be one that's not what you
+2:18
+want maybe we want to have a circle with
+2:20
+a bigger radius so we want to pass
+2:23
+radius as a parameter here so radius and
+2:26
+then instead of hard-coding one you want
+2:30
+to set the value so this radius argument
+2:33
+that we supply when calling this
+2:35
+function similarly we can add another
+2:38
+parameter here like location and instead
+2:42
+of hard-coding this object here we can
+2:44
+simply set location to this location
+2:46
+argument however for simplicity I'm
+2:49
+gonna remove these two properties
+2:52
+location and is visible so we can focus
+2:55
+on the core of factory functions so
+Draw Methods
+2:58
+let's delete these properties we don't
+3:01
+need the location parameter either now
+3:03
+we can make this code a little bit
+3:04
+shorter so in modern JavaScript if our
+3:08
+key and value are the same we can make
+3:11
+our code shorter by removing the value
+3:14
+and simply adding the key so that is
+3:17
+exactly equivalent to this code right so
+3:20
+that is better next we have our draw
+3:23
+method there is also a shorter syntax to
+3:26
+define this method so instead of
+3:29
+defining it as a key value pair we can
+3:31
+define it like this so draw parentheses
+3:36
+and code block this is similar to how we
+3:39
+define a function outside of an object
+3:42
+right so if you want to define a
+3:44
+function this is how we define it right
+3:46
+so we have the function keyword then the
+3:49
+name of the function parentheses and
+3:51
+code block now when we put this inside
+3:53
+of an object basically we're dropping
+3:55
+the function keyword and simply adding
+3:57
+this
+3:59
+inside of the object you can see this
+4:01
+syntax is a little bit shorter and what
+4:03
+we have here so let me delete this and
+4:07
+move this console not log statement in
+4:10
+our draw method
+4:14
+so now we have a factory function we can
+4:18
+simply call this to create a circle
+4:20
+object so I'm going to define this
+4:23
+constant circle one and call the create
+4:28
+circle function and pass one as the
+4:30
+radius now let's log this circle object
+4:33
+on the console circle one save the
+4:36
+changes so you can see radius is set to
+4:39
+one we also have this draw method so we
+4:43
+can call circle one but draw and here's
+4:48
+our draw message on the console now the
+4:51
+beauty of this Factory function is that
+4:53
+we have defined our logic in one place
+4:56
+so we can call this function with
+4:59
+different values or different arguments
+5:01
+we get different circle objects but we
+5:03
+have defined the draw method only in one
+5:07
+place so if there is a bug in this
+5:09
+method that we need to fix in the future
+5:11
+there is a single place that we need to
+5:12
+modify so now I'm gonna create another
+5:15
+circle object circle to create circle
+5:19
+I'm gonna pass to as the radius let's
+5:22
+log this on the console circle to save
+5:25
+the changes look we have two different
+5:27
+circle objects and a single definition
+5:30
+of the draw method so this is all about
+5:33
+factory functions but factory functions
+5:36
+are not the only way to create objects
+5:38
+we can also use constructor functions
+5:40
+and that's what you're going to learn
+5:42
+next
+JavaScript Course
+5:46
+hi guys thank you for watching my
+5:48
+javascript tutorial this tutorial is
+5:50
+part of my JavaScript course where you
+5:52
+learn all the essential JavaScript
+5:55
+features that every web and mobile
+5:57
+application developer must know if
+5:59
+you're an absolute beginner or have some
+6:01
+experience in JavaScript and are looking
+6:03
+for a fun and in-depth course that
+6:05
+teaches you the fundamentals of
+6:07
+JavaScript this course is for you this
+6:09
+course is also packed with tons of
+6:11
+exercises that help you master what you
+6:13
+learned in the course in fact many of
+6:15
+these exercises are questions that come
+6:18
+up in technical programming interviews
+6:20
+so if you're pursuing a job as a
+6:22
+front-end or a back-end developer or if
+6:25
+you simply want to have a more in-depth
+6:27
+understanding of JavaScript I highly
+6:29
+encourage you to enroll in the course
+6:31
+for a limited time you can get this
+6:33
+course with a discount using the link in
+6:35
+the video description click the link to
+6:37
+find out more about the course and
+6:39
+enroll)
+
+
+3.avaScript Constructor Functions(0:03
+in this lecture you're going to learn
+0:04
+about another pattern for creating
+0:07
+objects that is a constructor function
+0:11
+so just like the factory function we're
+0:13
+going to create a function and the job
+0:16
+of this function is to construct or
+0:18
+create an object however the naming
+0:23
+convention we use for constructor
+0:25
+functions is different so the naming
+0:27
+convention we have for factory functions
+0:29
+is what we call camel notation so the
+0:32
+first letter of the first word is
+0:34
+lowercase but the first letter of every
+0:37
+word after is uppercase this is what we
+0:40
+call camel notation so it looks like
+0:43
+this camel notation we've got one two
+0:46
+three four you can see the first letter
+0:49
+of the first word is lowercase and these
+0:52
+uppercase letters look like camel humps
+0:55
+that's why we call it camel notation in
+0:57
+contrast we have another notation that
+1:00
+is called Pascal notation and in this
+1:03
+notation the first letter of every word
+1:05
+should be uppercase so one two three
+1:09
+four you can see the pattern right now
+1:12
+when naming constructor functions we
+1:14
+should use Haskell notation by
+1:16
+convention because that's something that
+1:18
+other JavaScript developers expect when
+1:20
+they read your code so we're going to
+1:23
+call this function circle with a capital
+1:26
+C note that I did not call this create
+1:29
+circle and you will see that in a second
+1:31
+now just like our factory function here
+1:34
+we need to add a parameter radius
+1:36
+however instead of returning an object
+1:39
+we're going to use a different approach
+1:41
+to initialize an object in JavaScript we
+1:45
+have a keyword called this and this is a
+1:50
+reference to the object that is
+1:52
+executing this piece of code you're
+1:54
+gonna see that in a second for now just
+1:56
+imagine this references an empty object
+1:59
+now you know that with dot notation we
+2:02
+can access properties of an object we
+2:05
+can read a property or we can set a
+2:06
+property so on this new empty object you
+2:10
+want to add a property called radius and
+2:13
+we said that to this radius argument
+2:15
+that we receive here
+2:17
+so in JavaScript our objects are dynamic
+2:19
+once we create them we can always add
+2:21
+additional properties or methods to them
+2:24
+so here we are adding a new property to
+2:27
+an empty object as similarly we're gonna
+2:31
+use this approach to add a draw method
+2:34
+to this new empty object so this draw
+2:38
+but we set this to a function and in the
+2:42
+body of this function we simply do a
+2:43
+console dot log of draw now finally in
+2:49
+order to create a circle object using
+2:51
+this constructor function we're going to
+2:54
+define a constant called circle and here
+2:58
+we're gonna use another keyword that is
+3:00
+new circle and pass one as the radius
+3:05
+what is happening here well when we use
+3:09
+this new operator here three things
+3:12
+happen this new operator creates an
+3:14
+empty JavaScript object something like
+3:18
+this Const an X set to an empty object
+3:21
+that is happening under the hood but you
+3:23
+don't see that next it will set this to
+3:28
+point for this new empty object so in
+3:31
+this code you have access to this new
+3:33
+empty object and we said this radius
+3:36
+property as well as the draw method in
+3:38
+this new object finally this new
+3:41
+operator will return this new object
+3:45
+from this function so it looks like this
+3:48
+return this we don't have to explicitly
+3:51
+add this statement here in this function
+3:54
+this will happen under the hood so let
+3:57
+me recap when we use the new operator
+3:59
+three things happen this operator first
+4:02
+creates an empty object then it will set
+4:06
+this to point to this object and finally
+4:08
+it will return that object from this
+4:11
+function so what we get here is that new
+4:14
+object and we simply set circle to point
+4:16
+to that object now let's see the
+4:19
+difference between factory and
+4:21
+constructor functions so with Factory
+4:24
+functions we create an object like this
+4:27
+constant my circle
+4:30
+here recall create circle and pass an
+4:33
+argument so with factory functions we
+4:36
+simply call a function and in this
+4:38
+function with return a new object in
+4:41
+contrast with constructor functions we
+4:44
+use the new operator and instead of
+4:46
+returning an object we use that this
+4:49
+keyword also in terms of naming
+4:52
+convention with constructor functions we
+4:54
+use the pascal naming convention but in
+4:58
+factory functions we use the camel
+5:00
+notation so you might be asking which
+5:03
+approach or which pattern you should use
+5:04
+to create new objects both these
+5:07
+patterns are equally good for creating
+5:09
+new objects the constructor function
+5:12
+pattern is familiar to developers who
+5:15
+have some experience programming and
+5:17
+languages like C sharp or Java so with
+5:20
+this pattern you can see we're creating
+5:21
+a new circle now if you don't have any
+5:24
+experience in languages like C sharp or
+5:26
+Java you might want to go for a factory
+5:29
+function there's really no difference
+5:31
+between these two patterns however there
+5:34
+are some discussions online by some
+5:35
+strongly opinionated developers
+5:38
+comparing these two patterns my
+5:39
+suggestion to you is do not get hung up
+5:42
+on these discussions they're just a
+5:43
+waste of time pick one pattern and just
+5:46
+stick to that
+5:49
+hi guys thank you for watching my
+5:52
+javascript tutorial this tutorial is
+5:54
+part of my JavaScript course where you
+5:56
+learn all the essential JavaScript
+5:58
+features that every web and mobile
+6:01
+application developer must know if
+6:03
+you're an absolute beginner or have some
+6:05
+experience in JavaScript and are looking
+6:07
+for a fun and in-depth course that
+6:09
+teaches you the fundamentals of
+6:10
+JavaScript this course is for you this
+6:13
+course is also packed with tons of
+6:15
+exercises that help you master what you
+6:17
+learned in the course in fact many of
+6:19
+these exercises are questions that come
+6:21
+up in technical programming interviews
+6:24
+so if you're pursuing a job as a
+6:26
+front-end or a back-end developer or if
+6:29
+you simply want to have a more in-depth
+6:31
+understanding of JavaScript I highly
+6:33
+encourage you to enroll in the course
+6:35
+for a limited time you can get this
+6:37
+course with a discount using the link in
+6:39
+the video description click the link to
+6:41
+find out more about the course and
+6:42
+enroll
+)
+
+4.JavaScript IIFE ( Immediately invoked function expression)(0:01
+In this video
+0:02
+we will discuss about
+0:04
+a very interesting feature given by JavaScript
+0:07
+called as
+0:09
+IIFE
+0:15
+The full form of IIFE is Immediately
+0:20
+Invoked
+0:26
+function
+0:27
+Expression
+0:29
+The name is big and it does a very very important work
+0:35
+What exactly is IIFE in JavaScript?
+0:39
+Let us say
+0:40
+we want to do some initialization work for a web page
+0:44
+For web page
+0:47
+initialize a variable called as counter.
+0:52
+Then increment this counter.
+0:56
+We have a simple initialization code
+0:59
+which starts here and ends here
+1:07
+We have a function down below
+1:10
+SomeFunction
+1:12
+In the SomeFun()
+1:14
+we are using
+1:16
+a variable called as counter
+1:29
+If we run this
+1:36
+Put a debug point
+1:46
+Go to sources
+1:54
+We are putting a debug point here and here
+1:59
+and run this
+2:06
+The initialization starts and it makes this counter variable as 10
+2:10
+then we increment the variable the counter becomes
+2:14
+11
+2:19
+The someFun() is invoked
+2:22
+This SomeFun
+2:24
+value of the counter is 11
+2:27
+This counter value is taken from here
+2:30
+because in JavaScript when we declare a variable at the top
+2:33
+it becomes a global variable for the whole
+2:36
+web page
+2:38
+This counter variable
+2:39
+is the same what we have. If we do a increment here
+2:43
+it now becomes 12
+2:46
+There is a problem
+2:48
+we want this initialization code
+2:52
+should not affect
+2:53
+the function variable. In other words
+2:55
+we want this
+2:57
+counter variable should not be polluting
+3:00
+the variables of the function. We want this counter variable
+3:03
+should be different from this counter variable.
+3:06
+When we have lot of global variables in the application
+3:10
+we can have problems because
+3:12
+we do not know that global variable is getting modify from var
+3:19
+We want this counter variable scope
+3:22
+should be different from this counter variable
+3:25
+This count variable scope should be only
+3:28
+within the SomeFun
+3:29
+This counter variable should be
+3:33
+only for the initialization purpose
+3:36
+Because the counter variable is declared at the top, it becomes a global variable.
+3:43
+Second
+3:45
+this initialization code should be called only
+3:48
+only once
+3:52
+not again and again
+3:54
+There are two requirements we have
+3:56
+One is that we do not want
+3:58
+the
+3:59
+polluting of the global variables
+4:01
+The first requirement is
+4:05
+we do not want global variable
+4:08
+pollution
+4:10
+Second
+4:13
+initialize
+4:14
+only once
+4:18
+That's why we have something called as
+4:21
+Immediately Invoked Function
+4:23
+This Immediately Invoked function is an anonymous function.
+4:28
+Will wrap this up
+4:31
+into a function like this
+4:33
+then we will immediately
+4:35
+invoke it.
+4:42
+This is a function without the name so it is a
+4:45
+anonymous function.
+4:52
+When we are calling the round bracket that means we are just
+4:56
+invoking here
+4:57
+immediately.
+5:01
+Due to this
+5:02
+this counter variable scope is only limited till here
+5:06
+This counter variable will not pollute
+5:08
+this counter variable
+5:10
+If we now
+5:13
+reload the page
+5:20
+This function
+5:21
+will be
+5:22
+immediately invoked
+5:33
+As soon as the function created its immediate invoking
+5:37
+that code
+5:40
+It satisfies the second need saying that
+5:44
+only initialize once
+5:46
+This code will be called only once when the web page loads.
+5:50
+This counter variable is
+5:53
+10
+5:54
+it becomes 11
+5:55
+This counter variable code is only from this
+6:00
+functions code
+6:01
+As soon as it comes to SomeFun
+6:06
+it will throw up the exception.
+6:09
+There is an exception which says
+6:11
+this counter is not defined
+6:13
+which actually very good
+6:15
+because it is not referencing this counter
+6:20
+Here
+6:22
+if we say var counter = 0
+6:25
+doesn't work properly
+6:29
+If we now run this
+6:34
+This counter variable
+6:36
+is
+6:36
+no more referring this counter variable with value 11.
+6:41
+By using Immediately Invoked Function
+6:45
+the global variable pollution does not happen
+6:49
+If we have lot of global variables in the project
+6:51
+will end up into problem.
+6:53
+To do initialization only once
+6:56
+and also
+6:57
+to avoid global variable pollution
+6:59
+the the answer is
+7:01
+Immediately Invoked Function
+7:04
+In this video we were trying to understand
+7:06
+what is the importance of
+7:08
+Immediately Invoked Function
+7:10
+Before we end this tutorial
+7:12
+here is a small suggestion for people who are having
+7:15
+FF
+7:16
+FF means Framework Fever.
+7:20
+Lot of people crazily running after Angular 2, Angular 1, Node
+7:26
+TypeScript,
+7:27
+Knockout
+7:29
+All of these things are important .
+7:33
+When we want to create enterprise application
+7:36
+we need frameworks.
+7:39
+At the end of the day all of these frameworks are using JavaScript
+7:42
+as a background
+7:43
+JavaScript is a main language
+7:45
+on which these frameworks actually stand.
+7:49
+All of these developers who jump into
+7:52
+frameworks directly
+7:55
+they just know the if condition and the for loop.
+8:01
+JavaScript is a very difficult language, it is a prototypical language
+8:05
+The way it has classes, objects, the way it does inheritance
+8:10
+the way it has data types is completely different
+8:12
+from the way we have in the C# and Java.
+8:16
+Here is a
+8:17
+video link which we are flashing
+8:20
+on the video.
+8:23
+where we have walked up through
+8:26
+important features of JavaScript which a C# and a Java developer should know.
+8:32
+In this video we have not covered if condition , for loops
+8:37
+because as a developer we know it.
+8:39
+But we have covered those
+8:41
+typical weird JavaScript scenario or JavaScript things like
+8:46
+closures,
+8:47
+Inheritance,
+8:49
+the way datatypes are,
+8:51
+JavaScript hoisting and so on.
+8:57
+First become good in JavaScript. Spend some time in learning JavaScript.
+9:01
+The frameworks will come and go
+9:04
+JavaScript is here to stay for a long time.
+9:08
+Thank you very much)
+
+5.JavaScript Was So Bad They Had To Add A Second Mode To Fix It(0:00
+wouldn't it be nice if there was a way
+0:01
+to reduce the amount of bugs in your
+0:03
+code while also making it more secure
+0:05
+without writing any additional code I
+0:07
+know it sounds too good to be true but
+0:09
+it's actually a feature built into
+0:11
+JavaScript
+0:12
+[Music]
+0:15
+welcome back to web dev simplified my
+0:17
+name is Kyle and my job is to simplify
+0:19
+the web for you so you can start
+0:20
+building your dream project sooner and I
+0:22
+know I teased you a little bit about
+0:23
+this amazing feature but this amazing
+0:25
+feature is just called strict mode in
+How to enter strict mode
+0:27
+JavaScript you may have heard the
+0:29
+terminology before but in order to truly
+0:31
+understand how important it is and how
+0:33
+you can actually use it that's what this
+0:35
+video is going to be all about so the
+0:37
+very first thing I want to talk about is
+0:38
+the different ways to get into strict
+0:40
+mode and then we can talk about the
+0:41
+advantages of a strict mode because it
+0:43
+really improves the security of your
+0:44
+code and also makes it much less likely
+0:46
+for you to write bugs so there are two
+0:48
+ways to manually enter strict mode in
+0:50
+JavaScript the first way and probably
+0:52
+the most common is just adding the text
+0:54
+used strict at the top of any file it
+0:56
+has to be before any other code so just
+0:58
+put that inside of a string like that
+0:59
+and now all the code that you write
+1:01
+inside your Javascript file is going to
+1:03
+be using this strict mode which has
+1:04
+extra security and bug prevention
+1:06
+methods built in another way to do this
+1:08
+manually is if you have a function we'll
+1:10
+just call this sum Takes A and B what we
+1:14
+could do is we could use this exact same
+1:15
+string put it at the top of our function
+1:17
+and now all the code specifically in
+1:19
+this function is going to be in that
+1:21
+strict mode now I generally wouldn't
+1:23
+recommend doing this because it doesn't
+1:24
+really make sense to make one function
+1:26
+strict it makes more sense to have your
+1:28
+entire file be strict so if you're going
+1:30
+to manually enter strict mode I
+1:31
+recommend doing it like this at the top
+1:33
+of your code but there are two other
+1:34
+ways to automatically enter strict mode
+1:36
+how you having to do any of this weird
+1:38
+string stuff the first way that you can
+1:40
+automatically enter strict mode is any
+1:42
+time that you're writing class-based
+1:43
+code in JavaScript everything inside of
+1:45
+a class is automatically inside of
+1:47
+strict mode without you having to do any
+1:49
+type of manual designation yourself so
+1:51
+if you're using classes you're already
+1:53
+using strict mode the other way you can
+1:55
+automatically enter strict mode is
+1:56
+actually when you import your Javascript
+1:58
+file if you come in here and you set the
+2:00
+type equal to module for your Javascript
+2:02
+file that is again going to put all the
+2:05
+code inside that Javascript file into
+2:07
+strict mode automatically and personally
+2:09
+I highly recommend using modules when
+2:11
+you're working with JavaScript and if
+2:12
+you're unfamiliar with them I'm going to
+2:14
+have a video Linked In the cards
+2:15
+description about modules in JavaScript
+2:16
+but it's a much easier way to write
+2:18
+JavaScript code and again it's going to
+2:20
+automatically enter you into strict mode
+2:21
+so that's even one more reason to use
+2:23
+modules so that covers all the main ways
+2:25
+to get into strict mode I'd recommend
+2:26
+the module way if you can but if you
+2:28
+can't use modules then just put the text
+Reason #1 for strict mode
+2:30
+used strict at the top of your file now
+2:33
+I want to talk about the different ways
+2:34
+that strict mode can help you and
+2:35
+there's eight specific ways that I want
+2:37
+to talk about the first few are going to
+2:39
+be covering different ways they can help
+2:40
+prevent bugs so let's just comment this
+2:42
+out so we're no longer in strict mode
+2:43
+we'll just get rid of that line of code
+2:45
+and we're going to do is I'm going to
+2:46
+create a variable I'm going to set it
+2:47
+equal to value and I'm going to come
+2:50
+down here and we're just going to do
+2:52
+something with that variable we're going
+2:53
+to change the value to 10 and I'm going
+2:55
+to console.log out
+2:57
+my variable and now if we come over here
+2:59
+you can see that the value is still
+3:00
+value the reason for this is because I
+3:02
+made a typo over here I typed v r i a b
+3:04
+l instead of variable and the only
+3:07
+reason that this is actually technically
+3:08
+underlined is because I have a spell
+3:09
+checker built into my browser if I
+3:11
+change this to a word that's actually
+3:12
+spelled correctly you can see that that
+3:14
+error goes away so this is just for a
+3:16
+spell checker I have built in but you
+3:18
+can see there's no indication that I
+3:19
+created an error here there's no
+3:21
+anything at all it's working just fine
+3:22
+you can see our code is working there's
+3:24
+no errors and that's because when you're
+3:26
+outside of strict mode if you define a
+3:28
+variable any variable it doesn't matter
+3:29
+if it's a typo or if you just you know
+3:31
+change this to busy for example just a
+3:33
+random word it's going to automatically
+3:35
+put that on the window object or the
+3:37
+global object so if I come in here and I
+3:39
+say window dot busy
+3:41
+you can see that that prints out the
+3:42
+value of 10 or when I had this
+3:44
+misspelled
+3:45
+like this really all that's doing is
+3:48
+it's defining a variable on the window
+3:49
+object and giving it that specific value
+3:51
+this is generally not something that we
+3:53
+want to have happen so if we're inside
+3:55
+of strict mode so I'll just come in here
+3:56
+use strict you can see now we're getting
+3:59
+an error instead of just letting the
+4:00
+code work and defining this variable
+4:02
+automatically it's throwing an error and
+4:04
+saying hey you didn't spell this right
+4:05
+you probably meant to spell this
+4:07
+differently or you meant to do something
+4:08
+else we're going to throw an error for
+4:09
+you so you know that this is an issue
+Reason #2 for strict mode
+4:11
+now another really great thing that
+4:12
+strict mode does if we just go out of it
+4:14
+real quick as you know for a fact that
+4:16
+things like undefined are already
+4:17
+defined variables but when you're
+4:20
+outside of strict mode we can actually
+4:21
+set that value to 10 for example and you
+4:23
+can see that no error is thrown now if I
+4:25
+console log undefined you can see that
+4:27
+it's still printed out undefined if I go
+4:29
+window.undefined you can see it's still
+4:31
+printed out undefined so this code right
+4:33
+here doesn't actually do anything but
+4:35
+it's wrong like whatever I think this
+4:37
+should be doing it's not actually
+4:38
+happening same thing with like Nan I can
+4:40
+set that to 10 no errors are being
+4:42
+thrown but obviously this code does
+4:44
+nothing if I'm in strict mode this is
+4:45
+going to throw own error just saying hey
+4:47
+these things are read only you can't
+4:48
+redefine undefined or not a number
+4:50
+there's a read only so you can't change
+4:52
+them and speaking of read only it allows
+4:54
+you to do a lot of stuff related to read
+4:55
+only so let's just create an object here
+4:57
+we're going to make it an empty object
+4:58
+and what I can do is I can use this
+5:00
+fancy kind of terminology called Define
+5:02
+property and I can say on my object I
+5:04
+want to define a property called read
+5:06
+only
+5:07
+and to make this read only I can say
+5:09
+that it's going to be a writable
+5:10
+property with the value of false and
+5:11
+let's just give it a value of 10. so now
+5:13
+if I just console.log my object you can
+5:17
+see that it has this read-only value
+5:18
+that has a value of 10. and if I come in
+5:20
+here and I try to say object dot read
+5:22
+only equals 15 and save you'll notice it
+5:25
+doesn't update the property but it also
+5:27
+doesn't throw in error it should
+5:28
+probably throw an error being like hey
+5:29
+you tried to Define this read-only value
+5:31
+when we enter in District mode this
+5:33
+throws an error like it probably should
+5:35
+and speaking of this read-only property
+5:37
+we can do the same thing with like
+5:38
+Getters and Setters so if I come in here
+5:39
+and I say git read only return 10 it
+5:43
+doesn't have a way to set this value
+5:45
+because it's only a getter so if I just
+5:47
+come down here and get the value for
+5:48
+that you can see it prints out 10 no
+5:50
+errors at all when I enter in District
+5:52
+mode we get an error saying hey you
+5:53
+cannot set this value right here another
+5:55
+similar thing that it prevents us from
+Reason #3 for strict mode
+5:56
+doing is deleting things that are not
+5:58
+able to be deleted so I come in here and
+6:00
+I say I want to delete the
+6:02
+object.prototype you can't ever delete
+6:03
+the Prototype of an object for example
+6:05
+you can see I'm getting an error while
+6:07
+when I'm not in strict mode this works
+6:09
+just fine there's no error at all so
+6:10
+again this is just preventing you from
+6:12
+doing things that either a just don't
+6:14
+work or B give you unexpected results
+6:16
+like when you're setting different
+6:17
+variable names another instance of this
+Reason #4 for strict mode
+6:19
+like unexpected result is what happens
+6:21
+if you create a function so let's say
+6:23
+I'm going to create a function
+6:24
+I'm just going to call it combine it's
+6:26
+going to take in the properties A A and
+6:28
+C and this is just me making a typo I
+6:30
+accidentally typed this value wrong I
+6:32
+accidentally put a second a in there
+6:33
+instead of a b and then down here I'm
+6:35
+just going to return a A and C and let's
+6:38
+just console.log out the return of
+6:40
+calling that combined function
+6:43
+with one two and three what would you
+6:46
+expect the result of this to be well if
+6:48
+we run this it's going to run just fine
+6:49
+and the return value here is two two and
+6:51
+three and that's because normally when
+6:53
+you're not in strict mode if you define
+6:55
+two different variables with the same
+6:56
+name it's just going to take the value
+6:58
+of whatever the last variable is in our
+7:00
+case two and assign it to all of these
+7:02
+different values so that's how that's
+7:03
+working but of course this is not
+7:06
+correct I mean maybe it's correct but
+7:08
+this is not probably what you want to
+7:09
+have happen so if we enter into strict
+7:11
+mode instead of just doing the random
+7:13
+stuff it did before it's going to throw
+7:14
+an error being like hey you probably
+7:15
+shouldn't have a as a variable twice
+7:17
+that doesn't make any sense at all now
+Reason #5 for strict mode
+7:19
+another really important one is
+7:20
+something that you probably have never
+7:22
+actually realized why this is the case
+7:23
+but if you try to put a zero in front of
+7:26
+a number and we're in strict mode this
+7:27
+is going to throw an error so if I come
+7:29
+in here and I just say console.log
+7:31
+0-15 you should think this would log out
+7:33
+15 when I say we're actually getting an
+7:35
+error and the reason for that is because
+7:37
+when you're not in strict mode what
+7:38
+happens is this actually when you put a
+7:41
+zero in front is using in base 8 number
+7:43
+so like an octal numbering system same
+7:45
+thing if I put o x that's going to be
+7:47
+using hexadecimal as my number and
+7:49
+system when I put an o in front of a
+7:51
+number in JavaScript by default it uses
+7:53
+eight base numbering systems which is
+7:55
+why we get 13 being printed here because
+7:56
+this one stands for an 8 8 plus 5 is 13.
+8:00
+now normally when you're defining an
+8:01
+octal number you would use a zero
+8:03
+followed by the O character and that is
+8:06
+going to be how you define an octal
+8:07
+number but for some reason when
+8:09
+JavaScript was created they just said oh
+8:10
+you know if you put a zero it's going to
+8:12
+be octal by default now if you're in
+8:14
+strict mode it prevents you from doing
+8:16
+this because hey it's saying you know
+8:17
+what you probably meant to write 15 you
+8:19
+probably didn't want this to be a base 8
+8:21
+number so we're going to throw an error
+8:22
+just so you know not to do this if you
+8:24
+technically wanted it to be a base 8
+8:26
+number put the O in there and it'll be
+8:27
+base 8 otherwise just don't have a
+8:30
+leading zero in front of any of your
+8:31
+JavaScript numbers and if you're in
+8:33
+strict mode it's going to make sure that
+8:34
+you don't do that by accident now the
+Reason #6 for strict mode
+8:36
+final kind of mistake it prevents you
+8:37
+from causing before we jump into some
+8:39
+more of the Security based stuff is that
+8:40
+if I just have for example the value of
+8:42
+string you know this is a type inside of
+8:45
+JavaScript or if I just like get a
+8:47
+string with the value of string we'll
+8:48
+just say value here this is a string and
+8:50
+let's say I wanted to find a property on
+8:51
+that I can say prop equals 10 and I can
+8:54
+just say console.log you know value of
+8:57
+logging out value or whatever but this
+8:59
+doesn't make any sense this is a
+9:00
+primitive value I can't like say value
+9:02
+dot prop and get whatever this thing is
+9:04
+because even though I set it up here
+9:06
+this string is a primitive value it
+9:07
+doesn't have any connection anywhere I
+9:09
+just can't set properties on primitive
+9:11
+values even if we come in here and we
+9:13
+say for example const whoops V equals
+9:16
+value
+9:18
+and I come down here and I change this
+9:19
+to BV and I change this to be V you can
+9:22
+see still that's not logging out 10 but
+9:25
+it's not throwing me any errors either
+9:26
+and that's again because I'm not in
+9:28
+strict mode if I move into strict mode
+9:30
+we're now going to get an error that it
+9:31
+says essentially any time you try to
+9:33
+define a property on a primitive value
+9:35
+so like a string or a number or a
+9:38
+Boolean or anything like that it's going
+9:39
+to throw you an error essentially you
+9:41
+can only define properties on things
+9:42
+that are not primitive values so things
+9:44
+like objects that's going to work just
+9:46
+fine now the main security thing that
+Reason #7 for strict mode
+9:49
+strict mode does for us is if we're
+9:50
+inside of a function let's just say
+9:52
+function sum A and B
+9:56
+and we're just going to return a plus b
+9:59
+and I'm also inside of here just going
+10:01
+to do a quick console.log of whatever
+10:02
+this property is and I'm going to call
+10:05
+that function with the value 1 and 2.
+10:07
+you can see the console log for this is
+10:09
+returning to me the entire window object
+10:11
+essentially it's just the entire global
+10:13
+object inside of this it's the same
+10:15
+thing that this is out here so if I just
+10:16
+do a quick console.log of this right
+10:18
+before I call my sum function you can
+10:21
+see it returns me the exact same giant
+10:22
+window object now if we're inside of
+10:25
+strict mode this is actually a different
+10:26
+Behavior though when we console log this
+10:28
+up here instead of our sum you'll notice
+10:30
+it defaults to undefined even though
+10:32
+this variable next to sum is the full
+10:35
+window object like this when we're
+10:37
+inside of a function it only lets us
+10:39
+access undefined as this value unless we
+10:42
+specifically say that we want to bind a
+10:44
+property so I could say like bind this
+10:45
+and now what that's going to do is it's
+10:47
+going to bind that window object and I
+10:49
+just need to make sure that I do this
+10:51
+properly here we go sum dot bind this
+10:52
+and then call the function now you can
+10:54
+see it's done that or I combined
+10:55
+anything I can buy value 10 and now this
+10:57
+is the value of 10. so I specifically
+11:00
+want to bind a specific value to use I
+11:02
+can otherwise it's going to pass down
+11:04
+undefined now the reason this is a good
+11:06
+security feature is because you don't
+11:07
+want to expose the window object all
+11:09
+over the place whenever you're writing
+11:10
+code sometimes you want to prevent
+11:12
+certain things from using the window
+11:13
+object like Chrome extensions are a good
+11:15
+example of this it's really hard to get
+11:16
+the window object unless you're in
+11:18
+specific scenarios and there's other
+11:19
+instances where you just don't want that
+11:21
+polluting all of your different this
+11:22
+name spacing so it's kind of nice that
+11:24
+it makes sure it doesn't pass this along
+11:26
+by default because most of the time you
+11:27
+don't actually need it now the final
+Reason #8 for strict mode
+11:29
+thing I want to talk about is also going
+11:30
+to be dealing with functions so let's do
+11:32
+this sum function here but I'm going to
+11:34
+return two different results the first
+11:35
+one is going to be adding together A and
+11:37
+B and then we're going to use this
+11:38
+arguments keyword to get arguments 0
+11:40
+Plus
+11:42
+arguments of one and this should return
+11:45
+to me the exact same thing if I just do
+11:46
+a console.log sum of one and two you can
+11:50
+see when I save this both these values
+11:52
+have three so three and three just like
+11:53
+we would expect but what happens if I
+11:55
+change the value a here to 10 what's
+11:57
+going to happen let's first do this not
+11:59
+in strict mode and then we'll do it in
+12:00
+strict mode after when I change the
+12:02
+value to 10 you'll notice that
+12:03
+everything updates 12 and 12. so when I
+12:06
+change the value of a it's also changing
+12:08
+the value inside of the arguments array
+12:10
+and this arguments array is just the
+12:12
+arguments you pass into the function
+12:13
+while when we're in strict mode this is
+12:15
+different when you change the value of a
+12:17
+it's not actually updating this
+12:19
+arguments in Ray and instead it's just
+12:20
+changing the local value of that a
+12:22
+variable so now you can see we get 12
+12:24
+for when we add you know 10 plus 2 and
+12:26
+this one is giving us 3 because it's
+12:27
+taking the original one we passed in and
+12:29
+adding that to three this is a nice
+12:32
+feature that's being added for the most
+12:33
+part I don't use arguments ever but if
+12:35
+you did it really doesn't make sense
+12:37
+that this arguments array would change
+12:38
+when you change a variable locally
+12:40
+inside of a function
+12:42
+I really hope this video makes you
+12:43
+excited to start trying out strict mode
+12:45
+and if you want to try it out I
+12:46
+recommend using modules and I have a
+12:48
+great video on JavaScript modules it's
+12:50
+going to be linked right over here with
+12:51
+that said thank you very much for
+12:52
+watching and have a good day)
+
+6.JavaScript Value vs Reference Types(0:00
+[Music]
+0:01
+in JavaScript we have two categories of
+0:04
+types on one side we have value types
+0:07
+also called primitives and the other
+0:10
+side we have reference types so in the
+0:13
+value types category we have number
+0:15
+string boolean symbol which is new in
+0:19
+es6 we're going to look at that later in
+0:21
+the course as well as undefined and know
+0:24
+these are the primitive or value types
+0:27
+on the other side we have objects
+0:30
+functions and arrays
+0:32
+so in the last lecture you learned that
+0:34
+functions are also objects the same is
+0:37
+true about a race so in a nutshell in
+0:39
+JavaScript we have primitives and
+0:41
+objects now in this lecture I'm gonna
+0:43
+show you how primitives and objects
+0:46
+behave differently because this is
+0:48
+absolutely important for you to
+0:49
+understand before we move on to the next
+0:51
+section where I talk about prototypes so
+0:55
+on this empty canvas I'm gonna define
+0:57
+two primitives x and y I'm gonna set Y
+1:04
+to X so here Y is 10 now I'm gonna
+1:07
+change the value of x to 20 what I want
+1:10
+you to note here is that X and y are two
+1:14
+independent variables so I save the
+1:17
+changes go back in the console let's log
+1:20
+X X is 20 and Y is 10 they are
+1:25
+independent so when we work with
+1:27
+primitives this value is value that we
+1:31
+have here is stored inside of this
+1:33
+variable when we copy that variable that
+1:37
+value that is stored in the variable is
+1:39
+copied into this new variable so they
+1:42
+are completely independent of each other
+1:45
+now let's see what happens if we use a
+1:48
+reference type or an object here so I'm
+1:51
+gonna change this to an object that has
+1:54
+a property called value
+1:58
+and then instead of setting X to 20 I'm
+2:00
+gonna set X dot value to 20 so save the
+2:04
+changes back in the console let's log X
+2:08
+so you can see value property is 20 now
+2:12
+let's log Y we can see the value
+2:15
+property of Y is also 20 so this is the
+2:18
+takeaway when we use an object that
+2:21
+object is not stored in this variable
+2:23
+that object is stored somewhere else in
+2:26
+the memory and the address of that
+2:28
+memory location is stored inside that
+2:31
+variable so then when we copy X into y
+2:35
+it's the address or the reference that
+2:38
+is copied in other words both x and y
+2:41
+are pointing to the same object in
+2:44
+memory and when we modify that object
+2:47
+using either X or Y the changes are
+2:50
+immediately visible to the other
+2:52
+variable so here's the conclusion
+2:54
+primitives are copied by value reference
+2:58
+types or objects are copied by the
+3:01
+reference let's take a look at another
+3:03
+example so I'm gonna define a function
+3:07
+called increase that takes a number and
+3:12
+here we simply increase this number by 1
+3:16
+let's declare a number variable and set
+3:20
+it to 10 and then call increase and pass
+3:25
+this number now if I log this number on
+3:29
+the console what do you think we're
+3:31
+going to see let's have a look so save
+3:34
+the changes we see 10 but dinner we
+3:38
+increase the number well when we call
+3:41
+increase and pass this number variable
+3:44
+its value is copied into this parameter
+3:48
+that is local in this function so this
+3:51
+number variable here is completely
+3:53
+independent of this other number
+3:56
+variable here in this function we
+3:58
+increment number by 1 so it will be 11
+4:01
+but after this function this number is
+4:04
+going to go out of the scope so when we
+4:07
+log this number on the console we're
+4:10
+essentially dealing
+4:12
+with this first number so I told you
+4:14
+that primitives are copied by their
+4:17
+value so here we are dealing with two
+4:19
+independent copies that's why we see ten
+4:23
+on the console now let's change this to
+4:26
+a reference type or an object so I'm
+4:28
+gonna change ten to an object that has a
+4:32
+value property okay let's rename this
+4:36
+variable to object and similarly I'm
+4:40
+going to rename this parameter in this
+4:43
+function to object and then increment
+4:46
+object dot value now when we log this on
+4:50
+the console what do you think we're
+4:52
+gonna see we're gonna see 11 see we got
+4:57
+this object with value 11 the reason for
+5:00
+this is because when we call increase
+5:02
+and pass this object this object is
+5:05
+passed by its reference so this local
+5:07
+parameter that we have here will point
+5:10
+to the same object that we defined here
+5:13
+so in this case we are not dealing with
+5:16
+two independent copies we have two
+5:18
+variables that are pointing to the same
+5:20
+object so any changes we make to this
+5:22
+object will be visible to the other
+5:24
+variable so remember this in JavaScript
+5:28
+we have value types also called
+5:30
+primitives as well as reference types
+5:32
+which are objects our primitives are
+5:35
+number string boolean symbol undefined
+5:39
+and no primitives or value types are
+5:42
+copied by their value reference types or
+5:45
+objects are copied by the reference
+5:50
+hi guys thank you for watching my
+5:53
+javascript tutorial this tutorial is
+5:55
+part of my JavaScript course where you
+5:57
+learn all the essential JavaScript
+5:59
+features that every web and mobile
+6:02
+application developer must know if
+6:04
+you're an absolute beginner or have some
+6:06
+experience in JavaScript and are looking
+6:08
+for a fun and in-depth course that
+6:10
+teaches you the fundamentals of
+6:11
+JavaScript this course is for you this
+6:14
+course is also packed with tons of
+6:16
+exercises that help you master what you
+6:18
+learned in the course in fact many of
+6:20
+these exercises are questions that come
+6:22
+up in technical programming interviews
+6:25
+so if you're pursuing a job as a
+6:27
+front-end or a back-end developer or if
+6:30
+you simply want to have a more in-depth
+6:32
+understanding of JavaScript I highly
+6:34
+encourage you to enroll in the course
+6:36
+for a limited time you can get this
+6:38
+course with a discount using the link in
+6:40
+the video description click the link to
+6:42
+find out more about the course and
+6:43
+enroll)
+
+7.Type Conversion & Coercion in JavaScript(
+Search in video
+0:05
+[Music]
+0:05
+welcome back aliens my name is davin rady and  let's continue with this series on javascript  
+0:10
+now in this video we'll talk about type conversion  and type coercion now why do we have two different  
+0:15
+words let's understand that now first of all  it doesn't matter which language you work with  
+0:20
+you have something in common right you actually  work with data but sometimes you want to convert  
+0:26
+your data in specific format example we have  talked about data types right we have numbers  
+0:30
+string boolean and there might be an option  or there might be a requirement where you have  
+0:35
+to convert your data from number to string or  from string to number or from number to boolean  
+0:40
+how do we do that now let's say let me create  a variable here so i will say num this time i'm  
+0:45
+using a dark theme basically a high contrast so  let me know your feedback in the comments section  
+0:50
+uh so finally we are on the dark theme yeah let  me create a number here right so this is a number  
+0:55
+now we have seen how do you print the type of data  of course when you want to print the data as it  
+1:00
+is we can simply print num right now this will  print data example if i run this code you got 6  
+1:05
+but what if you want to print a type of  it in that case you can use a very special  
+1:10
+operator which we have seen earlier which is  type off and you can print the type of num  
+1:15
+so basically we are printing two things here we  are printing num and we are printing type of num  
+1:19
+and let's see what happens and you can see we  got six and we got number that means the type  
+1:24
+of this num is number that is working right but  what if i want to store this num in a different  
+1:30
+format i want this to be in string format can we  do this now you will think hey why do we do that  
+1:36
+so example let's say if you want to store a  pin called a zip code of area which is the best  
+1:41
+format should you store the zip code in number  or in a string format see whenever you don't  
+1:46
+want to perform any operation it's better to store  that in a string format example telephone number  
+1:51
+zip code or whatever big number you have when  you want to perform calculation that's why  
+1:55
+number makes sense right so here i want to store  this six in a string format in that case you have  
+2:01
+to convert that right you have to perform  some operation so we have a specific thing  
+2:06
+called a string so we'll pass string here  when you pass this number 6 inside a string  
+2:12
+it will give you a string format so this  number is getting stored in a string format now  
+2:17
+will it work let's try so let me just run this  code once again and you can see we got six  
+2:21
+no change in data of course you have not got s i  x what you got is number six and you got a string  
+2:28
+okay so this is working right and you can also do  reverse if you have a number in a string format  
+2:33
+let's say one two three so now if you run this  code of course the data is in string format 123  
+2:37
+is in string format and if you want to perform  operation you have to convert that into number  
+2:42
+in order to do that we can simply say number  and you can give a bracket and this will work  
+2:48
+right so if you run this code you got number the  same thing again you can do with boolean okay so  
+2:52
+you can convert a number up with boolean but  that's a different thing we'll do that later  
+2:56
+the interesting thing is this is type conversion  right you are able to convert a number  
+3:00
+in different format this is explicit conversion  because basically you as a developer you are  
+3:05
+trying to convert a data from one format to the  format it's working right but then javascript  
+3:13
+went ahead javascript says hey you have type  conversions that's great let me give you something  
+3:18
+called type conversion now what it means so let's  say i have a number here i'll say num or maybe  
+3:23
+i will not go for any specific name because  num represents a name right so i will go with  
+3:28
+let's say x i know it's not a good variable name  but just for the example here we can go with it  
+3:33
+so let's say i have a variable x and i want  to print x here and i want to print the type  
+3:37
+of it of course we are printing the data we are  printing the type of this data and the output  
+3:41
+you are getting is undefined undefined of course  that makes sense right now what i will do here is  
+3:47
+i will assign data to it so when you assign the  data it will change the type of it now what did i  
+3:51
+want to assign let me just do that here so i will  say x is equal to six or maybe a different number  
+3:57
+this time so let's go for x equal to eight now if  we do the same thing i just want to copy and paste  
+4:02
+actually where i'm just reusing the code right  so after changing the value of x now let's try so  
+4:07
+you can see we got undefined undefined because  that was the first time and then we got eight  
+4:11
+number because this is the number if i change  the same thing again let's say i want to perform  
+4:16
+some operation so i can simply say x is equal to i  want to add x with a string what do you think what  
+4:22
+would happen and what type of string i want to  add maybe i just want to add empty string i don't  
+4:27
+even have some specific type of string here right  it's it's an empty string now what will happen of  
+4:33
+course i should also print the console here okay  now let me try and you can see this time we got  
+4:38
+string so basically whenever you have a number and  you are you have a string this plus operator here  
+4:44
+it got confused the idea behind a plus operator is  to add two numbers right but this time we have a  
+4:49
+number and a string confusion right so coercion  comes into picture so javascript says okay in  
+4:55
+this case every time you have two different data  and you want to perform some operation you have  
+5:01
+to come to some consensus right either both has to  be same type it either it should be both string or  
+5:06
+both number so in this case it goes for the string  because we have string at one end now whenever you  
+5:11
+have string and when you use plus operator it is  actually concatenation so basically we are joining  
+5:16
+two strings for example let's say you have naveen  you have ready two different strings you use a  
+5:21
+plus orbital basically you are concatenating it in  this case as well even if you have x which is the  
+5:27
+number and you have a string it will convert that  into string but not always not always when you use  
+5:32
+a string a number it will give the same results  example let's say at this point if you see this is  
+5:37
+a type of string right this x is a type of string  what if i do x equal to x minus 2. now you tell me  
+5:43
+what will happen of course i have to print it as  well so pause this video and let me know what will  
+5:48
+happen because x is a string now 2 is a number so  how it should behave should we get 8 minus 2 6 or  
+5:56
+should we get some weird answer or maybe it should  be nand right which is because you are subtracting  
+6:00
+a number from a string and that is weird so let's  let's see what happens so if you run this code  
+6:05
+i hope you have answered that in the comment  section you got number so this is what happens  
+6:09
+when you have a subtraction operator with a string  it will convert that into number so this is type  
+6:15
+coercion so based on what type of operator you're  using based on what's the requirement javascript  
+6:20
+engine will change that for you in fact we can  also do with boolean so we know right boolean is  
+6:25
+true or false now the way you can manipulate  boolean is with the help of some operators  
+6:30
+one of them is exclamation exclamation will simply  replace or it will do the opposite so if it is  
+6:36
+true it will give you false if it is false it will  give you true right so exclamation actually means  
+6:41
+not so there's a not operator with boolean which  will change the type so from true to false false  
+6:46
+true now let me just do that so i will say x equal  to not x so even if it is a number format so you  
+6:51
+can see x in this case is number right so you  are applying a not operator or number because  
+6:56
+the naught will only work with boolean right and  you are giving a number so in this case it will  
+7:01
+convert that into boolean and then it will perform  the not operation and let's see what happens but  
+7:06
+the question is will you get true or false so  even if i say it converts this from number to  
+7:12
+boolean what happens is it true or false let's try  let's run this code oh i'm not printing it my bad  
+7:18
+let me print this and you can see we got false  boolean so boolean makes sense but why false  
+7:23
+that means you are performing an operation the  output of that operation is false that means  
+7:27
+initially the value of x was true that means  if you try to convert a number into boolean  
+7:34
+if that number is 6 it will give you true only  6 it's actually any number example let me just  
+7:42
+do that so what i will do is i will just go  to console and console.log and let me convert  
+7:48
+a number let's say i have a number seven and  i want to convert this into boolean how do we  
+7:52
+convert a number into boolean the same way we did  it for the number and string with the help of that  
+7:57
+keyword number string here let me use boolean  so i'm passing 7 to a boolean right so it will  
+8:02
+convert this 7 into a boolean format but what you  will get you will you get true or false let's try  
+8:09
+so when i run this code you can see we got true  okay so for six it just giving you true for seven  
+8:14
+is giving you true i thought it will be even odd  so even numbers will get true or number will get  
+8:18
+false but that's not the case every number  is giving you true let me try negative number  
+8:22
+so if i say minus seven let's see it's  still true okay now after trying out all  
+8:27
+the different combinations let's try zero and  the moment you try zero and if you underscore  
+8:31
+you can see we got false that means all  the numbers are true only zero is false  
+8:37
+why is because the actual implementation of  boolean happens in that way 0 is false 1 is  
+8:42
+true right if it is not 0 everything is true but  you can actually calculate with each number so  
+8:48
+they simply go with simple formula if it is 0 it's  false if it is all the other numbers it is true  
+8:53
+and this is called uh truthy and the falsie values  i know that that's tricky it's not just with  
+8:58
+numbers it's also with other types example let me  convert into boolean of type null now what will  
+9:03
+happen if we try to convert null into boolean and  if you're on this code you can see we got false so  
+9:08
+even null is a false value so whenever you try to  convert something into boolean and if that gives  
+9:15
+you false it is false value if you pass something  and if you're trying to convert that into boolean  
+9:20
+if it is giving you true that's called a truthy  value example after some time will start working  
+9:24
+with functions objects whatever your data you pass  so if you try to convert object into boolean it  
+9:30
+will give you true if you try to pass a function  to and convert into boolean it will give you true  
+9:34
+cool what about undefined let me just try that  so we'll try it with undefined also it will give  
+9:39
+you false so these are all false values okay  apart from this everything is truthy value so  
+9:44
+you can see the list if you have something like  this and if you try to convert these things into  
+9:49
+boolean you will get false and all the other  thing will give you true uh let me just try  
+9:53
+with stringer we have not tried with string yet so  what i will do is i'll pass the string like naveen  
+9:58
+now what happens nobody is true or false of course  nothing is true let's try and you can see we got  
+10:03
+true now since it's not a part of the false values  it's true so just reiterate whenever you have a  
+10:08
+number and a string it will convert that into  string when you apply the addition operator but  
+10:12
+when you perform this subtraction operator it will  convergent number so javascript is smart enough to  
+10:17
+know what should be done and that's one thing i  love and hate about javascript we love this thing  
+10:23
+because it helps you it actually understands what  you need and it will give the output the reason i  
+10:28
+also hate it is because it tries to convert things  the way it wants sometimes you don't intend to do  
+10:34
+that and you want others but javascript says  okay you're doing this i will allow you and i  
+10:38
+will help you here we don't want your help we want  others because this will eventually lead to bugs  
+10:44
+okay and that's why you have to very alert when  you're doing these operations in fact we have  
+10:49
+some more ways example let's say i want to do plus  operator here right so we have x in string format  
+10:53
+here and you want to okay let me just remove  this part just to make it simple yeah so we have  
+10:58
+x which is string format right so if you run this  code so you can see we got 82 because you have  
+11:03
+eight here which is x and then you got two so you  got 82. but in this case i want to convert this  
+11:08
+into a number in that case you can use unary  operators of course we'll talk about orbitals  
+11:13
+later in detail but so whenever you add a plus  here it tries to convert this string into number  
+11:18
+let's try that and you can see we got numbers so  we got 10 which is the addition of eight and two  
+11:22
+and you've got a number okay there are more ways  actually to convert the string into integer or  
+11:27
+the other format so let me just try that so let's  say we have x and the value of x is one two three  
+11:33
+navin okay now in this case i want to convert  this into a number format but of course you can't  
+11:38
+convert that into number format right because we  have naveen there so if you try to do that with  
+11:42
+the help of a number function so let's say if i  do let me just print that first as it is let's  
+11:46
+see what happens if you print this and you can see  we got one two three naveen okay that works but  
+11:51
+if you try to convert that into number because we  did that before let's see what happens so if we  
+11:57
+try to do that and if you run this code you can  see we got nan which is not number we don't want  
+12:01
+this what we want is it should be able to convert  that and at least fetch these first integer values  
+12:06
+so in this case you can actually use parseint  so pass int is a special function which will  
+12:11
+accept a string it will try to convert that number  okay it will do its hard work to convert a string  
+12:17
+into number and you can see we got 123 but what  happens if you have a character at the start in  
+12:22
+this case it will not work so i have to make sure  that you have numbers at the start so it will try  
+12:26
+to convert that into numbers right so that's how  you can do it uh so try out different functions  
+12:31
+you can go to google and search for different type  conversions functions and you will get those so i  
+12:35
+hope you enjoyed this video let me in the comments  section and do some stuff for the videos bye you
+
+)
+
+8.Callback Functions in JS ft. Event Listeners (0:00 In this video, one of the most
+0:01 important videos in Namaste JavaScript
+0:03 series, so in this video we will be covering
+0:05 what is a callback function in
+0:07 JavaScript. To understand event loop
+0:10 properly, you should know what a callback function is
+0:13 and what are its uses. Okay, we'll be covering
+0:16 all that in this video. You might have heard of
+0:19 something called a 'blocking main thread' in JavaScript.
+0:22 We'll cover that too. And last but not least, we will also
+0:26 dive live inside DevTools. Okay, so we'll
+0:30 delve into that. Also, people are asking
+0:33 me that, Akshay, just demonstrate in the
+0:36 DevTools, like how to use DevTools.
+0:39 Okay, so I'll be showing you inside DevTools itself
+0:42 how we'll see, like, and which will lead you
+0:46 to stay in the loop. You should not have the
+0:48 desire for the series, okay? That will be super
+00:52 amazing demo. So stay tuned.
+0:54 Matters.
+0:56 What is a function in JavaScript?
+1:00 So as you already know from the previous
+1:01 videos, that functions are first-class citizens
+1:04 in JavaScript, right? Remember that, yes.
+1:07 So that means that you can take a function and
+1:10 pass it into another function, right? And to do this,
+1:14 function.
+1:21 These are very powerful and
+1:24 subscribe.
+1:26 World in a single language.
+1:31 videos
+1:34 subscribe
+1:36 only one thing.
+1:40 But YouTube channel
+1:46 subscribe to
+1:49 This blog and receive notifications.
+1:55 College
+1:57 pass this function. Let's pass another function
+2:02 named 'Y' inside this. Okay?
+2:06 So, if you call a function and you pass a function
+2:10 inside another function, this function 'Y' over
+2:13 here is this callback function. But why is this
+2:16 function called a callback function? You can
+2:20 think of it like, if you call a function
+2:23 sometimes later in your code, okay? It's not called
+2:26 over there. So you give the responsibility of this
+2:29 function to another function. It's like you pass
+2:32 this Y inside X, right? And it is up to
+23:35 X and to call this Y. Okay, so this is like this
+2:40 function was called back sometime later in
+2:43 the code. That's why it's called a callback function.
+2:46 So, now let us see how it is used in asynchronous
+2:48 tasks. Okay? So, for that, let's take an example
+2:52 of set timeout. If you are writing JavaScript
+2:55 for sometime, you have already encountered
+2:57 this function before, right?
+3:00 This set timeout is a callback function. Okay?
+3:03 So now, this function over here, which you pass
+3:06 as the first parameter to set timeout,
+3:08 is a callback function. That means it is passed
+3:12 down to set timeout. It's called sometime in
+3:14 your program, and well, after a certain
+3:18 amount of time, which is passed as the
+3:20 argument, which will be in milliseconds. So 25
+3:28 July
+3:31 there
+3:34 college time
+3:37 inside
+3:39 The doctors should not lose and long way in
+3:44 inside per subscribe to
+3:49 [Music]
+3:52 So now let's see how this program is executed
+3:54 and what output this will give. So,
+3:57 JavaScript is a single-threaded
+3:59 language. That means the code will be executed
+4:01 line by line and in order. So, the
+4:04 first thing will happen is registering the set
+4:07 timeout. So, set timeout will take this callback
+4:10 function and will store it in a
+4:12 separate space, okay? And at that moment, for
+4:16 only the content will start
+4:18 in a positive way. JavaScript doesn't wait
+4:22 for timeout to expire. That's why a callback
+4:26 function
+4:27 gives us power of asynchronicity. It will not work.
+4:32 Here 5000 has expired.
+4:37 Needs to be done after 5000
+4:41 pay or
+4:42 subscribe or like
+4:47 subscribe or
+4:49 Liquid video child things okay wait for
+4:53 none. Remember that it's okay, wait for none.
+4:56 Similarly, it will not move on. It will move
+5:00 to the next topic, move on to this function.
+5:03 And then we'll try to call this X function.
+5:07 And we'll pass Y, a callback function into
+5:11 Y. And
+5:13 avoid X. So, console.log(X), remember. And
+5:18 at this point of time, at this millisecond,
+5:21 5000 milliseconds haven't expired. Okay? So,
+5:25 now it will do a console.log(X). And
+5:28 let's also console.log(Y). So, it will print Y.
+5:33 It will print Y. And
+5:36 it's golden. So, now, after some time, when 5000
+5:41 milliseconds expire, then this callback
+5:46 function is executed. The G.
+5:52 So, after 5000, let's see in the
+5:56 browser. So, console.log(X),
+6:01 this C timer printed.
+6:05 execute this timer sentence operation was
+6:10 not possible without
+6:15 subscribe video
+6:19 subscribe
+6:21 also inside
+6:24 difficult and I will tell you what is the
+6:27 meaning of
+6:33 This is the most important
+6:43 just before time
+6:47 delhi golf club skill mode
+6:52 Is it visible to you?
+6:54 Good. So, now this function actor will be
+6:58 executed. It will console.log(A) and console.log(B).
+7:02 And it will wait over here to see the calls stack. And
+7:06 what will happen? Everything will, everything
+7:09 from calls stack will be ended. And after
+7:12 5000 milliseconds, after
+7:14 5000 milliseconds, this function will magically pop
+7:18 up inside our call stack. It will be a magic. We will
+7:21 see. Okay? So, now read the code carefully. See the
+7:25 call stack. Okay? So, if I run this code, see X,
+7:28 Y, see I run call stack. And see the call stack ended.
+7:31 Now, after 5 seconds, this
+7:35 same thing came into the call stack.
+7:38 Automatically after 5 seconds. Doctor in
+7:42 between and
+7:44 page
+7:46 subscribe and don't like everything was
+7:50 over and comment
+7:54 But now this callback function was, after 5000 milliseconds,
+7:57 it came inside the call stack and executed. So, now, if you
+8:00 run this code, it's detected by this time.
+8:02 Let's see what happens if I do console.log(). Let me just
+8:08 subscribe Indian
+8:11 1617 my program against time jobs in
+8:16 the
+8:18 subscribe
+8:20 can also be in the
+8:27 midst of
+8:30 If I run this function
+8:34 function side say
+8:36 Everything will be rooted through
+8:43 subscribe the video then
+8:49 subscribe to the
+8:52 naukri.com tip. For that time, because
+8:55 JavaScript has just one core
+8:59 thread. So, to execute any other function in
+9:02 the code, when everything will be... the code is ready to
+9:05 say that don't block the main thread.
+9:09 It is this call stack, okay, which should never
+9:11 be full. So, we should always try to use asynchronous
+9:14 operations for things which take a lot of time,
+9:16 just like we did over here. The design for this
+9:20 timeout will basically take a callback
+9:23 and execute this piece of code something
+9:26 else. And it just empties and just does that
+9:30 sort of a call stack. If you try to
+9:32 quickly summarize everything. So, if JavaScript
+9:34 did not have these first-class
+9:36 functions and what these callback functions
+9:39 are, and we could not have passed these functions into
+9:43 another function, we could not have been able
+9:45 to do asynchronous operations, right? So, use
+9:48 this. With set timeout, we can achieve this
+9:52 asynchronous operation. We'll dive deep into a lot more
+9:55 in the next video of event loop. What actually
+9:59 happens when this set timeout function and
+10:11 subscribe button video which will be coming
+10:15 video
+10:17 Use this
+10:19 is the point to
+10:22 look inside you to subscribe to
+10:27 our knowledge.
+10:31 Subscribe now to
+10:38 subscribe our marked
+10:47 subscribe
+10:49 button, button
+10:52 has ID click me. So, we'll attach an alert to
+10:57 that button. Subscribe to
+11:00 it.
+11:03 Oh my God, we have done this, but we try not
+11:07 to attach this subscribe button.
+11:11 click
+11:13 document dot
+11:15 element ID. I'm just getting the button.
+11:22 The ID was click me. So now let's
+11:25 add a click event listener.
+11:30 and let's add more
+11:35 Subscribe now. What is this? What
+11:43 is this?
+11:45 It means just
+11:48 school
+111:50 pick up this element, pick up the button,
+11:55 click it later.
+11:57 Then
+11:59 if I click and
+12:02 it will
+12:05 subscribe
+12:12 automatically comes into
+12:15 subscribe to the channel, subscribe to
+12:22 automatically comes inside the call stack. This
+12:25 function will come here in the call stack. Okay? So,
+12:29 we'll see all that. Now, it means, give this function
+12:33 to get better visibility.
+12:36 and we'll leave you to log
+12:40 in button click
+12:43 To showcase you everything.
+12:47 So, now we attach an event handler, event
+12:51 listener to this
+12:53 button. So, I'll click it and I want to remove debugger.
+12:59 Now, if I click, let's see.
+13:01 Subscribe
+13:05 button click
+13:10 inside this
+13:12 If you click, it will automatically come in
+13:16 subscribe to the channel.
+13:20 button
+13:26 Subscribe to the page if you liked
+13:30 the video then
+13:41 subscribe to the page
+13:47 this is the famous interview question
+13:50 also. So, if you have to print button clicked,
+13:53 button clicked too, whenever you click the button, it should
+13:56 increase the count. How can we do that?
+13:59 We can use a global variable count. It's
+14:04 quite good.
+14:09 It will be zero.
+14:10 And it will just
+14:15 subscribe
+14:17 And whenever you click, subscribe to the channel.
+14:21 Sure.
+14:24 Subscribe button.
+14:26 12345
+14:29 global variable
+14:31 So, you can also
+14:35 go
+14:40 Subscribe. It should not be modified by
+14:44 subscribe. No problem. Because this video,
+14:48 I told you, remember let and const.
+14:56 subscribe
+14:58 simple example
+15:01 function attached okay attached
+15:11 subscribe
+15:13 and attach it with a listener to this button click
+15:20 So, please
+15:24 subscribe over here is for closure.
+15:30 subscribe
+15:32 Now, if I call this
+15:36 function attachListener.
+15:40 Video
+15:41 [Music]
+15:42 Subscribe for
+15:47 procedure with count and it basically sort
+15:50 of remembers where this count is present. Now,
+15:54 let's try to execute this code and
+15:56 see what happens. When it carefully observed the
+15:59 state.
+16:01 1057 code is run. If I
+16:05 click, click it, button clicked, 1, 2, 3, etc.
+16:09 Subscribe to my channel. Also, like it.
+16:13 Button clicked.
+16:19 subscribe function
+16:23 important
+16:33 subscribe
+16:39 button
+16:41 increase the
+16:47 the code, see, it's called scope.
+16:50 It will also
+16:52 So, I'll show you one more thing. If I
+16:57 use the elements and use this HTML
+17:04 elements, reference page and
+17:13 subscribe button button
+17:17 Here
+17:28 subscribe
+17:30 and
+17:37 subscribe to the channel.
+17:40 Oh my God, this
+17:45 is the world.
+17:47 Hey,
+17:48 This press he function is the
+17:50 same, which is the handler, right? Now, if we
+17:55 only, if we go inside, you can also see
+17:59 scope of this function.
+18:03 Something interesting. So, what did it actually find?
+18:07 If I want to make it one button, then
+18:11 subscribe button.
+18:13 Video
+18:16 handler button
+18:19 Video
+18:22 subscribe
+18:27 subscribe this video not
+18:34 video I don't like
+18:37 subscribe and
+18:40 Guess what will be inside the code?
+18:43 Subscribe.
+18:48 global environment, like execution
+18:51 environment for politics, is my
+18:53 environment closer, and its
+18:56 environment, that is the global, everything
+18:58 inside of, like, inside the scope of this
+19:02 function, right? The function is video.
+19:07 Then
+19:09 subscribe to the video then subscribe to
+19:15 the
+19:17 amazing
+19:19 prototype of the series. We will cover the most
+19:25 important interview questions related to
+19:28 all the garbage collection.
+19:33 question interview is ready.
+19:41 rather
+19:45 video fluid
+19:48 So, event listeners are heavy. Often, it is
+19:52 said that they consume memory, right? So, whenever you
+19:56 attach an event listener, it forms a
+19:59 closure, right? See, just like we did it from
+20:03 the closure in this account, and in the
+20:06 call stack, it became empty, right? So, now,
+20:09 this call stack is empty. And we are executing
+20:10 any code there, it's empty. But
+20:17 still, this program is not freeing up its
+20:21 memory and not just freeing up this count,
+20:25 right? Because you never know when somebody in
+20:27 this page can click on the button and we need
+20:30 this closure, right? We need this closure to
+20:33 count this. That's why JavaScript cannot free
+20:36 this. It's too heavy. So, that's why removing event
+20:39 listeners is a good thing. Suppose a page has hundreds
+20:46 of buttons, thousands of event listeners. If we
+20:48 want to click, mouseover, or scroll, everything
+20:51 will get into a messy state. Then our page can go
+20:55 very slow, because these closures are like,
+20:58 sitting and consuming a lot of
+21:00 memory. All these scopes and all these callback
+21:04 functions will hold these scopes. So, it's a
+21:08 good practice to try to free up
+21:12 and remove event listeners.
+21:14 We will cover this in
+21:20 subscribe
+21:23 100
+21:25 Example
+21:29 subscribe to this channel.
+21:48 Hello, callback functions. We covered event listeners.
+21:51 We covered call stack.
+21:54 So, I think we have covered everything for new
+21:57 videos.
+21:59 Of event loop.
+22:02 We'll cover all these things quickly and then
+22:06 Foundation ready to move and we'll cover the event loop.
+22:12 Control
+22:14 to
+22:16 this video.
+22:19 Friends, 90% developers don't know event loop.
+22:25 What's the point?
+22:27 What's the point?
+22:29 interview
+22:30 developer do
+22:39 Subscribe
+22:40 Understand
+22:44 whether you are excited or not.
+22:48 Okay? And also let me know whether you
+22:50 understand event listeners or not. Do you
+22:53 understand how things, everything works? Was the
+22:56 DevTools explanation very helpful?
+22:58 Tell me in the comments. I need your feedback.
+23:01 I read all the comments. So, do comment
+23:03 down below. Without comments, it's not okay. And
+23:07 thanks for watching.
+23:12 This
+23:23 You are)
+
+9.Asynchronous JavaScript & EVENT LOOP from scratch (0:00 So finally, the big intro video is here.
+0:03 After watching this video, you will have a crystal clear understanding of the event loop.
+0:05 All the tasks, the microtasks queue, and how everything is working inside the browser window.
+0:13 Instead of wasting time in an interview just because you were not able to answer all this, and 90% of developers don't understand this topic.
+0:24 But after watching this video, you will be in the top 10% and super excited that you should be.
+0:30 I'm going to give you a quick disclaimer, the content in this video is very knowledge-heavy, so you will be glued to your eyes, okay?
+0:40 So JavaScript is a single-threaded language that one code and 100 school stock is present inside this script engine.
+0:54 And all the code of JavaScript is executed inside a school stack.
+0:57 And this place in the city with the help of the example, okay?
+1:07 I'm going to show you how to execute this piece of code.
+1:09 First, let me tell you, whenever you need a JavaScript program, then the global execution context is created.
+1:17 And the global execution context is then pushed inside the call stack, okay?
+1:21 As you can see, this is the global execution context inside the call stack, okay?
+1:32 Now, the global execution context, now this code will run.
+1:36 Our all codes will run line by line over here.
+1:40 So let's dance.
+1:42 As we move on to the first line, this is the function definition of foo.
+1:45 So we should allocate memory, and this function should be stored.
+1:50 Now, we move to the most exciting part.
+1:53 This is the function invocation.
+1:56 So in case of function invocation, an execution context is created for this function that will execute the code of this.
+2:02 And the execution context is present in the call stack, okay?
+2:11 So now, it will be inside the call stack.
+2:16 So when this code of the app function will be executed, then console.log will be executed.
+2:21 Yeah, and console.log will print "Hello from the app".
+2:24 We will print "Hello from the app" on the console right now.
+2:28 Let's create one console.
+2:30 So how much support, this is your console.
+2:33 Let's create a console so it will be present in the console.
+2:36 Now we don't like it.
+2:41 This is the console.log game of code inside this console.log and lots of this execution context of the call stack, okay?
+2:48 Now this is the execution context from midnight tonight, so we can now control console.log.
+2:57 It will print console.log and inside it, it will display all the codes that have been processed.
+3:16 This console.log will print "Hello from the app".
+3:20 We can assume that now all the code has been executed.
+3:25 So the main job of the call stack is to execute the code.
+3:30 Whatever code is given to it, it executes it and nothing else.
+3:41 Whatever is executed by JavaScript, it executes it here.
+3:44 And you all say for anything, it easily executes it directly, okay?
+3:49 But what is the program?
+3:58 The program can also come with some additional features.
+4:01 For example, if you want to delay something for some time, then you want to do something after a certain time, then you don't have that feature.
+4:22 So we have to keep track of time, and we have to execute some piece of code after a certain delay.
+4:27 Let it become extra super powers.
+4:31 That super power of time.
+4:34 So let's know how we can get the super power.
+4:38 So the call stack, as you can see over here, is inside your JavaScript engine, okay?
+4:41 It's inside the JavaScript engine, and the JavaScript engine is inside the big red box, right?
+4:52 What is this box?
+4:52 It's created by the browser, okay?
+5:00 So this is where our program is.
+5:09 This is the place where JavaScript code is executed directly.
+5:12 So this is one of the most remarkable creations in the history of mankind.
+5:16 If you don't trust me, let me show you.
+5:22 The browser has the engine inside it, right?
+5:27 And it also has something called local storage, right?
+5:30 It can also store data inside it.
+5:33 You know that inside the browser, you can also have time inside the browser.
+5:41 The browser is super powerful.
+5:44 You can have time inside the browser.
+5:47 You also have your URL, like and this HTTP request, HTTP response, etc.
+5:57 This browser has the super power of communicating to the external world, right?
+6:04 Like the next electronic device, possibly this mix has two feature best TV series, right?
+6:08 This browser has an internet connection to the server.
+6:15 It can also fetch data and also display it to you.
+6:23 Remember the browser displays on the screen, right?
+6:27 So this cute little browser is here.
+6:30 It has video and suggestions and all things, and what is this?
+6:36 This is setTimeout and you know it's the most remarkable history of mankind.
+6:43 It is a code.
+6:57 This JavaScript code which is running over here inside this call stack, it's not exposed to the super power of the browser, right?
+7:07 Suppose it needs to use this paper mount, it needs access to this page that's been rendered, or URL, or local storage, all or the Bluetooth of setTimeout.
+7:19 We need it today.
+7:22 Super powers means we need to have a setTimeout connection, right?
+7:26 The JavaScript engine needs somewhere to access those super powers.
+7:29 Let's see how it can get it.
+7:35 As we move onto the next slide, the background of console.log is here.
+7:37 Let's welcome the Web APIs, yes.
+7:43 To access all those super powers, we need Web APIs, okay?
+7:49 Let's see what are some of these Web APIs, okay?
+7:53 So we have this Web API, setTimeout.
+7:57 You know, it will be a high-level to unlock developers.
+8:00 Effectively right now, setTimeout is not difficult.
+8:03 Yes, I depict setTimeout is not difficult.
+8:08 document.getElementById and this YouTube channel, please subscribe to it.
+8:16 And if you haven't subscribed to the channel yet, please subscribe to it.
+8:28 You see browser, it does not support JavaScript or basically JavaScript itself, not the browser.
+8:41 Browser itself doesn't support JavaScript.
+8:50 Browser gives access inside this call stack or you can say JavaScript engine.
+8:54 So JavaScript engine in this browser gives access to all the super powers inside the script engine to use all these super powers, okay?
+9:06 Suppose you have to use this setTimeout super power, this API is inside the browser.
+9:14 So it gives access to setTimeout.
+9:18 Suppose we have to access the DOM tree, HTML script from fetch, this browser gives access to DOM tree by a Web API.
+9:27 So you say document.getElementById, this is a DOM API, right?
+9:31 Similarly, suppose there's a backend connection, suppose you want to fetch data from a server, then you have fetch API inside the browser, and you get it.
+9:43 And the important thing is that these Web APIs are not part of JavaScript, they are given by the browser.
+9:50 Because of the global object.
+9:55 Now what is this global object?
+9:57 This global object is a small little window, okay?
+10:01 This is just because you write this global object in the browser.
+10:06 The browser JavaScript engine gives the facility to use all the super powers.
+10:16 Through a window, and all the things which you can use.
+10:26 Suppose you need the super power of this setTimeout inside our JavaScript code, then you will have to do something known as window.setTimeout, okay?
+10:32 window.setTimeout will give access to this timer.
+10:38 If you are writing window.localStorage inside our JavaScript code over here, right?
+10:46 It's little storage, and similarly if you are writing window.console.log, it will give you access to console.log something inside this console.
+10:56 So you get access to all the super powers, and rather, it is said that all these things.
+11:07 You don't have to explicitly write window.setTimeout.
+11:14 It is present in the global object already.
+11:17 So you can just write setTimeout directly.
+11:24 window.setTimeout.
+11:26 This is the main thing that wraps up all the super powers that the adapter is into a global object, right?
+11:30 It is given by the browser and wraps up all the super powers and gives access to this window.
+11:36 This context or Web APIs.
+11:39 You can also call it as this context or Web APIs.
+11:42 And if you are script code dot you can use dot work or even just setTimeout or fetch or whatever, right?
+11:52 To access all the super powers, so this again, a lot of theory.
+12:00 Let's move to the example.
+12:04 Now let's try to execute this piece of code and see how it works.
+12:07 Use these super powers, okay?
+12:10 I will be super fun.
+12:14 Let's start.
+12:17 As I already told you that whenever you try to execute a JavaScript code, a global execution context is created.
+12:21 And it's on the side of the call stack.
+12:24 Let's switch off the global execution context.
+12:26 Now the default code will run line by line.
+12:29 Let's take the first line console.log("Start").
+12:32 This basically will actually use this Web API.
+12:36 You write console.log over in your program.
+12:41 It basically calls this Web API.
+12:44 And internally it makes a call to actually modify or like log something inside this console.log.
+12:53 So here we have console.log.
+12:55 So this is the developer tools.
+12:59 You can inspect element and find console.
+13:02 So the console, you can access console or do a console.log just because you have this console API.
+13:10 And this API is plugged through window.
+13:13 So your code which is kept hidden inside your global execution context.
+13:20 But today this piece of code is basically logging to the console.
+13:24 So let's create a console, a small little console for us.
+13:30 So we will have console.log("Start").
+13:38 Okay, now we move to the next line.
+13:41 This time, it's setTimeout.
+13:44 setTimeout basically is a Web API and this Web API gives access to this timer feature of this browser.
+13:51 So this is the super power of the browser, right?
+13:54 So and it takes a callback function and some delay.
+13:58 So we pass a callback function to this setTimeout.
+14:02 It basically registers it, okay?
+14:05 Let's see it registers it.
+14:10 It registers callback over here, and it emits this.
+14:14 So this will be cb.
+14:17 Callback registers this callback over here and we pass this delay.
+14:23 So it installs a timer of 500 milliseconds inside this timer, okay?
+14:30 And this setTimeout super power, it sets the 500 millisecond timer, okay?
+14:34 And JavaScript code, console.log("End"), it does not wait for anything.
+14:38 And console.log("End") will be printed to the console.
+14:50 So let's do it.
+14:55 So console.log("End") will be inside the global execution context.
+15:15 So this setTimeout function is present in the Web API.
+15:22 As soon as the 500 milliseconds are over, okay?
+15:30 As soon as the 500 milliseconds pass, this callback function needs to be executed.
+15:36 And because we know that all the code in JavaScript is executed inside this call stack, we need this callback function inside this call stack to be executed.
+15:46 So now it's time to picture something more.
+16:09 So now let's go to picture two, and why do we need a queue?
+16:16 Let's quickly understand it.
+16:30 So we know that the 500 milliseconds timer was running, and this callback got registered.
+16:34 So this timer expires, yes, okay?
+16:37 This callback method needs to go inside this call stack, but it cannot directly go into the call stack.
+16:44 It will go to the call stack through this callback queue, okay?
+16:56 So when the timer expires, this callback function is put inside this callback queue, okay?
+17:03 So all the functions of the timer expression move inside the queue, and you can see from this that setTimeout and addEventListener also.
+17:12 So the queue is basically a data structure.
+17:20 The event loop is basically a constantly running program.
+17:29 So this event loop, what is its job?
+17:34 Its job is to continuously check whether the call stack is empty or not.
+17:42 And if the call stack is empty, and if there is some function waiting in the queue, then it will pick that function from the queue and put it inside the call stack, and it will execute it.
+17:50 So this event loop will pick this callback function, okay?
+17:56 Execute this callback function.
+17:59 How it creates an execution context?
+18:02 Suppose this is the execution context of the setTimeout inside the call stack, okay?
+18:04 So as the callback function execution context and browser, this callback function line by line over here, it says console.log("Callback").
+18:14 Then you see the console.log being executed.
+18:17 And this console.log will be logged in the console.
+18:22 So let's log "Callback" inside it.
+18:32 And now, my friends, this is how this whole thing works.
+18:42 So this will make a lot of people want to come up with more and more examples.
+18:45 So let's dip into the addEventListener concept.
+18:51 You will become strong and strong in your head.
+18:55 Let's continue.
+18:59 So now, it's time to see the addEventListener example.
+19:08 So we have a button in the DOM, we do document.getElementById and we have addEventListener inside it.
+19:13 So we have a button inside the browser, and we want to do something when the button is clicked.
+19:26 Let's see behind the picture of addEventListener.
+19:38 It's all open again.
+19:44 When you need JavaScript code, this global execution context is created.
+19:48 So like, memorize it, and then...
+19:58 So console.log("Start") and console.log("End") will be executed first.
+20:17 addEventListener is another Web API.
+20:34 It's a super power in the browser that gives access to the window object in the form of a Web API, which is the DOM API.
+20:42 So we do something like document.getElementById.
+20:47 It basically gets the element by ID and then attaches an event listener to it.
+20:52 So this addEventListener is again a Web API.
+21:00 So this addEventListener Web API is a Web API that is given by the browser.
+21:12 And when you call this Web API, it basically registers a callback.
+21:26 It registers a callback over here, and it's a different callback, okay?
+21:29 So how does it work?
+21:35 Basically, over here, inside this Web API, it will be registered.
+21:40 This Web API will be registered.
+21:40 This will be a clickEvent listener.
+21:51 So it attaches a clickEvent listener to the button.
+21:58 Okay, so this is known as registering a callback, okay?
+22:02 So in the web page, as you can see, this clickEvent listener is attached to the button.
+22:07 As soon as I click on this button, as soon as this clickEvent happens, then this Web API, this clickEvent listener, will take this function and put it inside the queue.
+22:31 And it will put this function inside the queue.
+22:52 As soon as you click on the button, then this callback function, this clickEvent listener, will be registered in the Web API, okay?
+22:58 As soon as you click, this clickEvent listener or Web API will be removed from the browser.
+23:01 So this is how the Web API works.
+23:08 And if you click on the button, you will see console.log("Click") printed on the console.
+23:16 And console.log("Click") will be executed.
+23:19 This is the callback function and this callback method will be in the queue.
+23:29 So this addEventListener callback function will go to the queue.
+23:43 Let's understand a little bit more about this sweet little event loop.
+23:47 In dedicated videos, we will dedicate to the super hero loop, this eventLoop.
+23:51 So let's see how it works.
+23:58 Basically, the event loop has just one job, okay?
+24:02 Its only job is to continuously monitor the call stack as well as the callback queue.
+24:06 So the event loop constantly checks whether there is a function waiting to be executed inside the call stack.
+24:12 If there is, it takes that function and puts it inside the call stack.
+24:17 And the callback method is like quickly executed inside.
+24:22 So let's imagine for a moment.
+24:27 If there is nothing inside the call stack, and it's like quickly executed.
+24:32 So the code line by line, this console.log("Callback") will print "Callback" inside this console.
+24:40 Let's quickly print "Callback", right?
+24:46 And it's gone from here also, right?
+24:50 We have removed it.
+24:55 So this callback method will be executed when you click.
+25:02 Now, the most important question comes to your mind, and I want to ask, why do we need a callback queue?
+25:05 Why don't we directly pick up the callback and just put it inside the call stack?
+25:10 Note that the call stack is empty.
+25:15 But now we need a callback queue.
+25:20 Why do we need a callback queue?
+25:22 Suppose you click on the button like 10 times, and you continuously click 10 times, okay?
+25:25 So 5 callback functions will be pushed inside the callback queue, five times.
+25:29 So there will be 5 callback functions waiting to be executed inside the callback queue.
+25:31 Let me show you how it will look.
+25:35 So we will have this callback function over here.
+25:39 Suppose you click continuously, right?
+25:42 So we will have its queue like we will have all the callback functions waiting to be executed.
+25:45 It's a queue, and the event loop will continuously check whether the call stack is empty or not.
+25:52 And if the call stack is empty and some function is lined up to be executed in the callback queue, it will take that function and push it inside the call stack and execute it.
+26:00 And slowly, slowly, this callback queue will be executed, and slowly, slowly, it will execute all of these callback functions one by one.
+26:08 So in a real-life application, we will find that a lot of event listeners, a lot of other things are happening inside the browser.
+26:15 I will not talk to you about all these things.
+26:31 So how does fetch() work?
+26:39 It's very interesting.
+26:58 fetch() is not exactly like setTimeout or addEventListener.
+27:02 It's a little different.
+27:05 Let's try to understand it in 5 minutes.
+27:11 This is very important, very unique.
+27:20 So fetch() will return a promise, right?
+27:25 So it basically makes a network request to the server, and it returns a promise.
+27:39 This fetch() function basically makes a network request to the server.
+27:45 And it returns a promise.
+27:51 This promise, suppose when it successfully fetches the data, then it will execute this callback function.
+27:58 Let's see all these selection.
+28:02 Okay, so let's say the global execution context is created first, then the call stack is created.
+28:05 Then console.log("Start") is executed, and console.log("Start") is printed to the console.
+28:11 You already know what will happen.
+28:28 It will register this setTimeout function.
+28:31 So setTimeout will be registered in the Web API, and it will be waiting for 500 milliseconds.
+28:52 And the fetch() function, which is a Web API, we use it to make network calls, okay?
+28:58 So it basically also registers this callback function into the Web API, a little specifically.
+29:02 This fetch() function specifically is inside the Web API, and it's not a setTimeout function.
+29:11 It's waiting for fetch() to return data from the server.
+29:23 It's like the setTimeout function waiting for 500 milliseconds.
+29:27 Similarly, the fetch() function is waiting for the data to be returned from the server.
+29:32 As soon as the fetch() returns the data, this callback function will be ready to be executed.
+29:38 And it will be executed.
+29:48 This callback function will be ready to be executed.
+29:52 So what do you think will happen?
+30:17 This callback function will go to the callback queue.
+30:20 This is what you expect.
+30:22 But no, that's not the case.
+30:25 This is the part that a lot of developers don't understand, the task queue.
+30:37 We all have something called the Microtask Queue.
+30:44 So here we have this Microtask Queue, okay?
+30:50 So this queue is basically parallel to the callback queue, and it's a higher priority queue.
+30:52 Whatever functions come inside it will be executed first.
+30:58 And functions in the callback queue are executed after that.
+31:06 Now, what comes inside the Microtask Queue?
+31:13 Yes, you guessed it, promises, right?
+31:18 This function cb over here, which was a callback function in case of promises, right?
+31:23 This network calls will go to this Microtask Queue, okay?
+31:27 This callback function cb will go to this Microtask Queue.
+31:32 And the job of the event loop is to keep asking whether the call stack is empty or not.
+31:40 And when it sees the call stack is empty, it gives a chance to all these functions in the queue to see the light of day inside the call stack.
+31:45 And this is how it works, okay?
+31:52 So suppose we are still executing this code, right?
+31:55 We are still executing this code.
+31:58 This line was console.log("End").
+32:02 We already got the response from the fetch() function.
+32:05 It was very fast, 50 milliseconds.
+32:08 We got the response and we are executing this code.
+32:11 Suppose there are thousands or millions of lines of code, okay?
+32:15 Let's imagine to understand.
+32:19 Only suppose there are millions of millions of lines of code.
+32:23 This function is waiting to run in the queue.
+32:32 So console.log("End") will be executed first.
+32:38 And the event loop is continuously checking whether the call stack is empty or not.
+32:45 And if it's empty, and it sees this Microtask Queue, and this line console.log("End") is executed now.
+32:50 And this line console.log("End") will be printed over here first, right?
+32:53 console.log("End") will be printed, and nothing else is to be executed now.
+33:14 So console.log("End") has been executed.
+33:19 Now the call stack is empty.
+33:24 The event loop will first check the Microtask Queue, whether there is any function in it or not.
+33:30 If there is any function in the Microtask Queue, it will always be executed first.
+33:32 The event loop will execute the functions in the Microtask Queue first.
+33:38 And then it will check the callback queue.
+33:40 So first it will check the Microtask Queue.
+33:43 And if it's empty, then it will check the callback queue.
+33:47 So now it sees the Microtask Queue has cb function, right?
+33:51 So it will pick this cb function and put it inside the call stack.
+34:01 So cb function is put inside the call stack.
+34:14 The event loop has put the cb function in the call stack.
+34:16 Now the execution context of cb function will be created.
+34:24 Now the execution context of cb function will be created.
+34:28 It will run this code of the cb function line by line over here.
+34:31 It will print console.log("Netflix").
+34:40 It's quite exciting to see it.
+34:44 console.log("Netflix") will be printed over here in the console.
+34:51 And it's gone from here also, right?
+34:55 We have removed it from the call stack, and we have removed it from the Microtask Queue.
+35:07 So this is how this whole thing works.
+35:10 And this is amazing.
+35:32 So whatever functions are waiting in the Microtask Queue, they will be executed first.
+35:39 And the call stack will not be empty, so the functions in the callback queue will not be executed.
+35:45 So that's how this whole thing works.
+35:50 It's very amazing.
+35:54 Now let's quickly talk about Microtasks.
+36:01 So this is a very important interview question for you.
+36:03 You need to give a higher priority to the Microtask Queue.
+36:07 This question arises.
+36:11 So what comes inside the Microtask Queue?
+36:18 All the callback functions which come through promises, they will go inside this Microtask Queue, okay?
+36:23 And there's something called MutationObserver.
+36:33 MutationObserver basically keeps on checking whether there is any mutation in the DOM tree or not.
+36:37 If there's any mutation in the DOM tree, then it can execute some callback function, okay?
+36:44 So these are the things from this.
+36:47 This is the function which comes from this.
+36:50 MutationObserver.
+36:54 Let me write down for reference, okay?
+36:56 So promises and MutationObserver.
+37:02 You can read more about MutationObserver.
+37:05 This is your homework.
+37:10 It goes inside this Microtask Queue.
+37:13 But all the rest, all the functions, right?
+37:16 The functions which come from setTimeout, callback functions which come from addEventListener and internationalization.
+37:22 All the rest goes inside this callback queue, okay?
+37:25 So everything is going inside this callback queue, and only two things are going inside the Microtask Queue, and they are given more priority.
+37:30 The callback queue is also known by some fancy names like the task queue, okay?
+37:39 Some people call this as the task queue, right?
+37:44 Yes, the Microtask Queue is also called jobQueue.
+37:48 And the task queue is called the callback queue in general.
+37:56 Microtask Queue is the queue which has observed from the promises and the MutationObserver.
+38:02 So it's more important to execute these functions first.
+38:04 So let's imagine a scenario where there are a lot of Microtasks.
+38:10 So suppose we have a setTimeout function in the callback queue.
+38:17 And in the Microtask Queue, we have a lot of Microtasks.
+38:24 It will not only give you one thing from the Microtask Queue.
+38:32 It will keep executing Microtasks until the Microtask Queue is empty.
+38:39 And the most important one is setInterval.
+38:57 So suppose we have another Microtask queue, and it creates another Microtask.
+39:02 And it creates another Microtask, and it keeps doing this.
+39:05 So this setTimeout function will never get a chance to execute.
+39:09 Because the Microtask Queue has more priority.
+39:15 That means the setTimeout function will never get a chance to execute.
+39:18 It will keep waiting for a long time.
+39:23 And in this case, this is known as starvation, okay?
+39:29 Starvation of the callback queue or the tasks inside the callback queue.
+39:33 This is a possibility that this can happen.
+39:36 If you want to read more about this, then this is your homework.
+39:42 And you will get to know a lot of information about it.
+39:44 It's very interesting.
+39:47 So now, my friend, you must be wondering what was happening over here.
+39:50 It was happening inside your browser, and it was actually with the JavaScript engine, not too much work.
+39:55 But don't underestimate this engine, and don't underestimate this.
+40:03 It has many more things to work inside it.
+40:13 In this video, we saw the power of the browser and Web APIs.
+40:19 In the next video, we will see the power of the JavaScript engine.
+40:22 We will dive deep into JavaScript, and we will understand what happens inside this JavaScript engine, the call stack.
+40:26 So don't underestimate the call stack.
+40:33 There are a lot more things inside the call stack that we will cover in the next video.
+40:36 The whole JavaScript engine architecture, what is the difference between main and things?
+40:41 And all these things, we will look inside it.
+40:45 But I hope you have enjoyed it a lot.
+40:51 This video.
+40:58 Let me know whether you understood the topic, the browser, or not.
+41:03 Do comment down.
+41:10 I will be waiting for your comments in the comments section.
+41:15 You can also watch my other videos on YouTube.
+41:19 But please, I request you to comment on this video.
+41:21 So this video is complete.
+41:24 See you in the next video.
+41:26 And thank you for watching Namaste JavaScript.)
+
+10. JS Engine EXPOSED 🔥 Google's V8 Architecture (0:00 that's like electricity is everywhere.
+0:03 And you but you need javascript enabled
+0:07 in your browser and server.
+0:11 video smart watch
+0:13 live
+0:15 inside
+0:18 you all
+0:23 subscribe
+0:26 Now to
+0:31 receive new updates
+0:37 for
+0:39 subscribe definitely the
+0:43 amazing
+0:49 use escorts good have Liquid
+0:51 alien So we can also have stoppages to
+0:55 connect with the doctor involvement. And then
+0:58 states which can also have it inside
+1:00 spring time environment which can also have
+1:03 you can also have mine protective the Lord
+1:08 of rings inside this run time environment.
+1:11 Basically container all things you need to
+1:15 execute subscribe.
+1:18 Video
+1:20 subscribe environment is not possible
+1:23 without
+1:25 [Music]
+1:29 subscribe
+1:32 video turn
+1:38 on talking about browser
+1:41 browser can only execute
+1:47 subscribe to your browser.
+1:50 Haz House Captain Time in environment. You must definitely
+1:53 not the famous notice right? Short note dress.
+1:57 Also has a front time investment. So
+2:00 if you Google dot S you will find treasure open
+2:03 source javascript time. That means have
+2:06 everything with this request to network
+2:08 hot and desk and brothers. So basically
+2:12 of cold outside your browser and opposite
+2:15 512 run some JavaScript piece of code in our water
+2:18 cooler. What do we need? All you need
+2:21 javascript and environment which you will
+2:24 need inside our water cooler. Okay, I have
+2:27 javascript in general and this is good.
+2:31 be different incentive water cooler. It can have
+2:33 a great water level. Okay, which you can use
+2:37 YouTube score to goals and
+2:41 navigate water level which gets water level
+24:45 from water cooler. Okay, so this is why
+2:49 javascript is capable of running in
+2:51 alarm device just because of this and
+2:55 and of A
+2:59 subscribe
+3:01 and different K
+3:05 subscribe
+3:07 for example,
+3:10 inside A
+3:12 paan local storage
+3:14 superpower of local storage from
+3:18 [Music]
+3:21 different
+3:24 name and present inside the browser as well.
+3:27 As for example,
+3:34 subscribe run time environment of browser.
+3:42 subscribe
+3:43 BJP chief controller. BJP present
+3:49 top browser as well as node and different
+3:52 places for browsers. Notice app name.
+3:56 Mary sim time out in browser looks very
+4:00 similar to death.
+4:03 But internally liquid
+4:08 subscribe my channel
+4:15 like
+4:18 subscribe and
+4:22 subscribe
+4:25 investment to the self and
+4:31 subscribe
+4:37 our environment.
+4:45 subscribe to this feed schedule. Definitely
+4:50 fall in love with JavaScript little more.
+4:54 Architecture JavaScript in your browser.
+4:57 options available
+5:02 channel
+5:03 subscribe
+5:05 definitely
+5:10 subscribe
+5:15 subscribe to the channel.
+5:20 Please
+5:27 subscribe and
+5:32 subscribe The Amazing
+5:35 [Music]
+5:38 basically list of
+5:45 the most important for us.
+5:49 Who is the following sentence? There is a
+5:52 bus conductor, a strip language and which
+5:55 needs to be followed by the injured. Okay.
+5:58 And subscribe
+6:00 like governing body of this script
+6:04 language. Okay.
+6:06 Google maps and read more about it, but for now
+6:10 let's move to the very interesting question.
+6:13 Okay.
+6:16 subscribe
+6:18 and
+6:32 subscribe the
+6:35 Amazing Spider-man.
+6:40 subscribe
+6:45 Now to take
+6:49 latest Now speak what this
+6:51 JavaScript engine actually looks like
+6:53 and what is there inside? What is the so
+6:56 much hyped, but it's not
+6:59 want to clarify important in so Java.
+7:02 features not machine.
+7:04 Developers coming in get confused about
+7:08 this.
+7:09 is something
+7:11 which is running
+7:15 with
+7:17 nothing.
+7:19 Nothing but just like a normal program.
+723 Like share and
+7:32 subscribe engineer
+7:38 to code.
+7:42 to code right in
+7:46 subscribe to it, baby machine. So that's why
+7:51 he just like normal program. But to make
+7:54 things more clear, that is why he recorded
+7:56 up like representative syncbox or
+8:00 diagram or subscribe, but in general it is
+8:02 like a normal code. Okay, so now let's move
+8:06 to the architecture. We'll see what
+8:09 happens actually inside the couple. Okay.
+8:12 So JavaScript engine basically takes code
+8:16 as the input. Human readable code copy right. And
+8:19 Shavers basically takes Department. Okay.
+8:23 Reddish code No go through office major
+8:27 steps to create those T-shirts.
+8:29 include the first pass.
+8:34 the second step after passing is which
+8:37 compilation.
+8:38 Okay. And third
+8:41 subscription on
+8:43 2003 majoring in need or code inside us.
+8:47 Cartoon plate VS one hot beautiful
+8:52 used to.
+8:58 subscribe is content to
+9:02 Suppose you write
+9:08 subscribe to console. That's one another.
+9:12 to come into another to do something like this.
+9:17 sentence is
+9:20 which of the sentence parser, yes.
+9:23 So basically take the record and basically
+9:25 converted into and test.
+9:29 Now you must be thinking about what is
+9:34 basically is not subtraction.
+9:38 techtree.com Liquid, not
+9:42 interested.
+9:45 subscribe
+9:47 Liquid.
+9:57 subscribe
+10:00 subscribe
+10:12 something like
+10:13 this is basically subscribe.
+10:17 [Music]
+10:20 actually at the top of this tree and hence you have
+10:24 declaration side. Songs declaration is a
+10:27 kind of it has a name which is the best.
+10:29 course name and well wishes Namaste
+10:32 JavaScript.
+10:34 basically kind of it's kind of victory.
+10:37 structure you don't like or
+10:41 subscribe Now to
+10:44 do
+10:50 subscribe my
+10:52 friend.
+10:55 subscribe this
+10:59 video
+11:06 subscribe
+11:09 Now
+11:17 media has brought down the beautiful
+11:19 website HTC explorer. Do you know the
+11:22 beautiful website? It's basically a kind
+11:25 of generates 80s and use the SP.
+11:30 Looks for a piece of wood, root and allied
+11:33 activities. It's like super fun as Pandi.
+11:36 outside.
+11:37 Solid back to compilation set.
+11:41 subscribe and execution pages. This is my
+11:44 favorite. It's the best part of birth.
+11:47 Registration form for joint code. DMC
+11:49 heart beats and compilation and
+11:53 execution gold and hand. Okay, so we'll see all
+11:56 this. It means just dig it. Things before
+12:00 I want to become tired and execution set.
+12:04 Domination to very carefully before to very
+12:07 important concept. Okay, so subscribe.
+12:11 Just in time compilation. Okay, so before we
+12:16 understand quick just in time compilation.
+12:18 First of all, let us understand what is
+12:21 an inter. What is a compiler and like is
+12:25 javascript interpreted language or
+12:28 compiled language is very interesting.
+12:31 And interview question. Okay, let's see.
+12:34 What is it? First see what is an inter.
+12:39 In interpreter programming
+12:41 language. The code executive and interpreter.
+12:44 First interpreter basically takes our code
+12:47 and it's executive the code line by
+12:50 line in the order. It's not know what will
+12:52 happen in electronic product. Yes,
+12:55 liquid.
+12:56 While on the other hand, harmony
+12:59 languages which uses compiler to compile
+13:01 report. Okay.
+13:03 So in case of compiler, your code is compiled.
+13:07 first form 15g cute.
+13:10 This code is
+13:12 compiled and new posts from which is
+13:14 the optimized version of this code. Okay, this
+13:17 is the optimized version of this code and
+13:20 execute this fast for your original code.
+13:23 Is modified and
+13:25 renew code is belief device version of
+13:28 record with very fast and default of
+13:31 performance improvement is the compiler.
+13:34 languages work. So there are runs in both
+13:37 interpreter assembler compiler.
+13:39 Okay. So interpreter the code fast fast.
+13:42 liquid and it's not have to wait for the code
+13:46 to become file first and metal east secret.
+13:49 line by line right? Point yes a compiler.
+13:53 Bihar modification C. Okay, but in case of
+13:56 interpreter we have more speed located. The code
+13:59 runs fast. So now you can you guess?
+14:01 JavaScript interpreted language or a
+14:04 couple language.
+14:06 Nice question right? So JavaScript
+14:08 and behave like an interpreted language.
+14:10 language
+14:12 in the
+14:16 initially created quite supposed to be
+14:20 interpreted language script in which he
+14:23 used to execute
+14:28 subscribe
+14:35 4,320 enter language. But
+14:40 in today's
+14:40 world, most modern browsers and most
+14:43 of the most dangerous dangers users and
+14:45 interpreter plus compiler both together. So now
+14:50 it all depends upon the SAZ and ZOR.
+14:54 interpreted or it's just in time compiled.
+14:57 100 degrees interesting summary.
+15:01 When JavaScript in time compilation which comes from
+15:04 Lee subscribe. Engine scan user interface
+15:09 with a compiler and
+15:12 subscribe language.
+15:14 relations from both
+15:18 internally, if I to execute a very
+15:22 interesting and
+15:25 more inside the
+15:28 nation as well as execution.
+15:35 subscribe
+15:38 subscribe. Indian also interpreted.
+15:41 Now this interpreter converter high level
+15:44 code to byte code and the code to
+15:47 execution step and while it's doing so,
+15:51 to act as the FBA compiler to
+15:54 optimize the record. So compiler basically
+15:57 talks to the interpreter. Advise the code runs
+16:00 been interpreted line by line. The compiler
+16:03 also basically tries to optimize the code.
+16:06 As much as he can. So it's not just one phase.
+16:10 process, but it can happen in multiple
+16:12 offenses.
+16:13 Old is gold finds have drawn.
+16:16 algorithms for doing great job.
+16:19 Near to optimize the code as it can be run.
+16:24 time table soon just in time.
+16:28 in sub
+16:30 school. Now the authority of time in compiler.
+16:36 subscribe
+16:39 look at it. And it tries to optimize the zinc.
+16:43 And also produces the code which in the
+16:47 studio execution phase and execution.
+16:50 Over is not possible without two major
+16:53 components of the Jazz engine.
+16:55 Those components are the memory here.
+16:58 and the call step.
+17:00 Remember the course of Dream. But
+17:05 after we talk about Lord in this
+17:08 course, you remember all.
+17:12 subscribe
+17:15 let it
+17:18 remember and
+17:22 subscribe and
+17:28 subscribe in which all
+17:32 contexts and subscribe
+17:39 is present over here inside your
+17:41 destination. Now can you imagine?
+17:46 subscribe video
+17:51 subscribe
+17:53 parsing compilation enter compiler.
+17:57 execution and
+18:00 subscribe overall things which are
+18:04 present inside.
+18:07 subscribe
+18:20 subscribe to
+18:24 now here we also have
+18:24 memory chip. So this is the place where the
+18:27 memory starts. Work at its cost in
+18:30 sync with big goals. A garbage collector.
+18:34 And a lot of things. Do you species in
+18:37 everything works together right? Summary
+18:40 hips place where all the variables and function
+18:44 are assigned memory of
+18:46 all those amazing right? Let me tell you more.
+18:50 amazing things. So we also have a
+18:52 garbage collector into the picture of all the
+18:55 best.
+18:57 garbage may possible when a person function is
+19:02 not been used or clear.
+19:05 basically like collects garbage.
+19:08 Liquid news general code.
+19:13 [Music]
+19:19 subscribe
+19:21 give you homework. Noted down from
+19:25 to the study. I'm not going to dive deep into
+19:28 small things. Otherwise videos going to be
+19:31 very long. But remember to read about Shri.
+19:35 Gautam
+19:36 Gautam like very important and widely
+19:40 used with collector. Not support
+19:43 JavaScript or you just another form of
+19:50 computers for the code.
+19:53 central
+19:55 television
+19:57 channel
+19:59 subscribe
+20:04 Liquid, don't
+20:08 like very beautiful when you read internal.
+20:11 behind the scene of algorithms for December
+20:17 1979
+20:20 copy lens
+20:22 and along with this, we also help in
+20:25 line question.
+20:32 that
+20:33 I don't to my channel single video. But each
+20:36 center so interesting that you need to cut short and
+20:40 it's okay. I'm telling you honestly, that
+20:43 process which I explained to you inside this
+20:46 sentence is very generic. All the Java
+20:50 pin has a run on ways of implementing
+20:52 things. Okay. But most of them are the most.
+20:55 browsers have a similar to this. Thanks.
+20:58 For this extraction, text trees,
+21:00 presentation like almost all the
+21:02 JavaScript this and they recent
+21:05 updates compiler and there are lot of other
+21:09 optimization techniques which
+21:11 pin implement all the
+21:14 best compilation logic inside the
+21:18 very different from
+21:22 inside you
+21:24 want to see the
+21:30 subscribe to work in bare night to
+21:34 made to optimizations as well as possible.
+21:37 So that this severe microsecond. Okay.
+21:41 And this violence so much competition. Every
+21:44 browser want to make the JavaScript.
+21:46 based in the world channel.
+21:52 subscribe
+21:57 personally love stories.
+22:00 so interesting. It's very
+22:05 interesting.
+22:12 subscribe really love name which will give to
+22:18 enter inside the
+22:22 then then
+22:26 school. But this
+22:32 is basically the job of compiling the code.
+22:36 verification interpreter along with straw.
+22:39 And optimized compilers. This is the run.
+22:43 Very fast. So now we are talking to the give.
+22:47 me to minute quickly. So you already with
+22:50 JavaScript engines architecture. Okay.
+22:53 So here we have the JavaScript engine.
+22:56 architecture. So it's just like we showed
+22:59 you in this architecture diagram, right? Vision
+23:02 one unit same inside with it.
+23:07 subscribe growth of parcel.
+23:10 recent expose.
+23:11 service is
+23:13 intellect. In the right. And this option takes.
+23:16 tree addition.
+23:18 interpret this winter vacation, right? And
+23:22 it's converted code to byte code which is
+23:25 the present of this code executive. And
+23:28 along with interactive read the app and compile.
+23:32 I'll just like a sodium pilot if in
+23:36 compiler abroad.
+23:38 and different compiler recent work in the
+23:44 middle of a lake.
+23:47 placed
+23:53 inside and liquid
+23:56 [Music]
+23:59 withdraw from official website of
+24:03 everything. Just told everything.
+24:12 subscribe
+24:14 my channel.
+24:18 to
+24:23 [Music]
+24:27 subscribe. It's like a closed loop.
+24:32 So before and yes, let's quickly
+24:34 revise the returns. It's very interesting.
+24:36 Right. Let's quickly devise it and do your
+24:40 memory forever. Okay. So we have the script.
+24:43 printing environment. So whenever your
+24:44 executive and JavaScript code, it
+24:47 means a container which has the required to
+24:50 run in JavaScript code. What do you use?
+24:52 printer in the browser. Run time environment.
+24:55 day
+24:57 subscribe in the
+24:59 midst of
+25:02 environment which
+25:12 subscribe
+25:14 this video
+25:26 subscribe
+25:30 school of the G kitchen paste Addison.
+25:34 Famous to kandhar generated. And after due to
+25:38 insufficient expose, sir, basically pass the
+25:40 whole code and convert in the SP file tree.
+25:44 For this is that SP but whole tree, right?
+25:48 Now this is sudden pass on to interpreter.
+25:51 So JavaScript just in time compiled.
+25:54 language problem. But most of modern
+25:57 browsers have this kind of interpreter plus
+26:00 compiler inside to make this code.
+26:03 optimized for more and more and it's very
+26:05 fast. Kabir, we have a interpreter. We have
+26:09 a compiler and the action of the ghost to see.
+26:13 interpreter. Interpreter produce the code.
+26:15 which can be executed with the help
+26:17 of memory hip and the call stack. And -
+26:22 click on state will work in a
+26:23 optimizing the code as much as possible. We have
+26:26 a garbage collector which basically does the job
+26:29 listings of birth and optimizing.
+26:31 every sphere.
+26:32 to JavaScript engine. Okay. And
+26:36 also have a lot of other optimization
+26:38 techniques for everyday. But all of them in
+26:41 learning copy alien. Like these are the most
+26:44 important works. Great to understand the subject.
+26:48 all in this JavaScript engine.
+26:50 Now tell me my friends. Do you love me?
+26:54 Three. Do you love me?
+27:00 Love
+27:02 me. You love
+27:06 you.
+27:08 love you.
+27:16 language, programming language, language,
+27:19 language,
+27:20 language.
+27:23 programming languages. But also be used.
+27:29 for you.
+27:32 special program in JavaScript.
+27:34 As well as object oriented programming in
+27:36 JavaScript. In next video, we'll take
+27:38 a little bit of functional programming and
+27:41 have what a function? You will definitely love it.
+27:44 For coming, let me
+27:47 love you.
+27:50 Don't
+27:53 comment any video comment.
+27:59 subscribe definitely
+28:02 video. Thank you for watching my video.
+28:06 [Music])
+
+11.Visualised guide to memory management in JavaScript(0:00
+foreign
+0:05
+[Music]
+0:13
+hello everybody I'm here to talk about
+0:16
+some of the memory things in JavaScript
+0:19
+but first of all a small disclaimer
+0:21
+there will be quite a lot of moving
+0:23
+things in my slides quite a lot of
+0:24
+Animation so if this is something that
+0:26
+is triggering to you just be aware of it
+0:28
+but let's start we know that on a
+0:31
+fundamental level everything we do on
+0:33
+the computer eventually gets turned into
+0:35
+binary code essentially just a bunch of
+0:38
+zeros and ones including everything we
+0:41
+write in JavaScript but how exactly does
+0:44
+it happen through What stages it goes
+0:47
+through in between
+0:48
+my talk will try to answer that question
+0:51
+and is the result of my own Journey Down
+0:54
+The Rabbit Hole trying to understand how
+0:56
+variables we create in JavaScript get
+0:58
+turned into a bunch of zeros and ones
+1:00
+and I'll try to cover the whole journey
+1:02
+starting from binary code and memory
+1:04
+architecture to Inner workings of a
+1:06
+JavaScript engine like memory allocation
+1:08
+and garbage collection
+1:10
+so with that uh I invite you on this
+1:12
+journey down the rabbit hole with me
+1:14
+we'll show you around uh but first let
+1:17
+me introduce myself real quick my name
+1:19
+is Katrina as anjana mentioned I am
+1:22
+Ukrainian and uh but I live in Italian
+1:23
+Estonia right now I'm a front engineer
+1:26
+and engineering manager but I'm also
+1:28
+organizer of Italian GS and I brought
+1:30
+some of our stickers here from our last
+1:32
+Meetup so if you want some you can feel
+1:34
+free to catch me later
+1:36
+um on the break
+1:37
+but let's start and let's start from the
+1:40
+beginning with those zeros and ones and
+1:43
+understand how computers represent and
+1:45
+store information so zero or one is the
+1:48
+smallest fraction of information there
+1:50
+is it's like on and off switch true or
+1:53
+false in early days computers use
+1:55
+literal light bulbs that glowed for one
+1:58
+and were dark for zero and it's called
+2:00
+one bit of information
+2:02
+and with combinations of these bits we
+2:04
+can represent all sorts of data small
+2:07
+numbers big numbers characters emoji and
+2:11
+even the answer to the ultimate question
+2:13
+of life universe and everything
+2:17
+there are different types of memory and
+2:19
+storage computers use to store these
+2:22
+bits in their own unique ways for
+2:24
+example DVD discs use small indentations
+2:26
+on the surface that reflect light
+2:28
+differently when being shined on with a
+2:30
+laser uh and sloppy disks if you
+2:33
+remember those I used magnetic encoding
+2:36
+so when the head passed through it could
+2:38
+read that information
+2:39
+but when it comes to the memory that our
+2:41
+JavaScript applications used it is
+2:43
+mainly Ram or Random Access Memory it's
+2:46
+basically a working memory the CPU uses
+2:48
+while running applications on the
+2:50
+computer and let's see really quickly
+2:52
+how Ram works first of all Ram consists
+2:55
+with these memory cells and we can think
+2:57
+of them as Tiny storage boxes that can
+3:00
+hold electrical charge for some time and
+3:03
+we can write to them and read from them
+3:05
+on the hardware level they are
+3:07
+implemented as an electric circuit with
+3:09
+combinations of transistor or
+3:11
+combination of transistor and capacitor
+3:13
+that can basically hold charge for some
+3:15
+time but of course the Single Cell isn't
+3:17
+much use on its own so we can arrange
+3:21
+the cells in a grid and then use the
+3:23
+address system to specify which cell
+3:24
+exactly we need and you can think of it
+3:27
+as like Street and house address in real
+3:29
+life so when we take the first part of
+3:31
+the address we can specify the column
+3:34
+and then the second part can specify the
+3:36
+row and then we can read the contents of
+3:39
+the memory cell at the intersection so
+3:41
+yay we just read one bit of information
+3:44
+however one bit of information isn't
+3:47
+enough in modern Computing we need a way
+3:49
+to manipulate more bits simultaneously
+3:52
+so to do that we can arrange these grids
+3:55
+in an array and then using the same
+3:57
+address we can access multiple memory
+4:00
+cells at once for example with this
+4:03
+8-bit address if we are using here we
+4:06
+were able to read one byte of data at a
+4:08
+time to simplify it a little bit further
+4:10
+we can think of it as a match between
+4:12
+the address and data it holds we can
+4:16
+convert address to the decimal format
+4:18
+and then represent all available memory
+4:20
+as this kind of array of available
+4:21
+addresses and their corresponding values
+4:24
+so current Ram that we are using used
+4:27
+eight bit addresses which means that in
+4:29
+total it allows us to use to store
+4:32
+256 bytes
+4:34
+which is very little in modern Computing
+4:37
+but this is an example of memory older
+4:39
+computers used often referred to as
+4:41
+8-bit memory architecture
+4:44
+modern computers operate on 32 or 64-bit
+4:48
+architecture instead which means that
+4:50
+addresses got a lot longer and therefore
+4:52
+they're usually represented in
+4:54
+hexadecimal format but all of the core
+4:57
+principles that we just discussed still
+4:59
+apply
+5:00
+now while we are talking about physical
+5:02
+RAM memory it's important to note that
+5:04
+applications when they run on the
+5:06
+computer they don't interface with
+5:08
+physical RAM directly instead operating
+5:10
+system maintains this additional layer
+5:12
+of obstruction known as virtual memory
+5:14
+and it maps to the Physical Realm under
+5:17
+the hood but gives operating system the
+5:19
+flexibility to for example use the hard
+5:21
+drive when physical RAM is running low
+5:24
+and it helps to manage memory usage more
+5:26
+efficiently and alleviate some security
+5:28
+concerns but also gives applications the
+5:31
+illusion of this large continuous memory
+5:33
+space available to them
+5:35
+now we have this memory and let's say
+5:37
+you want to store something let's say it
+5:38
+is a variable more often than not it
+5:41
+won't fit into one byte
+5:43
+so then it would occupy a continuous
+5:45
+segment of cells in the address space
+5:47
+and is often identified as the first
+5:49
+address in that space and it's called a
+5:52
+pointer
+5:53
+it means that this address points to the
+5:56
+location memory where our data begins
+5:58
+and after that we can just follow along
+6:00
+until we cover the size of our data
+6:03
+in languages like C and C plus plus U.S
+6:06
+developer need to manage memory
+6:08
+allocation manually for example right
+6:10
+now you see a piece of code on the
+6:11
+screen it's in C and it allocates memory
+6:14
+for an array of 10 integers so what we
+6:17
+do here we multiply 10 by the size of
+6:19
+type integer to allocate memory needed
+6:21
+to store that array and after we use
+6:24
+that array we need not to forget to
+6:26
+explicitly free the memory that was
+6:28
+associated with it so it can be used for
+6:30
+other allocations
+6:31
+and you can see it's quite a lot of work
+6:34
+and quite a lot of things to remember
+6:35
+for you as a developer but at the same
+6:37
+time it gives a lot of power to optimize
+6:40
+memory consumption
+6:41
+now if you get to JavaScript we don't
+6:44
+need to do any of that you can just go
+6:47
+around defining arrays left and right
+6:49
+without giving a second thoughts about
+6:51
+memory allocation and it's actually a
+6:54
+good thing JavaScript is a high level
+6:56
+language which means that it does a lot
+6:58
+of things for us so that we as
+7:00
+developers can focus on building
+7:02
+features and delivering value to our
+7:04
+users and all of the memory allocation
+7:06
+and freeing is done behind the scenes by
+7:09
+a JavaScript engine
+7:11
+and what is a JavaScript engine it's a
+7:14
+program that runs within a runtime
+7:15
+environment such as browser or node.js
+7:17
+that takes the JavaScript code that you
+7:19
+wrote which is essentially just a long
+7:21
+piece of text on its own and runs a lot
+7:24
+of transformation on it to turn it into
+7:26
+machine code that can be executed by CPU
+7:29
+there are a lot of different engines out
+7:31
+there for example V8 that is evolved by
+7:33
+Google spider monkey that is used in
+7:35
+Firefox and developed by Mozilla and
+7:37
+JavaScript core which is part of webkit
+7:39
+and is used in Safari developed by Apple
+7:42
+and this circle mainly focus in V8
+7:44
+because it's arguably the most popular
+7:46
+of them all but a lot of the core
+7:48
+principles still work the same in other
+7:50
+engines as well
+7:51
+so V8 is used in Chrome and other
+7:53
+chromium-based browsers such as Opera
+7:55
+and Edge node.js and Nano electron and
+7:58
+more V8 itself is written in C plus plus
+8:01
+and is open source so if you want it you
+8:03
+can go and check out the code for
+8:05
+yourself it's really well documented and
+8:06
+there's a lot of tutorials online how to
+8:08
+you can run the developer version of V8
+8:10
+if you wanted to
+8:12
+now let's take this piece of code that
+8:14
+declares a really simple object and
+8:16
+follow it down the rabbit hole to
+8:18
+understand how V8 allocates memory for
+8:20
+it
+8:21
+so first of all V8 uses two types of
+8:24
+memory there is stack memory and Heap
+8:27
+stack is the region of memory that
+8:29
+allocates local context when interpreter
+8:31
+goes through your code basically kind of
+8:33
+going through your code line by line and
+8:35
+allocating what is needed right now for
+8:36
+the execution and hip is a much larger
+8:39
+region of memory that allocates
+8:41
+everything that is allocated that stores
+8:43
+everything that is allocated dynamically
+8:44
+say your objects functions arrays Etc
+8:47
+and stacking Heap is not something that
+8:50
+is unique to V8 these are common ways to
+8:53
+structure data each with their own
+8:54
+specific ways of accessing and adding
+8:56
+new data into the structure now getting
+8:59
+back to our example first we when
+9:02
+interpreter reaches the line with our
+9:03
+variable declaration needs to allocate
+9:05
+memory for the new object on the Heap
+9:07
+since JavaScript is a dynamically typed
+9:09
+language it doesn't know in advance how
+9:11
+much space something will occupy in the
+9:13
+future so first of all it detects how
+9:15
+many properties the objects has in the
+9:17
+beginning and also it has a lot of
+9:19
+internal kind of logic and heuristics to
+9:21
+kind of predict how much space something
+9:23
+will occupy
+9:24
+so
+9:26
+um it will
+9:28
+dedicate space for it but then the color
+9:30
+property itself will be stored in a
+9:32
+different address whereas the original
+9:34
+object will be pointing to it
+9:36
+and it brings to kind of important point
+9:39
+that most of the Primitive values are
+9:41
+actually being stored on the Heap
+9:42
+contrary to the popular belief except
+9:44
+for small integers and then as our
+9:48
+memory is allocated the uh it can be
+9:50
+updated on the stack as well and our
+9:52
+code can be continued to execute
+9:55
+if you run the Heap snapshot under the
+9:59
+memory tab in Chrome you can actually
+10:00
+see all of this so for example here is
+10:03
+our object and you can see all of the
+10:05
+properties inside and a lot of other
+10:07
+things
+10:08
+under the hood V8 uses the superclass
+10:11
+called Heap object for everything that
+10:13
+is allocated on the Heap and contains
+10:15
+pointers to all of the internal values
+10:17
+for the object itself plus a lot of
+10:19
+useful metadata that V8 uses for
+10:21
+optimization
+10:22
+to connect back to what we discussed
+10:24
+before both of these occupy actual space
+10:28
+in the virtual memory and by extension
+10:31
+the physical RAM on your computer
+10:33
+now as our program runs more and more
+10:36
+things get allocated on the Heap and if
+10:38
+we zoom out a little bit more you can
+10:40
+see that both stack and Heap are located
+10:42
+on different sides of the memory array
+10:44
+dedicated to our application
+10:46
+and as we fill up it with more and more
+10:49
+variables they start growing towards
+10:51
+each other into the free space
+10:53
+but of course it's not like our program
+10:55
+is the only thing running on the
+10:57
+computer we need to share memory with
+10:59
+other applications and in the case of
+11:02
+the browser we need to share it with
+11:03
+other tabs and browser plugins that you
+11:06
+might have open which might give a
+11:08
+little bit
+11:09
+more insight why Chrome can be so memory
+11:12
+hungry sometimes
+11:13
+[Applause]
+11:18
+yeah I love I love this gift
+11:21
+uh but uh going back from the gift let's
+11:25
+shift our Focus back to the code and
+11:27
+explore a little bit more examples of
+11:29
+how stuff gets allocated on the Heap
+11:31
+from here on out I'm gonna stick only
+11:33
+with he but stack memory is still there
+11:35
+allocating local context as the code
+11:37
+gets executed
+11:40
+um so we already know how the object
+11:42
+itself is declared let's say we declare
+11:45
+another variable fool that has the
+11:47
+string of the same value white and this
+11:49
+presents an interesting situation for V8
+11:51
+because if it was to allocate new memory
+11:54
+space for it it won't be very efficient
+11:56
+we basically would be storing the same
+11:57
+thing twice so on state V8 uses the
+12:00
+technique called string interlining it
+12:02
+detects that both of these are basically
+12:04
+the same string and instead of
+12:06
+allocating new memory for it both of
+12:08
+them will be pointing to the same
+12:10
+location where the string is stored
+12:13
+and it brings to another important point
+12:15
+that most of the variables in JavaScript
+12:17
+are just pointers pointing to locations
+12:19
+where something is stored
+12:21
+but what happens if we reassign Foose
+12:24
+value as all of the kind of strings and
+12:26
+other primitive values are immutable
+12:28
+will allocate new space on the Heap for
+12:31
+the new string and then the fourth
+12:33
+pointer will be updated so that it
+12:35
+points to the new value
+12:36
+I really like analogy from then
+12:38
+abramov's just JavaScript course where
+12:40
+we come he Compares variables to wires
+12:43
+that point somewhere so we can imagine
+12:45
+that both color and full are wires
+12:48
+connecting to the same place and as
+12:50
+food's value changes wire just changes
+12:52
+its end location
+12:54
+now let's explore another example a
+12:56
+little bit more complicated one
+12:58
+here we have an object with two
+13:00
+properties
+13:01
+and then we create another variable and
+13:03
+assign it to the previous one
+13:05
+and that we change that variables
+13:07
+property
+13:09
+and you would see that original objects
+13:12
+name property got updated as well
+13:15
+so when we made an update here it got
+13:18
+updated here too
+13:20
+this is something that is called
+13:21
+modification by reference and can be
+13:23
+really tricky if you are not careful to
+13:25
+understand what actually happens under
+13:27
+the hood let's look at the Heap so as
+13:30
+again interpreter reaches the line with
+13:32
+our object decoration it allocates
+13:35
+memory for the object itself and this is
+13:37
+something that is already familiar to us
+13:38
+it's just that this object has two
+13:39
+properties instead
+13:41
+now when we create another variable and
+13:44
+assign it to the same object instead of
+13:46
+recreating the whole thing both of these
+13:48
+will be pointing to the same location
+13:51
+so that's when we update the name
+13:53
+property
+13:55
+uh it would be updated in both because
+13:59
+both of them are basically pointing to
+14:00
+the same place if we zoom out and get
+14:03
+back to the mental model that we saw
+14:05
+before this is what happens
+14:09
+and because both of them were pointing
+14:11
+to the same place it got updated in both
+14:14
+to avoid this Behavior we could use
+14:16
+something like a spread operator like
+14:18
+this in that case if we update the name
+14:21
+property original object will keep its
+14:23
+original value
+14:24
+what happens is that the spread operator
+14:27
+copies all of the top level properties
+14:29
+so then when the name is updated it
+14:32
+doesn't impact the original object
+14:34
+though it still has some limitations
+14:37
+interestingly it wouldn't help for all
+14:39
+the nested objects out there so let's
+14:41
+say we have a deep nested property here
+14:43
+and we update it for for the new created
+14:47
+object it will still get updated in the
+14:49
+original object as well
+14:52
+let's see what happens
+14:54
+so when we use the spread operator it
+14:56
+copies only top level properties often
+14:58
+referred to as shallow copying so that's
+15:01
+when we update the color property it
+15:04
+will still get updated in both because
+15:07
+both objects internal code property was
+15:10
+pointing to the same location with an
+15:12
+object
+15:13
+and as I said it can uh it can be really
+15:16
+tricky and can backfire and create some
+15:18
+bugs that are really hard to find so for
+15:20
+example when you have when you're using
+15:21
+react and you pass an object to as a
+15:24
+prop to the component uh you can and you
+15:27
+do some modifications with it in the
+15:29
+components code it actually impacts the
+15:31
+object in a parent component and in the
+15:33
+parent of the parent component and maybe
+15:35
+going back to your Redux store or
+15:36
+whatever else management solution you're
+15:38
+using and this is exactly why
+15:40
+immutability got popular some time ago
+15:42
+because libraries like immutable GS make
+15:44
+sure that all of the references are kind
+15:47
+of recreated and not copied
+15:50
+now we talked a lot about memory
+15:52
+allocation but what about freeing memory
+15:54
+or that we don't need anymore so for
+15:57
+example we have the string here white
+15:58
+that is not used anywhere anymore and in
+16:02
+languages like CNC plus plus that we
+16:04
+explored example before you would
+16:06
+actually need to free this memory
+16:08
+manually but JavaScript runs a garbage
+16:11
+collector for you in VA that is called
+16:13
+Orinoco and let's dive a little bit
+16:15
+deeper how the garbage collection itself
+16:17
+works but first of all let's understand
+16:19
+how V8 can generally detect whether
+16:22
+something is garbage or it's not
+16:24
+so when we have our application
+16:27
+represent all objects we have as this
+16:29
+kind of chain of references that goes
+16:31
+from the root and as our program runs
+16:34
+some of those references stop existing
+16:36
+as we saw in the example above
+16:39
+and it means that they become
+16:40
+unreachable from the root so they cannot
+16:42
+be used anymore
+16:43
+and there are four memory that was
+16:45
+associated with them can be freed
+16:48
+if you look at the memory array and just
+16:50
+free the memory that was associated with
+16:52
+it it might leave our memory fragmented
+16:55
+which means there's a lot of little gaps
+16:57
+and becomes a lot harder to allocate
+16:58
+anything new into the memory
+17:01
+So to avoid that memory needs to be
+17:03
+compacted so that we have a long
+17:05
+continuous chunk of fresh juicy memory
+17:08
+available for the new allocations
+17:10
+so if you remember old Windows operating
+17:12
+systems there was this
+17:15
+super scary this defragmenter utility I
+17:18
+remember being scared to use it every
+17:20
+time that did really similar thing to
+17:22
+your hard drive
+17:24
+of course current operating systems do
+17:26
+it automatically for you and it's not
+17:29
+needed anymore but the process is really
+17:31
+similar
+17:33
+now let's look at how V8 does garbage
+17:36
+collection so all Heap is split between
+17:39
+two main Generations Young Generation
+17:42
+and all generation
+17:44
+let's look at the Young Generation first
+17:46
+it's called young because this is where
+17:47
+all the new objects get allocated it is
+17:50
+relatively small usually between the
+17:52
+size of one to eight megabytes
+17:54
+and inside it is split into two equal
+17:57
+parts and right now we'll see why
+17:58
+they're called from space and two space
+18:01
+and as our program runs new objects get
+18:04
+allocated into the memory but at some
+18:07
+point the time comes when we try to
+18:08
+allocate something but there's just not
+18:10
+enough space for it and this is what
+18:12
+triggers the garbage collection cycle
+18:15
+so V8 stops the execution cycle
+18:17
+completely until the cleanup is finished
+18:20
+first it needs to understand which
+18:22
+objects are still alive so it traverses
+18:24
+through the chain of reference that we
+18:26
+talked before and finds the objects that
+18:28
+are referenced from there
+18:30
+then it can copy those objects from from
+18:33
+space to to space and this is why
+18:36
+they're called like that now everything
+18:38
+that we had before could be deleted but
+18:41
+of course before doing that the we need
+18:43
+not to forget to update the references
+18:45
+that were pointing to those objects that
+18:48
+we just moved to a different place
+18:50
+and you can see that this at the same
+18:52
+time does freeing of the memory but also
+18:54
+compaction right because we now have a
+18:57
+long continuous chunk available in the
+18:58
+two space for new allocations so after
+19:01
+that everything from the from space can
+19:02
+be safely removed and then this the
+19:05
+space can be swapped in place and
+19:07
+garbage collection cycle is finished and
+19:09
+we can continue the execution so the
+19:11
+object that has been waiting can be
+19:13
+allocated into the memory and then our
+19:15
+program runs as usual
+19:17
+as I said before this garbage collection
+19:19
+stops the execution cycle completely
+19:21
+because it needs to update all of those
+19:23
+references and it cannot be done uh
+19:26
+concurrently
+19:27
+and in earlier versions of V8 you could
+19:30
+even see a small lag because garbage
+19:32
+collector was doing its job for example
+19:34
+you're clicking the button and it
+19:35
+triggers the garbage collection cycle
+19:37
+and you could see maybe some login
+19:38
+rendering
+19:40
+in the now VA does a lot of work in
+19:42
+parallel and actually paralyzes this
+19:44
+work in up to seven threads so it takes
+19:46
+only a few milliseconds and this
+19:49
+algorithm is is really fast and it's
+19:51
+really simple it's called scavenger or
+19:53
+sometimes referred to as minor garbage
+19:54
+collector but at the same time it's
+19:56
+really memory hungry because we always
+19:58
+need twice as much memory uh to
+20:01
+facilitate the algorithms work remember
+20:03
+having two network from space and two
+20:05
+space at the same time
+20:07
+which is okay for small amounts of space
+20:10
+but of course it wouldn't be sustainable
+20:11
+for everything
+20:13
+and this is why all generation exists so
+20:16
+it follows what is called a generational
+20:18
+hypothesis which means that most objects
+20:22
+Die Young which is really depressing
+20:26
+but what it means is that it allocate
+20:29
+most objects get allocated and then
+20:31
+almost immediately become unreachable
+20:33
+and if you look at how you write your
+20:36
+code you can actually actually see those
+20:37
+patterns for example you have a function
+20:39
+that you create a temporary object for
+20:41
+and then you return the value and this
+20:43
+object is not needed anymore it's not
+20:44
+used anywhere
+20:46
+and this is where the garbage collection
+20:49
+like the old generation comes in so as
+20:51
+our Young Generation fills up and
+20:53
+garbage collection cycle is run the
+20:55
+objects that survive that cycle
+20:58
+are marked as intermediate meaning they
+21:00
+already survived one cycle of garbage
+21:02
+collection and then as Young Generation
+21:04
+fills up again
+21:05
+and we run the second cycle the
+21:08
+intermediate objects that survive
+21:09
+instead of staying in the Young
+21:11
+Generation get promoted into the old
+21:13
+generation instead
+21:15
+and all generation is taking most of the
+21:19
+Heap and statistically around 20 percent
+21:21
+of the objects survive into the old
+21:22
+generation
+21:24
+uh and it's uh way bigger and this is
+21:26
+where most of the data is stored so
+21:28
+let's talk a little bit how garbage
+21:29
+collection works here
+21:31
+so instead of using the same algorithm
+21:33
+that we discussed before because it's so
+21:35
+memory hungry uh it V8 uses what is
+21:38
+called Mark sweep and compact algorithm
+21:40
+and let's go about it step by step let's
+21:42
+start with the marking first
+21:44
+so remember that chain of references V8
+21:48
+goes through chain of references and
+21:49
+marks the pointers of the objects that
+21:51
+are accessible from the root
+21:54
+then it means that everything that is
+21:56
+not marked is not needed anymore and so
+21:58
+this memory can be used for something
+22:00
+else
+22:02
+so this memory can be freed which brings
+22:04
+us to the sweeping part
+22:06
+and the way that free memory is managed
+22:09
+is actually really interesting and let's
+22:11
+look a little bit more into in detail
+22:13
+how it works
+22:14
+so all Heap is split into these sections
+22:17
+that are called pages
+22:19
+and each page is basically a segment of
+22:21
+memory where we can allocate things
+22:24
+and as some of the memory is freed it
+22:27
+leaves some of the gaps that can be
+22:29
+available for the new allocations but if
+22:31
+V8 would just go through the whole heap
+22:33
+looking for the available space it
+22:35
+wouldn't be really efficient
+22:36
+so instead it maintains a structure
+22:39
+called free list
+22:40
+and it is a dictionary with all of the
+22:42
+free memory locations and we can think
+22:44
+of it as like Airbnb for all of the
+22:47
+objects on the Heap
+22:49
+so for example here we have three
+22:51
+locations of the size one available and
+22:53
+then three locations of the size two
+22:55
+available of course there's a lot more
+22:57
+sizes than that but this is just an
+22:59
+example
+23:00
+now when the new object comes and it
+23:03
+needs to get allocated instead of going
+23:04
+through the whole heap it just looks
+23:06
+into the free list and finds the first
+23:08
+available location of the needed size
+23:10
+available and this is where this object
+23:12
+can be allocated
+23:14
+then of course this location needs to be
+23:16
+removed from the free list because it's
+23:17
+not available anymore and then the
+23:19
+execution can be continued
+23:22
+and now we as we talked about the
+23:24
+sweeping and how all the free memory is
+23:26
+managed let's talk about the compaction
+23:28
+and it's also really interesting
+23:30
+so as our program runs some of those
+23:33
+pages become too fragmented to operate
+23:35
+and we ate the tags those pages early on
+23:38
+and then runs compaction on them
+23:41
+so let's say this page needs needs
+23:43
+compaction and it works relatively
+23:45
+simply so just allocate the new page and
+23:48
+then copies over all of the occupied
+23:49
+values into the new page so that we have
+23:52
+a longer continuous chunk available for
+23:54
+the new allocations then of course after
+23:57
+updating all of the references that are
+23:59
+pointing to this object
+24:01
+uh the old page can be deleted
+24:04
+and now we have the new page with like a
+24:06
+big chunk of memory available for the
+24:08
+new allocations
+24:09
+uh if in terms of performance a lot of
+24:12
+the work of this algorithm is done out
+24:14
+of the main thread for example the
+24:16
+marking is done is done concurrently and
+24:19
+sweeping is done concurrently as well
+24:21
+but the compaction bit again because it
+24:23
+involves updating all of those
+24:24
+references is still done in the main
+24:27
+thread and of course it is usually not
+24:30
+really taking a lot of time but of
+24:31
+course it depends on the size of your
+24:34
+hip
+24:35
+now we covered both minor garbage
+24:38
+collector and major garbage collector
+24:40
+and this is where I would like to wrap
+24:42
+up my story but before that let's do a
+24:44
+little bit of recap
+24:46
+so the code you write in JavaScript is
+24:48
+essentially just a long piece of text by
+24:50
+itself it doesn't do anything
+24:52
+it needs to be executed inside the
+24:54
+runtime environment such as browser or
+24:56
+node.js
+24:57
+and within that runtime environment
+24:59
+there's a JavaScript engine like V8 that
+25:01
+turns your code into machine code that
+25:03
+can be executed by CPU
+25:05
+and that engine is using two types of
+25:08
+memory stack for all of the local
+25:09
+contacts while interpreter goes through
+25:11
+your code and Heap for all of the stuff
+25:14
+that is allocated dynamically of course
+25:16
+there's not only allocation but also a
+25:18
+memory needs to be freed so it runs
+25:20
+automatic garbage collector and V8 has
+25:22
+two garbage collectors minor for the
+25:24
+Young Generation the scavenger but also
+25:26
+the major garbage collector for the rest
+25:28
+of the Heap
+25:29
+and then of course everything is stored
+25:31
+there translated into the virtual memory
+25:33
+that is dedicated by operating system
+25:35
+for our application
+25:37
+and then that translates to the actual
+25:39
+memory cells on the physical RAM that
+25:42
+store those zeros and ones
+25:45
+and I aim to cover quite a lot of ground
+25:48
+and get over you of the whole journey
+25:50
+that our variables that we create go
+25:52
+through but of course there's a lot more
+25:54
+space for you to dig deeper in some of
+25:56
+the aspects which I really encourage you
+25:57
+to do because it's really fascinating
+26:00
+and I will share some of the additional
+26:02
+materials and resources later in slack
+26:04
+as well
+26:05
+and I hope you enjoyed this journey and
+26:07
+it gave you a little bit more insight of
+26:09
+all of the things that happen under the
+26:11
+hood uh when we create variables in
+26:13
+JavaScript and how amazing the tools
+26:15
+that we as developers have at our
+26:17
+disposal when we are writing our
+26:19
+applications
+26:21
+so you can find me on these social media
+26:23
+and I'm super open to any questions
+26:24
+ideas or feedback you might have and
+26:27
+thank you for the attention
+26:29
+[Applause]
+26:39
+[Music]
+
+)
+
+12. garbage collection(0:00 if you want to be a top tier JavaScript
+0:01 developer then you need to have a
+0:03 Mastery over how JavaScript handles
+0:05 memory so in this video I'm going to be
+0:07 covering everything from the simple
+0:08 concepts of how garbage collection works
+0:10 all the way up to the incredibly complex
+0:11 concepts of how to use your Advanced
+0:13 debugging tools to find things like
+0:15 memory leaks inside of your
+0:19 application welcome back to web def
+0:21 simplified my name is Kyle and my job is
+0:23 to simplify the web for you so you can
+0:25 start building your dream project sooner
+0:26 now the very first thing I want to
+0:28 mention anytime you're dealing with
+0:29 memory management is I highly recommend
+0:31 you do this inside of an incognito tab
+0:33 in your browser for example here I have
+0:35 this entire web app open in an incognito
+0:37 tab it's a blank web app because there's
+0:39 not much going on but I want you to open
+0:41 it in an incognito tab because otherwise
+0:43 you're going to get memory for all your
+0:44 extensions and all the other things you
+0:46 have downloaded on your browser so doing
+0:48 it in Incognito just makes it easier to
+0:50 figure out what's actually part of your
+0:51 application versus what's external to
+0:53 your application now the first thing I
+0:55 want to talk about is how JavaScript
+0:57 handles garbage collection because
+0:59 understanding that allows us to to solve
+1:00 a lot of memory problems automatically
+1:02 and the nice thing about JavaScript
+1:03 compared to languages like C and C++ is
+1:06 garbage collection handles all the
+1:08 memory management for you for example
+1:09 it'll clean up memory when it's no
+1:11 longer needed now in this very simple
+1:13 bit of code we have just a class called
+1:15 test and we have two objects that we're
+1:17 creating we're creating a test object
+1:18 and we're creating this string right
+1:20 here and both of these variables are
+1:21 essentially Global variables they're
+1:23 available everywhere in our code which
+1:24 means that they're never going to get
+1:26 cleaned up by this garbage collection
+1:27 because they could be used other places
+1:29 in our code since these are essentially
+1:31 Global variables but if we create a
+1:33 scope we could do something like inside
+1:35 of an if block like this or we can just
+1:37 create a scope by using these curly
+1:38 braces just like this this is going to
+1:40 create a scope where the variables are
+1:42 only accessible inside that scope so for
+1:44 example if I instead create some
+1:46 variables in here and instead of calling
+1:47 them Global I'm just going to call them
+1:50 inner there we go so now we have this
+1:52 inner test and this inner string you can
+1:54 already see they're gray out because
+1:55 they're never being used so let's just
+1:56 go ahead and console log inner test.
+1:59 name and we're going to console log the
+2:01 inner string as well just they're
+2:03 actually being used so JavaScript will
+2:05 create space for them but these
+2:06 variables are inside of a scope right
+2:08 here and they're never accessible
+2:10 outside that scope which means as soon
+2:11 as this scope is done executing these
+2:13 variables are automatically going to be
+2:15 cleaned up out of memory by JavaScript
+2:17 for us and you'll notice on the right
+2:19 hand side of my screen I have all this
+2:20 information this is the memory tab
+2:22 inside of the Chrome debugger tools and
+2:24 this allows us to look at every single
+2:26 thing that's stored in memory for our
+2:27 entire application it's a ton of
+2:29 information but it can be incredibly
+2:31 useful for understanding how garbage
+2:32 collection works as well as finding
+2:34 problems inside of your actual code now
+2:36 the easiest thing to get started with is
+2:38 to use this Heap snapshot essentially
+2:40 that just takes a snapshot of everything
+2:42 that's stored inside of your HEAP memory
+2:44 all at once it just takes a snapshot of
+2:45 it and shows it to you so if we click
+2:47 this record button right here that'll
+2:48 actually take the snapshot for us you'll
+2:50 notice we have 2.2 megabytes of
+2:52 information being stored and as you can
+2:53 see it's a lot of stuff that's showing
+2:55 up inside of this list of information
+2:57 that we have stored we have strings we
+2:58 have arrays we have functions I mean you
+2:59 can see there's almost 10,000 strings
+3:01 being stored a lot of these strings are
+3:03 essentially strings for different error
+3:04 messages and so on that they may need to
+3:05 show us but if we want to search for a
+3:07 specific string we have for example if I
+3:09 want to search for Global string I can
+3:11 hit contrl F that gives me this finder
+3:13 down here I can just type in global
+3:15 string and this is going to show me
+3:16 every single place that I have Global
+3:18 string Bane defined so the first thing
+3:19 that pops up right here is essentially
+3:21 all of my code this entire file is
+3:23 stored as a string inside of my memory
+3:26 so obviously that code for Global string
+3:28 is going to be inside this file
+3:30 and the next place is the actual string
+3:32 itself as you can see if I scroll up
+3:34 this is inside of the strings category
+3:36 there we go you can see this is inside
+3:37 the string category and it is storing
+3:39 that Global string directly inside of
+3:41 here so we can see that that variable is
+3:43 being stored and you can see exactly how
+3:45 much space that's taking up inside of
+3:47 the memory of my program so we can
+3:48 really see exactly what's going on down
+3:50 to the individual bits and bytes of your
+3:52 code now I know this is a lot of
+3:53 overwhelming information but I promise
+3:55 you by the end of this video this is
+3:56 going to make a lot more sense to you
+3:58 now the next thing I want to search for
+3:59 for is this inner string so we can come
+4:01 in here let's search for inner string do
+4:02 a little paste and we'll notice it
+4:04 obviously shows up right here where
+4:05 we've created all of our code that's
+4:07 this entire file but if we hit enter
+4:09 again you'll notice inner string is
+4:11 actually still stored inside of our
+4:12 memory right here in the strings
+4:14 category now that may be a little bit
+4:15 counterintuitive because I told you
+4:17 garbage collection will clean things up
+4:19 that are no longer needed but in this
+4:21 case you can see the string is still
+4:22 there even though it should be removed
+4:24 since we're outside of this scope we can
+4:26 actually see this even more in action if
+4:28 we search specifically for the class CL
+4:29 of test so if we search for that class
+4:32 of test and we open this up you notice
+4:33 only one thing is being stored in here
+4:35 that is my global test my inner test for
+4:38 that inner test variable we have inside
+4:39 the scope that is not being stored
+4:41 anywhere in our memory it has been
+4:42 cleaned up and removed and the reason
+4:45 that there's a difference between the
+4:46 way that it handles classes and the way
+4:48 that it handles strings is because
+4:49 JavaScript has two different types of
+4:51 values there are primitive values these
+4:53 are essentially strings booleans numbers
+4:55 all those things that are built into
+4:57 JavaScript and then there are objects AR
+4:59 and other things that are built on top
+5:01 of Primitives so anytime you have
+5:03 something like an object an array a
+5:05 class anything like that those are going
+5:07 to be garbage collected automatically
+5:09 but anytime you use a string a number a
+5:11 Boolean those will stay in memory
+5:13 essentially forever because they are not
+5:15 being garbage collected that's why the
+5:17 string for inner string still shows up
+5:19 when I actually search for that down
+5:21 here you can see that this is showing up
+5:23 here while that inner test variable is
+5:25 removed because this is essentially an
+5:26 object and objects are automatically
+5:28 garbage collected to show you a little
+5:29 bit more exactly how this is working I'm
+5:31 going to throw in a debugger statement
+5:33 right here so I'm going to put a
+5:34 debugger statement inside of this
+5:36 particular scope and I can actually show
+5:38 you the difference between what it looks
+5:39 like before and after we get to this
+5:40 point so I'll give this a quick save you
+5:42 can see we're in that debugger statement
+5:43 I'm going to clear out my current
+5:45 snapshot and create a brand new snapshot
+5:47 and now what I'm going to do is I'm
+5:48 going to search for test you notice
+5:49 inside of here we have three different
+5:51 test things inside here we have a test
+5:52 for Global we have another test for
+5:54 Global and then we have a test for inner
+5:56 test now the reason we have two Global
+5:58 tests showing up right now is just just
+5:59 because I'm using live server so every
+6:01 time I refresh my site it keeps the data
+6:03 from before so there may be some things
+6:05 where this one hasn't been garbage
+6:06 collected quite yet but hopefully will
+6:08 eventually be garbage collected you'll
+6:10 also notice if I search for inner
+6:12 string that the inner string is still
+6:14 showing up inside of there as well as my
+6:16 outer string or I called it Global
+6:19 string you can see that that is still
+6:20 showing up inside of here as well now if
+6:22 I were to let this code continue by just
+6:24 clicking the play button right here
+6:25 that'll let my code continue on and I go
+6:27 into my memory and I create a brand new
+6:29 snapch we should hopefully see inside of
+6:31 here that if I search for a test we are
+6:32 now back to just one single global test
+6:35 so this is actually really a good
+6:36 example of how garbage collection works
+6:38 you noticed back in this example when we
+6:40 searched for only our test class we had
+6:42 three different test objects and two of
+6:43 them were our global test that's because
+6:46 originally I had one global test and
+6:48 then I refreshed my application so it
+6:51 refreshed my page and I created a brand
+6:53 new global test but the old one was
+6:55 still stored in memory because it hadn't
+6:57 gone around and cleaned up my memory yet
+6:58 cuz garbage collect just happens
+7:00 randomly over some period of time so I
+7:02 had two of these global test variables
+7:04 both being stored then eventually a
+7:06 little while later when I took this
+7:07 second snapshot garbage collection had
+7:09 happened and it cleaned up both my inner
+7:11 test which is no longer needed as well
+7:12 as that original global test that again
+7:14 is now no longer needed since that file
+7:16 essentially no longer exists since I
+7:18 refreshed my application now the reason
+7:19 I'm getting this refresh behavior is
+7:21 because I'm using something called live
+7:22 server which automatically refreshes my
+7:24 site every time I save my files and it's
+7:26 doing some magic behind the scenes to
+7:28 make all of that work but this is
+7:29 essentially would work anytime like you
+7:30 call a function if you call a function
+7:32 multiple times back to back it may have
+7:34 multiple instances of that variable
+7:35 still in memory just because it hasn't
+7:37 gone through and actually done garbage
+7:38 cleanup yet with the garbage collector
+7:40 so that's pretty much the basics of
+7:41 garbage collection anytime you have an
+7:43 object or any other non-primitive type
+7:45 it's going to be removed from memory
+7:47 anytime it is no longer needed and
+7:49 there's different algorithms that are
+7:50 used behind the scenes to try to figure
+7:52 out when this thing is no longer needed
+7:54 but essentially you can assume whenever
+7:55 the code is outside of its current scope
+7:57 it's probably going to get garbage
+7:58 collected event
+8:00 now this big memory thing if you don't
+8:02 have something to search for is
+8:03 incredibly difficult and the annoying
+8:04 thing is is you can't search for objects
+8:06 very easily inside of here you can
+8:08 search for classes very easily but
+8:10 objects are really hard to search for so
+8:12 one thing that I like to do to make this
+8:13 a little bit more manageable on what's
+8:15 actually going on is I like to add a
+8:16 debugger statement at the very top of my
+8:18 file if I need to do some really complex
+8:20 memory management so I'm going to add
+8:22 that debugger to the very top of my file
+8:23 you can see I've hit it right here go
+8:25 into my memory clear everything out and
+8:26 create a brand new snapshot this
+8:28 essentially will a a lot of the generic
+8:31 JavaScript stuff that gets automatically
+8:32 created when your program actually gets
+8:34 started this will hopefully minimize the
+8:36 amount of new stuff that's being created
+8:38 then we can go ahead and just click
+8:39 continue so it runs our entire
+8:41 application and now we can take another
+8:43 brand new snapshot you notice both these
+8:45 snapshots have a ton of information
+8:46 inside of them but the really nice thing
+8:48 is there's a drop down up here that I
+8:49 can say I only want to look at the
+8:50 things that were allocated between
+8:52 snapshots 1 and two and now you can see
+8:54 the list of things that's much smaller
+8:55 and these are only the things that were
+8:57 given memory between the time that this
+8:59 debugger statement ran at the very top
+9:01 of my application and then after all my
+9:03 code ran and I actually clicked the
+9:04 snapshot button this is a much more
+9:06 manageable way to look at your code
+9:08 because obviously there's a lot of stuff
+9:09 in here automatically generated by
+9:10 JavaScript but I can look at this and be
+9:12 like okay here's my test right here
+9:13 that's my test variable if I look inside
+9:15 of string you can see I have some string
+9:17 information being showing up inside of
+9:18 there now the reason that you don't
+9:19 actually see global string or inner
+9:21 string inside of here is because those
+9:22 are created essentially immediately
+9:24 that's just kind of how JavaScript works
+9:26 but generally if you're dealing with
+9:27 memory problems it's not because of
+9:28 strings it's probably because of objects
+9:30 and other things so this gives you a
+9:31 really clean way to essentially look at
+9:33 your code and figure out what's actually
+9:34 happening and I love being able to go
+9:36 between different snapshots and using
+9:38 debuggers is a great way to do this for
+9:40 example I threw a debugger originally
+9:41 into this section of my code because I
+9:43 wanted to see what essentially was being
+9:45 created in this very section of my code
+9:46 what did the memory look like at that
+9:48 exact moment so debugs are a great way
+9:50 to actually make sure you take a
+9:51 snapshot exactly where you want to and
+9:53 then you can use this only looking at
+9:54 things between multiple snapshots to see
+9:56 exactly what happened between each
+9:57 snapshot now in order to talk other
+9:59 potential problems I want to clear this
+10:01 out and talk about the different types
+10:02 of profiling types we have these other
+10:04 two options are essentially the same
+10:05 thing this first one is allocating
+10:07 essentially all of your different memory
+10:09 across the timeline so when I click this
+10:10 record button it'll actually record
+10:12 memory uses until I click stop this one
+10:15 right here called allocation sampling is
+10:16 just a version that samples at a much
+10:18 lower frequency so instead of being
+10:20 completely up to date with exactly what
+10:22 memory it is at all time it just takes
+10:23 snapshots periodically and then Compares
+10:25 those snapshots to each other it's more
+10:27 so if you want to do something long
+10:28 running as as compared to this option
+10:30 which is much more accurate but it's
+10:32 much more performance intensive so it's
+10:33 not as good for maybe longer running
+10:35 tasks so I want to talk about how these
+10:37 can be really great specifically when
+10:39 you want to deal with a memory leak in
+10:40 your code so if your application is just
+10:42 ballooning and ballooning in size this
+10:44 will help you figure out what that
+10:45 problem is so what I'm going to do is
+10:46 I'm going to remove all of this clode so
+10:48 we can talk about and show how this
+10:49 works I'm going to come in here with a
+10:51 document. addevent listener I'm going to
+10:53 add a click event listener that takes in
+10:55 an object I'm going to create a variable
+10:57 a which is just going to be equal to a
+10:59 string we just come in here this is
+11:02 going to take our client X and it's
+11:04 going to say position or something it
+11:05 really doesn't matter what this thing
+11:07 does I just want to show you how this
+11:09 allocation instrument timeline works so
+11:11 what happens when my application starts
+11:12 up I can click this play button and you
+11:14 can see I have a gray bar going along
+11:16 every time you see blue on that bar that
+11:18 means there's new memory being allocated
+11:19 so every time I click on my document
+11:21 I'll just bring this over real quick
+11:23 every time I click on S of here you can
+11:24 see a blue bar showing up even when I
+11:26 was moving things around there was blue
+11:27 bar showing up because there's different
+11:28 like size events and so on that are
+11:30 happening in JavaScript to allocate all
+11:32 this additional memory but the main
+11:33 memory is from me clicking on this you
+11:35 can see pretty much every time that I
+11:36 click I get this blue bar showing up on
+11:38 the right hand side now I'm going to
+11:40 bring this back over so it's out of the
+11:41 way we can stop this test and we can see
+11:43 all the information about all the memory
+11:44 that was allocated during the entire
+11:46 time that this snapshot was running
+11:48 which is a really great way again to
+11:49 only look at memory that was created
+11:50 during a specific time period now I want
+11:53 to talk about how we can use this to
+11:54 actually find memory leaks inside of our
+11:56 code so I'm going to replace this code
+11:58 real quick with some code that looks
+11:59 like this essentially we're creating a
+12:00 map starting at index zero and every
+12:02 single 1 millisecond we're adding a
+12:04 brand new entry to that map and adding
+12:06 one to I every single time now if I give
+12:08 this a quick save essentially what's
+12:10 happening behind the scenes now is every
+12:11 single millisecond I'm adding a new
+12:13 value to a map so we can come in here we
+12:14 can click play and you can see right
+12:16 here immediately there's tons of
+12:17 information being stored into memory
+12:19 every single Blue Bar means there's more
+12:20 information being stored into memory and
+12:22 it's obviously going to constantly grow
+12:24 and grow and grow and grow I'll click
+12:26 stop on this for now and we can actually
+12:28 search for our map you can see there's
+12:29 eight Maps being stored we just need to
+12:31 find the one that is ours so if we open
+12:32 up the table we should be able to find
+12:34 one as soon as we get the table open
+12:36 that has all of our information inside
+12:37 of it looks like it was none of these
+12:40 must be this top one right here there we
+12:41 go you can see I open up my table and
+12:43 this map right here has tons of
+12:44 information in it if we can even look at
+12:46 the size of this table you can see it is
+12:47 massive it's
+12:48 114,000 bytes of space that's being
+12:50 taken up compared to almost everything
+12:52 else that is a much smaller amount of
+12:54 size being stored inside of here if we
+12:55 look at the retained size right here
+12:57 245,000
+12:59 this is 10% of all the memory in our
+13:01 entire application is going to this one
+13:03 particular map so this is a great way
+13:05 for us to be able to detect that there's
+13:06 a memory leak inside of our application
+13:08 because you can see we're constantly
+13:09 allocating memory and this thing right
+13:11 here is constantly growing we can even
+13:13 do this with normal snapshots I can come
+13:14 in here for a keep snapshot take a quick
+13:16 snapshot and you can see that if I look
+13:18 at my retained size I search for map and
+13:20 we look inside here you can see 28% of
+13:22 my application is taken up by just this
+13:24 map at 924 th000 bytes now if we do
+13:28 another snapshot and again in search for
+13:29 map you can see that this is growing
+13:31 it's gone from 924 to 997 we take
+13:34 another snapshot we should see that this
+13:36 eventually will surpass a million so
+13:37 it's just constantly growing and growing
+13:39 so this is how we can narrow down and
+13:41 figure out what's actually causing
+13:43 memory leaks inside of our application
+13:45 we can see it is this map and we can
+13:46 find the really large map and if we look
+13:48 at the table for it we can see hey it's
+13:49 this map that has all these different
+13:51 index values inside of it and hopefully
+13:53 from there you can narrow it down inside
+13:54 of your code now this was actually a
+13:56 purposeful example of me using the map
+13:58 because I want to talk about how you can
+14:00 use a weak map instead to solve certain
+14:02 memory issues that you're having in your
+14:04 application related to possibly using
+14:05 Maps or sets that's because both maps
+14:08 and sets have a weak map and a weak set
+14:11 version now the only difference between
+14:13 the normal map and the weak map and the
+14:15 normal set and the weak map is that weak
+14:17 map will garbage collect your keys
+14:19 automatically for you so in our case as
+14:21 you can see here this keyi is no longer
+14:23 used ever again in our application after
+14:25 this point we're incrementing it by one
+14:26 it no longer exists so we realistic Al
+14:29 could remove this value from our map
+14:31 because we know we can never access it
+14:33 again now in some cases you want to have
+14:35 a map where you can later access it by
+14:37 some other means by like automatically
+14:38 typing in a value from a user input or
+14:40 something like that but sometimes you
+14:42 have a map where you only want to store
+14:43 the value and keep the value in that map
+14:45 if the key is essentially still around
+14:48 that's the case of a weak map and a weak
+14:49 set now a weak map and a weak set
+14:51 require you to use objects as the keys
+14:53 because those are the only things that
+14:54 are garbage collected so let's convert
+14:56 this to an object that uses this I
+14:58 variable inside of here instead and
+15:00 automatically just by doing that we
+15:01 should actually clean up our entire
+15:03 memory leak because what's happening is
+15:05 this object right here is being created
+15:07 and then it's automatically being
+15:08 garbage collected because it's no longer
+15:10 accessible outside of this particular
+15:11 scope we can even make this a little bit
+15:13 more clear by saying that this is going
+15:16 to be our object and we'll use this as
+15:18 the key right here as you can see this
+15:19 object is never accessible outside this
+15:21 scope so essentially it's setting this
+15:23 variable in the map and then garbage
+15:24 collection is automatically cleaning it
+15:26 up for us so we'll give that a save
+15:28 clear out of all of our s snot we'll go
+15:29 back to this allocation instrument and
+15:31 if we give this a quick run you can see
+15:32 with the snapshot recording we get no
+15:34 giant blue bars showing up anywhere in
+15:35 our application when we stop this and we
+15:38 look for our map and we come into here
+15:40 you can see right now we have that big
+15:41 map from before that's I think because
+15:44 of our way that our live reloading is
+15:46 working so I'm actually going to hard
+15:47 refresh my application to hopefully
+15:48 clear out everything that's inside of
+15:50 there and now I'm going to do another
+15:51 brand new snapshot and then we're going
+15:53 to stop that snapshot and I had to go
+15:55 through and do a little bit more
+15:55 clearing but I got all the extra data
+15:57 removed so now we're just left with
+15:59 essentially our normal application so
+16:00 I'm going to give this a quick save I'm
+16:02 going to do a snapshot start you can see
+16:04 there's a couple places where memory is
+16:05 being allocated but not too bad and if
+16:07 we stop and we search for map you can
+16:09 see that maps are taking up almost no
+16:11 space at all 0% and we specifically have
+16:13 all of our weak Maps this weak map right
+16:15 here is the one that we created and if
+16:17 we look inside the table you can see
+16:18 there's absolutely nothing being stored
+16:20 inside of our table I can even prove
+16:22 this by adding a specific value inside
+16:24 of here we're going to set this to
+16:26 object which say outer object is going
+16:29 to have a outer value and then let's
+16:32 create that outer object this is just
+16:33 something that won't be garbage
+16:35 collected so we'll say outer object is
+16:38 equal to this we'll say I is ne1 there
+16:41 we go now we give that a quick save do
+16:43 my Snapshot again give it a second to
+16:45 run open this up search for week map
+16:48 specifically we can pull up our weak map
+16:50 and you can see the only thing being
+16:52 stored in here is our outer object and
+16:53 then we just have a bunch of other stuff
+16:55 that's in the process of being deleted
+16:56 because as you can see it's essentially
+16:57 labeled as a whole which means there's
+16:59 no data being stored there because it's
+17:00 been garbage collected so the idea
+17:02 behind a weak map and a weak set is
+17:04 essentially anytime that the object that
+17:06 you use as the key leaves the scope of
+17:08 that particular map or set it's going to
+17:11 delete all the information related to
+17:13 that from the map so it's going to
+17:14 delete the key and it's going to delete
+17:15 the value while a normal map and a
+17:17 normal set keep all the information in
+17:19 them as long as possible another
+17:21 difference between the two is you cannot
+17:22 Loop through a weak map or a weak set
+17:25 because there's really nothing to Loop
+17:26 over because it only keeps in place the
+17:28 keys that actually exist so there's
+17:29 constantly data being removed from it
+17:31 which is why you can't Loop over it now
+17:33 this is a pretty Niche use case you're
+17:34 probably not going to use weak Maps or
+17:36 weak sets all that often because most of
+17:38 the time when you have a map or set it's
+17:40 because you want to keep data in their
+17:41 long term and reference it later by
+17:43 creating brand new objects or brand new
+17:45 values that reference those things while)

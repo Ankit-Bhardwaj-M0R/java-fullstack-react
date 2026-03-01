@@ -1,0 +1,3993 @@
+
+1. First-Class Functions and Anonymous Functions(
+
+    
+Search in video
+Introduction - My Interview Experience
+0:00
+once i was giving interview for a very
+0:01
+reputed indian startup i won't take the
+0:04
+name but that startup was a very famous
+0:06
+online food ordering startup the
+0:09
+interviewer over there asked me
+0:11
+that what is an anonymous function i
+0:14
+just quickly said that a function
+0:16
+without a name is an anonymous function
+0:18
+that was easy right then she moved on to
+0:21
+the next question which was what are
+0:24
+first class functions in javascript
+0:26
+okay
+0:27
+so
+0:28
+now i got nervous
+0:30
+because i never knew what first class
+0:32
+functions are
+0:34
+i have heard of callback functions i
+0:35
+have heard of higher order functions
+0:37
+i've heard of arrow functions pure
+0:39
+functions but i haven't heard of first
+0:41
+class functions what are they
+0:43
+and i got nervous the interviewer she
+0:46
+was looking directly into my eyes and
+0:48
+i was gone
+0:51
+i said that i don't know okay i don't
+0:53
+know the answer to this question so then
+0:55
+she moved on to the next question which
+0:58
+was what is the difference between a
+1:00
+function statement and a function
+1:02
+expression
+1:04
+and now that nervousness from here went
+1:07
+till here
+1:08
+okay i i didn't know i i didn't know
+1:11
+what a function expression statement is
+1:14
+so many things were going upon in my
+1:15
+head
+1:16
+i thought that statement expression both
+1:19
+were looking like the same so when the
+1:20
+nervousness went to the next level i
+1:22
+firmly said that
+1:24
+a statement which has functioned in it
+1:27
+is a function statement
+1:29
+and oh my god
+1:32
+the reaction of that interviewer was
+1:34
+like
+1:34
+she is just going to kill me there and
+1:36
+there itself she made a she made such a
+1:39
+weird face i mean like if i close my
+1:42
+eyes i can still like recall that face
+1:44
+okay and i knew that i am like gone in
+1:47
+the interview like
+1:48
+finished
+1:51
+so this video is dedicated to that
+1:53
+interview and that interviewer so let's
+1:55
+see what all these things are and uh
+1:58
+let's dive deep into the code now okay
+What is a Function Statement in JS
+2:02
+so let's move so we will be covering all
+2:04
+these topics let's go upon these slowly
+2:07
+one by one okay so first of all let us
+2:09
+see what a function statement is okay so
+2:13
+so you know how we create a function
+2:15
+there is one way to create a function
+2:17
+like this so if we write a function
+2:18
+keyword and we give a name so this is a
+2:21
+function statement
+2:23
+okay
+2:24
+so if i so suppose our function does
+2:27
+nothing but just a console log okay
+2:29
+let's just console log and let's give it
+2:31
+a call
+2:32
+that's it right so this way of creating
+2:36
+a function is known as a function
+2:38
+statement that's it
+2:39
+that's all
+2:41
+okay
+What is a Function Expression
+2:42
+and remember i have told you several
+2:44
+times throughout these videos that
+2:46
+functions are very beautiful in
+2:48
+javascript and functions are like the
+2:50
+heart of javascript right
+2:52
+so
+2:53
+a beautiful feature of function is that
+2:56
+you can assign it to a variable also
+2:59
+okay so suppose if i have a var b we can
+3:02
+assign a function to it okay we can
+3:05
+assign a function to it function acts
+3:07
+like a value okay you might have heard
+3:10
+this before i am revising it function
+3:12
+acts like a value okay so you it's it's
+3:15
+like a value which you are
+3:16
+initializing you are initializing this b
+3:19
+with a value like putting function
+3:21
+this into b so this is how beautiful
+3:24
+functions are in javascript in many
+3:26
+programming languages you can't do this
+3:28
+and people coming from like other
+3:29
+languages might find this crazy but
+3:33
+what this you can do okay
+3:35
+let's just log something inside this
+3:37
+also so let me do a console log of
+3:39
+be
+3:40
+called okay
+3:42
+so this is known as a function
+3:44
+expression and this is known as a
+3:45
+function statement both are ways to
+3:47
+create function and i was using this
+3:50
+since many years in our programming but
+3:52
+i never knew what the difference between
+3:54
+these
+3:54
+jargons are like and in the interview i
+3:57
+i was using this right a lot in my code
+4:00
+but i never knew in the interview that
+4:02
+this is what it is
+4:03
+right
+Difference between Function Statment and Function Expression
+4:05
+so
+4:06
+the interviewer did not ask me what it
+4:08
+is the interviewer asked me the
+4:09
+difference between function statement
+4:12
+and a function expression so what is the
+4:13
+difference between
+4:15
+these two
+4:16
+so the major difference between these
+4:19
+two is hoisting
+4:21
+okay
+4:22
+so let's first see how do you call this
+4:24
+function okay so you call this function
+4:26
+by just calling it like this you know
+4:28
+and even in the case of function
+4:29
+expression you call it like this right
+4:32
+if i call it if i run this program so
+4:34
+see it prints a call and it prints b
+4:36
+called right so that is how we call it
+4:38
+but the difference between creating
+4:40
+functions with these two types is
+4:42
+hosting
+4:43
+so how does hoisting come into picture
+4:46
+so what if i call this function a
+4:50
+even before creating it
+4:52
+okay so
+4:53
+here i am creating the function but i
+4:55
+want to call it before creating it and
+4:58
+similarly for b also
+5:00
+so you have seen my hosting video right
+5:02
+so what do you think the output will be
+5:04
+if i call these functions before even
+5:06
+creating them in code what will happen
+5:09
+can you give it a guess
+5:11
+yes let's just see so one will throw out
+5:13
+an error which one the b
+5:16
+so that is the difference between a
+5:17
+function statement and a function
+5:19
+expression so during the hosting phase
+5:22
+during the memory creation phase a is
+5:24
+created a memory and this function is
+5:27
+assigned to a
+5:28
+but in case of a function expression
+5:30
+this b is treated like any other
+5:32
+variable
+5:33
+it is assigned undefined initially
+5:36
+until the code hits this line itself
+5:39
+so when the javascript engine executes
+5:41
+this line by line and it reaches this
+5:44
+line then only this function is assigned
+5:47
+to this variable b until then it is
+5:49
+undefined
+5:51
+okay so here the value is undefined and
+5:53
+you can and you can't call that b right
+5:56
+that is the major difference between
+5:57
+function statement and a function
+5:59
+expression so now let's move on to
+What is a Function Declaration
+6:01
+function declaration so function
+6:03
+declaration is nothing this is another
+6:05
+jargon and function statement is also
+6:08
+known as
+6:09
+function declaration okay so they both
+6:12
+are the same thing if you say
+6:14
+function declaration or a function
+6:16
+statement these are both the same things
+What is an Anonymous Function in JavaScript
+6:18
+so now let's move on to the anonymous
+6:20
+functions so anonymous functions as you
+6:22
+know a function without a name is an
+6:24
+anonymous function
+6:26
+this is an anonymous function
+6:28
+okay
+Syntax Error & Anonymous functions
+6:29
+but let me tell you a little more about
+6:31
+anonymous functions so anonymous
+6:33
+functions
+6:35
+does not have their own identity okay
+6:38
+when i say it does not have its own
+6:39
+identity that means if you create an
+6:41
+anonymous function like this this will
+6:44
+result out to be a syntax error okay so
+6:47
+via syntax error let me tell you an
+6:50
+anonymous function looks like a function
+6:51
+statement right it looks like similar to
+6:54
+that right see if you clearly see this
+6:56
+looks exactly same as a function
+6:57
+statement but it has no name
+7:00
+but according to ecmascript
+7:02
+specification a function statement
+7:03
+should always have a name so this is a
+7:05
+invalid syntax let me run and show it to
+7:07
+you so if i save this run this so this
+7:10
+is c a syntax error and clearly see the
+7:13
+message which it says a function state
+7:15
+function statements require a function
+7:17
+name
+7:18
+okay so see it's a function statements
+7:21
+okay this function statements it is type
+7:23
+of a function statement and it requires
+7:26
+a name okay you need to give a name over
+7:28
+here you can't leave it anonymous and
+7:30
+create anonymous functions like this
+Use/ Advantages of Anonymous Functions
+7:32
+so now when you can't create it like
+7:34
+this what is the use of it
+7:36
+so anonymous functions are used in a
+7:38
+place where functions are used as values
+7:42
+so i have said this a lot of times let
+7:44
+me repeat it once again functions are
+7:46
+like very beautiful in javascript i love
+7:48
+functions and functions i think are
+7:51
+heart of javascript they are so powerful
+7:53
+you can use them as values also right
+7:57
+and anonymous functions are used when
+7:59
+the functions are used as values okay
+8:02
+when they are used as values so when i
+8:05
+say they are used as values that means
+8:06
+that you can use use it to assign it to
+8:10
+some variable so just like you assign
+8:11
+any other value to a variable okay you
+8:14
+can assign this anonymous function also
+8:16
+to a variable
+8:18
+so it acts like a value here you can use
+8:20
+anonymous functions but in function
+8:23
+statements you cannot use an anonymous
+8:25
+function okay so that is why it says
+8:27
+function statements
+8:29
+require a function name okay you know
+8:31
+this knowledge of knowing what is a
+8:33
+function statement or expression a
+8:35
+declaration and all these things is very
+8:37
+important also it helps you a lot if you
+8:39
+are debugging programs so if you read
+8:41
+clearly the message right so function
+8:43
+statement so here it's not an expression
+8:45
+it's a statement so these things these
+8:48
+keywords will kind of click your mind
+8:50
+and you will better understand
+8:51
+javascript
+8:53
+and generally you might have seen that
+8:54
+when we are reading blog articles or we
+8:56
+are reading books sometimes
+8:58
+we it is very confusing right the author
+9:01
+uses the term expression somewhere it is
+9:03
+a statement somewhere so this is what it
+9:05
+means okay so this knowledge will be
+9:07
+very helpful when you are reading some
+9:09
+books of javascript some blogs of
+9:11
+javascript some stack overflow answers
+9:12
+this all knowledge will be very helpful
+9:14
+for that so now let's just see what is a
+9:16
+named function expression okay so let me
+9:18
+just first of all remove these errors
+9:20
+okay let me just comment it out and
+9:23
+let me bring these calls uh over here
+9:26
+once again
+What are Named Function Expressions in JS
+9:28
+so now let me tell you what is a named
+9:30
+function expression so a named function
+9:32
+expression is like exactly the same as
+9:35
+this function expression but when this
+9:37
+anonymous function instead of using an
+9:39
+anonymous function here we use a
+9:41
+function with a name suppose if i gave
+9:43
+it a name so this becomes a named
+9:45
+function expression
+9:47
+it's kind of weird right
+9:49
+you are like kind of giving a name to
+9:51
+the function here also and you are
+9:53
+giving the name to the function here
+9:55
+also it's it's like weird right but this
+9:58
+is possible in javascript like you can
+10:00
+have the name of a function itself and
+10:02
+then put it into an expression so this
+10:04
+is known as a named function expression
+10:07
+remember a named function expression now
+10:09
+here there is a corner case also there
+Corner Case Gotcha using Named Function Expression
+10:11
+is a gaucha okay so uh so you know we
+10:15
+can call this b function like this but
+10:18
+what do you think what will happen if i
+10:20
+do something like this x y z so can you
+10:22
+guess what will happen if you just call
+10:24
+this function x y z like this give a
+10:26
+guess
+10:27
+so you will get an error okay so it is a
+10:29
+very famous output question also so you
+10:32
+might get a mcq where
+10:34
+the person might have called this xyz
+10:36
+like this but it will throw out to be an
+10:39
+error okay so this will give a reference
+10:41
+error that xyz is not defined okay so
+10:43
+why it gives xyz is not defined so
+10:47
+if we see clearly this x y z if you put
+10:50
+a function like this right if you use
+10:52
+this function as a value so in this case
+10:55
+this x y z is not created in the
+10:58
+outer scope okay so this xyz is not a
+11:02
+function inside this outer scope in this
+11:04
+close global scope but it is created as
+11:07
+a local variable okay when i say a local
+11:09
+variable if you try to if you want to
+11:11
+access this function inside this
+11:13
+function okay if you want to access this
+11:16
+function inside this function
+11:19
+okay so suppose if you want to access
+11:21
+xyz you can access it over here right
+11:25
+you can access this function see it
+11:27
+prints xyz and you can access this
+11:29
+function over here but if you try to use
+11:31
+it outside like this it will throw out
+11:33
+to be an error where it is okay let's go
+11:35
+to console so it it gives you a
+11:37
+reference error that xyz is not defined
+11:39
+okay so this is what is called as a name
+11:42
+function expression and if you just
+11:44
+don't give a name over here it is like a
+11:46
+normal function expression or you might
+11:48
+call it as an anonymous function to
+11:50
+create a function expression okay so
+11:53
+something like this so let me just
+11:55
+revert it once again
+11:57
+um and just remove this
+11:59
+xyz
+12:00
+and let's move on to the next part okay
+What is the difference between Parameters & Arguments?
+12:03
+one more thing which i have often seen
+12:05
+is that
+12:06
+a lot of programmer use parameters and
+12:08
+arguments as interchangeably terms but
+12:11
+no they are very different okay so these
+12:14
+two things parameter and arguments are
+12:16
+very different okay so whenever you are
+12:18
+creating a function so whatever you put
+12:21
+over here right these these identifier
+12:24
+or this labels right
+12:26
+over here are known as parameters so
+12:28
+that is why you can call it as a param
+12:30
+param1 okay so you might have seen the
+12:32
+syntax written a lot of places so this
+12:36
+identifier or the label
+12:38
+or this variable okay this is a local
+12:40
+variable in the function scope okay so
+12:43
+this this param1 and param two are local
+12:46
+variables inside this function you
+12:47
+cannot access this param1 and param two
+12:50
+outside okay so these local variables or
+12:53
+you can call it them as the identifiers
+12:56
+or the labels so whatever you might call
+12:57
+them so these are the parameters
+13:01
+parameters of a function
+13:03
+and the arguments which you pass over
+13:05
+here like if i uh give a one and a two
+13:08
+so this is known as arguments a lot of
+13:11
+people you know
+13:13
+use this as interchangeably and don't
+13:15
+know this that is why often when you
+13:17
+read a blog or you read a book then
+13:19
+somebody is using an argument somewhere
+13:21
+if somebody using parameter so you
+13:23
+should actually have a mental model of
+13:25
+what that person is talking about that
+13:28
+is when you will understand these blogs
+13:30
+and articles and books right
+13:32
+so once again the values which we pass
+13:34
+inside a function are known as arguments
+13:37
+and
+13:38
+these label and identifier which gets
+13:41
+those values are known as parameters
+13:43
+okay so now let's move on to the most
+13:45
+critical part which is first class
+13:47
+functions okay
+13:49
+so what are first class functions so
+13:51
+this is a very heavy term for what we
+13:53
+already know
+13:54
+so as i already told you and let me
+13:56
+repeat it once again because it is very
+13:58
+important functions are very beautiful
+14:01
+in javascript functions are very strong
+14:03
+functions are heart of javascript
+14:06
+and
+14:07
+just because it is like that
+14:09
+we call them as a first class functions
+14:12
+so the functions are so beautiful so
+14:14
+beautiful that instead of these
+14:17
+arguments we can even pass functions
+14:20
+inside another functions as an arguments
+14:24
+okay listen to this carefully arguments
+14:27
+so functions are treated as values right
+14:29
+i told like you can use an anonymous
+14:32
+function to pass in as a value also okay
+14:34
+that is how beautiful functions are and
+14:37
+you can receive that in the parameters
+14:39
+okay so if i pass this anonymous
+14:41
+function inside param1 and i try to
+14:44
+access this panel and see what we get
+14:46
+okay this is a perfectly valid
+14:48
+javascript okay see we got this
+14:50
+anonymous function inside it right and
+14:52
+there is one more way to pass this
+14:54
+function
+14:55
+okay inside this function okay suppose
+14:57
+it was a named function let's call it as
+15:00
+uh x y z okay and if i pass this x y z
+15:03
+like this we can do that too okay so
+15:06
+it's like passing another function
+15:09
+inside a function right we are passing
+15:11
+this x y z inside b
+15:13
+that's how beautiful functions are and
+15:15
+we can do that
+15:16
+and not just this if we pass this
+15:19
+function into this function we can also
+15:22
+return a function from a function
+15:24
+okay crazy it sounds right so we can
+15:28
+return a function from a function we can
+15:30
+return an anonymous function from a
+15:32
+function
+15:33
+and what will happen is when you invoke
+15:35
+this b right when you call this b
+15:39
+this function will be returned over here
+15:42
+right so let's just try to do a console
+15:44
+log of this okay so if i do a console
+15:47
+log of this
+15:48
+so uh and
+15:50
+let me just remove this x y z
+15:53
+and let me just remove this x y z also
+15:56
+and if i now
+15:58
+run this code so see
+16:00
+when we call this function so
+16:03
+this function anonymous functions were
+16:04
+returned from b and we did a console log
+16:07
+so it prints an anonymous function and
+16:09
+if it was a named function we can return
+16:11
+that too okay so what is first class
+First-Class Functions in JavaScript
+16:14
+functions so first class functions is
+16:16
+nothing but this only
+16:18
+the ability to use functions as values
+16:21
+is known as first class functions
+16:23
+so let me repeat it once again the
+16:25
+ability of functions to be used as
+16:27
+values and can be pass this in an
+16:30
+argument to another functions and can be
+16:32
+returned from the functions
+16:35
+is this ability is known as first class
+16:38
+functions in javascript
+16:40
+nothing more than that okay these
+16:42
+ability of these functions to use an n
+16:44
+value and assign it to a variable and
+16:47
+can be passed into another functions and
+16:49
+can be returned out of another functions
+16:51
+this ability all over all together is
+16:54
+known as first class functions
+16:56
+that is what is first class functions
+16:58
+and it's not just in javascript it is a
+17:00
+programming concept it's in other
+17:02
+languages also not in every language but
+17:05
+in many languages also so our interview
+17:08
+question can be what are first class
+17:10
+functions in javascript so you have to
+17:12
+explain it like this okay when they are
+17:14
+treated as a value parsed into another
+17:16
+functions or returned from another
+17:18
+functions so this is known as a first
+17:20
+class functions okay this ability is
+17:23
+known as the first class functions
+17:25
+that's all it is
+17:26
+right so if you read blog articles or if
+Functions are First-Class Citizens
+17:29
+you read books okay so a lot of times
+17:31
+you might also find a statement which is
+17:33
+functions are first class citizens let
+17:36
+me repeat it once again functions are
+17:38
+first class citizens okay so let me
+17:42
+write it down first class
+17:44
+citizens okay
+17:46
+so
+17:47
+when i say first class citizens it means
+17:50
+the same thing
+17:52
+first class functions functions are used
+17:55
+as first class citizens so it's both the
+17:58
+same thing okay so if you read it in
+18:00
+some blog or if you read it in some book
+18:02
+assume that this ability to be used like
+18:05
+values
+18:06
+makes the function as first class
+18:08
+citizens in javascript i know this is
+18:11
+kind of like a playing with english and
+18:13
+words right but that's how it is and it
+18:16
+is important to know all these things
+18:18
+because if we read it in some book we
+18:20
+should understand what that author is
+18:22
+trying to say right
+18:23
+javascript has a very vast community
+18:26
+right a lot of people are writing stack
+18:28
+overflow answers blogs blogs articles
+18:31
+this that and they use all sort of
+18:33
+notations so what i try to do is i am
+18:36
+just giving you this knowledge so that
+18:37
+next time you read these blog articles
+18:40
+you will properly understand what that
+18:41
+author is trying to say if somebody says
+18:43
+that functions are first class citizens
+18:46
+that means he is referring to first
+18:48
+class functions that means the ability
+18:50
+of these functions to be used as values
+18:52
+passed inside another function get out
+18:55
+from the function and like returned out
+18:57
+from the functions use them to assign
+18:59
+into a variable all these things make
+19:02
+say functions as the first class
+19:04
+citizens in javascript
+19:06
+remember will you remember this lifetime
+19:08
+remember this lifetime okay so one more
+19:11
+doubt you might get is that what if i
+19:12
+use a letter const over here so suppose
+19:15
+if i use a letter const over here so in
+19:17
+that case also it behaves the same way
+19:20
+just like let and const normal variables
+19:22
+do they are in a temporal dead zone
+19:25
+until it encounters this statement okay
+19:28
+so you it is treated exactly the same if
+19:30
+you want to get more information it is
+19:32
+in the latin cons video right go watch
+19:34
+that again if you are still confused
+19:36
+about it so in the latin const video
+19:38
+whatever rules are applied the same
+19:40
+rules are applied to these also so these
+19:43
+are nothing this const b is nothing but
+19:46
+just like a constant another variable
+19:48
+and this function over here is acting
+19:51
+just like any other value which is being
+19:53
+assigned to this b okay so that's how
+19:56
+and that's what it is okay
+Info about Arrow Functions
+19:58
+so now this function statement in a
+20:00
+function expression or a function
+20:01
+declaration these all things can also be
+20:03
+written using arrow functions okay arrow
+20:06
+functions has come up as a part of es6
+20:09
+you can call it as ecmascript 2015 and
+20:12
+this let const arrow functions these
+20:15
+things were introduced in es6 okay so
+20:18
+these function statements function
+20:20
+expression this all things can be
+20:21
+created using arrow functions also okay
+20:24
+but let's not do this in this video
+20:26
+because i haven't told you what an arrow
+20:28
+function is
+20:29
+up till now in this series i have seen a
+20:31
+lot of people asking in comments that
+20:34
+what will happen in case of arrow
+20:35
+functions error functions error
+20:36
+functions don't worry people
+20:38
+i am covering the basics first of all
+20:41
+okay the basics of javascript because
+20:43
+when javascript was built it was not
+20:45
+built with arrow functions right it used
+20:47
+to have where it used to have function
+20:49
+keyword so let us first explore these
+20:52
+basic nitty gritty things about uh these
+20:55
+this beauty of javascript which was
+20:57
+originally made right and we will slowly
+20:59
+transition towards this es6 new things
+21:02
+also you know i am not avoiding let
+21:05
+const or
+21:06
+arrow functions or something because
+21:08
+those things are being used a lot right
+21:11
+i will make a separate video all
+21:12
+together just for covering arrow
+21:14
+functions that will be a very
+21:16
+interesting video i will be covering
+21:18
+everything like how how this keyword
+21:21
+works and how arrow function syntax
+21:23
+works how higher order function works
+21:25
+and how
+21:26
+statements declaration expression
+21:29
+everything we will be covering in arrow
+21:30
+function series just keep calm and wait
+21:32
+no issues everything will be covered
+21:34
+slowly slowly slowly slowly slowly
+21:36
+slowly slowly slowly slowly slowly and
+21:39
+trust me i'm not going anywhere i'll
+21:41
+teach you everything just keep on
+21:43
+watching this series and watch it in the
+21:45
+sequence okay in the next video we will
+Teaser of the next video
+21:47
+be covering callbacks and higher order
+21:49
+functions those are very very very
+21:51
+important topics in javascript if you
+21:52
+want to learn functional programming
+21:55
+okay so don't miss that video that is a
+21:57
+very crucial video but before moving on
+Thank you for watching Namaste JavaScript
+21:59
+to that video give this video a thumbs
+22:01
+up it gives me a huge motivation and see
+22:03
+you in the next video till then thank
+22:05
+you for watching namaste javascript
+22:08
+[Music]
+22:24
+[Applause]
+22:27
+me
+)
+
+2.FIRST CLASS FUNCTIONS(0:00 once i was giving interview for a very
+0:01 reputed indian startup i won't take the
+0:04 name but that startup was a very famous
+0:06 online food ordering startup the
+0:09 interviewer over there asked me
+0:11 that what is an anonymous function i
+0:14 just quickly said that a function
+0:16 without a name is an anonymous function
+0:18 that was easy right then she moved on to
+0:21 the next question which was what are
+0:24 first class functions in javascript
+0:26 okay
+0:27 so
+0:28 now i got nervous
+0:30 because i never knew what first class
+0:32 functions are
+0:34 i have heard of callback functions i
+0:35 have heard of higher order functions
+0:37 i've heard of arrow functions pure
+0:39 functions but i haven't heard of first
+0:41 class functions what are they
+0:43 and i got nervous the interviewer she
+0:46 was looking directly into my eyes and
+0:48 i was gone
+0:51 i said that i don't know okay i don't
+0:53 know the answer to this question so then
+0:55 she moved on to the next question which
+0:58 was what is the difference between a
+1:00 function statement and a function
+1:02 expression
+1:04 and now that nervousness from here went
+1:07 till here
+1:08 okay i i didn't know i i didn't know
+1:11 what a function expression statement is
+1:14 so many things were going upon in my
+1:15 head
+1:16 i thought that statement expression both
+1:19 were looking like the same so when the
+1:20 nervousness went to the next level i
+1:22 firmly said that
+1:24 a statement which has functioned in it
+1:27 is a function statement
+1:29 and oh my god
+1:32 the reaction of that interviewer was
+1:34 like
+1:34 she is just going to kill me there and
+1:36 there itself she made a she made such a
+1:39 weird face i mean like if i close my
+1:42 eyes i can still like recall that face
+1:44 okay and i knew that i am like gone in
+1:47 the interview like
+1:48 finished
+1:51 so this video is dedicated to that
+1:53 interview and that interviewer so let's
+1:55 see what all these things are and uh
+1:58 let's dive deep into the code now okay
+2:02 so let's move so we will be covering all
+2:04 these topics let's go upon these slowly
+2:07 one by one okay so first of all let us
+2:09 see what a function statement is okay so
+2:13 so you know how we create a function
+2:15 there is one way to create a function
+2:17 like this so if we write a function
+2:18 keyword and we give a name so this is a
+2:21 function statement
+2:23 okay
+2:24 so if i so suppose our function does
+2:27 nothing but just a console log okay
+2:29 let's just console log and let's give it
+2:31 a call
+2:32 that's it right so this way of creating
+2:36 a function is known as a function
+2:38 statement that's it
+2:39 that's all
+2:41 okay
+2:42 and remember i have told you several
+2:44 times throughout these videos that
+2:46 functions are very beautiful in
+2:48 javascript and functions are like the
+2:50 heart of javascript right
+2:52 so
+2:53 a beautiful feature of function is that
+2:56 you can assign it to a variable also
+2:59 okay so suppose if i have a var b we can
+3:02 assign a function to it okay we can
+3:05 assign a function to it function acts
+3:07 like a value okay you might have heard
+3:10 this before i am revising it function
+3:12 acts like a value okay so you it's it's
+3:15 like a value which you are
+3:16 initializing you are initializing this b
+3:19 with a value like putting function
+3:21 this into b so this is how beautiful
+3:24 functions are in javascript in many
+3:26 programming languages you can't do this
+3:28 and people coming from like other
+3:29 languages might find this crazy but
+3:33 what this you can do okay
+3:35 let's just log something inside this
+3:37 also so let me do a console log of
+3:39 be
+3:40 called okay
+3:42 so this is known as a function
+3:44 expression and this is known as a
+3:45 function statement both are ways to
+3:47 create function and i was using this
+3:50 since many years in our programming but
+3:52 i never knew what the difference between
+3:54 these
+3:54 jargons are like and in the interview i
+3:57 i was using this right a lot in my code
+4:00 but i never knew in the interview that
+4:02 this is what it is
+4:03 right
+4:05 so
+4:06 the interviewer did not ask me what it
+4:08 is the interviewer asked me the
+4:09 difference between function statement
+4:12 and a function expression so what is the
+4:13 difference between
+4:15 these two
+4:16 so the major difference between these
+4:19 two is hoisting
+4:21 okay
+4:22 so let's first see how do you call this
+4:24 function okay so you call this function
+4:26 by just calling it like this you know
+4:28 and even in the case of function
+4:29 expression you call it like this right
+4:32 if i call it if i run this program so
+4:34 see it prints a call and it prints b
+4:36 called right so that is how we call it
+4:38 but the difference between creating
+4:40 functions with these two types is
+4:42 hosting
+4:43 so how does hoisting come into picture
+4:46 so what if i call this function a
+4:50 even before creating it
+4:52 okay so
+4:53 here i am creating the function but i
+4:55 want to call it before creating it and
+4:58 similarly for b also
+5:00 so you have seen my hosting video right
+5:02 so what do you think the output will be
+5:04 if i call these functions before even
+5:06 creating them in code what will happen
+5:09 can you give it a guess
+5:11 yes let's just see so one will throw out
+5:13 an error which one the b
+5:16 so that is the difference between a
+5:17 function statement and a function
+5:19 expression so during the hosting phase
+5:22 during the memory creation phase a is
+5:24 created a memory and this function is
+5:27 assigned to a
+5:28 but in case of a function expression
+5:30 this b is treated like any other
+5:32 variable
+5:33 it is assigned undefined initially
+5:36 until the code hits this line itself
+5:39 so when the javascript engine executes
+5:41 this line by line and it reaches this
+5:44 line then only this function is assigned
+5:47 to this variable b until then it is
+5:49 undefined
+5:51 okay so here the value is undefined and
+5:53 you can and you can't call that b right
+5:56 that is the major difference between
+5:57 function statement and a function
+5:59 expression so now let's move on to
+6:01 function declaration so function
+6:03 declaration is nothing this is another
+6:05 jargon and function statement is also
+6:08 known as
+6:09 function declaration okay so they both
+6:12 are the same thing if you say
+6:14 function declaration or a function
+6:16 statement these are both the same things
+6:18 so now let's move on to the anonymous
+6:20 functions so anonymous functions as you
+6:22 know a function without a name is an
+6:24 anonymous function
+6:26 this is an anonymous function
+6:28 okay
+6:29 but let me tell you a little more about
+6:31 anonymous functions so anonymous
+6:33 functions
+6:35 does not have their own identity okay
+6:38 when i say it does not have its own
+6:39 identity that means if you create an
+6:41 anonymous function like this this will
+6:44 result out to be a syntax error okay so
+6:47 via syntax error let me tell you an
+6:50 anonymous function looks like a function
+6:51 statement right it looks like similar to
+6:54 that right see if you clearly see this
+6:56 looks exactly same as a function
+6:57 statement but it has no name
+7:00 but according to ecmascript
+7:02 specification a function statement
+7:03 should always have a name so this is a
+7:05 invalid syntax let me run and show it to
+7:07 you so if i save this run this so this
+7:10 is c a syntax error and clearly see the
+7:13 message which it says a function state
+7:15 function statements require a function
+7:17 name
+7:18 okay so see it's a function statements
+7:21 okay this function statements it is type
+7:23 of a function statement and it requires
+7:26 a name okay you need to give a name over
+7:28 here you can't leave it anonymous and
+7:30 create anonymous functions like this
+7:32 so now when you can't create it like
+7:34 this what is the use of it
+7:36 so anonymous functions are used in a
+7:38 place where functions are used as values
+7:42 so i have said this a lot of times let
+7:44 me repeat it once again functions are
+7:46 like very beautiful in javascript i love
+7:48 functions and functions i think are
+7:51 heart of javascript they are so powerful
+7:53 you can use them as values also right
+7:57 and anonymous functions are used when
+7:59 the functions are used as values okay
+8:02 when they are used as values so when i
+8:05 say they are used as values that means
+8:06 that you can use use it to assign it to
+8:10 some variable so just like you assign
+8:11 any other value to a variable okay you
+8:14 can assign this anonymous function also
+8:16 to a variable
+8:18 so it acts like a value here you can use
+8:20 anonymous functions but in function
+8:23 statements you cannot use an anonymous
+8:25 function okay so that is why it says
+8:27 function statements
+8:29 require a function name okay you know
+8:31 this knowledge of knowing what is a
+8:33 function statement or expression a
+8:35 declaration and all these things is very
+8:37 important also it helps you a lot if you
+8:39 are debugging programs so if you read
+8:41 clearly the message right so function
+8:43 statement so here it's not an expression
+8:45 it's a statement so these things these
+8:48 keywords will kind of click your mind
+8:50 and you will better understand
+8:51 javascript
+8:53 and generally you might have seen that
+8:54 when we are reading blog articles or we
+8:56 are reading books sometimes
+8:58 we it is very confusing right the author
+9:01 uses the term expression somewhere it is
+9:03 a statement somewhere so this is what it
+9:05 means okay so this knowledge will be
+9:07 very helpful when you are reading some
+9:09 books of javascript some blogs of
+9:11 javascript some stack overflow answers
+9:12 this all knowledge will be very helpful
+9:14 for that so now let's just see what is a
+9:16 named function expression okay so let me
+9:18 just first of all remove these errors
+9:20 okay let me just comment it out and
+9:23 let me bring these calls uh over here
+9:26 once again
+9:28 so now let me tell you what is a named
+9:30 function expression so a named function
+9:32 expression is like exactly the same as
+9:35 this function expression but when this
+9:37 anonymous function instead of using an
+9:39 anonymous function here we use a
+9:41 function with a name suppose if i gave
+9:43 it a name so this becomes a named
+9:45 function expression
+9:47 it's kind of weird right
+9:49 you are like kind of giving a name to
+9:51 the function here also and you are
+9:53 giving the name to the function here
+9:55 also it's it's like weird right but this
+9:58 is possible in javascript like you can
+10:00 have the name of a function itself and
+10:02 then put it into an expression so this
+10:04 is known as a named function expression
+10:07 remember a named function expression now
+10:09 here there is a corner case also there
+10:11 is a gaucha okay so uh so you know we
+10:15 can call this b function like this but
+10:18 what do you think what will happen if i
+10:20 do something like this x y z so can you
+10:22 guess what will happen if you just call
+10:24 this function x y z like this give a
+10:26 guess
+10:27 so you will get an error okay so it is a
+10:29 very famous output question also so you
+10:32 might get a mcq where
+10:34 the person might have called this xyz
+10:36 like this but it will throw out to be an
+10:39 error okay so this will give a reference
+10:41 error that xyz is not defined okay so
+10:43 why it gives xyz is not defined so
+10:47 if we see clearly this x y z if you put
+10:50 a function like this right if you use
+10:52 this function as a value so in this case
+10:55 this x y z is not created in the
+10:58 outer scope okay so this xyz is not a
+11:02 function inside this outer scope in this
+11:04 close global scope but it is created as
+11:07 a local variable okay when i say a local
+11:09 variable if you try to if you want to
+11:11 access this function inside this
+11:13 function okay if you want to access this
+11:16 function inside this function
+11:19 okay so suppose if you want to access
+11:21 xyz you can access it over here right
+11:25 you can access this function see it
+11:27 prints xyz and you can access this
+11:29 function over here but if you try to use
+11:31 it outside like this it will throw out
+11:33 to be an error where it is okay let's go
+11:35 to console so it it gives you a
+11:37 reference error that xyz is not defined
+11:39 okay so this is what is called as a name
+11:42 function expression and if you just
+11:44 don't give a name over here it is like a
+11:46 normal function expression or you might
+11:48 call it as an anonymous function to
+11:50 create a function expression okay so
+11:53 something like this so let me just
+11:55 revert it once again
+11:57 um and just remove this
+11:59 xyz
+12:00 and let's move on to the next part okay
+12:03 one more thing which i have often seen
+12:05 is that
+12:06 a lot of programmer use parameters and
+12:08 arguments as interchangeably terms but
+12:11 no they are very different okay so these
+12:14 two things parameter and arguments are
+12:16 very different okay so whenever you are
+12:18 creating a function so whatever you put
+12:21 over here right these these identifier
+12:24 or this labels right
+12:26 over here are known as parameters so
+12:28 that is why you can call it as a param
+12:30 param1 okay so you might have seen the
+12:32 syntax written a lot of places so this
+12:36 identifier or the label
+12:38 or this variable okay this is a local
+12:40 variable in the function scope okay so
+12:43 this this param1 and param two are local
+12:46 variables inside this function you
+12:47 cannot access this param1 and param two
+12:50 outside okay so these local variables or
+12:53 you can call it them as the identifiers
+12:56 or the labels so whatever you might call
+12:57 them so these are the parameters
+13:01 parameters of a function
+13:03 and the arguments which you pass over
+13:05 here like if i uh give a one and a two
+13:08 so this is known as arguments a lot of
+13:11 people you know
+13:13 use this as interchangeably and don't
+13:15 know this that is why often when you
+13:17 read a blog or you read a book then
+13:19 somebody is using an argument somewhere
+13:21 if somebody using parameter so you
+13:23 should actually have a mental model of
+13:25 what that person is talking about that
+13:28 is when you will understand these blogs
+13:30 and articles and books right
+13:32 so once again the values which we pass
+13:34 inside a function are known as arguments
+13:37 and
+13:38 these label and identifier which gets
+13:41 those values are known as parameters
+13:43 okay so now let's move on to the most
+13:45 critical part which is first class
+13:47 functions okay
+13:49 so what are first class functions so
+13:51 this is a very heavy term for what we
+13:53 already know
+13:54 so as i already told you and let me
+13:56 repeat it once again because it is very
+13:58 important functions are very beautiful
+14:01 in javascript functions are very strong
+14:03 functions are heart of javascript
+14:06 and
+14:07 just because it is like that
+14:09 we call them as a first class functions
+14:12 so the functions are so beautiful so
+14:14 beautiful that instead of these
+14:17 arguments we can even pass functions
+14:20 inside another functions as an arguments
+14:24 okay listen to this carefully arguments
+14:27 so functions are treated as values right
+14:29 i told like you can use an anonymous
+14:32 function to pass in as a value also okay
+14:34 that is how beautiful functions are and
+14:37 you can receive that in the parameters
+14:39 okay so if i pass this anonymous
+14:41 function inside param1 and i try to
+14:44 access this panel and see what we get
+14:46 okay this is a perfectly valid
+14:48 javascript okay see we got this
+14:50 anonymous function inside it right and
+14:52 there is one more way to pass this
+14:54 function
+14:55 okay inside this function okay suppose
+14:57 it was a named function let's call it as
+15:00 uh x y z okay and if i pass this x y z
+15:03 like this we can do that too okay so
+15:06 it's like passing another function
+15:09 inside a function right we are passing
+15:11 this x y z inside b
+15:13 that's how beautiful functions are and
+15:15 we can do that
+15:16 and not just this if we pass this
+15:19 function into this function we can also
+15:22 return a function from a function
+15:24 okay crazy it sounds right so we can
+15:28 return a function from a function we can
+15:30 return an anonymous function from a
+15:32 function
+15:33 and what will happen is when you invoke
+15:35 this b right when you call this b
+15:39 this function will be returned over here
+15:42 right so let's just try to do a console
+15:44 log of this okay so if i do a console
+15:47 log of this
+15:48 so uh and
+15:50 let me just remove this x y z
+15:53 and let me just remove this x y z also
+15:56 and if i now
+15:58 run this code so see
+16:00 when we call this function so
+16:03 this function anonymous functions were
+16:04 returned from b and we did a console log
+16:07 so it prints an anonymous function and
+16:09 if it was a named function we can return
+16:11 that too okay so what is first class
+16:14 functions so first class functions is
+16:16 nothing but this only
+16:18 the ability to use functions as values
+16:21 is known as first class functions
+16:23 so let me repeat it once again the
+16:25 ability of functions to be used as
+16:27 values and can be pass this in an
+16:30 argument to another functions and can be
+16:32 returned from the functions
+16:35 is this ability is known as first class
+16:38 functions in javascript
+16:40 nothing more than that okay these
+16:42 ability of these functions to use an n
+16:44 value and assign it to a variable and
+16:47 can be passed into another functions and
+16:49 can be returned out of another functions
+16:51 this ability all over all together is
+16:54 known as first class functions
+16:56 that is what is first class functions
+16:58 and it's not just in javascript it is a
+17:00 programming concept it's in other
+17:02 languages also not in every language but
+17:05 in many languages also so our interview
+17:08 question can be what are first class
+17:10 functions in javascript so you have to
+17:12 explain it like this okay when they are
+17:14 treated as a value parsed into another
+17:16 functions or returned from another
+17:18 functions so this is known as a first
+17:20 class functions okay this ability is
+17:23 known as the first class functions
+17:25 that's all it is
+17:26 right so if you read blog articles or if
+17:29 you read books okay so a lot of times
+17:31 you might also find a statement which is
+17:33 functions are first class citizens let
+17:36 me repeat it once again functions are
+17:38 first class citizens okay so let me
+17:42 write it down first class
+17:44 citizens okay
+17:46 so
+17:47 when i say first class citizens it means
+17:50 the same thing
+17:52 first class functions functions are used
+17:55 as first class citizens so it's both the
+17:58 same thing okay so if you read it in
+18:00 some blog or if you read it in some book
+18:02 assume that this ability to be used like
+18:05 values
+18:06 makes the function as first class
+18:08 citizens in javascript i know this is
+18:11 kind of like a playing with english and
+18:13 words right but that's how it is and it
+18:16 is important to know all these things
+18:18 because if we read it in some book we
+18:20 should understand what that author is
+18:22 trying to say right
+18:23 javascript has a very vast community
+18:26 right a lot of people are writing stack
+18:28 overflow answers blogs blogs articles
+18:31 this that and they use all sort of
+18:33 notations so what i try to do is i am
+18:36 just giving you this knowledge so that
+18:37 next time you read these blog articles
+18:40 you will properly understand what that
+18:41 author is trying to say if somebody says
+18:43 that functions are first class citizens
+18:46 that means he is referring to first
+18:48 class functions that means the ability
+18:50 of these functions to be used as values
+18:52 passed inside another function get out
+18:55 from the function and like returned out
+18:57 from the functions use them to assign
+18:59 into a variable all these things make
+19:02 say functions as the first class
+19:04 citizens in javascript
+19:06 remember will you remember this lifetime
+19:08 remember this lifetime okay so one more
+19:11 doubt you might get is that what if i
+19:12 use a letter const over here so suppose
+19:15 if i use a letter const over here so in
+19:17 that case also it behaves the same way
+19:20 just like let and const normal variables
+19:22 do they are in a temporal dead zone
+19:25 until it encounters this statement okay
+19:28 so you it is treated exactly the same if
+19:30 you want to get more information it is
+19:32 in the latin cons video right go watch
+19:34 that again if you are still confused
+19:36 about it so in the latin const video
+19:38 whatever rules are applied the same
+19:40 rules are applied to these also so these
+19:43 are nothing this const b is nothing but
+19:46 just like a constant another variable
+19:48 and this function over here is acting
+19:51 just like any other value which is being
+19:53 assigned to this b okay so that's how
+19:56 and that's what it is okay
+19:58 so now this function statement in a
+20:00 function expression or a function
+20:01 declaration these all things can also be
+20:03 written using arrow functions okay arrow
+20:06 functions has come up as a part of es6
+20:09 you can call it as ecmascript 2015 and
+20:12 this let const arrow functions these
+20:15 things were introduced in es6 okay so
+20:18 these function statements function
+20:20 expression this all things can be
+20:21 created using arrow functions also okay
+20:24 but let's not do this in this video
+20:26 because i haven't told you what an arrow
+20:28 function is
+20:29 up till now in this series i have seen a
+20:31 lot of people asking in comments that
+20:34 what will happen in case of arrow
+20:35 functions error functions error
+20:36 functions don't worry people
+20:38 i am covering the basics first of all
+20:41 okay the basics of javascript because
+20:43 when javascript was built it was not
+20:45 built with arrow functions right it used
+20:47 to have where it used to have function
+20:49 keyword so let us first explore these
+20:52 basic nitty gritty things about uh these
+20:55 this beauty of javascript which was
+20:57 originally made right and we will slowly
+20:59 transition towards this es6 new things
+21:02 also you know i am not avoiding let
+21:05 const or
+21:06 arrow functions or something because
+21:08 those things are being used a lot right
+21:11 i will make a separate video all
+21:12 together just for covering arrow
+21:14 functions that will be a very
+21:16 interesting video i will be covering
+21:18 everything like how how this keyword
+21:21 works and how arrow function syntax
+21:23 works how higher order function works
+21:25 and how
+21:26 statements declaration expression
+21:29 everything we will be covering in arrow
+21:30 function series just keep calm and wait
+21:32 no issues everything will be covered
+21:34 slowly slowly slowly slowly slowly and
+21:39 trust me i'm not going anywhere i'll
+21:41 teach you everything just keep on
+21:43 watching this series and watch it in the
+21:45 sequence okay in the next video we will
+21:47 be covering callbacks and higher order
+21:49 functions those are very very very
+21:51 important topics in javascript if you
+21:52 want to learn functional programming
+21:55 okay so don't miss that video that is a
+21:57 very crucial video but before moving on
+21:59 to that video give this video a thumbs
+22:01 up it gives me a huge motivation and see
+22:03 you in the next video till then thank
+22:05 you for watching namaste javascript
+22:08 [Music]
+22:24 [Applause]
+22:27 me)
+
+3.Callback Pattern(0:06 in the previous video we had a look at
+0:08 the path module in node.js
+0:11 before we proceed with the other
+0:13 built-in modules we need to take a
+0:15 detour to understand the Callback
+0:17 pattern or callback style of programming
+0:20 in node.js which is what this video is
+0:23 all about
+0:24 let's begin by understanding a very
+0:26 important point
+0:28 in JavaScript functions are first class
+0:31 objects
+0:32 what that means is that just like an
+0:35 object a function can be passed as an
+0:38 argument to a function and a function
+0:40 can also be returned as value from other
+0:43 functions
+0:45 let's understand this with a simple
+0:46 example
+0:49 back in vs code in index.js I'm going to
+0:53 define a function called greet
+0:58 which accepts a name parameter
+1:00 and logs to the console hello followed
+1:03 by the name
+1:08 I'll Define another function called
+1:11 greet vishwas
+1:22 what is special here is that the
+1:24 function accepts another function as its
+1:27 argument
+1:28 within the function body we have a const
+1:30 declaration name equal to vishwas
+1:33 and we call the past in function with
+1:36 name as its argument
+1:39 finally I'll invoke greet vishwas
+1:43 passing in the grid function
+1:47 when we run node index
+1:51 the control goes to greet vishwas
+1:54 which calls greet FN
+1:56 greet FN is nothing but the grid
+1:58 function which we have defined on line
+2:00 1.
+2:02 execution goes to the grid function with
+2:05 name equal to vishwas and hello vishwas
+2:08 is going to be logged in the terminal
+2:13 here tweet vishwas is a function which
+2:16 accepts another function as an argument
+2:19 and you might be pleasantly surprised to
+2:21 learn that any function that is passed
+2:24 as an argument to another function is
+2:26 called a callback function in JavaScript
+2:29 also the function
+2:31 which accepts a function as its argument
+2:34 or returns a function is called a higher
+2:37 order function
+2:40 if I simply rename the function and its
+2:43 argument to convey what they stand for
+2:50 higher order function
+2:55 accepts a callback function
+2:58 and on line 7 calls that callback
+3:00 function passing in the name constant
+3:04 so we now know what a callback function
+3:07 is
+3:08 you might be thinking is that Ed
+3:11 well yes
+3:12 a function passed as an argument to
+3:14 another function is called a callback
+3:17 function
+3:18 but what we need to understand is why do
+3:21 we need a callback function
+3:24 we can answer that by categorizing
+3:26 callbacks into two synchronous and
+3:29 asynchronous
+3:31 let's first talk about synchronous
+3:33 callbacks
+3:35 a callback which is executed immediately
+3:37 is called a synchronous callback
+3:41 our greet callback function here is an
+3:43 example as the function gets executed
+3:45 immediately when the control goes inside
+3:48 the higher order function
+3:51 a more practical example is a callback
+3:54 function passed to methods like sort map
+3:57 or filter
+3:59 in these cases the Callback function
+4:01 defines a logic that the higher order
+4:03 function needs to apply
+4:06 nothing too fancy when it comes to
+4:08 synchronous callbacks
+4:10 let's now move on to async callbacks
+4:12 which will also bring our Focus back on
+4:14 asynchronous JavaScript
+4:17 an async callback is a callback that is
+4:20 often used to continue or resume code
+4:23 execution after an asynchronous
+4:26 operation has completed
+4:28 so in the async world callbacks are used
+4:31 to delay the execution of a function
+4:33 until a particular time or event has
+4:36 occurred
+4:37 and this use case is really important
+4:40 because most of the modules in node.js
+4:43 have an asynchronous nature to prevent
+4:46 blocking of execution
+4:48 for example
+4:49 reading data from a file fetching data
+4:52 from a database or handling a network
+4:55 request
+4:56 now we will understand each of these in
+4:59 more detail as we progress through the
+5:01 series but for now let me go back to
+5:04 browser JavaScript to help you
+5:05 understand with an example
+5:08 our first example is that of event
+5:11 handlers
+5:12 when JavaScript encounters dot add event
+5:15 listener it does not immediately run the
+5:18 Callback function
+5:20 the function is only run when the user
+5:22 clicks on the button
+5:24 in other words the execution of the
+5:27 Callback function is delayed till an
+5:29 event occurs in the browser
+5:31 and that event is the click event
+5:35 if you want a data fetching example with
+5:38 callbacks we can go back to jQuery if
+5:40 you've used it before
+5:42 for dollar dot get the first argument is
+5:45 the URL and the second argument is the
+5:47 Callback function which gets called only
+5:50 after the data has been loaded
+5:53 but this is the Callback pattern or
+5:56 callback style of programming that is
+5:58 very popular in node.js
+6:01 they allow you to delay the execution of
+6:03 a function until a particular time or
+6:06 event has occurred
+6:09 all right with this understanding of
+6:11 callbacks let's proceed to the next
+6:13 video where we will resume learning
+6:15 about the different built-in modules in
+6:17 node.js
+6:18 I'll see you in the next one
+
+
+)
+
+4.JavaScript ES6 Arrow Functions (0:00 hello everybody kyle here from webdev
+0:02 simplified in today's video I'm going to
+0:04 be going over at one of the most
+0:05 important and useful features that came
+0:07 with the es6 version of javascript and
+0:09 that is arrow functions i'm going to be
+0:11 comparing them and contrasting them with
+0:13 the normal function syntax that you all
+0:15 already know so without any further ado
+0:17 let's get started
+0:20 in this javascript file I have four
+0:24 examples of functions to help us
+0:25 understand the differences between the
+0:27 syntax for normal functions and arrow
+0:28 functions right now all these are normal
+0:31 functions and we're going to convert
+0:32 them to arrow functions so the different
+0:34 types of functions we have is a named
+0:36 function with multiple parameters in
+0:39 this case - we have the named function
+0:41 with one parameter a named function with
+0:43 no parameters and down here lastly we
+0:45 have an anonymous function so it's just
+0:47 a function with no name so to get
+0:49 started we're going to convert this sum
+0:51 function first to an arrow function
+0:53 because it is the easiest format and
+0:55 probably the most common you'll run into
+0:57 when converting an arrow function so I'm
+0:59 just going to copy this paste it down
+1:01 here so we can convert this and compare
+1:02 and contrast then when we're done
+1:03 the first thing we need to do to convert
+1:06 an arrow function is completely remove
+1:07 the function keyword because with an
+1:09 arrow function this function keyword is
+1:11 assumed and now we need to assign it
+1:14 this actual function here to a variable
+1:18 so we're just going to call that
+1:19 variable sum - in this case so we'll
+1:21 just say sum - as our variable name
+1:26 we're going to set that equal to what we
+1:28 have left over which is going to be the
+1:29 beginning of the syntax for our error
+1:31 function and the reason we have to do
+1:33 this assignment here to a variable is
+1:36 because normal functions already create
+1:38 a variable of the name sum in this case
+1:40 with the function keyword but since we
+1:42 no longer have the function keyword we
+1:44 now need to create our own variable to
+1:46 store this function and the only change
+1:48 that we need to make to convert this
+1:49 function syntax from here to an arrow
+1:51 function is to add in the arrow that
+1:54 denotes that these are our parameters on
+1:56 the left side here inside of the
+1:57 parentheses and then we have an arrow to
+1:59 denote that this is a function and then
+2:01 inside of the brackets we put the actual
+2:03 function syntax that we're going to be
+2:04 using and now our sum - and some are
+2:07 both the exact same function just one
+2:09 uses the arrow syntax and the other uses
+2:12 a normal function
+2:13 tax we can go even further to reduce
+2:15 this code slightly more since as you can
+2:18 see we just have one line of code and it
+2:20 returns something this arrow functions
+2:22 can be changed so that we can remove
+2:24 this return completely and we can remove
+2:27 these curly braces and put everything on
+2:30 one line so if you do this everything
+2:33 after the arrow is assumed to be
+2:35 returned so this a plus B is going to be
+2:38 returned because there's no brackets and
+2:40 there's no return statement so it just
+2:42 assumes that whatever comes after the
+2:43 arrow here is going to be returned from
+2:45 the function and this again is exactly
+2:48 the same as our normal function that we
+2:49 have defined at the top here but as you
+2:51 can see this is much more concise and
+2:53 easier to use so let's do the same thing
+2:55 tor is positive function we'll copy this
+2:58 paste it down and as you know we can get
+3:00 rid of this function keyword change is
+3:03 positive to a variable we'll call it is
+3:06 positive to and we just add in the arrow
+3:09 and there we go again we have an arrow
+3:10 function but we can reduce this further
+3:13 by getting rid of those curly braces and
+3:15 there we go we have that exact same
+3:16 arrow function is positive to is now
+3:19 exactly the same as is positive but when
+3:21 we only have one single parameter we can
+3:24 actually completely remove these
+3:25 parentheses around the parameter and
+3:27 just have the single name of the
+3:29 parameter number here and that will
+3:31 still work and you'll see this very
+3:33 often because there's tons of use cases
+3:35 for these single parameter functions to
+3:37 be arrow functions so it'll be very
+3:39 common for you to see syntax like this
+3:41 and all it is saying is this is the
+3:42 argument of your function this number
+3:44 and then the arrow says we're returning
+3:46 everything after it since there's no
+3:47 curly braces afterwards inside of a
+3:49 function argument and then lastly we
+3:52 have this random number function which
+3:54 we paste this down we can do the exact
+3:56 same thing we can remove function
+3:58 replace it with a variable assignment
+3:59 and then we put in our arrow and again
+4:03 this is the correct syntax for a
+4:05 function with zero arguments what we
+4:07 want to do is we want to put these
+4:08 brackets right here are these
+4:10 parentheses and inside of it we just put
+4:12 nothing to denote that this has no
+4:14 functions that go into it and again if
+4:16 we want to do that fancy thing with the
+4:18 return we could just remove the return
+4:19 and the curly braces put everything on
+4:22 one line
+4:22 so it's a lot cleaner and easier to read
+4:24 and you may be thinking that this really
+4:26 doesn't save you very much because you
+4:27 still have to say let and define
+4:29 variable and it seems kind of clunky and
+4:31 I have to agree arrow functions aren't
+4:34 that useful when it comes to narrowing
+4:36 down the amount of words that you have
+4:38 to write any amount of code you have to
+4:39 write when it creating functions like
+4:41 this but where the arrow functions
+4:43 really shine is when you're creating
+4:44 anonymous functions or functions that
+4:47 have no name such as in this case when
+4:48 we're passing a function to another
+4:50 function so this is the normal function
+4:52 syntax that we would use and if we want
+4:54 to change this to an arrow function we
+4:56 remove the keyword of function and then
+4:59 we add in our arrow and there we go now
+5:01 we have our arrow function and we don't
+5:03 actually have to sign it to a variable
+5:04 by saying but and a variable naming
+5:06 equals we just have this function now
+5:08 here that we can define without having
+5:10 to use the function keyword and again we
+5:12 can put this onto one line instead of
+5:14 having to do it on multiple lines so we
+5:16 can make it even more concise by putting
+5:18 it on one line and removing it curly
+5:20 braces and now this line right here 23
+5:23 is exactly the same as this entire code
+5:25 block up here from lines 19 to 21 it's
+5:28 just a more concise and easier way of
+5:30 using arrow functions but that's really
+5:32 not what makes arrow functions so great
+5:34 it's nice that they have a more concise
+5:36 syntax but what really makes arrow
+5:38 functions important is the fact that
+5:40 they redefine the this keyword inside of
+5:43 them as opposed to normal functions they
+5:45 use this keyword much differently so let
+5:48 me show you an example of how that will
+5:49 work on the left of my screen I have a
+5:51 simple person class which all it does is
+5:54 it takes in a name in the constructor
+5:55 and it sets this name to that name and
+5:58 then it has two functions one is called
+6:00 print name arrow and this function uses
+6:02 an arrow function inside of a timeout to
+6:05 print out the name of the person after
+6:06 the word arrow after a 100 millisecond
+6:09 delay and then those print name function
+6:11 down here
+6:11 which is exactly the same as the print
+6:13 name arrow function except for it uses
+6:15 the standard function syntax instead of
+6:18 the arrow function syntax so we can look
+6:20 at how this dot name is going to be
+6:21 different inside of the normal function
+6:23 versus the arrow function
+6:24 so before I start explaining the
+6:26 differences let's just run this code to
+6:28 show the differences so we can create a
+6:30 person object here we're gonna set it to
+6:32 new person and we just need to give it a
+6:35 name in our case we'll just give it the
+6:36 name of Bob and then we want to call
+6:38 those two function
+6:39 so we'll say printname arrow as our
+6:41 first function and then we'll print name
+6:44 function down here so we're both calling
+6:45 the arrow function and the normal
+6:47 function and printing them out and if we
+6:49 save this you'll see that the arrow
+6:51 function prints out Bob but the normal
+6:53 function doesn't print out any name and
+6:55 you are wondering why is that and that
+6:57 is because this is different inside of a
+6:59 function and inside of an arrow function
+7:01 so normally these standard functions
+7:04 syntax is here that we've been using
+7:06 since JavaScript came out it defines
+7:08 this based on where the function is
+7:10 called so as you can see the function is
+7:12 called down here print name function so
+7:14 this has the same scope as it would out
+7:17 here inside of this so if we did console
+7:20 dot log this dot name here you'll see as
+7:24 soon as that loads that it's also blank
+7:26 right there because this dot name is not
+7:28 defined in the global scope and this is
+7:31 a global scope to this because it's
+7:34 defined from what a function is called
+7:35 and that's a bit confusing to wrap your
+7:38 head around but it's easier to see how
+7:39 the print name arrow works because this
+7:42 is just the same as that this inside of
+7:45 this print name arrow function this does
+7:47 not actually get redefined when you use
+7:49 an arrow function and that's why this
+7:51 dot name is Bob inside of this set
+7:53 timeout for print named arrow and really
+7:56 that's the big difference is a normal
+7:58 standard function for JavaScript
+7:59 redefines this keyword so you can't
+8:02 actually use this dot name or anything
+8:04 else you defined on your this object
+8:06 inside of a normal function because it
+8:09 redefines it with whatever scope you
+8:11 call the function in and in our case
+8:12 that is the global scope that we're
+8:14 calling this function in but when you
+8:16 use an arrow function this is not
+8:18 redefined so this is going to be the
+8:20 exact same as this in the scope where
+8:23 the function is defined which is how it
+8:25 is in most other programming languages
+8:27 and it's such a relief to have this
+8:29 feature in JavaScript after so many
+8:31 years in almost all cases going for it I
+8:34 use arrow functions because it's much
+8:36 more intuitive to have this be defined
+8:38 in the scope that you call or that the
+8:40 function is defined rather than where
+8:42 you call the function because that just
+8:43 confuses me and confuses many other
+8:46 people so that's really the big reason
+8:48 to use an arrow function in my opinion
+8:50 is this scoping of this
+8:52 more similarly to how other programming
+8:54 languages work so I would recommend
+8:56 going forward to always use arrow
+8:58 functions unless you have a specific
+9:00 reason that you need this to be Reese
+9:02 code inside of that function which
+9:04 usually you'll not run into I hope you
+9:06 guys were able to learn the differences
+9:08 between arrow functions and standard
+9:09 functions and why arrow functions are
+9:11 almost always better for making your
+9:12 code more concise and legible and
+9:14 because the this context is defined more
+9:17 properly in arrow functions as opposed
+9:19 to standard functions if you guys did
+9:20 enjoy this video please make sure to
+9:22 subscribe for more videos just like this
+9:24 and check out my other videos listed
+9:26 over here which are going to be more
+9:27 JavaScript related content thank you
+9:29 guys very much for watching and have a
+9:31 good day
+
+
+
+Why avoid `function` keyword?
+How does `this` differ?
+)
+
+5.Default parameters in javascript(0:00 hey there everyone and I hope you're
+0:01 enjoying quite a lot in this JavaScript
+0:04 series so let's move further and there
+0:06 are a couple of things which I would
+0:07 like to talk about these functions and
+0:09 for that I will be creating more
+0:11 functions so first and foremost let's
+0:13 just comment this guy here so that we
+0:15 don't have to worry about anything and
+0:17 probably this one as well so let's just
+0:20 create one more function and this is
+0:22 gonna be quick revision so here's a
+0:23 quick thing for you now just like I have
+0:25 my adder go ahead pause the video and
+0:28 create a function which says my
+0:29 multiplier and as the name suggests it
+0:31 should do the same okay so I hope
+0:35 everybody did pause the video there and
+0:37 nobody cheated so we're gonna have
+0:39 simply let my and multiplier and this is
+0:44 gonna expect two parameters of course
+0:46 and this is gonna be like function and
+0:49 in the pair of parentheses we are
+0:51 expecting num1 and num2 there we go and
+0:56 there we go our function definition but
+0:58 this time we will be doing everything in
+1:00 just one line so what we can do is we
+1:02 can simply return a write the keyword
+1:04 return and we can simply say num1 it is
+1:07 multiplied by num2 so yes by this way we
+1:10 are actually saving a little bit of
+1:12 memory and these little bit memories
+1:14 actually do count a lot in a big project
+1:16 so here we are declaring a variable then
+1:18 doing it on one line and then returning
+1:20 it here we are directly returning it so
+1:22 yes these things and nobody understands
+1:25 at the first and these are not being
+1:27 guessed by everyone I didn't expected
+1:29 you to do it but later on as you will be
+1:31 moving on and when somebody shows it to
+1:33 you one time you always try to reduce
+1:35 the line number of lines of code so it's
+1:37 completely okay and we will not be
+1:39 running this function because you
+1:40 obviously know how to run that and
+1:42 that's gonna be a simple assignment for
+1:44 you so go ahead run this function and
+1:45 pass on a couple of parameters here but
+1:48 I want to discuss a little bit more
+1:50 about here okay so let's say we are
+1:53 gonna be creating a new function here so
+1:55 we're gonna say let and this is gonna be
+1:57 like something let's just say a user
+2:00 comes on my website and he clicks onto
+2:03 the Google link or Facebook link to
+2:06 create an account and then he wants to
+2:08 have a course purchase list as well so
+2:11 let's get started and write a function
+2:12 for that so
+2:13 we're gonna call this as guest user and
+2:16 that is gonna be a function now in that
+2:19 function obviously guest users should
+2:21 have a name as well as how many courses
+2:24 he's gonna have okay so in order to have
+2:27 it we need to define two things here
+2:29 first of all let's just say we're gonna
+2:31 have a name and the second is the thing
+2:34 that is gonna be course count okay
+2:37 something like that or maybe in the caps
+2:39 course count okay so these are good and
+2:42 we just want to just kind of a return
+2:45 that back so we're gonna simply say
+2:47 return simply like this and we will be
+2:52 returning something like this and I'm
+2:55 gonna be saying like this hello and then
+3:00 we can concatenate it with name and your
+3:08 course count is and then we are gonna be
+3:13 oops I forgot to have like concatenation
+3:15 here code here and they're not gonna be
+3:18 code here and then we're gonna be adding
+3:21 it with course count there we go okay so
+3:24 there we go I hope you can see that now
+3:27 okay so there we go this is our now
+3:29 simple list here but the problem is
+3:32 whenever we are gonna be calling a
+3:34 function like this and we simply say
+3:36 guest user and we just go like that it
+3:40 is okay but you may run into variety of
+3:43 special situations where either you
+3:45 don't have a name or you don't have a
+3:47 course count so if you're gonna be
+3:49 running this function like this and even
+3:52 if I just get something like this and
+3:53 run it using console log which is gonna
+3:57 be saying guest user and run this like
+3:59 that
+4:00 now strange things may happen so let me
+4:02 just press this guy and bring it up and
+4:05 there we go so what is going to happen
+4:07 it says hello undefined and obviously
+4:12 let me hello undefined here and your
+4:15 course count is undefined and let me
+4:18 have a space or something like this and
+4:21 now if I run that again notice this is
+4:24 what we don't want undefined so there is
+4:26 a quick thing
+4:27 to JavaScript that you need to know that
+4:29 whenever a value is not being defined it
+4:33 is by default undefined in JavaScript
+4:35 okay and that is something which
+4:37 everybody should keep in mind now if you
+4:40 want to explicitly set any value to like
+4:42 null you have a keyword here like you
+4:45 can explicitly set that to null so for
+4:47 example let name is gonna be equals to
+4:50 null so this is something you are
+4:52 deliberately doing which is considered
+4:54 as a good approach but if something like
+4:56 this appears as undefined this is not at
+4:58 all considered as good approach because
+5:00 this is considered as some case which is
+5:02 not being handled by you okay so make
+5:05 sure you always keep that in mind now
+5:07 how we can take over this situation it
+5:09 is actually absolutely simple for the
+5:11 name you can just assign a name and can
+5:13 say something like on name and you just
+5:18 have to assign the values here and the
+5:20 course current is gonna be default so
+5:22 these are known as default parameters
+5:24 when you don't pass on anything these
+5:26 guys take over if you pass anything
+5:28 these guys says hey I'm gonna step back
+5:30 and you can just take over so let's just
+5:33 save this and try to run that so that we
+5:35 can see that in action and there we go
+5:37 hello our name and your course count is
+5:40 zero so what happens when you try to
+5:43 take over let's just say your guess two
+5:45 username is our favorite John Doe so
+5:47 there we go John comes in so this
+5:49 unnamed is gonna say hey you know what
+5:50 something is coming up from this
+5:52 function I'm gonna step back and I'm
+5:54 gonna let it take over so let's just run
+5:57 this and there we go
+5:58 so it says hello John and your course
+6:01 count is zero so let's just say later on
+6:04 you decided that the course count should
+6:06 be updated directly to at least like
+6:08 there is a default course whenever user
+6:10 should enroll to website he should be
+6:12 registered into that course you can just
+6:14 say one and can later on figure out how
+6:16 we can do that but let's just say we
+6:19 have hello John and your course count is
+6:22 one so this is known as default
+6:24 parameters and you should be really
+6:26 focused on that now you can have as many
+6:28 parameters as you wish if you wish you
+6:30 can define them if you wish you cannot
+6:32 like you want to define one but you
+6:34 don't want to define for another that is
+6:36 also fine it is totally and totally
+6:38 dependent on your use case scenario
+6:40 okay so we're gonna keep this video
+6:42 short let me quickly summarize that we
+6:44 always drive in function that we reduce
+6:46 the line numbers of number of line of
+6:48 code as well as we have also learned how
+6:51 we can have default parameters in
+6:52 functions in JavaScript and it's really
+6:55 simple in that just like assuming that
+6:57 it's available we just define it but we
+6:59 don't use anything like let or water or
+7:01 Const we just have it that this is gonna
+7:03 come up we assign a default value and
+7:06 that's it
+7:06 our default values are only gonna take
+7:09 up in front only if you don't pass on
+7:11 anything if you pass on anything they're
+7:13 gonna step down and this is gonna take
+7:15 up okay so I hope everything is clear so
+7:18 far and completely understandable so
+7:21 that's it for this video and I'm gonna
+7:23 catch you up in a next one
+7:25 [Music])
+
+6.Spread and REST operators in Javascript(0:00 looks good people first let me give you
+0:04 some spoilers these three dots followed
+0:08 by any variable name usually args but it
+0:11 can be a face it can be numbers it can
+0:13 be Superman usually we call it as Arg
+0:16 this is your spread operator and this is
+0:19 your rest operator so what's the
+0:22 difference between them the difference
+0:24 is what is the challenge that we are
+0:27 facing on based on this it automatically
+0:29 changes to either a spread operator or
+0:31 either a rest operator first we're going
+0:34 to talk about some of the scenarios that
+0:36 where they actually reside and then
+0:39 we're going to talk first and foremost
+0:40 about spread then we are going to talk
+0:42 about the rest
+0:43 notice here pay huge attention on what
+0:47 is the challenge in front of us if you
+0:49 understand the challenge it's easier
+0:51 nobody is gonna tell you that hey did he
+0:53 used it as a spread or a rest but as
+0:56 long as they are doing their job it's
+0:58 fine but having more clarity behind the
+1:01 scene is always good so let me show you
+1:03 that how what are the scenarios where
+1:07 they actually take care of the things
+1:08 for example there is a math library and
+1:12 as soon as you put a math dot it gives
+1:14 you a whole lot of values max flow or
+1:16 main around there's no shortage of them
+1:18 we use them a lot in some other cases
+1:20 and some of the other courses so we have
+1:23 these guys up here it has one of the
+1:25 value which is coming up which is a max
+1:27 and you can just use max like this and
+1:30 you can give as many values as like for
+1:32 example maybe two five seven five not
+1:37 five four you can give repeated values
+1:40 as well I just don't want to give them
+1:41 nine and probably eight ninety eight
+1:45 ninety it was not good eight there we go
+1:48 okay and what we can do is we can hold
+1:51 this into a returned value variable just
+1:54 like this and now I can go ahead and
+1:57 print this out I can copy this instead
+2:01 of making mistakes let's go ahead and do
+2:03 this now what you're gonna notice in
+2:05 this case is we get nine it
+2:07 automatically picks whoever is the
+2:10 biggest value now what if I remove this
+2:13 now
+2:13 it's gonna pick up the next value no no
+2:16 rocket science there but notice we were
+2:20 able to pass on multiple arguments or
+2:22 multiple numbers to it it works fine
+2:25 with five elements it works five with
+2:27 eight elements it works fine with nine
+2:29 element so somehow behind the scene this
+2:32 max method is defined in such a way that
+2:35 it can take as many lists of values as
+2:37 it can and this is not the only one we
+2:40 have other one as well let's just say I
+2:41 simply define I save or my object like
+2:46 this and this is gonna be an empty
+2:48 object initially there we go and now I
+2:50 can what I can do is I can call this
+2:52 object and I can use a dot assign here
+2:55 now once I used assign it requires you
+2:57 to pass on a couple of parameters first
+2:59 and foremost what is my target my target
+3:02 is this and then it requires the list of
+3:05 the sources so you have to pass an
+3:07 object here so let's just say a is gonna
+3:10 be one B is gonna be 2 and then we got C
+3:14 is gonna be 3 just like this and I can
+3:18 give another object so it's gonna be Z
+3:20 is gonna be 9 then Y is gonna be 8 and X
+3:26 is gonna be 7 and feel free to just
+3:29 separate a comma and add more key value
+3:32 pairs like an object we can actually do
+3:34 that what you're gonna notice after that
+3:37 that if I try to print this my object
+3:40 there we go let's see what is the result
+3:43 that I get a result which is compiled by
+3:47 mixing all the objects that I am giving
+3:50 it first it's putting up all these
+3:52 things into the target which is the very
+3:54 first parameter so two different things
+3:56 are happening here first and foremost we
+3:59 are somehow treating all the values is
+4:01 just like hey any value can be given up
+4:03 but here this is not the case the first
+4:05 needs to be an empty object or maybe an
+4:07 object where all these values will go
+4:09 away so there is a difference here so
+4:12 understand the difference here now let's
+4:14 go ahead and work bit more on that so
+4:16 we're gonna comment all of this above so
+4:18 that you can have them in the exercise
+4:19 file now let's go on to the very very
+4:22 basic probably the bare minimum basics
+4:24 we can have
+4:25 let's just say we're defining a function
+4:27 we are gonna call this one as someone
+4:29 because I'll be defining someone some
+4:31 two just like that and there we go this
+4:34 is your method so what happens is you
+4:37 simply say I'm expecting a and B to be
+4:40 passed on and once that is being passed
+4:42 on to me I'm gonna simply say a plus B
+4:44 so it's a bare minimum simple method
+4:47 which gives me the sum of the value now
+4:50 notice here a couple of challenges that
+4:51 we have first and foremost let's do a
+4:53 regular console.log as well so that we
+4:55 can see yes our method is working fine
+4:57 there is no issue with that so we're
+5:00 gonna just say five and fold probably so
+5:04 let's go ahead and run this and no
+5:06 problem in the function okay now let me
+5:09 show you one of the thing which is
+5:11 challenging in front of us let's just
+5:14 see you have instead of having a 5 + 4
+5:18 you are having an array let's call it as
+5:22 my a and this is an array of 5 & 4 can
+5:27 you pass on this because obviously these
+5:29 are two values and you can their
+5:31 function is expecting two values can I
+5:33 do this I'm gonna go ahead and say my a
+5:36 is it possible okay let's see what's the
+5:40 result and it says 4 & 5 & undefined so
+5:44 I don't know what to do with it and this
+5:47 is the fact that when the type of the
+5:49 data doesn't really match it happens let
+5:52 me show you by that if I just say 5 & 4
+5:55 and I just come up here and I say I also
+5:59 want to add one more on to this the
+6:01 result is pretty obvious it adds a 5 + 4
+6:05 + 1 is being ignored so anything that is
+6:07 what this function don't understand is
+6:10 gonna be ignored
+6:11 and same exactly same happen just right
+6:14 here so when I said hey I want you to
+6:16 add my a it first tried to do it and
+6:20 once it says I don't know what is
+6:22 happening so it just printed them as it
+6:23 is this is the challenge number one when
+6:26 your function expects individual value
+6:30 but you're value comes up as a pack or a
+6:34 bunch right now this is array but it
+6:36 come it can come up with variety of
+6:38 other bunches like
+6:39 maybe an object in that case if you
+6:42 don't want to change the function
+6:44 definition all you can do is come up and
+6:47 put up these three dots and now what is
+6:49 going to happen when I run this one here
+6:52 notice we get the nine back now surely
+6:55 if I go ahead and go a little bit wonky
+6:58 just like this this is not supposed to
+7:01 happen because again it's gonna turn it
+7:03 back it's gonna try to ignore these
+7:04 values so make sure you keep an eye on
+7:06 that but now what is this this is spread
+7:10 operator so I'm going to write it for
+7:11 you this is actually a spread operator
+7:15 what spread operator does it takes the
+7:17 group and it tries to spread it into the
+7:21 multiple values right now it is array
+7:22 but again I mentioned this one more time
+7:25 it can be in any other format maybe
+7:28 object may be anything else so this is
+7:30 first and foremost your spread in the
+7:32 spread currently what scenario we have
+7:35 is I don't want to change the function
+7:37 definition okay now I'm gonna just
+7:39 remove this console.log because I want
+7:42 to show you another syntax of this okay
+7:44 now let's just say what I want to do is
+7:47 I want to define a new function let's
+7:50 just say function and this time I don't
+7:52 want to add two values I'm going to call
+7:54 this one as some two I want to add as
+7:57 many values as you would like to give it
+7:59 to me
+8:00 so in that case what I'll say is I want
+8:03 to expect I don't know how many
+8:05 arguments are gonna come in two to add
+8:07 two numbers maybe five numbers maybe 10
+8:09 numbers so in that case when you are not
+8:12 very sure that how many arguments are
+8:14 gonna come in then you put three dots
+8:16 followed by a variable name args is most
+8:19 common variable name but it can be
+8:21 Superman to no problem in that now what
+8:24 you have to do is expect that this orgs
+8:26 is gonna be an array and we need to loop
+8:31 through the values so that is the most
+8:33 important thing always expect when you
+8:35 are having this kind of statement in the
+8:37 function that an array is gonna come up
+8:39 so how do we add the values it's pretty
+8:42 simple we are gonna simply say hey I got
+8:43 available which is sum and then we are
+8:47 going to simply use probably for off
+8:49 loop so I'm gonna use a for off loop and
+8:52 it says hey give me
+8:53 the traitor and an object to iterate for
+8:55 so I'm gonna simply say alcohol your ass
+8:57 argh and the object that you have to
+9:00 loop through it is gonna be orgs which
+9:02 is being given to us and here I'm gonna
+9:05 simply say hey some value is gonna be
+9:07 equal to sum plus whatever the argument
+9:11 is coming up so argh or I can do a
+9:13 shorthand notation of this one so I can
+9:15 go ahead and remove this and I can say
+9:17 plus equals both are exactly same once
+9:21 I'm all done I can come up here and I
+9:22 can say return this sum there we go nice
+9:27 and easy
+9:28 now how many values comes up I don't
+9:30 really care two values I'm gonna still
+9:32 loop through them 200 values I'm gonna
+9:35 still loop through them okay let's go
+9:37 ahead and try this one so I'm gonna
+9:39 simply say log this one is gonna be some
+9:41 to come on some to there we go and let's
+9:46 just try with two and three just the two
+9:48 values let's see what is the result this
+9:50 time it says five okay nice and easy no
+9:53 problem in that one it was pretty easy
+9:55 let's just say we're gonna add one and
+9:57 five and seven let's see what happens in
+10:01 this one and there we go you can do the
+10:03 mathematics on your side as well it's
+10:05 absolutely correct we got 18 up here
+10:08 okay now this is all good and all okay
+10:11 now let's go on to third part so here we
+10:13 understood this is this was above one
+10:16 was the spread operator this is the rest
+10:18 operator it does a little bit different
+10:21 things so let me show you one more thing
+10:22 up here it's important that you see what
+10:24 is this thing here so let's just go
+10:27 ahead and log this orgs at least take a
+10:30 look at what this argh
+10:31 looks like notice here args convert
+10:35 individual value into the array so yes
+10:38 ambe's are almost like reverse of each
+10:41 other the other one what this was doing
+10:43 this was actually taking these array and
+10:47 trying to separate them out individually
+10:49 and passing it as an individual values
+10:52 but when we use it like in this syntax
+10:54 this is now a rest operator means it's
+10:57 gonna spread out or basically you can
+11:00 say it's gonna take these individual
+11:02 values and it's gonna bunch them
+11:04 together into an array and that's why we
+11:06 are able to
+11:06 use the for off loop maybe you want to
+11:08 use for each that's 100% fine
+11:11 okay a little bit more I think you want
+11:14 a little bit more now notice here we saw
+11:16 involve the syntax that first value was
+11:19 treated as bit different can we do
+11:22 something like this maybe for some weird
+11:25 reason you want to take first two values
+11:27 always want to return a product of it
+11:30 maybe multiplication and for rest of the
+11:33 values these values are going to be
+11:35 added up so can we pull this off
+11:37 absolutely it's super easy all you have
+11:39 to do is come up here and say a comma B
+11:42 and comma so now the first two arguments
+11:45 will be treated as an A and B individual
+11:48 parameters or arguments and rest of them
+11:50 will go into args so notice here ORS are
+11:53 being handled up here let's go ahead and
+11:55 handle these a and B so I'm gonna simply
+11:58 say let multi and multi is gonna be
+12:01 simply a multiplied by B there we go
+12:05 nice and easy
+12:05 while returning I don't want to return
+12:08 the sum I actually want to return an
+12:10 array there are multiple ways of how you
+12:12 can return to values may be a string may
+12:14 be an array object there are a lot of us
+12:16 I'm gonna go with the easy one I'm gonna
+12:18 call this multi now what is happening
+12:20 the first two value will be inside this
+12:23 multi so the product will be returned
+12:25 and rest of them will just go like as it
+12:27 is notice here args now is gonna ignore
+12:31 first two elements so inside the arcs
+12:33 when you are calculating the sum or
+12:34 looping through them two and three are
+12:36 gonna be ignored by here and the easy
+12:39 way to find it out is gonna be saying 1
+12:41 1 and 1 so now it's easier to see what's
+12:44 going to be the result let's go ahead
+12:46 and see that as well
+12:47 run that and now you're gonna see this 1
+12:50 1 1 is actually coming up because we
+12:53 actually console dot log Det all the
+12:55 arguments making my point again the
+12:57 first two values are being ignored the
+13:00 notice at the sum so the sum is first
+13:03 and formost
+13:04 we got this sum here which is 3 so 3 is
+13:08 the sum of last 3 values and the product
+13:11 the multi which we are getting is 2
+13:14 multiplied by 3 which we all know in
+13:16 this much of mathematics and we get a 6
+13:18 up here so there we go now you and
+13:20 stand about the spread operator the
+13:23 multi operator and some of the things
+13:25 which object dot assign my object or
+13:27 return dot math values they are pulling
+13:30 off behind the scene and yes 100 percent
+13:32 they are written exactly like this not
+13:35 100 percent exactly because some of them
+13:37 don't use these modern es6 approach but
+13:40 yeah behind the scene you can say they
+13:42 are almost similar to that ok quite a
+13:44 lot I know this will has too much often
+13:46 very intense video go ahead take a break
+13:48 get yourself a nice tea after hitting
+13:50 that subscribe button and let's catch up
+13:52 in next one
+13:56 [Music])
+
+7.Javascript Interview Questions ( Currying ) (0:00 while preparing for this video a lot of
+0:02 interviewers told me that currying is
+0:03 the topic whose questions are the one a
+0:06 lot of candidates fail to answer
+0:08 just because they don't know how it
+0:10 exactly works or don't have their basics
+0:12 right so what is this carrying anyway
+0:15 carrying is a function that takes one
+0:17 argument at a time and returns a new
+0:19 function expecting the next argument it
+0:22 is a conversion of functions from
+0:24 callable as this
+0:26 into callable as this
+0:28 and curried functions are constructed by
+0:31 chaining closures by immediately
+0:33 returning their inner function
+0:34 simultaneously so if you haven't watched
+0:36 the last video of this series which was
+0:38 on closures you can watch that video by
+0:40 clicking on link in the description or i
+0:42 button above now don't worry if you're
+0:44 unable to understand what i just
+0:45 explained by the end of this video
+0:47 you'll be able to answer most of the
+0:48 questions that can be formed on currying
+0:51 so let's understand it with an example
+0:53 okay so i've opened vs code over here
+0:54 with basic html css and javascript files
+0:58 and let's understand carrying with this
+1:00 simple example so as i mentioned we have
+1:02 a function
+1:04 f with params a comma b
+1:07 and it prints
+1:10 a comma b so when we convert this type
+1:13 of normal function into this type of
+1:16 format this is called carrying so let's
+1:19 see how we can do that so instead of
+1:21 writing this
+1:22 we can write a function
+1:26 f with param a
+1:28 and as i mentioned in carrying a
+1:31 function takes one argument at a time
+1:33 and returns a new function expecting the
+1:35 next argument so we're gonna
+1:37 return a new
+1:38 function we're going to keep it as
+1:41 anonymous function
+1:44 with no name and with the b parameter
+1:46 and inside of this we're just going to
+1:47 simply console log
+1:49 a comma b just like before okay let's
+1:52 try to run this
+1:54 i'm gonna console log
+1:56 function with value five let's see what
+1:59 do we get when we run this much of the
+2:01 code so let me run this by
+2:03 opening with live server
+2:06 there we go let's go to the console
+2:09 and in the console you can see we get
+2:11 another function over here so how do we
+2:13 run this
+2:14 we can
+2:15 go over here and since this is returning
+2:18 us a function what we can do is we can
+2:21 call it just like this with something
+2:22 else so let's say if i enter 6 over here
+2:25 let's see what do we get but you know
+2:26 what instead of this i'm just gonna say
+2:28 return
+2:31 with a
+2:32 and
+2:34 b
+2:37 just like that
+2:39 so and without this
+24:3 we get this function returned to us so
+2:45 this is how carrying works this is how
+2:46 we convert a normal function into a
+2:49 function which is carried there can be a
+2:51 lot of levels to this we can have more
+2:54 parenthesis over here just like this so
+2:56 it depends on how deep the carrying is
+2:58 and we're gonna discuss all the types of
+3:00 question that interviewers can ask you
+3:02 during the interview process now there's
+3:04 an interview question where interviewer
+3:06 can ask you why do we use carrying so
+3:08 there can be a lot of answer to this
+3:10 question to avoid passing the same
+3:11 variable again and again to create
+3:13 higher order functions to make your
+3:15 function pure and less prone to errors
+3:18 so actually this is more of a theory
+3:19 question so instead of making this video
+3:21 too long i've written a blog on curing
+3:23 which you can check out by clicking the
+3:24 link in the description below and follow
+3:26 along with this video in that blog i
+3:28 have included a lot of theory questions
+3:30 and all of the interview questions that
+3:31 i'm going to discuss in this video as we
+3:33 move along so definitely go and check
+3:35 out that blog with link in the
+3:36 description below all right so let's get
+3:38 down to our first question which is how
+3:40 will you implement this sum function
+3:43 like this and what this function should
+3:45 do is this function should sum all of
+3:48 the parameters that are provided to this
+3:50 parenthesis so this is actually very
+3:52 similar to the example that i discussed
+3:54 few minutes ago so i will highly
+3:56 recommend you to go and try this
+3:57 question yourself first so pause the
+3:59 video right now and try this question
+4:01 yourself and then continue with this
+4:02 video
+4:05 so i hope you are able to solve this
+4:06 question let's go and understand how we
+4:08 can do this so as i explained to you we
+4:11 have a function first let's go from
+4:14 scratch so how i would explain this
+4:16 question to the interviewer is so i'll
+4:18 go and explain by creating a normal
+4:20 function first sum with three parameters
+4:22 let's say a b and c
+4:25 and return
+4:27 a plus b plus c just like that and if we
+4:31 go and console log this
+4:34 some
+4:35 let's say 2 comma 6 comma 1
+4:39 so we'll obviously get the output 9 but
+4:41 how do we implement it
+4:43 just like this so right below this
+4:45 actually i'm going to comment it out
+4:46 first
+4:47 yeah below this i'm going to create
+4:49 another function
+4:50 sum
+4:51 which takes a and insert this as we
+4:54 already discussed incurring a function
+4:56 takes one argument at a time and returns
+4:58 a new function expecting the next
+5:00 argument we're gonna create a new
+5:01 function which will give us another
+5:03 argument
+5:04 so
+5:05 i'm gonna create a function
+5:07 an anonymous function with parameter of
+5:10 b
+5:11 and after that i'm gonna create since we
+5:13 have another uh parameter over here
+5:15 another parenthesis so
+5:17 i'm gonna return
+5:19 another function
+5:21 with
+5:22 c oops c and inside of this finally we
+5:25 can return our answer
+5:28 which is going to be a plus b plus c
+5:32 now if we go on and run this
+5:36 sum a i mean two
+5:40 and then six
+5:41 and then
+5:43 one
+5:45 and go and check it out
+5:48 yep we got the same output now if you
+5:50 want to explain this in much more in
+5:52 depth to the interviewer you can explain
+5:54 this just the way i explained you so you
+5:57 can
+5:58 start by
+5:59 one parameter you can say that if we
+6:01 provide it to then it's going to return
+6:02 us a function which is going to expect
+6:05 another parameter b
+6:06 and when we provide it b
+6:09 which let's say we provide 6
+6:11 that's going to expect another parameter
+6:13 which is c
+6:14 so we're going to provide it the third
+6:17 parameter as well and then we are going
+6:18 to get the final answer which is going
+6:20 to be a plus b plus c
+6:23 all right so our next question is this
+6:25 we need to create a function called
+6:26 evaluate and we provide it a parameter
+6:29 of sum multiply divide or
+6:32 subtract so we can provide this either
+6:34 of these operations and after that we're
+6:36 going to provide it to parameters over
+6:39 here which are going to give us the
+6:40 result according to this so if this is
+6:42 sum this is going to add this if this
+6:43 multiplier is going to multiply this and
+6:45 so on so we're going to go on and create
+6:47 a function over here
+6:49 called
+6:50 evaluate
+6:52 and first thing that is going to be
+6:53 taking is this type of operation so i'm
+6:56 going to give this operation parameter
+6:59 inside of this
+7:01 is obviously going to return another
+7:03 function because it because it is
+7:05 expecting another argument so we're
+7:07 going to provide it
+7:09 we're going to return another function
+7:13 which is going to be anonymous function
+7:14 and i'm going to give this let's say a
+7:16 and inside of this it's going to be
+7:18 expecting another parameter so i'm going
+7:20 to return another function
+7:22 which is going to have a parameter b and
+7:24 now insert this with respect to this
+7:26 operation we're going to give
+7:28 the output so i'm going to check if
+7:31 operation
+7:32 is equals to sum then return a plus b
+7:37 and so on so let me write this quickly
+7:39 just like that otherwise let's return if
+7:43 the none of the operations are there
+7:44 then i'm just gonna return
+7:46 invalid
+7:47 operation
+7:49 cool
+7:50 all right let's try to run this so i'm
+7:52 gonna say evaluate
+7:54 and i'm gonna
+7:56 write sum over here and i'm going to
+7:58 provide this
+7:59 let's say 4
+8:01 and 2. let's see what do we get
+8:04 oh i need to console log this
+8:09 all right we got 6 over here let's see
+8:11 we will try to give this multiply
+8:16 okay we got multiply so we so you can
+8:18 write this actually in some other way as
+8:20 well so i'm going to create a const
+8:23 mul
+8:25 and i'm gonna provide this evaluate
+8:29 multiply so this is one of the use cases
+8:32 of carrying since we have provided this
+8:34 multiply over here this will always
+8:36 perform multiply so you can reuse this n
+8:38 number of times so if i go on
+8:40 console.log mul and mult will all
+8:43 obviously will have this function
+8:45 returned to it so
+8:47 we can say
+8:49 3
+8:50 5 which should give us 15.
+8:54 and we can reuse it again
+8:57 let's say 2 and
+8:59 6 which should give us 12. so we should
+9:02 have 15 and 12 as an output yep just
+9:04 like that so you see this is one of the
+9:06 use cases of carrying that we
+9:07 initialized our function once with
+9:10 multiply or whatever that we wanted to
+9:12 so we we're not initializing it again
+9:14 and again by providing multiply every
+9:15 time we call this so we just provided it
+9:17 and initialized it once and now we can
+9:19 use this mul function over here to
+9:22 multiply these numbers again and again
+9:24 so during the interview you can explain
+9:25 all of these things to the interviewer
+9:27 and the interviewer will really be
+9:28 impressed now our next question is on
+9:30 infinite carrying so what is infinite
+9:33 carrying so interview will ask us to
+9:35 write a function which we can call just
+9:37 like this with n number of parameters so
+9:39 if your function like this sum and we
+9:41 can say 1
+9:43 1 and 2. so this should give us 3 but we
+9:46 can also call this function like this
+9:50 we can add f4
+9:51 5 or we can add n number of parameters
+9:54 after this
+9:55 and this should be flexible according to
+9:57 the number of parameters and should give
+9:59 us the answer accordingly which in this
+10:01 case is going to be 12. so how do we do
+10:03 this so this question was actually asked
+10:05 to me during my cast 24 interview and
+10:07 i've already discussed in this cast 24
+10:09 interview experience video so i'm going
+10:11 to go on and play that clip right here
+10:13 so the interviewer provided me with this
+10:14 code snippet and he asked me to
+10:16 implement this add function so let's see
+10:19 how we can implement that so we create a
+10:21 function
+10:22 called add
+10:23 and it takes a parameter
+10:26 let's say a
+10:27 okay
+10:28 so
+10:29 we have a bunch of parameters over here
+10:32 so it's obviously going to return a
+10:33 function
+10:34 then we are going to call that function
+10:36 with another parameter with another
+10:38 parameter so it it can go infinite right
+10:40 it's not it's just not that we have to
+10:42 implement it till five two four five and
+10:44 then that's it because that will be easy
+10:46 right so if i so let me remove this
+10:48 complexity for now and i'm just going to
+10:51 implement with just two parameters so
+10:52 this function a and it's obviously going
+10:54 to return a function so i'm going to say
+10:55 return function b let's say
+10:59 or let's say anonymous function
+11:01 and it's going to take b and
+11:04 then instead of it i'm just going to
+11:05 return another function
+11:09 which will have let's say a plus b
+11:12 okay
+11:15 right so now if we go on and execute
+11:17 this you're gonna see we get the output
+11:19 as 7
+11:20 yep just like that but we don't want
+11:22 that we don't want this much complexity
+11:23 right so we want to create we want to
+11:26 write a code which works infinitely so
+11:28 if i let's say go on and add
+11:31 4 and 8 over here this should adapt to
+11:35 that code so what i'm going to do i'm
+11:37 going to remove this inner function and
+11:40 i'm going to say
+11:41 we have two of these but then i'm gonna
+11:44 check if we have any more params or not
+11:47 so i'll check if
+11:49 b
+11:50 has a param then just return
+11:55 this add again i'm just gonna provide
+11:57 the value of a plus b and just continue
+11:59 this so a plus b
+12:02 and that's it but if b
+12:05 doesn't have any value inside of it that
+12:07 means it's coming to an end so i'm just
+12:09 gonna return
+12:11 a
+12:12 so let me explain this again to you so
+12:14 let's say we have 5 2 4 8 over here so
+12:17 first of all we provided it with the 5
+12:19 and it returned us a function
+12:21 okay so then we again called it with two
+12:25 we called b with the two but if it's
+12:27 gonna check if two is there or not if
+12:30 there is some value inside of b or not
+12:32 only then it's going to return the
+12:34 addition otherwise it's just going to
+12:36 return the initial 5 value the sum of
+12:39 those numbers up until that point so
+12:41 okay so we did have 2 at that point
+12:44 so we said okay if 2 is there then
+12:47 return a plus b so 5 plus 2 was returned
+12:51 so 5 plus 2 that is 7 went inside of
+12:54 this function so now its value is 7 over
+12:56 here
+12:57 but then again it's going to return
+12:59 another function
+13:00 then it's going to check if we are
+13:02 calling that function as empty but no
+13:04 this is not empty it has four inside of
+13:06 it so then again it's going to check if
+13:09 there's something inside of the b then
+13:10 return a plus b so at this point a value
+13:13 was seven so it's gonna say seven plus
+13:16 four that is eleven so it's gonna pass
+13:19 11 to that so this cycle will run again
+13:21 and again and again until we reach this
+13:24 point so up until this point the value
+13:26 was 19 so then it's gonna have a 19
+13:29 value over here and it's going to return
+13:31 a function again and then it's going to
+13:33 check if b has something but here b
+13:36 doesn't have anything so it's not going
+13:37 to go inside of it and it's just going
+13:39 to return a that is 19 from here so our
+13:42 answer is going to be 19. yep we got
+13:45 this output over here now the next
+13:47 question that the interviewer can ask
+13:49 you is the difference between carrying
+13:51 and partial application now what is this
+13:53 partial application let's see now you
+13:56 may have start to think that the number
+13:58 of nested functions a curried function
+14:00 has depends on the number of arguments
+14:02 it receives and yes that is what makes
+14:05 it a curry let's take some example so if
+14:07 we have a function
+14:10 sum with a
+14:11 and it returns
+14:13 another function
+14:15 which has b comma c
+14:17 and then they return
+14:19 a
+14:20 plus b plus c
+14:22 just like that and this can be called
+14:24 like this
+14:27 and we provided 10
+14:29 and then we can call x like this
+14:33 let me console log this
+14:36 or
+14:37 it can be called as
+14:39 sum
+14:40 it can be called directly
+14:42 as so you get it what i'm trying to
+14:45 explain right so it can be called in
+14:47 either of these ways so you get what i'm
+14:49 trying to explain right it can be called
+14:51 in either of this or these way so these
+14:53 function expect three arguments and has
+14:55 two nested functions unlike our previous
+14:58 version that expects three argument and
+15:00 has three nesting functions so the first
+15:02 question that we discussed in which the
+15:03 sum had three nesting functions and had
+15:06 three arguments so that is what our
+15:07 statement was right that the number of
+15:09 nested functions a carried function has
+15:11 depends on the number of arguments it
+15:13 received but in this case that is not
+15:15 the case in this case we have three
+15:17 arguments but we are only returning two
+15:20 functions over here so this right here
+15:22 is not carrying we just did a partial
+15:25 application for this sum function what
+15:27 partial application does is partial
+15:29 application transform a function into
+15:31 another function with small arity also
+15:34 if you don't know arity just means the
+15:36 number of operands or the arguments a
+15:38 function receives so if we were to write
+15:40 this same function with carrying we
+15:42 would have written it something like
+15:43 this because in this we have three
+15:45 arguments and we are returning three
+15:47 functions
+15:48 but in this we have three arguments but
+15:50 we are returning only two function so
+15:52 that is the difference between carrying
+15:54 and partial application this right here
+15:56 is partial application now in some cases
+15:59 interviewer can ask you to explain a
+16:01 real world scenario for using carrying
+16:03 while developing our web applications we
+16:05 can actually use carrying to manipulate
+16:08 our dom as well so let me give you an
+16:09 example right here and you can give the
+16:11 same example to your interviewer as well
+16:13 so i'm gonna go to the html file and i'm
+16:15 gonna add another h1 tag over here
+16:17 called hello
+16:19 push and here it is
+16:21 now i'm going to go to our javascript
+16:22 file so right here i'm going to create a
+16:24 function
+16:25 called update element text and this is
+16:27 going to take an id
+16:29 and inside of this i'm going to create
+16:30 another function
+16:32 which will take content
+16:34 and inside of this i'm just gonna write
+16:37 document
+16:38 dot query selector and i'm gonna provide
+16:40 this the id
+16:43 hashtag id
+16:45 oops
+16:46 just like that
+16:49 dot and i'm going to update the text
+16:51 content to be the content provided right
+16:54 over here now what we can do is we since
+16:57 we have an id over here oops i haven't
+16:59 provided the id so let me give this id
+17:02 of
+17:03 heading
+17:05 let's take this id
+17:08 now what we can do over here is we can
+17:09 just initialize this function with our
+17:12 id once and we can update the
+17:15 text
+17:16 of our heading again and again by
+17:17 calling this uh the function that will
+17:19 be returned from this so let me show you
+17:21 so const
+17:22 update header
+17:25 and i'm gonna call update element text
+17:27 and i'm gonna provide this this heading
+17:30 id now we can use this update header
+17:34 again and again every time we want to
+17:36 update the text inside of this heading
+17:39 right over here
+17:40 so let me show you i'm just gonna call
+17:44 update
+17:45 header right here and i'm gonna say
+17:47 hello
+17:49 roadside coder
+17:52 and let's see yep you see we have
+17:54 updated it or we can write
+17:58 to roadside coder
+18:00 and you see it has been updated so yeah
+18:02 we can use this function again and again
+18:04 in our code according to let's say the
+18:06 condition if we click on a button we can
+18:07 call this function again and again we
+18:09 don't need to use query selector again
+18:10 and again by providing it the id we just
+18:12 need to initialize it once and we can
+18:14 use it just like this so yeah you can
+18:16 give this answer to your interviewer and
+18:17 they will definitely be impressed and
+18:19 think that you've used carrying in your
+18:21 apps before now do you remember in the
+18:23 beginning of this video i gave you an
+18:25 example on how we can convert a function
+18:28 like this into this and this is what a
+18:30 carried function is
+18:32 so how about we write a function called
+18:34 curry which converts this function into
+18:38 this function now this is the most
+18:40 important question of this video now
+18:42 this question is usually asked during
+18:44 the senior interviews but can sometimes
+18:46 be asked during junior interviews as
+18:48 well so let's add a function called
+18:50 curry which converts a normal function
+18:52 into a curried function
+18:55 so i'm going to write function
+18:57 curry
+18:58 and this is obviously going to take a
+19:00 function so i'm going to provide a
+19:02 function right here and this is going to
+19:04 return us
+19:05 a curried function which will look
+19:08 something like this
+19:10 so i'm going to return carried
+19:13 function
+19:15 or just carry it funk so this is going
+19:17 to take all of the arguments of the
+19:19 function in the form of the array so
+19:21 args right here will be the array of all
+19:24 of the arguments so what we'll do over
+19:26 here is i'm gonna check if
+19:29 function
+19:30 dot length is more than equals to
+19:33 args dot length
+19:35 so that is what carrying is right if the
+19:37 function dot length is equals to
+19:38 args.length because the number of
+19:40 argument has to be the equals to the
+19:42 number of functions returned so if it's
+19:43 not equal then what we'll do is this is
+19:45 this is actually our base case to check
+19:47 if it's not then we're going to return
+19:50 a
+19:51 funk
+19:53 with args else we will return a function
+19:56 which will collect all of the next
+19:57 arguments that are going to be returned
+19:59 to us spreading the values of the
+20:01 arguments first and then the next
+20:02 arguments calling the correct func
+20:04 recursively so let me show you it's
+20:07 going to be a little confusing but don't
+20:08 worry i'm going to explain you after
+20:09 writing this whole thing so let me write
+20:11 this out first so return
+20:15 function
+20:18 with all of the next arguments and
+20:20 inside of this i'm gonna call this
+20:22 curried funk
+20:25 with args
+20:28 and of the next arguments until this
+20:30 becomes more than all of the arguments
+20:33 of function length so yeah let's test
+20:35 this out and i'm going to explain to you
+20:36 after that
+20:38 so we have a function sum over here and
+20:40 inside this curry function we're going
+20:41 to provide this sum function right over
+20:43 here and inside this total sum we will
+20:46 have this curried funk now this thing
+20:49 will be a carried function so i'm going
+20:51 to call it just like this
+20:53 so let's see we should get the output
+20:56 oops i made a mistake over here so
+20:58 i'm going to check if args.length
+21:02 is more than equals
+21:04 function dot length
+21:06 yeah now let's see
+21:07 so yeah we get this output six now let's
+21:10 understand how this whole thing is
+21:12 working
+21:13 so we've created a function sum over
+21:15 here right which takes four arguments
+21:18 and it calculates the sum for it okay
+21:20 then we have created a variable total
+21:22 somewhere here and we're passing this
+21:24 sum function to this curry
+21:26 implementation that we have done right
+21:27 over here okay cool then we're calling
+21:31 this total sum just like this
+21:34 in a carried way
+21:35 so let's see what's happening we've
+21:37 provided this 1 to this so obviously
+21:39 when we do this this is going to return
+21:42 as a function which is going to be this
+21:43 carried func right so we have supplied
+21:46 it one first of all so one will be
+21:49 supplied to it then it goes inside of it
+21:51 it's gonna check
+21:52 arcs dot length so arcs length right now
+21:55 is just one so let me show you if i go
+21:58 on console log
+22:00 and i'm going to say args.length
+22:02 and i'll also do func dot length
+22:06 oops
+22:08 first time the number of arguments were
+22:10 1 and
+22:12 length of the function was 4 that is
+22:14 these four functions
+22:16 second time the length of argument was 2
+22:18 then 3 then 4 and the moment the number
+22:21 of argument exceeded it's gonna call
+22:23 this function right over here with all
+22:25 of the arguments so i'm going to explain
+22:27 you as we move along so let's do this
+22:29 step by step so i'm going to comment
+22:30 this line now so yeah first time we have
+22:32 called it with this one so it's gonna
+22:35 check rx dot length so our short length
+22:37 right now is one obviously it's not more
+22:39 than the function.length so it's not
+22:40 going to go inside of it it's going to
+22:42 go over here now this is going to call
+22:44 this correct func over here recursively
+22:46 so what this will do is this will return
+22:48 us a function expecting next arguments
+22:51 so if i remove this for now
+22:54 and run this you're gonna see that it
+22:56 returns us another function which is
+22:58 expecting the next arguments because
+23:00 obviously the
+23:02 criteria for this is not satisfied
+23:0)
+
+8.Debounce And Throttle(0:00 debouncing and throttling are great ways
+0:02 to not only improve your user experience
+0:04 but also save yourself quite a bit of
+0:06 money in this video i'm going to show
+0:08 you how to use debounce and throttling
+0:09 in javascript as well as comparing the
+0:11 differences between them
+0:13 [Music]
+0:16 welcome back to web dev simplified my
+0:18 name is kyle and my job is to simplify
+0:20 the web for you so you can start
+0:21 building your dream project sooner in
+0:23 today's video i'm goingd to be talking
+0:24 about throttle and debounce and why
+0:25 they're important to understand to get
+0:27 started i have a basic index html file
+0:30 which just has a text input as you can
+0:31 see on the right-hand side here it has a
+0:33 default tab which we can put some text
+0:35 inside of a d-mount section which some
+0:37 text we can add and a throttle section
+0:39 where we can add some text just so we
+0:40 can compare the differences between the
+0:42 default behavior debounce behavior and
+0:44 throttle behavior i also have all of
+0:46 those elements selected so we can
+0:47 actually work with them the first thing
+0:49 i want to talk about is how we can
+0:50 actually see the differences between d
+0:52 bounce throttle and why they're
+0:53 important let's take our input element
+0:55 and i want to add an event listener for
+0:56 whenever our input changes so anytime
+0:58 that we type anything into our input
+1:00 this event listener is going to run and
+1:02 all i want to do is i want to take our
+1:03 default text and i'm going to set the
+1:05 text to the value of our input
+1:07 so what this is going to do is every
+1:08 time i type something you can see it
+1:10 shows up in this default section down
+1:12 here now when you're just working
+1:14 locally on your computer this works fine
+1:15 i mean this is super quick it's not
+1:17 going to cause any performance problems
+1:18 it doesn't matter what your network
+1:19 connection is and that's just because
+1:20 we're just storing everything locally in
+1:23 our page what happens if let's say this
+1:25 is like an auto complete box and i start
+1:26 typing something and what it does is
+1:28 actually goes to the server and queries
+1:30 a bunch of information to say hey give
+1:32 me everything that you know has said in
+1:34 the name for example and then it brings
+1:35 you back a list so imagine you're like
+1:37 querying a movie database and you want
+1:38 to find all the movies with the name
+1:40 matrix in them well what it's going to
+1:41 do is as you type each character it's
+1:44 going to send a brand new request
+1:45 because this event gets fired every
+1:47 single time you type a character so when
+1:48 i type m it's going to make a request
+1:50 for all the movies that start with m
+1:51 then when i hit a it's now going to look
+1:53 for all the movies that have m a in them
+1:55 and then t and r and i and x and just by
+1:57 typing out the word matrix we made six
+1:59 requests to our server which are all
+2:01 going to come back at different rates
+2:03 and that is not only going to cause some
+2:04 ui problems but also that's a huge
+2:06 burden for the people using your code
+2:08 because now they just made six network
+2:10 requests downloaded them and if they're
+2:12 on a slow connection or using data
+2:13 that's going to burn through their data
+2:15 and it's going to really slow down the
+2:16 app if their connection is not quick
+2:18 enough to keep up this is where
+2:19 debouncing and throttling come in really
+2:21 useful they are there as a way to
+2:23 actually slow down a function instead of
+2:25 calling a function every single time
+2:27 what it's going to do is it's only going
+2:29 to call that function after a set delay
+2:31 and that delay is going to be different
+2:32 based on debouncing and throttling they
+2:34 have a different way of working so the
+2:35 way that d bounce works is instead of
+2:37 running the function every single time
+2:39 that you do something in our case every
+3:40 time we type a character it's going to
+3:41 run the function instead what happens is
+3:43 it says hey has there been a delay since
+3:45 the last time you tried to call this
+3:47 function so when i type s it's going to
+3:49 call the function but it's going to wait
+3:51 it's going to wait let's say one second
+3:53 and as long as nothing changes in that
+3:54 one second then the function will run
+3:56 but if during that one second i type
+3:58 another character well it's going to say
+4:00 okay something has changed reset our
+4:02 timer back to one second and wait to see
+4:04 if anything has changed if i type
+4:06 another character in that one second it
+4:07 resets again essentially debounce waits
+4:10 until there's been at least a set period
+4:11 of time in our case one second before it
+4:14 actually calls the function so let's
+4:15 look at implementing a debounce version
+4:18 of this we'll come in here we'll create
+4:19 a function called debounce and the way
+4:21 this debounce function is going to work
+4:23 is i'm going to pass it a callback
+4:24 function i'm going to pass it a delay
+4:26 and our just delay is going to be
+4:27 defaulted to one second
+4:29 and inside here what we want to do is we
+4:30 want to call this callback function
+4:32 after the delay as long as we haven't
+4:34 recalled our debounce in the past and
+4:36 the way this debounce function works is
+4:38 we give it a function inside of it so
+4:40 what we can do is we can say like update
+4:42 the bounce text is going to be the
+4:43 function we create we're going to call
+4:45 deep bounce we're going to pass it in a
+4:47 callback and this callback is going to
+4:49 take in the text you want to update and
+4:51 it's just going to take our debounce
+4:52 text
+4:53 and it's going to update it
+4:55 so just like this all we're doing is
+4:58 we're just updating the text for our d
+4:59 bounce text and that's what we're
+5:01 passing as our callback to this function
+5:02 now inside of here we need to do the
+5:04 logic to make sure that this callback is
+5:06 only called a limited amount of times so
+5:08 first of all we need to return it as a
+5:09 function because the way we're going to
+5:10 call this is we'll say update debounce
+5:12 text
+5:13 we're going to pass in that text just
+5:14 like that so now this d bounce needs to
+5:17 return to us a function and this
+5:18 function is going to take in any amount
+5:20 of arguments it doesn't matter we want
+5:21 to make sure it's generic because if we
+5:23 have a callback that takes in 10
+5:24 arguments one argument zero arguments it
+5:26 doesn't matter this is going to get all
+5:28 of the arguments and inside of here we
+5:30 want to set up that timer so we're going
+5:32 to choose a set timeout for that and the
+5:34 set timeout is just going to inside of
+5:36 it call our callback with our arguments
+5:38 we're going to spread those out
+5:39 and we're going to make sure we to wait
+5:41 for our delay
+5:42 so by default what this does is it's
+5:43 just forcing our function to wait one
+5:46 second before it actually runs so if we
+5:48 save this and we just hit a here you can
+5:50 see after one second the text and d
+5:51 bounds changes to a if i change the text
+5:54 here you can see after one second each
+5:56 element is going to be putting itself in
+5:57 there but that's not how d balance works
+5:59 that's just delaying things by a second
+6:01 we want to make sure all of those calls
+6:03 for the a the s the d they actually
+6:05 don't run until we're done typing
+6:07 everything completely so the way we do
+6:09 that is we just save a variable here for
+6:12 our timeout
+6:13 so we'll set it to nothing by default
+6:15 and then here we're going to say timeout
+6:17 is equal to this and what i want to do
+6:18 is i just want to clear that timeout
+6:20 every time i call this function so now
+6:22 what's happening is when i call debounce
+6:23 here i'm running this function i'm
+6:25 creating this timeout variable and i'm
+6:26 returning a new function and inside this
+6:29 function i'm just clearing out our
+6:30 current timeout and creating a new one
+6:32 so every time that my input changes i
+6:34 call this update function and this
+6:36 update function clears my original
+6:37 timeout and starts a new one second
+6:39 timer so as long as there's less than
+6:41 one second delay between calling this
+6:42 function it'll never do anything it
+6:44 waits until there's at least a one
+6:46 second delay before it actually runs
+6:48 let's take a look at that if i type in
+6:49 something and i make sure that there's
+6:51 never a second delay i always type
+6:53 things quick enough now if i wait a
+6:54 second you can see that that function
+6:56 runs and it ran just one time it updated
+6:59 all the input at once same thing if i
+7:00 just start deleting things as long as i
+7:02 don't have more than a second delay it's
+7:04 going to wait until there's a delay and
+7:06 then it's going to call that function
+7:08 this is really important because again
+7:09 if you're fetching from an api you don't
+7:11 want to fetch every single time they
+7:13 type a character like we're doing in
+7:14 this default here we want to wait until
+7:16 they're done typing and then we make
+7:17 that fetch so you might make this delay
+7:19 shorter you know for example we could
+7:20 change the delay here to like 250
+7:22 milliseconds now as long as there's a
+7:24 250 millisecond delay it's going to make
+7:26 that api request and it's not going to
+7:28 really be noticeable to the user but
+7:30 it'll drastically increase the speed for
+7:32 them because they're not having to make
+7:34 10 requests if you type 10 characters
+7:36 and it's going to save you a lot of
+7:37 money because you won't have 10 requests
+7:38 hitting your server so debouncing is
+7:40 really useful in these scenarios where
+7:42 you have auto complete that you need to
+7:44 do where like people are typing in
+7:45 things essentially debounce is great
+7:47 when you want to make sure you do one
+7:48 request after everything is changed like
+7:50 if you have a bunch of changes happening
+7:52 all at once you can kind of batch them
+7:53 up and send them all off at once with
+7:55 the d-bounce throttle on the other hand
+7:56 is a little bit different than d-bounds
+7:58 throttle works where it delays your
+8:00 function call but instead of waiting
+8:02 until everything is done what throttle
+8:04 does is it says okay as soon as you make
+8:05 a change i'm going to send off a request
+8:07 and then every single second if that's
+8:09 your delay i'm going to continually send
+8:11 a new request based on whatever the last
+8:13 input was so in the throttle example
+8:16 let's say i type s it's going to send a
+8:17 request and then let's say i type fds a
+8:20 or e and then after that it's been one
+8:23 second now it's going to send this and
+8:25 if i just continue typing after one
+8:26 second it's going to send whatever the
+8:27 new value is and again after one second
+8:29 it sends the new value until there are
+8:31 no more changes this is great where
+8:33 things are changing a lot and you want
+8:35 to be able to just make sure you send
+8:36 the most recent request so for example
+8:38 if you're resizing a window or you're
+8:40 doing scrolling it's really useful to do
+8:42 throttling in that case because you
+8:44 don't really want to wait until they're
+8:45 done resizing or done scrolling you want
+8:47 to figure out where they are as you're
+8:49 going but you don't want to call that
+8:50 method a hundred thousand times because
+8:52 scrolling and resizing they make a lot
+8:53 of event calls so by using throttle you
+8:55 can limit the amount of power that the
+8:57 cpu needs to use in order to execute all
+8:59 of them because you're slowing them down
+9:01 it's a little bit complicated but let me
+9:02 show you exactly how it works and it'll
+9:03 be much easier to understand so we're
+9:05 going to create another function called
+9:07 throttle and it's going to work exactly
+9:09 the same we take a callback and a delay
+9:10 which by default we're going to set to a
+9:12 thousand
+9:13 and we'll get rid of that 250
+9:15 millisecond delay up here so we can
+9:16 really compare these now we need to call
+9:18 that throttle function by saying we'll
+9:20 say this is update
+9:22 throttle text
+9:25 and we're going to call
+9:26 throttle and it's going to take in that
+9:28 text and we're going to change this to
+9:30 our throttle text and we're just going
+9:31 to call that function
+9:33 down here with our target value so now
+9:35 all we need to do is actually implement
+9:37 our throttle and there's two main ways
+9:38 to implement it i'll show you the easier
+9:40 way and then the more complex way second
+9:42 so with a throttle the main thing that's
+9:43 different from d-bounce is d-bounce
+9:45 waits until there's been a second delay
+9:47 before it runs and with throttle it runs
+9:49 immediately when you call the function
+9:50 so let's return our function which has
+9:52 our arguments just like we did with our
+9:54 d-bounds and what we want to do inside
+9:56 of here is we want to immediately call
+9:57 the function as soon as we execute it so
+9:59 we're going to call our callback with
+10:01 our arguments that's the very first
+10:02 thing we're going to do and then what we
+10:04 want to do is we want to say hey you
+10:05 know what now we need to wait one second
+10:07 or whatever our delay is until we call
+10:09 this function again so we're going to
+10:10 create a set timeout
+10:12 and this set timeout is just going to be
+10:14 set to that delay which in our case is
+10:16 one second by default and inside of here
+10:18 we're going to set a variable this
+10:20 variable is called
+10:21 should wait and call whatever we want
+10:23 and we're going to set that to false and
+10:25 what this variable does is say hey if
+10:27 we're within this waiting period this
+10:28 variable will be true which means don't
+10:30 call the function so in our case what
+10:32 we're going to do here is we're going to
+10:33 say if should wait then we just return
+10:36 so by default should weight is false so
+10:38 this is not going to return it's going
+10:40 to call our callback function then we
+10:41 want to set should weight to true so
+10:43 we'll set it to true here and then we
+10:45 want to wait one second or whatever our
+10:46 delay is and after that we set our
+10:48 should weight equal to false
+10:51 the way that this works is the first
+10:52 time we call throttle it immediately
+10:54 calls our callback function and then
+10:56 every other time that we call it it does
+10:57 nothing until our delay has finished
+11:00 once our delay has finished this should
+11:01 weight gets set back to false which
+11:03 means it no longer returns here it calls
+11:05 the function again forces you to wait
+11:07 and you have to wait another second so
+11:09 let's see how throttle works here if i
+11:11 type in s you see immediately throttle
+11:13 gets that input of s right away while
+11:15 the d-bounce takes a second but if i
+11:17 start typing in a bunch of characters
+11:19 you can see the throttle is getting it
+11:21 and every second it's updating that
+11:22 value but you'll notice something a
+11:24 little bit interesting about throttle if
+11:25 i just type in like asdf you can see
+11:28 throttle gets just the a but it's not
+11:30 getting the s d and f portion and that's
+11:32 because we didn't have another event
+11:34 happen after one second all of these
+11:36 events happened within one second so the
+11:38 very first event got ran with this
+11:40 callback but none of the other events
+11:41 got ran afterwards so we need to
+11:43 actually tweak our throttle method a
+11:45 little bit to make it more advanced so
+11:46 that it'll save whatever the last call
+11:48 to it was and send that out after that
+11:50 one second that way you make sure you
+11:52 get this other information into it so in
+11:54 order to handle that we need to add a
+11:55 new variable we'll call this waiting
+11:57 args and this waiting args is going to
+11:59 be the argument for the function that we
+12:01 call when we're actually waiting so if
+12:03 should weight is true what we need to do
+12:05 in here is take our weighting arguments
+12:06 and set it equal to those args and then
+12:09 we return so now what we're doing is
+12:11 every time we are in the waiting stage
+12:13 we're saving whatever the last call to
+12:14 the function was we're saving those
+12:16 arguments so we can call the function
+12:18 later with those arguments
+12:19 then this part is fine right here the
+12:22 next part with our set timeout needs to
+12:23 change though because what if we have
+12:25 waiting arguments that we need to take
+12:26 care of so what we can do here is we can
+12:29 take our weighting arguments if it's
+12:31 equal to null
+12:32 that means that we don't have anything
+12:33 waiting to happen so we can just treat
+12:35 this exactly like it was before we can
+12:37 set our should weight equal to false and
+12:39 then it'll wait until the next response
+12:41 before anything happens this is great if
+12:43 you have like one event that happens and
+12:45 then three seconds later a new event
+12:46 this is going to work just fine
+12:48 then what happens though if we make two
+12:50 calls so for example we come back in
+12:52 here and i type in a s
+12:54 you would notice it prints out the a but
+12:56 it doesn't print the s out and that's
+12:57 because we made two calls the first one
+12:59 came in nothing happened the second one
+13:01 came in we're saving that to our waiting
+13:02 arguments so we need to do is if we have
+13:04 waiting arguments i want to call our
+13:06 function after that second with those
+13:08 waiting arguments so we'll spread those
+13:09 out just like this then what i want to
+13:12 do is set our weighting arguments equal
+13:13 to null so that way we don't save that
+13:15 information anymore and then i want to
+13:17 just restart our timer because we
+13:18 already called it we need to restart our
+13:20 one second timer so i'm going to take
+13:22 this function right here
+13:23 i'm just going to put this into its own
+13:24 variable we're just going to call it
+13:27 timeout func just like that
+13:30 and then what i can do is just call
+13:33 set timeout inside of here
+13:35 asset our timeout func
+13:37 and our delay
+13:39 and what i can do down here is the same
+13:41 thing so in order to explain exactly
+13:43 what's going on here is we're saving the
+13:45 last call that we made after we made a
+13:47 call so we called the throttle it ran
+13:49 just fine when we call it once nothing
+13:51 changes it works just like a normal call
+13:53 if we call it a second time during this
+13:55 waiting period it saves that call and it
+13:57 says hey you know what you called this
+13:58 function i'm going to execute this as
+14:00 soon as the delay is over so that way
+14:02 you don't send more than one call per
+14:04 second in our case so it's waiting it's
+14:06 waiting is waiting it's finally done
+14:07 waiting it's saying hey we have some
+14:08 waiting arguments follow with those
+14:10 waiting arguments and start your wait
+14:11 over again for the next one so now with
+14:13 that done we just type in asd you'll see
+14:17 that it's going to work we'll just do it
+14:18 a little bit different here i'll type in
+14:19 really quickly asdf and you can see i
+14:21 guess that's a little too quick we'll
+14:22 wait for this wait a full second asdf or
+14:25 as you can see it prints out the a that
+14:27 worked fine and then after a second
+14:29 delay it printed out the s as well it's
+14:31 making sure to catch that last call and
+14:33 always send it every time that's really
+14:35 important to make sure you do with
+14:36 throttle now this example that we're
+14:38 covering right here really isn't that
+14:40 useful for throttling because this is
+14:41 something you'd want to handle with
+14:42 d-bounds but i mentioned a few use cases
+14:44 like resizing but another one is mouse
+14:47 movement if you want to track the mouse
+14:48 movement that function gets called all
+14:51 the time so you may want to throttle
+14:53 that so it doesn't call it quite as
+14:54 often so let's set up a really simple
+14:56 event we're just going to say document
+14:58 add event listener and this event
+15:00 listener here is just going to be for
+15:02 mouse move so every time we move our
+15:04 mouse this event is going to get called
+15:07 and all i want to do in here is i want
+15:08 to increment a number between 0 and
+15:10 whatever for how many times this
+15:11 function has been called so all i want
+15:13 to do is i'm going to scroll down here
+15:14 i'm going to paste this function it's
+15:15 called increment count we pass it an
+15:17 element and all it's going to do is
+15:18 increment the count for that function
+15:20 and it's going to tell us how many times
+15:22 default has been called d bounce has
+15:23 been called and throttle has been called
+15:25 so we can just say here increment count
+15:27 of our default text and now as you can
+15:30 see as i move my mouse you can see just
+15:32 by moving my mouse a little bit we've
+15:33 already called this function 354 times
+15:36 that is insane that depending on how
+15:38 much code you have inside this function
+15:40 it could really slow down especially
+15:42 slower devices so let's look at what
+15:44 happens when we do debouncing and
+15:45 throttling what i'm going to do is i'm
+15:47 going to just copy this scroll up here
+15:49 to where we implement these update
+15:50 functions i'm going to replace the
+15:52 implementation for these functions so
+15:54 here
+15:55 we're going to increment our debounce
+15:58 text
+15:59 and here i'm going to increment our
+16:01 throttle text just like that
+16:04 and this entire section with the input
+16:06 we don't need that anymore we can just
+16:07 get rid of that so now when we update
+16:08 our throttle and debounce text we're
+16:10 actually just incrementing those values
+16:12 so we can call
+16:14 update d-bounds text and update throttle
+16:16 text
+16:18 just like that and now if i come over
+16:20 here and move my mouse you can see
+16:21 throttle is getting called once every
+16:23 single second our default is getting
+16:24 called obviously every time we move our
+16:26 mouse and debounce it's waiting until
+16:28 there's been an entire second between
+16:30 when i move my mouse and the next time i
+16:32 move it so if i pause and don't move my
+16:33 mouse now you can see d bounce gets
+16:35 called once and obviously in our case
+16:37 you'd probably want to increase the
+16:38 frequency of our throttle so maybe make
+16:40 it like every 10 milliseconds and then
+16:42 when we move actually maybe like every
+16:43 100 milliseconds would be fine
+16:46 there we go so now when i move you can
+16:48 see that this is only being called 10
+16:49 times a second which for most use cases
+16:51 is probably fine instead of being called
+16:53 you know 796 times it's only being
+16:55 called 58. so with throttling you can do
+16:58 things like mouse movement for drag and
+17:00 drop you can do things like resizing
+17:01 scrolling those are really good use
+17:03 cases for throttling where you want to
+17:05 make sure you're sending out requests
+17:06 but you don't want to send them out too
+17:08 quickly because it could slow down
+17:09 devices slow down your api and so on
+17:12 now if you enjoyed this video and want
+17:13 to see how to implement debouncing in
+17:15 react i have a full video on that it's
+17:17 going to be linked over here and if you
+17:18 want to see a project that's the perfect
+17:20 use case for deep bouncing i have a
+17:22 search bar project also linked over here
+17:24 in javascript with that said thank you
+17:26 very much for watching and have a good
+17:27 day)
+

@@ -1,0 +1,4510 @@
+1.Callback Hell(Pyramid of Doom), Inversion of Control(0:00 Ho ho ho. I am back again to teach you
+0:03 here on my channel and I'm super excited
+0:06 right now. Let's just begin. This is the
+0:09 first episode of this series and we will
+0:11 keep it very simple and sweet. We will
+0:14 just cover two topics in this episode.
+0:17 First one is the good part of callbacks
+0:20 and the second topic is the bad part of
+0:22 callbacks. In the good parts, we will
+0:24 see that how callbacks are super
+0:27 important while writing asynchronous
+0:29 code in JavaScript. And in the bad
+0:31 parts, we will see that using callbacks
+0:33 can let us face a lot of issues. There
+0:35 are two major issues. We will cover both
+0:37 of them. The first one is call back hell
+0:40 and the second one is inversion of
+0:42 control. Yes, these two issues are
+0:45 really very important. And you know if
+0:47 you understand these two issues very
+0:49 well then understanding promises in the
+0:51 upcoming episodes will become very
+0:53 simple for you. So please I request your
+0:56 attention and just keep watching this
+0:58 episode of Namaste JavaScript season 2.
+1:02 JavaScript is a synchronous
+1:04 singlethreaded language and it can just
+1:06 do one thing at a time. Remember it has
+1:09 just one call stack and it can execute
+1:11 just one thing at a time and whatever
+1:14 code you give it to JavaScript will be
+1:16 quickly executed by the JavaScript
+1:18 engine. It does not wait for anything.
+1:20 So suppose if we have this code over
+1:22 here. So this code will be quickly
+1:25 executed by JavaScript engine and it
+1:27 will just quickly print on the console
+1:29 these three statements. Let us see that
+1:32 if I save here. See namaste JavaScript
+1:35 and season 2. So it just quickly prints
+1:37 it. And remember time, tide and
+1:40 javascript waits for none. But what if
+1:43 we really need to wait for something?
+1:45 Suppose if in this line number five,
+1:48 suppose if we had to execute this
+1:50 console log javascript after 5 seconds.
+1:54 How would we do that? So now here comes
+1:57 the hero of our episode which is the
+2:00 callbacks. So yes, what we will do is
+2:03 suppose if we have to execute this line
+2:05 number five after 5 seconds we will just
+2:09 wrap it inside a call back function.
+2:11 Let's create a function and what we will
+2:14 do we will just wrap this code inside a
+2:16 call back function and we will pass it
+2:19 to the set time out isn't it? So let's
+2:23 just quickly do that.
+2:29 So now we have this call back function
+2:31 inside the set timeout and we will also
+2:34 pass 5 5,000 milliseconds in it. Now
+2:37 listen to me very carefully. We gave
+2:39 this call back function to set time out.
+2:42 Now it is the job of set timeout to
+2:45 execute this call back function after 5
+2:48 seconds. So using call back is a
+2:50 powerful way to do asynchronous thing in
+2:52 JavaScript. Right? So we can take a code
+2:55 piece of code inside a function and we
+2:58 can just pass it as a call back which
+3:00 can be executed later point of time
+3:02 right and our job is done. So that's how
+3:04 callback plays a very important role in
+3:07 writing asynchronous code in JavaScript.
+3:09 So this was a very easy example. Let us
+3:11 take one more interesting example and
+3:13 you will love it. So suppose we are
+3:15 building a e-commerce website and you
+3:17 know e-commerce website can't exist
+3:19 without a cart, isn't it? So, let's
+3:21 create a cart. And this is an array.
+3:24 Array of items that we add to cart. So,
+3:26 let's just quickly add some dummy items
+3:28 into the cart. Um, let's add shoes,
+3:31 right? And what else should we buy?
+3:34 Let's add uh pants and let's add uh ka
+3:39 as well. Okay, why not? So, these as
+3:42 card for the sake of simplicity, I've
+3:43 taken these as strings, but you know how
+3:46 it works in real world, right? Big
+3:47 objects. Yep. So what we will do now
+3:50 once we have this items into card now
+3:53 how how e-commerce website works. So
+3:56 first we need to create an order and
+3:58 then we proceed to payment isn't it? So
+4:01 how would we write that in code? So
+4:04 suppose if we have access to two backend
+4:07 APIs one is the create order API. So
+4:10 let's call it as API dot create order
+4:14 create order. So suppose if we have this
+4:16 API create order that creates an order
+4:20 right and another API which can be
+4:23 proceed to payment. Okay. So payment
+4:27 right so after we have created a order
+4:30 we will just proceed to payment. So with
+4:32 these two backend APIs so how it works
+4:34 is first of all we need to create an
+4:37 order by using create order API and once
+4:40 the order is created then only we can
+4:43 proceed to payment. there is a
+4:44 dependency between them. So how do we
+4:46 manage that dependency in our code?
+4:48 Because this is an async operation,
+4:50 isn't it? So here call back can come
+4:54 into picture and call back can help us
+4:57 write code for this kind of behavior. So
+5:00 let us just see a very common pattern
+5:02 which we follow in programming. Right?
+5:04 So what we will do is we again will wrap
+5:07 our proceed to payment API inside a call
+5:10 back function. Let's just quickly do
+5:13 that. We created a call back function. A
+5:15 function right and we add this proceed
+5:18 to payment inside this call back
+5:20 function. And where will this call back
+5:22 function go? Can you guess? Yes. So we
+5:25 will take this call back function and we
+5:27 we will pass along with the cart items
+5:30 to this create order API. Isn't it? Does
+5:34 this make sense? So now how this code
+5:36 will be executed, right? So when
+5:39 JavaScript engine executes this piece of
+5:41 code, it will just call the create order
+5:44 API. And now listen to me very
+5:46 carefully. We have passed this call back
+5:48 function. We have given this call back
+5:50 function to create order API. Now it is
+5:53 the responsibility of create order API
+5:56 to create an order and then call this
+5:59 function back. That way we can handle
+6:02 async operations in JavaScript. Isn't it
+6:05 powerful? So now let's make things a
+6:08 little more complicated. So we created
+6:10 an order. Now after order is created, we
+6:13 proceeded to payment. Now what if after
+6:16 we proceed to payment, after the payment
+6:18 is successful, we need to show a order
+6:20 summary page. Okay. And for that suppose
+6:23 we have another API show order summary.
+6:27 Okay. So how do we do that? We have to
+6:29 call this API only after we have done
+6:32 with the payments. So again here a call
+6:34 back function comes into picture. We
+6:36 will just wrap it inside a call back
+6:39 function this API over here. And what we
+6:42 will do now we will pass this call back
+6:45 function into where? Where will we pass?
+6:48 Yes into proceed to payments. Okay. So
+6:52 now again listen to me very carefully.
+6:56 We passed we gave this function this
+6:59 call back function to proceed to payment
+7:01 API. Now it is the responsibility of
+7:03 proceed to payment API to complete the
+7:06 payment and call this function back.
+7:09 That's how we can manage this dependency
+7:11 between this whole flow which happens
+7:13 one after the other. But do you see a
+7:16 problem over here? Let me show you a
+7:18 very important problem that we can face
+7:21 right. Oh my god, a honeybee just passed
+7:24 from here.
+7:26 But yes, let us continue with the code.
+7:28 Hope it doesn't come back. So now we
+7:31 have created the order. We have done the
+7:33 payment. We have shown the order
+7:34 summary. After that suppose if we also
+7:36 want to update the wallet. How would we
+7:39 do that? So now we again have a API
+7:42 right? We have again have a API to
+7:44 update wallet. Right? So that happens
+7:48 the wallet will be updated only after we
+7:51 have shown the order summary. So how
+7:52 would we write that code? Again we will
+7:55 have a call back function over here and
+7:58 where where we will pass this call back
+8:00 function. You would have already got
+8:02 bored seeing me doing this again and
+8:04 again. We will pass this inside show
+8:07 order summary. Okay. So do you now see a
+8:10 problem with this code? Yes. So when we
+8:13 have a large code base and there are so
+8:15 many APIs here and there and APIs are
+8:18 dependent on one after the other. So
+8:20 what happens is we end up falling into
+8:22 this call back hell. What is a call back
+8:24 hell? So one call back inside another
+8:27 call back inside another API or some if
+8:29 statements and random things happening
+8:32 makes this call back hell and our code
+8:35 starts to grow horizontally instead of
+8:37 vertically. This is a call back hell
+8:40 right and you know this code this type
+8:43 of code structure is like very
+8:45 unmaintainable. You can't maintain it
+8:47 properly. It's very tough to manage all
+8:50 this. And trust me I have seen these
+8:52 type of call back hell a lot written on
+8:54 production code in very big companies.
+8:58 Yeah super cool developers right?
+9:02 So this is the first problem with using
+9:04 callbacks that is call back hell and
+9:06 this structure is also known as pyramid
+9:08 of doom. Okay you can google it. So it
+9:11 is because of this structure it is known
+9:13 as pyramid of doom in programming.
+9:17 So now we saw the first problem but now
+9:19 I need your utmost attention because now
+9:23 we are going to discuss the most
+9:25 important part of this episode that is
+9:27 the inversion of control and trust me
+9:30 this is really very important to
+9:32 understand promises as we go ahead.
+9:34 Okay. So please please pay attention
+9:37 please give me just two more minutes and
+9:39 I would teach you this. Okay. So let's
+9:42 study inversion of control. Inversion of
+9:45 control is another problem we see while
+9:47 using callbacks and Kyle Simpson
+9:49 explains it very beautifully in you
+9:51 don't knowjs. So inversion of control is
+9:54 like that you lose the control of your
+9:56 code when we are using callbacks.
+9:59 Now it might sound a little complicated
+10:01 that how do we lose control over our
+10:03 code but let me show you with a code
+10:05 example. We will use the same example
+10:07 which is here. Okay. So let me just get
+10:10 rid of this call back function first of
+10:12 all. So now what is happening in this
+10:14 code is we are creating a order and now
+10:17 listen to me very carefully. What we did
+10:19 here was we take this call back function
+10:22 and we give it to create order API and
+10:25 now we as a developer are sitting back
+10:28 relaxed and we are blindly trusting
+10:31 create order API. How we are blindly
+10:33 trusting? We gave this call back
+10:36 function to create order API. Now we are
+10:39 expecting that create order function at
+10:41 some point of time will create an order
+10:43 and we'll call our function back. Isn't
+10:46 it risky? This is very risky very very
+10:50 risky. How it is risky? Because this is
+10:53 an important piece of our code isn't it?
+10:55 Proceed to payment. What we did is we
+10:58 gave the control of our program to
+11:00 create order API. Now we now it is the
+11:04 responsibility of create order API to
+11:07 call our function back and we are
+11:10 blindly trusting create order API. Now
+11:13 we don't know create order API must have
+11:15 been in some other service or some other
+11:17 developer wrote it or an intern wrote
+11:19 it. Right? There could be a lot of bugs
+11:21 inside create order API isn't it? What
+11:25 if our call back function was never
+11:27 called? Can happen right? You don't know
+11:30 what is the code written in create order
+11:32 API. We are just blindly trusting it.
+11:34 What if our call back function is called
+11:36 twice, proceed to payment happens twice
+11:40 because we don't know what is happening
+11:42 created in the create order API. So what
+11:45 I'm trying to explain is that whenever
+11:48 we have this call back function and we
+11:50 pass it to some other function, we are
+11:52 giving the control of our function right
+11:55 our piece of written code to some other
+11:57 code and we don't know what's happening
+12:00 behind the scenes now right so this is a
+12:04 very important problem that we face when
+12:07 we are using callbacks and we as a
+12:09 developer don't don't realize this right
+12:12 I have written so much code and I have
+12:14 seen seen so much code and have seen
+12:17 this happening so many times but this is
+12:19 a very important and a risky thing which
+12:22 we need to take care of. So as we move
+12:24 ahead in next episodes we will see that
+12:26 how this inversion of control can be
+12:29 handled in our code. Okay. So for now
+12:32 just keep these two problems in your
+12:34 mind and that's all in this episode.
+12:36 Before we end this episode let us just
+12:38 quickly recap what all we studied. So
+12:40 first of all we studied that callbacks
+12:42 are like super powerful way of handling
+12:44 async operations in JavaScript. Isn't it
+12:46 the first thing we studied? In fact
+12:48 asynchronous programming in JavaScript
+12:51 exist because call back exists. Another
+12:53 thing to remember is that while we are
+12:55 writing callbacks we face a lot of
+12:57 issues. The two important issues that we
+13:00 face is the first one is the call back
+13:02 hell. Right? that call back inside call
+13:05 back inside call back a lot of nested
+13:07 call backs and the code becomes
+13:09 unmaintainable. And the second thing is
+13:11 inversion of control that we lose
+13:13 control of our program because we pass
+13:15 that call back function into another
+13:17 function and now we have given the
+13:19 control of this function to some other
+13:21 function right and now we don't know
+13:24 whether that function will ever execute
+13:26 our call back or not. So this invert of
+13:28 control is another big issue with
+13:30 callbacks. So in this episode you just
+13:32 have to remember these three things
+13:34 these important good parts and the bad
+13:36 parts of call backs and that's all in
+13:38 this episode and and and in the next
+13:41 episode we will be covering promises.
+13:43 Yes promises and I'm super excited to
+13:45 teach that topic. It's one of the most
+13:48 important and most interesting part of
+13:50 JavaScript and I will explain you
+13:52 promises in a very different way. Not
+13:56 like explaining you just the gist of it.
+13:58 I will explain it in detail in depth.
+14:01 Best video of promises I'm coming up
+14:03 with. So what are you waiting for? Check
+14:05 that video right now. But before moving
+14:07 on to that video, just wait. Just wait.
+14:09 I have to ask two things from you. First
+14:12 is to go like the video right now
+14:15 because it takes a lot of effort to make
+14:17 these videos. Please like it. Share it
+14:19 on social media because I don't have a
+14:22 marketing team. You are my marketing
+14:24 team. share it across on social media
+14:26 about Namaste JavaScript season 2. And
+14:28 the second thing is your homework. Okay.
+14:30 Now with this episode, I will be giving
+14:32 you homework with each and every
+14:34 episode. So homework for this episode is
+14:37 that you have to go in the comments and
+14:39 explain in your own words what are the
+14:41 two problems that we face while using
+14:43 callbacks. Okay, you have to explain it
+14:45 in your words. Uh trust me that will
+14:47 help you memorize that concept very
+14:50 well. Okay, do that. Two things like the
+14:53 video, share it across social media and
+14:56 the second thing is to do your homework.
+14:57 Finish your homework right now. Don't go
+14:59 before finishing your homework. Okay, so
+15:01 that's all in this episode and keep
+15:03 watching Namaste JavaScript season 2.
+15:10 [Music]
+15:26 better than D)
+
+
+2.Promises (States: Pending, Fulfilled, Rejected)(0:01
+promises yes so promise is the most important topic you should know if you are a JavaScript developer if you're
+0:07
+giving a frontend interview then definitely 100% there will be questions around promises knowing promises will
+0:14
+not just help you in your interviews but will also help you become a better JavaScript developer while you are doing
+0:20
+your day-to-day coding see I can tell you what promises are in just 5 to 10 minutes but no I won't do that in this
+0:27
+video we will be diving deep into promises just like how we do right and we will explore the beauty of promises
+0:34
+we'll see how beautiful promises are so that's why this episode can go a little long but I promise that you will fall in
+0:41
+love with promises after watching this video so I just please request your attention and just keep watching this
+0:47
+episode of Namaste JavaScript season 2 so now listen to me very carefully
+Code Example of Callbacks and Promises
+0:54
+promises are used to handle async operations in JavaScript now I will take a code example and will show you how
+1:00
+things used to work before promises and then how it used to work after promises
+1:05
+let's just begin let's dive into the code now so I will take a take a example
+1:10
+suppose we are creating an e-commerce website like Amazon right so we have
+1:16
+cart in it suppose we have a cart in it let's call it as const cart right so
+1:21
+this cart is nothing but an array for the sake of Simplicity I will just use strings over here okay and let's add
+1:27
+some items to the card what items should be add let's add shoes and tell me some
+1:33
+products okay let's add pants let's add Kura to it why not right so let's add CA
+1:41
+right so this is our cart every e-commerce website has a cart along with the cart suppose we have two more apis
+1:48
+let's call them as create order API right this API takes cart to it right
+1:54
+takes the cart items and will return us the order details or an order order ID
+2:00
+right what this will do is this will create an order in our database or whatever it will do and will give us an
+2:06
+order ID it will create a order right and then there is one more API let us call that as proceed to payment right
+2:13
+this API basically proceed to payment okay this API will then take this order
+2:20
+ID and will take you to the payment page or this will proceed to payment right
+2:25
+this so now what will happen is these two apis are are asynchronous create
+2:31
+order is asynchronous proceed to payment is asynchronous we don't know how much time it will take right and they are
+2:37
+dependent on each other right so we can only do proceed to payment once we have
+2:42
+created the order make sense right so how so now let us see that how we used
+2:49
+to write this code using callbacks right callbacks used to be very crucial part
+2:54
+when writing asynchronous code in our programming so how we handle this type of situation in our code using callbacks
+3:01
+is that we wrap this function inside a call back function right this proceed to
+3:06
+payment we will wrap it inside a call back function and what we used to do is we design our apis in such a way that we
+3:13
+pass this call back function let us just grab this and we'll pass this fallback function to create order API right this
+3:22
+this used to be the case now it is the responsibility of create order API to
+3:27
+create an order first of all and then will call our call back function back once the order is created with the order
+3:34
+ID so this is how we used to handle async operations using callbacks but my dear friends there is a very important
+3:41
+issue with this code what is that issue if you have seen my previous video you would have guessed it already yes that
+3:47
+issue is inversion of control so what does that mean is that we have given
+3:53
+this callback function we have passed this call back function to create order API and now we are just sitting back
+3:59
+relaxed as a developer that at some point of time this create order function
+4:04
+will just call our call back function back and everything will be peaceful but
+4:09
+but but what if what if we are just blindly trusting this create order API
+4:15
+and it never calls our call back function back or it might call it twice
+4:20
+who knows because this create order API can be in some other service can be in
+4:26
+some external world can be written by some other developer or or some other team or some intern and we can't just
+4:32
+blindly trust these apis isn't it so what I mean to say is that we have given
+4:39
+the responsibility of our code proceed to payment to some other API and it's not in our control anymore we have just
+4:46
+passed in and we are just expecting it to be like randomly magically being called after the order is created isn't
+4:53
+it risky so passing call back functions like this isn't reliable we are just giv
+4:59
+giving the control of our program to some other part of our code which we are not aware of isn't it this is not a very
+5:07
+confident way of writing code so how we can solve this so now let us just see that how we can handle this type of
+5:14
+situation using promises okay so what will happen is if we were designing these apis so we would have designed our
+5:21
+create order API in such a way that whenever we this API right create order
+5:26
+API will no longer take a call back function it won't take a call back function but it will just take card
+5:32
+details right and what it will do is it will return us a promise what is a
+5:37
+promise I will tell you so we will capture that promise into a variable let
+5:43
+us call it as promise right so whenever you call this line right whenever this
+5:48
+line is executed by JavaScript this create order API will return us a
+5:54
+promise and promise is nothing but you can assume it to be an empty object
+6:00
+right empty object with some data value in it right and this data value will
+6:06
+hold whatever this create order API will return to us right so now listen to me
+6:13
+very carefully this create order API is an async operation it will take some time to execute but we don't know how
+6:20
+much time it will take this create order API might take 5 Seconds 6 seconds or we don't know how much time it will take
+6:26
+but as soon as this line is executed it will return us an object right it
+6:33
+will return us an object with a data with some empty undefined property right
+6:40
+undefined or an empty value right what does undefined means an empty value it
+6:45
+will just assume that it is returning us an empty object with some property data and it is undefined not defined at that
+6:53
+moment itself and suppose after 5 Second 6 second 10 seconds whenever how much
+6:59
+ever time it takes what it will do is it will create an order and will give us
+7:06
+order details and will fill this object back at some later point of time got it
+7:12
+I will repeat it once again listen to me very carefully because this is very important whenever JavaScript engine
+7:19
+will execute this line right so this create order API will return us a
+7:25
+promise promise is nothing but an empty object over here
+7:30
+and what will happen is the program will just go on executing suppose if there are more lines of code over here they
+7:37
+will start they will start executing and after 5 Seconds 6 second or how much
+7:43
+time it takes what will happen is This Promise object this empty object will be
+7:49
+filled with data automatically Right This Promise object
+7:54
+will fill this data automatically and we will have order details in it after
+8:00
+whatever async time it takes got it this is what promise is so now you can ask me
+Promise.then function
+8:06
+a very important question that what will happen once we have these order details once we have this data with us how do we
+8:12
+continue our program what will happen to proceed to payment yes I will tell you what happens so what we will do is now
+8:19
+we will attach a call back function to This Promise object right and how do we
+8:24
+do that I'll show you so we will use a function do then this is the
+8:30
+this is a function which is available over promise object this is the promise object we can use promise object right
+8:37
+whatever we call it as we will use promise. then and we will attach a call
+8:43
+back function using this then function okay we will have this call back
+8:48
+function that we used to pass in earlier and we will attach it to our promise
+8:53
+object now what will happen is whenever right earlier this data used to be
+8:59
+undefined right this was empty as soon as JavaScript engine executed this line
+9:04
+this was undefined this was empty but after certain point of time this will be
+9:10
+filled with exact data that will be returned by create order API right here
+9:16
+we will have order details right and once we have data inside This Promise object what will happen is this call
+9:24
+back function that we attach to This Promise object will be automatically called right so this is how we used we
+Callbacks vs Promises
+9:32
+write code in world of promise and this is how we used to do earlier
+9:37
+right so now I know that you might have a lot of doubts in your mind that ake what are you smoking this is looking
+9:44
+more complicated than callbacks right the earlier solution how did how did you
+9:49
+help us right we are still using callbacks over here right so what what
+9:55
+Improvement did we make in our code I will tell you my dear friend friends this piece of code is a lot lot lot
+10:03
+better than this piece of code how can you guess I will tell
+10:09
+you listen to me very carefully what we did in the earlier solution was we
+10:14
+passed this function to create order API and we were blindly trusting create
+10:20
+order API we were relying on it and in this case we are attaching a call back
+10:26
+function to a promise object there is a difference first one we were passing this call back
+10:32
+function to another function right and here we are attaching a callback
+10:39
+function to a promise object there is a difference between these words passing a
+10:44
+function and attaching a function so what happens in this case is we just
+10:50
+pass this function and now create order API would have called it whenever it wants to right and in this case we will
+10:58
+have the the control of our program with us right how that create order API will
+11:05
+only do its job it will create an order and it will it will fill the promise
+11:11
+object with the data the order ID whenever it wants to and as soon as this
+11:16
+promise objected filled with that data it will automatically call our call back function back and we will have the
+Importance of Promises
+11:24
+control of our program with us promises gives us this trust TR and Promises
+11:30
+gives us this guarantee that it will call this call back function Whenever there is data inside the promise object
+11:38
+and in the earlier piece of code we had a lot of doubts right that what if this create order API might call our function
+11:45
+twice or Thrice or it might never call it promises handles it beautifully what
+11:51
+will happen is as soon as we have data inside promise it will call this
+11:57
+function definitely 100% of the time that is the guarantee given by
+12:02
+JavaScript right and it will call it just once and only once and we will also
+12:09
+have control of our program with us as we are not passing our code to some other external function isn't it
+12:16
+beautiful to have this guarantee and sity as a developer it's beautiful my dear friends so I told you that okay
+Promise Object in Browser
+12:23
+promise object is an empty object with some data field or something no it is much more special and it is much more
+12:29
+advanced than that okay now I will show you the real promise object we will we are diving deep now okay we will just
+12:37
+exactly see how promise objects looks like just let me write some code to show you that okay so if you uh if you want
+12:44
+to see that object we will use a function fetch if you are writing JavaScript code then you would have
+12:50
+already been familiar with this fetch function it is a basically an API given
+12:56
+by browsers to us to make external calls so now we will use this fetch function
+13:01
+to make an API call to GitHub servers and we'll get a user info with us so
+13:06
+this opensource API gives us the info of this username I have written down my GitHub username over here so I'm just
+13:13
+taking this as an example so what we will do is we will try to fetch this user info from this API okay and by
+13:20
+Design This fetch function right this fetch function returns us a promise just
+13:26
+like I was telling in create order API right here here so this fetch function will return us a promise and let us just
+13:33
+capture that promise into a object which is known as user okay and we will pass
+13:40
+this GitHub API over here now my dear friends what will happen is as soon as
+13:47
+this line of code is executed we will get a promise object inside this user
+13:54
+okay so fetch returns us a promise okay and let us see dive deep into the
+14:01
+console and what we will do is let us just go to sources let me just add a
+14:09
+debugger over here so I have added a debugger before this line is executed now as you can see user is right now
+14:16
+undefined but you will slowly see as soon as this line is executed you know
+14:22
+this line number 15 what will happen is as soon as this fetch function will be called a promise object is going to be
+14:29
+returned inside a user object and let us now see how does that promise object looks like let me just run it yes see
+14:37
+now this is the promise object my dear friend are you able to see this let me
+14:42
+just zoom a little bit here and just oh my God I not able to show you let me
+14:49
+just yes so this is a promise object over here right this is an empty object
+14:55
+that I was showing you over here and let us just see what is inside This Promise object so we have a prototype over here
+15:02
+and we have promise State and we have promise result and whatever I was
+15:08
+telling you that empty object and then data is equals to undefined it is this right so right now this promise is in a
+15:16
+pending state so what are the state of a promise I will tell you there are two
+15:21
+things one is the state of a promise and one is the result so result will store
+15:27
+whatever data it returns right whatever the data that fetch method will return
+15:33
+this will be stored inside promise result and promise State tells you that
+15:38
+in what state that promise is initially the promise will be in pending State and
+15:44
+once we have got the data back remember I was telling you that it might take 4 seconds 5 seconds for that oinos
+15:50
+operation to get completed so after that that promised State changes to fulfilled
+15:57
+State now I'll show you something really interesting okay so let's move to the console and over here suppose if I am
+Deep dive into Promise States
+16:05
+writing console.log of user let's just print user so before I run this code
+16:11
+just can you guess what this console log user will do so what will happen when JavaScript runs this code is it will
+16:18
+just have this will this is a normal code right and once this line 15 is executed fetch will return us a promise
+16:25
+like user promise and this console log will log that promise so what do you think at this point of time on line
+16:32
+number 17 the state and the result of Promise will be remember this is an
+16:38
+async operation it takes some time to execute what will it log
+16:44
+here pending or fulfilled interesting question right let
+16:51
+us just see so my dear friends it is logging pending and if I expand it so it
+16:58
+shows you fulfilled you know it took me like 5
+17:03
+days and like six Red Bulls to find out that why is this pending and this is
+17:10
+fulfilled you know this is this inconsistency is just in Chrome browser don't worry is is a part of Chrome
+17:16
+browser but it generally I'll tell you I'll explain you why it is behaving in this way so actually what happens
+17:25
+is when this console lock statement is executed at this point of time the user
+17:32
+the promise object is in a pending State okay how because JavaScript engine
+17:39
+executes JavaScript engine does not wait for anything it just quickly execute whatever is there right so it just
+17:45
+executes line number 13 then 15 then 17 in line number 15 fetch returns a
+17:51
+promise and that promise at that particular time is in a pending state it
+17:56
+takes some time to get the data and fill it back right to get fulfilled but
+18:02
+JavaScript does not wait for that right it just goes on and prints console log into the console and that's why this
+18:09
+promise is pending over here but what does Google Chrome does is after some
+18:15
+point of time right after eventually this data will come into this promise object so if you expand it it shows you
+18:22
+the current state of the promise so that's why this is fulfilled right now
+18:28
+but when it was logged it was in pending state so that's why this inconsistency but assume okay but right now at this
+18:35
+point of time the promise has been fulfilled and as I told you that this result right promise result which was
+18:42
+undefined earlier I showed you over here right using a debugger so which was undefined is now filled with our
+18:48
+response and if I open that we have body we have headers we have a lot more things over here so that data is inside
+18:55
+this body this is a readable stream right so we can't just see a readable stream like this right but it is there
+19:03
+there's a way to extract it we can convert this readable stream into a Json and extract it but what I want to tell
+19:08
+you is that promise right now is in fulfilled State this is how a fulfilled promise looks like earlier it was in
+19:16
+pending and after the is incorporation is done it just fulfills it now what if
+19:21
+what if what if we had some call back attached to this promise object right
+19:27
+how do we attach it I'll show it you right then and we had a function a call back
+19:32
+function over here and what we can do is here right if we have this data so this data we can
+19:42
+this data the result over here this data will come over here and we can just use
+19:48
+this right we can just use this as we want to we can just do whatever we want to with this data and that's how we
+19:55
+attach call backs to promise so what whatever needs to be done after we have data inside our user object that needs
+20:03
+to go in like this so if I save this so we get this response over here this data
+20:09
+right and we can use this in our program we can do whatever we want to with this data so that's how we generally handle
+20:15
+promises so let us just get back so this is how my friends a promise objects looks like and this is a spal object in
+20:21
+JavaScript so this special promise object brings a lot of trust in this transaction because JavaScript
+20:28
+guaranteed is that this promise object can only be resolved once either it will be success or a failure over here it is
+20:34
+fulfilled it can be rejected also okay and the state can be only three inside a
+20:40
+promise there can be only three states one is pending one is fulfilled and one is rejected if we go to the mdn
+20:47
+documentation let us just see see there can be only three states inside the promise one is pending fulfilled and
+20:54
+rejected that's all three states it can have right so this brings us a lot of
+20:59
+trust in the transaction and one more important thing is that promise objects are immutable what does that mean so
+21:08
+whenever it is fulfilled and whenever we have data inside our promise object we can just pass it here and there in our
+21:14
+code and we don't have to worry about that someone can mutate that data so if you would want to do a user do data do
+21:23
+something equal to something you can't just edit this user now right this is so
+21:29
+so so great as a developer right because you have control over this object right
+21:35
+this promis data and there is a way to attach handlers to it using then right
+21:40
+so that's how we do that and nobody can mutate it it's immutable immutable and
+21:46
+resolve just once and you can pass in wherever you want to such a beautiful thing isn't it so now my dear friend let
+21:53
+us talk about interviews right the most interesting part how do you answer question in your interviews for that let
+22:00
+me just get rid of this right I will tell you so what if your interviewer tells you that what is promise what is a
+22:09
+promise in JavaScript how do you answer that question what is This Promise how would you answer that I'll tell you just
+22:16
+listen to me very carefully there are a lot of different definitions of promises running all across the internet okay so
+22:23
+some people call This Promise object as a placeholder right placeholder which
+22:29
+will be filled later with a value makes sense promise object is a
+22:34
+placeholder for a certain period of time until we receive a value from a asynchronous operation isn't it so there
+22:41
+is this is one definition the other definition some people would like to call it as a container for a future
+22:48
+value some people use the word future value for this value which it will have
+22:53
+after the promisees isoled right so it's a container for a future value some people like to call it like that and
+23:00
+there is one more definition of promises over mdn documentation which I personally like now but first time when
+23:06
+I read it right my I got a headache while I was trying to understand what does it trying to say by this line right
+23:13
+but now I find that this is the most beautiful definition of promises let us
+23:18
+just try to understand this and now when I have explained you a lot right so this will make sense to you now so promise is
+23:26
+an object representing eventual completion of an asynchronous
+23:31
+operation sounds complicated right but no it is not I'll tell you so This Promise over here is an object that
+23:39
+represents an eventual completion of an asynchronous event okay sounds complicated let me break it down to you
+23:46
+promise is an object that you can remember represents the eventual
+23:51
+completion of an asynchronous operation because see this is an asynchronous operation create order and it will
+23:58
+eventually be completed so promise is an object representing eventual completion of an async
+24:04
+operation just try to remember it once again promise is an object representing
+24:11
+eventual completion of an async operation eventual completion right eventually completed and asnc operation
+24:18
+that's how mdn defines promises to be I find that definition more Technical and
+24:23
+more precise and more beautiful for the interviews because sometimes if you just say that container over a future value
+24:30
+then you would have to back your answer with a lot of explanation but if you'll say to your interviewer that promise is
+24:35
+an object that represents an eventual completion of an async operation I dare you he won't ask you anything except
+24:42
+this for promises he would know that you know promises already okay so that's how
+24:48
+try to remember it it's very easy once again promise is an object which
+24:53
+represents the eventual completion of an asnc operation eventual completion of async operation async Operation right
+25:01
+eventual completion async operation as it is an object easy
+25:06
+are I know that this video is getting a little longer but please give me 5 10 more minutes I want to explain just one
+25:13
+more Topic in this video and then in the next video rest of the things okay so let me just close my browser let's get
+25:19
+back to code again now listen to me very carefully this is the last part of the whole explanation which I wanted to give
+Promise Chaining in JavaScript
+25:25
+okay so what will happen is we saw soled inversion of control which was a major issue while using callbacks right we
+25:32
+were giving control of our code to something else but there is one more issue with call backs right if you have
+25:38
+seen my previous video you would know that there was an issue of call back hell I'll just quickly explain you what
+25:44
+it is right now if you haven't watched my video though watch that video also but I'll quickly explain it over here
+25:49
+also so suppose in an e-commerce website what we do is we create an order then we have a proceed to payment then we have
+25:57
+an API suppose we we have an API for show order summary right once the payment is done we show an order summary
+26:04
+right which takes payment info and there is one more API suppose
+26:11
+update wallet update Wallet balance wallet wallet uh balance right so once
+26:19
+the order summary is shown so just update the Wallet balance okay so it just update the Wallet balance okay so
+26:26
+now how do we and these are dependent on each other okay once we do create order then we do proceed to payment then we do
+26:33
+show order summary then we do then we update the wallet right it happens in a sequence so what will happen is how do
+26:39
+we used to write this type of code in our old fashion right the call back way
+26:44
+so we used to have a call back which have this show order summary and we used
+26:50
+to pass this callback right this call back method we used to pass this call
+26:57
+back method method into our proceed to payment remember this is how we wrote
+27:04
+code let me just make it a little more readable to you okay and what will
+27:10
+happen is now if you see clearly we have our create order then proceed to payment
+27:16
+then show order summary and once the order summary is shown then we will do update balance so we have another call
+27:22
+back and when we write this type of code when we have a lot of apis which depend
+27:27
+on each other so we tend to fall into a call back hell this is known as call
+27:34
+back hell now our code starts to grow horizontally instead of vertically isn't it this is also known as Pyramid of Doom
+27:42
+and it takes and if suppose we have more if and else cases more nested callbacks
+27:47
+then this code becomes very ugly and hard to maintain you don't know how and where what API is being ending right so
+27:55
+this we want to avoid promise helps us avoid this as well and this is handled
+28:01
+using promise chaining so promise comes with an important feature of Promise chaining yes that term sounds very
+28:09
+complicated but it is not I'll show you that how we can write this type of code
+28:14
+using promises if suppose these apis were returning as promises how do we handle this type of situation okay so uh
+28:24
+this is the way of writing promises so if you see it clearly then this create order API was returning us a promise and
+28:31
+then we were attaching a call back function to this create order api's returned promise so this is a way to do
+28:38
+that or we could have just instead of doing promise dot then we could have
+28:43
+just did we can just do a DOT then after this create order API so this is same
+28:50
+right so it is equivalent to writing this right so this create order API will
+28:58
+return us a promise and then we will attach a call back function over here
+29:04
+right so this is same as getting a variable and then attaching then to it
+29:09
+or we can just simply write like this using promises right so suppose if after
+29:16
+proceed to payment we also had to show order summary so what we we so what we
+29:21
+could have done is we could have just added one more then statement after this
+29:29
+right and we would have just attached another call back function to this
+29:34
+promis chain right this is known as promise chaining and we would have just done show order summary over here and
+29:42
+instead of payment info let's just add payment info over here so that's all
+29:48
+that's how we would have handled it inside our promise world right and what
+29:54
+if there was update update Wallet balance also so we would have as added one more call back we to this
+30:02
+chain right and we would have done update wallet over here right let me
+30:07
+just show it to you so our code would have become Lean by writing like this so
+Common mistake while Promise Chaining
+30:13
+one more important thing to note over here is that a lot of developers fall into that that issue right there is a
+30:19
+bug in a lot of code right you would pull your hairs if you will fall in that bug is that whenever you are attaching a
+30:26
+lot of then then function and lot of call backs in This Promise chain what happens is we used to pipe the data
+30:35
+right we want this data to flow in the whole chain what will happen is whatever
+30:41
+is the response of this create order should pass into this this chain and then whatever the whatever is the
+30:48
+response of this pred to payment should pass down the chain and then whatever is there returned from show order summary
+30:54
+should pass down the chain for that you have to take care in mind that you return from here okay so we always
+31:03
+return a promise from an promise when we are chaining it right so that's when we will get data properly into our chain
+31:11
+and a lot of times we as developer forget to write this right so just make
+31:16
+sure that you are doing this when you are handling it so this is how we write code and our code does not grow
+31:23
+horizontally but it is in a meaningful chained fashion okay so this is how we
+31:29
+write this piece of code inside promises and one more thing some some developers
+31:36
+also prefer to use Arrow functions over here right that makes it a little more lean uh I I don't want to question about
+31:44
+readability but the code will look something like this if you will have Arrow functions over here we can just
+31:51
+get a of return statement so some some developers find it much more readable
+31:57
+like like this okay so they kind of just remove all these returns and all right
+32:04
+because there is just one line over here in our Arrow function so they just prefer to just write the code like this
+32:12
+so This basically looks a little more lean but I don't want to comment over
+32:18
+the readability it is developer choice and how you follow but I personally like
+32:24
+the older syntax with function keyword better right that is my way of coding
+32:29
+but some developers like to write code like this also I just wanted to show you
+32:35
+that this code growing horizontally is now converted to this fashionly evenly
+32:41
+fashioned vertical written code and a promise chain make sense so this is known as promise chaining and it helps
+32:48
+us get out of call back hell isn't it beautiful my dear friends it's so beautiful promises gives us so many
+32:54
+amazing functionalities that what we had to do in our previous call back fashion
+32:59
+would have messed up our code so much it just messes up I have seen repositories
+33:05
+where a lot of code here and there written in random order and Promises
+33:11
+just makes our code much more beautiful and cleaner and generates trust in that transaction so this was a very long
+Recap of the video
+33:18
+video and now let us just quickly recap whatever we studied in this video very quickly okay so first of all we saw that
+33:24
+okay how we can handle our asyn code in user callbacks and there is a major issue in this callbacks while using
+33:31
+callbacks that is inversion of control we were passing a function inside another API and we were given control of
+33:37
+our program to some other API which we wanted to avoid that was inversion of control and how did we solve it we
+33:43
+basically had a promise object and that promise object will be eventually filled
+33:49
+with the result of async operation right that promise object and we don't pass a
+33:55
+function inside any other function but what we do is we attach a call back function to that promise object and
+34:01
+whenever we have data inside or whenever the promise is resolved that automatically that call back function
+34:07
+will automatically be called by promises right beautiful thing isn't it and what happens is promise gives us guarantee
+34:14
+and Trust in our whole transaction how because you can resolve promise just
+34:20
+once and you can only have three states for promises either pending or fulfilled
+34:26
+or rejected there is no other State you can pass promise wherever you want to without caring about the mutability of
+34:32
+it it is immutable you cannot alter a promise if it is resolved so promise
+34:38
+comes with a lot of trust and then we also saw that beautiful looking promise object remember that okay it was a
+34:44
+special object right which had two major properties one was the promised State and the other one was promised result
+34:50
+which used to hold data remember which eventually get filled right which eventually gets filled right and then I
+34:56
+also told you that how do you have to answer a question that what is a promise in the interviews how remember that
+35:02
+definition I bet you would have forgot it righty now let me just recap it once again so the promise is an object that
+35:09
+represents eventual completion of an async operation eventual completion of an async operation it's very easy just
+35:15
+remember it once say it yourself promise is an object that represents eventual completion of an async operation that
+35:23
+async operation will be eventually completed so it's an object that represents it right very easy just say
+35:29
+it two three times you will just remember it for life it's so beautiful okay we saw that how do we answer that
+35:35
+and the other and then later on we also discussed that okay there is one more issue using call backs that is call back
+35:41
+hell right and then we can use promise chaining right to handle that type of
+35:46
+issue and then we have a beautiful looking promise chain with us we can use then to attach a lot of call back
+35:52
+handlers for our promise and we can just do that and then I also disc because one
+35:57
+more thing which you need to be careful about that whenever there is a promise right inside that promise chain right so
+36:03
+you might have to return that promise once again into the chain otherwise you might lose some data in inside the chain
+36:10
+right so these were the things which I discussed in this video I hope you liked it and you would see promises the same
+36:17
+way like you used to see earlier promises are much more beautiful much much much more beautiful so in the next
+Teaser of the Next Video
+36:23
+video I will cover that how we can create our own promise isn't it beautiful right right now in this video
+36:28
+we just saw that how we can consume a promise right fetch function created a promise and gave us to us right the
+36:34
+create order we were assuming that this create order API will give us a promise but now we will in the next episode we
+36:41
+will see that how we can create a promise and return from this create order API okay we will try to write our
+36:48
+own implementation of this create order API how will I create a new promise and return it right because I am also a
+36:54
+developer I want to create promises and send it around to people to generate trust in our transaction isn't it so we
+37:01
+will see that how we can create a promise in the next episode this was about consuming promises that episode is
+37:07
+going to be mindblowing just keep watching Namaste JavaScript season 2 and now it's time for homework of this
+Homework of this episode
+37:13
+episode so what you have to do is first of all you have to explain in the comments that what if the interviewer
+37:19
+ask you what is a promise how would you answer that don't see other comments just write your own definition with the
+37:26
+exact same line over there okay what will you answer first question is what
+37:32
+is a promise according to you just write it down and then second thing why promises are important how would you
+37:38
+explain it to the interviewer write it down that will help you please this this is a very important episode and I'm
+37:46
+telling you this is the most most most important video episode of Namaste
+37:52
+JavaScript so I want you to take away a lot of things from this episode if you
+37:57
+have if you have doubts about anything just comment it down just see the video once again and just do this homework two
+38:04
+questions first is how would you answer a question about what are promises in JavaScript and the second one is why do
+38:11
+we use promises what is advantages of it explain it in your own terms in the comments I would love to read all the
+38:17
+answers I would give you a heart if I like your answer please do that please do the homework this is really very
+38:23
+important it just takes 5 minutes before you go away from this video please do that and in the next episode I will be
+38:30
+coming up with creating our own promises so go check out the next video but finish your homework right now before
+Thank you for watching Namaste JavaScript
+38:36
+you move from this video and thank you so much for watching Namaste JavaScript season
+38:42
+[Music] 2 promise object represents eventual completion of a Asing operation promise
+38:48
+object represents eventual completion of a Asing operation promise object represent eventual completion of any sync operation promise object represent
+38:55
+eventual completion of any sync operation promise object repres presents eventual completion of
+39:01
+[Music])
+
+
+3.Creating a Promise('resolve()', 'reject()'), Chaining Promises('.then()', '.catch()'), Error Handling in Promises(0:00 promise is my favorite topic of
+0:01 JavaScript and it has made our lives so
+0:04 much easy and I'm super excited to teach
+0:06 you and give you all the knowledge I
+0:08 have in the last episode we talked about
+0:10 that how we can consume a promise
+0:12 suppose if there is an async cooperation
+0:14 which returns a promise how do we handle
+0:16 that we talked about that and in this
+0:18 episode we will be talking about how we
+0:20 can create our own promise right are you
+0:23 excited to learn that we will see a lot
+0:25 of examples where we will create our own
+0:27 promise we will see how we can handle
+0:29 the errors inside promises we will see
+0:32 the live examples of Promise chaining I
+0:34 will go dive deep into each examples and
+0:38 you know I'm not just teaching you for
+0:40 interviews right it will help you in
+0:41 interviews but I am teaching you for you
+0:44 to become a better JavaScript developer
+0:46 you will get confidence when you will
+0:48 write your own promise and I bet you
+0:50 that after this video you would be able
+0:53 to create your own promise and you
+0:54 should be able to consume our own own
+0:56 promise as well so are you feeling
+0:58 excited now so let's just be this new
+1:00 episode of all new Namaste JavaScript
+1:03 season
+1:05 2 so I will again take my super favorite
+1:08 example of an e-commerce website suppose
+1:10 we are creating an e-commerce website
+1:12 and it has a cart I have already written
+1:15 this cart and it has three items inside
+1:17 the cart shoes pants CA I have just
+1:19 added these dummy items just for the
+1:21 sake of example okay and now what we do
+1:24 is now with this cart items we will have
+1:27 to create an order right so how does an
+1:29 e-commerce work work is first of all we
+1:31 will create an order with this cart
+1:33 right and suppose we have an async API
+1:36 right this is an async operation create
+1:38 order API which takes cart right and it
+1:42 returns us order ID right it gives us an
+1:45 order ID and then what we do is after
+1:48 that we proceed to payment right with
+1:51 this order ID we will just proceed to
+1:53 payment right so what will happen is we
+1:57 will just pass in order ID here
+2:00 so now listen to me very carefully what
+2:03 happens in case of promises is right
+2:06 this is an async operation this create
+2:09 order API is an async operation so this
+2:11 will return us a promise right as we saw
+2:14 in the last episode the example right so
+2:18 suppose if it returns us a promise
+2:20 here so now this create order returns us
+2:24 a promise and after that what we'll do
+2:27 is we will attach a call back function
+2:28 to This Promise object and that function
+2:30 will call the proceed to payment so how
+23:33 it used to work right promise. then and
+2:36 then we used to attach a call back
+2:38 function remember from the previous
+2:40 video so let's just quickly attach a
+2:42 call back function and this call back
+2:44 function will call our proceed to
+2:46 payment now we will see that how does
+2:49 this create order return a promise who
+2:52 is writing this we as developer will
+2:54 write this create order right so now we
+2:57 will see that how we can create our new
+2:59 promise and send it to the consumer so
+3:02 this is the consumer part now we will
+3:05 write the producer part of this code
+3:07 right so are you excited let's just
+3:09 begin so now we will try to write our
+3:12 own create order function this is the
+3:14 important part of this video just listen
+3:16 to me very carefully as I go through
+3:18 with the code so now we will create a
+3:20 create order function by ourselves let's
+3:22 create a function create order right and
+3:25 it takes cart inside it isn't it and
+3:29 what we already know by design of this
+3:31 API that this create order will return a
+3:34 promise right so we know that so let us
+3:36 just quickly return a promise right so
+3:39 what for that we will have to create a
+3:41 promise right so let's just create PR
+3:44 and here we will create a promise and we
+3:45 will just return a promise from it so
+3:48 now I will tell you that how do we
+3:50 create a promise right so to create a
+3:54 promise we will use a new keyword and a
+3:57 promise promise Constructor so this is a
+3:59 promise Constructor now how do we call
+4:02 this promise Constructor listen to me
+4:04 very carefully this is the important
+4:06 part of the video This is how we create
+4:08 a promise So This Promise Constructor
+4:11 will take a function right and this
+4:13 function will have two parameters which
+4:16 is resolve and reject resolve and reject
+4:20 so this is this is how we create a
+4:23 promise over
+4:24 here right so now you would say that
+4:27 what is this resolve what is this reject
+4:29 what what is new promise and all those
+4:31 things so this is a way to create a
+4:34 promise right this is a promise
+4:36 Constructor and this Constructor takes a
+4:38 function which has resolve and reject
+4:41 and these resolve and rejects are the
+4:43 functions which are given by JavaScript
+4:46 to build promises right it is not
+4:48 something which we pass in this is given
+4:51 by JavaScript by design of Promise API
+4:53 right so what will happen is if we if we
+4:57 invoke this Constructor with using a new
+5:00 keyword and pass in this function over
+5:02 here with resolve and reject now we can
+5:05 just return This Promise right this is a
+5:08 perfectly valid promise as of now what
+5:11 we will do inside a promise is write our
+5:14 logic of handling whatever we need to do
+5:17 inside this create order function okay
+5:20 so let me show it to you by code so now
+5:22 tell me what does create order will do
+5:24 create order basically will take the
+5:26 cart items and what it will do it will
+5:28 just create an order right here we will
+5:30 write logic to create an order because
+5:33 we don't have any database or something
+5:36 so this is the place you will write
+5:38 calls to database or you will write uh
+5:41 validate cart right let's let's just
+5:43 validate cart first of all right we will
+5:45 be validating cart how does that code
+5:47 works right I'm not going into the
+5:49 actual logic of how do you create an
+5:51 order I'm just taking an example so what
+5:53 you generally will do is we will
+5:54 validate the cart then you will just
+5:57 make a API call to create an order and
+5:59 then you will get an order ID that you
+6:01 will return as a success right so our
+6:04 promise should return a success or a
+6:06 failure isn't it so the success would be
+6:09 to returning an order ID and the failure
+6:11 would be to throw an error whatever uh
+6:14 error it gets right so let us just take
+6:17 a dummy example over here so suppose if
+6:21 we are trying to validate our card
+6:23 suppose if we have a function let's call
+6:25 it as validate cart right and we pass in
+6:28 cart items to it
+6:30 if this function fails then what we will
+6:32 do we will reject this promise right so
+6:35 now understand this point very clearly I
+6:38 am telling you once again that we are
+6:40 creating a promise now and we I'm
+6:42 sending it right so basically we are
+6:44 writing the producer part of it over
+6:46 here this create order function will
+6:49 return us a promise over here this
+6:51 promise object right this this is how we
+6:54 will return a promise now what will
+6:56 happen is we can reject that promise or
+6:58 we can resolve it and there is a logic
+7:00 behind it right so this is what we will
+7:02 do from this side now this is the
+7:05 producer
+7:06 end just to make things clear right
+7:08 otherwise it would be confusing for you
+7:10 so if the cart is not validated if
+7:13 suppose not validate cart so what we
+7:16 will do is we will just throw an error
+7:20 right we will reject the promise and how
+7:22 do you reject the promise this is where
+7:24 this resolve and reject come into
+7:26 picture this resolve and reject are the
+7:30 functions which are passed by JavaScript
+7:33 to us this is the super powerful thing
+7:36 which JavaScript gives us right we don't
+7:38 have to pass anything inside it so what
+7:40 will happen is this we will just call
+7:43 this reject right the reject function
+7:46 with some error if we reject it so our
+7:49 promise over here will be rejected
+7:52 whosoever is consuming our API whosoever
+7:54 is calling this create order the if the
+7:57 cart is not valid they are sending us
+7:59 the card if this is not valid we will
+8:02 just reject it right we are on the
+8:04 producer end now so if this is not valid
+8:06 we will just rejected and we will throw
+8:08 a new error so let's create a error how
+8:11 do you create an error inside JavaScript
+8:15 yes new error and what let's call and
+8:18 let's pass a message what error uh cart
+8:21 is not valid cart is not valid okay and
+8:25 then we will reject this with this error
+8:28 okay this is how simple it is if the
+8:30 cart is not valid just rejected and if
+8:33 everything is successful right now we
+8:35 will write logic to create error Logic
+8:38 for creating order sorry Logic for
+8:41 create
+8:42 order uh okay so now if the logic of
+8:45 create order is successful then we will
+8:47 get some order ID let's assume that we
+8:50 get an order ID after making a DB DB
+8:53 call suppose DB call do uh get order ID
+8:57 or something whatever whatever we want
+8:59 to to do we just call that DB call and
+9:02 we get the order ID or howsoever I'm
+9:04 just assuming that we get the order ID
+9:06 let's just take a dummy order ID over
+9:08 here 1 2 3 4 5 and now if the order ID
+9:12 is valid right if our if we have this
+9:15 order ID okay then what we will do is we
+9:19 will just resolve our promise we will
+9:22 just make it a success right so promise
+9:25 can only have two things right this is
+9:27 the guarantee with JavaScript provid
+9:30 this is what we are talking about right
+9:32 that promise can either be fulfilled or
+9:34 resolved or it can be rejected right so
+9:38 we know that this is how we reject a
+9:40 promise and how do we resolve a promise
+9:42 we will just we will just resolve a
+9:45 promise by calling resolve and we will
+9:48 just pass in order ID over here so now
+9:52 this is how we create the whole promise
+9:55 that's what it is okay it was that easy
+9:59 it was that simple and this is the main
+10:02 core part of promises first is the
+10:05 consuming part the second is the
+10:07 creation part so U I know it could be a
+10:11 little confusing so if it is confusing
+10:13 let me just recap quickly once again so
+10:16 that you will never forget it so over
+10:18 here again so we are now creating this
+10:21 create order API what will happen is
+10:23 once you call this create order API it
+10:25 will just create a new promise and
+10:27 return This Promise this part you
+10:29 understand understood now we as a
+10:31 creator of this API have two things to
+10:34 do we get cart right we get these cart
+10:37 items now we can valid we can either
+10:40 reject the promise or we can just accept
+10:43 or approve or resolve the promise right
+10:45 so we will do our own checks if the cart
+10:48 is validated then we will move ahead and
+10:50 create the order and we will resolve the
+10:53 promise with the order ID that okay
+10:55 everything whatever the cart items you
+10:57 passed everything is successful we'll
+10:58 just we will just approve it right it's
+11:01 like giving a stamp to a promise that
+11:03 okay done and we can do other thing is
+11:05 to reject things right so we can just
+11:08 reject if anything is uh not correct in
+11:11 that order got it so we created this
+11:14 promise now we are consuming it over
+11:16 here so let us just run this code and
+11:19 see what happens um it we get an error
+11:24 validate cart is not oh we have not
+11:26 defined validate card so let's just
+11:28 quickly Define validate cart for now
+11:31 validate cart and it takes
+11:36 cart uh and let's just let's not go into
+11:40 the details of checking if the cart is
+11:42 empty or if cart has like there are
+11:45 things how you can validate the cart
+11:46 right I assume that you can write that
+11:48 logic for the sake of Simplicity I'm
+11:50 just returning true from here okay but
+11:52 we can do all sort of validation over
+11:54 the cart whether the cart is empty or
+11:56 whether the cart has like the items are
+11:59 proper or not or something like we can
+12:01 validate the cart over here for the sake
+12:03 of Simplicity I'm just returning true
+12:05 from here and let's run the program once
+12:07 again now it says proceed to payment is
+12:09 not defined so it reaches reach this
+12:11 line okay yep definitely we have not
+12:13 gone to this line yet so let me just
+12:16 remove the proceed to payment for now
+12:19 and just do order ID we'll just print
+12:21 order ID Okay order ID and then order ID
+12:25 here right yes so see now we got this
+12:30 order ID so now what happened in this
+12:33 code was this create order function
+12:35 created a promise object right and this
+12:38 promise object was attached with this
+12:40 function right so what happened is it
+12:42 just returned a promise and we and then
+12:45 JavaScript just called this function
+12:47 create order and returned a promise and
+12:50 because the cart items were validated
+12:52 and everything was success so it just
+12:54 resolved this promise and once you
+12:56 resolve anything this data over here
+12:58 what ever you pass in over here this
+13:00 order ID it just gets over here in the
+13:03 call back functions whatever we have
+13:05 attached to our promise okay and then we
+13:08 just loged this order ID so this log was
+13:10 printed over here right so it just came
+13:13 quickly but what we will do is let me
+13:16 show you properly that how actually it
+13:18 looks like when it is an API call
+13:21 suppose if we were creating a a async
+13:23 operation which takes 5 seconds or
+13:25 something let me show you to you that
+13:27 also okay so if if we have let's just
+13:30 make a fake delay uh let's just have a
+13:33 uh set time out with uh 5,000
+13:36 milliseconds right and we will resolve
+13:39 so basically what I'm trying to do now
+13:40 is I will resolve the promise after 5
+13:44 Seconds okay we will take 5 seconds and
+13:47 then we will say
+13:49 that your promise is
+13:53 resolved okay so now see now it did not
+13:57 log order ID quickly but it took 5
+14:00 seconds for it to resolve right let me
+14:03 show it to you once again I saved it 1 2
+14:06 3 4 and five it should be printed now
+14:09 yes see after 5 Seconds it got printed
+14:13 isn't it beautiful now let me just show
+14:16 it to you what happened okay if I do a
+14:19 console log over here and if I log the
+14:21 promise so what would you see over here
+14:24 see the Promise is pending right so what
+14:28 happened is is why did you see the
+14:31 Promise pending
+14:32 here you know right yes so when
+14:36 JavaScript tried to execute this code so
+14:38 the create order API will take 5 Seconds
+14:41 to complete isn't it 5 Seconds to
+14:43 resolve by that time our promise object
+14:47 will be in pending state so that's why
+14:49 it just printing pending and then it
+14:51 attached this call back function and
+14:54 after 5 Seconds we get data into this
+14:56 promise object it got filled with the
+14:59 data and then as soon as the data was
+15:01 there this call back function was called
+15:03 with that order ID and this got printed
+15:05 so that's why if I run it once again if
+15:08 I just clear this and refresh the page
+15:10 once again see it says pending and then
+15:13 after 5 Seconds we will get the order
+15:15 ID Yep this is how we create a new
+15:19 promise and this is how we consume
+15:23 it now let me show you that what happens
+15:26 if we reject a promise right let us also
+15:28 see that case you would be amazed by
+15:30 this right if we will now try to reject
+15:33 our promise how do we reject our promise
+15:35 how do we reject our promise I'll just
+15:37 mark this validate cart as false right
+15:40 over here if I mark this as false and
+15:42 now I will save just see what happens in
+15:44 the console now see we got an error
+15:48 right and this is a red color error in
+15:51 the browser so this red color error over
+15:53 here shows that we have not handled our
+15:56 exception right we have not handled this
+15:58 error
+15:59 this is failing inside the browser and
+16:01 we as a developer should never do this
+16:03 we should always write code to handle
+16:06 errors so this you know what will happen
+16:08 if we just push this code to production
+16:11 this will fail in users computer and
+16:14 they will silently get that error right
+16:16 in their browser console and like user
+16:19 will not see anything on the page right
+16:21 so we should always gracefully handle
+16:23 errors whenever we are writing code so
+16:25 let me tell you how do we handle
+16:27 gracefully this error right this is a
+16:29 error which is there in browser console
+16:31 we want to handle it gracefully so now
+16:33 we have as a consumer right we have just
+16:36 written the success part right if the
+16:38 order ID is there if the everything is
+16:41 perfect then we will do this log the
+16:43 order ID but what if it fails how do we
+16:46 write that code so now for that promise
+16:49 also comes with one more function that
+16:51 is known as catch right it is just like
+16:54 a function just like then right and we
+16:57 can attach a failure call back also to
+17:00 it right so the promise object can can
+17:04 be attached with a failure call back as
+17:07 well right failure call back means if
+17:10 the call back fails if our promise fails
+17:13 then what will happen we will this call
+17:15 back will be invoked I'll show you
+17:17 quickly okay so this was the success
+17:20 part right uh this is the Callback which
+17:23 will be called if everything is Success
+17:25 if we resolve the promise right and this
+17:29 will be called if we reject the promise
+17:31 right if the promise is rejected so I'll
+17:33 show you that okay uh and then let us
+17:36 just do a console.log of error error do
+17:40 message right now if I if I save this
+17:45 program see we got printed cart is not
+17:47 valid so this is how now we don't get a
+17:50 red in our console right so now this is
+17:53 like gracefully handling the rejection
+17:56 of a promise right we should always do
+17:59 that whenever you are creating a promise
+18:01 or whenever you are consuming any
+18:03 promise you should always write a catch
+18:05 statement right to handle the errors
+18:07 gracefully this is a graceful way of
+18:09 handling errors we could have just shown
+18:11 a pop up saying that okay your cart is
+18:13 not valid or something right so this is
+18:15 how we handle it so now this was all the
+18:18 core part and the easy part now let's
+18:21 make things a little more complicated
+18:23 now let us see promise chaining we will
+18:25 take we will dive deep into promise
+18:27 chaining and we will see real life
+18:29 examples okay you would just love it
+18:32 just pay some more attention just 5 10
+18:34 minutes more and I would love to cover
+18:36 this promise chaining you would just
+18:38 love it we will see okay now let us just
+18:41 get proceed to payment also into into
+18:43 picture Okay so uh right now we did not
+18:47 have proceed to payment right so what we
+18:49 will do is let us just take proceed to
+18:52 payment also in picture Suppose there
+18:53 was proceed to payment this API and this
+18:56 is again an async operation so how do we
+18:58 handle that so suppose now what we will
+19:02 do is uh we had a promise over here this
+19:05 create order API returned a promise
+19:08 right and then what do we do we just
+19:11 attached a call back function to this
+19:13 right remember and then we handled then
+19:16 we returned order ID from here now we
+19:19 want to do with this order ID we want to
+19:22 proceed to payment right so how do we
+19:25 handle that I will show you now so first
+19:27 of all this promise right we just take
+19:29 this promise and then attach it over
+19:31 here so let us just write it in more
+19:33 clearer cleaner fashion okay I'm just
+19:36 I'm not changing anything in code I am
+19:38 just writing it in a different fashion
+19:40 right let's get rid of this promise word
+19:42 right so let me just remove it we can
+19:45 just simply do a DOT then uh after this
+19:48 right so I'll show you so it is same as
+19:51 writing it like that right so create
+19:54 order this will return a promise and
+19:56 then we attached a then method then
+19:59 function to it and then we passed in a
+20:01 call back function we just attached this
+20:03 call back function to This Promise
+20:04 object whatever was returned from this
+20:06 right so now what we'll do we want it to
+20:09 proceed to payment as well suppose once
+20:11 we have the promise object then what we
+20:14 will do we will just pass in another
+20:17 call back function where we will proceed
+20:19 to payment right so this is how we chain
+20:22 things up so this is the promise
+20:25 chaining once we get the order ID from
+20:28 this promise what we will do is we will
+20:30 pass the data into the next level of the
+20:33 chain and this is how then we will do a
+20:35 proceed to payment and let us just
+20:38 quickly write proceed to payment also so
+20:40 proceed to payment is what proceed to
+20:42 payment will again return a promise
+20:45 right let's make things a little more
+20:47 complicated you would just love it so
+20:49 proceed to payment is a promise now okay
+20:52 this is what I wanted to teach you that
+20:54 how do we handle it because in real
+20:56 world we will get to see such kind of
+20:58 scenarios we will fall into the
+21:00 scenarios so we should know how do we
+21:02 handle that so proceed to payment will
+21:04 have order ID which is passed from here
+21:07 right so this order ID will be there in
+21:11 proceed to payment order ID and now what
+21:14 we will do is we will just have this
+21:17 order ID and what we will do with this
+21:20 order ID we will just proceed to payment
+21:22 so I'm not writing the logic for
+21:24 handling payment and all that assume
+21:26 that we have uh this proceed to payment
+21:29 now this proceed to payment will return
+21:31 a promise right so let's see how do we
+21:34 return a promise we will just write
+21:36 return new
+21:38 promise
+21:39 right so basically last time what I did
+21:42 was I just created a PR variable with
+21:45 new promise and then just returned PR
+21:48 right instead of that we can just
+21:50 directly write return new promise and
+21:53 what does This Promise Constructor take
+21:55 a function isn't it a function and what
+21:58 what will this function have two
+21:59 arguments
+22:01 resolve and reject right now what we
+22:06 will do is I'm not writing the logic for
+22:08 payment now I'm just simply just
+22:10 resolving it directly right uh just for
+22:13 the sake of example and I am just saying
+22:16 payment
+22:18 successful payment
+22:20 suce successful oh my God my
+22:24 typing okay so I just I'm just quickly
+22:27 resolving it because I wanted to just
+22:29 show that how do we handle this promise
+22:32 over here now okay now what happens is
+22:36 I'll tell you one important thing which
+22:38 a lot of people forget right while
+22:41 writing code so generally whenever you
+22:44 have a promise like this you would
+22:46 handle this in the next level of the
+22:48 chain right you can do
+22:51 it like
+22:53 this so over here whatever the response
+22:57 of this proceed to payment will will be
+22:59 will be passed to the next call back
+23:01 function of this
+23:03 chain
+23:04 okay and then we will get payment info
+23:08 it will tell us whether the payment was
+23:10 successful or uh not successful and then
+23:13 let us just log this payment info but so
+23:17 generally people write code like this
+23:20 right this is how we change things up
+23:23 but this is a very common error in this
+23:26 program right now a very common error
+23:28 and a lot of developers fall into that
+23:30 and I and you know you won't be able to
+23:32 even figure out what the error is
+23:35 remember I told you last time yes we
+23:37 need to whenever we are chaining things
+23:39 up in this promise chain we need to keep
+23:42 returning things from one chain down to
+23:45 other down to other down to other right
+23:47 that's how we do it so how do we do that
+23:50 so whatever we need to passing down the
+23:53 chain we need to return it from top of
+23:57 the chain okay very simple very easy
+24:01 very simple
+24:03 okay what we need to do whatever we will
+24:06 return from here will be passed down the
+24:08 chain what does that mean we need to
+24:11 pass an order ID right so what we will
+24:13 do we'll just return order ID from here
+24:17 right and what can we return from here
+24:19 we can return any data or we can return
+24:22 a promise that can be resolved okay so
+24:26 we will return order ID and this order
+24:28 ID will go over here right so this will
+24:31 now receive order ID and over here again
+24:36 what we can do is we will just return
+24:39 the promise itself and when you return a
+24:42 promise from here this Dawn method will
+24:45 get attached to this promise okay it is
+24:50 basically exactly as writing something
+24:53 like
+24:56 this but this code would be ugly right
+24:59 we will again fall into promise hell
+25:01 this will be a promise hell if we just
+25:03 keep writing like
+25:05 this this is exactly similar to this
+25:08 because what will this return proceed to
+25:11 payment a new promise right so This
+25:14 Promise could be handled by the then
+25:15 method right we can attach a method uh
+25:19 attach a function attach a call back
+25:21 function to this promise right but to
+25:25 and then we can fall into a promise hell
+25:27 just like call back hell there can be
+25:29 promise hell also
+25:32 but the promise API was designed in such
+25:35 a way that we don't fall into this call
+25:38 back hell or that Doom right Pyramid of
+25:41 Doom kind of structure our code does not
+25:43 grow horizontally so what we do is we
+25:46 generally return the promise from this
+25:49 and we handle it in the next level of
+25:51 the chain okay how do we handle it we)
+
+
+4.Promise APIs ('Promise.all()', 'Promise.race()', 'Promise.allSettled()', 'Promise.any()')(0:00 welcome back to Namaste JavaScript and
+0:02 today we are going to cover promise apis
+0:04 so promise apis there are four promise
+0:06 apis which are majorly important and I
+0:09 will cover all of them in this video
+0:11 These promise apis will be very helpful
+0:13 when you are giving your interviews
+0:15 right and not just interviews it will be
+0:17 very helpful when you are building your
+0:19 day-to-day applications you know I was
+0:21 building a major project in my Namaste
+0:23 react course and you know we came to a
+0:26 place where we have to made make
+0:28 parallel API calls and that that is
+0:30 where we used promise apis these promise
+0:32 apis okay so it is very important even
+0:35 if you are building react applications
+0:37 wherever JavaScript promises comes into
+0:39 picture these apis will be very helpful
+0:42 so much important interview questions
+0:44 also comes with this I will try to cover
+0:46 everything in this video so let us just
+0:49 start before moving on to the code I
+0:52 will first tell you the theory portion
+0:54 of it so that you can understand it
+0:55 properly then we will write code for it
+0:57 okay so let's get started so get your
+1:00 notebook and pen and let's just begin
+1:03 okay so I have my uh notebook and pen
+1:07 with me so let me just tell you so first
+1:10 promise API that we are going to cover
+1:13 is known as
+1:14 promise.all okay
+1:17 promise.all so why this promise.all is
+1:20 used and what is the contract for it let
+1:22 me tell you that so suppose if you have
+1:25 to make parallel API calls and get the
+1:27 results it's a very important use case
+6:30 works differently okay so let us see
+6:33 that so again let us take an example
+6:36 similar kind of example where we have
+6:38 promised. all but this time what happens
+6:41 is it again has these three promises P1
+6:46 P2 and P3 but this time one of the
+6:50 promises will get rejected okay one of
+6:53 these promises will get rejected so uh
+6:56 let us take the similar kind of example
+6:58 right so P1 takes 3 seconds P2 will take
+7:01 1 second and P3 will take 2 seconds okay
+7:06 but what happens is after 1 seconds P2
+7:10 gets rejected after 1 seconds P2 get
+7:13 rejected now what will happen so listen
+7:16 to me very carefully take down note in
+7:18 your notebook as soon as any of these
+7:22 promises will get rejected promise doall
+7:25 will throw an error promise doall will
+7:28 also be a failure and whatever error
+7:31 will will it get from that promise from
+7:34 that rejected promise it will throw the
+7:36 same error as its result okay so the
+7:40 output will be error okay the output
+7:43 will be e r r o r and this will be the
+7:46 same error which is returned by P2 okay
+7:50 the output will be error and what will
+7m52s happen
+7:54 immediately right
+7:57 immediately immediately
+8:00 as soon as as soon as error
+8:06 happened right as soon as error happened
+8:09 it will return the error in this case in
+8:12 this case P2 takes one second and after
+8:16 1 second it got error so that means
+8:19 after 1 second right after 1 second you
+8:23 will see an error it will not even what
+8:26 I'm trying to say it will not even wait
+8:28 for other promises to get successful or
+11:50 if one of them fails right so in that
+11:53 case we have one more promise API to
+11:56 handle that case let me tell you about
+11:58 that it is known as promise doall
+12:02 settled right promise doall
+12:06 settled promise dot all settled s TT e l
+12:12 e d right promise do all s settled right
+12:16 suppose if we pass in an array of P1 P2
+12:19 P3 over here right P1 P2 P3 over here if
+12:24 all of them get successful right if all
+12:27 of them get success F right and this
+12:31 takes 3 seconds this take 1 second this
+12:33 take 2 seconds so what will
+12:35 happen after 3 seconds you will get the
+12:39 same results right Val 1 Val two Val
+12:43 three right the same results just like
+12:45 promise. all but this will H but this
+12:49 will be different but this will be
+12:51 different in case of failure this will
+12:53 be the output for a success case but
+12:56 what if one of these promises gets
+12:58 rejected
+12:59 right suppose let's take an same example
+13:02 if P2 gets rejected I am just uh uh
+13:05 erasing it and doing it right away over
+13:07 here only right so what
+13:09 if what if my P2 gets rejected this gets
+13:14 rejected in 1 second so what will happen
+13:17 is this will still wait for it will wait
+13:21 for all promise all promises to fulfill
+13:28 to
+13:30 fulfill or maybe to get settled okay
+13:33 let's not use the word fulfilled
+13:35 fulfilled basically in promise World
+13:38 fulfilled is used for Success right so
+13:41 uh let's call it as settled right
+15:17 earlier we talked about promise.all so
+15:19 basically they both are same just the
+15:22 error handling is different if I have to
+15:25 rephrase it promise. all is kind kind of
+15:28 like a fail first right uh sorry fail
+15:32 fast right so promise. all is kind of
+15:35 like a fail fast right can I call it as
+15:39 fail fast right so even if one fails it
+15:43 just quickly gives you the result that
+15:45 one failed right and fail fast technique
+15:49 and in promise. all settled it waits for
+15:52 all the result and then we'll perform
+15:55 action accordingly right so this is how
+15:58 it works and uh promis and it depends on
+16:02 use case also suppose if you made five
+16:04 API calls and if you really needed the
+16:07 result of all these five API calls to
+16:10 show a web page right then you will use
+16:12 promise.all if one gets uh but suppose
+16:16 if you are swing five cards right five
+16:19 cards on your page and these five cards
+16:21 are populated by five API calls one of
+16:23 them fails just show four cards right in
+16:26 that case you can use promise.all
+16:27 settled so there are different use cases
+16:29 for promise. any uh promise.all and
+16:32 promise.all settle use it according to
+16:34 your need okay so when we will use the
+16:37 example in code you will understand it
+16:39 even more okay so now let's move on to
+16:42 the third API right the third API oh my
+16:45 God uh okay cool so let's go to the
+16:49 third API the third API is known as
+16:53 promise. R come on take notes along with
+16:57 me okay so promise do race so promise.
+17:00 rat again takes three promises now as
+17:04 the name
+17:05 suggest it's a race right and the person
+17:10 who will finish first will be the winner
+17:14 right so the person who finishes first
+17:16 will be the winner over here so suppose
+17:19 if there are three promises again and
+17:22 suppose P2 takes 1 second right let's
+17:25 take the same example P1 takes 3 seconds
+17:28 P1 P2 takes 1 second P3 takes 2 seconds
+17:31 so as soon as we get the winner as soon
+17:34 as first promise is resolved right first
+17:37 promise is resolved that is after 1
+17:39 seconds so what we'll do after 1 seconds
+17:43 it will give me the result of Val to
+17:46 right it will give me the result of Val
+17:48 to let me tell you this is not an array
+17:51 this is a value I representing with uh
+17:53 this uh round brackets okay it will give
+17:56 you the value of the second promise
+17:59 right basically it will give you the
+18:02 value of the
+18:05 first
+18:08 settled promise right it will give you
+18:11 the value of the first settled promise
+18:15 after 1 seconds right after 1 seconds
+18:18 whatever the result P2 will have it will
+18:20 give you that
+18:22 value whatever the results P2 will give
+18:24 after 1 second it will give you the
+18:26 value suppose if P3 was suppose if if
+18:30 suppose right let me change change this
+18:32 example suppose if P3 took 1 second or
+18:36 P3 took sorry right let me let me remove
+18:39 this times right let me remove this
+18:41 timeline suppose if P1 right suppose if
+18:46 P1 takes 3 second P2 takes 5 Seconds P3
+18:50 takes 2 seconds so what that will happen
+18:53 is P2 will be success after 2 seconds
+18:56 now the value will be P3 sorry
+18:58 P3 is P3 will get settled in 2 seconds
+19:02 so the value over here will be P3 right
+19:05 value returned from the third promise so
+19:08 basically what I'm trying to say it's a
+19:10 race whatever promise settles first let
+19:15 me tell you the word is settled settles
+19:18 first you will get that result now an
+19:22 important question is this is when the
+19:24 first promise was successful what if the
+19:26 first promise was error
+19:29 What If This Promise was rejected let me
+19:31 just show you that case also let me
+19:33 remove this right let me remove this so
+19:36 this was the success case you understood
+19:38 it right keep taking down notes okay
+19:40 keep taking down
+19:41 notes right because I am rubbing it
+19:45 right so uh I am just changing whatever
+19:48 I am writing so please keep taking down
+19:50 notes pause the video if if I'm going
+19:52 fast but take down notes it is very
+19:55 important okay what if after 2 seconds
+19:58 seconds P3
+20:00 fails what if P3 fails after 2 seconds
+20:03 it is the first promise to get settled
+20:05 what if the P3 fails what will happen is
+20:08 error will be
+20:11 thrown error will be thrown right it
+20:14 will not it will return the error which
+20:16 will come from this error from
+20:20 P3 right whatever the error will come
+20:23 from P3 error will come right after 2
+20:26 seconds got it after 2 seconds so what
+20:29 will happen is it will uh it will
+20:34 return
+20:36 result of first settled promise settled
+20:43 promise okay so whether okay it's kind
+20:47 of like a race first promise whatever is
+20:51 resolved in that
+20:52 array whether it is Success whether it
+20:55 is failure it will throw it will return
+20:57 the result right it will not wait for
+21:01 other promises to finish it will not
+21:04 wait for other promises to get settled
+21:07 eventually eventually after 3 seconds 5
+21:09 Seconds they will also get settled right
+21:12 success or failure that's different part
+21:14 but eventually they will get success but
+21:16 it will not wait right it will also not
+21:20 wait because it's a race right so it
+21:22 will not get it will just quickly return
+21:24 the result success failure does not
+21:26 matter it will just return the result
+21:28 now this was promise. R now let's get
+21:31 back to our final and the fourth promise
+21:33 API and that is interesting right and
+21:37 once you if you have understood this
+21:38 much then the Last Promise API it will
+21:41 be very easy for you to understand okay
+21:43 so let's go to the next promise API it
+21:47 is known as
+21:49 promise do
+21:52 any okay promise. any it again takes a
+21:56 list of promises an arror of promises
+21:59 okay P1 P2 P3 now we have this array of
+22:04 promises okay now it is very much
+23:59 rejected right this was rejected so it
+24:02 will it will ignore this now it will go
+24:05 to P3 and it is successful so it will
+24:08 return the result from P3 right so let's
+24:10 call this as Val 3 right from P3 it will
+24:14 return this result what if now what if
+24:18 this P3 also was s was unsuccessful
+24:22 right what if P3 also gets rejected
+24:25 right then it will again wait for p 2 P1
+24:29 and suppose if P1 was success right what
+24:31 will happen then the value will be Val
+24:34 one right then the value will be this
+24:38 value which will be returned from here
+24:40 got it so basically it will wait it will
+24:44 wait for the first
+24:46 success now you must be thinking a
+24:49 curiosity will come into your head I
+24:50 know what you are thinking that what if
+24:52 everything fails what if everything
+24:55 fails right what if suppose let me just remove
+25:01 let me just clear all of this and let me
+25:03 just show you what if everything fails
+25:05 over
+25:05 here what if everything fails over here
+25:09 all of them got failed all the app calls
+25:12 failed so the return result will be an
+25:17 aggregated
+25:19 error aggregated error now when all the
+25:23 all of them will be failed then the
+25:25 return will be error obviously but but
+25:27 this time it will be an aggregate error
+25:31 right aggregate error and this aggregate
+25:34 error will be an array of all the three
+25:38 errors okay it will be an error of error
+25:43 one error 2 error three so basically a
+25:48 good part about promise. any is it will
+25:51 wait for Success right wait for the
+25:54 first success but if all fails
+25:58 in case of all fails then it will you
+26:01 know it will wait for success and it
+26:03 will ignore the failures but if all of
+26:06 them fails now it will collect all the
+26:08 errors and it will give you back this
+26:11 aggregate error it will give you back
+26:13 this aggregate error and now all these
+26:17 errors will be if all fails it will give
+26:19 you the list of all
+26:23 errors okay and it will so basically
+26:27 what will happen is see this the first
+26:30 uh the first first result you get after
+26:33 1 second P2 the second result you get
+26:35 after 2 seconds the third result you get
+26:37 after 3 seconds right so all of them
+26:40 failed so after 3 seconds right after 3
+26:45 seconds you will get this type of array
+26:48 and this array will have all the
+26:51 errors got it so a difference between a
+26:54 r and any is that R will give you the
+26:57 first result irrespective of success or
+27:00 failure promise. any will wait for a
+27:03 success right and it will give you
+27:05 success whatever the first success is if
+27:08 all of them fails then it will give you
+27:10 an array of all of the failures hope you
+27:12 would have understood it I have I have
+27:13 tried to explain you beautifully using
+27:15 diagrams right these diagrams are very
+27:18 helpful to make a memory map in your
+27:21 head now when you will write code you
+27:24 will just love it I'm telling you if you
+27:26 understood this much writing code will
+27:28 be a piece of C for you and you will
+27:31 never forget in this life right I'm
+27:33 telling you you will never forget in
+27:34 your life it is very easy in Namaste
+27:37 JavaScript my main aim is to just teach
+27:40 you the best right and I'm telling you
+27:42 my dear friends I have used this promise
+27:45 apis I have used these promise apis into
+27:48 my Namaste react you know I have a
+27:50 course Namaste react course right where
+27:52 I teach react I was building a final
+27:54 project and there I had to make parallel
+27:57 API calls and I made parallel API calls
+28:00 and I had to use these apis very
+28:03 important and in your interviews right
+28:06 the interviewer can confuse you between
+28:08 race and any the failure case the
+28:10 success case this that right so you
+28:12 should know all of these cases right we
+28:15 will we will recap this quickly and then
+28:17 we will move to code okay so please let
+28:19 us just quickly recap it and then we
+28:22 will just go back and write code very
+28:24 quickly I will show you how to write
+28:26 code I will show you how actually these
+28:28 promises work right uh how you will get
+28:31 the details how you will use it is in
+28:33 your uh in your day to-day life okay so
+28:37 let's go back to our uh revision right
+28:40 let me just quickly revise
+28:42 it I am going very fast so listen to me
+28:44 very carefully promise.all takes an
+28:48 array of promises right this is the
+28:50 first thing suppose if all of them get
+28:53 successful so it will return you and
+30:29 if one API call fails it will still wait
+30:32 for all the API calls to finish right
+30:35 and then you will get this array after 3
+30:38 seconds after 3 seconds and you will get
+30:41 the value or error according to what the
+30:44 promises you sent in the same order okay
+30:47 so if P1 was fulfilled then the value
+30:49 success value will come over here P2
+30:51 gets rejected the error will come over
+30:53 here P3 gets success the success value
+30:56 will come over here right let's go back
+30:58 quickly to promise. race hope you are
+31:01 understanding this let me tell you very
+31:03 important I have taught you in a
+31:05 diagrammatic fashion right when you
+31:07 learn with images it sticks in your head
+31:09 hope this is sticking to your head okay
+31:12 so hope you are getting something out of
+31:15 this the third one is promise. race in
+31:18 this it's kind of like a race right P1
+31:20 P2 P3 are racing the first settled see
+31:26 uh the there is a difference between a
+31:28 lingo right when you say settle it can
+31:31 settle with a success or a failure it
+31:33 can settle with a resulted or a promise
+31:36 can get resolved or rejected but it's in
+31:39 a settled state right it has settled
+31:41 settled means you have gotten uh
+31:43 response whether it is success or
+31:45 failure that's a different case settles
+31:47 right so first settle Pro and let me
+31:50 tell you you know interviewers will
+31:53 confuse you they will say fulfilled
+31:55 sucess settle resolve reject you will
+31:58 get messed up success failure listen to
+32:01 me very carefully get that lingo in your
+32:04 habit because you know uh I hate those
+32:07 type of interviewers which focus more on
+32:10 the lingo but I understand that okay
+32:13 like now interviewers are asking you you
+32:15 should you should also know so please
+32:17 know that you will always use the word
+32:19 settle right it will it will return the
+32:23 results as soon as the first settle
+32:25 promise it will return the result of the
+32:27 first settled promise now the settled
+32:29 promise can be success or failure if it
+32:31 is Success it will return the success if
+32:33 it is error it will return the error the
+32:35 first settled promise right this is race
+32:40 now right now promise. any it will
+32:43 return the result of first settled resol
+32:48 or first settled success right first
+32:51 settled success okay so remember if it
+32:55 fails if the first settled promise fails
+32:58 it will wait for the second if the
+33:01 second also fails it will wait for the
+33:02 third and it will keep on waiting till
+33:04 it gets a success right it's a success
+33:06 seeking API success seeking API right
+33:09 it's seeking for a success it's
+33:12 basically seeking for first success
+33:14 right let's write it down right
+33:18 seeking for
+33:22 first
+33:24 success right pardon my bad handwriting
+33:27 I'm writing very fast that's why it is
+33:28 happening it is seeking the first
+33:30 success once it gets the first success
+33:32 it will quickly return the result right
+33:34 so that is what if all of them fails if
+33:37 all of them fails then it will give you
+33:39 an aggregate error right error an array
+33:42 of errors all the error messages so this
+33:46 is what it will give you now this is all
+33:50 the theory part and if you have
+33:51 understood the theory let me tell you
+33:53 you have understood 80% of the things
+33:56 okay you have understood 80% of the
+33:58 things now let's move on to our VSS code
+34:00 editor and try to see all of this in
+34:03 action you will just love it you should
+34:05 also know how to write code for all of
+34:07 them isn't it okay so let us just
+34:10 quickly write the code for all of them
+34:12 okay so uh first of all right we will
+34:16 have we will see what is promise okay oh
+34:18 my God my caps lock is on
+34:22 promise.all okay so we will first of all
+34:24 see promise.all it will take an ADD of
+34:27 promises right P1 P2 and P3 okay P1 P2
+34:31 P3 these P1 P2 P3 can be API calls also
+34:35 okay suppose if P1 is a API call you can
+34:38 write Fetch and you can fetch a result
+34:41 Right This Promise can be this P1
+34:43 promise can be an API call also right
+34:45 suppose you are fetching some data but
+34:48 for this example I'm not making actual
+34:50 API calls okay for this demo I'm not
+34:52 making API calls I am writing a normal
+34:55 promise okay uh uh because we have more
+34:57 control over the timer right on it so
+35:00 that I can demonstrate all the cases to
+35:02 you okay so I am creating a promise uh
+35:06 you can also use fetch over here if you
+35:08 want to see live examples and that is
+35:09 what you will do generally in your real
+35:11 world example but I am just using this
+35:14 to show you the actual demo how it works
+35:17 right so I am doing a set timeout after
+35:20 set timeout okay let me resolve the
+35:23 first promise resolve it with a uh
+35:27 success okay so P1 success okay P1
+35:31 success uh let me call this as P1
+35:34 success over here and let me let's take
+35:37 the same example after 3 seconds it will
+35:39 give you the success okay 3 seconds it
+35:42 will give you the success right and what
+35:46 if let me just
+35:49 also let me make P2 P3 also right so P2
+35:53 is P2 success okay
+35:57 P2 success but it will take 1 second
+36:00 right this is what the example was and
+36:03 what if it is p uh P3 will take 2
+36:06 seconds and the P3 will be resolved with
+36:08 a P3 success okay P3 success now let me
+36:13 tell you let's call this as P1 P2 P3
+36:16 right P1 P2 P3 and now what is the
+36:20 return result for this right what I will
+36:23 do is I will just do a so basically it
+36:27 returns a promise only right so let me
+36:30 get the result of this right result
+36:34 right let me get the result and let me
+36:36 just log the result over here log the
+36:40 result whatever the result will be there
+36:42 I will just logging it to show you right
+36:45 and let us also see the time also right
+36:48 so basically time right so basically P1
+36:51 takes 3 seconds to resolve P2 takes 1
+36:55 second to resolve I am I'm just making a
+36:57 dummy so basically these are if if you
+36:59 are not understanding what I have
+37:01 written all of this this is dummy
+37:02 promises I have created dummy promises
+37:05 actually you will make an API calls or
+37:07 you will use actual promises and they
+37:09 will take their own times I have created
+37:11 dummy top dummy promises so that I can
+37:13 control at what time it gets resolved
+37:16 okay to show you the
+37:18 demo cool so this is promise. all hope
+37:22 all of this is visible also let me
+37:23 increase the font Okay cool so this is
+37:25 the font now promise. all now let me
+37:29 just save it and refresh my page save it
+37:32 and refresh my page and let me see what
+37:35 will be the result I saving it and I've
+37:37 have refreshed the page so after 3
+37:39 seconds 1 2 3 you will get an array see
+37:42 this array of response P P1 success P2
+37:46 success P3 success and it took 3 seconds
+37:49 right it took 3 seconds isn't it if I
+37:53 refresh my page it will take 3 seconds
+37:56 and it will get the result right after 3
+37:59 seconds remember this right now let us
+38:01 fail one of them right suppose let us
+38:04 fail the uh first promise okay let us
+38:07 fail this first promise okay so CV okay
+38:10 I am commenting down the success uh let
+38:12 me just make it P2 fail okay P2 fail P2
+38:18 fail and let me just reject This Promise
+38:20 r e j e c okay so what should happen is
+38:25 so now what will happen after 1
+38:28 seconds it will throw an error right
+38:31 this is what we learned in theory right
+38:33 after 1 second it will throw an error
+38:34 let us see it will not wait for p this
+38:39 this two seconds or 3 seconds exactly
+38:41 after 1 second it will throw an error
+38:43 okay I'll show it to you let us save
+38:45 this right if I save this refresh the
+38:47 page see refresh the page see after 1
+38:50 second itself it just failed now this is
+38:53 an uncut uncut error because I have not
+38:56 written a catch over here so let us just
+38:58 catch it right because catch is a good
+39:00 thing right we should catch the errors
+39:02 right and let me do a console. log of
+39:05 this error okay so let me just catch
+39:09 this let me write catch in another line
+39:12 so that it is much
+39:14 readable okay so we are catching the
+39:16 error so if I save it if I refresh the
+39:19 page see this after 1 second P2 fail we
+39:22 have oh it is not even looking like an
+39:25 error so let me make it look like an
+39:27 error basically console. err error right
+39:31 console. error so if I do console. error
+39:34 yes so it is a now this is not a uncut
+39:36 error this is a error which I have
+39:38 explicitly logged it right so it's not
+39:41 an uncut error it is always good you
+39:43 know while I am teaching this Namaste
+39:45 JavaScript I also want to teach you good
+39:47 practices never ever rely on uncut error
+39:51 you should never have this uncut error
+39:53 in your code okay let me just show it to
+39:55 you see this
+39:56 uncaught right uncaught means you are
+40:00 not even aware of you have not handled
+40:01 the error right this is uncaught error
+40:04 right so don't get into uncut error
+40:06 always write your catch statement always
+40:09 catch your errors before the before the
+40:13 browser catches your error you should
+40:14 catch your error okay so you write a
+40:17 catch statement so see this this is a
+40:19 CAU error right and if I do a console
+40:22 log it will not look not even look like
+40:24 an error see this it will be P2 fail
+40:28 okay so this is P2 fail right let me
+40:31 make it console. error only so that
+40:33 error is visible properly but after 1
+40:35 second it fails this)
+
+
+
+5.async/await, Error Handling in Async Code(0:00 welcome back to Namaste JavaScript and
+0:02 today we are going to study async await
+0:04 I know this is the most awaited topic of
+0:06 this series and I have come here to
+0:09 teach you okay if you are a JavaScript
+0:11 developer then you should definitely
+0:13 know async of it you cannot skip it
+0:14 right it will be useful for your daily
+0:16 coding as well as for your interviews
+0:19 okay I will cover everything today about
+0:21 async await we will dive deep into this
+0:23 topic okay so first of all we are going
+0:26 to cover these topics what is async
+0:28 right we will see what is async then
+00:30 we'll see what is await then we will
+0:32 also see how async of it works behind
+0:34 the scenes okay we will dive deep into
+0:36 it right and then we will also see some
+0:39 examples of how async await is used in
+0:41 real life got it and then we will see
+0:43 how we can do error handling how we can
+0:45 handle errors in your async await then
+0:47 we will also talk a little bit about
+0:49 interviews right if you get interview
+0:51 questions around async of it how you can
+0:53 handle that and then we will also see
+0:56 what is the difference between using
+0:58 normal promise that then catch and then
+1:01 why we use async of it right basically
+1:03 this whole thing will cover everything
+1:05 about async of it so let's get started
+1:09 foreign
+1:09 [Music]
+1:12 that
+1:17 is used before a function to create a
+1:20 async function and what is async
+1:22 function let me show you to you with the
+1:24 help of code okay let us create our
+1:26 async function and now I will tell you
+1:28 how async functions are different than
+1:30 normal functions okay so if I have to
+1:32 create a async function I will write a s
+1:35 y n c async and then I will write
+1:38 function and then the name of the
+1:40 function let's call that as get data or
+1:43 something right any name you can give it
+1:45 right so this is a async function now
+1:48 how is it different than a normal
+17:09 [Music]
+17:12 okay if you if you'll try to write a
+17:15 weight over here it will throw an error
+17:17 right it will throw an error over here
+17:19 okay it will throw an error okay so now
+17:21 let's understand this thing a little
+17:23 bit with the code a little bit okay I
+17:25 will just add a console.log over here
+17:27 right now
+17:29 now and let me add uh Namaste JavaScript
+17:34 so so now tell me
+17:37 tell me what will be printed first
+17:40 Namaste JavaScript or promise resolved
+17:44 value what will be printed first
+17:47 right when you will call this get data
+17:49 what will be printed first tell me tell
+17:52 me right so
+17:54 you are absolutely right first of all
+17:57 this Namaste JavaScript will be printed
+17:59 then the promise will be resolved after
+18:01 10 seconds okay shall I show you in
+18:04 action okay for people who don't know
+18:06 let me save it Let me refresh the page
+18:08 see this Namaste JavaScript is printed
+18:11 and now after 10 seconds
+18:13 my promise will be resolved basically
+18:16 how this function will run is it will
+18:19 basically keep this callback function it
+18:21 will see this now after 10 seconds this
+18:24 has come up right so what it will do is
+18:27 as I told you in my previous episodes
+18:29 right time tied and JavaScript waits for
+18:31 none right time tied and JavaScript
+18:34 waits for none right JavaScript will not
+18:35 wait for anything so what will happen is
+18:38 as soon as this get data function will
+18:40 be executed it will register this
+18:43 promise and it will take this callback
+18:45 function and keep it separately right
+18:47 till it is resolved and it will continue
+18:50 executing then the JavaScript will move
+18:52 on to line number after 26 move on to
+18:54 line number 27 it will not wait for this
+18:57 promise to resolve
+18:59 over here over here JS engine will not
+19:04 wait will not wait
+19:07 wait for promise to Res to be resolved
+19:12 okay JS engine will not wait over here
+19:14 for promise to be resolved it will just
+19:15 move on to the next line okay it will
+19:18 move on to the next line and it will
+19:20 print this Namaste JavaScript
+19:22 and This Promise will be resolved after
+19:25 10 seconds and once it is resolved then
+19:29 it will do a console log off
+19:31 the resolved value right this promises
+19:34 all value that is why if you refresh the
+19:36 page Namaste JavaScript is printed
+19:39 quickly right because it does not wait
+19:42 for anything right and after 10 seconds
+19:44 This Promise resolve value will be
+19:46 printed see this yes see this after 10
+19:49 seconds promise resolve value is printed
+19:51 automatically onto the console so that's
+19:53 how our normal behavior of
+19:55 promises used to work right so the
+19:59 problem with this was
+20:01 the problem with this was a you know it
+20:05 used to be very confusing for a lot of
+20:07 developers right a lot of developers
+20:09 used to think that over here JavaScript
+20:12 will wait right JavaScript will wait or
+20:14 the program will wait on line number 27
+20:17 it will wait for the promise to resolve
+20:19 and then once once the promise resolved
+20:21 then only it will go to line number 29
+20:24 or 28. right so this was very confusing
+20:28 to a lot of developers and they used to
+20:30 think they used to think that this
+20:32 console log will happen only after my
+20:35 get data was resolved right
+20:36 but that is why I said time tied and
+20:38 JavaScript waits for none right JavaScript
+20:41 won't wait for anything so what will
+20:43 happen is
+20:45 JavaScript will never wait for this to
+20:47 be resolved right it will always print
+20:50 this first and then it will do the
+20:52 console log off the promise result value
+20:55 got it so that is why we got async await
+20:58 got it that is the major thing which we
+21:01 got async await and what does async
+21:04 away do what what does async away do it
+21:07 basically waits at that particular line
+21:10 it basically it will make your program
+21:13 run synchronously okay it will make your
+21:16 JavaScript run synchronously okay
+21:18 although it is still not running
+21:20 synchronously but it appears that it is
+21:23 running synchronously and it is making
+21:26 your life easier okay it is not actually
+21:29 running synchronously you know JavaScript
+21:31 does not pause over here okay it is not
+21:33 like it is not doing anything
+21:35 nothing over here JavaScript is still
+21:37 doing other work in the background it is
+21:39 still going ahead and executing all the
+21:41 other lines but the appearance but it
+21:44 appears that it is synchronously waiting
+21:46 over here and once this is done then
+21:49 only it will move on to the next lines
+21:51 got it okay so now let us implement
+21:54 this get data using async away so we have
+21:57 our
+21:58 async function over here let me remove
+22:00 all of this right so we have our async
+22:03 function over here let me comment this
+22:05 normal function right so let's call this
+22:08 as a sink function
+22:10 handle promise right and now what will
+22:12 happen is let's create a promise
+22:15 inside right let's create a promise inside
+22:19 so this is a promise p and let's add a
+22:23 set timeout so that you understand this
+22:26 okay so let's add a set timeout and
+22:30 let's console log let's resolve this
+22:33 after 10 seconds right let's do this
+22:37 resolve after 10 seconds right
+22:39 resolve after 10 seconds right and then
+22:42 we have this resolve call and then we
+22:45 have a promise resolved
+22:48 value right
+22:50 so this is the promise we had right if
+22:53 I will remove this function from here
+22:56 if I will call this handle promise over
+22:59 here and now tell me what will be the
+23:01 console if I save this file and refresh
+23:04 my page
+23:05 there is no console log
+23:07 can you tell me what will be the output
+23:10 what will be the console log I'm pretty
+23:13 sure you are not going to be right this
+23:15 time or maybe you are you have learned
+23:17 something new right so let me save it and
+23:20 if I hit the save button
+23:22 console nothing is printed over here
+23:25 nothing is printed over here why because
+23:28 this function when it is running it is
+23:31 waiting for this line to get executed
+23:34 okay this is waiting for this to get
+23:36 executed right this function is basically
+23:40 not moving ahead right it's not moving
+23:42 ahead okay what do you think it is going
+23:45 ahead or it is not moving ahead what do
+23:48 you think no my dear friends this is
+23:51 exactly how this is exactly how your
+23:55 synchronous function used to work right
+23:58 it is amazing right right and let me
+24:01 tell you let me ask you one more
+24:03 question right so suppose if I have a
+24:05 console log
+24:07 console log on the top of this right on
+24:10 the top of this line suppose if I have a
+24:13 console log on the top of this line how
+24:16 will this work right how will this work
+24:18 right so let me call this as hello world
+24:21 okay let's call this as hello world okay
+24:24 so when will this hello world be printed
+24:26 can you guess
+24:27 can you guess so if I save this file and
+24:31 refresh my page hello world is printed
+24:33 quickly right it will quickly be printed
+24:37 and then once this hello world is
+24:39 printed then at this line number 22 line
+24:43 number 22 the program waits for 10
+24:45 seconds and then Namaste JavaScript and
+24:47 Promises all value is printed
+24:50 did you understand all of this
+24:52 this is the whole Funda of async await
+24:55 right and async await basically actually
+24:58 Waits at that point of time weights
+25:01 right it will the program will wait over
+25:04 here
+25:05 what if let us resolve this value two
+25:07 times right and let us see how this
+25:09 function behaves right
+25:11 right let me do Val 2 over here right
+25:14 Val 2 over here and let us quickly write
+25:17 let us quickly copy this also and now
+25:19 can you guess the execution Behavior now
+25:21 a lot of developers get confused with
+25:24 this a lot of developers get confused
+25:27 with this like what will happen now tell
+25:29 me my dear friends we have we are
+25:31 resolving we have this await line two
+25:33 times in our program will our program
+25:35 wait two times or will it run parallely
+25:39 how will it happen how will this whole
+25:41 thing be printed
+25:44 are you also amused these are the type
+25:46 of interview questions you will get and
+25:49 you will just won't be able to answer
+25:51 how how everything is happening right
+25:53 that is why interviewers are
+25:55 interviewers screw you in your interview
+25:57 okay so next time
+26:00 learn this right now in this video and
+26:02 next time crack your interviews with
+26:04 confidence okay you will know exactly
+26:06 what is happening right so let me show
+26:09 you what happens and let me also explain
+26:11 you refresh the page see this hello
+26:12 world is printed now our program will
+26:15 wait for 10 seconds or after 10 seconds
+26:16 will you see all of it Namaste
+26:19 JavaScript Namaste JavaScript 2 valve
+26:21 one well two both of them
+26:23 yes serious my dear friends after 10
+26:27 seconds after 10 seconds are
+26:32 are you know are both the promises are
+26:35 resolved
+26:36 it was confusing for you right so let me
+26:39 try to make it even more complicated and
+26:41 let us see some more examples it will be
+26:43 interesting right so uh what happened is
+26:46 right now we had the same promise and we
+26:49 were resolving it twice right and you
+26:51 would have thought that okay Akshay the
+26:53 program will wait for 10 seconds over
+26:54 here then it will wait for 10 seconds
+26:56 over here so after 10 seconds these logs
+26:58 will print but my dear friend it did not
+27:00 happen like this what happened was JavaScript
+27:03 did not wait two times it waited only
+27:06 for 10 seconds right did it not
+27:09 so let me show you one more example and
+27:11 now you are going to get
+27:14 completely mind blown now let me use
+27:17 two different promises okay now let me
+27:20 use two different promises
+27:22 now we have two different promises P1
+27:26 and P2 okay so P1 will resolve in 10
+27:29 seconds okay let's call this as P1 okay
+27:32 and P2 will resolve in 5 seconds
+27:36 so we have P1 as 10 seconds and P2 as
+27:40 five seconds okay and now let me
+27:43 uncomment this line console log Namaste
+27:46 JavaScript console log Namaste JavaScript
+27:48 2 and now
+27:50 this is P1 now let's resolve P2 over
+27:53 here this is P2 over here right this is
+27:56 P2 over here so let's
+28:00 write val 1 and Val 2 okay
+28:03 Val one is Namaste JavaScript and Val 2
+28:06 is Namaste JavaScript 2 okay and now
+28:08 what will happen can you guess now right
+28:11 so now let me make it 20 seconds and
+28:14 10 seconds okay can you tell me what
+28:16 will happen now right so P1 resolves in
+28:20 20 seconds P2 resolves in 10 seconds
+28:23 what will happen now
+28:25 confusing right this is why you
+28:27 are not able to answer the questions in
+28:29 your interviews I want to go dive deep
+28:32 and tell you everything about promise
+28:34 all the complicated topics I want to
+28:36 cover everything in detail right you
+28:39 will never get confused with async await
+28:41 next time I'm telling you right so uh if
+28:45 you are liking this hit the thumbs up
+28:48 right hit the like button in the YouTube
+28:49 video it motivates me to make more such
+28:51 videos right so let me show you what
+28:54 will happen now so if I refresh the page
+28:56 see this P1 is 10 seconds P2 is 5
+28:59 Seconds what will happen Let me refresh
+29:01 the page hello world is printed now
+29:02 after five seconds will this be printed
+29:05 no uh five seconds are gone and this is
+29:09 not printed let's see what happens after
+29:10 10 seconds all of it is printed see this
+29:13 after 10 seconds all of these it's
+29:16 printed
+29:17 isn't it interesting right this promise
+29:20 was resolved in five seconds but still
+29:23 these lines had to wait for 10 seconds
+29:26 to resolve
+29:29 d right did you understand that right
+29:31 did you understand that now it looks
+29:34 like that our async function is waiting
+29:37 for all the promises to get completed
+29:39 right before it starts logging again
+29:42 is it is it let us see one more example
+29:45 where now I will reverse the order right
+29:48 now I will reverse the other now I will
+29:51 make the P1 promises five seconds
+29:55 right now I will make the P1 promises
+29:58 five seconds and P2 promises 10 seconds
+30:01 right P2 promises 10 seconds now what
+30:04 will happen right now what will happen
+30:06 what do you think it will be right Let
+30:09 me just quickly run this for you
+30:11 right let me just quickly run this for
+30:13 you so hello world is printed over here
+30:16 now this P1 is 5 seconds right P1 is
+30:18 five seconds so will this print after
+30:21 five seconds and then it will wait for
+30:23 another 10 seconds and then print this
+30:25 no my dear friend that is not how it is
+30:28 going to happen it will happen exactly
+30:30 how it happened before see this all of
+30:33 it is printed after 10 seconds okay now
+30:36 did you understand it you know I'm
+30:38 trying to you know give you some examples
+30:40 which are confusing to you right now so
+30:42 you can think about it so what is
+30:45 happening it seems like our whole async
+30:47 function is waiting for all the promises
+30:49 to resolve
+30:51 no not even that it is waiting for all
+30:54 the await calls to be resolved
+30:57 no even that is not true my dear friends
+31:00 let me tell you the actual truth okay
+31:02 this is very important let me dive deep
+31:05 and tell you what is happening behind the
+31:08 scenes okay this is this is amazing what
+31:10 is happening okay so first of all let's
+31:13 run this with the debugger okay let me
+31:16 run this with the debugger this is what
+31:18 I want to teach you now okay so let's
+31:21 run this with the debugger and let me
+31:23 open this up right let me put a debugger
+31:26 over here right this debugger over here
+31:28 and then we will have a debugger over
+31:31 here then we will have a debugger over
+31:34 here and then we'll have debugger over
+31:37 here right so so we have a debugger over
+31:39 here right and now let me run this with
+31:42 debugger and now see how this works
+31:44 right so hello world is printed now let
+31:47 me step over right step over right
+31:49 it will come to line number 22 it will
+31:52 come to line number 22 right and now
+31:54 let me click this right it will step
+31:57 over and see this the function handle
+32:00 promise from the call stack it will go
+32:03 away see this call stack is empty now
+32:05 did you see that my dear friend did you
+32:08 see that this handle promise function
+32:10 it basically returned basically it got
+32:13 out of the call stack okay this is a
+32:16 very very important thing to understand
+32:19 okay when an await keyword is there in
+32:22 front of a promise okay okay when the
+32:25 await keyword is there okay in front of
+32:28 any promise and if that promise is not
+32:31 resolved the async function which is the
+32:34 handle promise function it will literally
+32:37 get out of the call stack it will remove
+32:40 itself from the call stack and it will
+32:42 wait for that promise to be resolved
+32:45 okay this is a very important point you
+32:48 need to understand okay it will wait
+32:51 for that promise to be resolved and it
+32:53 will sit somewhere else maybe in web
+32:56 apis or something okay it will it will
+32:59 wait for that promise to be resolved it
+33:01 will get out of the call stack so that
+33:04 it does not block the call stack it does
+33:06 not block the main thread and then once
+33:09 the promise is resolved it will again
+33:12 come into the call stack and it will
+33:14 start executing again so now let me show
+33:17 you what will happen this will wait for
+33:19 10 seconds right P1 is 10 seconds P2 is
+33:23 5 Seconds so P1 is 10 seconds so it will
+33:26 wait till this P1 is resolved after 10
+33:29 seconds it should come into the call
+33:31 stack again so let me step over
+33:34 see this the call stack is empty right
+33:37 and now I will do a resume okay see this
+33:40 again it has come up into the call stack
+33:42 did you see that my dear friends this is
+33:45 amazing so it came up into the call stack
+33:48 again and now it will execute it will
+33:50 console log Namaste JavaScript and then
+33:53 it will come on to the next line and now
+33:55 the program will wait for the next five
+33:57 seconds because P2 is 5 Seconds isn't it
+34:00 so again the program will wait for the
+34:02 next five seconds and then it will again
+34:04 take this handle promise outside the call
+34:06 stack and it will be out of the call
+34:08 stack okay so it came again right it was
+34:11 out of the call stack for 5 seconds and
+34:13 then it again came up right and now it
+34:16 will console log Namaste JavaScript too
+34:19 isn't it isn't it right so now let me
+34:22 show you how it works now okay so now
+34:25 we have this we have P1 as 10 seconds
+34:28 and P2 as 5 Seconds right P2 is 5
+34:31 seconds so now
+34:33 what will happen is it will basically
+34:36 it will basically come here it will wait
+34:39 for this 10 seconds this program will
+34:42 basically come out of the call stack and
+34:44 then once this 10 seconds is over it
+34:47 will again go into the call stack and
+34:50 then it will print this and then it will
+34:53 again see a weight and it will see that
+34:55 P2 is still not resolved right it has
+34:57 five more seconds for it to get resolved
+35:00 then again it will move out of the call
+35:03 stack and then after five seconds it
+35:05 will again come into the call stack and
+35:08 then it will print this Namaste JavaScript
+35:10 too isn't it fascinating isn't it right
+35:14 this is how it actually works right
+35:17 now let me let me just remove these
+35:20 console logs also so you get a very clear
+35:22 picture okay let me remove these console
+35:24 logs also okay and let me keep the debugger
+35:27 on okay so this is a very clear picture
+35:30 you will get of how it is working behind
+35:32 the scenes okay so hello world is printed
+35:34 now we have await P1 right P1 is 10
+35:37 seconds right P1 is 10 seconds
+35:39 so the call stack has handle promise right
+35:42 handle promise it will get out of the
+35:44 call stack right see this right and it
+35:47 will be out of the call stack till
+35:50 10 seconds okay now after 10 seconds it
+35:53 will again come into the call stack it
+35:56 is now here at line number 23 okay now
+35:59 let's go on to the next line right and
+36:02 now this will have to wait for P2 and
+36:04 P2 is 5 Seconds so it will again get out
+36:07 of the call stack okay this is amazing
+36:09 this is what I want to teach you so it
+36:12 will again get out of the call stack see
+36:14 this right again get out of the call stack
+36:16 and then after 5 seconds it will again
+36:19 come here and then it will print the two
+36:22 console logs right and then it will print
+36:24 the two console logs
+36:26 isn't it amazing right so this is how
+36:29 this actually works behind the scenes
+36:31 right let me just uh
+36:34 let me just add a more confusing factor
+36:36 to it right let me add a more confusing
+36:38 factor to it okay so let me just add
+36:40 let me just add a console log over here
+36:43 console.log Namaste JS right and let's
+36:47 say uh it resolves in 10 seconds it
+36:50 resolves in 5 seconds P2 resolves in 5
+36:53 seconds P1 resolves in 10 seconds okay
+36:55 and now let's quickly print P1 over here
+36:58 okay Val one over here and now let me
+37:01 print Namaste JS and then after that let
+37:04 me also print Val 2 over here right and
+37:07 this is important this is important to
+37:10 understand right now this is very important
+37:12 to understand right now let me remove
+37:14 the debugger over here and let us see
+37:16 how this will work now right so this is
+37:19 10 seconds 5 seconds right what will
+37:21 happen right what will happen if I save
+37:23 this file see this first of all hello
+37:26 world is printed right and then after
+37:28 10 seconds
+37:30 Namaste JavaScript will be printed right
+37:33 Namaste JavaScript 2 will be printed Namaste
+37:35 JS will be printed after five seconds
+37:37 what will happen now right after 10 seconds
+37:40 see this P1 is printed and then after
+37:43 five seconds Namaste JS and P2 is printed
+37:46 got it so that's how it actually works
+37:49 my dear friends right that's how it
+37:51 actually works okay so let me let me
+37:54 try to explain it again right so hello
+37:56 world is printed it encounters a weight
+37:58 P1 P1 resolves in 10 seconds okay so
+38:02 what will happen is it will get out of
+38:04 the call stack right and then after 10
+38:07 seconds this whole function the handle
+38:09 promise function will again be put back
+38:12 into the call stack and it will continue
+38:15 its execution from line number 24 right
+38:18 it will continue its execution and then
+38:20 it will print this and then again it
+38:22 will encounter a weight over here right
+38:25 and then it will encounter a weight over
+38:27 here and this P2 resolves in 5 seconds
+38:30 so now it will wait for the next five
+38:33 seconds and then once it is resolved
+38:35 then it will print this Namaste JS and
+38:38 then it will print this Namaste JavaScript
+38:40 too so basically it will print this Val
+38:43 one first it will print this Namaste
+38:45 JavaScript then it will wait for another
+38:48 five seconds and then it will print this
+38:51 Namaste JS and Namaste JavaScript 2
+38:54 isn't it amazing right I mean this is
+38:56 how it works okay and then what if right
+38:59 what if now P1 was 5 seconds and P2
+39:02 was 10 seconds right now what will
+39:04 happen here right now what will happen
+39:06 here right so now what will happen is
+39:09 first of all it will print the hello
+39:11 world right then it will resolve this P1
+39:14 in 5 seconds right so it will pause the
+39:17 execution for 5 seconds and then it will
+39:19 get out of the call stack and then it
+39:21 will come back after 5 seconds and then
+39:24 it will print this Namaste JavaScript and
+39:26 then it will encounter P2 which is 10
+39:29 seconds right so basically after five
+39:32 seconds P1 is resolved and then it will
+39:35 print this then it will go for the next
+39:38 line it will encounter a weight P2 P2
+39:41 resolves in 10 seconds it will again
+39:43 go out of the call stack and then after
+39:46 10 seconds it will come back and then it
+39:48 will print this Namaste JS and Namaste
+39:51 JavaScript 2 this is what will happen now
+39:53 isn't it right so let me save it and
+39:56 let me show it to you see this after five
+39:58 seconds Namaste JavaScript is printed
+40:00 and then after 10 seconds Namaste JS
+40:03 and Namaste JavaScript 2 is printed
+40:05 got it so this is the theory behind
+40:09 this how it is working right this is the
+40:11 theory behind it so whenever await is
+40:14 called okay what happens is your async
+40:17 function basically gets out of the call
+40:19 stack okay it gets out of the call stack
+40:22 it waits for that promise to be resolved
+40:25 and then after that promise is resolved)
+
+
+
+
+6.Web Workers(0:00 [Music]
+0:06 what's up people it's deb sage here and
+0:09 in this video we're going to be going
+0:10 over web workers
+0:13 so what is a web worker a web worker is
+0:17 simply a javascript process that runs in
+0:21 the background
+0:22 of a web page
+0:24 javascript by default is single threaded
+0:28 there is one thread or execution path
+0:31 and this thread is known as the main
+0:34 thread
+0:35 the main thread is responsible for
+0:37 executing all of the javascript for a
+0:40 web page one line at a time
+0:43 a web worker is basically a separate
+0:46 javascript thread
+0:48 that allows you to execute
+0:51 multiple threads of javascript in
+0:53 parallel with each other
+0:55 so instead of the main thread having to
+0:57 do all of the heavy lifting by itself
+1:00 a web worker can be created to offload
+1:03 any computationally expensive work
+1:06 so that the main thread doesn't get
+1:07 bogged down and can continue executing
+1:11 some other code
+1:13 one main difference between the main
+1:15 thread and a web worker thread is that
+1:17 web workers cannot perform any dom
+1:20 manipulation
+1:22 only the main thread can access and
+1:24 manipulate the dom this is important to
+1:27 note
+1:28 okay so let's take a look at an example
+1:31 of where a web worker could come in
+1:32 handy
+1:34 so over here we have
+1:36 uh two files here we have our index.html
+1:39 and our script.js
+1:41 and what we have here is we have two
+1:42 buttons on the page
+1:44 one of the button is a change background
+1:46 button
+1:47 and all it does is when you click it it
+1:49 changes the background between blue and
+1:52 green
+1:53 and that
+1:54 script looks like this
+1:56 something simple
+1:58 adding a click listener to the
+1:59 background button
+2:00 and toggling the color of the background
+2:03 between blue and green
+2:05 okay cool
+2:07 the other button
+2:08 is the calculate sum button and when
+2:10 this button is clicked
+2:12 what's going to happen is it's going to
+2:13 find the sum
+2:15 of all the numbers
+2:17 from 1 to 10 billion
+2:20 and that happens here
+2:21 and when it finds that sum it's going to
+2:24 alert
+2:25 the final sum is
+2:27 the sum
+2:29 so that was kind of computationally
+2:32 expensive
+2:33 right
+2:34 i clicked the button and
+2:37 if i try to change the background if i
+2:38 try to click change background i can't
+2:40 actually change the background
+2:42 what's happening is the main thread is
+2:44 being locked up right now it's stuck in
+2:47 this for loop
+2:48 remember javascript is single threaded
+2:50 there's only one path of execution
+2:53 and if we have some expensive body of
+2:56 work
+2:58 that it could potentially block up the
+3:00 main thread and prevent anything else
+3:02 from happening
+3:03 right now
+3:04 the user can't do anything else on the
+3:06 page
+3:07 because the the main thread is locked up
+3:10 this is definitely not ideal and this is
+3:12 where web workers come in
+3:15 we can create a web worker in order to
+3:17 offload this expensive
+3:20 cpu work
+3:22 such that the main thread doesn't have
+3:24 to get blocked up and the web worker can
+3:26 actually do the work
+3:27 for us
+3:28 in parallel
+3:30 and the main thread
+3:32 and any worker threads that we create
+3:34 can communicate with each other in order
+3:36 to pass data to and from each other
+3:39 so
+3:40 let's see how to do that let's see how a
+3:42 web worker works
+3:44 well
+3:45 in order to spin up a new web worker we
+3:47 need to go to the top here and we need
+3:49 to create a new instance of a worker
+3:52 so we can say const worker equals new
+3:56 worker
+3:58 okay
+3:59 the worker constructor takes in
+4:02 a path to a worker script
+4:06 so we actually don't have that script
+4:07 yet so let's go over here and let's
+4:09 create a new file let's call this
+4:11 worker.js
+4:14 let's go back here and let's pass in
+4:16 worker.js
+4:18 okay we just created a new worker
+4:21 and we passed in the file name for that
+4:23 worker script and here it is
+4:26 okay so
+4:28 what do we want to do now well it's
+4:30 important to understand how a worker
+4:32 works like how can we basically
+4:36 pass data to and from
+4:39 this script and the worker script
+4:42 well the way we pass data the way we can
+4:44 offload some data to a worker
+4:47 is by using the post message api
+4:51 the post message api essentially just
+4:53 raises an event from one script that
+4:57 another script can catch or listen to
+5:02 so
+5:02 the way we do that so if we go to the
+5:04 worker here we can set up an event
+5:07 listener to listen for new post messages
+5:12 so the way we do that is we say self dot
+5:16 on message
+5:17 equals
+5:18 some function
+5:20 that takes in the message
+5:22 so we're basically just creating a new
+5:25 event handler for the on message event
+5:29 so whenever we get a new post message
+5:31 we need to do some work
+5:34 self here is a reference to the worker
+5:38 the worker itself has an on message
+5:40 event listener so that's why we're
+5:42 saying self dot on message
+5:44 so you can think about it like
+5:46 whenever you create a new worker script
+5:49 the worker object is the global object
+5:53 for that script
+5:54 so self here is referring to the worker
+5:58 kind of like how the global object for a
+6:01 regular javascript that's embedded in
+6:02 the web page is the window object so the
+6:05 global object here is window whereas the
+6:08 global object in a worker is actually
+6:10 the worker
+6:12 so technically we don't even need this
+6:13 self right here we can just say
+6:15 onmessage equals
+6:17 function
+6:18 which takes in the message
+6:21 okay
+6:22 so
+6:23 what can we do in this on message so
+6:25 basically we're saying when we receive a
+6:27 new message
+6:29 let's do something with that message
+6:30 let's just print the message out
+6:32 so let's just say console.log
+6:34 message
+6:36 okay so we set our worker up to listen
+6:39 for a new post message
+6:42 now in our regular in our main thread
+6:45 let's actually send a message to that
+6:47 worker
+6:48 so
+6:49 let's uh
+6:51 let's comment this out for now
+6:53 and
+6:54 let's comment this out too
+6:56 so when the button is clicked instead of
+6:58 doing all this work let's just send a
+7:00 new message to the worker
+7:02 so let's just say worker dot
+7:04 post message
+7:06 in this inside of the post message uh
+7:09 call here we can pass in any data that
+7:12 we want to send to the worker
+7:15 so in this case let's just send
+7:17 [Music]
+7:18 let's just send hello
+7:20 worker
+7:22 okay
+7:23 so now what happens when we click the
+7:26 sum button
+7:27 is
+7:28 the worker will get sent a post message
+7:31 with the data hello worker
+7:33 and the worker is going to listen for
+7:35 that message
+7:36 and print it out
+7:38 so let's click this
+7:40 calculate some
+7:42 okay cool
+7:43 so down here you can see that we printed
+7:45 out the message event that was caught by
+7:48 the worker here
+7:49 and inside of this message event in the
+7:52 data property we have our hello worker
+7:56 uh data that we passed in from the main
+7:58 thread
+8:00 okay so now let's focus on moving some
+8:03 of that computationally expensive code
+8:06 from the main script
+8:08 into the worker
+8:09 okay so let's just take this let's copy
+8:12 this
+8:14 and
+8:15 paste it into our worker
+8:18 oops
+8:21 all right let's align this properly
+8:25 okay and
+8:27 we don't we actually don't need any of
+8:29 the information from inside of the
+8:31 message
+8:32 in this example
+8:33 so we can remove this console log
+8:36 okay so now what we've done is we've
+8:38 taken that big heavy for loop that was
+8:41 blocking up the main thread
+8:42 and we moved it into our worker so now
+8:45 the worker thread is going to be doing
+8:46 all this work in a background process
+8:49 that won't stop the main thread from
+8:52 continuing to execute what what it needs
+8:54 to do
+8:56 so now what's going to happen is
+8:58 when we click uh let's say we click
+9:00 calculate sum
+9:02 okay we clicked it
+9:04 the worker is currently running that
+9:06 loop but if we try to change the
+9:07 background
+9:09 we can see that we're not blocked
+9:10 anymore
+9:14 but now we have a problem because
+9:17 the worker
+9:18 is doing all this work but it's not
+9:20 actually telling the main thread
+9:22 whenever it's done
+9:24 so the main thread actually doesn't know
+9:25 what the sum is
+9:27 so what we can do is in the same way
+9:30 that we can pass a message
+9:31 from the main script
+9:33 to the worker
+9:35 we can pass information from the worker
+9:38 back to the main script
+9:40 we do that by setting up
+9:42 an on message listener for the worker in
+9:45 the main script so we can say worker dot
+9:48 on message equals
+9:51 some function
+9:53 and pass in the message event
+9:56 and now what we can do is we can
+9:59 um let's console.log
+10:02 the message that we get back
+10:05 okay so in the main thread we're setting
+10:07 up an event listener from the worker
+10:09 whenever we get a message from the
+10:10 worker
+10:11 let's just print that message out
+10:14 so now back in the worker we actually
+10:16 need to send a message so we do that
+10:18 with the same post message api
+10:21 we can post the message back to the main
+10:23 thread with the sum that we got from
+10:25 doing all this expensive work
+10:27 so let's just say
+10:28 post message
+10:31 um and we can pass in some
+10:35 okay
+10:36 cool
+10:37 so let's see how this behaves now
+10:40 so let's click calculate sum
+10:42 nothing appears to happen at first but
+10:45 now let's try to change the background
+10:48 as you can see we're allowed to change
+10:50 the background now
+10:51 the worker is in the background
+10:53 calculating the sum
+10:55 but we're still allowed to change the
+10:56 background and down here you can see
+10:59 that we just got this message event here
+11:02 this message is being logged from
+11:05 the worker responding to the main thread
+11:08 here this is what this is how this is
+11:09 being printed and inside of here we
+11:12 should have a data property yep so we
+11:14 have this data property which represents
+11:17 the sum
+11:18 that the worker just calculated behind
+11:20 the scenes
+11:23 so now what we can do is we can bring
+11:25 this alert down
+11:28 and we can say alert the final sum is
+11:32 message dot data
+11:35 so that's what that's where the sum is
+11:37 going to be located
+11:39 and let's get rid of this
+11:42 uh so now let's rerun this
+11:45 so if we say calculate sum
+11:47 the worker is currently processing all
+11:50 of this work
+11:51 and we can change background we don't
+11:53 have to block up the main thread the
+11:55 main thread is free to do whatever it
+11:57 wants
+11:58 and when the worker is finished it's
+12:00 going to post the message back
+12:02 yep and we just got it
+12:05 the listener on the main thread is going
+12:07 to listen for that message and call
+12:08 alert and that's just what happened
+12:11 okay so i hope that made sense
+12:14 web workers are really really effective
+12:17 it allows you to offload
+12:19 some expensive work to some background
+12:22 thread
+12:23 that can do the work and then let you
+12:25 know whenever it's finished via this
+12:27 post message api
+12:29 so i hope that helped if you like this
+12:31 video be sure to leave a like
+12:33 subscribe if you want to see more
+12:34 content if you want more web dev
+12:36 explained simply
+12:38 be sure to check out some of my other
+12:39 videos
+12:40 and yeah other than that
+12:43 peace
+12:45 [Music])
+
+7.setTimeout .(0:00 now we will cover very important
+0:01 interview questions related to closures
+0:03 which is asked a lot of times in
+0:05 interviews and you know even very senior
+0:07 developers they pull their hairs right
+0:10 when they see
+0:12 like things are not working as expected
+0:15 and you know that is because we don't
+0:17 understand what happens behind the
+0:19 scenes so now let us see these examples
+0:21 and you will be better in your
+0:22 interviews i'm telling you just keep
+0:24 watching so suppose we have a function
+0:26 over here okay let's call it x and we
+0:30 have a where i is equals to let's say
+0:33 one
+0:34 over here okay and we have a set timeout
+0:37 let's create a set timeout
+0:40 okay it takes a callback function
+0:44 and we are just trying to access this i
+0:46 right this i inside set timeout nothing
+0:50 else
+0:51 and we are just logging this and it also
+0:53 takes a timer right
+0:55 and let us give one second timer that is
+0:58 1000 millisecond over here so what do
+1:01 you expect if i run this program if i
+1:04 run this function what do you expect to
+1:06 see in the console
+1:07 so many of you already know that it is
+1:10 easy right
+1:11 it prints
+1:12 i value of i one
+1:15 after one second right so if we run this
+1:18 code so see after one second it prints
+1:21 one if i do it three over here three
+1:24 thousand okay it will print after three
+1:26 seconds one two and three so it will
+1:29 print after three seconds the value of i
+1:31 many people think that this set timeout
+1:34 runs over here itself
+1:36 no you will pull your hairs if i show
+1:39 you something so even if i show you
+1:42 okay even if i show you suppose if i
+1:45 print namaste javascript over here right
+14:48 so what will happen okay so yep so what
+1:52 do we expect to see now so many
+1:54 developers will think that javascript
+1:56 will wait for 3000 milliseconds over
+1:58 here and then we'll print
+2:00 i and then the value of namaste
+2:02 javascript no man see if i run this code
+2:06 if i run this code it prints namaste
+2:08 javascript then waits for 3000
+2:10 milliseconds and run that function and
+2:13 prints the value of i
+2:16 right so
+2:18 you know
+2:19 many people think that javascript set
+2:22 timeout will wait over here
+2:25 no
+2:26 javascript does not wait for anyone okay
+2:29 so just like we say right time and tide
+2:31 waits for none just like javascript also
+2:33 waits for none okay
+2:35 nice code right time tied and javascript
+2:37 waits for none
+2:40 i know that's a bad joke but
+2:42 yeah so what set timeout actually does
+2:45 is
+2:46 how and why this is printing like this
+2:48 is because
+2:51 these see this function first of all let
+2:53 me tell you an important thing this
+2:55 function forms a closure okay so this
+2:58 function remembers the reference to i
+3:01 okay this reference to i and it is like
+3:04 forms a closure so wherever this
+3:06 function goes it takes the reference of
+3:08 i along with it
+3:10 okay that's what closure is right
+3:12 and what does the set timeout do is it
+3:14 takes this callback function
+3:16 and stores it into some place okay and
+3:19 attaches a timer to it let me tell you
+3:22 that it takes this callback function and
+3:24 it attaches a timer of 3000 milliseconds
+3:27 to it
+3:28 and it stores it somewhere and the
+3:29 javascript proceeds right it does not
+3:32 wait for anything it just goes to the
+3:34 next line and prints namaste javascript
+3:37 okay that's how javascript works and
+3:39 once that timer expires once that 3000
+3:42 millisecond is
+3:43 done right that timer expires it
+3:46 takes that function okay puts it again
+3:49 to the call stack and runs it that's how
+3:51 set timeout work okay and we will go
+3:54 into more details in event loop callback
+3:57 queue those things come into picture but
+3:59 we'll go dive deep into it later but for
+4:02 now just understand set timeouts takes
+4:04 this callback function attaches a timer
+4:06 and when the timer expires it like calls
+4:09 that function that's how and javascript
+4:11 does not wait at that point of time
+4:13 itself right while you see this set
+4:15 timeout statement it does not wait there
+4:17 actually okay it just goes on and runs
+4:20 the whole code so it just prints the
+4:22 namaste javascript and goes on that's it
+4:24 that's it and it's it's somehow
+4:26 somewhere else stores and waits for the
+4:29 timer to expire something like that
+4:32 now
+4:33 this is also many developers understand
+4:36 and can crack but now what i will show
+4:38 you will like you will pull your hairs
+4:40 okay literally you will pull your hairs
+4:42 because that most developers are
+4:44 confused about so suppose we are given a
+4:46 problem to print in the console one two
+4:51 three four five after each and every
+4:53 second okay something like that okay one
+4:55 after one second two after two seconds
+4:57 three after three seconds four after
+4:59 four seconds some like this till five
+5:02 how would you do it
+5:03 so i know many of you cool developers
+5:06 who are watching right now what they
+5:08 will do is they will just quickly write
+5:10 a for loop right
+5:12 that is what we use right i'll tell you
+5:14 and you will just write where is equals
+5:16 to 1 and you will run this from 1 to 5
+5:19 right 1 to less than equal to 5 and you
+5:21 will do a i plus plus and what you will
+5:24 do inside the loop you will put this set
+5:26 time out right
+5:28 okay it's easy right we can just do it
+5:31 like this
+5:32 let me just remove this i now we no
+5:34 longer need this i and then what you
+5:36 will do so over here i i value will be
+5:39 one two three four five so it will print
+5:41 one two three four five and two like
+5:43 print it after each and every second
+5:45 what generally developers will do they
+5:47 will just put a i into one thousand
+5:50 easy
+5:50 right done
+5:52 we are done with our code right it will
+5:55 it will and how this will behave it will
+5:57 print namaste javascript then it will
+5:59 like go on and uh this when the value of
+6:02 i will be 2 it will set the timer of
+6:04 2000 and
+6:06 it will like log 2 then 3 then 4 then 5
+6:09 and that's how it is and that's how it
+6:10 is not
+6:11 okay it does not behave that way
+6:14 it behaves very differently
+6:16 okay and i if i'll show you the output
+6:19 of this code you will like pull your
+6:21 hairs so i'll show you the output of
+6:22 this code that will be very interesting
+6:24 okay
+6:25 so let me just run this code now so if i
+6:27 run this code so it prints namaste
+6:29 javascript and then six and then six and
+6:31 then six
+6:32 and why why it is printing 6
+6:36 it printed in the correct order right it
+6:38 printed after one second it printed 6
+6:40 after 2 seconds 6 6 6 like this
+6:44 after seeing javascript behave like this
+6:46 many developers want to like crash their
+6:49 screens but that's not the case let us
+6:51 see let us find out and let us see why
+6:53 this is working this way right
+6:56 so
+6:57 it is working this way because of the
+6:59 closure okay so if you understand
+7:01 closures properly you will be able to
+7:03 understand why it is printing six over
+7:04 here like this so remember what happens
+7:06 when a closure is formed a closure is
+7:09 like function
+7:10 along with its lexical environments
+7:12 right so even when function is taken out
+7:15 from its original scope right if it is
+7:17 executed in some other scope still it
+7:19 remembers its lexical environment right
+7:22 it can access to those variables uh of
+7:25 its lexical scope right so what will
+7:28 happen when the set timeout takes this
+7:31 function and stores it somewhere and
+7:33 attaches a timer so that function
+7:35 remembers the reference to i
+7:37 so let me make things clear i have told
+7:40 you in the closure video also that it
+7:42 remembers the reference to i not the
+7:45 value of i
+7:46 it reference to i many developers get
+7:49 confused here so when
+7:52 the loop runs the first time so it like
+7:55 kind of makes a copy of this function
+7:58 attaches a timer and
+8:00 also remembers the reference of i and
+8:02 similarly these five copy of this
+8:04 functions all of them are pointing to
+8:07 same reference of i
+8:09 right
+8:10 they are pointing to same reference of i
+8:12 because the environment for all of these
+8:15 functions are same right
+8:18 all of these copy of set timeout
+8:20 callback functions the reference to that
+8:22 i right it it refers to the same memory
+8:25 space right
+8:26 so that was the first thing the second
+8:28 thing is that javascript does not wait
+8:30 for anything remember so it does not
+8:33 wait for anything it will run the loop
+8:34 again and again okay it will just
+8:36 quickly uh push that like store that
+8:39 function set timeout will store that
+8:41 function all these five functions and
+8:43 javascript will move on right it does
+8:45 not wait for those timer to expire
+8:47 right so it will print namaste
+8:49 javascript and when the timer expires it
+8:52 is too late
+8:53 it is too late and the value of i
+8:56 because the loop was constantly running
+8:57 right it was one two three four five six
+9:01 so the i value became six
+9:03 okay this i value became six and when
+9:06 this callback function runs
+9:08 by that time the value of i this where i
+9:13 is six okay in the memory location it is
+9:16 six so that is why it prints six every
+9:19 time because all of these callback
+9:21 functions all of these copy of these
+9:24 functions all of these five functions
+9:26 are referring this i is referring to the
+9:28 same spot in memory
+9:30 and that is the same variable
+9:33 this variable which has now run five
+9:37 times and its value because of this
+9:39 increment has gone to six so if we try
+9:42 to retrospect that why it is behaving
+9:44 this way then we get to know that it is
+9:47 because this i for each and every copy
+9:50 of the function
+9:51 is referring to the same spot in memory
+9:53 that is i
+9:55 this i okay which has now become six
+9:58 right
+9:59 because the loop was continuously
+10:00 running by the time this callback
+10:02 function gets a chance to execute right
+10:06 by that time this i value has been
+10:08 changed because of this loop to 6 right
+10:11 so the problem lies over here in this i
+10:15 so how we can fix this
+10:17 how we can fix this
+10:18 a very quick and very easy way to fix
+10:21 this is to use let over here
+10:25 okay so if i use a let over here you
+10:28 already know what let will do
+10:30 let has a what block scope right
+10:34 so when i say let has a block scope that
+10:37 means for each and every loop iteration
+10:39 right so whenever every time loop runs
+10:43 this i
+10:44 is a new variable altogether okay it is
+10:47 a new copy of i altogether
+10:50 and
+10:51 each time set timeout is run
+10:53 this callback function
+10:55 has a new copy of i with it its own
+10:59 identity of i with it let me first run
+11:01 you run and show it to you that it works
+11:03 okay many of you might not believe it so
+11:07 see it runs why
+11:10 you know because these let variables are
+11:12 block scoped right so each and every
+11:16 this time this loop is called right each
+11:19 and every time the set timeout method is
+11:21 called
+11:22 this function forms a closure with a new
+11:25 variable itself okay that means this
+11:28 copy of i in each iteration is new okay
+11:33 so that means if we do a i plus plus
+11:35 here so i is equals to 2 is a new copy
+11:38 of variable which forms a closure with
+11:40 this function okay set timeout what it
+11:43 will do set timeout will take this
+11:45 function now this function has a new
+11:47 copy of
+11:49 i bound to it which has value 2 and send
+11:52 it okay and saves it
+11:55 and similarly when the i goes to three
+11:58 it it forms a closure with i is equals
+12:01 to three which is a fresh variable in
+12:03 itself okay fresh new copy of i
+12:06 and it like saves it and similarly it
+12:08 like keeps on doing it keeps on doing it
+12:10 and it makes five copies of this
+12:13 variable i
+12:15 and they form closure with each and
+12:17 every function
+12:20 so in simple term you can assume that
+12:22 each and every time this function is
+12:24 called it is it is referring to
+12:27 different memory location which is their
+12:29 individual i
+12:31 uh separate copy of i which were in the
+12:34 scope okay so why was it not working
+12:36 with var and why it is working with lead
+12:39 the only difference is that let is block
+12:41 scope and it creates a new copy every
+12:43 time this loop is executed but you know
+12:46 some of these smart interviewers very
+12:49 smart interviewers they will say that no
+12:51 you can't use lit you have to use web
+12:55 now you are confused right now what you
+12:57 will do
+12:58 now again only closures will help you
+13:01 okay closures will help you
+13:04 with this and you can like without even
+13:07 writing let you can do and perform the
+13:10 same thing because you already know why
+13:12 this is happening
+13:14 so it is hap it was happening like it
+13:16 was not working with var just because
+13:19 this the copy of this i right this copy
+13:22 of this i refers to the same memory
+13:25 location so somehow we have to give a
+13:29 new copy of i
+13:30 every time right to this set timeout and
+13:34 forms a closure with it okay so for that
+13:37 what we can do if we want to fix it with
+13:40 using where over here
+13:43 so what we can do we can form a closure
+13:46 okay so clearly see this pay very
+13:48 attention you like it it might be
+13:50 confusing for you initially but
+13:53 i'll show you so what we will do is we
+13:55 will create a function okay let's call
+13:58 it close let's call it close okay we
+14:01 will enclose this set timeout inside
+14:04 this function okay let us take this
+14:08 so what we have to do is we want to kind
+14:11 of have a new copy of i each and every
+14:15 time this loop is executed like that is
+14:17 what was working with let right
+14:20 so what we will do is we wrap this
+14:23 wrap this sept time out inside this
+14:25 close function pay attention very
+14:27 carefully so we wrap this set timeout
+14:30 inside this closed function
+14:32 and we somehow have to supply this i
+14:35 every time with a new copy of i
+14:37 right how we can do that
+14:40 we can just call this close function
+14:44 with an i okay so if i do a i over here
+14:48 okay and if i pass in i here and
+14:52 if i run it like this so it works
+14:56 why it will work because every time
+14:59 you call this close function with this i
+15:03 it creates a new copy of i for itself
+15:06 over here okay
+15:08 uh i know these are these are a lot of
+15:11 eyes
+15:12 that might be confusing to you but you
+15:15 can assume this to be like this somewhat
+15:17 like this okay so these are like
+15:21 this so these two code have no
+15:24 difference it's like this okay so
+15:27 basically what we did is so we just
+15:30 identified that problem that that
+15:32 problem was because it was referring to
+15:34 the same memory space now using closures
+15:38 using this close function we kind of
+15:41 created a new copy of
+15:44 i or a new copy of x every time this set
+15:48 timeout was called okay so every time
+15:50 the set timeout callback function is
+15:52 like stored in a separate memory and
+15:55 like attach the timer right it stores so
+15:57 it remembers a new copy of x every time
+16:00 this close function is called it like
+16:02 has a new copy of i in it okay so
+16:06 uh that is how it is and that is how you
+16:08 can make this work so next time if you
+16:10 find something like this so don't just
+16:12 pull your head and hate javascript but
+16:14 understand how it beautifully works
+16:16 behind the scenes okay how you can make
+16:18 closures work for you not against you
+16:21 you know while coding how you can make
+16:24 closures work for you like understanding
+16:26 how these things are working
+16:28 you don't get into this this is a very
+16:30 corner case you don't get run into these
+16:32 problems very often but this is
+16:35 important to know okay how things are
+16:37 working behind the scenes if you know
+16:39 internally you won't hate javascript but
+16:41 you will love it
+16:46 i know it is too much for this video so
+16:49 that's all in this video and in the next
+16:51 video we will be covering an important
+16:53 example of closures you know i saw in
+16:55 the comment somebody wrote that
+16:57 if suppose an interviewer is asking for
+16:59 a good example of closure what can we
+17:01 give so in the next video i will show
+17:04 you a good example of closures which
+17:06 will make your foundations more strong
+17:09 you will remember closures for your life
+17:11 before moving on to that video give this
+17:13 video a thumbs up it motivates me a lot
+17:15 and till next time thank you for
+17:17 watching namaste javascript
+17:20 [Music]
+17:42 foreign)
+
+8.AbortController for Cancelling Async Tasks(0:00
+JavaScript is quite a powerful language
+0:02
+when it comes to being asynchronous you
+0:04
+can do HTTP requests have websockets
+0:07
+have event listeners and read from files
+0:09
+all of that while being completely
+0:11
+asynchronous now before we had the
+0:14
+features of a board controller and the
+0:16
+board signal it was quite cumbersome to
+0:19
+be able to deal with async operations
+0:22
+within JavaScript but nowadays it's much
+0:24
+easier and I want to show you everything
+0:26
+that you need to know regarding that so
+0:29
+if you're ready let's get started
+0:31
+alrighty so here we have different
+0:33
+examples on aborting things for example
+0:36
+how to abort feature Quest event
+0:37
+listeners websocket and so on but before
+0:40
+I expand the code and we take a look
+0:42
+into it please leave me a like And
+0:44
+subscribe to the channel so that you
+0:46
+don't miss any future videos like this
+0:48
+and of course this is really going to
+0:51
+help my channel so thank you very much
+0:53
+for that and let's get started so I'm
+0:56
+going to uncomment one block after
+0:57
+another and explain how to uh what
+1:00
+basically what's happening here so we
+1:03
+have the board controller of course
+1:05
+and you are using it like this by
+1:08
+instantiating it okay so we have a
+1:10
+controller here so what is happening
+1:12
+with fetch request imagine we just have
+1:15
+a normal fetch request and it's an async
+1:17
+function which means we can use a weight
+1:19
+inside if you are not familiar with
+1:21
+async weight watch this video that is
+1:24
+popping up on the right side of the
+1:26
+screen and you can also find the link in
+1:28
+the description but basically we're
+1:29
+fetching uh basically it to do one okay
+1:33
+and then we have another promise that we
+1:37
+await for
+1:38
+which is converting to Json and constant
+1:41
+logging this out just to make sure that
+1:43
+this is works I'm going to actually call
+1:47
+index.js and we are expecting this kind
+1:50
+of a result so we get the user title
+1:52
+completed and so on okay so far so good
+1:57
+and we are calling this function here
+1:59
+but what if we have a use case where
+2:02
+based based on some kind of a condition
+2:04
+we actually want to cancel this request
+2:06
+so there's actually a way in to do this
+2:10
+with Ajax requests in XML but I don't
+2:14
+think there's an easy way to do it with
+2:15
+the fetch request which is the newer API
+2:17
+right and one solution is obviously to
+2:21
+use the abort controller so how would
+2:23
+you do that the way you would do this is
+2:26
+for you first of all
+2:28
+by supplying another option to this
+2:31
+fetch request so if you hover over it or
+2:34
+I hover over it obviously we see that
+2:37
+well we have an input which is a request
+2:39
+info and we have init but
+2:42
+I don't think this is the right name I
+2:44
+think it's actually options so I would
+2:47
+like to go to the documentation of
+2:50
+um
+2:51
+to to the to the mdn and look for fetch
+2:54
+API
+2:55
+so here the fetch API and the fetch
+2:58
+request and let's see what we have here
+3:00
+so the syntax is the resource which we
+3:02
+already have which is this URL and we
+3:06
+also have options so let's take a look
+3:08
+what kind of options we have we have a
+3:10
+method headers body if you don't specify
+3:13
+the header obviously it's gonna default
+3:15
+to get and we don't need a body mode
+3:18
+credentials and so on and here we have
+3:22
+here you're here your signal an import
+3:25
+signal object instance allows you to
+3:28
+communicate with a fetch request and
+3:29
+abort it if desired via an abort
+3:32
+controller so going back to our code
+3:34
+turns out we can pass another object of
+3:38
+options here
+3:39
+and I'm going to pass a signal you see
+3:42
+it's already recommending it
+3:43
+recommending me a signal and I'm going
+3:46
+to grab the controller from here so
+3:49
+controller dot signal just like this and
+3:53
+of course in order to cancel the request
+3:56
+itself I'm going to call controller dot
+4:00
+abort this is the main function or main
+4:04
+method of from the abort from the abort
+4:06
+controller from the controller here that
+4:09
+actually performs the aborting okay I'm
+4:11
+Gonna Save this now going to expand the
+4:15
+terminal a little bit so that it's
+4:17
+easier for us to see what's happening
+4:19
+and I'm going to call the same
+4:21
+file and now we see that we have an
+4:25
+error
+4:26
+called a Bot error and it says the
+4:29
+operation was aborted all right so this
+4:33
+is coming from our code it's because we
+4:36
+aborted it and there's a kind of a cool
+4:39
+way to actually check for abort errors
+4:42
+so we can say
+4:44
+error
+4:45
+name is
+4:49
+like let's say well not let's say but
+4:52
+it's called a board
+4:53
+error
+4:55
+and then
+4:56
+we can actually
+4:58
+put this inside here
+5:01
+all right
+5:03
+now that we put put inside here we're
+5:05
+gonna make sure that whenever
+5:07
+this whenever we see this error it's
+5:11
+definitely coming from the abort
+5:12
+controller
+5:13
+so I'm going to call it again and now
+5:17
+you see this here all right and of
+5:20
+course you can supply like a custom
+5:22
+message let's say
+5:24
+um
+5:25
+aborted
+5:28
+or
+5:29
+imported
+5:31
+because of me
+5:33
+right
+5:35
+just like this
+5:36
+and oops this must be inside and this is
+5:40
+going to work properly all right so this
+5:44
+is the first use case that we saw when
+5:46
+it comes to the board controllers so I'm
+5:48
+gonna
+5:50
+comp this out collapse and go to the
+5:52
+next use case and I'm also going to
+5:55
+clear the console and make it smaller so
+5:58
+that we have more space
+6:00
+alrighty so what else do we have here so
+6:03
+we have event listeners turns out you
+6:05
+can use a board controller with event
+6:08
+listeners as well even though many
+6:10
+people don't don't know that many people
+6:12
+think that network controls are only for
+6:15
+um for fetch requests actually no you
+6:17
+can use a board controller for any
+6:20
+asynchronous operation it can be a fetch
+6:23
+request it can be event listeners it can
+6:25
+also be reading a file writing a file
+6:27
+you know with node.js so here we have
+6:30
+some interesting things first of all I
+6:32
+guess you already noticed that we are
+6:34
+grabbing signal from the controller
+6:36
+object so we're gonna be using this
+6:40
+later and here let's just quickly
+6:43
+understand what the code is doing so we
+6:45
+have an event listener for Mouse move
+6:47
+basically whenever we're moving our
+6:49
+Mouse we're gonna call this log function
+6:51
+and what the log function does it
+6:53
+basically looks Mouse moved that's it as
+6:56
+simple as that and we have another event
+6:58
+listener Mouse up Mouse up happens
+7:01
+whenever you click the mouse and then
+7:03
+let it go so as soon as it goes up we
+7:07
+are going to remove all the listeners so
+7:10
+first of all inside this function we're
+7:12
+gonna remove the listener for the mouse
+7:14
+move or the original one
+7:16
+and we're passing the function that we
+7:18
+want to remove from The Listener and the
+7:21
+second one is going to be Mouse up so
+7:24
+basically it's kind of recursive because
+7:26
+Mouse up triggers remove event listeners
+7:29
+and it removes this same function right
+7:34
+um just pause the video and think about
+7:36
+it if it doesn't make sense but
+7:37
+basically all this thing is about event
+7:40
+listeners so yes we can obviously do
+7:43
+that so but how can a board controller
+7:47
+help us so
+7:50
+turns out you can pass a signal to event
+7:53
+listeners as well so let's go to mdn and
+7:57
+search for add event listener
+8:02
+I always do that just go to the
+8:04
+documentation you're going to find
+8:05
+everything so let's look at the syntax
+8:07
+so the syntax says type listener which
+8:10
+is the function all right and options
+8:13
+so what kind of options do we have here
+8:15
+so options capture ones passive and
+8:19
+signal
+8:20
+so an abort signal The Listener will be
+8:23
+removed when the given abort signal
+8:25
+object blah blah blah method is called
+8:26
+so
+8:28
+turns out here as well we can also as an
+8:32
+abort signal so
+8:34
+we're gonna do like this create another
+8:37
+object again
+8:38
+signal which is equal to
+8:42
+signal like this but since we are using
+8:46
+es6 and node I think 18 specifically you
+8:50
+can actually just remove this so it's
+8:53
+going to work just like just like signal
+8:56
+signal right it's the same thing and one
+9:00
+thing to mention a board signal is
+9:01
+available from node version 15 and above
+9:04
+so make sure that you have the newest
+9:06
+version of node
+9:07
+and so yeah we have an abort signal here
+9:10
+and
+9:12
+we are also going to have a signal here
+9:17
+right so
+9:20
+in order to
+9:22
+remove these listeners
+9:24
+as soon as the signal has been aborted
+9:28
+what we need to do is remove these first
+9:32
+of all because we are not going to use a
+9:35
+remove event listeners event listener
+9:37
+function anymore
+9:38
+and instead we are going to call
+9:41
+controller
+9:44
+abort
+9:45
+as simple as that all right this is
+9:48
+going to cancel or remove these event
+9:51
+listeners automatically because let's
+9:53
+see what it says The Listener will be
+9:56
+removed
+9:57
+removed that's a keyword when the given
+9:59
+abort signal objects a board method is
+10:02
+called
+10:03
+so we are calling this method a board
+10:05
+and it means the signal are going to
+10:08
+cause these event listeners to be
+10:11
+removed automatically so this is a cool
+10:13
+feature that you can use with event
+10:16
+listeners but here's a cooler thing
+10:19
+let me expand this
+10:20
+so
+10:22
+turns out
+10:24
+it's uncomment so turns out a port
+10:27
+controller or a board signal actually
+10:30
+has its own event listener okay that
+10:34
+sounds like an event listener how's it
+10:37
+called the movie from Leonardo the
+10:39
+copper Inception event listener
+10:40
+Inception so network has an abort event
+10:43
+listener inside what yes it does so
+10:47
+and it works like this I'm going to
+10:50
+comment these guys out so that they're
+10:53
+not on our way but we still have
+10:55
+controller and Signal okay so I'm gonna
+10:58
+call a board
+11:00
+on this controller
+11:02
+and we have the signal that is here and
+11:05
+we're listening for add event listener
+11:07
+and as soon as we have
+11:09
+an event aboard we are going to call
+11:13
+this Anonymous function and inside it we
+11:16
+are just console plugging that it is
+11:18
+aborted and the reason why we say once
+11:21
+true is again let's go to mdn Once is a
+11:25
+Boolean value indicating that the
+11:27
+listener should be invoked at most once
+11:30
+after being added so basically that the
+11:33
+listener doesn't hang in the memory and
+11:34
+it works only once all right I'm going
+11:37
+to save this
+11:38
+um actually do I need to do that
+11:41
+terminal
+11:42
+new terminal
+11:45
+I guess it's gonna work right away so
+11:47
+let's see
+11:49
+node index.js and a word controller got
+11:52
+aborted as we expected because we're
+11:54
+listening on the signal for this
+11:57
+event right
+12:00
+cool so what else do we have here
+12:03
+we have still a lot of stuff
+12:06
+so one cool thing that you already
+12:09
+noticed is that a board signal is quite
+12:12
+flexible right you can use it not only
+12:14
+with how to say not only specifically
+12:17
+asynchronous operations
+12:20
+of course you can use it with any async
+12:22
+operation but also with your own use
+12:25
+cases when you use the abort event
+12:27
+listener so why is it red oh it's
+12:31
+because it's declared here
+12:34
+right let's uncomment this or rather
+12:36
+comment this
+12:37
+so let's look at our example we have the
+12:41
+same controller and signal and we are
+12:43
+initializing a websocket so the
+12:45
+websocket is here located from the new
+12:48
+websocket and now we have some kind of
+12:50
+URL which is example.com and usually
+12:54
+what you do to kind of close the socket
+12:56
+is you call this socket.close Method All
+13:01
+right but what if we want to be a bit
+13:03
+smarter and based on some
+13:06
+signal that is passed during this init
+13:11
+websocket function
+13:13
+we are closing it automatically first of
+13:16
+all we can do that by simply
+13:19
+checking if the signal was aborted or
+13:22
+not if not okay let's continue and we
+13:24
+simply add this event listener so what
+13:27
+it's gonna do is nothing if you don't
+13:30
+abort it but let's say we initialize the
+13:32
+websocket and then as this socket is
+13:36
+there and it's running and we're
+13:38
+receiving and sending messages and so on
+13:40
+at some point we take the controller and
+13:43
+we abort it so let's say after 30
+13:46
+seconds to close our websocket so what's
+13:49
+gonna happen so this abort event is
+13:52
+going to fire because we are passing the
+13:54
+signal here and it's going to basically
+13:58
+close the socket all right
+14:00
+so it's going to close the socket and
+14:03
+you are going basically that's the end
+14:06
+the socket is closed and now one
+14:09
+interesting thing is that with the abort
+14:11
+controller you can actually pass a
+14:14
+reason which is a string so you can say
+14:17
+like
+14:19
+um
+14:20
+tired
+14:22
+of the websocket so what's going to
+14:25
+happen is whenever you're listening for
+14:27
+this abort
+14:29
+uh and and the close function is wired
+14:33
+you can actually check for this message
+14:36
+here inside and the way you do this is
+14:40
+actually like this
+14:42
+so it's gonna be
+14:45
+if
+14:46
+signal let's say it was already aborted
+14:49
+gonna be uh
+14:51
+reason
+14:54
+and wait is it like this let me check
+14:59
+abort signal
+15:03
+awarded reason exactly a JavaScript
+15:06
+value providing the abort reason once
+15:08
+the signal has aborted so you can
+15:12
+basically console log this same value
+15:15
+here like this
+15:17
+signal
+15:19
+reason as simple as that all right and I
+15:22
+want to show you one last
+15:24
+example of how flexible the abort signal
+15:28
+is so
+15:30
+let's open this one class Constructor so
+15:33
+you can use the word signal with classes
+15:35
+as well especially heavy
+15:38
+maybe let's say heavy methods that are
+15:41
+doing some heavy jobs so we have some
+15:43
+object and whenever we initialize the
+15:46
+object or the Constructor rather we pass
+15:49
+in a signal all right
+15:52
+and by the way you don't have to call
+15:54
+this controller you can call this
+15:55
+something like customize so that you
+15:57
+know what it's referring to let's say
+16:00
+some object controller right and we are
+16:04
+passing it here and we have a signal now
+16:06
+inside our class and let's say we're
+16:08
+doing some complex operation so first
+16:11
+we're gonna check if this signal has
+16:14
+been aborted then we're gonna throw an
+16:16
+error
+16:17
+otherwise we are going to have a heavy
+16:19
+Loop okay 10 for Loops uh 10 10
+16:22
+iterations very heavy but let's say we
+16:25
+want to be careful and as long as there
+16:29
+is no um like a board method called let
+16:33
+me demonstrate that
+16:35
+so clear the console
+16:37
+node index.js we have 10 iterations
+16:41
+right but let's say I try to abort it
+16:45
+right away just as a use case so
+16:49
+controller dot abort like this save it
+16:53
+run it
+16:55
+oh still ran oh okay I I just realized
+16:59
+my mistake of course we run this
+17:01
+function and by that time it's not
+17:03
+aborted so it's going to run the loop
+17:05
+but what if before running this method
+17:08
+we abort it first of all and now let's
+17:11
+run it and you're gonna see that it was
+17:14
+aborted because complex operation
+17:17
+aborted because we wanted to abort it
+17:20
+and now we have our custom error how
+17:23
+cool is that well this is pretty much it
+17:26
+when it comes to a world controller and
+17:28
+a board signal let me know if you still
+17:31
+want to uh yeah learn more about it and
+17:35
+I will try to answer you in the comment
+17:37
+section hey there it's me again I just
+17:39
+wanted to quickly say thank you very
+17:40
+much for watching this video and
+17:41
+smashing the like button and if you want
+17:43
+to stay up to date with such cool topics
+17:45
+make sure you subscribe so that you
+17:47
+don't miss whenever a new video is out
+17:49
+and I'm gonna see you in the next one
+17:52
+[Music]
+
+)
