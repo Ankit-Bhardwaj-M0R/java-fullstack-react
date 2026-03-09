@@ -1,11 +1,13 @@
-# DSA Problems – Solved Using Java Collections
+# DSA Problems – Solved Using ArrayList, HashMap, HashSet & Collections
 
-> All solutions use the **Java Collections Framework** (`ArrayList`, `LinkedList`,
-> `ArrayDeque`, `PriorityQueue`, `HashMap`, `TreeMap`, `TreeSet`, `Collections` utilities, etc.)
+> **Allowed collections only:**
+> - `ArrayList` — ordered list, index access, used as stack (add/remove last)
+> - `HashMap` — key-value pairs, O(1) lookup
+> - `HashSet` — unique elements, O(1) lookup
+> - `Collections` — utility methods (sort, reverse, max, min, frequency, rotate, swap)
 >
 > ```java
 > import java.util.*;
-> import java.util.stream.*;
 > ```
 
 ---
@@ -24,15 +26,12 @@ Output: 9
 ```
 
 ```java
-// Collections.max() on a List
 public static int findMax(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
     return Collections.max(list);
 }
 ```
-
-> **Key:** `Collections.max(Collection)` returns the maximum element in O(n).
 
 ---
 
@@ -47,7 +46,7 @@ Output: 1
 
 ```java
 public static int findMin(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
     return Collections.min(list);
 }
@@ -57,7 +56,7 @@ public static int findMin(int[] arr) {
 
 ## 3. Reverse an Array
 
-**Problem:** Reverse the elements of an array in-place.
+**Problem:** Reverse the elements of an array.
 
 ```
 Input:  [1, 2, 3, 4, 5]
@@ -65,15 +64,15 @@ Output: [5, 4, 3, 2, 1]
 ```
 
 ```java
-public static List<Integer> reverseArray(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+public static ArrayList<Integer> reverseArray(int[] arr) {
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
-    Collections.reverse(list);   // mutates list in-place, O(n)
+    Collections.reverse(list);
     return list;
 }
 ```
 
-> **Key:** `Collections.reverse(List)` reverses in-place — no manual swapping needed.
+> `Collections.reverse(list)` reverses the list in-place in O(n).
 
 ---
 
@@ -88,9 +87,11 @@ Output: 15
 
 ```java
 public static int arraySum(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
-    return list.stream().mapToInt(Integer::intValue).sum();
+    int sum = 0;
+    for (int n : list) sum += n;
+    return sum;
 }
 ```
 
@@ -107,13 +108,13 @@ Input:  [1, 3, 2, 4]     → false
 
 ```java
 public static boolean isSorted(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
 
-    List<Integer> sorted = new ArrayList<>(list);
-    Collections.sort(sorted);           // O(n log n)
+    ArrayList<Integer> sorted = new ArrayList<>(list);
+    Collections.sort(sorted);
 
-    return list.equals(sorted);         // compares element-by-element
+    return list.equals(sorted);
 }
 ```
 
@@ -130,16 +131,18 @@ Output: 15
 
 ```java
 public static int secondLargest(int[] arr) {
-    // TreeSet keeps unique elements in sorted order
-    TreeSet<Integer> set = new TreeSet<>();
-    for (int n : arr) set.add(n);
+    ArrayList<Integer> list = new ArrayList<>();
+    for (int n : arr) list.add(n);
 
-    set.pollLast();          // remove the largest
-    return set.last();       // next largest
+    Collections.sort(list, Collections.reverseOrder());  // sort descending
+
+    int first = list.get(0);
+    for (int n : list) {
+        if (n != first) return n;   // first element different from max
+    }
+    return -1;  // no second distinct element
 }
 ```
-
-> **Key:** `TreeSet` is a sorted, duplicate-free set. `pollLast()` removes max.
 
 ---
 
@@ -154,12 +157,14 @@ Output: Even: 2, Odd: 3
 
 ```java
 public static void countEvenOdd(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
 
-    long even = list.stream().filter(n -> n % 2 == 0).count();
-    long odd  = list.stream().filter(n -> n % 2 != 0).count();
-
+    int even = 0, odd = 0;
+    for (int n : list) {
+        if (n % 2 == 0) even++;
+        else odd++;
+    }
     System.out.println("Even: " + even + ", Odd: " + odd);
 }
 ```
@@ -176,16 +181,15 @@ Output: [1, 3, 12, 0, 0]
 ```
 
 ```java
-public static List<Integer> moveZeros(int[] arr) {
-    List<Integer> nonZero = new ArrayList<>();
-    List<Integer> zeros   = new ArrayList<>();
+public static ArrayList<Integer> moveZeros(int[] arr) {
+    ArrayList<Integer> nonZero = new ArrayList<>();
+    ArrayList<Integer> zeros   = new ArrayList<>();
 
     for (int n : arr) {
         if (n != 0) nonZero.add(n);
         else        zeros.add(0);
     }
-
-    nonZero.addAll(zeros);   // append zeros at the end
+    nonZero.addAll(zeros);
     return nonZero;
 }
 ```
@@ -202,19 +206,19 @@ Output: [2, 1]
 ```
 
 ```java
-public static List<Integer> findDuplicates(int[] arr) {
-    Set<Integer> seen       = new HashSet<>();
-    List<Integer> duplicates = new ArrayList<>();
+public static ArrayList<Integer> findDuplicates(int[] arr) {
+    HashSet<Integer> seen       = new HashSet<>();
+    ArrayList<Integer> duplicates = new ArrayList<>();
 
     for (int n : arr) {
-        if (!seen.add(n))          // add() returns false if already present
+        if (!seen.add(n))   // add() returns false if already present
             duplicates.add(n);
     }
     return duplicates;
 }
 ```
 
-> **Key:** `HashSet.add()` returns `false` when the element already exists — a clean duplicate detector.
+> `HashSet.add()` returns `false` when the element already exists — a clean duplicate detector.
 
 ---
 
@@ -229,7 +233,7 @@ Output: [0, 1]
 
 ```java
 public static int[] twoSum(int[] arr, int target) {
-    Map<Integer, Integer> map = new HashMap<>();   // value → index
+    HashMap<Integer, Integer> map = new HashMap<>();  // value → index
 
     for (int i = 0; i < arr.length; i++) {
         int complement = target - arr[i];
@@ -245,7 +249,7 @@ public static int[] twoSum(int[] arr, int target) {
 
 ## 11. Remove Duplicates from Sorted Array
 
-**Problem:** Keep only unique elements (preserving order).
+**Problem:** Keep only unique elements (preserving first-occurrence order).
 
 ```
 Input:  [1, 1, 2, 3, 3, 4]
@@ -253,15 +257,17 @@ Output: [1, 2, 3, 4]
 ```
 
 ```java
-public static List<Integer> removeDuplicatesSorted(int[] arr) {
-    // LinkedHashSet preserves insertion order and removes duplicates
-    Set<Integer> set = new LinkedHashSet<>();
-    for (int n : arr) set.add(n);
-    return new ArrayList<>(set);
+public static ArrayList<Integer> removeDuplicatesSorted(int[] arr) {
+    HashSet<Integer> seen = new HashSet<>();
+    ArrayList<Integer> result = new ArrayList<>();
+
+    for (int n : arr) {
+        if (seen.add(n))   // only add if not already seen
+            result.add(n);
+    }
+    return result;
 }
 ```
-
-> **Key:** `LinkedHashSet` = HashSet (no duplicates) + insertion-order iteration.
 
 ---
 
@@ -275,17 +281,17 @@ Output: [4, 5, 1, 2, 3]
 ```
 
 ```java
-public static List<Integer> rotateRight(int[] arr, int k) {
-    List<Integer> list = new ArrayList<>();
+public static ArrayList<Integer> rotateRight(int[] arr, int k) {
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
 
     k = k % list.size();
-    Collections.rotate(list, k);   // positive k = right rotation
+    Collections.rotate(list, k);   // positive = right rotation
     return list;
 }
 ```
 
-> **Key:** `Collections.rotate(list, distance)` — positive distance rotates right.
+> `Collections.rotate(list, distance)` — positive distance rotates right, negative rotates left.
 
 ---
 
@@ -299,12 +305,12 @@ Output: [3, 4, 5, 1, 2]
 ```
 
 ```java
-public static List<Integer> leftRotation(int[] arr, int d) {
-    List<Integer> list = new ArrayList<>();
+public static ArrayList<Integer> leftRotation(int[] arr, int d) {
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
 
     d = d % list.size();
-    Collections.rotate(list, -d);   // negative distance = left rotation
+    Collections.rotate(list, -d);   // negative = left rotation
     return list;
 }
 ```
@@ -322,16 +328,17 @@ Output: 3
 
 ```java
 public static int missingNumber(int[] arr, int n) {
-    List<Integer> list = new ArrayList<>();
-    for (int i = 1; i <= n; i++) list.add(i);    // [1..n]
+    ArrayList<Integer> full = new ArrayList<>();
+    for (int i = 1; i <= n; i++) full.add(i);   // [1, 2, ..., n]
 
-    for (int num : arr) list.remove(Integer.valueOf(num));  // remove found
+    for (int num : arr)
+        full.remove(Integer.valueOf(num));        // remove by value, not index
 
-    return list.get(0);   // what's left is the missing number
+    return full.get(0);
 }
 ```
 
-> **Key:** `list.remove(Integer.valueOf(x))` removes by value (not by index).
+> `list.remove(Integer.valueOf(x))` removes by value; `list.remove(x)` removes by index.
 
 ---
 
@@ -341,17 +348,18 @@ public static int missingNumber(int[] arr, int n) {
 
 ```
 Input:  [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-Output: 6  (subarray [4, -1, 2, 1])
+Output: 6
 ```
 
 ```java
 public static int maxSubarraySum(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
 
     int maxSum = list.get(0), currentSum = list.get(0);
     for (int i = 1; i < list.size(); i++) {
-        currentSum = Math.max(list.get(i), currentSum + list.get(i));
+        int val = list.get(i);
+        currentSum = Math.max(val, currentSum + val);
         maxSum = Math.max(maxSum, currentSum);
     }
     return maxSum;
@@ -370,19 +378,20 @@ Output: [2, 4]
 ```
 
 ```java
-public static List<Integer> intersection(int[] a, int[] b) {
-    Set<Integer> setA = new HashSet<>();
+public static ArrayList<Integer> intersection(int[] a, int[] b) {
+    HashSet<Integer> setA = new HashSet<>();
     for (int n : a) setA.add(n);
 
-    Set<Integer> setB = new HashSet<>();
-    for (int n : b) setB.add(n);
+    ArrayList<Integer> result = new ArrayList<>();
+    HashSet<Integer> added = new HashSet<>();   // avoid duplicates in result
 
-    setA.retainAll(setB);              // setA ∩ setB  (modifies setA in-place)
-    return new ArrayList<>(setA);
+    for (int n : b) {
+        if (setA.contains(n) && added.add(n))
+            result.add(n);
+    }
+    return result;
 }
 ```
-
-> **Key:** `Set.retainAll(other)` keeps only elements present in both sets.
 
 ---
 
@@ -396,15 +405,19 @@ Output: [1, 2, 3, 4, 5]
 ```
 
 ```java
-public static List<Integer> union(int[] a, int[] b) {
-    Set<Integer> set = new LinkedHashSet<>();
-    for (int n : a) set.add(n);
-    for (int n : b) set.add(n);       // duplicates ignored automatically
-    return new ArrayList<>(set);
+public static ArrayList<Integer> union(int[] a, int[] b) {
+    HashSet<Integer> seen = new HashSet<>();
+    ArrayList<Integer> result = new ArrayList<>();
+
+    for (int n : a) {
+        if (seen.add(n)) result.add(n);
+    }
+    for (int n : b) {
+        if (seen.add(n)) result.add(n);
+    }
+    return result;
 }
 ```
-
-> **Key:** `Set.addAll()` / adding to a Set naturally deduplicates.
 
 ---
 
@@ -418,10 +431,15 @@ Output: 3
 ```
 
 ```java
-public static long countLessThan(int[] arr, int x) {
-    List<Integer> list = new ArrayList<>();
+public static int countLessThan(int[] arr, int x) {
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
-    return list.stream().filter(n -> n < x).count();
+
+    int count = 0;
+    for (int n : list) {
+        if (n < x) count++;
+    }
+    return count;
 }
 ```
 
@@ -437,19 +455,18 @@ Output: true
 ```
 
 ```java
+// O(n) using ArrayList
 public static boolean contains(int[] arr, int target) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
-    return list.contains(target);   // O(n) linear search
+    return list.contains(target);
 }
-```
 
-**O(1) lookup version using HashSet:**
-```java
+// O(1) using HashSet
 public static boolean containsFast(int[] arr, int target) {
-    Set<Integer> set = new HashSet<>();
+    HashSet<Integer> set = new HashSet<>();
     for (int n : arr) set.add(n);
-    return set.contains(target);   // O(1) average
+    return set.contains(target);
 }
 ```
 
@@ -465,10 +482,13 @@ Output: {1=2, 2=2, 3=1, 4=1}
 ```
 
 ```java
-public static Map<Integer, Integer> frequency(int[] arr) {
-    Map<Integer, Integer> map = new LinkedHashMap<>();
-    for (int n : arr)
-        map.merge(n, 1, Integer::sum);   // merge(key, value, remappingFn)
+public static HashMap<Integer, Integer> frequency(int[] arr) {
+    ArrayList<Integer> list = new ArrayList<>();
+    for (int n : arr) list.add(n);
+
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for (int n : list)
+        map.put(n, map.getOrDefault(n, 0) + 1);
     return map;
 }
 ```
@@ -476,16 +496,16 @@ public static Map<Integer, Integer> frequency(int[] arr) {
 **Using `Collections.frequency`:**
 ```java
 public static void frequencyUsingCollections(int[] arr) {
-    List<Integer> list = new ArrayList<>();
+    ArrayList<Integer> list = new ArrayList<>();
     for (int n : arr) list.add(n);
 
-    Set<Integer> unique = new LinkedHashSet<>(list);
+    HashSet<Integer> unique = new HashSet<>(list);
     for (int n : unique)
         System.out.println(n + " -> " + Collections.frequency(list, n));
 }
 ```
 
-> **Key:** `map.merge(key, 1, Integer::sum)` is the idiomatic Java 8+ way to count.
+> `Collections.frequency(list, obj)` counts occurrences of obj in the list in O(n).
 
 ---
 
@@ -499,19 +519,29 @@ Output: [1, 2, 3, 4, 5, 6]
 ```
 
 ```java
-// Using PriorityQueue (min-heap)
-public static List<Integer> mergeSorted(int[] a, int[] b) {
-    PriorityQueue<Integer> pq = new PriorityQueue<>();
-    for (int n : a) pq.offer(n);
-    for (int n : b) pq.offer(n);
-
-    List<Integer> result = new ArrayList<>();
-    while (!pq.isEmpty()) result.add(pq.poll());  // poll() returns min
+public static ArrayList<Integer> mergeSorted(int[] a, int[] b) {
+    ArrayList<Integer> result = new ArrayList<>();
+    for (int n : a) result.add(n);
+    for (int n : b) result.add(n);
+    Collections.sort(result);
     return result;
 }
 ```
 
-> **Key:** `PriorityQueue` is a min-heap by default. `poll()` always returns the smallest.
+**Two-pointer approach (O(n) for pre-sorted input):**
+```java
+public static ArrayList<Integer> mergeSortedTwoPointer(int[] a, int[] b) {
+    ArrayList<Integer> result = new ArrayList<>();
+    int i = 0, j = 0;
+    while (i < a.length && j < b.length) {
+        if (a[i] <= b[j]) result.add(a[i++]);
+        else               result.add(b[j++]);
+    }
+    while (i < a.length) result.add(a[i++]);
+    while (j < b.length) result.add(b[j++]);
+    return result;
+}
+```
 
 ---
 
@@ -525,25 +555,22 @@ Output: [17, 5, 2]
 ```
 
 ```java
-public static List<Integer> findLeaders(int[] arr) {
-    Deque<Integer> stack = new ArrayDeque<>();
-    List<Integer> leaders = new ArrayList<>();
-
-    stack.push(arr[arr.length - 1]);   // rightmost is always a leader
+// ArrayList used as a stack: add() to push, remove(size-1) to pop
+public static ArrayList<Integer> findLeaders(int[] arr) {
+    ArrayList<Integer> stack = new ArrayList<>();
+    stack.add(arr[arr.length - 1]);   // rightmost is always a leader
 
     for (int i = arr.length - 2; i >= 0; i--) {
-        if (arr[i] > stack.peek()) {
-            stack.push(arr[i]);
+        if (arr[i] > stack.get(stack.size() - 1)) {
+            stack.add(arr[i]);
         }
     }
-
-    while (!stack.isEmpty()) leaders.add(stack.pop());
-    Collections.reverse(leaders);
-    return leaders;
+    Collections.reverse(stack);
+    return stack;
 }
 ```
 
-> **Key:** Use `ArrayDeque` as a Stack (`push`/`pop`/`peek`) — preferred over `Stack` class in Java.
+> ArrayList as a stack: `add()` = push, `get(size-1)` = peek, `remove(size-1)` = pop.
 
 ---
 
@@ -558,11 +585,11 @@ Output: 3
 
 ```java
 public static int majorityElement(int[] arr) {
-    Map<Integer, Integer> freq = new HashMap<>();
+    HashMap<Integer, Integer> freq = new HashMap<>();
     int threshold = arr.length / 2;
 
     for (int n : arr) {
-        freq.merge(n, 1, Integer::sum);
+        freq.put(n, freq.getOrDefault(n, 0) + 1);
         if (freq.get(n) > threshold) return n;
     }
     return -1;
@@ -581,9 +608,9 @@ Output: (1, 5), (4, 2)
 ```
 
 ```java
-public static List<int[]> printPairs(int[] arr, int target) {
-    Set<Integer> seen = new HashSet<>();
-    List<int[]> pairs = new ArrayList<>();
+public static ArrayList<int[]> printPairs(int[] arr, int target) {
+    HashSet<Integer> seen = new HashSet<>();
+    ArrayList<int[]> pairs = new ArrayList<>();
 
     for (int n : arr) {
         int complement = target - n;
@@ -599,7 +626,7 @@ public static List<int[]> printPairs(int[] arr, int target) {
 
 ## 25. Prefix Sum Array (Cumulative Sum)
 
-**Problem:** Build a prefix sum array where each element is the cumulative sum up to that index.
+**Problem:** Build a prefix sum array where each element is the cumulative sum.
 
 ```
 Input:  [1, 2, 3, 4, 5]
@@ -607,8 +634,8 @@ Output: [1, 3, 6, 10, 15]
 ```
 
 ```java
-public static List<Integer> prefixSum(int[] arr) {
-    List<Integer> prefix = new ArrayList<>();
+public static ArrayList<Integer> prefixSum(int[] arr) {
+    ArrayList<Integer> prefix = new ArrayList<>();
     int running = 0;
     for (int n : arr) {
         running += n;
@@ -634,18 +661,17 @@ Output: "olleh"
 ```
 
 ```java
-// Using ArrayDeque as a Stack
+// ArrayList used as a stack to reverse characters
 public static String reverseString(String s) {
-    Deque<Character> stack = new ArrayDeque<>();
-    for (char c : s.toCharArray()) stack.push(c);
+    ArrayList<Character> stack = new ArrayList<>();
+    for (char c : s.toCharArray()) stack.add(c);   // push
 
     StringBuilder sb = new StringBuilder();
-    while (!stack.isEmpty()) sb.append(stack.pop());
+    while (!stack.isEmpty())
+        sb.append(stack.remove(stack.size() - 1));  // pop from end
     return sb.toString();
 }
 ```
-
-> **Key:** Push all chars onto the stack, then pop (LIFO) to reverse order.
 
 ---
 
@@ -659,20 +685,20 @@ Input:  "hello"    → false
 ```
 
 ```java
-// Using ArrayDeque as a Deque (double-ended queue)
 public static boolean isPalindrome(String s) {
     s = s.toLowerCase();
-    Deque<Character> deque = new ArrayDeque<>();
-    for (char c : s.toCharArray()) deque.addLast(c);
+    ArrayList<Character> list = new ArrayList<>();
+    for (char c : s.toCharArray()) list.add(c);
 
-    while (deque.size() > 1) {
-        if (!deque.pollFirst().equals(deque.pollLast())) return false;
+    int left = 0, right = list.size() - 1;
+    while (left < right) {
+        if (!list.get(left).equals(list.get(right))) return false;
+        left++;
+        right--;
     }
     return true;
 }
 ```
-
-> **Key:** `ArrayDeque` as a deque — compare front and back simultaneously.
 
 ---
 
@@ -687,18 +713,18 @@ Output: 3
 
 ```java
 public static int countVowels(String s) {
-    Set<Character> vowels = new HashSet<>(
-        Arrays.asList('a','e','i','o','u','A','E','I','O','U')
-    );
+    HashSet<Character> vowels = new HashSet<>();
+    for (char c : "aeiouAEIOU".toCharArray()) vowels.add(c);
 
-    List<Character> chars = new ArrayList<>();
-    for (char c : s.toCharArray()) chars.add(c);
-
-    return (int) chars.stream().filter(vowels::contains).count();
+    int count = 0;
+    for (char c : s.toCharArray()) {
+        if (vowels.contains(c)) count++;
+    }
+    return count;
 }
 ```
 
-> **Key:** `Set.contains()` is O(1) — faster lookup than `String.indexOf()`.
+> `HashSet.contains()` is O(1) — faster than `String.indexOf()`.
 
 ---
 
@@ -715,27 +741,27 @@ Input:  "hello", "world"    → false
 public static boolean isAnagram(String s1, String s2) {
     if (s1.length() != s2.length()) return false;
 
-    Map<Character, Integer> freq = new HashMap<>();
+    HashMap<Character, Integer> freq = new HashMap<>();
 
     for (char c : s1.toLowerCase().toCharArray())
-        freq.merge(c, 1, Integer::sum);
+        freq.put(c, freq.getOrDefault(c, 0) + 1);
 
     for (char c : s2.toLowerCase().toCharArray()) {
         if (!freq.containsKey(c)) return false;
-        freq.merge(c, -1, Integer::sum);
+        freq.put(c, freq.get(c) - 1);
         if (freq.get(c) < 0) return false;
     }
     return true;
 }
 ```
 
-**Sorting approach with Collections:**
+**Sorting approach:**
 ```java
 public static boolean isAnagramSort(String s1, String s2) {
-    List<Character> l1 = new ArrayList<>(), l2 = new ArrayList<>();
+    ArrayList<Character> l1 = new ArrayList<>();
+    ArrayList<Character> l2 = new ArrayList<>();
     for (char c : s1.toLowerCase().toCharArray()) l1.add(c);
     for (char c : s2.toLowerCase().toCharArray()) l2.add(c);
-
     Collections.sort(l1);
     Collections.sort(l2);
     return l1.equals(l2);
@@ -746,7 +772,7 @@ public static boolean isAnagramSort(String s1, String s2) {
 
 ## 30. First Non-Repeating Character
 
-**Problem:** Find the first character in a string that does not repeat.
+**Problem:** Find the first character that does not repeat.
 
 ```
 Input:  "aabbc"  → 'c'
@@ -755,17 +781,23 @@ Input:  "aabb"   → '\0' (none)
 
 ```java
 public static char firstNonRepeating(String s) {
-    // LinkedHashMap preserves insertion order
-    Map<Character, Integer> map = new LinkedHashMap<>();
-    for (char c : s.toCharArray())
-        map.merge(c, 1, Integer::sum);
+    // HashMap for frequency + ArrayList to preserve insertion order
+    HashMap<Character, Integer> freq = new HashMap<>();
+    ArrayList<Character> order = new ArrayList<>();
 
-    for (Map.Entry<Character, Integer> entry : map.entrySet())
-        if (entry.getValue() == 1) return entry.getKey();
+    for (char c : s.toCharArray()) {
+        if (!freq.containsKey(c)) order.add(c);   // track first-seen order
+        freq.put(c, freq.getOrDefault(c, 0) + 1);
+    }
 
+    for (char c : order) {
+        if (freq.get(c) == 1) return c;
+    }
     return '\0';
 }
 ```
+
+> `ArrayList` preserves insertion order; `HashMap` gives O(1) frequency lookup.
 
 ---
 
@@ -780,19 +812,17 @@ Output: 4
 
 ```java
 public static int countChar(String s, char target) {
-    List<Character> list = new ArrayList<>();
+    ArrayList<Character> list = new ArrayList<>();
     for (char c : s.toCharArray()) list.add(c);
     return Collections.frequency(list, target);
 }
 ```
 
-> **Key:** `Collections.frequency(Collection, Object)` counts occurrences in O(n).
-
 ---
 
 ## 32. Remove Duplicates from a String
 
-**Problem:** Remove duplicate characters, keeping only first occurrence.
+**Problem:** Remove duplicate characters, keeping only the first occurrence.
 
 ```
 Input:  "programming"
@@ -801,11 +831,16 @@ Output: "progamin"
 
 ```java
 public static String removeDuplicates(String s) {
-    Set<Character> seen = new LinkedHashSet<>();   // preserves insertion order
-    for (char c : s.toCharArray()) seen.add(c);
+    HashSet<Character> seen = new HashSet<>();
+    ArrayList<Character> result = new ArrayList<>();
+
+    for (char c : s.toCharArray()) {
+        if (seen.add(c))   // add returns false if already present
+            result.add(c);
+    }
 
     StringBuilder sb = new StringBuilder();
-    for (char c : seen) sb.append(c);
+    for (char c : result) sb.append(c);
     return sb.toString();
 }
 ```
@@ -824,24 +859,16 @@ Input:  "abcde", "cdeab"  → true
 public static boolean isRotation(String s1, String s2) {
     if (s1.length() != s2.length()) return false;
 
-    // Convert to List<Character> and use Collections.rotate
-    List<Character> list = new ArrayList<>();
+    ArrayList<Character> list = new ArrayList<>();
     for (char c : s1.toCharArray()) list.add(c);
 
     for (int k = 0; k < list.size(); k++) {
-        Collections.rotate(list, 1);
+        Collections.rotate(list, 1);   // rotate right by 1
         StringBuilder sb = new StringBuilder();
         for (char c : list) sb.append(c);
         if (sb.toString().equals(s2)) return true;
     }
     return false;
-}
-```
-
-**Cleaner string-based check:**
-```java
-public static boolean isRotationFast(String s1, String s2) {
-    return s1.length() == s2.length() && (s1 + s1).contains(s2);
 }
 ```
 
@@ -859,7 +886,8 @@ Output: 4
 ```java
 public static int countWords(String s) {
     if (s == null || s.trim().isEmpty()) return 0;
-    List<String> words = Arrays.asList(s.trim().split("\\s+"));
+    ArrayList<String> words = new ArrayList<>();
+    for (String w : s.trim().split("\\s+")) words.add(w);
     return words.size();
 }
 ```
@@ -877,13 +905,12 @@ Output: "World Hello"
 
 ```java
 public static String reverseWords(String s) {
-    List<String> words = new ArrayList<>(Arrays.asList(s.trim().split("\\s+")));
+    ArrayList<String> words = new ArrayList<>();
+    for (String w : s.trim().split("\\s+")) words.add(w);
     Collections.reverse(words);
     return String.join(" ", words);
 }
 ```
-
-> **Key:** `Collections.reverse(List)` + `String.join()` — clean, one-liner logic.
 
 ---
 
@@ -898,9 +925,13 @@ Input:  "123a5"   → false
 
 ```java
 public static boolean isNumeric(String s) {
-    List<Character> chars = new ArrayList<>();
-    for (char c : s.toCharArray()) chars.add(c);
-    return !chars.isEmpty() && chars.stream().allMatch(Character::isDigit);
+    if (s == null || s.isEmpty()) return false;
+    ArrayList<Character> list = new ArrayList<>();
+    for (char c : s.toCharArray()) list.add(c);
+    for (char c : list) {
+        if (!Character.isDigit(c)) return false;
+    }
+    return true;
 }
 ```
 
@@ -918,21 +949,21 @@ Output: "def"
 ```java
 public static String caesarCipher(String s, int k) {
     k = k % 26;
-    List<Character> chars = new ArrayList<>();
+    ArrayList<Character> chars = new ArrayList<>();
     for (char c : s.toCharArray()) chars.add(c);
 
-    List<Character> shifted = new ArrayList<>();
+    ArrayList<Character> result = new ArrayList<>();
     for (char c : chars) {
         if (Character.isLetter(c)) {
             char base = Character.isUpperCase(c) ? 'A' : 'a';
-            shifted.add((char) ((c - base + k) % 26 + base));
+            result.add((char) ((c - base + k) % 26 + base));
         } else {
-            shifted.add(c);
+            result.add(c);
         }
     }
 
     StringBuilder sb = new StringBuilder();
-    for (char c : shifted) sb.append(c);
+    for (char c : result) sb.append(c);
     return sb.toString();
 }
 ```
@@ -949,14 +980,16 @@ Output: "fl"
 ```
 
 ```java
-// TreeSet trick: in lexicographic order, the first and last strings
-// have the smallest common prefix among all strings.
 public static String longestCommonPrefix(String[] strs) {
     if (strs == null || strs.length == 0) return "";
 
-    TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
-    String first = set.first();
-    String last  = set.last();
+    ArrayList<String> list = new ArrayList<>();
+    for (String s : strs) list.add(s);
+    Collections.sort(list);   // lexicographic sort
+
+    // After sorting, only first and last need to be compared
+    String first = list.get(0);
+    String last  = list.get(list.size() - 1);
 
     int i = 0;
     while (i < first.length() && i < last.length()
@@ -966,7 +999,7 @@ public static String longestCommonPrefix(String[] strs) {
 }
 ```
 
-> **Key:** In a `TreeSet`, comparing only the lexicographically smallest and largest strings is enough to find the common prefix for all strings.
+> After sorting, the lexicographically smallest and largest strings cover all possible prefix comparisons for the whole list.
 
 ---
 
@@ -975,32 +1008,34 @@ public static String longestCommonPrefix(String[] strs) {
 **Problem:** Check if a string of brackets is balanced.
 
 ```
-Input:  "(()())"  → true
-Input:  "(()"     → false
+Input:  "(()())"   → true
+Input:  "(()"      → false
+Input:  "{[()]}"   → true
 ```
 
 ```java
+// ArrayList used as a stack
 public static boolean isBalanced(String s) {
-    Deque<Character> stack = new ArrayDeque<>();
-    Map<Character, Character> pairs = new HashMap<>();
+    HashMap<Character, Character> pairs = new HashMap<>();
     pairs.put(')', '(');
     pairs.put(']', '[');
     pairs.put('}', '{');
 
+    HashSet<Character> opening = new HashSet<>(pairs.values());
+    ArrayList<Character> stack = new ArrayList<>();
+
     for (char c : s.toCharArray()) {
-        if (pairs.containsValue(c)) {
-            stack.push(c);                          // opening bracket
+        if (opening.contains(c)) {
+            stack.add(c);                                    // push opening bracket
         } else if (pairs.containsKey(c)) {
-            if (stack.isEmpty() || stack.pop() != pairs.get(c))
-                return false;                       // mismatched
+            if (stack.isEmpty()) return false;
+            char top = stack.remove(stack.size() - 1);      // pop
+            if (top != pairs.get(c)) return false;
         }
     }
     return stack.isEmpty();
 }
 ```
-
-> **Key:** `ArrayDeque` as a Stack is the standard approach for bracket matching.
-> This version also handles `[]` and `{}` — not just `()`.
 
 ---
 
@@ -1015,13 +1050,10 @@ Output: "a3b2c1"
 
 ```java
 public static String compress(String s) {
-    // Use LinkedHashMap to maintain character order
-    Map<Character, Integer> freq = new LinkedHashMap<>();
+    ArrayList<String> parts = new ArrayList<>();
+    int i = 0;
     char[] chars = s.toCharArray();
 
-    // Process runs (not just total frequency — handle consecutive groups)
-    int i = 0;
-    List<String> parts = new ArrayList<>();
     while (i < chars.length) {
         char c = chars[i];
         int count = 0;
@@ -1044,31 +1076,34 @@ Output: [abc, acb, bac, bca, cab, cba]
 ```
 
 ```java
-public static List<String> permutations(String s) {
-    List<String> result = new ArrayList<>();
-    generatePermutations(new ArrayList<>(Arrays.asList(s.split(""))),
-                         new ArrayDeque<>(), result);
+public static ArrayList<String> permutations(String s) {
+    ArrayList<String> result = new ArrayList<>();
+    ArrayList<Character> chars = new ArrayList<>();
+    for (char c : s.toCharArray()) chars.add(c);
+    generatePermutations(chars, new ArrayList<>(), result);
     return result;
 }
 
-private static void generatePermutations(List<String> chars,
-                                          Deque<String> current,
-                                          List<String> result) {
-    if (chars.isEmpty()) {
-        result.add(String.join("", current));
+private static void generatePermutations(ArrayList<Character> remaining,
+                                          ArrayList<Character> current,
+                                          ArrayList<String> result) {
+    if (remaining.isEmpty()) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : current) sb.append(c);
+        result.add(sb.toString());
         return;
     }
-    for (int i = 0; i < chars.size(); i++) {
-        String ch = chars.remove(i);
-        current.addLast(ch);
-        generatePermutations(chars, current, result);
-        current.removeLast();
-        chars.add(i, ch);
+    for (int i = 0; i < remaining.size(); i++) {
+        char ch = remaining.remove(i);
+        current.add(ch);
+        generatePermutations(remaining, current, result);
+        current.remove(current.size() - 1);   // backtrack
+        remaining.add(i, ch);
     }
 }
 ```
 
-> **Key:** `Deque` (ArrayDeque) used as the "current path" — add to tail, remove from tail (backtracking).
+> `ArrayList` acts as both the "remaining characters" pool and the "current path" stack.
 
 ---
 
@@ -1081,19 +1116,18 @@ Input:  s = "ace", t = "abcde"  → true
 ```
 
 ```java
+// ArrayList used as a queue (remove from front = index 0)
 public static boolean isSubsequence(String s, String t) {
-    Deque<Character> queue = new ArrayDeque<>();
-    for (char c : s.toCharArray()) queue.offer(c);  // add to tail
+    ArrayList<Character> queue = new ArrayList<>();
+    for (char c : s.toCharArray()) queue.add(c);
 
     for (char c : t.toCharArray()) {
-        if (!queue.isEmpty() && queue.peek() == c)
-            queue.poll();                            // matched, remove from head
+        if (!queue.isEmpty() && queue.get(0) == c)
+            queue.remove(0);   // matched — dequeue from front
     }
-    return queue.isEmpty();                          // all chars matched
+    return queue.isEmpty();    // all chars of s matched
 }
 ```
-
-> **Key:** `ArrayDeque` as a Queue — `offer` to enqueue, `poll` to dequeue (FIFO).
 
 ---
 
@@ -1107,24 +1141,26 @@ Output: {h=1, e=1, l=2, o=1}
 ```
 
 ```java
-public static Map<Character, Integer> charFrequency(String s) {
-    Map<Character, Integer> map = new LinkedHashMap<>();
-    for (char c : s.toCharArray())
-        map.merge(c, 1, Integer::sum);
+public static HashMap<Character, Integer> charFrequency(String s) {
+    ArrayList<Character> chars = new ArrayList<>();
+    for (char c : s.toCharArray()) chars.add(c);
+
+    HashMap<Character, Integer> map = new HashMap<>();
+    for (char c : chars)
+        map.put(c, map.getOrDefault(c, 0) + 1);
     return map;
 }
 ```
 
-**Sorted by frequency (highest first) using TreeMap / PriorityQueue:**
+**Sort characters by frequency (most frequent first):**
 ```java
-public static List<Map.Entry<Character, Integer>> sortedByFrequency(String s) {
-    Map<Character, Integer> map = new LinkedHashMap<>();
-    for (char c : s.toCharArray())
-        map.merge(c, 1, Integer::sum);
+public static ArrayList<Character> sortedByFrequency(String s) {
+    HashMap<Character, Integer> freq = charFrequency(s);
 
-    List<Map.Entry<Character, Integer>> entries = new ArrayList<>(map.entrySet());
-    entries.sort((a, b) -> b.getValue() - a.getValue());  // desc frequency
-    return entries;
+    ArrayList<Character> chars = new ArrayList<>(freq.keySet());
+    // Sort descending by frequency using Collections.sort with comparator
+    Collections.sort(chars, (a, b) -> freq.get(b) - freq.get(a));
+    return chars;
 }
 ```
 
@@ -1141,17 +1177,13 @@ Output: true
 
 ```java
 public static boolean isPangram(String s) {
-    Set<Character> alphabetSeen = new HashSet<>();
-
-    for (char c : s.toLowerCase().toCharArray())
-        if (c >= 'a' && c <= 'z') alphabetSeen.add(c);
-
-    // All 26 letters must be present
-    return alphabetSeen.size() == 26;
+    HashSet<Character> seen = new HashSet<>();
+    for (char c : s.toLowerCase().toCharArray()) {
+        if (c >= 'a' && c <= 'z') seen.add(c);
+    }
+    return seen.size() == 26;
 }
 ```
-
-> **Key:** HashSet naturally tracks unique elements — just check if all 26 letters are collected.
 
 ---
 
@@ -1165,107 +1197,76 @@ Output: [1, 2]
 ```
 
 ```java
-public static List<Integer> topKFrequent(int[] arr, int k) {
+public static ArrayList<Integer> topKFrequent(int[] arr, int k) {
     // Step 1: count frequencies
-    Map<Integer, Integer> freq = new HashMap<>();
-    for (int n : arr) freq.merge(n, 1, Integer::sum);
+    HashMap<Integer, Integer> freq = new HashMap<>();
+    for (int n : arr)
+        freq.put(n, freq.getOrDefault(n, 0) + 1);
 
-    // Step 2: max-heap ordered by frequency (descending)
-    PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
-        new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
+    // Step 2: put all keys in a list and sort by frequency descending
+    ArrayList<Integer> keys = new ArrayList<>(freq.keySet());
+    Collections.sort(keys, (a, b) -> freq.get(b) - freq.get(a));
 
-    maxHeap.addAll(freq.entrySet());
-
-    // Step 3: poll top k
-    List<Integer> result = new ArrayList<>();
-    for (int i = 0; i < k; i++) result.add(maxHeap.poll().getKey());
-    return result;
+    // Step 3: return first k elements
+    return new ArrayList<>(keys.subList(0, k));
 }
 ```
 
-> **Key:** `PriorityQueue` with a custom comparator becomes a max-heap when you reverse the comparison.
-
 ---
 
-# Collections Quick Reference
+# Quick Reference
 
-## Which Collection to Use?
-
-| Need | Use |
-|------|-----|
-| Ordered list, index access | `ArrayList` |
-| Frequent insert/delete at ends | `LinkedList` / `ArrayDeque` |
-| Stack (LIFO) | `ArrayDeque` (`push`/`pop`) |
-| Queue (FIFO) | `ArrayDeque` (`offer`/`poll`) |
-| No duplicates, fast lookup | `HashSet` |
-| No duplicates, insertion order | `LinkedHashSet` |
-| No duplicates, sorted order | `TreeSet` |
-| Key-value pairs, fast lookup | `HashMap` |
-| Key-value pairs, insertion order | `LinkedHashMap` |
-| Key-value pairs, sorted keys | `TreeMap` |
-| Priority / min-max heap | `PriorityQueue` |
-
-## Key Collections Utility Methods
+## ArrayList as a Stack (LIFO)
 
 ```java
-Collections.sort(list)                    // sort ascending
-Collections.sort(list, Comparator)        // sort custom order
-Collections.reverse(list)                 // reverse in-place
-Collections.shuffle(list)                 // random shuffle
-Collections.max(collection)               // maximum element
-Collections.min(collection)               // minimum element
-Collections.frequency(collection, obj)    // count occurrences
-Collections.rotate(list, distance)        // rotate (+ = right, - = left)
-Collections.swap(list, i, j)              // swap two elements
-Collections.fill(list, val)               // fill all with value
-Collections.disjoint(c1, c2)             // true if no common elements
-Collections.unmodifiableList(list)        // read-only view
+ArrayList<Integer> stack = new ArrayList<>();
+stack.add(x);                        // push
+stack.get(stack.size() - 1);        // peek
+stack.remove(stack.size() - 1);     // pop
+stack.isEmpty();                     // check empty
 ```
 
-## PriorityQueue Patterns
+## ArrayList as a Queue (FIFO)
 
 ```java
-// Min-heap (default)
-PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-
-// Max-heap
-PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
-
-// Custom comparator (sort by string length)
-PriorityQueue<String> pq = new PriorityQueue<>(Comparator.comparingInt(String::length));
+ArrayList<Integer> queue = new ArrayList<>();
+queue.add(x);        // enqueue (add to end)
+queue.get(0);        // peek front
+queue.remove(0);     // dequeue (remove from front)
+queue.isEmpty();     // check empty
 ```
 
-## Map Patterns
+## HashMap Patterns
 
 ```java
-// Count frequency
-map.merge(key, 1, Integer::sum);
-
-// Get or default
-map.getOrDefault(key, 0);
-
-// Put if absent
-map.putIfAbsent(key, new ArrayList<>());
-
-// Iterate entries
-for (Map.Entry<K, V> entry : map.entrySet()) { ... }
-
-// Sort map by value
-entries.sort(Map.Entry.comparingByValue());
+map.getOrDefault(key, 0)              // get with default
+map.put(key, map.getOrDefault(k,0)+1) // count / increment
+map.containsKey(key)                  // check existence
+map.keySet()                          // all keys
+map.values()                          // all values
+map.entrySet()                        // key-value pairs
 ```
 
-## ArrayDeque as Stack vs Queue
+## HashSet Patterns
 
 ```java
-Deque<Integer> deque = new ArrayDeque<>();
+set.add(x)        // returns false if already present (duplicate check)
+set.contains(x)   // O(1) lookup
+set.remove(x)     // remove element
+new HashSet<>(list) // deduplicate a list
+```
 
-// Stack (LIFO)
-deque.push(1);   // pushes to front
-deque.pop();     // removes from front
-deque.peek();    // views front
+## Collections Utility Methods
 
-// Queue (FIFO)
-deque.offer(1);  // adds to back
-deque.poll();    // removes from front
-deque.peek();    // views front
+```java
+Collections.sort(list)                  // sort ascending
+Collections.sort(list, (a,b)->b-a)      // sort descending
+Collections.reverse(list)               // reverse in-place
+Collections.max(list)                   // maximum element
+Collections.min(list)                   // minimum element
+Collections.frequency(list, obj)        // count occurrences
+Collections.rotate(list, k)             // rotate (+ right, - left)
+Collections.swap(list, i, j)            // swap two elements
+Collections.shuffle(list)               // random shuffle
+Collections.fill(list, val)             // fill all with value
 ```
